@@ -1,0 +1,47 @@
+[
+  {
+    "id": "tavern", "name": "Village Tavern",
+    "description": "An everyday taproom and kitchen serving travellers and local workers.",
+    "merchantNotes": {
+      "alwaysStocks": ["Bread", "Simple meals", "Local ale", "Drinking water"],
+      "oftenStocks": ["Cheese", "Cured meat", "Travel meals", "House wine"],
+      "rarelyStocks": ["Imported spirits", "Fine wine", "Celebration feasts"]
+    }
+  },
+  {
+    "id": "general-store", "name": "Village General Store",
+    "description": "Practical household goods, travelling supplies and containers for a small settlement.",
+    "merchantNotes": {
+      "alwaysStocks": ["Rope", "Sacks", "Candles", "Soap", "Rations", "Torches"],
+      "oftenStocks": ["Lanterns", "Tents", "Blankets"],
+      "rarelyStocks": ["Spyglass", "Silk Rope", "Lockbox"]
+    }
+  },
+  {
+    "id": "alchemist", "name": "Village Alchemist",
+    "description": "A modest workshop supplying common reagents and prepared remedies.",
+    "merchantNotes": {
+      "alwaysStocks": ["Empty bottles", "Common herbs", "Basic reagents"],
+      "oftenStocks": ["Prepared remedies", "Antitoxin", "Lamp oil"],
+      "rarelyStocks": ["Healing potions", "Rare reagents", "Specialist alchemical preparations"]
+    }
+  },
+  {
+    "id": "blacksmith", "name": "Village Blacksmith",
+    "description": "A working forge focused on repairs, fittings and practical ironwork.",
+    "merchantNotes": {
+      "alwaysStocks": ["Nails", "Horseshoes", "Simple iron fittings"],
+      "oftenStocks": ["Hand tools", "Chains", "Locks"],
+      "rarelyStocks": ["Fine weapons", "Fitted armour", "Specialist metalwork"]
+    }
+  },
+  {
+    "id": "black-market", "name": "Discreet Fence",
+    "description": "An irregular contact whose stock depends on recent opportunities and trusted introductions.",
+    "merchantNotes": {
+      "alwaysStocks": ["Small second-hand valuables of uncertain provenance"],
+      "oftenStocks": ["Unmarked tools", "Concealable containers", "Stolen trade goods"],
+      "rarelyStocks": ["Forged papers", "Restricted reagents", "Distinctive stolen treasures"]
+    }
+  }
+]

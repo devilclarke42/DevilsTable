@@ -2,11 +2,51 @@
   <h2>Build/Rebuild Compendiums</h2>
   <p>Foundry V14 · D&D5e 5.3.3 · 2014 rules · adjusted weights in pounds.</p>
   <p>The source catalogue defines every generated item. Multiple shop tags do not create duplicate items.</p>
-  <p class="dt-warning">Framework release: no production items are included yet. Preview checks the pipeline; an empty build does not create or clear a pack.</p>
+  <p class="dt-warning">Containers is the first content batch and awaits review. Other General Store categories contain plans only.</p>
+  {{#if catalogueError}}
+    <pre class="dt-warning" role="alert">{{catalogueError}}</pre>
+  {{else}}
+    <fieldset class="dt-filters" {{#if busy}}disabled{{/if}}>
+      <legend>Shop</legend>
+      <button type="button" data-action="selectShop" data-shop="" aria-pressed="{{#if allShops}}true{{else}}false{{/if}}">All shops</button>
+      {{#each shops}}
+        <button type="button" data-action="selectShop" data-shop="{{id}}" aria-pressed="{{#if selected}}true{{else}}false{{/if}}">{{name}}</button>
+      {{/each}}
+    </fieldset>
+    {{#if shop}}
+      <details class="dt-merchant-notes" open>
+        <summary>Merchant Notes — {{shop.name}}</summary>
+        <p>{{shop.description}}</p>
+        <p>Stock guidance for the builder. Notes can name future goods; they do not create items or go into the compendium.</p>
+        <div class="dt-stock-tiers">
+          <section><h3>Always Stocks</h3><ul>{{#each shop.merchantNotes.alwaysStocks}}<li>{{this}}</li>{{/each}}</ul></section>
+          <section><h3>Often Stocks</h3><ul>{{#each shop.merchantNotes.oftenStocks}}<li>{{this}}</li>{{/each}}</ul></section>
+          <section><h3>Rarely Stocks</h3><ul>{{#each shop.merchantNotes.rarelyStocks}}<li>{{this}}</li>{{/each}}</ul></section>
+        </div>
+      </details>
+    {{else}}
+      <p>Select a shop to see its Merchant Notes.</p>
+    {{/if}}
+    <fieldset class="dt-categories" {{#if busy}}disabled{{/if}}>
+      <legend>Category</legend>
+      <button type="button" data-action="selectCategory" data-category="" aria-pressed="{{#if allCategories}}true{{else}}false{{/if}}">All categories</button>
+      <div class="dt-category-list">
+        {{#each categories}}
+          <div class="dt-category">
+            <button type="button" data-action="selectCategory" data-category="{{id}}" aria-pressed="{{#if selected}}true{{else}}false{{/if}}">{{name}} · {{count}} items</button>
+            <details><summary>Category plan</summary><p>{{description}}</p><p>{{planned}}</p></details>
+          </div>
+        {{/each}}
+      </div>
+    </fieldset>
+    <p><strong>{{scopeLabel}}</strong> — {{count}} authored items selected.</p>
+    <p>Pricing: 1–9 cp everyday; 1–9 sp common; 1–24 gp equipment; 25+ gp specialist.</p>
+    <p>{{#each priceBands}}{{name}}: {{count}}{{#unless @last}} · {{/unless}}{{/each}}</p>
+  {{/if}}
   <fieldset {{#if busy}}disabled{{/if}}>
     <legend>GM actions</legend>
     <button type="button" data-action="preview"><i class="fa-solid fa-check" aria-hidden="true"></i> Validate / Preview</button>
-    <button type="button" data-action="build"><i class="fa-solid fa-hammer" aria-hidden="true"></i> Build / Rebuild</button>
+    <button type="button" data-action="build" {{#if blocked}}disabled{{/if}}><i class="fa-solid fa-hammer" aria-hidden="true"></i> Build / Rebuild</button>
   </fieldset>
   <h3>Report</h3>
   <pre class="dt-report" role="status" aria-live="polite" aria-atomic="true">{{report}}</pre>

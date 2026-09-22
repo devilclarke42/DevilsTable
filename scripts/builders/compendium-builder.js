@@ -1,5 +1,6 @@
 import { BATCH_SIZE, PACK_COLLECTION } from "../constants.js";
 import { loadCatalogue } from "../data/catalogue-loader.js";
+import { selectEntries } from "../data/shop-catalogue.js";
 import { validateCatalogue } from "../validation/catalogue-validator.js";
 import { catalogueEntryToItem } from "./item-factory.js";
 import { planBuild } from "./build-plan.js";
@@ -8,7 +9,7 @@ import { createFoundryAdapter } from "./foundry-adapter.js";
 /** One service instance is shared by the UI and public API, preventing local overlap. */
 export function createBuilder({ load = loadCatalogue, adapter = null, now = () => new Date().toISOString() } = {}) {
   let busy = false;
-  return async function rebuild({ dryRun = true, onProgress = () => {} } = {}) {
+  return async function rebuild({ dryRun = true, onProgress = () => {}, shopId = null, categoryId = null } = {}) {
     if (busy) throw new Error("A Devil's Table build is already running in this client.");
     busy = true;
     // Progress observers must not be able to interrupt persistence or lock restoration.
@@ -30,17 +31,18 @@ export function createBuilder({ load = loadCatalogue, adapter = null, now = () =
         error.details = validation.errors;
         throw error;
       }
-      const documents = catalogue.entries.map(({ item }) => catalogueEntryToItem(item));
+      const documents = selectEntries(catalogue, { shopId, categoryId }).map(({ item }) => catalogueEntryToItem(item));
       progress(`Preflighting ${documents.length} D&D5e documents…`);
       await io.validateDocuments(documents);
       pack = await io.getPack();
       const existing = pack ? await io.readPack(pack) : [];
       const plan = planBuild(documents, existing);
       summary = {
-        status: dryRun ? "preview" : "complete", at: now(), pack: PACK_COLLECTION,
+        status: dryRun ? "preview" : "complete", at: now(), pack: PACK_COLLECTION, scope: { shopId, categoryId },
         count: documents.length, create: plan.create.length, update: plan.update.length,
         unchanged: plan.unchanged, preserved: plan.preserved, written: 0, warnings: validation.warnings
       };
+      if (!documents.length && catalogue.entries.length) summary.warnings = [...summary.warnings, "No authored items match this selection. Planned names and Merchant Notes do not create items."];
       if (dryRun || (!plan.create.length && !plan.update.length)) return summary;
 
       io.assertCanBuild();

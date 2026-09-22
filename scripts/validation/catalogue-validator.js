@@ -1,13 +1,18 @@
 import { compileSchema } from "./schema-validator.js";
 import { documentIdFor } from "../builders/document-id.js";
+import { validateShopDefinitions } from "./shop-validator.js";
+import { validateItemRules } from "./item-rules.js";
 
 /** Cross-file, registry and permanent-ID checks supplement structural schemas. */
-export function validateCatalogue({ index, entries, itemSchema, catalogueSchema, ledger }) {
+export function validateCatalogue(catalogue) {
+  const { index, entries, itemSchema, catalogueSchema, ledger, categoryDefinitions } = catalogue;
   const errors = compileSchema(catalogueSchema)(index, "data/catalogue.json");
   const warnings = [];
   const result = () => ({ valid: errors.length === 0, count: entries?.length ?? 0, errors, warnings });
   const add = (path, message) => errors.push({ path, message });
   if (!Array.isArray(entries)) { add("entries", "Expected loaded catalogue entries."); return result(); }
+  if (errors.length) return result();
+  errors.push(...validateShopDefinitions(catalogue));
   if (errors.length) return result();
   if (ledger?.schemaVersion !== 1 || !Array.isArray(ledger?.ids) ||
       ledger.ids.some(id => typeof id !== "string" || !/^DT_ITEM_[A-Z0-9]+(?:_[A-Z0-9]+)+$/.test(id)) ||
@@ -20,16 +25,27 @@ export function validateCatalogue({ index, entries, itemSchema, catalogueSchema,
   const documents = new Map();
   const shops = new Set(index.shops);
   const categories = new Set(index.categories);
+  const shopCategories = new Map();
+  for (const category of categoryDefinitions) {
+    if (!shopCategories.has(category.shop)) shopCategories.set(category.shop, new Set());
+    shopCategories.get(category.shop).add(category.id);
+  }
   const validate = compileSchema(itemSchema);
   for (const { item, location } of entries) {
     const itemErrors = validate(item, location);
     errors.push(...itemErrors);
     if (itemErrors.length) continue;
+    errors.push(...validateItemRules(item, location));
     if (ids.has(item.id)) add(`${location}.id`, `Duplicate ${item.id}; first seen at ${ids.get(item.id)}.`);
     ids.set(item.id, location);
     if (!registered.has(item.id)) add(`${location}.id`, "Permanent ID must be reserved in data/id-ledger.json.");
     if (!categories.has(item.category)) add(`${location}.category`, "Category is not in the catalogue registry.");
-    for (const shop of item.shops) if (!shops.has(shop)) add(`${location}.shops`, `Unknown shop: ${shop}.`);
+    for (const shop of item.shops) {
+      if (!shops.has(shop)) add(`${location}.shops`, `Unknown shop: ${shop}.`);
+      if (shopCategories.has(shop) && !shopCategories.get(shop).has(item.category)) {
+        add(`${location}.category`, `Category is not defined for ${shop}.`);
+      }
+    }
   }
   // Include retired IDs: they must never collide with a new active document.
   for (const id of registered) {

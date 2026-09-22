@@ -11,18 +11,31 @@
 
 Implementation is available for acceptance testing; the target environment is not yet verified.
 
-## Next — Reviewed content, not bulk generation
+## Current — General Store / Containers review
+
+- [x] Define all eight curated General Store categories and their planned item lists.
+- [x] Require builder-only Merchant Notes for Tavern, General Store, Alchemist, Blacksmith and Black Market.
+- [x] Establish whole cp/sp/gp prices and the 25 gp specialist boundary.
+- [x] Author exactly 13 Containers with reserved permanent IDs and adjusted empty weights.
+- [x] Add native container capacities, shop/category filters and regression coverage.
+- [ ] Owner review of prices, weights, descriptions, capacities, stock guidance and icons.
+- [ ] Live V14 / D&D5e 5.3.3 Forge acceptance, including contained-item encumbrance.
+
+**Stop here until the Containers review is complete.** Fire & Lighting, Rope & Climbing,
+Camping, Writing, Household, Animal and Travel are planning lists only.
+
+## After review — Curated content
 
 - Review the original Tavern material against the canonical schema before any import.
-- Agree the first small General Store batch, adjusted weights and source attributions.
+- Agree the next General Store category and review its prices, adjusted weights and source attributions.
 - Reserve permanent IDs before publication; test rename and cross-shop behaviour.
-- Extend supported converters only when a real item type needs them: containers, consumables,
+- Extend supported converters only when a real item type needs them: consumables,
   tools, weapons and armour each need documented mappings and system tests.
 
 ## Later — Catalogue and shop workflows
 
 - Add Tavern, Alchemist, Blacksmith and Black Market catalogues incrementally.
-- Add category/shop filtering without multiplying item identities.
+- Expand category plans to other shops without multiplying item identities.
 - Design stock quantities, prices and availability workflows as explicit requirements.
 - Add a reviewed retirement/migration workflow, backups and stronger multi-session coordination.
 - Profile read/write memory use and responsiveness inside Foundry with thousands of real items.

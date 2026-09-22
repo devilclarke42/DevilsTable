@@ -5,7 +5,7 @@
   "price": { "value": 2, "denomination": "sp" },
   "weight": { "value": 0.25, "units": "lb", "notes": "Synthetic adjusted weight for automated tests only." },
   "icon": "icons/svg/item-bag.svg",
-  "category": "trade-goods",
+  "category": "camping",
   "tags": ["mundane", "test-only"],
   "shops": ["general-store", "tavern"],
   "availability": "core",

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Devil's Table shop categories v1",
+  "type": "array", "minItems": 1,
+  "items": {
+    "type": "object", "additionalProperties": false,
+    "required": ["id", "shop", "name", "description", "plannedItems"],
+    "properties": {
+      "id": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+      "shop": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+      "name": { "type": "string", "minLength": 1, "maxLength": 200, "pattern": "\\S" },
+      "description": { "type": "string", "minLength": 1, "maxLength": 2000, "pattern": "\\S" },
+      "plannedItems": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "type": "string", "minLength": 1, "maxLength": 200, "pattern": "\\S" } }
+    }
+  }
+}

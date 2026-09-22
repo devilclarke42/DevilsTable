@@ -1,5 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
+import { readJson } from "./helpers.js";
 
 test("startup registers a restricted V2 menu and a read-only-default API without building", async t => {
   const names = ["foundry", "Hooks", "game"];
@@ -40,6 +41,27 @@ test("startup registers a restricted V2 menu and a read-only-default API without
   assert.ok(menus[0].config.type.prototype instanceof ApplicationV2);
   assert.equal(Object.isFrozen(module.api), true);
   assert.deepEqual(module.api.openBuilder(), { force: true });
+  t.mock.method(globalThis, "fetch", async url => ({
+    ok: true, json: () => readJson(String(url).replace("modules/devils-table/", ""))
+  }));
+  const App = menus[0].config.type;
+  const app = new App();
+  const initial = await app._prepareContext({});
+  assert.equal(initial.shop.id, "general-store");
+  assert.equal(initial.count, 13);
+  assert.equal(initial.categories.length, 8);
+  assert.equal(initial.blocked, false);
+  await App.DEFAULT_OPTIONS.actions.selectCategory.call(app, null, { dataset: { category: "fire-lighting" } });
+  assert.equal((await app._prepareContext({})).count, 0);
+  await App.DEFAULT_OPTIONS.actions.selectShop.call(app, null, { dataset: { shop: "alchemist" } });
+  const alchemist = await app._prepareContext({});
+  assert.equal(alchemist.count, 3);
+  assert.equal(alchemist.allCategories, true);
+  assert.equal(alchemist.shop.name, "Village Alchemist");
+  globalThis.fetch = async () => ({ ok: false, status: 404 });
+  const failed = await new App()._prepareContext({});
+  assert.equal(failed.blocked, true);
+  assert.match(failed.catalogueError, /HTTP 404/);
   game.user.isGM = false;
   assert.throws(() => module.api.openBuilder(), /Only a GM/);
   assert.ok(menus[0].config.type.DEFAULT_OPTIONS.actions.preview);

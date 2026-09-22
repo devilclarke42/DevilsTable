@@ -5,12 +5,13 @@ import { loadCatalogue, readModuleJson } from "../scripts/data/catalogue-loader.
 import { validateCatalogue } from "../scripts/validation/catalogue-validator.js";
 import { catalogue, fixture, readJson } from "./helpers.js";
 
-test("empty production catalogue validates without including fixtures", async () => {
+test("Containers production catalogue validates without including fixtures", async () => {
   const data = await loadCatalogue({ readJson });
   const result = validateCatalogue(data);
   assert.equal(result.valid, true);
-  assert.equal(result.count, 0);
-  assert.match(result.warnings[0], /empty/);
+  assert.equal(result.count, 13);
+  assert.equal(result.warnings.length, 0);
+  assert.ok(data.entries.every(({ item }) => !item.id.includes("TEST")));
 });
 
 test("valid fixture supports multiple shops and adjusted pounds", async () => {

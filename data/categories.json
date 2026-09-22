@@ -1,0 +1,42 @@
+[
+  {
+    "id": "containers", "shop": "general-store", "name": "Containers",
+    "description": "Bags, boxes and vessels sold empty, with explicit carrying capacities.",
+    "plannedItems": ["Backpack", "Pouch", "Sack", "Chest", "Lockbox", "Barrel", "Crate", "Basket", "Bottle", "Flask", "Waterskin", "Clay Jug", "Ceramic Jar"]
+  },
+  {
+    "id": "fire-lighting", "shop": "general-store", "name": "Fire & Lighting",
+    "description": "Portable lights, fuel and everyday fire-making supplies.",
+    "plannedItems": ["Torch", "Candle", "Beeswax Candle", "Tallow Candle", "Lantern", "Hooded Lantern", "Bullseye Lantern", "Lamp", "Lamp Oil", "Tinderbox", "Flint & Steel", "Charcoal"]
+  },
+  {
+    "id": "rope-climbing", "shop": "general-store", "name": "Rope & Climbing",
+    "description": "Cordage, anchors and equipment for secured climbing.",
+    "plannedItems": ["Hempen Rope", "Silk Rope", "Twine", "Grappling Hook", "Pitons", "Climber's Kit"]
+  },
+  {
+    "id": "camping", "shop": "general-store", "name": "Camping",
+    "description": "Shelter, bedding and reusable camp kitchen equipment.",
+    "plannedItems": ["Blanket", "Bedroll", "Tent", "Bedroll Strap", "Mess Kit", "Cooking Pot", "Camp Kettle", "Cup", "Bowl", "Spoon", "Wooden Plate"]
+  },
+  {
+    "id": "writing", "shop": "general-store", "name": "Writing",
+    "description": "Writing surfaces, marking supplies and seals.",
+    "plannedItems": ["Parchment", "Paper", "Ink", "Ink Pen", "Chalk", "Wax", "Sealing Stamp"]
+  },
+  {
+    "id": "household", "shop": "general-store", "name": "Household",
+    "description": "Cleaning, sewing and other ordinary household needs.",
+    "plannedItems": ["Soap", "Needle", "Thread", "Sewing Kit", "Broom", "Mop", "Wash Bucket", "Wash Board", "Clothes Line"]
+  },
+  {
+    "id": "animal", "shop": "general-store", "name": "Animal",
+    "description": "Feed, grooming supplies and routine tack maintenance.",
+    "plannedItems": ["Horse Feed", "Feed Bag", "Brush", "Curry Comb", "Horseshoes", "Tack Repair Kit"]
+  },
+  {
+    "id": "travel", "shop": "general-store", "name": "Travel",
+    "description": "Navigation aids, signalling tools and practical travelling accessories.",
+    "plannedItems": ["Walking Stick", "Compass", "Spyglass", "Bell", "Signal Whistle"]
+  }
+]

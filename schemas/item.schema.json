@@ -12,8 +12,8 @@
     "price": {
       "type": "object", "additionalProperties": false, "required": ["value", "denomination"],
       "properties": {
-        "value": { "type": "number", "minimum": 0 },
-        "denomination": { "type": "string", "enum": ["cp", "sp", "ep", "gp", "pp"] }
+        "value": { "type": "integer", "minimum": 1 },
+        "denomination": { "type": "string", "enum": ["cp", "sp", "gp"] }
       }
     },
     "weight": {
@@ -38,10 +38,26 @@
       }
     },
     "mechanics": {
-      "type": "object", "additionalProperties": false, "required": ["type", "subtype"],
+      "type": "object", "additionalProperties": false, "required": ["type"],
       "properties": {
-        "type": { "type": "string", "const": "loot" },
-        "subtype": { "type": "string", "enum": ["art", "gear", "gem", "junk", "material", "resource", "trade", "treasure"] }
+        "type": { "type": "string", "enum": ["loot", "container"] },
+        "subtype": { "type": "string", "enum": ["art", "gear", "gem", "junk", "material", "resource", "trade", "treasure"] },
+        "capacity": {
+          "type": "object", "additionalProperties": false, "required": ["weight", "volume"],
+          "properties": {
+            "weight": {
+              "type": "object", "additionalProperties": false, "required": ["value", "units"],
+              "properties": { "value": { "type": "number", "minimum": 0 }, "units": { "type": "string", "const": "lb" } }
+            },
+            "volume": {
+              "type": "object", "additionalProperties": false, "required": ["value", "units"],
+              "properties": {
+                "value": { "type": "number", "minimum": 0 },
+                "units": { "type": "string", "enum": ["cubicFoot", "pint", "quart", "gallon"] }
+              }
+            }
+          }
+        }
       }
     }
   }

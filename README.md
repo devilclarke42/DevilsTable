@@ -6,9 +6,11 @@ Foundry compendiums are generated from it and must never be edited as source dat
 
 ## Current status
 
-Sprint 2 framework, `0.2.0-alpha.1`. There are **zero production items** in this revision.
-Automated tests use a synthetic parcel that is excluded from the module ZIP.
-No earlier ZIP or Tavern catalogue has been imported or silently replaced.
+General Store / Containers review build, `0.2.0-alpha.2`. The catalogue contains **13 authored
+Containers items**. All eight General Store categories are defined; the other seven contain
+planning lists only. Development stops here for content review. See the
+[Containers review table](docs/CONTAINERS_REVIEW.md) for every price, empty weight and capacity.
+Automated tests also use a synthetic parcel that is excluded from the module ZIP.
 
 The target is Foundry V14 and D&D5e **5.3.3**, with the **2014 rules** baseline and
 author-supplied adjusted weights for Variant Encumbrance. No world encumbrance settings
@@ -19,29 +21,37 @@ is still required. The manifest deliberately does not claim verified compatibili
 
 - Loads a registry of source JSON files, with bounded parallel reads.
 - Validates every item and permanent ID before writing anything.
-- Converts ordinary goods to D&D5e `loot` documents using 2014 source rules and exact adjusted weights.
+- Converts ordinary goods to D&D5e `loot` and native `container` documents, using 2014 source rules and exact adjusted weights.
 - Provides a GM settings window with read-only validation/preview and a confirmed build action.
+- Filters authored items by shop and category; empty planned categories generate no Items.
+- Displays builder-only Merchant Notes (Always / Often / Rarely Stocks) for all five shops.
+- Validates whole-coin prices: 1–9 cp, 1–9 sp, 1–24 gp equipment and 25+ gp specialist goods.
 - Creates or updates one world Item compendium: `world.devils-table-items`.
 - Preserves internal document IDs, unrelated entries, folders and other modules' flags.
 - Batches writes in groups of 100 and checks the result against the source.
 - Never deletes items. Inactive catalogue entries stay in the pack until an explicit retirement workflow is added.
 
-Shops are tags, not copies of an item. The registry currently names Tavern, General Store,
-Alchemist, Blacksmith and Black Market. Dedicated shop interfaces and additional mechanical
-item types are future work, not hidden features in this release.
+Shops are tags, not copies of an item. Tavern, General Store, Alchemist, Blacksmith and Black Market
+each have a definition and Merchant Notes. Notes guide the GM; they are never included in generated
+Item descriptions or flags. Stock quantities, random inventories and customer purchasing remain
+future work. Availability does not automatically include or exclude an item from a build.
 
 ## Install and test on The Forge
 
 1. Obtain the packaged ZIP from the successful **Validate and package** GitHub Actions run
    (artifact: `devils-table-framework`), or build it using the development commands below.
    Downloading an Actions artifact may wrap the module ZIP in another ZIP: extract the artifact
-   first and select `devils-table-v0.2.0-alpha.1.zip` for import.
+   first and select `devils-table-v0.2.0-alpha.2.zip` for import.
 2. Back up your test world. In The Forge's Import Wizard, import that module ZIP as a custom package.
    See the [Forge custom-package guide](https://forums.forge-vtt.com/t/how-to-upload-a-modified-version-of-a-module-system/10510).
 3. In a V14 / D&D5e 5.3.3 test world, enable **Devil's Table: Goods & Provisions** and reload.
 4. As the active GM, open **Configure Settings → Devil's Table → Build/Rebuild Compendiums → Open Builder**.
-5. Choose **Validate / Preview**. This revision should report zero items and no changes.
-6. Choose **Build / Rebuild** and confirm. The empty catalogue does not create or clear a compendium.
+5. Select **Village General Store → Containers**, then **Validate / Preview**. In a fresh world,
+   expect 13 creates. Preview leaves the world unchanged.
+6. Choose **Build / Rebuild** and confirm. The builder creates 13 native containers in
+   `world.devils-table-items`. Run it again: expect 13 unchanged Items and no duplicates.
+7. Review the stock notes, empty weights and capacities. Selecting Fire & Lighting should report
+   zero authored items and preserve the existing pack. Follow the [live checklist](docs/TESTING.md).
 
 The archive contains exactly one `devils-table/module.json`, alongside its runtime folders.
 Do not upload the repository's source-code ZIP as though it were a packaged release.
@@ -91,7 +101,7 @@ See [the authoring contract](docs/SOURCE_DATA.md), [architecture and API](docs/A
 
 ## Publication
 
-This is an unreleased framework build. The project owner has not yet selected a distribution
+This is an unreleased content review build. The project owner has not yet selected a distribution
 license. Public-release work includes that decision, icon and text provenance review,
 live platform testing, release assets and a real update manifest. A `source.license` string
 records provenance; it does not itself grant permission to redistribute content.

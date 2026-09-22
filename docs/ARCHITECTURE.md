@@ -13,7 +13,7 @@
 4. **Shared validation.** Browser and Node use the same JSON Schemas and validator. The small
    supported schema vocabulary is deliberately explicit. Unsupported keywords throw rather than
    silently loosening validation. This is not advertised as a general JSON Schema implementation.
-5. **Explicit system boundary.** The converter supports only ordinary goods (`loot`) now.
+5. **Explicit system boundary.** The converter supports ordinary goods (`loot`) and native `container` Items.
    The adapter preflights with the installed D&D5e document models, and guards the exact target
    version. Source rules are explicitly `2014`, even in a world configured for modern rules.
 6. **One generated Item pack.** An item with multiple shop tags stays one Item. Generated data
@@ -31,6 +31,13 @@
 10. **Release discipline.** Versioned source, changelog, checks, runtime-only ZIP and acceptance
     checklist precede a public release. License selection and remote release publication are not
     silently performed by this framework.
+11. **Builder-only shop context.** Structured Merchant Notes and category plans live in their own
+    JSON files with shared schemas. The Item converter receives only canonical item records.
+    Shop/category filters select entries after validating the entire catalogue; out-of-scope
+    documents remain untouched. Planned names never substitute for missing item records.
+12. **Honest container weights.** Empty mass is copied exactly; contents contribute their normal
+    weight. Native capacities use pounds and cubic feet, with a small explicit US liquid-volume
+    conversion. Volume limits, locks and liquid consumption are not newly automated mechanics.
 
 ## Build sequence
 
@@ -55,15 +62,23 @@ api.openBuilder();                                      // GM UI
 const catalogue = await api.loadCatalogue();            // no writes
 const validation = api.validateCatalogue(catalogue);     // no writes
 const preview = await api.rebuildCompendiums();          // dryRun defaults to true
+const containers = await api.rebuildCompendiums({
+  shopId: "general-store", categoryId: "containers"      // filtered preview
+});
 // Only after reviewing the preview and backing up the world:
 const result = await api.rebuildCompendiums({ dryRun: false });
 ```
 
-`loadCatalogue` returns the registry, schemas, ledger and `{item, location}` entries.
+`loadCatalogue` returns the registry, item/catalogue/shop/category schemas, ledger,
+`shopDefinitions`, `categoryDefinitions` and `{item, location}` entries.
 `validateCatalogue` returns `{valid, count, errors, warnings}`; errors contain a `path` and `message`.
 `rebuildCompendiums` returns a report with planned `create`/`update`, `unchanged`, `preserved`,
-`written`, target pack, status, time and warnings. It throws on failure. Validation errors carry
+`written`, target pack, selected `scope`, status, time and warnings. It throws on failure. Validation errors carry
 an additional `details` array. `onProgress(message)` is optional and does not control persistence.
+
+Omitting `shopId`/`categoryId` (or using `null`) includes all authored entries. Unknown filters fail
+before writes. Filtered builds preserve Items outside the selection; shared shop tags never create
+additional copies. All source data is validated even when only one category will be built.
 
 The UI asks for confirmation. Direct API callers intentionally opt into writes with `dryRun: false`.
 The API is framework-versioned but not yet a stable public integration contract.
@@ -77,5 +92,7 @@ The API is framework-versioned but not yet a stable public integration contract.
 - [D&D5e 5.3.3 physical item fields](https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/module/data/item/templates/physical-item.mjs)
 - [D&D5e 5.3.3 source fields](https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/module/data/shared/source-field.mjs)
 - [D&D5e 5.3.3 loot model](https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/module/data/item/loot.mjs)
+- [D&D5e 5.3.3 container model](https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/module/data/item/container.mjs)
+- [D&D5e 5.3.3 supported units](https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/module/config.mjs)
 
 Documentation/source review is not a substitute for executing the module in the target environment.
