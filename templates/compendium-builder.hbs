@@ -1,0 +1,14 @@
+<div class="dt-builder">
+  <h2>Build/Rebuild Compendiums</h2>
+  <p>Foundry V14 · D&D5e 5.3.3 · 2014 rules · adjusted weights in pounds.</p>
+  <p>The source catalogue defines every generated item. Multiple shop tags do not create duplicate items.</p>
+  <p class="dt-warning">Framework release: no production items are included yet. Preview checks the pipeline; an empty build does not create or clear a pack.</p>
+  <fieldset {{#if busy}}disabled{{/if}}>
+    <legend>GM actions</legend>
+    <button type="button" data-action="preview"><i class="fa-solid fa-check" aria-hidden="true"></i> Validate / Preview</button>
+    <button type="button" data-action="build"><i class="fa-solid fa-hammer" aria-hidden="true"></i> Build / Rebuild</button>
+  </fieldset>
+  <h3>Report</h3>
+  <pre class="dt-report" role="status" aria-live="polite" aria-atomic="true">{{report}}</pre>
+  <details><summary>Last build record</summary><pre>{{lastBuild}}</pre></details>
+</div>

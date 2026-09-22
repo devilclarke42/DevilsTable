@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "rules": "2014",
+  "weightPolicy": "adjusted-lb",
+  "files": ["data/items/general-store.json"],
+  "shops": ["tavern", "general-store", "alchemist", "blacksmith", "black-market"],
+  "categories": [
+    "containers", "camping", "climbing", "lighting", "writing", "household",
+    "tools", "clothing", "animal-supplies", "trade-goods", "food", "drink",
+    "alchemical-goods", "weapons", "armour", "contraband"
+  ]
+}

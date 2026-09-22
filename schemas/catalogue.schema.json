@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Devil's Table catalogue registry v1",
+  "type": "object", "additionalProperties": false,
+  "required": ["schemaVersion", "rules", "weightPolicy", "files", "shops", "categories"],
+  "properties": {
+    "schemaVersion": { "type": "integer", "const": 1 },
+    "rules": { "type": "string", "const": "2014" },
+    "weightPolicy": { "type": "string", "const": "adjusted-lb" },
+    "files": {
+      "type": "array", "minItems": 1, "uniqueItems": true,
+      "items": { "type": "string", "pattern": "^data/items/(?:[a-z0-9-]+/)*[a-z0-9-]+\\.json$" }
+    },
+    "shops": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" } },
+    "categories": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" } }
+  }
+}

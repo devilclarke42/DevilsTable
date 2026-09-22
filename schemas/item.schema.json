@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Devil's Table canonical item v1",
+  "description": "Plain-text descriptions, 2014 mechanics, and author-supplied adjusted weights in pounds.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "name", "description", "price", "weight", "icon", "category", "tags", "shops", "availability", "source", "mechanics"],
+  "properties": {
+    "id": { "type": "string", "pattern": "^DT_ITEM_[A-Z0-9]+(?:_[A-Z0-9]+)+$", "maxLength": 128 },
+    "name": { "type": "string", "minLength": 1, "maxLength": 200, "pattern": "\\S" },
+    "description": { "type": "string", "minLength": 1, "maxLength": 20000, "pattern": "\\S" },
+    "price": {
+      "type": "object", "additionalProperties": false, "required": ["value", "denomination"],
+      "properties": {
+        "value": { "type": "number", "minimum": 0 },
+        "denomination": { "type": "string", "enum": ["cp", "sp", "ep", "gp", "pp"] }
+      }
+    },
+    "weight": {
+      "type": "object", "additionalProperties": false, "required": ["value", "units", "notes"],
+      "properties": {
+        "value": { "type": "number", "minimum": 0 },
+        "units": { "type": "string", "const": "lb" },
+        "notes": { "type": "string", "minLength": 1, "maxLength": 2000, "pattern": "\\S" }
+      }
+    },
+    "icon": { "type": "string", "pattern": "^(icons/|modules/devils-table/assets/)[A-Za-z0-9_/-]+\\.(svg|webp|png|jpg|jpeg)$" },
+    "category": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+    "tags": { "type": "array", "uniqueItems": true, "items": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" } },
+    "shops": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" } },
+    "availability": { "type": "string", "enum": ["core", "variable", "special-order"] },
+    "source": {
+      "type": "object", "additionalProperties": false, "required": ["title", "reference", "license"],
+      "properties": {
+        "title": { "type": "string", "minLength": 1, "maxLength": 300, "pattern": "\\S" },
+        "reference": { "type": "string", "minLength": 1, "maxLength": 2000, "pattern": "\\S" },
+        "license": { "type": "string", "minLength": 1, "maxLength": 300, "pattern": "\\S" }
+      }
+    },
+    "mechanics": {
+      "type": "object", "additionalProperties": false, "required": ["type", "subtype"],
+      "properties": {
+        "type": { "type": "string", "const": "loot" },
+        "subtype": { "type": "string", "enum": ["art", "gear", "gem", "junk", "material", "resource", "trade", "treasure"] }
+      }
+    }
+  }
+}

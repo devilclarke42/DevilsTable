@@ -1,0 +1,14 @@
+{
+  "id": "DT_ITEM_TEST_PARCEL",
+  "name": "Test parcel",
+  "description": "A test-only parcel for exercising the framework. Not production shop content.",
+  "price": { "value": 2, "denomination": "sp" },
+  "weight": { "value": 0.25, "units": "lb", "notes": "Synthetic adjusted weight for automated tests only." },
+  "icon": "icons/svg/item-bag.svg",
+  "category": "trade-goods",
+  "tags": ["mundane", "test-only"],
+  "shops": ["general-store", "tavern"],
+  "availability": "core",
+  "source": { "title": "Devil's Table test fixtures", "reference": "tests/fixtures/item.json", "license": "test-only" },
+  "mechanics": { "type": "loot", "subtype": "gear" }
+}
