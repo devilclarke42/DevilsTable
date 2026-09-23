@@ -48,14 +48,14 @@ test("startup registers a restricted V2 menu and a read-only-default API without
   const app = new App();
   const initial = await app._prepareContext({});
   assert.equal(initial.shop.id, "general-store");
-  assert.equal(initial.count, 13);
+  assert.equal(initial.count, 69);
   assert.equal(initial.categories.length, 8);
   assert.equal(initial.blocked, false);
   await App.DEFAULT_OPTIONS.actions.selectCategory.call(app, null, { dataset: { category: "fire-lighting" } });
-  assert.equal((await app._prepareContext({})).count, 0);
+  assert.equal((await app._prepareContext({})).count, 12);
   await App.DEFAULT_OPTIONS.actions.selectShop.call(app, null, { dataset: { shop: "alchemist" } });
   const alchemist = await app._prepareContext({});
-  assert.equal(alchemist.count, 3);
+  assert.equal(alchemist.count, 6);
   assert.equal(alchemist.allCategories, true);
   assert.equal(alchemist.shop.name, "Village Alchemist");
   globalThis.fetch = async () => ({ ok: false, status: 404 });

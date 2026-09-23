@@ -2,7 +2,16 @@
   "schemaVersion": 1,
   "rules": "2014",
   "weightPolicy": "adjusted-lb",
-  "files": ["data/items/general-store/containers.json"],
+  "files": [
+    "data/items/general-store/containers.json",
+    "data/items/general-store/fire-lighting.json",
+    "data/items/general-store/rope-climbing.json",
+    "data/items/general-store/camping.json",
+    "data/items/general-store/writing.json",
+    "data/items/general-store/household.json",
+    "data/items/general-store/animal.json",
+    "data/items/general-store/travel.json"
+  ],
   "shops": ["tavern", "general-store", "alchemist", "blacksmith", "black-market"],
   "categories": [
     "containers", "fire-lighting", "rope-climbing", "camping", "writing", "household", "animal", "travel",

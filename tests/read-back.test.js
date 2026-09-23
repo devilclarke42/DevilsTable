@@ -35,13 +35,13 @@ test("format equivalence is limited to description fields and never hides change
   assert.equal(matchesGenerated({ system: { source: { custom: "Owner's" } } }, { system: { source: { custom: "Owner&#39;s" } } }), false);
 });
 
-test("all 13 production items reconcile after equivalent apostrophe serialization", async () => {
+test("all 69 production items reconcile after equivalent apostrophe serialization", async () => {
   const data = await loadCatalogue({ readJson });
   const expected = data.entries.map(({ item }) => catalogueEntryToItem(item));
   const saved = structuredClone(expected);
   for (const item of saved) item.system.description.value = item.system.description.value.replaceAll("&#39;", "'");
   const plan = planBuild(expected, saved);
-  assert.equal(plan.unchanged, 13);
+  assert.equal(plan.unchanged, 69);
   assert.deepEqual(plan.update, []);
 });
 
@@ -55,8 +55,8 @@ test("a simulated HTML save round-trip verifies and reruns without rewriting ite
     return result;
   };
   const build = createBuilder({ load: () => data, adapter });
-  assert.equal((await build({ dryRun: false })).written, 13);
-  assert.equal((await build({ dryRun: false })).unchanged, 13);
+  assert.equal((await build({ dryRun: false })).written, 69);
+  assert.equal((await build({ dryRun: false })).unchanged, 69);
   assert.equal(state.writes.length, 1);
   assert.equal(state.pack.locked, true);
 });

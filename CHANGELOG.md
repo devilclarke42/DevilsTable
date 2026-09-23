@@ -3,6 +3,37 @@
 All significant changes are documented here. Versions in this file describe repository builds;
 they do not imply a public GitHub Release exists.
 
+## 0.2.0-alpha.4 — 2026-09-23 — Complete General Store categories
+
+### Added
+
+- 56 canonical items: Fire & Lighting (12), Rope & Climbing (6), Camping (11), Writing (7),
+  Household (9), Animal (6) and Travel (5). The General Store now contains all 69 approved items.
+- Permanent ID reservations, original descriptions, whole cp/sp/gp prices, adjusted weights and
+  rationales, icons, availability, provenance, tags and shared-shop membership for each new item.
+- Explicit purchase units for lengths, bundles, kits, filled goods and empty vessels. The schema's
+  optional `saleUnit` field preserves compatibility with the original 13 records.
+- A small native D&D5e consumable converter: eight goods consume one completed sale unit;
+  four reusable lights and the climber's kit have non-consuming utility activities. Owning-item
+  consumption references survive actor imports; item and activity IDs are deterministic.
+- Structured light range, shape, fuel and duration metadata, with validation for compatible
+  modes and total dim reach. No automatic token lighting, burn timer, fuel transfer or attack rolls.
+- Six native containers outside the Containers category: Cooking Pot, Camp Kettle, Cup, Bowl,
+  Wash Bucket and Feed Bag. Contents contribute ordinary carried weight.
+- 15 original module-owned SVG icons; other icons reference the verified core library.
+- General Store review tables, source/mapping documentation and focused upgrade/activity regressions.
+
+### Validation and scope
+
+- All 69 records validate and 133 automated tests pass. A simulated upgrade creates 56 items,
+  leaves 13 unchanged and then converges to 69 unchanged on rerun. Existing Containers JSON and
+  generated fields are unchanged; no IDs are renamed and no builder deletion is introduced.
+- The user reported success after the alpha.3 read-back fix. Full environment details were not
+  supplied; new alpha.4 content, utility activities and icons still need live Foundry/Forge acceptance.
+- Merchant Notes remain builder-only. The price mix is 31 copper, 27 silver and 11 gold purchases.
+- Installation remains a versioned custom-package ZIP; no hosted install manifest, public release,
+  distribution-license selection or additional shop catalogue was created.
+
 ## 0.2.0-alpha.3 — 2026-09-23 — Read-back comparison fix
 
 ### Fixed

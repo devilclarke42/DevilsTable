@@ -1,0 +1,446 @@
+[
+  {
+    "id": "DT_ITEM_GS_BLANKET",
+    "name": "Blanket",
+    "description": "A tightly woven wool blanket with bound edges, large enough to wrap one adult or add a warm layer to a bedroll. It folds into a flat bundle for tying to a pack.\n\nThe blanket offers ordinary comfort and insulation. Severe cold, soaked bedding and exposure remain subject to the GM's judgement; it grants no automatic resistance or resting benefit.",
+    "saleUnit": "One wool blanket",
+    "price": {
+      "value": 4,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 2,
+      "units": "lb",
+      "notes": "Two pounds for a practical single-person wool blanket, adjusted for ordinary travel rather than a heavy bed covering."
+    },
+    "icon": "icons/commodities/cloth/cloth-bolt-gold-orange.webp",
+    "category": "camping",
+    "tags": [
+      "mundane",
+      "bedding",
+      "wool",
+      "camping"
+    ],
+    "shops": [
+      "general-store",
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original project design. Original wording; project prices and adjusted weights. See docs/GENERAL_STORE_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_BEDROLL",
+    "name": "Bedroll",
+    "description": "A thin padded sleeping mat and light blanket rolled together with two tie cords. The bedroll keeps a traveller off bare ground and provides bedding for an ordinary night under shelter.\n\nThe listed weight includes the mat, blanket and cords. A separate blanket may be added for warmth; this purchase includes neither a tent nor weatherproof shelter.",
+    "saleUnit": "One complete single-person bedroll",
+    "price": {
+      "value": 8,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 3,
+      "units": "lb",
+      "notes": "Three pounds for the complete light bedroll; its included blanket and tie cords are already counted."
+    },
+    "icon": "icons/sundries/survival/bedroll-grey.webp",
+    "category": "camping",
+    "tags": [
+      "mundane",
+      "bedding",
+      "camping",
+      "travel"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "core",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original project design. Original wording; project prices and adjusted weights. See docs/GENERAL_STORE_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_TENT",
+    "name": "Tent",
+    "description": "A low canvas shelter for two Medium travellers lying side by side. Folding poles, wooden pegs and light guy lines are bundled with the tent in a matching wrap. Space inside is modest; bulky baggage may need its own cover.\n\nThe purchase includes all listed parts, but no mallet, bedding or climbing rope. Pitching and striking the shelter take practical work and suitable ground; no automatic protection from extreme weather is implied.",
+    "saleUnit": "One two-person tent with poles, pegs and guy lines",
+    "price": {
+      "value": 3,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 8,
+      "units": "lb",
+      "notes": "Eight pounds for a compact two-person canvas tent and all included fittings, adjusted from heavier expedition equipment."
+    },
+    "icon": "icons/environment/wilderness/camp-improvised.webp",
+    "category": "camping",
+    "tags": [
+      "mundane",
+      "shelter",
+      "canvas",
+      "camping"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original project design. Original wording; project prices and adjusted weights. See docs/GENERAL_STORE_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_BEDROLL_STRAP",
+    "name": "Bedroll Strap",
+    "description": "A broad leather strap with a simple metal buckle, sized to hold a rolled blanket or sleeping mat closed. It can secure a bedroll to suitable loops on a pack.\n\nOne strap is supplied. It does not increase the pack's capacity or reduce the weight of anything attached, and it is not a climbing harness.",
+    "saleUnit": "One buckled leather strap",
+    "price": {
+      "value": 4,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 0.1,
+      "units": "lb",
+      "notes": "One tenth of a pound includes the short leather strap and small buckle."
+    },
+    "icon": "modules/devils-table/assets/icons/bedroll-strap.svg",
+    "category": "camping",
+    "tags": [
+      "mundane",
+      "leather",
+      "fastening",
+      "camping"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "core",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original project design. Original wording; project prices and adjusted weights. See docs/GENERAL_STORE_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_MESS_KIT",
+    "name": "Mess Kit",
+    "description": "A compact tin pan and shallow plate close around a small cup and spoon, forming one tied bundle. The pan suits warming a simple portion over a modest cooking fire; the other pieces provide basic tableware for one traveller.\n\nAll four pieces are included in the listed price and weight. They are represented as one equipment item, without separate nested inventory or extra storage capacity.",
+    "saleUnit": "One nesting pan, plate, cup and spoon set",
+    "price": {
+      "value": 3,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 0.5,
+      "units": "lb",
+      "notes": "Half a pound for a light tin travel set; all four pieces are counted together."
+    },
+    "icon": "icons/tools/cooking/fork-steel-tan.webp",
+    "category": "camping",
+    "tags": [
+      "mundane",
+      "tableware",
+      "cooking",
+      "camping",
+      "bundle"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "core",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original project design. Original wording; project prices and adjusted weights. See docs/GENERAL_STORE_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_POT_COOKING",
+    "name": "Cooking Pot",
+    "description": "A small iron pot with a close-fitting lid and swinging bail handle, suited to simmering porridge, stew or water over a hearth. Its broad base is stable on a grate or level stone.\n\nSold empty. It holds up to 2 quarts of liquid or 4 lb of contents, whichever limit is reached first. Food, water and fuel are separate purchases; add their weight when carried. The lid is not a watertight transport seal.",
+    "saleUnit": "One empty two-quart iron pot with lid",
+    "price": {
+      "value": 7,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 3,
+      "units": "lb",
+      "notes": "Three pounds is the empty weight of a small iron pot, lid and handle. Its contents add their own weight."
+    },
+    "icon": "icons/tools/laboratory/cauldron-filled-gold.webp",
+    "category": "camping",
+    "tags": [
+      "mundane",
+      "container",
+      "cooking",
+      "iron",
+      "camping"
+    ],
+    "shops": [
+      "general-store",
+      "tavern"
+    ],
+    "availability": "core",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original project design. Original wording; project prices and adjusted weights. See docs/GENERAL_STORE_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "container",
+      "capacity": {
+        "weight": {
+          "value": 4,
+          "units": "lb"
+        },
+        "volume": {
+          "value": 2,
+          "units": "quart"
+        }
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_KETTLE_CAMP",
+    "name": "Camp Kettle",
+    "description": "A light tinned-metal kettle with a short spout, removable lid and raised carry handle. It is intended for heating drinking water over a small camp fire.\n\nSold empty. Capacity is 2 quarts or 4 lb of contents. Water and fuel are not included, and the spout prevents the kettle from serving as a sealed travel flask. Add the weight of any water carried inside.",
+    "saleUnit": "One empty two-quart metal kettle with lid",
+    "price": {
+      "value": 9,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 1.5,
+      "units": "lb",
+      "notes": "One and a half pounds for the empty thin-walled kettle, handle and lid; water is counted separately."
+    },
+    "icon": "icons/tools/laboratory/cauldron-filled-gold.webp",
+    "category": "camping",
+    "tags": [
+      "mundane",
+      "container",
+      "cooking",
+      "metal",
+      "camping"
+    ],
+    "shops": [
+      "general-store",
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original project design. Original wording; project prices and adjusted weights. See docs/GENERAL_STORE_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "container",
+      "capacity": {
+        "weight": {
+          "value": 4,
+          "units": "lb"
+        },
+        "volume": {
+          "value": 2,
+          "units": "quart"
+        }
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_CUP",
+    "name": "Cup",
+    "description": "A turned wooden drinking cup with a smooth rim and a lightly oiled finish. It is comfortable to hold and durable enough for daily meals or a travelling pack.\n\nSold empty. It holds up to 1 pint or 1 lb of contents. It has no lid, must be kept upright when filled and should not be placed directly over a fire.",
+    "saleUnit": "One empty one-pint wooden cup",
+    "price": {
+      "value": 2,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 0.15,
+      "units": "lb",
+      "notes": "An empty lightweight wooden cup weighs 0.15 lb; any drink adds its own weight."
+    },
+    "icon": "icons/containers/kitchenware/stein-empty.webp",
+    "category": "camping",
+    "tags": [
+      "mundane",
+      "container",
+      "tableware",
+      "wood",
+      "camping"
+    ],
+    "shops": [
+      "general-store",
+      "tavern"
+    ],
+    "availability": "core",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original project design. Original wording; project prices and adjusted weights. See docs/GENERAL_STORE_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "container",
+      "capacity": {
+        "weight": {
+          "value": 1,
+          "units": "lb"
+        },
+        "volume": {
+          "value": 1,
+          "units": "pint"
+        }
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_BOWL",
+    "name": "Bowl",
+    "description": "A shallow wooden bowl, rubbed smooth and finished with oil, for soup, porridge or a share of the evening stew. Its wide opening makes it easy to eat from and clean.\n\nSold empty. It holds up to 1 pint or 1 lb of contents. This open bowl has no lid or spill protection and is not intended for cooking directly over a flame.",
+    "saleUnit": "One empty one-pint wooden bowl",
+    "price": {
+      "value": 3,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 0.25,
+      "units": "lb",
+      "notes": "Quarter-pound empty wooden bowl; food and liquid remain separate carried weight."
+    },
+    "icon": "icons/commodities/materials/bowl-liquid-white.webp",
+    "category": "camping",
+    "tags": [
+      "mundane",
+      "container",
+      "tableware",
+      "wood",
+      "camping"
+    ],
+    "shops": [
+      "general-store",
+      "tavern"
+    ],
+    "availability": "core",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original project design. Original wording; project prices and adjusted weights. See docs/GENERAL_STORE_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "container",
+      "capacity": {
+        "weight": {
+          "value": 1,
+          "units": "lb"
+        },
+        "volume": {
+          "value": 1,
+          "units": "pint"
+        }
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_SPOON",
+    "name": "Spoon",
+    "description": "A simple carved wooden spoon with a rounded bowl and a short, smooth handle. It is suitable for eating porridge or stew and stirring a cup of hot drink.\n\nThe purchase is one ordinary eating utensil. It is not a full mess kit or a long-handled cooking ladle.",
+    "saleUnit": "One wooden eating spoon",
+    "price": {
+      "value": 1,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 0.02,
+      "units": "lb",
+      "notes": "Two hundredths of a pound for a small wooden spoon, retaining a positive weight for large quantities."
+    },
+    "icon": "modules/devils-table/assets/icons/spoon.svg",
+    "category": "camping",
+    "tags": [
+      "mundane",
+      "tableware",
+      "wood",
+      "camping"
+    ],
+    "shops": [
+      "general-store",
+      "tavern"
+    ],
+    "availability": "core",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original project design. Original wording; project prices and adjusted weights. See docs/GENERAL_STORE_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_PLATE_WOOD",
+    "name": "Wooden Plate",
+    "description": "A shallow wooden plate with a raised rim, sized for bread, cheese and a modest meal. Its oiled surface can be wiped clean after use.\n\nThe plate is ordinary reusable tableware. It provides no inventory storage capacity, has no lid and is unsuitable for direct cooking over a fire.",
+    "saleUnit": "One wooden dinner plate",
+    "price": {
+      "value": 2,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 0.25,
+      "units": "lb",
+      "notes": "Quarter-pound weight for a single practical wooden plate."
+    },
+    "icon": "modules/devils-table/assets/icons/plate.svg",
+    "category": "camping",
+    "tags": [
+      "mundane",
+      "tableware",
+      "wood",
+      "camping"
+    ],
+    "shops": [
+      "general-store",
+      "tavern"
+    ],
+    "availability": "core",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original project design. Original wording; project prices and adjusted weights. See docs/GENERAL_STORE_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  }
+]

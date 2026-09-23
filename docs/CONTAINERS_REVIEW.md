@@ -1,7 +1,8 @@
 # General Store: Containers review
 
-Build: **0.2.0-alpha.3**, with the same content as alpha.2. Exactly 13 authored items; all other General Store categories remain
-plans. The canonical records are in [containers.json](../data/items/general-store/containers.json).
+Original batch, preserved unchanged in **0.2.0-alpha.4**. These 13 Containers are now part of the
+69-item General Store; see the [complete review](GENERAL_STORE_REVIEW.md). The canonical records
+are in [containers.json](../data/items/general-store/containers.json).
 These permanent IDs are reserved and must not be renamed, even if names or balance change.
 
 Prices, descriptions and empty weights are project choices for a grounded 2014-rules game with
@@ -70,4 +71,5 @@ not how every icon appears in a live Foundry V14 installation; that remains on t
 | Waterskin | [Waterskin](https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/food/waterskin.yml) |
 | Clay Jug | [Jug](https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/container/jug/_container.yml) |
 
-**Review stop:** do not author Fire & Lighting or any later category until this batch has been reviewed.
+The user accepted the working build and authorised the seven remaining categories. This table
+continues to document the original Containers values; later balance edits must preserve their IDs.

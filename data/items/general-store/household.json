@@ -1,0 +1,346 @@
+[
+  {
+    "id": "DT_ITEM_GS_SOAP",
+    "name": "Soap",
+    "description": "A firm bar of plain household soap with a mild, clean scent. It is useful for washing hands, clothing and ordinary cooking utensils when water is available.\n\nOne bar is supplied without a box or washcloth. Track gradual wear manually; soap has no automatic effect on disease, poison or magical contamination.",
+    "saleUnit": "One bar of plain soap",
+    "price": {
+      "value": 4,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 0.25,
+      "units": "lb",
+      "notes": "Quarter-pound bar, substantial enough for repeated everyday use."
+    },
+    "icon": "icons/sundries/survival/soap.webp",
+    "category": "household",
+    "tags": [
+      "mundane",
+      "cleaning",
+      "soap",
+      "household"
+    ],
+    "shops": [
+      "general-store",
+      "tavern"
+    ],
+    "availability": "core",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original project design. Original wording; project prices and adjusted weights. See docs/GENERAL_STORE_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "material"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_NEEDLE",
+    "name": "Needle",
+    "description": "A fine steel needle with a small eye, suited to ordinary cloth repairs and attaching buttons. It is sold in a folded scrap of paper to keep its point covered.\n\nThread, scissors and replacement cloth are separate purchases. The needle is a domestic sewing implement, not a set of thieves' tools or medical equipment.",
+    "saleUnit": "One steel sewing needle",
+    "price": {
+      "value": 1,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 0.002,
+      "units": "lb",
+      "notes": "Two thousandths of a pound per needle, preserving a small positive mass rather than treating bulk needles as weightless."
+    },
+    "icon": "modules/devils-table/assets/icons/needle.svg",
+    "category": "household",
+    "tags": [
+      "mundane",
+      "sewing",
+      "steel",
+      "household"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "core",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original project design. Original wording; project prices and adjusted weights. See docs/GENERAL_STORE_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_THREAD",
+    "name": "Thread",
+    "description": "A small wooden spool wound with 50 feet of plain linen sewing thread. It suits mending seams, replacing buttons and other light cloth repairs.\n\nThe price and weight cover the entire spool and thread. Partial use is tracked manually. This fine thread is not suitable for lifting loads or supporting a climber.",
+    "saleUnit": "One spool holding 50 feet of linen thread",
+    "price": {
+      "value": 2,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 0.02,
+      "units": "lb",
+      "notes": "Two hundredths of a pound for the full spool and its light wooden core."
+    },
+    "icon": "modules/devils-table/assets/icons/thread.svg",
+    "category": "household",
+    "tags": [
+      "mundane",
+      "sewing",
+      "linen",
+      "household"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "core",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original project design. Original wording; project prices and adjusted weights. See docs/GENERAL_STORE_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "material"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_SEWING_KIT",
+    "name": "Sewing Kit",
+    "description": "A folding cloth wallet containing two needles, 50 feet of linen thread, small scissors, a few plain buttons and modest cloth patches. It covers routine repairs to travel clothes and household linens.\n\nAll listed contents are included in the purchase weight. This is a small domestic kit, not a full set of weaver's tools, and it grants no tool proficiency or healing ability. Replacement thread, buttons and patches are bought separately as they are used.",
+    "saleUnit": "One domestic mending kit",
+    "price": {
+      "value": 2,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 0.15,
+      "units": "lb",
+      "notes": "Fifteen hundredths of a pound for the complete light kit, including its cloth wallet."
+    },
+    "icon": "modules/devils-table/assets/icons/sewing-kit.svg",
+    "category": "household",
+    "tags": [
+      "mundane",
+      "sewing",
+      "repair",
+      "kit",
+      "household"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "core",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original project design. Original wording; project prices and adjusted weights. See docs/GENERAL_STORE_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_BROOM",
+    "name": "Broom",
+    "description": "A bundle of tightly bound straw fixed to a smooth wooden handle. It is a dependable broom for sweeping dust, dry leaves and crumbs from hard floors.\n\nThis is ordinary household equipment. It includes no dustpan and has no magical properties.",
+    "saleUnit": "One straw broom",
+    "price": {
+      "value": 5,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 1.5,
+      "units": "lb",
+      "notes": "One and a half pounds for a full-length light wooden handle and bound straw head."
+    },
+    "icon": "icons/tools/hand/broom-straw-brown.webp",
+    "category": "household",
+    "tags": [
+      "mundane",
+      "cleaning",
+      "straw",
+      "wood",
+      "household"
+    ],
+    "shops": [
+      "general-store",
+      "tavern"
+    ],
+    "availability": "core",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original project design. Original wording; project prices and adjusted weights. See docs/GENERAL_STORE_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_MOP",
+    "name": "Mop",
+    "description": "Strips of absorbent cloth are secured to the end of a wooden handle for washing floors and wiping up spills. The head can be rinsed and wrung out by hand.\n\nSold dry, without soap or a bucket. A wet mop may be heavier while being carried; the listed weight is for the dry item.",
+    "saleUnit": "One wooden-handled cloth mop",
+    "price": {
+      "value": 8,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 1.25,
+      "units": "lb",
+      "notes": "One and a quarter pounds for the dry handle and cloth head. Retained water is not included."
+    },
+    "icon": "modules/devils-table/assets/icons/mop.svg",
+    "category": "household",
+    "tags": [
+      "mundane",
+      "cleaning",
+      "cloth",
+      "wood",
+      "household"
+    ],
+    "shops": [
+      "general-store",
+      "tavern"
+    ],
+    "availability": "core",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original project design. Original wording; project prices and adjusted weights. See docs/GENERAL_STORE_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_BUCKET_WASH",
+    "name": "Wash Bucket",
+    "description": "A light metal bucket with a rolled rim and swinging handle, intended for carrying wash water and cleaning supplies.\n\nSold empty. It holds up to 3 gallons or 24 lb of contents. The open top makes spills likely on a rough journey; there is no sealing lid. Water, soap and cloths are separate purchases, and any carried contents add their own weight.",
+    "saleUnit": "One empty three-gallon bucket",
+    "price": {
+      "value": 3,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 1.5,
+      "units": "lb",
+      "notes": "One and a half pounds for the empty thin metal bucket and handle; a full water load adds up to 24 lb."
+    },
+    "icon": "icons/containers/misc/bucket-steel.webp",
+    "category": "household",
+    "tags": [
+      "mundane",
+      "container",
+      "cleaning",
+      "metal",
+      "household"
+    ],
+    "shops": [
+      "general-store",
+      "tavern"
+    ],
+    "availability": "core",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original project design. Original wording; project prices and adjusted weights. See docs/GENERAL_STORE_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "container",
+      "capacity": {
+        "weight": {
+          "value": 24,
+          "units": "lb"
+        },
+        "volume": {
+          "value": 3,
+          "units": "gallon"
+        }
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_BOARD_WASH",
+    "name": "Wash Board",
+    "description": "A compact wooden board with a ridged working face and smooth handhold. Rubbing wet cloth against the ribs helps loosen ordinary dirt during washing.\n\nThe board is supplied without a tub, bucket or soap. It is a household aid and has no special effect on stains or substances that require unusual treatment.",
+    "saleUnit": "One ribbed wooden wash board",
+    "price": {
+      "value": 2,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 2,
+      "units": "lb",
+      "notes": "Two pounds for a sturdy wooden board sized for use over a basin or small tub."
+    },
+    "icon": "modules/devils-table/assets/icons/washboard.svg",
+    "category": "household",
+    "tags": [
+      "mundane",
+      "cleaning",
+      "laundry",
+      "wood",
+      "household"
+    ],
+    "shops": [
+      "general-store",
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original project design. Original wording; project prices and adjusted weights. See docs/GENERAL_STORE_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_CLOTHES_LINE",
+    "name": "Clothes Line",
+    "description": "A 50-foot length of tightly twisted light cord for hanging washing between posts or trees. It coils into a small bundle when the laundry is taken down.\n\nPegs and supports are not included. This cord is made for clothing and light household loads, not climbing, lifting people or replacing full-strength hempen rope.",
+    "saleUnit": "One 50-foot length of laundry cord",
+    "price": {
+      "value": 8,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 1,
+      "units": "lb",
+      "notes": "One pound for fifty feet of light laundry cord, substantially lighter than climbing rope."
+    },
+    "icon": "icons/sundries/survival/rope-wrapped-brown.webp",
+    "category": "household",
+    "tags": [
+      "mundane",
+      "cordage",
+      "laundry",
+      "household"
+    ],
+    "shops": [
+      "general-store",
+      "tavern"
+    ],
+    "availability": "core",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original project design. Original wording; project prices and adjusted weights. See docs/GENERAL_STORE_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  }
+]

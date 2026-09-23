@@ -1,0 +1,234 @@
+[
+  {
+    "id": "DT_ITEM_GS_ROPE_HEMP",
+    "name": "Hempen Rope",
+    "description": "A workmanlike coil of hemp rope with its ends whipped against fraying. It is useful for hauling, tying down loads and climbing when properly secured.\n\nOne purchase contains 50 feet. Under the 2014 rules the rope has 2 hit points and can be burst with a DC 17 Strength check. The rope alone does not establish a safe anchor, remove a climbing check or protect against falling.",
+    "saleUnit": "one 50-foot coil",
+    "price": {
+      "value": 7,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 5,
+      "units": "lb",
+      "notes": "Adjusted dry weight for one complete 50-foot coil; count additional coils separately."
+    },
+    "icon": "icons/sundries/survival/rope-wrapped-brown.webp",
+    "category": "rope-climbing",
+    "tags": [
+      "mundane",
+      "rope",
+      "hemp",
+      "climbing",
+      "reusable"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "core",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "2014 SRD 5.1, Adventuring Gear: Rope. Original wording; project prices and adjusted weights. See docs/GENERAL_STORE_REVIEW.md.",
+      "license": "Original project text: distribution license pending; referenced SRD 5.1 rules: CC-BY-4.0."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_ROPE_SILK",
+    "name": "Silk Rope",
+    "description": "A smooth, tightly braided silk rope that packs more lightly than hemp. Its soft finish makes it pleasant to handle, but it still requires sound knots and a secure anchor.\n\nOne purchase contains 50 feet. It has 2 hit points and can be burst with a DC 17 Strength check under the 2014 rope rules. The higher price buys lighter cordage, not an automatic bonus to climbing.",
+    "saleUnit": "one 50-foot coil",
+    "price": {
+      "value": 8,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 2.5,
+      "units": "lb",
+      "notes": "Adjusted dry weight for a complete 50-foot silk coil, half the project's hemp-rope weight."
+    },
+    "icon": "icons/sundries/survival/rope-wrapped-brown.webp",
+    "category": "rope-climbing",
+    "tags": [
+      "mundane",
+      "rope",
+      "silk",
+      "climbing",
+      "reusable"
+    ],
+    "shops": [
+      "general-store",
+      "black-market"
+    ],
+    "availability": "special-order",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "2014 SRD 5.1, Adventuring Gear: Rope. Original wording; project prices and adjusted weights. See docs/GENERAL_STORE_REVIEW.md.",
+      "license": "Original project text: distribution license pending; referenced SRD 5.1 rules: CC-BY-4.0."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_TWINE",
+    "name": "Twine",
+    "description": "A small ball of twisted plant fibre for tying parcels, securing labels and marking a straight line. Its loose fibres take a simple knot readily.\n\nThe ball contains 100 feet. Twine is suitable for light lashings, not for supporting a climbing creature or arresting a fall. Cutting it into shorter lengths does not create more material.",
+    "saleUnit": "one 100-foot ball of twine",
+    "price": {
+      "value": 5,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 0.1,
+      "units": "lb",
+      "notes": "Adjusted weight for 100 feet of fine twine; excludes a separate reel or container."
+    },
+    "icon": "icons/sundries/survival/rope-wrapped-brown.webp",
+    "category": "rope-climbing",
+    "tags": [
+      "mundane",
+      "cordage",
+      "fibre",
+      "packing",
+      "material"
+    ],
+    "shops": [
+      "general-store",
+      "tavern"
+    ],
+    "availability": "core",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original project design. Original wording; project prices and adjusted weights. See docs/GENERAL_STORE_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "material"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_GRAPPLING_HOOK",
+    "name": "Grappling Hook",
+    "description": "A forged iron hook with three curved tines and an eye for a rope. It can catch an accessible ledge, beam or other suitable purchase.\n\nSold without rope. Throwing it into position and judging whether the hold will bear a climber remain matters for the GM; possession of a hook does not guarantee a secure anchor.",
+    "saleUnit": "one grappling hook",
+    "price": {
+      "value": 2,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 2,
+      "units": "lb",
+      "notes": "Adjusted weight for a compact three-tined iron hook; rope is separate."
+    },
+    "icon": "icons/tools/fishing/hook-multi-steel-brown.webp",
+    "category": "rope-climbing",
+    "tags": [
+      "mundane",
+      "climbing",
+      "iron",
+      "anchor",
+      "reusable"
+    ],
+    "shops": [
+      "general-store",
+      "blacksmith"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original project design. Original wording; project prices and adjusted weights. See docs/GENERAL_STORE_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_PITONS",
+    "name": "Pitons",
+    "description": "Ten tapered iron pitons with eyes for cord or rope, wrapped together for sale. Each is intended to be driven into a suitable rock crack or timber to help establish an anchor.\n\nThe listed price and weight cover the entire bundle. Each piton accounts for 0.2 lb if the bundle is split. A hammer and rope are separate; the strength of an anchor depends on its placement and the supporting material.",
+    "saleUnit": "one bundle of 10 pitons",
+    "price": {
+      "value": 5,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 2,
+      "units": "lb",
+      "notes": "Adjusted bundle weight: ten iron pitons at 0.2 lb each, including negligible wrapping."
+    },
+    "icon": "icons/tools/fasteners/nail-steel.webp",
+    "category": "rope-climbing",
+    "tags": [
+      "mundane",
+      "climbing",
+      "iron",
+      "anchor",
+      "bundle"
+    ],
+    "shops": [
+      "general-store",
+      "blacksmith"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original project design. Original wording; project prices and adjusted weights. See docs/GENERAL_STORE_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_CLIMBERS_KIT",
+    "name": "Climber's Kit",
+    "description": "A compact climbing set containing specialised pitons, boot fittings, tough gloves and a harness. It is supplied as one kit; a separate rope is still useful and is not included in this purchase.\n\nUsing an action, you can secure yourself to an anchor. While secured, the 2014 kit rules limit a fall to 25 feet from that point and prevent climbing more than 25 feet away without releasing the anchor. The kit does not grant a climbing speed or an automatic successful climb.",
+    "saleUnit": "one complete climber's kit",
+    "price": {
+      "value": 18,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 5,
+      "units": "lb",
+      "notes": "Adjusted total for the harness, gloves, boot fittings and specialised pitons; excludes a separate rope."
+    },
+    "icon": "icons/weapons/sickles/sickle-hooked-wood.webp",
+    "category": "rope-climbing",
+    "tags": [
+      "mundane",
+      "climbing",
+      "kit",
+      "harness",
+      "reusable"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "special-order",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "2014 SRD 5.1, Adventuring Gear: Climber's Kit. Original wording; project prices and adjusted weights. See docs/GENERAL_STORE_REVIEW.md.",
+      "license": "Original project text: distribution license pending; referenced SRD 5.1 rules: CC-BY-4.0."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "trinket",
+      "use": {
+        "name": "Anchor with climbing kit",
+        "mode": "reusable",
+        "activation": "action",
+        "condition": "Requires a suitable anchor. Apply the 25-foot movement and fall limits manually; no climbing proficiency is granted."
+      }
+    }
+  }
+]

@@ -9,6 +9,7 @@
     "id": { "type": "string", "pattern": "^DT_ITEM_[A-Z0-9]+(?:_[A-Z0-9]+)+$", "maxLength": 128 },
     "name": { "type": "string", "minLength": 1, "maxLength": 200, "pattern": "\\S" },
     "description": { "type": "string", "minLength": 1, "maxLength": 20000, "pattern": "\\S" },
+    "saleUnit": { "type": "string", "minLength": 1, "maxLength": 200, "pattern": "\\S" },
     "price": {
       "type": "object", "additionalProperties": false, "required": ["value", "denomination"],
       "properties": {
@@ -40,8 +41,29 @@
     "mechanics": {
       "type": "object", "additionalProperties": false, "required": ["type"],
       "properties": {
-        "type": { "type": "string", "enum": ["loot", "container"] },
-        "subtype": { "type": "string", "enum": ["art", "gear", "gem", "junk", "material", "resource", "trade", "treasure"] },
+        "type": { "type": "string", "enum": ["loot", "container", "consumable"] },
+        "subtype": { "type": "string", "enum": ["art", "gear", "gem", "junk", "material", "resource", "trade", "treasure", "food", "trinket"] },
+        "use": {
+          "type": "object", "additionalProperties": false,
+          "required": ["name", "mode", "activation", "condition"],
+          "properties": {
+            "name": { "type": "string", "minLength": 1, "maxLength": 100, "pattern": "\\S" },
+            "mode": { "type": "string", "enum": ["consume", "reusable"] },
+            "activation": { "type": "string", "enum": ["action", "special"] },
+            "condition": { "type": "string", "minLength": 1, "maxLength": 500, "pattern": "\\S" }
+          }
+        },
+        "light": {
+          "type": "object", "additionalProperties": false,
+          "required": ["brightFeet", "dimFeet", "shape", "durationHours", "fuel"],
+          "properties": {
+            "brightFeet": { "type": "integer", "minimum": 1 },
+            "dimFeet": { "type": "integer", "minimum": 1 },
+            "shape": { "type": "string", "enum": ["radius", "cone"] },
+            "durationHours": { "type": "number", "minimum": 0 },
+            "fuel": { "type": "string", "enum": ["self", "candle", "oil"] }
+          }
+        },
         "capacity": {
           "type": "object", "additionalProperties": false, "required": ["weight", "volume"],
           "properties": {

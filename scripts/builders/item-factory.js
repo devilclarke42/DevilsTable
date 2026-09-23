@@ -1,16 +1,18 @@
 import { FLAG_SCOPE, MODULE_ID } from "../constants.js";
 import { documentIdFor } from "./document-id.js";
 import { containerSystemFields } from "./container-factory.js";
+import { consumableSystemFields } from "./consumable-factory.js";
 
 const ESCAPES = { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" };
 export function escapeHtml(text) { return text.replace(/[&<>"']/g, char => ESCAPES[char]); }
 
 /** Pure, deterministic converter. Never reads world settings or mutates source JSON. */
 export function catalogueEntryToItem(entry) {
-  if (!["loot", "container"].includes(entry.mechanics.type)) throw new Error(`No converter for ${entry.mechanics.type}.`);
+  if (!["loot", "container", "consumable"].includes(entry.mechanics.type)) throw new Error(`No converter for ${entry.mechanics.type}.`);
   const typeFields = entry.mechanics.type === "container"
     ? containerSystemFields(entry.mechanics.capacity)
-    : { type: { value: entry.mechanics.subtype, subtype: "" } };
+    : entry.mechanics.type === "consumable" ? consumableSystemFields(entry)
+      : { type: { value: entry.mechanics.subtype, subtype: "" } };
   const text = escapeHtml(entry.description).split(/\n\s*\n/u).map(p => `<p>${p.replaceAll("\n", "<br>")}</p>`).join("");
   return {
     _id: documentIdFor(entry.id),
@@ -37,7 +39,9 @@ export function catalogueEntryToItem(entry) {
         availability: entry.availability,
         source: { ...entry.source },
         weightPolicy: "adjusted-lb",
-        weightNotes: entry.weight.notes
+        weightNotes: entry.weight.notes,
+        ...(entry.saleUnit ? { saleUnit: entry.saleUnit } : {}),
+        ...(entry.mechanics.light ? { light: { ...entry.mechanics.light } } : {})
       }
     }
   };

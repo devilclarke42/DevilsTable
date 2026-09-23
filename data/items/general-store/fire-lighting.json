@@ -1,0 +1,577 @@
+[
+  {
+    "id": "DT_ITEM_GS_TORCH",
+    "name": "Torch",
+    "description": "A wooden handle wrapped in resinous cloth, ready to be lit from an existing flame.\n\nOne torch burns for 1 hour, giving bright light out to 20 feet and dim light from there to 40 feet. A hit with a burning torch used as an improvised melee weapon deals 1 fire damage. The listed price and weight cover one unlit torch.",
+    "saleUnit": "one torch",
+    "price": {
+      "value": 2,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 0.5,
+      "units": "lb",
+      "notes": "Adjusted weight of one dry wooden torch with its resinous wrapping; nothing is treated as weightless."
+    },
+    "icon": "icons/sundries/lights/torch-black.webp",
+    "category": "fire-lighting",
+    "tags": [
+      "mundane",
+      "light",
+      "fuel",
+      "wood",
+      "single-use"
+    ],
+    "shops": [
+      "general-store",
+      "tavern"
+    ],
+    "availability": "core",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "2014 SRD 5.1, Adventuring Gear: Torch. Attack and token light are adjudicated manually. Original wording; project prices and adjusted weights. See docs/GENERAL_STORE_REVIEW.md.",
+      "license": "Original project text: distribution license pending; referenced SRD 5.1 rules: CC-BY-4.0."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "trinket",
+      "use": {
+        "name": "Mark one torch burned out",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after one torch is fully exhausted; ignition and remaining burn time are tracked manually."
+      },
+      "light": {
+        "brightFeet": 20,
+        "dimFeet": 40,
+        "shape": "radius",
+        "durationHours": 1,
+        "fuel": "self"
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_CANDLE",
+    "name": "Candle",
+    "description": "A short candle made from an economical blend of wax and rendered fat. It is a cheap source of light for a bedside, shrine or sheltered workbench.\n\nOne candle burns for 1 hour, giving bright light out to 5 feet and dim light from there to 10 feet. It has no holder and is easily extinguished by a gust.",
+    "saleUnit": "one small mixed-wax candle",
+    "price": {
+      "value": 1,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 0.05,
+      "units": "lb",
+      "notes": "Adjusted weight for one small candle, including its wick; holder and protective lantern are separate."
+    },
+    "icon": "icons/sundries/lights/candle-unlit-tan.webp",
+    "category": "fire-lighting",
+    "tags": [
+      "mundane",
+      "light",
+      "fuel",
+      "wax",
+      "single-use"
+    ],
+    "shops": [
+      "general-store",
+      "tavern"
+    ],
+    "availability": "core",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "2014 SRD 5.1, Adventuring Gear: Candle. Original wording; project prices and adjusted weights. See docs/GENERAL_STORE_REVIEW.md.",
+      "license": "Original project text: distribution license pending; referenced SRD 5.1 rules: CC-BY-4.0."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "trinket",
+      "use": {
+        "name": "Mark one candle burned out",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only when this candle is exhausted; lighting it does not consume it immediately."
+      },
+      "light": {
+        "brightFeet": 5,
+        "dimFeet": 10,
+        "shape": "radius",
+        "durationHours": 1,
+        "fuel": "self"
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_CANDLE_BEESWAX",
+    "name": "Beeswax Candle",
+    "description": "A clean-burning beeswax candle with a plaited wick and a faint honey scent. Its slower burn makes it a favoured purchase for a long evening indoors.\n\nThis project variant burns for 4 hours, giving bright light out to 5 feet and dim light from there to 10 feet. Sold singly without a holder. Its material improves convenience, not light radius.",
+    "saleUnit": "one long beeswax candle",
+    "price": {
+      "value": 6,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 0.2,
+      "units": "lb",
+      "notes": "Adjusted weight for one long beeswax candle; extra wax accounts for its longer burn."
+    },
+    "icon": "icons/sundries/lights/candle-unlit-tan.webp",
+    "category": "fire-lighting",
+    "tags": [
+      "mundane",
+      "light",
+      "fuel",
+      "beeswax",
+      "single-use"
+    ],
+    "shops": [
+      "general-store",
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "2014 SRD 5.1 Candle light distances; four-hour duration is a Devil's Table variant. Original wording; project prices and adjusted weights. See docs/GENERAL_STORE_REVIEW.md.",
+      "license": "Original project text: distribution license pending; referenced SRD 5.1 rules: CC-BY-4.0."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "trinket",
+      "use": {
+        "name": "Mark one beeswax candle burned out",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the entire four-hour candle is spent; track partial burning manually."
+      },
+      "light": {
+        "brightFeet": 5,
+        "dimFeet": 10,
+        "shape": "radius",
+        "durationHours": 4,
+        "fuel": "self"
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_CANDLE_TALLOW",
+    "name": "Tallow Candle",
+    "description": "A thick candle of rendered tallow around a twisted wick. It is inexpensive but gives off more smell and smoke than beeswax, especially when the wick needs trimming.\n\nThis project variant burns for 2 hours, giving bright light out to 5 feet and dim light from there to 10 feet. Sold singly without a holder; keep it sheltered from wind.",
+    "saleUnit": "one thick tallow candle",
+    "price": {
+      "value": 2,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 0.1,
+      "units": "lb",
+      "notes": "Adjusted weight for a thicker tallow candle and wick, with no holder included."
+    },
+    "icon": "icons/sundries/lights/candle-unlit-tan.webp",
+    "category": "fire-lighting",
+    "tags": [
+      "mundane",
+      "light",
+      "fuel",
+      "tallow",
+      "single-use"
+    ],
+    "shops": [
+      "general-store",
+      "tavern"
+    ],
+    "availability": "core",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "2014 SRD 5.1 Candle light distances; two-hour duration is a Devil's Table variant. Original wording; project prices and adjusted weights. See docs/GENERAL_STORE_REVIEW.md.",
+      "license": "Original project text: distribution license pending; referenced SRD 5.1 rules: CC-BY-4.0."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "trinket",
+      "use": {
+        "name": "Mark one tallow candle burned out",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the entire two-hour candle is spent; track partial burning manually."
+      },
+      "light": {
+        "brightFeet": 5,
+        "dimFeet": 10,
+        "shape": "radius",
+        "durationHours": 2,
+        "fuel": "self"
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_LANTERN",
+    "name": "Lantern",
+    "description": "A simple tin lantern with translucent horn panels, a carrying ring and a socket for one candle. It shields the flame from ordinary draughts but cannot close down to a narrow beam.\n\nSold without a candle. With a standard Candle it gives bright light out to 5 feet and dim light from there to 10 feet for 1 hour. Beeswax and tallow candles retain their own burn times. Add the loaded candle's weight separately; the lantern itself is reusable.",
+    "saleUnit": "one empty candle lantern",
+    "price": {
+      "value": 7,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 0.75,
+      "units": "lb",
+      "notes": "Adjusted empty weight for the tin frame and horn panels; excludes the candle."
+    },
+    "icon": "icons/sundries/lights/lantern-iron-yellow.webp",
+    "category": "fire-lighting",
+    "tags": [
+      "mundane",
+      "light",
+      "reusable",
+      "candle-lantern",
+      "sold-empty"
+    ],
+    "shops": [
+      "general-store",
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original candle-lantern design using the 2014 Candle light profile. Original wording; project prices and adjusted weights. See docs/GENERAL_STORE_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "trinket",
+      "use": {
+        "name": "Light candle lantern",
+        "mode": "reusable",
+        "activation": "action",
+        "condition": "Requires a separately carried candle and a means of ignition; track its burn time and weight separately."
+      },
+      "light": {
+        "brightFeet": 5,
+        "dimFeet": 10,
+        "shape": "radius",
+        "durationHours": 1,
+        "fuel": "candle"
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_LANTERN_HOODED",
+    "name": "Hooded Lantern",
+    "description": "A metal oil lantern with glass panes and a sliding hood. It is built for travellers who need a useful light that can be screened quickly.\n\nWith 1 pint of oil it burns for 6 hours, giving bright light out to 30 feet and dim light from there to 60 feet. Lowering the hood takes an action and leaves only dim light within 5 feet. Sold with a wick but no oil; fuel weight is additional.",
+    "saleUnit": "one empty hooded oil lantern",
+    "price": {
+      "value": 6,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 1.5,
+      "units": "lb",
+      "notes": "Adjusted empty weight includes metalwork, glass and wick; excludes the oil supply."
+    },
+    "icon": "icons/sundries/lights/lantern-iron-yellow.webp",
+    "category": "fire-lighting",
+    "tags": [
+      "mundane",
+      "light",
+      "reusable",
+      "oil-lantern",
+      "hooded",
+      "sold-empty"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "2014 SRD 5.1, Adventuring Gear: Lantern, Hooded. Original wording; project prices and adjusted weights. See docs/GENERAL_STORE_REVIEW.md.",
+      "license": "Original project text: distribution license pending; referenced SRD 5.1 rules: CC-BY-4.0."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "trinket",
+      "use": {
+        "name": "Light hooded lantern",
+        "mode": "reusable",
+        "activation": "action",
+        "condition": "Requires oil and ignition. Set normal or hooded light manually; consume fuel separately."
+      },
+      "light": {
+        "brightFeet": 30,
+        "dimFeet": 60,
+        "shape": "radius",
+        "durationHours": 6,
+        "fuel": "oil"
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_LANTERN_BULLSEYE",
+    "name": "Bullseye Lantern",
+    "description": "A sturdy oil lantern with a reflector and a polished lens that concentrates its light into a forward beam. It is useful when inspecting a passage or signalling along a road.\n\nA pint of oil supplies 6 hours of burning. The cone is brightly lit to 60 feet, with dim light extending from there to 120 feet. The beam does not light the space behind the bearer. Sold with a wick and without oil; fuel weight is additional.",
+    "saleUnit": "one empty bullseye oil lantern",
+    "price": {
+      "value": 12,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 2,
+      "units": "lb",
+      "notes": "Adjusted empty weight includes the heavier lens, reflector, frame and wick; excludes oil."
+    },
+    "icon": "icons/sundries/lights/lantern-iron-yellow.webp",
+    "category": "fire-lighting",
+    "tags": [
+      "mundane",
+      "light",
+      "reusable",
+      "oil-lantern",
+      "directional",
+      "sold-empty"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "special-order",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "2014 SRD 5.1, Adventuring Gear: Lantern, Bullseye. Original wording; project prices and adjusted weights. See docs/GENERAL_STORE_REVIEW.md.",
+      "license": "Original project text: distribution license pending; referenced SRD 5.1 rules: CC-BY-4.0."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "trinket",
+      "use": {
+        "name": "Light bullseye lantern",
+        "mode": "reusable",
+        "activation": "action",
+        "condition": "Requires oil and ignition. Aim and configure the light cone manually; consume fuel separately."
+      },
+      "light": {
+        "brightFeet": 60,
+        "dimFeet": 120,
+        "shape": "cone",
+        "durationHours": 6,
+        "fuel": "oil"
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_LAMP",
+    "name": "Lamp",
+    "description": "A small glazed lamp with a shallow oil reservoir and a replaceable wick. It sits securely on a table but has no enclosure to protect its flame while travelling.\n\nOne pint of oil supplies 6 hours of light: bright within 15 feet, then dim out to a total distance of 45 feet. Sold with a wick but no fuel. Carry it upright and account for loaded oil separately.",
+    "saleUnit": "one empty oil lamp",
+    "price": {
+      "value": 4,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 0.5,
+      "units": "lb",
+      "notes": "Adjusted empty weight of a small ceramic lamp and wick; oil is additional."
+    },
+    "icon": "icons/sundries/lights/lantern-iron-yellow.webp",
+    "category": "fire-lighting",
+    "tags": [
+      "mundane",
+      "light",
+      "reusable",
+      "oil-lamp",
+      "ceramic",
+      "sold-empty"
+    ],
+    "shops": [
+      "general-store",
+      "tavern"
+    ],
+    "availability": "core",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "2014 SRD 5.1, Adventuring Gear: Lamp. Original wording; project prices and adjusted weights. See docs/GENERAL_STORE_REVIEW.md.",
+      "license": "Original project text: distribution license pending; referenced SRD 5.1 rules: CC-BY-4.0."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "trinket",
+      "use": {
+        "name": "Light oil lamp",
+        "mode": "reusable",
+        "activation": "action",
+        "condition": "Requires oil, ignition and a stable surface; configure lighting and account for fuel manually."
+      },
+      "light": {
+        "brightFeet": 15,
+        "dimFeet": 45,
+        "shape": "radius",
+        "durationHours": 6,
+        "fuel": "oil"
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_OIL_LAMP",
+    "name": "Lamp Oil",
+    "description": "A stoppered clay flask of ordinary lamp oil. One pint supplies an oil lamp, hooded lantern or bullseye lantern for 6 hours; the entire filled flask is included in the listed weight.\n\nAs an action, oil can be splashed within 5 feet or thrown up to 20 feet, using an improvised ranged attack against a creature or object. On a hit it coats the target for 1 minute; fire damage during that time adds 5 fire damage from the oil. A pint spread across a level 5-foot square burns for 2 rounds when ignited, dealing 5 fire damage when a creature enters or ends its turn there, at most once per turn. These combat uses require manual resolution.\n\nIf the empty flask is retained after pouring, track it separately at 0.25 lb; transferred oil weighs 0.75 lb.",
+    "saleUnit": "one stoppered flask containing 1 pint of oil",
+    "price": {
+      "value": 2,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 1,
+      "units": "lb",
+      "notes": "Adjusted total: 0.75 lb of oil plus a 0.25 lb clay flask and stopper. Do not count both the full flask and transferred oil."
+    },
+    "icon": "icons/consumables/potions/bottle-bulb-empty-glass.webp",
+    "category": "fire-lighting",
+    "tags": [
+      "mundane",
+      "fuel",
+      "oil",
+      "filled-vessel",
+      "single-use"
+    ],
+    "shops": [
+      "general-store",
+      "tavern",
+      "alchemist"
+    ],
+    "availability": "core",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "2014 SRD 5.1, Adventuring Gear: Oil. Prices, filled weight and packaging allowance are project values. Original wording; project prices and adjusted weights. See docs/GENERAL_STORE_REVIEW.md.",
+      "license": "Original project text: distribution license pending; referenced SRD 5.1 rules: CC-BY-4.0."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "trinket",
+      "use": {
+        "name": "Use one pint of oil",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Records one whole pint being poured or expended. Track transferred fuel and any retained empty flask separately."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_TINDERBOX",
+    "name": "Tinderbox",
+    "description": "A small lidded box holding flint, a striking steel and dry tinder. Keeping the tinder dry matters more than a fine finish on the case.\n\nUsing it to light a torch or other plentiful exposed fuel takes an action. Starting another sort of fire takes 1 minute. The listed price includes the reusable tools and a modest starting supply of tinder; replace damp or exhausted tinder as needed.",
+    "saleUnit": "one complete tinderbox",
+    "price": {
+      "value": 4,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 0.25,
+      "units": "lb",
+      "notes": "Adjusted total for the small box, flint, steel and a starting pinch of tinder."
+    },
+    "icon": "modules/devils-table/assets/icons/flint-steel.svg",
+    "category": "fire-lighting",
+    "tags": [
+      "mundane",
+      "fire-making",
+      "kit",
+      "reusable",
+      "tinder"
+    ],
+    "shops": [
+      "general-store",
+      "tavern"
+    ],
+    "availability": "core",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "2014 SRD 5.1, Adventuring Gear: Tinderbox. Original wording; project prices and adjusted weights. See docs/GENERAL_STORE_REVIEW.md.",
+      "license": "Original project text: distribution license pending; referenced SRD 5.1 rules: CC-BY-4.0."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_FLINT_STEEL",
+    "name": "Flint & Steel",
+    "description": "A sharp piece of flint paired with a curved striking steel. Proper blows throw sparks into suitable dry tinder.\n\nSold as a matched pair without tinder or a storage box. This is a replacement or stripped-down fire-making set, not a complete tinderbox. It cannot start a fire without suitable tinder and fuel, and does not grant a skill bonus.",
+    "saleUnit": "one flint and one striking steel",
+    "price": {
+      "value": 8,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 0.1,
+      "units": "lb",
+      "notes": "Adjusted weight of one flint and its small striking steel; no tinder box or fuel included."
+    },
+    "icon": "modules/devils-table/assets/icons/flint-steel.svg",
+    "category": "fire-lighting",
+    "tags": [
+      "mundane",
+      "fire-making",
+      "steel",
+      "reusable"
+    ],
+    "shops": [
+      "general-store",
+      "blacksmith"
+    ],
+    "availability": "core",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original project design. Original wording; project prices and adjusted weights. See docs/GENERAL_STORE_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_CHARCOAL",
+    "name": "Charcoal",
+    "description": "A tied sack of dry hardwood charcoal for a brazier, cook fire or small workshop hearth. It makes less smoke than green wood once properly burning.\n\nThe purchase contains 5 lb of charcoal; the light disposable wrapping is included in that adjusted weight. Fuel needs depend on the hearth and work being done, so this bag has no fixed universal burn time. It is fuel rather than a portable light source.",
+    "saleUnit": "one 5 lb bag of charcoal",
+    "price": {
+      "value": 8,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 5,
+      "units": "lb",
+      "notes": "Adjusted sale weight for the whole bag and its contents; most of the weight is actual fuel."
+    },
+    "icon": "modules/devils-table/assets/icons/charcoal.svg",
+    "category": "fire-lighting",
+    "tags": [
+      "mundane",
+      "fuel",
+      "charcoal",
+      "bulk-supply",
+      "single-use"
+    ],
+    "shops": [
+      "general-store",
+      "tavern",
+      "blacksmith",
+      "alchemist"
+    ],
+    "availability": "core",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original project design. Original wording; project prices and adjusted weights. See docs/GENERAL_STORE_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "trinket",
+      "use": {
+        "name": "Use up one bag of charcoal",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the full 5 lb bag is expended; track partial fuel use manually."
+      }
+    }
+  }
+]

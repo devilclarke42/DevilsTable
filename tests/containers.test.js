@@ -10,18 +10,20 @@ import { readJson, catalogue, fakeAdapter } from "./helpers.js";
 
 const production = () => loadCatalogue({ readJson });
 
-test("all eight curated categories exist; only the 13 planned Containers are authored", async () => {
+test("all eight curated General Store categories contain exactly their approved items", async () => {
   const data = await production();
   assert.deepEqual(data.categoryDefinitions.map(category => category.name), [
     "Containers", "Fire & Lighting", "Rope & Climbing", "Camping", "Writing", "Household", "Animal", "Travel"
   ]);
-  assert.deepEqual(data.entries.map(({ item }) => item.name), data.categoryDefinitions[0].plannedItems);
-  assert.equal(data.entries.length, 13);
-  assert.ok(data.entries.every(({ item }) => item.category === "containers" && item.shops.includes("general-store")));
+  for (const category of data.categoryDefinitions) {
+    assert.deepEqual(data.entries.filter(({ item }) => item.category === category.id).map(({ item }) => item.name), category.plannedItems);
+  }
+  assert.equal(data.entries.length, 69);
+  assert.ok(data.entries.every(({ item }) => item.shops.includes("general-store")));
   assert.deepEqual(new Set(data.entries.map(({ item }) => item.id)), new Set(data.ledger.ids));
   const view = shopView(data, { shopId: "general-store" });
-  assert.deepEqual(view.categories.map(category => category.count), [13, 0, 0, 0, 0, 0, 0, 0]);
-  assert.deepEqual(view.priceBands.map(band => band.count), [3, 7, 3, 0]);
+  assert.deepEqual(view.categories.map(category => category.count), [13, 12, 6, 11, 7, 9, 6, 5]);
+  assert.deepEqual(view.priceBands.map(band => band.count), [31, 27, 9, 2]);
 });
 
 test("every registered shop has three Merchant Notes tiers, including the requested village profile", async () => {
@@ -76,7 +78,7 @@ test("whole-coin pricing enforces cp/sp limits and the 25 gp specialist boundary
 
 test("native containers preserve empty mass and count contents without a loot subtype", async () => {
   const data = await production();
-  for (const { item } of data.entries) {
+  for (const { item } of data.entries.filter(({ item }) => item.mechanics.type === "container")) {
     const before = structuredClone(item);
     const doc = catalogueEntryToItem(item);
     assert.equal(doc.type, "container");
@@ -141,7 +143,7 @@ test("notes and category plans never enter Item documents or trigger Item update
   await build({ dryRun: false });
   data.shopDefinitions[0].merchantNotes.alwaysStocks.push("MERCHANT_ONLY_SENTINEL");
   data.categoryDefinitions[0].plannedItems.push("PLAN_ONLY_SENTINEL");
-  assert.equal((await build()).unchanged, 13);
+  assert.equal((await build()).unchanged, 69);
   assert.ok(!JSON.stringify(state.docs).includes("SENTINEL"));
   for (const doc of state.docs) {
     assert.equal(Object.hasOwn(doc.flags["devils-table"], "merchantNotes"), false);
@@ -160,17 +162,17 @@ test("shared goods keep one identity across filtered and full builds", async () 
   assert.equal(state.docs.length, 13);
   assert.equal((await build()).unchanged, 13);
   data.entries.find(({ item }) => item.name === "Bottle").item.price.value = 3;
-  const updated = await build({ dryRun: false, shopId: "alchemist" });
+  const updated = await build({ dryRun: false, shopId: "alchemist", categoryId: "containers" });
   assert.equal(updated.update, 1);
   assert.equal(updated.preserved, 10);
   assert.equal(state.docs.length, 13);
 });
 
-test("planned categories select zero real items and never create or clear a pack", async () => {
+test("empty shop/category intersections never create or clear a pack", async () => {
   const data = await production();
-  assert.equal(selectEntries(data, { shopId: "general-store", categoryId: "fire-lighting" }).length, 0);
+  assert.equal(selectEntries(data, { shopId: "blacksmith", categoryId: "travel" }).length, 0);
   const { adapter, state } = fakeAdapter({ hasPack: false });
-  const result = await createBuilder({ load: () => data, adapter })({ dryRun: false, shopId: "general-store", categoryId: "fire-lighting" });
+  const result = await createBuilder({ load: () => data, adapter })({ dryRun: false, shopId: "blacksmith", categoryId: "travel" });
   assert.equal(result.count, 0);
   assert.match(result.warnings.join(" "), /No authored items/);
   assert.equal(state.pack, null);

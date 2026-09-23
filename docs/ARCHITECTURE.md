@@ -13,7 +13,8 @@
 4. **Shared validation.** Browser and Node use the same JSON Schemas and validator. The small
    supported schema vocabulary is deliberately explicit. Unsupported keywords throw rather than
    silently loosening validation. This is not advertised as a general JSON Schema implementation.
-5. **Explicit system boundary.** The converter supports ordinary goods (`loot`) and native `container` Items.
+5. **Explicit system boundary.** The converter supports ordinary goods (`loot`), native `container`
+   Items and mundane `consumable` Items with explicit utility activities.
    The adapter preflights with the installed D&D5e document models, and guards the exact target
    version. Source rules are explicitly `2014`, even in a world configured for modern rules.
 6. **One generated Item pack.** An item with multiple shop tags stays one Item. Generated data
@@ -42,6 +43,15 @@
     validation. Compare only equivalent quote entities and break-tag spellings in description
     fields; do not strip HTML or relax other generated fields. Remaining differences produce
     bounded source-ID/field diagnostics using the same comparison rules as preview and rebuild.
+14. **One purchase, one quantity.** Optional `saleUnit` text is retained in module flags. Prices,
+    weight and any consumption apply to the whole authored purchase, including listed packaging
+    or kit parts. No nested component generation or automatic bundle splitting is introduced.
+15. **Small consumable boundary.** `consumable-factory.js` maps only `food` and `trinket` with
+    explicit consume/reusable modes. It derives a stable embedded activity ID from the item ID
+    plus `_USE`; these IDs are scoped within each Item. Blank `itemUses` targets refer to the
+    owning Item after actor import. Consume uses native one-use/auto-destroy semantics; reusable
+    goods have no consumption. Light metadata remains reference data; duration is informational.
+    Neither the builder nor a startup hook changes token lights, transfers fuel or schedules use.
 
 ## Build sequence
 
@@ -101,5 +111,9 @@ The API is framework-versioned but not yet a stable public integration contract.
 - [D&D5e 5.3.3 loot model](https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/module/data/item/loot.mjs)
 - [D&D5e 5.3.3 container model](https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/module/data/item/container.mjs)
 - [D&D5e 5.3.3 supported units](https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/module/config.mjs)
+- [D&D5e 5.3.3 consumable model](https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/module/data/item/consumable.mjs)
+- [D&D5e 5.3.3 utility activity](https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/module/data/activity/utility-data.mjs)
+- [D&D5e 5.3.3 owning-item consumption](https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/module/data/activity/fields/consumption-targets-field.mjs)
+- [D&D5e 5.3.3 limited-use fields](https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/module/data/shared/uses-field.mjs)
 
 Documentation/source review is not a substitute for executing the module in the target environment.

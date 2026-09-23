@@ -11,26 +11,32 @@
 
 Implementation is available for acceptance testing; the target environment is not yet verified.
 
-## Current — General Store / Containers review
+## Current — Complete General Store review
 
 - [x] Define all eight curated General Store categories and their planned item lists.
 - [x] Require builder-only Merchant Notes for Tavern, General Store, Alchemist, Blacksmith and Black Market.
 - [x] Establish whole cp/sp/gp prices and the 25 gp specialist boundary.
 - [x] Author exactly 13 Containers with reserved permanent IDs and adjusted empty weights.
 - [x] Add native container capacities, shop/category filters and regression coverage.
-- [ ] Owner review of prices, weights, descriptions, capacities, stock guidance and icons.
+- [x] User accepted the working Containers build and requested all seven remaining categories.
+- [x] Author the remaining 56 approved goods with explicit purchase units and permanent IDs.
+- [x] Add supported mundane consumable activities, light metadata and focused validation.
+- [x] Verify a 13-to-69 upgrade and repeat build in automated tests.
+- [ ] Owner review of all 69 prices, weights, descriptions, purchase units, capacities and icons.
 - [ ] Live V14 / D&D5e 5.3.3 Forge acceptance, including contained-item encumbrance.
+- [ ] Live actor-import, completed-use consumption, reusable activity and light metadata checks.
 
-**Stop here until the Containers review is complete.** Fire & Lighting, Rope & Climbing,
-Camping, Writing, Household, Animal and Travel are planning lists only.
+All eight General Store categories now have authored stock. The alpha.3 read-back fix received
+a successful user report; this does not complete the wider live checklist. Review the complete
+General Store before expanding another shop's catalogue.
 
 ## After review — Curated content
 
 - Review the original Tavern material against the canonical schema before any import.
-- Agree the next General Store category and review its prices, adjusted weights and source attributions.
+- Resolve General Store balance feedback against the canonical JSON and preserve all existing IDs.
 - Reserve permanent IDs before publication; test rename and cross-shop behaviour.
-- Extend supported converters only when a real item type needs them: consumables,
-  tools, weapons and armour each need documented mappings and system tests.
+- Extend supported converters only when a real item needs them: potions, proficiency tools,
+  weapons and armour still need documented mappings and system tests.
 
 ## Later — Catalogue and shop workflows
 

@@ -6,15 +6,26 @@ Foundry compendiums are generated from it and must never be edited as source dat
 
 ## Current status
 
-General Store / Containers review build, `0.2.0-alpha.3`. The catalogue contains **13 authored
-Containers items**. All eight General Store categories are defined; the other seven contain
-planning lists only. Development stops here for content review. See the
-[Containers review table](docs/CONTAINERS_REVIEW.md) for every price, empty weight and capacity.
+General Store review build, `0.2.0-alpha.4`. The catalogue contains **69 authored items** across
+all eight approved categories. This adds 56 goods to the original 13 Containers records, which
+remain unchanged. See the [General Store review](docs/GENERAL_STORE_REVIEW.md) for the new
+items' prices, purchase units, weights and mechanics, and the
+[Containers review table](docs/CONTAINERS_REVIEW.md) for the original batch.
 Automated tests also use a synthetic parcel that is excluded from the module ZIP.
 
-Alpha.3 fixes false read-back failures caused by equivalent HTML quote entities/break tags and
-adds item/field details for genuine mismatches. The 13 source items and their IDs are unchanged.
-The reported alpha.2 failure still requires an in-world retest with this build.
+The user reported that alpha.3's read-back fix worked. This build retains that fix and its
+item/field diagnostics. The new utility activities and extended catalogue still require live acceptance.
+
+| Category | Items |
+| --- | ---: |
+| Containers | 13 |
+| Fire & Lighting | 12 |
+| Rope & Climbing | 6 |
+| Camping | 11 |
+| Writing | 7 |
+| Household | 9 |
+| Animal | 6 |
+| Travel | 5 |
 
 The target is Foundry V14 and D&D5e **5.3.3**, with the **2014 rules** baseline and
 author-supplied adjusted weights for Variant Encumbrance. No world encumbrance settings
@@ -25,15 +36,21 @@ is still required. The manifest deliberately does not claim verified compatibili
 
 - Loads a registry of source JSON files, with bounded parallel reads.
 - Validates every item and permanent ID before writing anything.
-- Converts ordinary goods to D&D5e `loot` and native `container` documents, using 2014 source rules and exact adjusted weights.
+- Converts ordinary goods to D&D5e `loot`, native `container` and explicitly supported mundane `consumable` documents, using 2014 source rules and exact adjusted weights.
 - Provides a GM settings window with read-only validation/preview and a confirmed build action.
-- Filters authored items by shop and category; empty planned categories generate no Items.
+- Filters authored items by shop and category; empty selections generate no Items.
 - Displays builder-only Merchant Notes (Always / Often / Rarely Stocks) for all five shops.
 - Validates whole-coin prices: 1–9 cp, 1–9 sp, 1–24 gp equipment and 25+ gp specialist goods.
 - Creates or updates one world Item compendium: `world.devils-table-items`.
 - Preserves internal document IDs, unrelated entries, folders and other modules' flags.
 - Batches writes in groups of 100 and checks the result against the source.
-- Never deletes items. Inactive catalogue entries stay in the pack until an explicit retirement workflow is added.
+- The builder never deletes items. Inactive catalogue entries stay in the pack until an explicit retirement workflow is added.
+
+New records define one purchase explicitly: a 50-foot rope, ten pitons, four horseshoes or one
+day's animal feed, for example. Quantity 1 means that complete sale unit. Eight consumable goods
+have a native activity that removes one unit when its use is complete; lights are marked spent
+after burning out, not when first lit. Reusable lights and the climber's kit have non-consuming
+activities. Token lighting, elapsed burn time, fuel transfer and partial quantities remain manual.
 
 Shops are tags, not copies of an item. Tavern, General Store, Alchemist, Blacksmith and Black Market
 each have a definition and Merchant Notes. Notes guide the GM; they are never included in generated
@@ -45,17 +62,18 @@ future work. Availability does not automatically include or exclude an item from
 1. Obtain the packaged ZIP from the successful **Validate and package** GitHub Actions run
    (artifact: `devils-table-framework`), or build it using the development commands below.
    Downloading an Actions artifact may wrap the module ZIP in another ZIP: extract the artifact
-   first and select `devils-table-v0.2.0-alpha.3.zip` for import.
+   first and select `devils-table-v0.2.0-alpha.4.zip` for import.
 2. Back up your test world. In The Forge's Import Wizard, import that module ZIP as a custom package.
    See the [Forge custom-package guide](https://forums.forge-vtt.com/t/how-to-upload-a-modified-version-of-a-module-system/10510).
 3. In a V14 / D&D5e 5.3.3 test world, enable **Devil's Table: Goods & Provisions** and reload.
 4. As the active GM, open **Configure Settings → Devil's Table → Build/Rebuild Compendiums → Open Builder**.
-5. Select **Village General Store → Containers**, then **Validate / Preview**. In a fresh world,
-   expect 13 creates. Preview leaves the world unchanged.
-6. Choose **Build / Rebuild** and confirm. The builder creates 13 native containers in
-   `world.devils-table-items`. Run it again: expect 13 unchanged Items and no duplicates.
-7. Review the stock notes, empty weights and capacities. Selecting Fire & Lighting should report
-   zero authored items and preserve the existing pack. Follow the [live checklist](docs/TESTING.md).
+5. Select **Village General Store → All categories**, then **Validate / Preview**. In a fresh world,
+   expect 69 creates. When upgrading a complete alpha.3 Containers pack, expect **56 creates,
+   0 updates and 13 unchanged**. Preview leaves the world unchanged.
+6. Choose **Build / Rebuild** and confirm. The builder adds the selected items to
+   `world.devils-table-items`. Run it again: expect 69 unchanged Items and no duplicates.
+7. Review each category's prices, purchase units, icons and weights. Import test copies into an
+   actor to check the new use actions. Follow the [live checklist](docs/TESTING.md).
 
 The archive contains exactly one `devils-table/module.json`, alongside its runtime folders.
 Do not upload the repository's source-code ZIP as though it were a packaged release.
@@ -65,7 +83,7 @@ the live acceptance test and an actual versioned release exist.
 ### Recovering from the alpha.2 read-back error
 
 Keep the existing generated compendium. Import the updated module ZIP using the same Forge
-custom-package method, restart/reload the test world and confirm the module shows `0.2.0-alpha.3`.
+custom-package method, restart/reload the test world and confirm the module shows `0.2.0-alpha.4`.
 Run **Village General Store → Containers → Validate / Preview**, then **Build / Rebuild**.
 If all 13 Items were saved, equivalent description formatting should now report 13 unchanged.
 If any are missing or genuinely different, the normal rebuild creates/updates them with their
@@ -106,6 +124,7 @@ Generated ZIPs and Foundry compendiums are not committed.
 
 Every item requires `id`, `name`, `description`, `price`, `weight`, `icon`, `category`,
 `tags`, `shops`, `availability`, `source`, and an explicit supported `mechanics` mapping.
+Every new General Store item also specifies `saleUnit`; it is optional for the unchanged original batch.
 Names and shop membership may change; IDs such as `DT_ITEM_GS_ROPE_HEMP` must not.
 Reserve IDs in the append-only `data/id-ledger.json`; never recycle an old ID.
 

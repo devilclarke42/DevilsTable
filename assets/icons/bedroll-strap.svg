@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title">
+  <title id="title">Bedroll strap</title>
+  <rect width="256" height="256" rx="28" fill="#27211e"/>
+  <rect x="8" y="8" width="240" height="240" rx="22" fill="none" stroke="#69543a" stroke-width="4"/>
+  <g fill="none" stroke="#e2c89a" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <path fill="#906440" d="M69 35h42v175H69z"/><path stroke="#e7bd79" fill="#bd8d49" d="M99 88h88v79H99z"/><path fill="#30251e" d="M117 106h50v43h-50z"/><path stroke="#ecd49c" d="M109 127h61"/><path stroke="#2c2018" stroke-width="9" d="M89 54v2m0 16v2m0 111v2"/>
+  </g>
+</svg>

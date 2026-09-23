@@ -1,0 +1,239 @@
+[
+  {
+    "id": "DT_ITEM_GS_FEED_HORSE",
+    "name": "Horse Feed",
+    "description": "A ten-pound ration of dry grain and chopped fodder, measured out for a working mount. It is sold loose or in a light paper wrap; a durable sack or feed bag is a separate purchase.\n\nThe daily ration follows the 2014 equipment baseline. The GM determines adjustments for the animal, grazing and workload. Drinking water is not included. Use 'Feed one daily ration' when the entire portion is given to an animal; this consumes one sale unit and provides no healing.",
+    "saleUnit": "One day's ten-pound ration of dry animal feed",
+    "price": {
+      "value": 8,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 10,
+      "units": "lb",
+      "notes": "Ten pounds is deliberately retained for the full daily feed ration so pack-animal provisioning remains meaningful; a reusable bag is not included."
+    },
+    "icon": "icons/consumables/grains/sack-rice-flour-brown.webp",
+    "category": "animal",
+    "tags": [
+      "mundane",
+      "feed",
+      "animal-care",
+      "consumable"
+    ],
+    "shops": [
+      "general-store",
+      "tavern"
+    ],
+    "availability": "core",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "2014 SRD 5.1 equipment: animal feed is priced by the day and listed at 10 lb; this project changes its price. Original wording; project prices and adjusted weights. See docs/GENERAL_STORE_REVIEW.md.",
+      "license": "Original project text: distribution license pending; referenced SRD 5.1 rules: CC-BY-4.0."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Feed one daily ration",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use when one complete ten-pound feed ration is given to an animal. Water is separate."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_BAG_FEED",
+    "name": "Feed Bag",
+    "description": "A stout canvas bag with a broad hanging strap, shaped to hold feed within easy reach of a tethered horse or similar mount. Its seams and mouth are reinforced for repeated use.\n\nSold empty. It holds up to 10 lb or half a cubic foot of dry feed, whichever limit is reached first. Feed is bought separately and adds its own weight. The bag is not watertight; fit and supervise it appropriately for the animal.",
+    "saleUnit": "One empty canvas feed bag",
+    "price": {
+      "value": 2,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 0.5,
+      "units": "lb",
+      "notes": "Half a pound for the empty canvas bag and strap; feed carried inside is counted separately."
+    },
+    "icon": "icons/containers/bags/sack-cloth-orange.webp",
+    "category": "animal",
+    "tags": [
+      "mundane",
+      "container",
+      "canvas",
+      "feed",
+      "animal-care"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "core",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original project design. Original wording; project prices and adjusted weights. See docs/GENERAL_STORE_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "container",
+      "capacity": {
+        "weight": {
+          "value": 10,
+          "units": "lb"
+        },
+        "volume": {
+          "value": 0.5,
+          "units": "cubicFoot"
+        }
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_BRUSH",
+    "name": "Brush",
+    "description": "A small wooden-backed brush with stiff bristles and a cloth hand loop. It lifts loose dust and hair from a mount's coat during routine grooming.\n\nOne brush is supplied. It is an ordinary care tool, with no automatic Animal Handling bonus or effect on wounds and illness.",
+    "saleUnit": "One stiff-bristled grooming brush",
+    "price": {
+      "value": 3,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 0.1,
+      "units": "lb",
+      "notes": "One tenth of a pound for the small wooden back, bristles and hand loop."
+    },
+    "icon": "modules/devils-table/assets/icons/brush.svg",
+    "category": "animal",
+    "tags": [
+      "mundane",
+      "grooming",
+      "wood",
+      "animal-care"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "core",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original project design. Original wording; project prices and adjusted weights. See docs/GENERAL_STORE_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_CURRY_COMB",
+    "name": "Curry Comb",
+    "description": "A hand-sized metal comb with rounded, toothed ridges and a short handle. Used carefully during grooming, it loosens dried mud and shedding hair from a mount's coat.\n\nThe comb is separate from a finishing brush. It grants no skill bonus and is not equipment for treating an injured animal.",
+    "saleUnit": "One metal curry comb",
+    "price": {
+      "value": 4,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 0.2,
+      "units": "lb",
+      "notes": "One fifth of a pound for a light metal comb and short handle."
+    },
+    "icon": "modules/devils-table/assets/icons/curry-comb.svg",
+    "category": "animal",
+    "tags": [
+      "mundane",
+      "grooming",
+      "metal",
+      "animal-care"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "core",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original project design. Original wording; project prices and adjusted weights. See docs/GENERAL_STORE_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_HORSESHOES",
+    "name": "Horseshoes",
+    "description": "Four plain iron horseshoes with a small packet of fitting nails, supplied as an uninstalled set. They are ordinary farrier's stock for a suitably sized horse.\n\nThe listed price and weight cover the whole set. Skilled fitting, removal of old shoes and any reshaping are separate services. These mundane shoes provide no magical movement benefit or automatic speed increase.",
+    "saleUnit": "One set of four iron horseshoes with fitting nails",
+    "price": {
+      "value": 8,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 2,
+      "units": "lb",
+      "notes": "Two pounds for four light ordinary shoes and their nails; size-specific heavy shoes may differ by GM ruling."
+    },
+    "icon": "icons/tools/smithing/horsehoe-worn-steel-grey.webp",
+    "category": "animal",
+    "tags": [
+      "mundane",
+      "horseshoes",
+      "iron",
+      "bundle",
+      "animal-care"
+    ],
+    "shops": [
+      "general-store",
+      "blacksmith"
+    ],
+    "availability": "core",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original project design. Original wording; project prices and adjusted weights. See docs/GENERAL_STORE_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_TACK_REPAIR_KIT",
+    "name": "Tack Repair Kit",
+    "description": "A small roll containing an awl, heavy needle, waxed thread, leather patches, spare laces and two plain buckles. It supports minor repairs to sound straps, harnesses and saddlebags.\n\nThe purchase includes the roll and all listed supplies. It is not a full set of leatherworker's tools and grants no proficiency. Major damage or a failed load-bearing strap may need a craftsperson and replacement parts.",
+    "saleUnit": "One compact tack-mending kit",
+    "price": {
+      "value": 5,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 0.75,
+      "units": "lb",
+      "notes": "Three quarters of a pound for the complete compact tool roll and repair materials."
+    },
+    "icon": "icons/commodities/leather/leather-buckle-steel-tan.webp",
+    "category": "animal",
+    "tags": [
+      "mundane",
+      "repair",
+      "leather",
+      "kit",
+      "animal-care"
+    ],
+    "shops": [
+      "general-store",
+      "blacksmith"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original project design. Original wording; project prices and adjusted weights. See docs/GENERAL_STORE_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  }
+]

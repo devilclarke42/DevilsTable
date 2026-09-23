@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title">
+  <title id="title">Cloth mop</title>
+  <rect width="256" height="256" rx="28" fill="#27211e"/>
+  <rect x="8" y="8" width="240" height="240" rx="22" fill="none" stroke="#69543a" stroke-width="4"/>
+  <g fill="none" stroke="#e2c89a" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <path stroke="#b98c58" stroke-width="19" d="m139 35-28 135"/><path fill="#637f8a" d="m81 131 72 14-5 24-72-14z"/><path stroke="#c3d2c9" stroke-width="15" d="m83 162-33 53m48-52-11 60m27-57 4 56m12-53 28 48m-12-45 42 32"/>
+  </g>
+</svg>

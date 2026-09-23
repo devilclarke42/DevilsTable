@@ -1,0 +1,187 @@
+[
+  {
+    "id": "DT_ITEM_GS_WALKING_STICK",
+    "name": "Walking Stick",
+    "description": "A straight, seasoned ash stick about five feet long, smoothed at the grip and capped at the foot with a plain iron ferrule. It offers a steady handhold on uneven ground and can probe shallow mud or undergrowth.\n\nThis entry is ordinary travelling gear, without an automatic movement bonus or weapon attack. Any improvised use is resolved by the GM.",
+    "saleUnit": "One five-foot wooden walking stick",
+    "price": {
+      "value": 3,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 1,
+      "units": "lb",
+      "notes": "One pound for a slim seasoned wooden stick and small protective ferrule."
+    },
+    "icon": "icons/commodities/wood/wood-pole.webp",
+    "category": "travel",
+    "tags": [
+      "mundane",
+      "walking",
+      "wood",
+      "travel"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "core",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original project design. Original wording; project prices and adjusted weights. See docs/GENERAL_STORE_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_COMPASS",
+    "name": "Compass",
+    "description": "A balanced magnetic needle turns beneath a simple marked dial in a hinged brass case. In ordinary conditions it indicates magnetic north, giving a traveller a useful reference for orientation.\n\nThis specialist project item does not reveal a destination, draw a map or replace navigation checks. Local magnetic interference, unusual environments and magical effects are adjudicated by the GM. No automatic Survival bonus is applied.",
+    "saleUnit": "One pocket magnetic compass in a brass case",
+    "price": {
+      "value": 25,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 0.1,
+      "units": "lb",
+      "notes": "One tenth of a pound for a small needle assembly, dial and protective brass case."
+    },
+    "icon": "modules/devils-table/assets/icons/compass.svg",
+    "category": "travel",
+    "tags": [
+      "mundane",
+      "navigation",
+      "brass",
+      "specialist",
+      "travel"
+    ],
+    "shops": [
+      "general-store",
+      "black-market"
+    ],
+    "availability": "special-order",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original project design. Original wording; project prices and adjusted weights. See docs/GENERAL_STORE_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_SPYGLASS",
+    "name": "Spyglass",
+    "description": "A compact brass viewing tube with fitted glass lenses and a sliding focus. Looking through it makes distant objects appear twice as large, following the 2014 equipment rule.\n\nThe spyglass needs a clear line of sight and suitable light. It grants no darkvision, ability to see invisible creatures or automatic Perception bonus. Its price is a deliberate project adjustment for a specialist village-order purchase.",
+    "saleUnit": "One collapsible brass spyglass",
+    "price": {
+      "value": 100,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 0.75,
+      "units": "lb",
+      "notes": "Three quarters of a pound for a compact brass tube and lenses, adjusted from heavier full-sized optics."
+    },
+    "icon": "icons/tools/navigation/spyglass-telescope-brass.webp",
+    "category": "travel",
+    "tags": [
+      "mundane",
+      "navigation",
+      "optics",
+      "specialist",
+      "travel"
+    ],
+    "shops": [
+      "general-store",
+      "black-market"
+    ],
+    "availability": "special-order",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "2014 SRD 5.1 equipment: a spyglass doubles apparent object size. Project price is 100 gp, rather than the SRD's 1,000 gp. Original wording; project prices and adjusted weights. See docs/GENERAL_STORE_REVIEW.md.",
+      "license": "Original project text: distribution license pending; referenced SRD 5.1 rules: CC-BY-4.0."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_BELL",
+    "name": "Bell",
+    "description": "A small brass bell with a metal clapper and a loop for holding or tying to a cord. Its clear ring suits calling attention, marking a routine signal or sounding when an attached line is disturbed.\n\nCord and any alarm rigging are separate. How far it can be heard depends on background noise, obstructions and circumstances; the item applies no automatic detection or alarm effect.",
+    "saleUnit": "One small brass hand bell",
+    "price": {
+      "value": 1,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 0.1,
+      "units": "lb",
+      "notes": "One tenth of a pound for the bell, clapper and attachment loop."
+    },
+    "icon": "icons/tools/instruments/bell-brass-brown.webp",
+    "category": "travel",
+    "tags": [
+      "mundane",
+      "signalling",
+      "brass",
+      "travel"
+    ],
+    "shops": [
+      "general-store",
+      "tavern"
+    ],
+    "availability": "core",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original project design. Original wording; project prices and adjusted weights. See docs/GENERAL_STORE_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_WHISTLE_SIGNAL",
+    "name": "Signal Whistle",
+    "description": "A small wooden whistle pierced for a carrying cord. A sharp breath produces a high, clear note useful for agreed signals between travellers or workers.\n\nNo cord is included. Companions must agree what a signal means, and the GM determines whether it can be heard through distance, weather and surrounding noise. It has no fixed detection radius or magical effect.",
+    "saleUnit": "One wooden signal whistle",
+    "price": {
+      "value": 6,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 0.02,
+      "units": "lb",
+      "notes": "Two hundredths of a pound for a single small wooden whistle."
+    },
+    "icon": "icons/tools/instruments/pipe-flute-brown.webp",
+    "category": "travel",
+    "tags": [
+      "mundane",
+      "signalling",
+      "wood",
+      "travel"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "core",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original project design. Original wording; project prices and adjusted weights. See docs/GENERAL_STORE_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  }
+]

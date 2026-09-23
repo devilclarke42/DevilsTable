@@ -4,7 +4,8 @@
 
 Edit catalogue JSON in this repository. Do not edit generated pack data directly. A rebuild
 overwrites builder-controlled fields; imports already owned by an actor or the world are independent.
-The first 13 authored items live in `data/items/general-store/containers.json` and await review.
+The 69 General Store items live in eight category files under `data/items/general-store/`.
+The original 13 Containers records are unchanged by the seven-category expansion.
 `tests/fixtures/item.json` is synthetic test material only.
 
 ## Required fields
@@ -22,11 +23,18 @@ The first 13 authored items live in `data/items/general-store/containers.json` a
 | `shops` | One or more unique shop slugs from the registry. A shared item occurs once in source. |
 | `availability` | `core`, `variable`, or `special-order`; stock frequency, not D&D magic rarity. |
 | `source` | `{title, reference, license}`; all nonblank. Attribute the original or project source honestly. |
-| `mechanics` | Either `{type: "loot", subtype: …}` or `{type: "container", capacity: …}`. |
+| `mechanics` | Explicit `loot`, `container` or supported mundane `consumable` mapping, described below. |
 
 The authoritative structural definitions are in `schemas/`. Unknown fields fail validation,
 helping catch misspellings. Extend the schema, converter, docs and tests together when needed.
 Do not work around an unsupported potion/weapon by labelling it as ordinary loot.
+
+`saleUnit` is an optional nonblank description of one purchase, present on all 56 new items.
+Generated quantity 1, price and weight describe that complete unit: ten pitons are one bundle,
+four horseshoes are one set and Horse Feed is one ten-pound daily ration. A bundle is not ten
+copies of a single piton, and a kit does not create nested component Items. Split bundles and
+partially used supplies manually in actor inventory; never change their permanent catalogue IDs.
+The original Containers descriptions already state what is supplied, so their records stay unchanged.
 
 ## Pricing conventions
 
@@ -46,6 +54,7 @@ An item's availability is independent of its price band: a 12 gp lockbox can be 
 ## Containers and encumbrance
 
 Every item in the Containers category uses `mechanics.type: "container"`, with no loot subtype.
+Other categories may also contain native containers, such as a cooking pot or feed bag.
 `mechanics.capacity` requires positive `weight: {value, units: "lb"}` and positive
 `volume: {value, units}`. Volume units are `cubicFoot`, `pint`, `quart` or `gallon`; liquid measures
 are US measures. The converter uses 231 cubic inches per gallon and 1728 cubic inches per cubic
@@ -58,6 +67,44 @@ adjudication. There is no automatic enforcement of liquid volume or an included 
 Containers use quantity 1 and never grant `weightlessContents`. Track actual contents as separate
 inventory entries; do not also add their mass to the container's empty weight. In this catalogue,
 water uses a game allowance of 2 lb per US quart: a full waterskin is 0.5 + 4 = 4.5 lb.
+
+## Mundane goods and consumable use
+
+Ordinary equipment uses `mechanics: {type: "loot", subtype: "gear"}`; crafting supplies may
+use `material`. The other existing loot subtypes remain available. Small domestic repair kits
+do not imply a D&D tool proficiency. Weapons, armour, proficiency tools and healing potions
+are not supported converter types in this build.
+
+Supported `consumable` subtypes are `trinket` and `food`. Each requires `mechanics.use` with
+`name`, `mode` (`consume` or `reusable`), `activation` (`action` or `special`) and a clear
+`condition`. Food must consume. The converter creates one native utility activity; it has no
+spell-slot consumption, attack, healing roll or active effects.
+
+- **Consume:** one use per sale unit, no recovery, native `autoDestroy: true`. The activity
+  consumes one owning Item use with a blank target, which remains valid after actor import.
+  D&D5e removes one quantity from the stack, or the Item when its last quantity is spent.
+  Torches and candles are marked spent after burning out. Oil is expended when transferred or
+  otherwise used; ink and charcoal are marked spent after their full bottle/bag is exhausted.
+- **Reusable:** no limited uses, no consumption targets and `autoDestroy: false`. Lighting a
+  lamp or anchoring with a climber's kit does not remove the equipment. Externally supplied
+  oil or candles must be tracked separately.
+
+These actions operate on a player's explicitly used inventory copy. The compendium builder
+still never deletes Items or alters actor inventories. Partial consumption, retained empty
+packaging, transferred fuel and its carried weight need manual bookkeeping. Do not count one
+fuel unit twice after transferring it. Resting does not refill spent supplies.
+
+`mechanics.light`, when present, requires `brightFeet`, `dimFeet`, `shape` (`radius` or `cone`),
+`durationHours` and `fuel` (`self`, `candle` or `oil`). **Dim distance is total reach** from the
+light, not the additional dim band: a lamp is 15 ft bright plus 30 ft dim, encoded as 15/45.
+Positive durations and compatible consumption modes are validated. Light data is copied to
+module flags as reference metadata; it never changes token lighting or starts a timer. Reusable
+light activities show the duration of the stated fuel supply. Candle-lantern duration assumes
+the basic one-hour candle; other candles use their own duration. Hooded mode is handled manually.
+
+Beeswax and tallow candle sizes/durations, the candle lantern and compass are project designs.
+2014 baseline mechanics and project adjustments are distinguished in each record's source
+reference and the [General Store review](GENERAL_STORE_REVIEW.md).
 
 ## Shops, categories and Merchant Notes
 

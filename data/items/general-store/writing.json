@@ -1,0 +1,262 @@
+[
+  {
+    "id": "DT_ITEM_GS_PARCHMENT",
+    "name": "Parchment",
+    "description": "A prepared sheet of pale animal skin, scraped smooth on both sides and cut to roughly 8 by 12 inches. It accepts ink well and can be rolled for storage.\n\nThe purchase is one blank sheet, not a scroll of magic. Ink, a pen and any preparation required for spell transcription or scroll crafting are separate; this sheet alone grants no such capability.",
+    "saleUnit": "One sheet, approximately 8 by 12 inches",
+    "price": {
+      "value": 8,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 0.02,
+      "units": "lb",
+      "notes": "Two hundredths of a pound per dry sheet; bundles retain the sum of their individual weights."
+    },
+    "icon": "icons/sundries/scrolls/scroll-plain-tan.webp",
+    "category": "writing",
+    "tags": [
+      "mundane",
+      "writing",
+      "stationery",
+      "sheet"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original project design. Original wording; project prices and adjusted weights. See docs/GENERAL_STORE_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "material"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_PAPER",
+    "name": "Paper",
+    "description": "A single sheet of cream-coloured rag paper, roughly 8 by 12 inches, suitable for a letter, sketch or page of notes. Its faintly uneven edges show the marks of hand production.\n\nSold blank and unbound. Paper is easily spoiled by rain or a leaking flask; a protective case, writing implements and ink are separate purchases.",
+    "saleUnit": "One sheet, approximately 8 by 12 inches",
+    "price": {
+      "value": 4,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 0.01,
+      "units": "lb",
+      "notes": "One hundredth of a pound per dry sheet, so a large stack still contributes to encumbrance."
+    },
+    "icon": "icons/sundries/documents/paper-plain-white.webp",
+    "category": "writing",
+    "tags": [
+      "mundane",
+      "writing",
+      "stationery",
+      "sheet"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "core",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original project design. Original wording; project prices and adjusted weights. See docs/GENERAL_STORE_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "material"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_INK",
+    "name": "Ink",
+    "description": "A small stoppered bottle of dark writing ink, holding 1 US fluid ounce. A few drops provide for ordinary notes or correspondence; the amount used depends on the writing surface and hand.\n\nThe listed weight includes the ink and bottle. Track partial use manually. Use 'Mark one ink bottle empty' only when the entire bottle has been spent; it removes one complete purchase from inventory. An empty bottle retained afterward must be recorded separately. This is ordinary ink, without magical or forgery benefits.",
+    "saleUnit": "One stoppered bottle containing 1 US fluid ounce of ink",
+    "price": {
+      "value": 2,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 0.1,
+      "units": "lb",
+      "notes": "One tenth of a pound for the filled small bottle, including roughly 0.065 lb of ink and its lightweight vessel."
+    },
+    "icon": "icons/consumables/potions/potion-bottle-labeled-medicine-capped-red-black.webp",
+    "category": "writing",
+    "tags": [
+      "mundane",
+      "writing",
+      "stationery",
+      "ink",
+      "consumable"
+    ],
+    "shops": [
+      "general-store",
+      "alchemist"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original project design. Original wording; project prices and adjusted weights. See docs/GENERAL_STORE_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "trinket",
+      "use": {
+        "name": "Mark one ink bottle empty",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after all ink in one bottle has been spent; this removes one whole sale unit."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_INK_PEN",
+    "name": "Ink Pen",
+    "description": "A sturdy quill trimmed to a fine nib for writing with bottled ink. It is a simple everyday implement for letters, accounts and travel notes.\n\nInk and a writing surface are not included. The nib may need occasional trimming with a suitable small blade. The pen grants no special ability to copy handwriting or create magical writings.",
+    "saleUnit": "One cut quill pen",
+    "price": {
+      "value": 2,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 0.01,
+      "units": "lb",
+      "notes": "One hundredth of a pound for a single cut quill, keeping bulk purchases visible to encumbrance."
+    },
+    "icon": "icons/tools/scribal/pen-steel-grey-brown.webp",
+    "category": "writing",
+    "tags": [
+      "mundane",
+      "writing",
+      "stationery",
+      "quill"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "core",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original project design. Original wording; project prices and adjusted weights. See docs/GENERAL_STORE_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_CHALK",
+    "name": "Chalk",
+    "description": "A short stick of soft white chalk for marking stone, timber or a reusable writing board. It is useful for tally marks, directions and temporary labels.\n\nChalk marks can rub away or wash off and are not reliable permanent trail signs. Track wear manually; no fixed number of marks or automatic trail-finding bonus is attached to the item.",
+    "saleUnit": "One stick of white chalk",
+    "price": {
+      "value": 1,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 0.02,
+      "units": "lb",
+      "notes": "Two hundredths of a pound for one small chalk stick."
+    },
+    "icon": "modules/devils-table/assets/icons/chalk.svg",
+    "category": "writing",
+    "tags": [
+      "mundane",
+      "writing",
+      "marking",
+      "chalk"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "core",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original project design. Original wording; project prices and adjusted weights. See docs/GENERAL_STORE_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "material"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_WAX",
+    "name": "Wax",
+    "description": "A small red bar of sealing wax for closing folded letters or impressing a simple seal. Gentle heat softens the end so a little wax can be dripped onto the chosen surface.\n\nA bar is usually enough for about ten modest seals, depending on their size; track actual use manually. A heat source and stamp are separate. This wax is not a candle and does not establish the authenticity of a letter by itself.",
+    "saleUnit": "One small bar of sealing wax",
+    "price": {
+      "value": 4,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 0.05,
+      "units": "lb",
+      "notes": "One twentieth of a pound for the small wax bar; the approximate seal count is a project guideline."
+    },
+    "icon": "icons/sundries/lights/candle-unlit-red.webp",
+    "category": "writing",
+    "tags": [
+      "mundane",
+      "writing",
+      "sealing",
+      "wax"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "core",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original project design. Original wording; project prices and adjusted weights. See docs/GENERAL_STORE_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "material"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_SEALING_STAMP",
+    "name": "Sealing Stamp",
+    "description": "A small brass seal face mounted on a wooden handle. Its plain geometric mark leaves a clear impression in softened sealing wax.\n\nThe listed price covers a common stock design. Personal engraving, copied heraldry and official insignia require separate arrangements with a craftsperson. The stamp includes no wax and grants no automatic success at impersonation or forgery.",
+    "saleUnit": "One brass-faced stamp with a simple geometric mark",
+    "price": {
+      "value": 7,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 0.2,
+      "units": "lb",
+      "notes": "One fifth of a pound for the brass face and short wooden handle."
+    },
+    "icon": "modules/devils-table/assets/icons/sealing-stamp.svg",
+    "category": "writing",
+    "tags": [
+      "mundane",
+      "writing",
+      "sealing",
+      "brass"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original project design. Original wording; project prices and adjusted weights. See docs/GENERAL_STORE_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  }
+]

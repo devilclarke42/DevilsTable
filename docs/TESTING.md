@@ -9,6 +9,10 @@ lock restoration, partial-write recovery, permission guards and a synthetic 5,00
 Containers coverage adds all eight category plans, all five Merchant Notes definitions, pricing
 boundaries, native capacities and US liquid conversions, metadata isolation, empty-category builds,
 full-catalogue validation before filtered writes and stable shared identities across shop builds.
+The full General Store adds exact curated-category coverage, sale-unit preservation, six more
+native vessels, strict consumable/light validation, stable utility activity IDs, owning-item
+consumption targets, reusable actions and a simulated upgrade from 13 to 69 without rewriting
+the original Items. All 133 automated tests pass for alpha.4.
 Read-back regressions simulate equivalent HTML entity/break-tag serialization, verify stable
 reruns and require real price/weight/capacity/identity drift to remain detectable. Mismatch details
 are checked for missing Items, bounded output, saved reports and failure during lock restoration.
@@ -28,15 +32,23 @@ Use a backed-up/disposable world. Do not mark the manifest `verified` until resu
 | Forge custom-package import | Module appears with the expected title/version | Pending |
 | Enable on V14 / D&D5e 5.3.3 | No module-origin console errors | Pending |
 | GM settings menu | Builder opens; report is legible in light/dark themes | Pending |
-| Shop/category controls | All eight General Store categories appear; only Containers has authored items | Pending |
+| Shop/category controls | Eight categories with counts 13 / 12 / 6 / 11 / 7 / 9 / 6 / 5 | Pending for alpha.4 |
 | Merchant Notes | Five shop profiles display the three stock tiers; no stock notes in Item data | Pending |
-| Preview General Store / Containers | 13 creates in a fresh world; no pack or settings writes | Pending |
-| Build Containers, then rebuild | 13 native container Items, then 13 unchanged; stable UUIDs | Alpha.2 read-back failure reported; alpha.3 retest pending |
+| Preview General Store / All categories | Fresh world: 69 creates; existing complete Containers pack: 56 creates, 0 updates, 13 unchanged; no preview writes | Pending |
+| Build Containers, then rebuild | 13 native container Items, then 13 unchanged; stable UUIDs | User reported alpha.3 fix worked; full test details unavailable |
+| Build all categories, then rebuild | 69 Items, then 69 unchanged; original Containers UUIDs retained | Pending |
 | Container sheets | Correct names, descriptions, icons, price, empty mass and capacities | Pending |
 | Contained-item encumbrance | Added contents contribute mass once; empty shell remains after contents are removed | Pending |
 | Waterskin | Empty 0.5 lb; separately tracked 4 lb water gives 4.5 lb total | Pending |
-| Empty planned category | Zero selected; no new pack or document deletion | Pending |
-| Shared shop build | Alchemist selects Bottle, Flask and Ceramic Jar; rebuilding creates no duplicates | Pending |
+| Category-only build | Selected category changes; other categories remain untouched | Pending |
+| Shared shop build | Alchemist selects Bottle, Flask, Ceramic Jar, Lamp Oil, Charcoal and Ink; no duplicates | Pending |
+| New item sheets and icons | All 56 new descriptions, sale units, prices and weights are correct; all 15 SVGs render | Pending |
+| New native vessels | Pot, kettle, cup, bowl, wash bucket and feed bag count empty weight plus contents once | Pending |
+| Actor import and use | Import a consumable stack of 3; completed-use action leaves 2, then 1, then removes the final unit; no stale compendium target | Pending |
+| Candle/torch timing | Lighting does not auto-remove the item; use its completed-burn action only when spent | Pending |
+| Reusable activities | Lamp/lantern/climbing-kit action leaves quantity unchanged and spends no spell slot | Pending |
+| Rest and consumables | Spent quantities do not reappear after a short/long rest | Pending |
+| Light reference metadata | Lamp 15/45 ft total reach, hooded 30/60, bullseye 60/120 cone; manual token setup and fuel tracking | Pending |
 | Original pack lock state | Restored for locked and unlocked packs; newly created pack ends locked | Pending |
 | Player permissions | No builder menu; direct write API denied | Pending |
 | Wrong target version | Build blocked with an actionable error | Pending |
@@ -50,14 +62,18 @@ simulation reproduced false mismatches for Backpack and Waterskin when an HTML s
 `&#39;` to an apostrophe. This establishes a comparison bug, not the complete cause of the live
 failure. Alpha.3 fixes that case and supplies detailed reports for any remaining differences.
 
-Retest the existing pack after installing alpha.3. Do not delete or manually repair generated
-Items. Preview/build should either recognise already saved Items or repair missing/changed ones
-under their original identities. If it still fails, record the full item/field report and module
-version before making another change. No successful live retest is claimed here.
+Following the alpha.3 fix, the user replied, "That worked great," and authorised the seven
+remaining categories. This records a successful user-reported recovery; no exact Foundry build,
+browser, enabled-module list or detailed acceptance results were supplied. It is not evidence
+that every check above, particularly alpha.4's new activities, has passed.
+
+Keep the existing pack when installing alpha.4. Preview/build should recognise already saved
+Items and add the newly authored stock under their permanent identities. If verification fails,
+record the full item/field report and module version before making another change.
 
 ## Recovery and upgrade checks — disposable development copy only
 
-The packaged Containers catalogue now exercises real Item writes directly. Additional destructive
+The packaged General Store catalogue now exercises real Item writes directly. Additional destructive
 or source-editing scenarios belong in an isolated development checkout and disposable world:
 
 1. Rename Bottle in source and repackage: one update, same UUID. Never change its permanent ID.

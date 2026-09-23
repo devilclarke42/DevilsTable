@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title">
+  <title id="title">Sewing needle</title>
+  <rect width="256" height="256" rx="28" fill="#27211e"/>
+  <rect x="8" y="8" width="240" height="240" rx="22" fill="none" stroke="#69543a" stroke-width="4"/>
+  <g fill="none" stroke="#e2c89a" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <path stroke="#8dbaaa" stroke-width="10" d="M78 78C32 43 21 93 62 106s48-38 99-29 61 68 26 69"/><path fill="#c5d2d4" d="m187 39-24-10L44 218 188 66q10-19-1-27z"/><path stroke="#354148" stroke-width="8" d="m173 46-13 21"/>
+  </g>
+</svg>
