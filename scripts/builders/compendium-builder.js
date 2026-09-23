@@ -5,6 +5,7 @@ import { validateCatalogue } from "../validation/catalogue-validator.js";
 import { catalogueEntryToItem } from "./item-factory.js";
 import { planBuild } from "./build-plan.js";
 import { createFoundryAdapter } from "./foundry-adapter.js";
+import { readBackError } from "./generated-fields.js";
 
 /** One service instance is shared by the UI and public API, preventing local overlap. */
 export function createBuilder({ load = loadCatalogue, adapter = null, now = () => new Date().toISOString() } = {}) {
@@ -68,7 +69,9 @@ export function createBuilder({ load = loadCatalogue, adapter = null, now = () =
       }
       const actual = await io.readPack(pack);
       const verification = planBuild(documents, actual);
-      if (verification.create.length || verification.update.length) throw new Error("Read-back verification failed; some generated fields do not match the source.");
+      if (verification.create.length || verification.update.length) {
+        throw readBackError([...verification.create, ...verification.update], actual);
+      }
       progress("Build verified.");
       return summary;
     } catch (error) {
@@ -77,6 +80,7 @@ export function createBuilder({ load = loadCatalogue, adapter = null, now = () =
         error.message += " The build may be partial; no items were deleted. Correct the error and rerun to converge.";
         summary.status = "failed";
         summary.error = error.message;
+        if (error.details) summary.details = error.details;
       }
       throw error;
     } finally {
@@ -99,7 +103,9 @@ export function createBuilder({ load = loadCatalogue, adapter = null, now = () =
       } finally { busy = false; }
       if (cleanupErrors.length) {
         const causes = [failure, ...cleanupErrors].filter(Boolean);
-        throw new AggregateError(causes, causes.map(error => error.message).join("\n"));
+        const error = new AggregateError(causes, causes.map(error => error.message).join("\n"));
+        if (failure?.details) error.details = failure.details;
+        throw error;
       }
     }
   };

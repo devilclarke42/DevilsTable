@@ -38,6 +38,10 @@
 12. **Honest container weights.** Empty mass is copied exactly; contents contribute their normal
     weight. Native capacities use pounds and cubic feet, with a small explicit US liquid-volume
     conversion. Volume limits, locks and liquid consumption are not newly automated mechanics.
+13. **Saved description equivalence.** Foundry sanitizes HTML on the server, beyond client model
+    validation. Compare only equivalent quote entities and break-tag spellings in description
+    fields; do not strip HTML or relax other generated fields. Remaining differences produce
+    bounded source-ID/field diagnostics using the same comparison rules as preview and rebuild.
 
 ## Build sequence
 
@@ -75,6 +79,8 @@ const result = await api.rebuildCompendiums({ dryRun: false });
 `rebuildCompendiums` returns a report with planned `create`/`update`, `unchanged`, `preserved`,
 `written`, target pack, selected `scope`, status, time and warnings. It throws on failure. Validation errors carry
 an additional `details` array. `onProgress(message)` is optional and does not control persistence.
+Read-back failures also carry `details` with source IDs, field paths and shortened expected/saved
+values. These details are kept in the last-build summary even if lock cleanup also fails.
 
 Omitting `shopId`/`categoryId` (or using `null`) includes all authored entries. Unknown filters fail
 before writes. Filtered builds preserve Items outside the selection; shared shop tags never create
@@ -89,6 +95,7 @@ The API is framework-versioned but not yet a stable public integration contract.
 - [V14 ApplicationV2](https://foundryvtt.com/api/v14/classes/foundry.applications.api.ApplicationV2.html)
 - [V14 compendium API](https://foundryvtt.com/api/v14/classes/foundry.documents.collections.CompendiumCollection.html)
 - [V14 settings](https://foundryvtt.com/api/v14/classes/foundry.helpers.ClientSettings.html)
+- [V14 HTMLField server sanitization](https://foundryvtt.com/api/v14/classes/foundry.data.fields.HTMLField.html)
 - [D&D5e 5.3.3 physical item fields](https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/module/data/item/templates/physical-item.mjs)
 - [D&D5e 5.3.3 source fields](https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/module/data/shared/source-field.mjs)
 - [D&D5e 5.3.3 loot model](https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/module/data/item/loot.mjs)

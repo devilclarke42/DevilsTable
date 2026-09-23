@@ -9,6 +9,9 @@ lock restoration, partial-write recovery, permission guards and a synthetic 5,00
 Containers coverage adds all eight category plans, all five Merchant Notes definitions, pricing
 boundaries, native capacities and US liquid conversions, metadata isolation, empty-category builds,
 full-catalogue validation before filtered writes and stable shared identities across shop builds.
+Read-back regressions simulate equivalent HTML entity/break-tag serialization, verify stable
+reruns and require real price/weight/capacity/identity drift to remain detectable. Mismatch details
+are checked for missing Items, bounded output, saved reports and failure during lock restoration.
 Foundry globals are injected/mocked where needed. These tests do **not** execute the proprietary
 Foundry server or prove Forge compatibility.
 
@@ -28,7 +31,7 @@ Use a backed-up/disposable world. Do not mark the manifest `verified` until resu
 | Shop/category controls | All eight General Store categories appear; only Containers has authored items | Pending |
 | Merchant Notes | Five shop profiles display the three stock tiers; no stock notes in Item data | Pending |
 | Preview General Store / Containers | 13 creates in a fresh world; no pack or settings writes | Pending |
-| Build Containers, then rebuild | 13 native container Items, then 13 unchanged; stable UUIDs | Pending |
+| Build Containers, then rebuild | 13 native container Items, then 13 unchanged; stable UUIDs | Alpha.2 read-back failure reported; alpha.3 retest pending |
 | Container sheets | Correct names, descriptions, icons, price, empty mass and capacities | Pending |
 | Contained-item encumbrance | Added contents contribute mass once; empty shell remains after contents are removed | Pending |
 | Waterskin | Empty 0.5 lb; separately tracked 4 lb water gives 4.5 lb total | Pending |
@@ -38,6 +41,19 @@ Use a backed-up/disposable world. Do not mark the manifest `verified` until resu
 | Player permissions | No builder menu; direct write API denied | Pending |
 | Wrong target version | Build blocked with an actionable error | Pending |
 | Reload world | Settings persist; no automatic pack builds | Pending |
+
+### Reported alpha.2 failure
+
+The user reported: "Read-back verification failed; some generated fields do not match the source."
+The original report did not identify the Item or field. Source inspection and an automated
+simulation reproduced false mismatches for Backpack and Waterskin when an HTML save decoded
+`&#39;` to an apostrophe. This establishes a comparison bug, not the complete cause of the live
+failure. Alpha.3 fixes that case and supplies detailed reports for any remaining differences.
+
+Retest the existing pack after installing alpha.3. Do not delete or manually repair generated
+Items. Preview/build should either recognise already saved Items or repair missing/changed ones
+under their original identities. If it still fails, record the full item/field report and module
+version before making another change. No successful live retest is claimed here.
 
 ## Recovery and upgrade checks — disposable development copy only
 

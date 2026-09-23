@@ -48,6 +48,7 @@ runtime modules were extended in place. Generated data is not included in this i
 | `scripts/builders/item-factory.js` | Pure D&D5e loot/container conversion, escaped description, exact empty weight and item provenance flags. |
 | `scripts/builders/container-factory.js` | Native container fields, source capacities mapped to pounds/cubic feet, ordinary contents encumbrance. |
 | `scripts/builders/build-plan.js` | Read-only conflict detection and create/update/unchanged/preserved plan. No deletions. |
+| `scripts/builders/generated-fields.js` | Shared comparison of owned fields, narrow HTML serialization equivalence and bounded read-back diagnostics. |
 | `scripts/builders/foundry-adapter.js` | Foundry-specific permission/version checks, model preflight, pack operations and saved build record. |
 | `scripts/builders/compendium-builder.js` | Orchestrates validation through verification, batched writes, local overlap guard and lock/error cleanup. |
 | `scripts/apps/compendium-builder-app.js` | ApplicationV2 GM interface, shop/category selection, stock guidance, confirmation, progress and reports. |
@@ -68,6 +69,7 @@ runtime modules were extended in place. Generated data is not included in this i
 | `tests/adapter.test.js` | Checks Foundry adapter boundary calls and guards with mocked globals. Not a live runtime test. |
 | `tests/startup.test.js` | Imports the runtime with mocked globals and checks hooks, V2 menu registration, API exposure and GM access. |
 | `tests/containers.test.js` | Curated category completeness, shop notes isolation, prices, container capacities, filtered reconciliation and shared identities. |
+| `tests/read-back.test.js` | Simulated HTML save/rebuild regressions, strict non-HTML fields, mismatch diagnostics and cleanup error preservation. |
 
 ## Documentation
 

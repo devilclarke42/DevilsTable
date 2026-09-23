@@ -1,6 +1,6 @@
 # General Store: Containers review
 
-Build: **0.2.0-alpha.2**. Exactly 13 authored items; all other General Store categories remain
+Build: **0.2.0-alpha.3**, with the same content as alpha.2. Exactly 13 authored items; all other General Store categories remain
 plans. The canonical records are in [containers.json](../data/items/general-store/containers.json).
 These permanent IDs are reserved and must not be renamed, even if names or balance change.
 

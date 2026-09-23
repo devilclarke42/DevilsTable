@@ -1,11 +1,6 @@
 import { FLAG_SCOPE, MODULE_ID } from "../constants.js";
-
-/** Compare only builder-controlled fields; preserve unrelated flags, folders and metadata. */
-export function matchesGenerated(actual, expected) {
-  if (Array.isArray(expected)) return Array.isArray(actual) && actual.length === expected.length && expected.every((v, i) => matchesGenerated(actual[i], v));
-  if (expected && typeof expected === "object") return actual != null && Object.entries(expected).every(([k, v]) => matchesGenerated(actual[k], v));
-  return actual === expected;
-}
+import { matchesGenerated } from "./generated-fields.js";
+export { matchesGenerated } from "./generated-fields.js";
 
 /** Read-only plan. Conflicts abort before any pack unlock or document write. No deletes. */
 export function planBuild(documents, existing) {

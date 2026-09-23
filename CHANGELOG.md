@@ -3,6 +3,29 @@
 All significant changes are documented here. Versions in this file describe repository builds;
 they do not imply a public GitHub Release exists.
 
+## 0.2.0-alpha.3 — 2026-09-23 — Read-back comparison fix
+
+### Fixed
+
+- Description comparison now accepts equivalent apostrophe/quotation-mark HTML entities and
+  `<br>` serialization. The old literal comparison produced false updates for Backpack and
+  Waterskin when simulating a server save that decoded apostrophe entities.
+- Preview, build reconciliation and read-back verification share the same narrow comparison.
+  Prices, weights, capacities, IDs, metadata, description text and other markup stay strict.
+- Genuine verification failures now identify source IDs, field paths and expected/saved values,
+  with bounded output. The saved build record and cleanup errors retain these details.
+
+### Validation and scope
+
+- Added regressions for equivalent HTML saves, idempotent reruns, real field drift, missing Items,
+  bounded reports and lock-restoration failures. The original tests used exact-copy persistence
+  doubles and did not model server-side HTML serialization.
+- All 13 source records, permanent IDs, economics and category scope are unchanged.
+- Alpha.2's user-reported live read-back failure is recorded. The exact live field was not included
+  in that report; this patch fixes a reproduced comparison bug and makes any other cause visible.
+- Live Foundry/Forge retesting remains pending. ZIP-only installation continues; no hosted manifest
+  or public release was created.
+
 ## 0.2.0-alpha.2 — 2026-09-22 — General Store / Containers review
 
 ### Added

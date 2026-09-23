@@ -6,11 +6,15 @@ Foundry compendiums are generated from it and must never be edited as source dat
 
 ## Current status
 
-General Store / Containers review build, `0.2.0-alpha.2`. The catalogue contains **13 authored
+General Store / Containers review build, `0.2.0-alpha.3`. The catalogue contains **13 authored
 Containers items**. All eight General Store categories are defined; the other seven contain
 planning lists only. Development stops here for content review. See the
 [Containers review table](docs/CONTAINERS_REVIEW.md) for every price, empty weight and capacity.
 Automated tests also use a synthetic parcel that is excluded from the module ZIP.
+
+Alpha.3 fixes false read-back failures caused by equivalent HTML quote entities/break tags and
+adds item/field details for genuine mismatches. The 13 source items and their IDs are unchanged.
+The reported alpha.2 failure still requires an in-world retest with this build.
 
 The target is Foundry V14 and D&D5e **5.3.3**, with the **2014 rules** baseline and
 author-supplied adjusted weights for Variant Encumbrance. No world encumbrance settings
@@ -41,7 +45,7 @@ future work. Availability does not automatically include or exclude an item from
 1. Obtain the packaged ZIP from the successful **Validate and package** GitHub Actions run
    (artifact: `devils-table-framework`), or build it using the development commands below.
    Downloading an Actions artifact may wrap the module ZIP in another ZIP: extract the artifact
-   first and select `devils-table-v0.2.0-alpha.2.zip` for import.
+   first and select `devils-table-v0.2.0-alpha.3.zip` for import.
 2. Back up your test world. In The Forge's Import Wizard, import that module ZIP as a custom package.
    See the [Forge custom-package guide](https://forums.forge-vtt.com/t/how-to-upload-a-modified-version-of-a-module-system/10510).
 3. In a V14 / D&D5e 5.3.3 test world, enable **Devil's Table: Goods & Provisions** and reload.
@@ -57,6 +61,16 @@ The archive contains exactly one `devils-table/module.json`, alongside its runti
 Do not upload the repository's source-code ZIP as though it were a packaged release.
 No install-manifest URL or public release asset is advertised yet: those are added only after
 the live acceptance test and an actual versioned release exist.
+
+### Recovering from the alpha.2 read-back error
+
+Keep the existing generated compendium. Import the updated module ZIP using the same Forge
+custom-package method, restart/reload the test world and confirm the module shows `0.2.0-alpha.3`.
+Run **Village General Store → Containers → Validate / Preview**, then **Build / Rebuild**.
+If all 13 Items were saved, equivalent description formatting should now report 13 unchanged.
+If any are missing or genuinely different, the normal rebuild creates/updates them with their
+existing permanent identities. If verification still fails, copy the full builder report: it now
+includes source IDs, field paths and shortened expected/saved values. Do not delete the pack.
 
 ## Safe rebuild contract
 
