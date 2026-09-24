@@ -145,6 +145,27 @@ CI runs those checks on pushes and pull requests, checks that permanent IDs were
 from either ledger, and uploads a testable ZIP. It does not publish releases or deploy anything.
 Generated ZIPs and Foundry compendiums are not committed.
 
+## Development standards
+
+The documents below are the official standards for future development. They distinguish current
+validated behaviour from editorial requirements and planned features. Start with the Content Standard
+before authoring an item; use the release process before distributing a candidate.
+
+| Standard | Purpose |
+| --- | --- |
+| [Content Standard](docs/CONTENT_STANDARD.md) | Permanent IDs, writing, sale units, fields, categories, tags and validation |
+| [Price Guide](docs/PRICE_GUIDE.md) | Copper/silver economy, price bands and coherent purchase units |
+| [Weight Guide](docs/WEIGHT_GUIDE.md) | Variant Encumbrance, adjusted pounds, empty/full goods and capacities |
+| [Merchant Standard](docs/MERCHANT_STANDARD.md) | Shared goods, Merchant Notes, availability, quantities and player experience |
+| [Icon Standard](docs/ICON_STANDARD.md) | Shared assets, new 256×256 WebP artwork, consistency and provenance |
+| [Design Decisions](docs/DESIGN_DECISIONS.md) | Accepted project decisions, reasons and consequences |
+| [Release Process](docs/RELEASE_PROCESS.md) | Validation, world builders, upgrade checks, versioning and ZIP packaging |
+| [Milestone Roadmap](docs/ROADMAP.md) | Planned releases from General Store to 1.0 Stable Release |
+| [Milestone Changelog](docs/CHANGELOG.md) | Keep a Changelog history and unreleased development |
+
+The root changelog and roadmap retain detailed alpha-build history and implementation checklists.
+The corresponding documents under `docs/` govern milestone history and release scope.
+
 ## Source contract
 
 Every item requires `id`, `name`, `description`, `price`, `weight`, `icon`, `category`,
@@ -156,7 +177,8 @@ Stock policy lives in `data/stock.json`, weighted quantity profiles in `data/sto
 table identities are reserved separately in
 `data/table-id-ledger.json`. Merchant Notes remain private builder guidance.
 
-See [the authoring contract](docs/SOURCE_DATA.md), [architecture and API](docs/ARCHITECTURE.md),
+See [the Content Standard](docs/CONTENT_STANDARD.md), [the schema contract](docs/SOURCE_DATA.md),
+[architecture and API](docs/ARCHITECTURE.md),
 [the complete file inventory](docs/FILE_MAP.md), [the acceptance checklist](docs/TESTING.md),
 [CHANGELOG](CHANGELOG.md) and [ROADMAP](ROADMAP.md).
 

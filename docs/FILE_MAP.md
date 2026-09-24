@@ -1,6 +1,7 @@
 # Complete repository file map
 
-This inventory covers the framework, 69-item General Store and generated stock RollTable workflow.
+This inventory covers the framework, 69-item General Store, stock RollTable workflow and official
+development standards.
 Existing modules were extended in place, with separate table conversion, persistence and UI helpers.
 Generated compendiums and ZIPs are not included in this inventory.
 
@@ -13,8 +14,8 @@ Generated compendiums and ZIPs are not included in this inventory.
 | `.gitignore` | Excludes dependencies, generated ZIPs and build output from commits. |
 | `.github/workflows/validate.yml` | Runs checks/tests, enforces append-only ID history and uploads a module ZIP. Read-only repository permissions; pinned actions; no release publishing. |
 | `README.md` | Project status, install/build instructions, safety contract and documentation entry point. |
-| `CHANGELOG.md` | Exact Sprint 2 additions and exclusions. |
-| `ROADMAP.md` | Completion gates, remaining live QA and future content/system work. |
+| `CHANGELOG.md` | Detailed alpha-build history and documentation changes; milestone history lives under `docs/`. |
+| `ROADMAP.md` | Implementation checklists and remaining live QA; versioned milestones live under `docs/`. |
 
 ## Canonical data and schemas
 
@@ -107,6 +108,15 @@ Generated compendiums and ZIPs are not included in this inventory.
 
 | File | Responsibility |
 | --- | --- |
+| `docs/CONTENT_STANDARD.md` | Official item authoring standard: permanent IDs, naming, descriptions, sale units, fields, categories, tags, shops and validation. |
+| `docs/PRICE_GUIDE.md` | Copper/silver economy, denomination bands, purchase-unit comparisons and stock-band effects. |
+| `docs/WEIGHT_GUIDE.md` | Variant Encumbrance rationale, adjusted weights, official comparisons, contents and capacity conventions. |
+| `docs/MERCHANT_STANDARD.md` | Merchant experience, shared products, Merchant Notes, frequency/context definitions and current stock/quantity behaviour. |
+| `docs/ICON_STANDARD.md` | Shared icon policy, new 256×256 WebP standards, legacy compatibility, deduplication and provenance. |
+| `docs/DESIGN_DECISIONS.md` | Durable accepted decisions with their rationale, consequences and migration boundaries. |
+| `docs/RELEASE_PROCESS.md` | Validation, builders, compendiums, RollTables, upgrade acceptance, versioning, changelogs and ZIP/publication gates. |
+| `docs/ROADMAP.md` | Official 0.2.0–1.0 milestones, current status and explicit acceptance criteria. |
+| `docs/CHANGELOG.md` | Official Keep a Changelog milestone/release history, including honest foundation and in-development status. |
 | `docs/ARCHITECTURE.md` | Decisions, build flow, API contract, limitations and primary technical references. |
 | `docs/SOURCE_DATA.md` | Authoring fields, permanent-ID policy, provenance and future content-review workflow. |
 | `docs/TESTING.md` | Automated scope and pending live Foundry/Forge acceptance checklist. |

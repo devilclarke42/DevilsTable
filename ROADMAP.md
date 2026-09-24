@@ -1,5 +1,19 @@
 # Roadmap
 
+This is the detailed implementation and acceptance checklist. The official versioned milestones
+and release outcomes are defined in [docs/ROADMAP.md](docs/ROADMAP.md).
+
+## Documentation Foundation
+
+- [x] Publish the nine complete development standards under `docs/`.
+- [x] Document permanent identities, content quality, copper/silver pricing and adjusted weights.
+- [x] Define merchant frequency/context, quantity conventions, shared icons and release practice.
+- [x] Record accepted design decisions and the 0.2.0–1.0 milestone plan.
+- [x] Preserve alpha-build history and distinguish implemented behaviour from future requirements.
+
+The documentation sprint changes Markdown only; weighted quantities and compact tables were
+implemented and verified in the preceding stock feature change.
+
 ## Sprint 2 — Framework implementation
 
 - [x] Module structure, manifest, documentation, settings and logging.

@@ -1,5 +1,9 @@
 # Canonical source-data contract
 
+The [Content Standard](CONTENT_STANDARD.md) governs all future authoring. This document describes
+the current schema, converter and source-file contract, including compatibility exceptions for
+existing content. Editorial requirements may be stricter than current automated checks.
+
 ## Ownership
 
 Edit catalogue JSON in this repository. Do not edit generated pack data directly. A rebuild

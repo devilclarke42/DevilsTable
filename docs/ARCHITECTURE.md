@@ -1,5 +1,9 @@
 # Architecture and API
 
+The official [Design Decisions](DESIGN_DECISIONS.md) record explains the enduring project choices.
+This guide supplies their current technical implementation, API contract and operational limits.
+Use the [development standards](../README.md#development-standards) when proposing changes.
+
 ## Decisions
 
 1. **Repository first.** Source JSON and implementation live here. No generated Foundry database

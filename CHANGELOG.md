@@ -1,7 +1,24 @@
 # Changelog
 
-All significant changes are documented here. Versions in this file describe repository builds;
-they do not imply a public GitHub Release exists.
+This file retains detailed repository build history. The official milestone/release record is
+[docs/CHANGELOG.md](docs/CHANGELOG.md). Versions here do not imply a public GitHub Release exists.
+
+## Unreleased — Documentation Foundation
+
+### Added
+
+- Nine complete development standards under `docs/`: Content Standard, Price Guide, Weight Guide,
+  Merchant Standard, Icon Standard, Design Decisions, Release Process, Roadmap and Changelog.
+- Concrete authoring rules and current-catalogue examples, merchant frequency/context definitions,
+  shared 256×256 WebP guidance, release gates and milestone outcomes from 0.2.0 through 1.0.
+- Clear distinctions between editorial requirements, current automated checks and planned features.
+
+### Changed
+
+- Linked the standards from the README, technical guides and complete file inventory, while
+  preserving existing alpha history and implementation checklists.
+- This sprint changes Markdown only. Runtime code, data, schemas, tests and version numbers remain
+  at the preceding stock feature commit; the updated ZIP includes the documentation.
 
 ## 0.2.0-alpha.6 — 2026-09-24 — Weighted quantities and compact stock tables
 
