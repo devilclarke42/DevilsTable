@@ -16,12 +16,15 @@ the original Items. The alpha.4 baseline had 133 passing automated tests.
 Read-back regressions simulate equivalent HTML entity/break-tag serialization, verify stable
 reruns and require real price/weight/capacity/identity drift to remain detectable. Mismatch details
 are checked for missing Items, bounded output, saved reports and failure during lock restoration.
-Stock coverage adds all 120 reserved tables, real compendium references, Always guarantees,
+Stock coverage adds 20 active tables with all 120 IDs still reserved, real compendium references, Always guarantees,
 80/15/5 ranges, per-shop overrides, empty/exhausted tiers, duplicate-free lists, profile validation
 and Merchant Notes isolation. Persistence tests cover table previews, native model preflight,
 missing Items, result order, embedded-row changes, foreign metadata preservation, 100-row batches,
 partial failure/retry, custom-row protection, independent settings menus and permission guards.
-All 171 automated tests pass for alpha.5; the package gate validates 69 source Items and 120 tables.
+All 204 automated tests pass for alpha.6; validation reports 69 source Items and 20 active tables.
+Quantity tests exhaust all 100 percentile outcomes per tier/price rule, check complete sale units,
+category filtering and invalid distributions. Cleanup tests cover 120-to-20 upgrades, protected
+edits/references, exact approval, partial deletion/retry, read-back, locks and the shared guard.
 Foundry globals are injected/mocked where needed. These tests do **not** execute the proprietary
 Foundry server or prove Forge compatibility.
 
@@ -60,7 +63,7 @@ Use a backed-up/disposable world. Do not mark the manifest `verified` until resu
 | Wrong target version | Build blocked with an actionable error | Pending |
 | Reload world | Settings persist; no automatic pack builds | Pending |
 
-### Stock RollTables — alpha.5
+### Stock RollTables and quantities — alpha.6
 
 Use the separate **Build/Rebuild Stock RollTables → Open RollTable Builder** settings button.
 Retain the accepted Item pack; stock generation should not change its Items.
@@ -70,10 +73,10 @@ Retain the accepted Item pack; stock generation should not change its Items.
 | Upgrade from complete alpha.4 Items | Item preview reports 69 unchanged; prices, weights and UUIDs retained | Pending |
 | Separate settings button | Both builder windows open independently; table controls/report work in light/dark themes | Pending |
 | Missing Item preflight | Missing referenced Item produces an actionable source-ID error before table writes | Pending |
-| All-shop table preview | 120 creates in a fresh world; no pack, lock or settings writes | Pending |
-| All-shop table build/rebuild | 120 creates then 120 unchanged, stable parent/result IDs, new pack locked | Pending |
-| General Store filter | 36 tables: shop overview plus eight categories, four tables per set | Pending |
-| One shop/category filter | Four tables in a populated scope; other tables preserved | Pending |
+| All-shop table preview | 20 creates in a fresh world; no pack, lock or settings writes | Pending |
+| All-shop table build/rebuild | 20 creates then 20 unchanged, stable parent/result IDs, new pack locked | Pending |
+| General Store filter | Four whole-shop tables | Pending |
+| Category filter | Same four tables; stock results contain only the selected category | Pending |
 | Partial shops | Tavern/Alchemist/Blacksmith/Black Market show shared-goods-only notices and no invented products | Pending |
 | Item results and nested pools | Native references open actual generated Items; rotating results recurse into the correct pool | Pending |
 | Always native draw | Imported General Store Always table returns all 47 core goods in one draw; never Normalize | Pending |
@@ -86,6 +89,14 @@ Retain the accepted Item pack; stock generation should not change its Items.
 | Separate last-build records | Item/table summaries remain independent and survive reload | Pending |
 | Native imported copies | World-table copies draw correctly; rebuilding packs does not overwrite them | Pending |
 | Permissions and locks | Players/inactive GMs cannot build or roll; original table-pack lock restored | Pending |
+| Weighted quantities | Positive whole sale-unit counts; price/tier select the documented profile | Pending |
+| Rare quantity boundary | Quantity d100 1–95 gives one; 96–100 gives two | Pending |
+| Bundle display | Quantity 4 Pitons means four bundles of ten, with 5 sp shown per bundle | Pending |
+| Alpha.5 upgrade | 20 existing whole-shop tables unchanged; normal builds preserve 100 category tables | Pending |
+| Legacy cleanup preview/cancel | Exact proposed/protected names shown; cancelling changes no tables or lock | Pending |
+| Confirmed pristine cleanup | 100 category tables removed; 20 active tables and all Items retained | Pending |
+| Protected legacy tables | Edited fields/rows, folders, foreign flags or known incoming links prevent removal | Pending |
+| Cleanup repeat/failure | Repeat deletes nothing; interrupted cleanup relocks and requires a fresh preview | Pending |
 
 ### Reported alpha.2 failure
 
@@ -102,10 +113,11 @@ that every check above, particularly alpha.4's new activities, has passed.
 
 The user subsequently reported alpha.4 worked and said the prices and other goods looked good.
 That is catalogue acceptance and a successful build report, without detailed evidence for each
-live check. Alpha.5's new table behavior has not yet been exercised in the target environment.
+live check. The user also reported alpha.5 worked; the detailed environment/checklist was not
+supplied. Alpha.6 quantities and cleanup still require target-environment testing.
 
-Keep the existing pack when installing alpha.5. Preview/build should recognise all 69 already saved
-Items unchanged. The separate builder adds stock tables. If verification fails,
+Keep the existing pack when installing alpha.6. Preview/build should recognise all 69 already saved
+Items and the 20 whole-shop tables unchanged. If verification fails,
 record the full item/field report and module version before making another change.
 
 ## Recovery and upgrade checks — disposable development copy only

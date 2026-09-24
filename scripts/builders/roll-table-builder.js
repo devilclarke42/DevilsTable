@@ -5,6 +5,7 @@ import { createBuilder } from "./compendium-builder.js";
 import { createRollTableAdapter } from "./roll-table-adapter.js";
 import { stockTableDocuments } from "./roll-table-factory.js";
 import { planRollTables, tableReadBackError } from "./roll-table-plan.js";
+import { withStockOperation } from "./stock-operation.js";
 
 export function requireValidStock(catalogue) {
   const validation = validateStockCatalogue(catalogue);
@@ -18,7 +19,7 @@ export function requireValidStock(catalogue) {
 
 /** Reuse the existing preview/batch/verification/lock lifecycle without changing Item output. */
 export function createStockTableBuilder(options = {}) {
-  return createBuilder({
+  return withStockOperation(createBuilder({
     load: loadStockCatalogue, adapterFactory: createRollTableAdapter, collection: TABLE_PACK_COLLECTION,
     planner: planRollTables, verificationError: tableReadBackError,
     prepare(catalogue, scope) {
@@ -27,7 +28,7 @@ export function createStockTableBuilder(options = {}) {
       return { documents: stockTableDocuments(catalogue, scope), warnings };
     },
     ...options
-  });
+  }));
 }
 
 export const rebuildStockTables = createStockTableBuilder();

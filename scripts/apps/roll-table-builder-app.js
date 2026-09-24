@@ -4,6 +4,7 @@ import { shopView } from "../data/shop-catalogue.js";
 import { stockScopes } from "../data/stock-catalogue.js";
 import { requireValidStock, rebuildStockTables } from "../builders/roll-table-builder.js";
 import { rollStockList } from "../stock/stock-roller.js";
+import { cleanupLegacyStockTables } from "../builders/legacy-table-cleanup.js";
 import { escapeHtml } from "../builders/item-factory.js";
 import { logger } from "../core/logger.js";
 
@@ -21,7 +22,8 @@ export class RollTableBuilderApplication extends HandlebarsApplicationMixin(Appl
     position: { width: 760, height: "auto" },
     window: { title: "Devil's Table — Stock RollTable Builder", icon: "fa-solid fa-dice", resizable: true },
     actions: { selectShop: RollTableBuilderApplication.#selectShop, selectCategory: RollTableBuilderApplication.#selectCategory,
-      preview: RollTableBuilderApplication.#preview, build: RollTableBuilderApplication.#build, rollStock: RollTableBuilderApplication.#rollStock }
+      preview: RollTableBuilderApplication.#preview, build: RollTableBuilderApplication.#build, rollStock: RollTableBuilderApplication.#rollStock,
+      cleanup: RollTableBuilderApplication.#cleanup }
   };
   static PARTS = { body: { template: "modules/devils-table/templates/roll-table-builder.hbs", scrollable: [".dt-report"] } };
 
@@ -44,7 +46,8 @@ export class RollTableBuilderApplication extends HandlebarsApplicationMixin(Appl
     } catch (error) { this.#data = null; catalogueError = error.message; }
     return { ...await super._prepareContext(options), ...view, catalogueError, busy: this.#busy,
       blocked: this.#busy || Boolean(catalogueError), rollBlocked: this.#busy || Boolean(catalogueError) || !this.#scope.shopId,
-      report: this.#report, lastBuild: game.settings.get(MODULE_ID, "lastTableBuildSummary") || "No table builds recorded." };
+      report: this.#report, lastBuild: game.settings.get(MODULE_ID, "lastTableBuildSummary") || "No table builds recorded.",
+      lastCleanup: game.settings.get(MODULE_ID, "lastTableCleanupSummary") || "No legacy cleanup recorded." };
   }
 
   static async #selectShop(_event, target) {
@@ -62,6 +65,7 @@ export class RollTableBuilderApplication extends HandlebarsApplicationMixin(Appl
   static async #preview() { await this.#run("preview"); }
   static async #build() { await this.#run("build"); }
   static async #rollStock() { await this.#run("stock"); }
+  static async #cleanup() { await this.#run("cleanup"); }
 
   async #run(mode) {
     if (this.#busy || !game.user.isGM) return;
@@ -76,12 +80,26 @@ export class RollTableBuilderApplication extends HandlebarsApplicationMixin(Appl
         });
         if (!confirmed) return;
       }
-      if (mode === "stock") {
+      if (mode === "cleanup") {
+        const preview = await cleanupLegacyStockTables(scope);
+        this.#report = [`Legacy cleanup preview — ${preview.removable.length} removable; ${preview.preserved.length} protected.`,
+          ...preview.removable.map(table => `REMOVE: ${table.name}`),
+          ...preview.preserved.map(table => `KEEP: ${table.name} — ${table.reason}`), ...preview.warnings].join("\n");
+        await this.render();
+        if (!preview.removable.length) return;
+        const confirmed = await foundry.applications.api.DialogV2.confirm({
+          window: { title: "Remove superseded category tables?" },
+          content: `<p>Remove the ${preview.removable.length} legacy category tables listed in the builder report? The current shop tables and Items are kept. This cannot be undone by a normal rebuild.</p><p>Check saved journal, macro and other-compendium links before continuing. Keep a world backup.</p>`
+        });
+        if (!confirmed) return;
+        const result = await cleanupLegacyStockTables({ ...scope, dryRun: false, approvedIds: preview.removable.map(table => table.id) });
+        this.#report = `Legacy cleanup complete — ${result.deleted} removed; ${result.preserved.length} protected.\n${result.warnings.join("\n")}`;
+      } else if (mode === "stock") {
         const stock = await rollStockList(scope);
         this.#report = [
           `Stock list — ${stock.items.length} distinct goods; ${stock.outcomes.length} rotating attempts.`,
-          "Availability only. Choose quantities separately; no inventory or chat was changed.",
-          ...stock.items.map(item => `${item.tier.toUpperCase()}: ${item.name} — ${item.price.value} ${item.price.denomination} / ${item.saleUnit}`)
+          "Quantities count complete sale units. These are stock suggestions; no inventory or chat was changed.",
+          ...stock.items.map(item => `${item.tier.toUpperCase()}: ${item.quantity} × ${item.name} — ${item.price.value} ${item.price.denomination} each (${item.saleUnit})`)
         ].join("\n");
       } else {
         const result = await rebuildStockTables({ ...scope, dryRun: mode === "preview", onProgress: message => {

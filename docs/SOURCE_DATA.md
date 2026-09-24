@@ -136,7 +136,7 @@ existing catalogue. Stock validation runs in the browser and packaging/CI.
 | `shop` | Exactly one profile per registered shop slug. |
 | `coverage` | `complete` for the agreed authored catalogue, or `partial` to show its limitations. This is an editorial assertion, not an automatic completeness test. |
 | `draws`, `categoryDraws` | Suggested rotating attempts for a whole shop and one category; integers 1–50. |
-| `categories` | Unique registered category slugs. Include every category used by an item tagged for this shop. A whole-shop set is generated automatically. |
+| `categories` | Unique registered category slugs. Include every category used by an item tagged for this shop. These are stock filters; one whole-shop table set is generated. |
 | `overrides` | Explicit `{itemId, tier}` exceptions; `tier` is `always`, `often` or `rarely`. Each ID must be an active item tagged for this shop, with at most one override per shop. |
 
 Without an override, `core` maps to Always, `variable` to Often and `special-order` to Rarely.
@@ -144,23 +144,34 @@ An override changes only that shop's table membership. It never changes item pri
 identity or base availability. Current overrides make Lamp Oil Often at the Alchemist, Lockbox
 Often at the Blacksmith, and Lockbox/Silk Rope Often at the Black Market.
 
-Every shop/category scope generates four tables, even when a tier is empty. Empty pools carry
+Every shop generates four tables, even when a tier is empty. Category rolls filter the shared
+pools without creating category tables. Empty pools carry
 an explicit text result and rotating draws do not redirect their probability to another tier.
 Generated tables contain operational instructions and item/table UUIDs, never Merchant Notes.
 Future goods mentioned in Merchant Notes must be authored and reviewed before they can enter a pool.
 
 Reserve every generated table ID in the append-only `data/table-id-ledger.json`. The convention
-is `<profile ID>_<CATEGORY or ALL>_<ALWAYS/OFTEN/RARELY/ROTATING>`; hyphens in category slugs become
-underscores. For example, `DT_TABLE_GS_FIRE_LIGHTING_ROTATING`. Display-name and probability edits
-retain identities. Profile IDs and category slugs are now part of permanent table identity;
-changing them needs an explicit migration. Old ledger entries and inactive tables are preserved.
+is `<profile ID>_ALL_<ALWAYS/OFTEN/RARELY/ROTATING>` for current whole-shop tables. Legacy category
+IDs such as `DT_TABLE_GS_FIRE_LIGHTING_ROTATING` remain reserved; their generation has been retired.
+Display-name and probability edits retain identities. Profile IDs are permanent; changing them needs
+an explicit migration. Ordinary builds preserve inactive tables. Separate reviewed legacy cleanup
+may remove unchanged category tables, but never releases their IDs for reuse.
 The validator detects duplicate profiles, reservations and derived document-ID collisions.
 
 Result identity is derived from its permanent table ID and the item ID or tier key. Tier changes
 move an item's generated row between tables without changing the Item UUID. Rebuilds may remove
-obsolete owned rows; they never delete Items or whole tables. Custom result rows in a generated
+obsolete owned rows; normal builds never delete Items or whole tables. Custom result rows in a generated
 table block rebuilding. Keep personal tables separate and edit source policy for generated stock.
 See [Stock RollTables](STOCK_TABLES.md) for current coverage and usage.
+
+`data/stock-quantities.json` defines `schemaVersion: 1`, named `profiles` with weighted
+`{quantity, weight}` results and a complete `rules` matrix of `{tier, priceBand, profile}`.
+The schema and `quantity-validator.js` enforce positive integer outcomes, unique profiles/rules,
+100% coverage, a 100-unit bound, and non-increasing expected stock as price/scarcity rises.
+Rare profiles must produce one at least 90% of the time and never exceed two. Current Rare weights
+are 95% one and 5% two. Price bands use the existing Everyday/Common/Equipment/Specialist labels.
+Stock quantities apply to full sale units and are rolled after presence; no quantities or additional
+stock copies are written into the canonical Items or generated compendiums.
 
 ## Permanent identity
 

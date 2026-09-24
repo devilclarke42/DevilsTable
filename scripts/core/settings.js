@@ -35,7 +35,11 @@ export function registerSettings() {
   });
   game.settings.registerMenu(MODULE_ID, "stockTableBuilder", {
     name: "Build/Rebuild Stock RollTables", label: "Open RollTable Builder",
-    hint: "Generate shop and category stock RollTables from canonical JSON; roll core plus rotating stock.",
+    hint: "Generate four tables per shop; roll stock and weighted quantities with optional category filters.",
     icon: "fa-solid fa-dice", type: RollTableBuilderApplication, restricted: true
+  });
+  game.settings.register(MODULE_ID, "lastTableCleanupSummary", {
+    name: "Last legacy table cleanup", scope: "world", config: false,
+    type: new foundry.data.fields.StringField(), default: ""
   });
 }

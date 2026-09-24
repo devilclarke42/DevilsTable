@@ -4,6 +4,8 @@ import { requireValidStock } from "../builders/roll-table-builder.js";
 import { stockTableDocuments } from "../builders/roll-table-factory.js";
 import { createRollTableAdapter } from "../builders/roll-table-adapter.js";
 import { planRollTables } from "../builders/roll-table-plan.js";
+import { selectEntries } from "../data/shop-catalogue.js";
+import { rollStockQuantity } from "./stock-quantities.js";
 
 async function checkedRoll(rollDie, sides) {
   const value = await rollDie(sides);
@@ -12,11 +14,12 @@ async function checkedRoll(rollDie, sides) {
 }
 
 /** Read-only sampling of built table ranges. Exhausted tiers never promote rare goods. */
-export async function rollStockFromTables(tables, { draws, rollDie }) {
+export async function rollStockFromTables(tables, { draws, rollDie, eligibleIds = null }) {
   if (!Number.isSafeInteger(draws) || draws < 0 || draws > 50) throw new Error("Draw count must be an integer from 0 to 50.");
   const byTier = new Map(tables.map(table => [table.flags[FLAG_SCOPE].tier, table]));
   for (const tier of ["always", "often", "rarely", "rotating"]) if (!byTier.has(tier)) throw new Error(`Missing ${tier} stock table.`);
-  const rows = tier => byTier.get(tier).results.filter(row => row.flags[FLAG_SCOPE].itemId).map(row => structuredClone(row));
+  const rows = tier => byTier.get(tier).results.filter(row => row.flags[FLAG_SCOPE].itemId
+    && (!eligibleIds || eligibleIds.has(row.flags[FLAG_SCOPE].itemId))).map(row => structuredClone(row));
   const selected = rows("always").map(row => ({ row, tier: "always" }));
   const pools = { often: rows("often"), rarely: rows("rarely") };
   const seen = new Set(selected.map(({ row }) => row.flags[FLAG_SCOPE].itemId));
@@ -37,7 +40,7 @@ export async function rollStockFromTables(tables, { draws, rollDie }) {
   return { selected, outcomes };
 }
 
-/** No chat, pack updates, drawn-state writes, stock quantities or actor transfers. */
+/** Quantity suggestions are returned with the list; no chat, pack or inventory writes. */
 export async function rollStockList({ shopId = "general-store", categoryId = null, draws = null,
   load = loadStockCatalogue, adapter = null, rollDie = async sides => (await new Roll(`1d${sides}`).evaluate()).total } = {}) {
   const io = adapter ?? createRollTableAdapter();
@@ -45,7 +48,8 @@ export async function rollStockList({ shopId = "general-store", categoryId = nul
   if (!shopId) throw new Error("Select one shop before rolling stock.");
   const catalogue = await load();
   requireValidStock(catalogue);
-  const expected = stockTableDocuments(catalogue, { shopId, categoryId }).filter(table => table.flags[FLAG_SCOPE].category === (categoryId ?? "all"));
+  const eligibleIds = new Set(selectEntries(catalogue, { shopId, categoryId }).map(({ item }) => item.id));
+  const expected = stockTableDocuments(catalogue, { shopId, categoryId });
   if (expected.length !== 4) throw new Error("This shop has no authored stock category matching the selection.");
   await io.validateDocuments(expected);
   const pack = await io.getPack();
@@ -54,15 +58,20 @@ export async function rollStockList({ shopId = "general-store", categoryId = nul
   if (plan.create.length || plan.update.length) throw new Error("Build/Rebuild Stock RollTables for this selection before rolling; its tables are missing or outdated.");
   const ids = new Set(expected.map(table => table._id));
   const tables = actual.filter(table => ids.has(table._id));
-  const count = draws ?? expected[0].flags[FLAG_SCOPE].draws;
-  const rolled = await rollStockFromTables(tables, { draws: count, rollDie });
+  const profile = catalogue.stock.profiles.find(profile => profile.shop === shopId);
+  const count = draws ?? (categoryId ? profile.categoryDraws : profile.draws);
+  const rolled = await rollStockFromTables(tables, { draws: count, rollDie, eligibleIds });
   const items = new Map(catalogue.entries.map(({ item }) => [item.id, item]));
+  const stock = [];
+  // Presence is decided first; quantity dice cannot change the chosen assortment.
+  for (const { row, tier } of rolled.selected) {
+    const item = items.get(row.flags[FLAG_SCOPE].itemId);
+    stock.push({ id: item.id, name: item.name, uuid: row.documentUuid, tier,
+      price: { ...item.price }, saleUnit: item.saleUnit ?? "one empty container",
+      ...await rollStockQuantity(catalogue.quantities, item, tier, rollDie) });
+  }
   return {
     shopId, categoryId, draws: count, outcomes: rolled.outcomes,
-    items: rolled.selected.map(({ row, tier }) => {
-      const item = items.get(row.flags[FLAG_SCOPE].itemId);
-      return { id: item.id, name: item.name, uuid: row.documentUuid, tier,
-        price: { ...item.price }, saleUnit: item.saleUnit ?? "one empty container" };
-    })
+    items: stock
   };
 }

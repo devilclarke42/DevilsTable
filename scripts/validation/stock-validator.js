@@ -2,6 +2,7 @@ import { compileSchema } from "./schema-validator.js";
 import { validateCatalogue } from "./catalogue-validator.js";
 import { documentIdFor } from "../builders/document-id.js";
 import { STOCK_KINDS, stockTableId } from "../data/stock-catalogue.js";
+import { validateQuantities } from "./quantity-validator.js";
 
 /** Validate profiles and cross-file links before generating any RollTable documents. */
 export function validateStockCatalogue(catalogue) {
@@ -11,6 +12,7 @@ export function validateStockCatalogue(catalogue) {
   const result = () => ({ valid: errors.length === 0, count: base.count, errors, warnings });
   if (!base.valid) return result();
   errors.push(...compileSchema(catalogue.stockSchema)(catalogue.stock, "data/stock.json"));
+  errors.push(...validateQuantities(catalogue));
   if (errors.length) return result();
   const add = (path, message) => errors.push({ path, message });
   const { stock, tableLedger } = catalogue;
@@ -49,7 +51,7 @@ export function validateStockCatalogue(catalogue) {
       const item = items.get(entry.itemId);
       if (!item || !item.shops.includes(profile.shop)) add(`${path}.overrides`, `${entry.itemId} must be an active item tagged for this shop.`);
     }
-    for (const category of [null, ...profile.categories]) {
+    for (const category of [null]) {
       for (const kind of STOCK_KINDS) {
         const id = stockTableId(profile, category, kind);
         if (active.has(id)) add(path, `Duplicate generated table identity: ${id}.`);
@@ -67,6 +69,6 @@ export function validateStockCatalogue(catalogue) {
     hashed.set(hash, id);
   }
   const inactive = tableLedger.ids.filter(id => !active.has(id));
-  if (inactive.length) warnings.push(`${inactive.length} table IDs are inactive; their existing tables are preserved.`);
+  if (inactive.length) warnings.push(`${inactive.length} table IDs are inactive and remain reserved. Normal builds preserve existing legacy tables; use the separate cleanup preview to review removal.`);
   return result();
 }

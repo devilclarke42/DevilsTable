@@ -10,16 +10,16 @@ import { rollStockFromTables, rollStockList } from "../scripts/stock/stock-rolle
 
 const production = () => loadStockCatalogue({ readJson });
 const tierOf = table => table.flags["devils-table"].tier;
-const scopeTables = (data, shopId = "general-store", categoryId = null) => stockTableDocuments(data, { shopId, categoryId })
-  .filter(table => table.flags["devils-table"].category === (categoryId ?? "all"));
+const scopeTables = (data, shopId = "general-store", categoryId = null) => stockTableDocuments(data, { shopId, categoryId });
 const rollSequence = values => async sides => { const value = values.shift(); assert.ok(value >= 1 && value <= sides, `d${sides}: ${value}`); return value; };
 
-test("five stock profiles generate 120 reserved tables with true compendium references", async () => {
+test("five stock profiles generate only 20 tables while all 120 IDs remain reserved", async () => {
   const data = await production();
   assert.equal(validateStockCatalogue(data).valid, true);
   const tables = stockTableDocuments(data);
-  assert.equal(tables.length, 120);
-  assert.deepEqual(new Set(tables.map(table => table.flags["devils-table"].sourceId)), new Set(data.tableLedger.ids));
+  assert.equal(tables.length, 20);
+  assert.equal(data.tableLedger.ids.length, 120);
+  assert.ok(tables.every(table => data.tableLedger.ids.includes(table.flags["devils-table"].sourceId)));
   const items = new Set(data.entries.map(({ item }) => itemUuid(item.id)));
   const nested = new Set(tables.map(table => `Compendium.world.devils-table-stock-tables.RollTable.${table._id}`));
   for (const table of tables) for (const result of table.results) {
@@ -29,7 +29,7 @@ test("five stock profiles generate 120 reserved tables with true compendium refe
     assert.equal(typeof result.type, "string");
   }
   const counts = Object.fromEntries(data.stock.profiles.map(profile => [profile.shop, tables.filter(t => t.flags["devils-table"].shop === profile.shop).length]));
-  assert.deepEqual(counts, { tavern: 32, "general-store": 36, alchemist: 16, blacksmith: 20, "black-market": 16 });
+  assert.deepEqual(counts, { tavern: 4, "general-store": 4, alchemist: 4, blacksmith: 4, "black-market": 4 });
 });
 
 test("one Always draw returns every core good instead of selecting only one", async () => {
@@ -53,12 +53,10 @@ test("rotating d100 ranges preserve 80/15/5 odds and empty tiers do not promote 
     assert.deepEqual(rotating.results.map(row => row.range), [[1, 80], [81, 95], [96, 100]]);
   }
   const travel = scopeTables(data, "general-store", "travel");
-  const rotating = travel.find(table => tierOf(table) === "rotating");
-  assert.equal(rotating.results[0].type, "text");
-  assert.equal(rotating.results[1].type, "document");
-  const empty = await rollStockFromTables(travel, { draws: 3, rollDie: rollSequence([1, 80, 100]) });
+  const eligibleIds = new Set(data.entries.filter(({ item }) => item.category === "travel").map(({ item }) => item.id));
+  const empty = await rollStockFromTables(travel, { draws: 3, eligibleIds, rollDie: rollSequence([1, 80, 100]) });
   assert.equal(empty.selected.length, 3); // The three Always travel goods; no forced compass/spyglass.
-  const rare = await rollStockFromTables(travel, { draws: 1, rollDie: rollSequence([81, 1]) });
+  const rare = await rollStockFromTables(travel, { draws: 1, eligibleIds, rollDie: rollSequence([81, 1]) });
   assert.equal(rare.selected.filter(row => row.tier === "rarely").length, 1);
 });
 
@@ -96,7 +94,7 @@ test("result ordering and equivalent table HTML are harmless; altered odds and U
   const expected = stockTableDocuments(await production());
   const saved = structuredClone(expected);
   for (const table of saved) { table.results.reverse(); table.description = table.description.replaceAll("&#39;", "'"); }
-  assert.equal(planRollTables(expected, saved).unchanged, 120);
+  assert.equal(planRollTables(expected, saved).unchanged, 20);
   saved[0].results[0].documentUuid = "Compendium.world.wrong.Item.1234567890123456";
   const plan = planRollTables(expected, saved);
   assert.equal(plan.update.length, 1);
@@ -111,14 +109,15 @@ test("preview, first build, filtered rebuild and repeated all-shop build preserv
   const data = await production();
   const { adapter, state } = fakeAdapter({ hasPack: false });
   const build = createStockTableBuilder({ load: () => data, adapter });
-  assert.equal((await build()).create, 120);
+  assert.equal((await build()).create, 20);
   assert.equal(state.pack, null);
   assert.deepEqual(state.summaries, []);
   const first = await build({ dryRun: false, shopId: "general-store", categoryId: "containers" });
   assert.equal(first.create, 4);
   assert.equal(first.pack, "world.devils-table-stock-tables");
-  assert.equal((await build({ dryRun: false })).create, 116);
-  assert.equal((await build({ dryRun: false })).unchanged, 120);
+  assert.equal((await build({ dryRun: false })).create, 16);
+  assert.equal((await build({ dryRun: false })).unchanged, 20);
+  assert.equal((await build({ categoryId: "travel" })).unchanged, 20);
   assert.equal(state.pack.locked, true);
   assert.ok(state.writes.every(write => write.count <= 100));
 });
@@ -126,15 +125,15 @@ test("preview, first build, filtered rebuild and repeated all-shop build preserv
 test("partial table writes relock and converge on retry", async () => {
   const data = await production();
   const { adapter, state } = fakeAdapter({ hasPack: false });
-  state.hooks.create = () => { if (state.docs.length === 100) throw new Error("Disconnected"); };
+  state.hooks.create = docs => { state.docs.push(...structuredClone(docs.slice(0, 4))); throw new Error("Disconnected"); };
   const build = createStockTableBuilder({ load: () => data, adapter });
   await assert.rejects(build({ dryRun: false }), /partial/);
-  assert.equal(state.docs.length, 100);
+  assert.equal(state.docs.length, 4);
   assert.equal(state.pack.locked, true);
   delete state.hooks.create;
   const result = await build({ dryRun: false });
-  assert.equal(result.unchanged, 100);
-  assert.equal(result.create, 20);
+  assert.equal(result.unchanged, 4);
+  assert.equal(result.create, 16);
 });
 
 test("unmanaged result rows fail before any table is unlocked or written", async () => {
@@ -163,10 +162,11 @@ test("stock sampling is duplicate-free, keeps Always goods and does not mutate b
 test("Roll Stock uses current built tables and never writes packs, chat or inventories", async () => {
   const data = await production();
   const { adapter, state } = fakeAdapter({ existing: stockTableDocuments(data) });
-  const stock = await rollStockList({ load: () => data, adapter, draws: 1, rollDie: rollSequence([95, 1]) });
+  const stock = await rollStockList({ load: () => data, adapter, draws: 1, rollDie: rollSequence([95, 1, ...Array(48).fill(1)]) });
   assert.equal(stock.items.length, 48);
   assert.equal(stock.items.filter(item => item.tier === "rarely").length, 1);
   assert.ok(stock.items.every(item => item.uuid.startsWith("Compendium.world.devils-table-items.Item.")));
+  assert.ok(stock.items.every(item => Number.isSafeInteger(item.quantity) && item.quantity >= 1));
   assert.deepEqual(state.writes, []);
   assert.deepEqual(state.summaries, []);
   assert.deepEqual(state.configurations, []);
@@ -191,7 +191,7 @@ const invalid = {
   "fractional probabilities": data => { data.stock.rarelyChance = 1.5; },
   "unregistered category": data => { data.stock.profiles[0].categories.push("missing"); },
   "missing authored category": data => { data.stock.profiles[1].categories.pop(); },
-  "unreserved table": data => { data.tableLedger.ids.pop(); },
+  "unreserved table": data => { data.tableLedger.ids.shift(); },
   "duplicate reserved table": data => { data.tableLedger.ids.push(data.tableLedger.ids[0]); },
   "wrong-shop override": data => { data.stock.profiles[0].overrides.push({ itemId: "DT_ITEM_GS_SPYGLASS", tier: "always" }); },
   "unknown override item": data => { data.stock.profiles[0].overrides.push({ itemId: "DT_ITEM_MISSING_GOOD", tier: "often" }); },

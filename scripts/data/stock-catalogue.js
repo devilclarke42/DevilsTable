@@ -22,14 +22,16 @@ export function stockGroups(catalogue, profile, categoryId = null) {
   return groups;
 }
 
-/** Every profile has a whole-shop set and one set per explicitly registered category. */
-export function stockScopes(catalogue, { shopId = null, categoryId = null } = {}) {
+/** Four tables per shop. Categories filter stock rolls; legacy scopes exist only for cleanup. */
+export function stockScopes(catalogue, { shopId = null, categoryId = null } = {}, { legacyCategories = false } = {}) {
   selectEntries(catalogue, { shopId, categoryId }); // Reuse the public filter guards.
   const scopes = [];
   for (const profile of catalogue.stock.profiles) {
     if (shopId && profile.shop !== shopId) continue;
     const shop = catalogue.shopDefinitions.find(entry => entry.id === profile.shop);
-    for (const category of categoryId ? profile.categories.filter(id => id === categoryId) : [null, ...profile.categories]) {
+    const categories = legacyCategories
+      ? profile.categories.filter(id => !categoryId || id === categoryId) : [null];
+    for (const category of categories) {
       const categoryName = catalogue.categoryDefinitions.find(entry => entry.id === category)?.name ?? category ?? "All categories";
       scopes.push({ profile, categoryId: category, label: `${shop.name} / ${categoryName}`, groups: stockGroups(catalogue, profile, category) });
     }

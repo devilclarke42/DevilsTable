@@ -75,6 +75,12 @@ export function createRollTableAdapter() {
       }
       return updated;
     },
+    deleteLegacy: (pack, ids) => TableClass.deleteDocuments(ids, { pack: pack.collection }),
+    readWorldTables: async () => {
+      if (game.tables.invalidDocumentIds.size) throw new Error("Invalid world RollTables prevent checking legacy references.");
+      return game.tables.contents.map(table => table.toObject());
+    },
+    saveCleanupSummary: summary => game.settings.set(MODULE_ID, "lastTableCleanupSummary", JSON.stringify(summary)),
     saveSummary: summary => game.settings.set(MODULE_ID, "lastTableBuildSummary", JSON.stringify(summary))
   };
 }

@@ -52,6 +52,10 @@ async function environment(t) {
         return table;
       });
     }
+    static async deleteDocuments(ids, options) {
+      state.writes.push({ action: "deleteTables", count: ids.length, options });
+      return ids.map(id => { const table = state.tables.get(id); state.tables.delete(id); return table; });
+    }
     async createEmbeddedDocuments(type, rows, options) {
       assert.equal(type, "TableResult");
       assert.equal(options.keepId, true);
@@ -92,6 +96,7 @@ async function environment(t) {
   globalThis.game = {
     user: { id: "gm", isGM: true }, users: { activeGM: { id: "gm" } }, release: { generation: 14 }, system: { id: "dnd5e", version: "5.3.3" },
     packs: new Map([[itemPack.collection, itemPack], [tablePack.collection, tablePack]]),
+    tables: { invalidDocumentIds: new Set(), contents: [] },
     settings: { set: async (...args) => state.settings.push(args) }
   };
   globalThis.foundry = { documents: { collections: { CompendiumCollection: { createCompendium: async metadata => {
@@ -101,6 +106,22 @@ async function environment(t) {
   } } } } };
   return { catalogue, state, items, tablePack, itemPack };
 }
+
+test("legacy cleanup adapter only deletes named pack tables and has an independent record", async t => {
+  const { catalogue, state, tablePack } = await environment(t);
+  const docs = stockTableDocuments(catalogue, { shopId: "general-store", categoryId: "writing" }, { legacyCategories: true });
+  const adapter = createRollTableAdapter();
+  await adapter.create(tablePack, docs);
+  assert.deepEqual(await adapter.readWorldTables(), []);
+  const removed = await adapter.deleteLegacy(tablePack, [docs[0]._id]);
+  assert.equal(removed.length, 1);
+  assert.equal(state.tables.size, 3);
+  assert.equal(state.writes.at(-1).options.pack, "world.devils-table-stock-tables");
+  await adapter.saveCleanupSummary({ deleted: 1 });
+  assert.equal(state.settings[0][1], "lastTableCleanupSummary");
+  game.tables.invalidDocumentIds.add("bad");
+  await assert.rejects(adapter.readWorldTables(), /Invalid world RollTables/);
+});
 
 test("table preflight resolves real item identities and missing links block all writes", async t => {
   const { catalogue, items, state } = await environment(t);

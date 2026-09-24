@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "profiles": [
+    { "id": "abundant", "results": [{ "quantity": 4, "weight": 10 }, { "quantity": 6, "weight": 20 }, { "quantity": 8, "weight": 25 }, { "quantity": 12, "weight": 30 }, { "quantity": 20, "weight": 15 }] },
+    { "id": "common", "results": [{ "quantity": 2, "weight": 10 }, { "quantity": 3, "weight": 15 }, { "quantity": 4, "weight": 30 }, { "quantity": 6, "weight": 30 }, { "quantity": 8, "weight": 15 }] },
+    { "id": "limited", "results": [{ "quantity": 1, "weight": 15 }, { "quantity": 2, "weight": 40 }, { "quantity": 3, "weight": 30 }, { "quantity": 4, "weight": 15 }] },
+    { "id": "scarce", "results": [{ "quantity": 1, "weight": 65 }, { "quantity": 2, "weight": 30 }, { "quantity": 3, "weight": 5 }] },
+    { "id": "rare", "results": [{ "quantity": 1, "weight": 95 }, { "quantity": 2, "weight": 5 }] }
+  ],
+  "rules": [
+    { "tier": "always", "priceBand": "Everyday", "profile": "abundant" },
+    { "tier": "always", "priceBand": "Common", "profile": "common" },
+    { "tier": "always", "priceBand": "Equipment", "profile": "limited" },
+    { "tier": "always", "priceBand": "Specialist", "profile": "scarce" },
+    { "tier": "often", "priceBand": "Everyday", "profile": "common" },
+    { "tier": "often", "priceBand": "Common", "profile": "limited" },
+    { "tier": "often", "priceBand": "Equipment", "profile": "scarce" },
+    { "tier": "often", "priceBand": "Specialist", "profile": "scarce" },
+    { "tier": "rarely", "priceBand": "Everyday", "profile": "rare" },
+    { "tier": "rarely", "priceBand": "Common", "profile": "rare" },
+    { "tier": "rarely", "priceBand": "Equipment", "profile": "rare" },
+    { "tier": "rarely", "priceBand": "Specialist", "profile": "rare" }
+  ]
+}

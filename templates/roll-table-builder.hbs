@@ -13,14 +13,15 @@
       {{/each}}
     </fieldset>
     <fieldset class="dt-categories" {{#if busy}}disabled{{/if}}>
-      <legend>Category</legend>
-      <button type="button" data-action="selectCategory" data-category="" aria-pressed="{{#if allCategories}}true{{else}}false{{/if}}">All categories + shop overview</button>
+      <legend>Category for stock rolls and legacy cleanup</legend>
+      <button type="button" data-action="selectCategory" data-category="" aria-pressed="{{#if allCategories}}true{{else}}false{{/if}}">All categories</button>
       {{#each categories}}
         <button type="button" data-action="selectCategory" data-category="{{id}}" aria-pressed="{{#if selected}}true{{else}}false{{/if}}">{{name}} · {{count}} items</button>
       {{/each}}
     </fieldset>
     <p><strong>{{scopeLabel}}</strong> — {{tableCount}} tables in {{setCount}} sets.</p>
     <p>Each set: Always Stock, Often Stock, Rarely Stock and Rotating Stock.</p>
+    <p>Builds create four tables per shop. Category rolls filter those shared tables; no category tables are needed.</p>
     <p>Rotating draws: Often {{oftenChance}}% · Rarely {{rarelyChance}}% · No extra stock {{noneChance}}%. Empty or exhausted tiers add no item.</p>
     {{#each profiles}}
       <p>{{name}}: up to {{draws}} rotating draws. {{#if partial}}<strong>Partial catalogue: authored shared goods only.</strong>{{/if}}</p>
@@ -41,10 +42,13 @@
     <legend>GM actions</legend>
     <button type="button" data-action="preview" {{#if blocked}}disabled{{/if}}>Validate / Preview Tables</button>
     <button type="button" data-action="build" {{#if blocked}}disabled{{/if}}>Build / Rebuild Tables</button>
-    <button type="button" data-action="rollStock" {{#if rollBlocked}}disabled{{/if}}>Roll Stock</button>
+    <button type="button" data-action="rollStock" {{#if rollBlocked}}disabled{{/if}}>Roll Stock &amp; Quantities</button>
+    <button type="button" data-action="cleanup" {{#if blocked}}disabled{{/if}}>Preview Legacy Cleanup</button>
   </fieldset>
-  <p>Roll Stock reads the built tables, adds all Always goods and chooses rotating goods without duplicates. It does not change stock quantities or inventories.</p>
+  <p>Stock rolls include Always goods and distinct rotating choices, then roll a quantity for each. Cheaper, more common goods tend to have larger stocks; Rare goods usually have one sale unit. Inventories stay under GM control.</p>
+  <p>Existing category tables are kept until you preview and confirm legacy cleanup. Edited tables and known incoming RollTable links are protected.</p>
   <h3>Report</h3>
   <pre class="dt-report" role="status" aria-live="polite" aria-atomic="true">{{report}}</pre>
   <details><summary>Last table build record</summary><pre>{{lastBuild}}</pre></details>
+  <details><summary>Last legacy cleanup record</summary><pre>{{lastCleanup}}</pre></details>
 </div>

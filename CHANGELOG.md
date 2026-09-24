@@ -3,6 +3,34 @@
 All significant changes are documented here. Versions in this file describe repository builds;
 they do not imply a public GitHub Release exists.
 
+## 0.2.0-alpha.6 — 2026-09-24 — Weighted quantities and compact stock tables
+
+### Added
+
+- Canonical weighted quantity profiles with strict schema and semantic validation. Every selected
+  good receives a quantity based on its price band and effective shop tier, measured in complete
+  sale units. Rare goods receive one unit 95% of the time and two 5% of the time.
+- A separate legacy cleanup preview/confirmation for the 100 superseded category tables.
+  Exact approved IDs, generated-field comparison, edited/organised table protection, known
+  RollTable reference checks, lock restoration, read-back verification and a separate cleanup record.
+- A shared client guard for table builds and cleanup; focused distribution, category-filter,
+  cleanup, interruption/retry and adapter tests. All 204 automated tests pass.
+
+### Changed
+
+- Generate 20 tables rather than 120: one Always/Often/Rarely/Rotating set per shop. Category
+  stock rolls filter shared pools and keep category-specific draw counts, without creating tables.
+- The builder displays quantities, prices per sale unit and category scope. Quantity rolls follow
+  assortment selection and do not change its probabilities or write to inventories.
+- Existing whole-shop table identities and output remain unchanged. The 100 retired category IDs
+  stay reserved; normal builds preserve those tables until cleanup is explicitly reviewed.
+
+### Scope and acceptance
+
+- All 69 item records, IDs, prices, weights, icons and generated Item fields are unchanged.
+- User reported alpha.5 worked. New quantities and cleanup still need live Foundry/Forge acceptance.
+- No automatic world-tab copies, hosted install manifest, public release or new merchant catalogue.
+
 ## 0.2.0-alpha.5 — 2026-09-24 — Shop and category stock RollTables
 
 ### Added

@@ -8,6 +8,7 @@ import { CompendiumBuilderApplication } from "./apps/compendium-builder-app.js";
 import { RollTableBuilderApplication } from "./apps/roll-table-builder-app.js";
 import { rebuildStockTables } from "./builders/roll-table-builder.js";
 import { rollStockList } from "./stock/stock-roller.js";
+import { cleanupLegacyStockTables } from "./builders/legacy-table-cleanup.js";
 
 Hooks.once("init", () => {
   registerSettings();
@@ -16,6 +17,7 @@ Hooks.once("init", () => {
     validateCatalogue,
     rebuildCompendiums,
     rebuildStockTables,
+    cleanupLegacyStockTables,
     rollStock: rollStockList,
     openStockBuilder: () => {
       if (!game.user.isGM) throw new Error("Only a GM can open the stock table builder.");

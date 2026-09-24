@@ -18,8 +18,8 @@ function row(tableId, key, name, range, { uuid = null, icon = TABLE_ICON, itemId
 }
 
 /** V14 result names/description/documentUuid fields; never legacy numeric result types. */
-export function stockTableDocuments(catalogue, selection = {}) {
-  return stockScopes(catalogue, selection).flatMap(scope => {
+export function stockTableDocuments(catalogue, selection = {}, options = {}) {
+  return stockScopes(catalogue, selection, options).flatMap(scope => {
     const { profile, categoryId, label, groups } = scope;
     const draws = categoryId ? profile.categoryDraws : profile.draws;
     const ids = Object.fromEntries(STOCK_KINDS.map(kind => [kind, stockTableId(profile, categoryId, kind)]));

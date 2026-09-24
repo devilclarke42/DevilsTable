@@ -32,15 +32,18 @@ for alpha.3 and alpha.4 do not complete the detailed live checklist.
 ## Current — Stock RollTables
 
 - [x] Add canonical stock profiles and permanent table IDs for all five shops.
-- [x] Generate Always / Often / Rarely / Rotating sets for each shop and its authored categories.
+- [x] Generate Always / Often / Rarely / Rotating sets for each shop with category filters.
 - [x] Keep Merchant Notes in the builder and use real Item compendium references.
 - [x] Add a separate settings button, preview/build window and independent build record.
 - [x] Guarantee core stock and offer duplicate-free rotating lists from built tables.
 - [x] Preserve item economics and identities; support safe table/result reconciliation and retries.
+- [x] Reduce active output from 120 to 20 tables, retaining IDs and category stock selection.
+- [x] Roll weighted sale-unit quantities from price and effective availability.
+- [x] Provide a separate reviewed cleanup of unchanged legacy category tables.
 - [ ] Review stock tier overrides, 80/15/5 chances and suggested draw counts.
 - [ ] Complete live V14 / D&D5e 5.3.3 Forge table build, native draw and repeat-build checks.
 
-There are 120 tables covering existing source goods. Tavern, Alchemist, Blacksmith and Black
+There are 20 active tables covering existing source goods. Tavern, Alchemist, Blacksmith and Black
 Market remain partial catalogues. Table generation does not create missing shop-specific content.
 
 ## After review — Curated content
@@ -55,7 +58,7 @@ Market remain partial catalogues. Table generation does not create missing shop-
 
 - Add Tavern, Alchemist, Blacksmith and Black Market catalogues incrementally.
 - Expand category plans to other shops without multiplying item identities.
-- Design stock quantities, merchant actors, settlement/quality variations and purchasing workflows.
+- Design saved stock, merchant actors, settlement/quality variations and purchasing workflows.
 - Add a reviewed retirement/migration workflow, backups and stronger multi-session coordination.
 - Profile read/write memory use and responsiveness inside Foundry with thousands of real items.
 - Add localisation and wider runtime compatibility only after tests and review.

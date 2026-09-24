@@ -34,11 +34,13 @@ Generated compendiums and ZIPs are not included in this inventory.
 | `data/id-ledger.json` | Append-only reservations for permanent catalogue IDs, including retired IDs; now reserves all 69 General Store IDs. |
 | `data/stock.json` | Canonical stock chances, five shop profiles, category scopes, draw counts, coverage notices and explicit per-shop availability overrides. |
 | `data/table-id-ledger.json` | Append-only reservations for 120 permanent stock table IDs, independent of the Item ledger. |
+| `data/stock-quantities.json` | Weighted percentile quantity profiles and the complete effective-tier/price-band matrix, measured in sale units. |
 | `schemas/catalogue.schema.json` | Structure, allowed fields and safe path formats for the catalogue registry. |
 | `schemas/item.schema.json` | Required item fields, field shapes and currently supported converter types. |
 | `schemas/shops.schema.json` | Shop fields and required nonempty Merchant Notes tiers. |
 | `schemas/categories.schema.json` | Shop category definitions and editorial planning lists. |
 | `schemas/stock.schema.json` | Strict structural stock profile contract shared by runtime and Node checks. |
+| `schemas/stock-quantities.schema.json` | Structural contract for quantity profiles, outcomes and mapping rules. |
 
 ## Runtime code
 
@@ -57,6 +59,7 @@ Generated compendiums and ZIPs are not included in this inventory.
 | `scripts/validation/shop-validator.js` | Structural shop/category validation, complete shop coverage, unique definitions and nonconflicting stock guidance. |
 | `scripts/validation/item-rules.js` | Pricing bands and whole-coin limits; conditional type/subtype, capacity, use-mode and light consistency checks. |
 | `scripts/validation/stock-validator.js` | Full catalogue plus stock validation: chances, coverage, overrides, draw bounds, profile identity and table reservations/collisions. |
+| `scripts/validation/quantity-validator.js` | Distribution totals/bounds, unique mappings, complete tier/price coverage, scarcity trends and rare-stock limits. |
 | `scripts/builders/document-id.js` | Frozen mapping from permanent IDs to deterministic 16-character Foundry IDs. |
 | `scripts/builders/item-factory.js` | Pure D&D5e conversion routing, escaped descriptions, exact weights, sale-unit/light metadata and provenance flags. |
 | `scripts/builders/container-factory.js` | Native container fields, source capacities mapped to pounds/cubic feet, ordinary contents encumbrance. |
@@ -69,7 +72,10 @@ Generated compendiums and ZIPs are not included in this inventory.
 | `scripts/builders/roll-table-plan.js` | Order-independent result comparison, generated-row ownership/identity checks and table read-back diagnostics. |
 | `scripts/builders/roll-table-adapter.js` | Native preflight, referenced-Item checks, separate table pack, bounded embedded-result reconciliation and independent saved build record. |
 | `scripts/builders/roll-table-builder.js` | Stock validation and table preparation wired into the shared build lifecycle through optional extension points. |
+| `scripts/builders/stock-operation.js` | Shared client overlap guard for stock builds and legacy cleanup. |
+| `scripts/builders/legacy-table-cleanup.js` | Exact preview/approval, protected-data/reference planning and bounded verified deletion of superseded category tables. |
 | `scripts/stock/stock-roller.js` | Read-only stock lists from current built tables; all Always goods, bounded rotating draws, duplicate prevention and no rare promotion on empty tiers. |
+| `scripts/stock/stock-quantities.js` | One checked percentile quantity roll per selected item using its effective tier and canonical price band. |
 | `scripts/apps/compendium-builder-app.js` | ApplicationV2 GM interface, shop/category selection, stock guidance, confirmation, progress and reports. |
 | `scripts/apps/roll-table-builder-app.js` | Separate ApplicationV2 GM window with shop/category filters, coverage notices, preview, confirmed table build and read-only Roll Stock action. |
 | `templates/compendium-builder.hbs` | Accessible builder layout and action controls. |
@@ -94,6 +100,8 @@ Generated compendiums and ZIPs are not included in this inventory.
 | `tests/general-store.test.js` | Purchase units, consumable modes, light metadata, new vessels, activity identity, strict validation and 13-to-69 upgrades. |
 | `tests/stock-tables.test.js` | Native table shape, permanent UUIDs, stock tiers/chances, notes isolation, filtered builds, retry convergence, profile validation and duplicate-free read-only sampling. |
 | `tests/roll-table-adapter.test.js` | Mocked native preflight, missing references, target guards, embedded create/update/delete, preserved metadata, batching and interrupted-row recovery. |
+| `tests/stock-quantities.test.js` | Exhaustive percentile distributions, price/scarcity trends, category selection, sale-unit handling and invalid policies. |
+| `tests/legacy-table-cleanup.test.js` | Safe 120-to-20 upgrades, exact approval, protected edits/dependency chains, concurrency, failure and retry. |
 
 ## Documentation
 

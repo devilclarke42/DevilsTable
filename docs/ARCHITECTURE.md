@@ -71,8 +71,20 @@
     empty tiers produce no extra stock. The read-only stock action verifies current built tables,
     includes all Always results, then samples eligible Often/Rarely pools without replacement.
     It does not retry empty tiers into another tier or promote rare goods when Often is exhausted.
-    Draw counts are bounded; quantities, stock persistence, merchant actors and purchasing await
-    separate requirements. Each builder has its own client overlap guard; use one operation/tab.
+    Draw counts are bounded. Stock persistence, merchant actors and purchasing await separate
+    requirements. Table build and cleanup share a client guard; use one operation/tab.
+20. **Compact table set.** Generate four tables per shop, preserving the original whole-shop UUIDs.
+    Filter category-eligible item IDs before sampling these shared pools. Category draw defaults
+    still apply, and an empty filtered tier never borrows items from another category or tier.
+21. **Weighted quantities after presence.** Canonical quantity profiles and a complete tier/price
+    matrix select one d100 distribution per chosen good. Validation bounds outcomes and enforces
+    lower expected stock for increasing price/scarcity. Return quantity, profile and die result with
+    each sale unit; keep compendium Items, actor inventories and selection probabilities unchanged.
+22. **Explicit legacy cleanup.** A separate service previews exact, reserved superseded category
+    tables and accepts only the reviewed IDs. Edited data, folders, foreign flags and known incoming
+    references from this pack/world RollTables prevent deletion; dependency protection propagates.
+    Check other references manually. Current whole-shop tables are required, writes are bounded,
+    IDs stay reserved, lock restoration is attempted and read-back/cleanup records expose failure.
 
 ## Build sequence
 
@@ -110,6 +122,11 @@ const stock = await api.rollStock({ shopId: "general-store" }); // read-only sto
 const camping = await api.rollStock({
   shopId: "general-store", categoryId: "camping", draws: 3
 });
+const cleanup = await api.cleanupLegacyStockTables();    // read-only removal/protection report
+// After reviewing this exact list, other saved references and a world backup:
+await api.cleanupLegacyStockTables({
+  dryRun: false, approvedIds: cleanup.removable.map(table => table.id)
+});
 ```
 
 `loadCatalogue` returns the registry, item/catalogue/shop/category schemas, ledger,
@@ -126,15 +143,20 @@ before writes. Filtered builds preserve Items outside the selection; shared shop
 additional copies. All source data is validated even when only one category will be built.
 
 `rebuildStockTables` accepts the same filters, `dryRun` and progress callback and returns the same
-report shape for its separate pack. All categories means both the shop overview and category sets;
-one category generates only that category's set. Its preflight requires referenced Items to have
+report shape for its separate pack. It always generates whole-shop sets; a category selection
+does not change table output. Its preflight requires referenced Items to have
 already been built. Stock profile validation supplements full catalogue validation.
 
 `rollStock` requires one shop (General Store by default) and current built tables. It returns
 `{shopId, categoryId, draws, outcomes, items}`; item entries include permanent `id`, `name`,
-compendium `uuid`, `tier`, `price` and `saleUnit`. `draws` optionally overrides the profile default
+compendium `uuid`, `tier`, `price`, `saleUnit`, `quantity`, `quantityProfile` and `quantityRoll`.
+`draws` optionally overrides the whole-shop or category profile default
 with an integer from 0 to 50. It uses Foundry dice and actual built ranges, with no chat, drawn-state,
 pack, setting, actor or inventory writes. See [the stock guide](STOCK_TABLES.md) for native draws.
+
+`cleanupLegacyStockTables` accepts the shop/category filters, `dryRun` (default true) and explicit
+`approvedIds` for writes. It returns `removable`, `preserved` reasons, `deleted`, warnings and scope.
+It never creates a pack or modifies Items. A changed removal list requires a fresh preview.
 
 The UI asks for confirmation. Direct API callers intentionally opt into writes with `dryRun: false`.
 The API is framework-versioned but not yet a stable public integration contract.

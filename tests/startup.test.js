@@ -36,7 +36,7 @@ test("startup registers a restricted V2 menu and a read-only-default API without
   assert.deepEqual([...hooks.keys()], ["init", "ready"]);
   hooks.get("init")();
   hooks.get("ready")();
-  assert.equal(settings.length, 3);
+  assert.equal(settings.length, 4);
   assert.equal(menus.length, 2);
   assert.equal(menus[1].key, "stockTableBuilder");
   assert.equal(menus[1].config.restricted, true);
@@ -48,6 +48,7 @@ test("startup registers a restricted V2 menu and a read-only-default API without
   assert.deepEqual(module.api.openStockBuilder(), { force: true });
   assert.equal(typeof module.api.rebuildStockTables, "function");
   assert.equal(typeof module.api.rollStock, "function");
+  assert.equal(typeof module.api.cleanupLegacyStockTables, "function");
   t.mock.method(globalThis, "fetch", async url => ({
     ok: true, json: () => readJson(String(url).replace("modules/devils-table/", ""))
   }));
@@ -68,13 +69,14 @@ test("startup registers a restricted V2 menu and a read-only-default API without
   const StockApp = menus[1].config.type;
   const stockApp = new StockApp();
   const stockContext = await stockApp._prepareContext({});
-  assert.equal(stockContext.tableCount, 36);
-  assert.equal(stockContext.setCount, 9);
+  assert.equal(stockContext.tableCount, 4);
+  assert.equal(stockContext.setCount, 1);
   assert.equal(stockContext.oftenChance, 80);
   assert.equal(stockContext.rarelyChance, 15);
   assert.ok(StockApp.DEFAULT_OPTIONS.actions.rollStock);
+  assert.ok(StockApp.DEFAULT_OPTIONS.actions.cleanup);
   await StockApp.DEFAULT_OPTIONS.actions.selectShop.call(stockApp, null, { dataset: { shop: "" } });
-  assert.equal((await stockApp._prepareContext({})).tableCount, 120);
+  assert.equal((await stockApp._prepareContext({})).tableCount, 20);
   assert.equal((await stockApp._prepareContext({})).rollBlocked, true);
   await StockApp.DEFAULT_OPTIONS.actions.selectShop.call(stockApp, null, { dataset: { shop: "general-store" } });
   await StockApp.DEFAULT_OPTIONS.actions.selectCategory.call(stockApp, null, { dataset: { category: "travel" } });
