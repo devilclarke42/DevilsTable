@@ -22,13 +22,26 @@ Implementation is available for acceptance testing; the target environment is no
 - [x] Author the remaining 56 approved goods with explicit purchase units and permanent IDs.
 - [x] Add supported mundane consumable activities, light metadata and focused validation.
 - [x] Verify a 13-to-69 upgrade and repeat build in automated tests.
-- [ ] Owner review of all 69 prices, weights, descriptions, purchase units, capacities and icons.
+- [x] User reported alpha.4 worked and accepted the prices and goods.
 - [ ] Live V14 / D&D5e 5.3.3 Forge acceptance, including contained-item encumbrance.
 - [ ] Live actor-import, completed-use consumption, reusable activity and light metadata checks.
 
-All eight General Store categories now have authored stock. The alpha.3 read-back fix received
-a successful user report; this does not complete the wider live checklist. Review the complete
-General Store before expanding another shop's catalogue.
+All eight General Store categories now have accepted authored stock. Successful user reports
+for alpha.3 and alpha.4 do not complete the detailed live checklist.
+
+## Current — Stock RollTables
+
+- [x] Add canonical stock profiles and permanent table IDs for all five shops.
+- [x] Generate Always / Often / Rarely / Rotating sets for each shop and its authored categories.
+- [x] Keep Merchant Notes in the builder and use real Item compendium references.
+- [x] Add a separate settings button, preview/build window and independent build record.
+- [x] Guarantee core stock and offer duplicate-free rotating lists from built tables.
+- [x] Preserve item economics and identities; support safe table/result reconciliation and retries.
+- [ ] Review stock tier overrides, 80/15/5 chances and suggested draw counts.
+- [ ] Complete live V14 / D&D5e 5.3.3 Forge table build, native draw and repeat-build checks.
+
+There are 120 tables covering existing source goods. Tavern, Alchemist, Blacksmith and Black
+Market remain partial catalogues. Table generation does not create missing shop-specific content.
 
 ## After review — Curated content
 
@@ -42,7 +55,7 @@ General Store before expanding another shop's catalogue.
 
 - Add Tavern, Alchemist, Blacksmith and Black Market catalogues incrementally.
 - Expand category plans to other shops without multiplying item identities.
-- Design stock quantities, prices and availability workflows as explicit requirements.
+- Design stock quantities, merchant actors, settlement/quality variations and purchasing workflows.
 - Add a reviewed retirement/migration workflow, backups and stronger multi-session coordination.
 - Profile read/write memory use and responsiveness inside Foundry with thousands of real items.
 - Add localisation and wider runtime compatibility only after tests and review.

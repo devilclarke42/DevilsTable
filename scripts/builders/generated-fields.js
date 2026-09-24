@@ -1,6 +1,6 @@
 import { FLAG_SCOPE } from "../constants.js";
 
-const DESCRIPTION_FIELDS = new Set(["system.description.value", "system.description.chat"]);
+const DESCRIPTION_FIELDS = new Set(["system.description.value", "system.description.chat", "description"]);
 
 /**
  * Foundry sanitizes HTML on the server, after client-side model validation.

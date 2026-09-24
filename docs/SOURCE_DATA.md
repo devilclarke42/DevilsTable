@@ -121,6 +121,47 @@ Household, Animal and Travel. Other shop category plans can be added later. For 
 defined categories, each tagged item must use one of those categories. A shared good exists once,
 with multiple `shops` tags; its category and permanent ID stay the same across filtered builds.
 
+## Stock profiles and generated tables
+
+`data/stock.json` is the canonical stock policy. It is separate from Merchant Notes: free-form
+notes may mention future goods, while every table result must refer to an authored item. The
+stock loader adds this file, `schemas/stock.schema.json` and `data/table-id-ledger.json` to the
+existing catalogue. Stock validation runs in the browser and packaging/CI.
+
+| Field | Meaning |
+| --- | --- |
+| `schemaVersion` | Currently 1. |
+| `oftenChance`, `rarelyChance` | Positive whole percentages; Often must exceed Rarely and their sum cannot exceed 100. The remainder means no extra stock. Current defaults: 80 / 15 / 5. |
+| `profiles[].id` | Permanent table identity prefix, such as `DT_TABLE_GS`; never rename or reuse. |
+| `shop` | Exactly one profile per registered shop slug. |
+| `coverage` | `complete` for the agreed authored catalogue, or `partial` to show its limitations. This is an editorial assertion, not an automatic completeness test. |
+| `draws`, `categoryDraws` | Suggested rotating attempts for a whole shop and one category; integers 1–50. |
+| `categories` | Unique registered category slugs. Include every category used by an item tagged for this shop. A whole-shop set is generated automatically. |
+| `overrides` | Explicit `{itemId, tier}` exceptions; `tier` is `always`, `often` or `rarely`. Each ID must be an active item tagged for this shop, with at most one override per shop. |
+
+Without an override, `core` maps to Always, `variable` to Often and `special-order` to Rarely.
+An override changes only that shop's table membership. It never changes item price, weight,
+identity or base availability. Current overrides make Lamp Oil Often at the Alchemist, Lockbox
+Often at the Blacksmith, and Lockbox/Silk Rope Often at the Black Market.
+
+Every shop/category scope generates four tables, even when a tier is empty. Empty pools carry
+an explicit text result and rotating draws do not redirect their probability to another tier.
+Generated tables contain operational instructions and item/table UUIDs, never Merchant Notes.
+Future goods mentioned in Merchant Notes must be authored and reviewed before they can enter a pool.
+
+Reserve every generated table ID in the append-only `data/table-id-ledger.json`. The convention
+is `<profile ID>_<CATEGORY or ALL>_<ALWAYS/OFTEN/RARELY/ROTATING>`; hyphens in category slugs become
+underscores. For example, `DT_TABLE_GS_FIRE_LIGHTING_ROTATING`. Display-name and probability edits
+retain identities. Profile IDs and category slugs are now part of permanent table identity;
+changing them needs an explicit migration. Old ledger entries and inactive tables are preserved.
+The validator detects duplicate profiles, reservations and derived document-ID collisions.
+
+Result identity is derived from its permanent table ID and the item ID or tier key. Tier changes
+move an item's generated row between tables without changing the Item UUID. Rebuilds may remove
+obsolete owned rows; they never delete Items or whole tables. Custom result rows in a generated
+table block rebuilding. Keep personal tables separate and edit source policy for generated stock.
+See [Stock RollTables](STOCK_TABLES.md) for current coverage and usage.
+
 ## Permanent identity
 
 Keep the same ID through renames, rebalancing, category moves and shop changes. The `GS`, `TAV`
@@ -138,8 +179,9 @@ migration; the builder refuses to guess. Hash collisions fail validation and req
 2. Reserve the permanent ID in `data/id-ledger.json`.
 3. Add the item once to an appropriate file under `data/items/`.
 4. Register any new file, category or shop in `data/catalogue.json`.
-5. Run `npm run check`, then preview and build in a disposable test world.
-6. Rebuild and confirm no duplicates; record a live result before publishing.
+5. Update stock profiles for new shop/category membership and reserve any additional table IDs.
+6. Run `npm run check`, then preview/build Items followed by tables in a disposable test world.
+7. Rebuild and confirm no duplicates; record a live result before publishing.
 
 Descriptions, licensing claims and economic/encumbrance balance need human review. Validation
 can check required fields and formats, not the truth of a source attribution or a license grant.

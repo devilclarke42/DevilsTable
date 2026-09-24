@@ -4,4 +4,6 @@ export const CATALOGUE_INDEX = `modules/${MODULE_ID}/data/catalogue.json`;
 export const FLAG_SCOPE = MODULE_ID;
 export const PACK_NAME = "devils-table-items";
 export const PACK_COLLECTION = `world.${PACK_NAME}`;
+export const TABLE_PACK_NAME = "devils-table-stock-tables";
+export const TABLE_PACK_COLLECTION = `world.${TABLE_PACK_NAME}`;
 export const BATCH_SIZE = 100;

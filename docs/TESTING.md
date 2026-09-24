@@ -12,10 +12,16 @@ full-catalogue validation before filtered writes and stable shared identities ac
 The full General Store adds exact curated-category coverage, sale-unit preservation, six more
 native vessels, strict consumable/light validation, stable utility activity IDs, owning-item
 consumption targets, reusable actions and a simulated upgrade from 13 to 69 without rewriting
-the original Items. All 133 automated tests pass for alpha.4.
+the original Items. The alpha.4 baseline had 133 passing automated tests.
 Read-back regressions simulate equivalent HTML entity/break-tag serialization, verify stable
 reruns and require real price/weight/capacity/identity drift to remain detectable. Mismatch details
 are checked for missing Items, bounded output, saved reports and failure during lock restoration.
+Stock coverage adds all 120 reserved tables, real compendium references, Always guarantees,
+80/15/5 ranges, per-shop overrides, empty/exhausted tiers, duplicate-free lists, profile validation
+and Merchant Notes isolation. Persistence tests cover table previews, native model preflight,
+missing Items, result order, embedded-row changes, foreign metadata preservation, 100-row batches,
+partial failure/retry, custom-row protection, independent settings menus and permission guards.
+All 171 automated tests pass for alpha.5; the package gate validates 69 source Items and 120 tables.
 Foundry globals are injected/mocked where needed. These tests do **not** execute the proprietary
 Foundry server or prove Forge compatibility.
 
@@ -54,6 +60,33 @@ Use a backed-up/disposable world. Do not mark the manifest `verified` until resu
 | Wrong target version | Build blocked with an actionable error | Pending |
 | Reload world | Settings persist; no automatic pack builds | Pending |
 
+### Stock RollTables — alpha.5
+
+Use the separate **Build/Rebuild Stock RollTables → Open RollTable Builder** settings button.
+Retain the accepted Item pack; stock generation should not change its Items.
+
+| Check | Expected result | Status |
+| --- | --- | --- |
+| Upgrade from complete alpha.4 Items | Item preview reports 69 unchanged; prices, weights and UUIDs retained | Pending |
+| Separate settings button | Both builder windows open independently; table controls/report work in light/dark themes | Pending |
+| Missing Item preflight | Missing referenced Item produces an actionable source-ID error before table writes | Pending |
+| All-shop table preview | 120 creates in a fresh world; no pack, lock or settings writes | Pending |
+| All-shop table build/rebuild | 120 creates then 120 unchanged, stable parent/result IDs, new pack locked | Pending |
+| General Store filter | 36 tables: shop overview plus eight categories, four tables per set | Pending |
+| One shop/category filter | Four tables in a populated scope; other tables preserved | Pending |
+| Partial shops | Tavern/Alchemist/Blacksmith/Black Market show shared-goods-only notices and no invented products | Pending |
+| Item results and nested pools | Native references open actual generated Items; rotating results recurse into the correct pool | Pending |
+| Always native draw | Imported General Store Always table returns all 47 core goods in one draw; never Normalize | Pending |
+| Rotating ranges | 1–80 Often, 81–95 Rarely, 96–100 no extra; empty pools produce text, not invented goods | Pending |
+| Roll Stock | General Store has 47 Always goods and up to eight distinct extras; category selection uses its own defaults | Pending |
+| Empty Often pool | Travel retains its three Always goods; Often outcomes never force Compass or Spyglass | Pending |
+| Read-only rolling | No Item/actor changes, chat messages, saved stock or changed drawn-state | Pending |
+| Stale/missing tables | Roll Stock asks for a rebuild and does not silently use an outdated pool | Pending |
+| Merchant Notes | Visible in the builder only, absent from table/Item descriptions and flags | Pending |
+| Separate last-build records | Item/table summaries remain independent and survive reload | Pending |
+| Native imported copies | World-table copies draw correctly; rebuilding packs does not overwrite them | Pending |
+| Permissions and locks | Players/inactive GMs cannot build or roll; original table-pack lock restored | Pending |
+
 ### Reported alpha.2 failure
 
 The user reported: "Read-back verification failed; some generated fields do not match the source."
@@ -67,8 +100,12 @@ remaining categories. This records a successful user-reported recovery; no exact
 browser, enabled-module list or detailed acceptance results were supplied. It is not evidence
 that every check above, particularly alpha.4's new activities, has passed.
 
-Keep the existing pack when installing alpha.4. Preview/build should recognise already saved
-Items and add the newly authored stock under their permanent identities. If verification fails,
+The user subsequently reported alpha.4 worked and said the prices and other goods looked good.
+That is catalogue acceptance and a successful build report, without detailed evidence for each
+live check. Alpha.5's new table behavior has not yet been exercised in the target environment.
+
+Keep the existing pack when installing alpha.5. Preview/build should recognise all 69 already saved
+Items unchanged. The separate builder adds stock tables. If verification fails,
 record the full item/field report and module version before making another change.
 
 ## Recovery and upgrade checks — disposable development copy only
@@ -84,6 +121,12 @@ or source-editing scenarios belong in an isolated development checkout and dispo
    reconnect and rerun to converge without deleting unrelated data.
 6. Remove an item from active source without dropping its reserved ID: pack Item remains.
 7. Import a generated Item into an actor, edit source and rebuild: actor copy remains unchanged.
+8. Change one stock override in source: only affected generated tables/results update; Item UUIDs,
+   unrelated tables, folders and foreign flags survive. The next build reports unchanged tables.
+9. Add a custom result to a generated table: preview/build refuses before unlocking. Keep custom
+   tables separate. Do this only in the disposable world, not as the source-authoring workflow.
+10. Interrupt an embedded-result update: error is reported and lock restored; retry converges,
+    including removal of obsolete generated rows without deleting Items or whole tables.
 
 Synthetic fixtures are not proposed game content. Do not commit or publish an integration-test archive.
 

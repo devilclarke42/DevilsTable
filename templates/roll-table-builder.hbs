@@ -1,0 +1,50 @@
+<div class="dt-builder">
+  <h2>Build/Rebuild Stock RollTables</h2>
+  <p>Always stock is guaranteed. Rotating stock adds Often and Rarely goods using real compendium items.</p>
+  <p>Build the Item compendium first. This builder creates a separate Stock RollTables compendium.</p>
+  {{#if catalogueError}}
+    <pre class="dt-warning" role="alert">{{catalogueError}}</pre>
+  {{else}}
+    <fieldset class="dt-filters" {{#if busy}}disabled{{/if}}>
+      <legend>Shop</legend>
+      <button type="button" data-action="selectShop" data-shop="" aria-pressed="{{#if allShops}}true{{else}}false{{/if}}">All shops</button>
+      {{#each shops}}
+        <button type="button" data-action="selectShop" data-shop="{{id}}" aria-pressed="{{#if selected}}true{{else}}false{{/if}}">{{name}}</button>
+      {{/each}}
+    </fieldset>
+    <fieldset class="dt-categories" {{#if busy}}disabled{{/if}}>
+      <legend>Category</legend>
+      <button type="button" data-action="selectCategory" data-category="" aria-pressed="{{#if allCategories}}true{{else}}false{{/if}}">All categories + shop overview</button>
+      {{#each categories}}
+        <button type="button" data-action="selectCategory" data-category="{{id}}" aria-pressed="{{#if selected}}true{{else}}false{{/if}}">{{name}} · {{count}} items</button>
+      {{/each}}
+    </fieldset>
+    <p><strong>{{scopeLabel}}</strong> — {{tableCount}} tables in {{setCount}} sets.</p>
+    <p>Each set: Always Stock, Often Stock, Rarely Stock and Rotating Stock.</p>
+    <p>Rotating draws: Often {{oftenChance}}% · Rarely {{rarelyChance}}% · No extra stock {{noneChance}}%. Empty or exhausted tiers add no item.</p>
+    {{#each profiles}}
+      <p>{{name}}: up to {{draws}} rotating draws. {{#if partial}}<strong>Partial catalogue: authored shared goods only.</strong>{{/if}}</p>
+    {{/each}}
+    {{#if shop}}
+      <details class="dt-merchant-notes">
+        <summary>Merchant Notes — {{shop.name}}</summary>
+        <p>Builder guidance only; these notes are not exported into table or Item documents.</p>
+        <div class="dt-stock-tiers">
+          <section><h3>Always Stocks</h3><ul>{{#each shop.merchantNotes.alwaysStocks}}<li>{{this}}</li>{{/each}}</ul></section>
+          <section><h3>Often Stocks</h3><ul>{{#each shop.merchantNotes.oftenStocks}}<li>{{this}}</li>{{/each}}</ul></section>
+          <section><h3>Rarely Stocks</h3><ul>{{#each shop.merchantNotes.rarelyStocks}}<li>{{this}}</li>{{/each}}</ul></section>
+        </div>
+      </details>
+    {{/if}}
+  {{/if}}
+  <fieldset {{#if busy}}disabled{{/if}}>
+    <legend>GM actions</legend>
+    <button type="button" data-action="preview" {{#if blocked}}disabled{{/if}}>Validate / Preview Tables</button>
+    <button type="button" data-action="build" {{#if blocked}}disabled{{/if}}>Build / Rebuild Tables</button>
+    <button type="button" data-action="rollStock" {{#if rollBlocked}}disabled{{/if}}>Roll Stock</button>
+  </fieldset>
+  <p>Roll Stock reads the built tables, adds all Always goods and chooses rotating goods without duplicates. It does not change stock quantities or inventories.</p>
+  <h3>Report</h3>
+  <pre class="dt-report" role="status" aria-live="polite" aria-atomic="true">{{report}}</pre>
+  <details><summary>Last table build record</summary><pre>{{lastBuild}}</pre></details>
+</div>

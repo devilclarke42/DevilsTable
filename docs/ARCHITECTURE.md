@@ -26,8 +26,8 @@
    atomic. A partial failure is reported and a rerun converges. Locks are restored in `finally`.
    Only the active GM can operate, and the shared service rejects concurrent calls in one client.
    Multiple tabs with the same GM are not coordinated: use one tab.
-9. **Separation of data and mechanics.** Shops, category and availability are metadata, not
-   automatic stock, attacks, healing or spell effects. Adjusted weights are stored exactly,
+9. **Separation of data and mechanics.** Shops, category and availability guide explicit stock
+   generation; they do not add attacks, healing or spell effects. Adjusted weights are stored exactly,
    not recalculated by guessed multipliers. The module never changes world encumbrance settings.
 10. **Release discipline.** Versioned source, changelog, checks, runtime-only ZIP and acceptance
     checklist precede a public release. License selection and remote release publication are not
@@ -52,6 +52,27 @@
     owning Item after actor import. Consume uses native one-use/auto-destroy semantics; reusable
     goods have no consumption. Light metadata remains reference data; duration is informational.
     Neither the builder nor a startup hook changes token lights, transfers fuel or schedules use.
+16. **Separate stock generation.** A dedicated GM settings menu calls a separate builder service
+    targeting `world.devils-table-stock-tables`. Stock profiles and a table-ID ledger extend the
+    catalogue loader without changing Item output. The existing build lifecycle accepts optional
+    preparation, planning, adapter and verification functions; the Item defaults are retained.
+17. **Native V14 table documents.** Results use string `document`/`text` types and the current
+    `name`, `description` and `documentUuid` fields. Item results reference the single world Item
+    pack. Rotating results reference generated Often/Rarely tables. Native document validation
+    and referenced-Item identity checks happen before any pack is created or unlocked.
+18. **Owned embedded rows.** A table ID derives from its permanent profile prefix, category and
+    tier; each result ID derives from its table ID and item/tier key. Reconciliation ignores row
+    storage order, creates/updates required rows and removes only obsolete owned rows using
+    explicit `TableResult` embedded-document APIs in bounded batches. Unmanaged rows block the
+    selected build. Whole tables, Items, folders and foreign flags are preserved. A partial row
+    update is retryable under the same read-back/lock contract as an Item build.
+19. **Guaranteed essentials and bounded randomness.** Always tables use intentional overlapping
+    1–1 ranges to return every core good. Rotating d100 ranges apply the source probabilities;
+    empty tiers produce no extra stock. The read-only stock action verifies current built tables,
+    includes all Always results, then samples eligible Often/Rarely pools without replacement.
+    It does not retry empty tiers into another tier or promote rare goods when Often is exhausted.
+    Draw counts are bounded; quantities, stock persistence, merchant actors and purchasing await
+    separate requirements. Each builder has its own client overlap guard; use one operation/tab.
 
 ## Build sequence
 
@@ -81,6 +102,14 @@ const containers = await api.rebuildCompendiums({
 });
 // Only after reviewing the preview and backing up the world:
 const result = await api.rebuildCompendiums({ dryRun: false });
+
+api.openStockBuilder();                                 // separate GM settings window
+const tables = await api.rebuildStockTables();           // all shops, read-only preview
+const built = await api.rebuildStockTables({ dryRun: false });
+const stock = await api.rollStock({ shopId: "general-store" }); // read-only stock list
+const camping = await api.rollStock({
+  shopId: "general-store", categoryId: "camping", draws: 3
+});
 ```
 
 `loadCatalogue` returns the registry, item/catalogue/shop/category schemas, ledger,
@@ -96,6 +125,17 @@ Omitting `shopId`/`categoryId` (or using `null`) includes all authored entries. 
 before writes. Filtered builds preserve Items outside the selection; shared shop tags never create
 additional copies. All source data is validated even when only one category will be built.
 
+`rebuildStockTables` accepts the same filters, `dryRun` and progress callback and returns the same
+report shape for its separate pack. All categories means both the shop overview and category sets;
+one category generates only that category's set. Its preflight requires referenced Items to have
+already been built. Stock profile validation supplements full catalogue validation.
+
+`rollStock` requires one shop (General Store by default) and current built tables. It returns
+`{shopId, categoryId, draws, outcomes, items}`; item entries include permanent `id`, `name`,
+compendium `uuid`, `tier`, `price` and `saleUnit`. `draws` optionally overrides the profile default
+with an integer from 0 to 50. It uses Foundry dice and actual built ranges, with no chat, drawn-state,
+pack, setting, actor or inventory writes. See [the stock guide](STOCK_TABLES.md) for native draws.
+
 The UI asks for confirmation. Direct API callers intentionally opt into writes with `dryRun: false`.
 The API is framework-versioned but not yet a stable public integration contract.
 
@@ -106,6 +146,10 @@ The API is framework-versioned but not yet a stable public integration contract.
 - [V14 compendium API](https://foundryvtt.com/api/v14/classes/foundry.documents.collections.CompendiumCollection.html)
 - [V14 settings](https://foundryvtt.com/api/v14/classes/foundry.helpers.ClientSettings.html)
 - [V14 HTMLField server sanitization](https://foundryvtt.com/api/v14/classes/foundry.data.fields.HTMLField.html)
+- [Foundry RollTables, nested results and overlapping ranges](https://foundryvtt.com/article/roll-tables/)
+- [V14 RollTable document](https://foundryvtt.com/api/v14/classes/foundry.documents.RollTable.html)
+- [V14 TableResult schema](https://foundryvtt.com/api/v14/classes/foundry.documents.TableResult.html)
+- [V14 result types](https://foundryvtt.com/api/v14/variables/CONST.TABLE_RESULT_TYPES.html)
 - [D&D5e 5.3.3 physical item fields](https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/module/data/item/templates/physical-item.mjs)
 - [D&D5e 5.3.3 source fields](https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/module/data/shared/source-field.mjs)
 - [D&D5e 5.3.3 loot model](https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/module/data/item/loot.mjs)

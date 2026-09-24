@@ -8,7 +8,9 @@ import { createFoundryAdapter } from "./foundry-adapter.js";
 import { readBackError } from "./generated-fields.js";
 
 /** One service instance is shared by the UI and public API, preventing local overlap. */
-export function createBuilder({ load = loadCatalogue, adapter = null, now = () => new Date().toISOString() } = {}) {
+export function createBuilder({ load = loadCatalogue, adapter = null, now = () => new Date().toISOString(),
+  prepare = null, collection = PACK_COLLECTION, planner = planBuild, verificationError = readBackError,
+  adapterFactory = createFoundryAdapter } = {}) {
   let busy = false;
   return async function rebuild({ dryRun = true, onProgress = () => {}, shopId = null, categoryId = null } = {}) {
     if (busy) throw new Error("A Devil's Table build is already running in this client.");
@@ -22,7 +24,7 @@ export function createBuilder({ load = loadCatalogue, adapter = null, now = () =
     let failure;
     let io;
     try {
-      io = adapter ?? createFoundryAdapter();
+      io = adapter ?? adapterFactory();
       io.assertCanBuild();
       progress("Loading and validating source JSON…");
       const catalogue = await load();
@@ -32,16 +34,17 @@ export function createBuilder({ load = loadCatalogue, adapter = null, now = () =
         error.details = validation.errors;
         throw error;
       }
-      const documents = selectEntries(catalogue, { shopId, categoryId }).map(({ item }) => catalogueEntryToItem(item));
-      progress(`Preflighting ${documents.length} D&D5e documents…`);
+      const prepared = prepare ? await prepare(catalogue, { shopId, categoryId }) : null;
+      const documents = prepared?.documents ?? selectEntries(catalogue, { shopId, categoryId }).map(({ item }) => catalogueEntryToItem(item));
+      progress(`Preflighting ${documents.length} documents…`);
       await io.validateDocuments(documents);
       pack = await io.getPack();
       const existing = pack ? await io.readPack(pack) : [];
-      const plan = planBuild(documents, existing);
+      const plan = planner(documents, existing);
       summary = {
-        status: dryRun ? "preview" : "complete", at: now(), pack: PACK_COLLECTION, scope: { shopId, categoryId },
+        status: dryRun ? "preview" : "complete", at: now(), pack: collection, scope: { shopId, categoryId },
         count: documents.length, create: plan.create.length, update: plan.update.length,
-        unchanged: plan.unchanged, preserved: plan.preserved, written: 0, warnings: validation.warnings
+        unchanged: plan.unchanged, preserved: plan.preserved, written: 0, warnings: [...validation.warnings, ...(prepared?.warnings ?? [])]
       };
       if (!documents.length && catalogue.entries.length) summary.warnings = [...summary.warnings, "No authored items match this selection. Planned names and Merchant Notes do not create items."];
       if (dryRun || (!plan.create.length && !plan.update.length)) return summary;
@@ -68,9 +71,9 @@ export function createBuilder({ load = loadCatalogue, adapter = null, now = () =
         }
       }
       const actual = await io.readPack(pack);
-      const verification = planBuild(documents, actual);
+      const verification = planner(documents, actual);
       if (verification.create.length || verification.update.length) {
-        throw readBackError([...verification.create, ...verification.update], actual);
+        throw verificationError([...verification.create, ...verification.update], actual);
       }
       progress("Build verified.");
       return summary;

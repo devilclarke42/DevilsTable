@@ -6,15 +6,18 @@ Foundry compendiums are generated from it and must never be edited as source dat
 
 ## Current status
 
-General Store review build, `0.2.0-alpha.4`. The catalogue contains **69 authored items** across
-all eight approved categories. This adds 56 goods to the original 13 Containers records, which
-remain unchanged. See the [General Store review](docs/GENERAL_STORE_REVIEW.md) for the new
+Stock RollTable build, `0.2.0-alpha.5`. The catalogue contains **69 authored items** across
+all eight approved categories, unchanged from alpha.4. The builder now generates **120 stock
+RollTables** for all five shops and their populated categories through a separate settings button.
+See [Stock RollTables](docs/STOCK_TABLES.md) for the stock rules and the
+[General Store review](docs/GENERAL_STORE_REVIEW.md) for the newer
 items' prices, purchase units, weights and mechanics, and the
 [Containers review table](docs/CONTAINERS_REVIEW.md) for the original batch.
 Automated tests also use a synthetic parcel that is excluded from the module ZIP.
 
-The user reported that alpha.3's read-back fix worked. This build retains that fix and its
-item/field diagnostics. The new utility activities and extended catalogue still require live acceptance.
+The user reported that alpha.4 worked and accepted its prices and goods. This build retains
+the earlier read-back fix and field diagnostics. Detailed live acceptance, including the new
+RollTable workflow, remains to be recorded.
 
 | Category | Items |
 | --- | ---: |
@@ -42,6 +45,9 @@ is still required. The manifest deliberately does not claim verified compatibili
 - Displays builder-only Merchant Notes (Always / Often / Rarely Stocks) for all five shops.
 - Validates whole-coin prices: 1–9 cp, 1–9 sp, 1–24 gp equipment and 25+ gp specialist goods.
 - Creates or updates one world Item compendium: `world.devils-table-items`.
+- Provides a separate **Build/Rebuild Stock RollTables → Open RollTable Builder** settings button.
+- Generates Always / Often / Rarely / Rotating tables in `world.devils-table-stock-tables`.
+- Rolls a read-only stock list with guaranteed Always goods and duplicate-free rotating choices.
 - Preserves internal document IDs, unrelated entries, folders and other modules' flags.
 - Batches writes in groups of 100 and checks the result against the source.
 - The builder never deletes items. Inactive catalogue entries stay in the pack until an explicit retirement workflow is added.
@@ -54,26 +60,33 @@ activities. Token lighting, elapsed burn time, fuel transfer and partial quantit
 
 Shops are tags, not copies of an item. Tavern, General Store, Alchemist, Blacksmith and Black Market
 each have a definition and Merchant Notes. Notes guide the GM; they are never included in generated
-Item descriptions or flags. Stock quantities, random inventories and customer purchasing remain
-future work. Availability does not automatically include or exclude an item from a build.
+Item or RollTable descriptions or flags. Structured stock profiles use item availability and
+explicit per-shop overrides to decide table membership. Stock quantities and customer purchasing
+remain future work. Availability does not exclude an item from the Item compendium build.
 
 ## Install and test on The Forge
 
 1. Obtain the packaged ZIP from the successful **Validate and package** GitHub Actions run
    (artifact: `devils-table-framework`), or build it using the development commands below.
    Downloading an Actions artifact may wrap the module ZIP in another ZIP: extract the artifact
-   first and select `devils-table-v0.2.0-alpha.4.zip` for import.
+   first and select `devils-table-v0.2.0-alpha.5.zip` for import.
 2. Back up your test world. In The Forge's Import Wizard, import that module ZIP as a custom package.
    See the [Forge custom-package guide](https://forums.forge-vtt.com/t/how-to-upload-a-modified-version-of-a-module-system/10510).
 3. In a V14 / D&D5e 5.3.3 test world, enable **Devil's Table: Goods & Provisions** and reload.
 4. As the active GM, open **Configure Settings → Devil's Table → Build/Rebuild Compendiums → Open Builder**.
 5. Select **Village General Store → All categories**, then **Validate / Preview**. In a fresh world,
-   expect 69 creates. When upgrading a complete alpha.3 Containers pack, expect **56 creates,
-   0 updates and 13 unchanged**. Preview leaves the world unchanged.
+   expect 69 creates. An existing complete alpha.4 pack should report **69 unchanged**.
+   A Containers-only pack needs 56 creates and retains its 13 unchanged Items. Preview is read-only.
 6. Choose **Build / Rebuild** and confirm. The builder adds the selected items to
    `world.devils-table-items`. Run it again: expect 69 unchanged Items and no duplicates.
-7. Review each category's prices, purchase units, icons and weights. Import test copies into an
-   actor to check the new use actions. Follow the [live checklist](docs/TESTING.md).
+7. Open the separate **Configure Settings → Devil's Table → Build/Rebuild Stock RollTables →
+   Open RollTable Builder** button. Select **All shops → All categories + shop overview**,
+   then **Validate / Preview Tables**: expect 120 creates on the first build.
+8. Choose **Build / Rebuild Tables** and confirm. Repeat: expect 120 unchanged tables.
+   General Store alone generates 36 tables; one populated shop/category generates four.
+9. Select one shop and click **Roll Stock** for its Always goods plus rotating choices.
+   This displays a stock list; quantities and inventory transfers stay under GM control.
+   Follow [the table guide](docs/STOCK_TABLES.md) and [live checklist](docs/TESTING.md).
 
 The archive contains exactly one `devils-table/module.json`, alongside its runtime folders.
 Do not upload the repository's source-code ZIP as though it were a packaged release.
@@ -83,7 +96,7 @@ the live acceptance test and an actual versioned release exist.
 ### Recovering from the alpha.2 read-back error
 
 Keep the existing generated compendium. Import the updated module ZIP using the same Forge
-custom-package method, restart/reload the test world and confirm the module shows `0.2.0-alpha.4`.
+custom-package method, restart/reload the test world and confirm the module shows `0.2.0-alpha.5`.
 Run **Village General Store → Containers → Validate / Preview**, then **Build / Rebuild**.
 If all 13 Items were saved, equivalent description formatting should now report 13 unchanged.
 If any are missing or genuinely different, the normal rebuild creates/updates them with their
@@ -93,14 +106,17 @@ includes source IDs, field paths and shortened expected/saved values. Do not del
 ## Safe rebuild contract
 
 - Only the active GM can preview/build. Use **one browser tab** for building.
-- Preview does not create packs, unlock packs, write Items or save settings.
+- Preview does not create packs, unlock packs, write documents or save settings.
 - A build updates only the builder-controlled fields of its own generated documents.
   Manual edits to those fields will be overwritten: edit canonical JSON instead.
 - A conflict, duplicate permanent ID or attempted Item type change aborts before writes.
 - A new pack is locked after building. An existing pack's original lock state is restored.
-- Actor-owned and world-inventory copies are not updated; the builder only targets its named world pack.
+- Actor-owned and world-inventory copies are not updated; each builder targets its named world pack.
+- Table rebuilds refresh owned result rows, including removing obsolete generated rows. They never
+  delete Items or whole RollTables. A selected generated table containing custom rows blocks the
+  build; keep custom tables separate. Table references must resolve to already-built Items.
 - Foundry batch operations are **not a database transaction**. A disconnect or hook failure can
-  leave a partial build. Nothing is deleted; fix the error and rerun the same catalogue to converge.
+  leave a partial build. No Items or whole tables are deleted; fix the error and rerun to converge.
   Back up the world first. Failed lock restoration is reported, not hidden.
 - The local overlap guard and active-GM check are not a distributed lock across tabs/sessions.
 - Generated world compendiums remain in the world when the module is disabled or updated.
@@ -117,7 +133,7 @@ npm run package     # rerun checks and write a runtime-only ZIP under dist/
 ```
 
 CI runs those checks on pushes and pull requests, checks that permanent IDs were not removed
-from the ledger, and uploads a testable ZIP. It does not publish releases or deploy anything.
+from either ledger, and uploads a testable ZIP. It does not publish releases or deploy anything.
 Generated ZIPs and Foundry compendiums are not committed.
 
 ## Source contract
@@ -127,6 +143,8 @@ Every item requires `id`, `name`, `description`, `price`, `weight`, `icon`, `cat
 Every new General Store item also specifies `saleUnit`; it is optional for the unchanged original batch.
 Names and shop membership may change; IDs such as `DT_ITEM_GS_ROPE_HEMP` must not.
 Reserve IDs in the append-only `data/id-ledger.json`; never recycle an old ID.
+Stock policy lives in `data/stock.json`; table identities are reserved separately in
+`data/table-id-ledger.json`. Merchant Notes remain private builder guidance.
 
 See [the authoring contract](docs/SOURCE_DATA.md), [architecture and API](docs/ARCHITECTURE.md),
 [the complete file inventory](docs/FILE_MAP.md), [the acceptance checklist](docs/TESTING.md),

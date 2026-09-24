@@ -3,6 +3,45 @@
 All significant changes are documented here. Versions in this file describe repository builds;
 they do not imply a public GitHub Release exists.
 
+## 0.2.0-alpha.5 — 2026-09-24 — Shop and category stock RollTables
+
+### Added
+
+- A separate **Build/Rebuild Stock RollTables → Open RollTable Builder** settings button,
+  with read-only preview, confirmed build, shop/category filters and an independent last-build record.
+- Canonical stock profiles, strict validation and an append-only table-ID ledger. Five whole-shop
+  sets and 25 category sets generate 120 native V14 tables: Always, Often, Rarely and Rotating Stock.
+- A dedicated world RollTable compendium with stable table/result identities, real references to
+  the existing Item compendium, native model preflight and actionable missing-item errors.
+- Always tables return every core good in one draw. Rotating tables default to 80% Often,
+  15% Rarely and 5% no extra stock. Empty tiers add no item. These are editable project defaults.
+- Explicit shop overrides: Lamp Oil is Often at the Alchemist; Lockbox is Often at the Blacksmith;
+  Lockbox and Silk Rope are Often at the Black Market. Original item availability is unchanged.
+- A read-only **Roll Stock** action/API that includes all Always goods and samples built rotating
+  tables without duplicate items, automatic quantities, chat messages or inventory changes.
+- Focused table generation, embedded-result reconciliation, interruption/retry, UUID, permission,
+  validation and sampling regressions; a stock guide and expanded live acceptance checklist.
+
+### Changed and preserved
+
+- Reused the existing preview/batch/verification/lock lifecycle through small optional extension
+  points. Table reconciliation uses explicit embedded-result operations, including removal of
+  obsolete owned rows, while preserving Items, whole tables, folders and unrelated data.
+- Table comparisons ignore result storage order and accept the existing narrow description-HTML
+  equivalence. Custom rows in selected generated tables block writes instead of being removed.
+- All 69 canonical item records, prices, weights, IDs and generated Item fields remain unchanged.
+  Merchant Notes remain builder-only and never enter either compendium.
+- General Store is complete for the agreed list. Other shop tables cover only existing shared
+  goods and explicitly report partial coverage; no additional shop catalogue was invented.
+- The user reported alpha.4 worked and accepted its prices and goods. New RollTable behavior
+  still requires live Foundry/Forge testing. No hosted install manifest or public release was added.
+
+### Validation
+
+- All 171 automated tests pass, including the previous 133 Item/framework regressions.
+- Source validation reports 69 Items and 120 stock tables. The verified runtime ZIP contains
+  76 files, one module manifest and no tests, developer tools or generated compendium databases.
+
 ## 0.2.0-alpha.4 — 2026-09-23 — Complete General Store categories
 
 ### Added

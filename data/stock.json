@@ -1,0 +1,101 @@
+{
+  "schemaVersion": 1,
+  "oftenChance": 80,
+  "rarelyChance": 15,
+  "profiles": [
+    {
+      "id": "DT_TABLE_TAV",
+      "shop": "tavern",
+      "coverage": "partial",
+      "draws": 10,
+      "categoryDraws": 3,
+      "categories": [
+        "containers",
+        "fire-lighting",
+        "rope-climbing",
+        "camping",
+        "household",
+        "animal",
+        "travel"
+      ],
+      "overrides": []
+    },
+    {
+      "id": "DT_TABLE_GS",
+      "shop": "general-store",
+      "coverage": "complete",
+      "draws": 8,
+      "categoryDraws": 3,
+      "categories": [
+        "containers",
+        "fire-lighting",
+        "rope-climbing",
+        "camping",
+        "writing",
+        "household",
+        "animal",
+        "travel"
+      ],
+      "overrides": []
+    },
+    {
+      "id": "DT_TABLE_ALC",
+      "shop": "alchemist",
+      "coverage": "partial",
+      "draws": 4,
+      "categoryDraws": 2,
+      "categories": [
+        "containers",
+        "fire-lighting",
+        "writing"
+      ],
+      "overrides": [
+        {
+          "itemId": "DT_ITEM_GS_OIL_LAMP",
+          "tier": "often"
+        }
+      ]
+    },
+    {
+      "id": "DT_TABLE_BSM",
+      "shop": "blacksmith",
+      "coverage": "partial",
+      "draws": 3,
+      "categoryDraws": 2,
+      "categories": [
+        "containers",
+        "fire-lighting",
+        "rope-climbing",
+        "animal"
+      ],
+      "overrides": [
+        {
+          "itemId": "DT_ITEM_GS_LOCKBOX",
+          "tier": "often"
+        }
+      ]
+    },
+    {
+      "id": "DT_TABLE_BMK",
+      "shop": "black-market",
+      "coverage": "partial",
+      "draws": 6,
+      "categoryDraws": 2,
+      "categories": [
+        "containers",
+        "rope-climbing",
+        "travel"
+      ],
+      "overrides": [
+        {
+          "itemId": "DT_ITEM_GS_LOCKBOX",
+          "tier": "often"
+        },
+        {
+          "itemId": "DT_ITEM_GS_ROPE_SILK",
+          "tier": "often"
+        }
+      ]
+    }
+  ]
+}

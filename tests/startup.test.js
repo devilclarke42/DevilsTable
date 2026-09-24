@@ -36,11 +36,18 @@ test("startup registers a restricted V2 menu and a read-only-default API without
   assert.deepEqual([...hooks.keys()], ["init", "ready"]);
   hooks.get("init")();
   hooks.get("ready")();
-  assert.equal(settings.length, 2);
+  assert.equal(settings.length, 3);
+  assert.equal(menus.length, 2);
+  assert.equal(menus[1].key, "stockTableBuilder");
+  assert.equal(menus[1].config.restricted, true);
+  assert.equal(menus[1].config.label, "Open RollTable Builder");
   assert.equal(menus[0].config.restricted, true);
   assert.ok(menus[0].config.type.prototype instanceof ApplicationV2);
   assert.equal(Object.isFrozen(module.api), true);
   assert.deepEqual(module.api.openBuilder(), { force: true });
+  assert.deepEqual(module.api.openStockBuilder(), { force: true });
+  assert.equal(typeof module.api.rebuildStockTables, "function");
+  assert.equal(typeof module.api.rollStock, "function");
   t.mock.method(globalThis, "fetch", async url => ({
     ok: true, json: () => readJson(String(url).replace("modules/devils-table/", ""))
   }));
@@ -58,12 +65,27 @@ test("startup registers a restricted V2 menu and a read-only-default API without
   assert.equal(alchemist.count, 6);
   assert.equal(alchemist.allCategories, true);
   assert.equal(alchemist.shop.name, "Village Alchemist");
+  const StockApp = menus[1].config.type;
+  const stockApp = new StockApp();
+  const stockContext = await stockApp._prepareContext({});
+  assert.equal(stockContext.tableCount, 36);
+  assert.equal(stockContext.setCount, 9);
+  assert.equal(stockContext.oftenChance, 80);
+  assert.equal(stockContext.rarelyChance, 15);
+  assert.ok(StockApp.DEFAULT_OPTIONS.actions.rollStock);
+  await StockApp.DEFAULT_OPTIONS.actions.selectShop.call(stockApp, null, { dataset: { shop: "" } });
+  assert.equal((await stockApp._prepareContext({})).tableCount, 120);
+  assert.equal((await stockApp._prepareContext({})).rollBlocked, true);
+  await StockApp.DEFAULT_OPTIONS.actions.selectShop.call(stockApp, null, { dataset: { shop: "general-store" } });
+  await StockApp.DEFAULT_OPTIONS.actions.selectCategory.call(stockApp, null, { dataset: { category: "travel" } });
+  assert.equal((await stockApp._prepareContext({})).tableCount, 4);
   globalThis.fetch = async () => ({ ok: false, status: 404 });
   const failed = await new App()._prepareContext({});
   assert.equal(failed.blocked, true);
   assert.match(failed.catalogueError, /HTTP 404/);
   game.user.isGM = false;
   assert.throws(() => module.api.openBuilder(), /Only a GM/);
+  assert.throws(() => module.api.openStockBuilder(), /Only a GM/);
   assert.ok(menus[0].config.type.DEFAULT_OPTIONS.actions.preview);
   assert.ok(menus[0].config.type.DEFAULT_OPTIONS.actions.build);
 });

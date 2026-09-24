@@ -1,5 +1,6 @@
 import { MODULE_ID } from "../constants.js";
 import { CompendiumBuilderApplication } from "../apps/compendium-builder-app.js";
+import { RollTableBuilderApplication } from "../apps/roll-table-builder-app.js";
 
 export function registerSettings() {
   game.settings.register(MODULE_ID, "debugLogging", {
@@ -26,5 +27,15 @@ export function registerSettings() {
     icon: "fa-solid fa-hammer",
     type: CompendiumBuilderApplication,
     restricted: true
+  });
+
+  game.settings.register(MODULE_ID, "lastTableBuildSummary", {
+    name: "Last stock table build summary", scope: "world", config: false,
+    type: new foundry.data.fields.StringField(), default: ""
+  });
+  game.settings.registerMenu(MODULE_ID, "stockTableBuilder", {
+    name: "Build/Rebuild Stock RollTables", label: "Open RollTable Builder",
+    hint: "Generate shop and category stock RollTables from canonical JSON; roll core plus rotating stock.",
+    icon: "fa-solid fa-dice", type: RollTableBuilderApplication, restricted: true
   });
 }
