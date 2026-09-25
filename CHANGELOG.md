@@ -3,7 +3,40 @@
 This file retains detailed repository build history. The official milestone/release record is
 [docs/CHANGELOG.md](docs/CHANGELOG.md). Versions here do not imply a public GitHub Release exists.
 
-## Unreleased — Documentation Foundation
+## 0.2.0-alpha.7 — 2026-09-25 — Complete General Store
+
+### Added
+
+- 75 finished goods, bringing the General Store to 144 Items across ten categories. Tools and
+  Trade Goods join the expanded existing categories; every product has a permanent ID, sale unit,
+  original description, reviewed economics, adjusted mass, tags, icon and provenance.
+- Town General Store, City General Store and Merchant Wagon variants alongside the existing
+  Village profile. Four shared tables per profile produce sixteen General Store tables and
+  32 active module tables, with no duplicate Item documents or category/quantity tables.
+- Profile selection and private Merchant Notes in the separate RollTable builder; inherited
+  overrides, Wagon exclusions and existing weighted quantity rules use effective availability.
+- Twelve original 256×256 WebP icons with editable developer masters; existing core/SVG reuse.
+- Full Sprint 3 review, updated standards/upgrade instructions and regression checks for original
+  content, both upgrades, variant boundaries, icons, source validation and historical cleanup safety.
+
+### Changed
+
+- All thirteen Containers now declare sale units. `saleUnit` and nonempty tags are required;
+  normalized display names must be unique. Existing 69 IDs, descriptions, economics and mechanics
+  remain unchanged. Lighting & Fire and Animal Supplies have updated display labels, retaining slugs.
+- The table ledger reserves 132 identities, including all 100 retired category IDs. New tables
+  retain references to canonical Items. Tavern and other partial shop catalogues are not expanded.
+
+### Verification
+
+- 226 automated tests; simulated alpha.6 Item upgrade: 75 creates, 13 updates, 56 unchanged.
+  Table upgrade: 12 creates, 3 updates, 17 unchanged. Repeat builds report 144 / 32 unchanged.
+- Historical category tables whose membership or names no longer match current source are
+  protected by cleanup. Tests preserve those tables rather than force removal.
+- Live V14 / D&D5e 5.3.3 / Forge acceptance remains pending. Compendiums are generated in the
+  target world through the two builder buttons; this candidate is not a public stable release.
+
+## Documentation Foundation — 2026-09-24
 
 ### Added
 
@@ -17,7 +50,7 @@ This file retains detailed repository build history. The official milestone/rele
 
 - Linked the standards from the README, technical guides and complete file inventory, while
   preserving existing alpha history and implementation checklists.
-- This sprint changes Markdown only. Runtime code, data, schemas, tests and version numbers remain
+- That sprint changed Markdown only. Runtime code, data, schemas, tests and version numbers remain
   at the preceding stock feature commit; the updated ZIP includes the documentation.
 
 ## 0.2.0-alpha.6 — 2026-09-24 — Weighted quantities and compact stock tables

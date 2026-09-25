@@ -8,7 +8,7 @@ version, validation results and target-environment acceptance record.
 
 ## Current release model
 
-The current runtime version is `0.2.0-alpha.6`. Installation uses a custom-package ZIP on The Forge.
+The current runtime version is `0.2.0-alpha.7`. Installation uses a custom-package ZIP on The Forge.
 The archive contains canonical source JSON and runtime code; builders create world compendiums
 after installation. It does not contain prebuilt compendium databases.
 
@@ -25,7 +25,7 @@ of each. A documentation-only sprint must not modify runtime code, schemas, cano
 
 Use [Semantic Versioning](https://semver.org/) with prerelease identifiers during development:
 
-- `0.2.0-alpha.6` is a review build toward the 0.2.0 milestone, not a claim that stable 0.2.0 shipped.
+- `0.2.0-alpha.7` is a review build toward the 0.2.0 milestone, not a claim that stable 0.2.0 shipped.
 - Keep `module.json` and `package.json` versions equal when changing runtime/package version.
 - Bump a prerelease number for another distinct distributed runtime candidate.
 - Use a patch release for a compatible correction after a numbered milestone; a new milestone
@@ -48,7 +48,7 @@ npm run check
 
 This checks canonical items, shop/category definitions, stock and quantity policies, reservations,
 supported mappings, manifest consistency, runtime files/imports, JavaScript syntax and tests.
-The current baseline is 69 Items, 20 active tables and 204 passing tests. Re-evaluate counts when
+The current baseline is 144 Items, 32 active tables and 226 passing tests. Re-evaluate counts when
 approved content changes; a count is evidence of this build, not a permanent quota.
 
 CI compares both ID ledgers with the push/PR base revision. For a local checkout with history, the
@@ -81,13 +81,14 @@ Foundry build, browser, enabled modules and installation method. Operate as the 
 
 1. Install the candidate ZIP, enable the module and reload. Confirm the expected version.
 2. Open **Build/Rebuild Compendiums → Open Builder** in module settings.
-3. Preview the intended Items. A fresh complete catalogue creates 69; an unchanged accepted
-   General Store pack reports 69 unchanged.
+3. Preview the intended Items. A fresh complete catalogue creates 144. An alpha.6
+   69-item pack previews 75 creates, 13 sale-unit updates and 56 unchanged; a current pack reports 144 unchanged.
 4. Build, then rebuild. Confirm stable IDs, resolved icons, correct price/weight/sale-unit data and
    no duplicates. Check container contents and native activities where applicable.
 5. Open the separate **Build/Rebuild Stock RollTables → Open RollTable Builder**.
-6. Preview/build **All shops → All categories**. A fresh world creates 20 tables; each shop uses four.
-   Rebuilding those tables should report 20 unchanged. Referenced Items must already exist.
+6. Preview/build **All shops → All categories**. A fresh world creates 32 tables; each merchant profile uses four.
+   Rebuilding those tables should report 32 unchanged. An alpha.6 pack needs twelve creates,
+   three pool updates and seventeen unchanged tables, retaining all twenty prior identities. Referenced Items must already exist.
 7. Roll several shops and categories with **Roll Stock & Quantities**. Check guaranteed essentials,
    category isolation, duplicate prevention, weighted quantities and sale-unit interpretation.
 8. Test native table references/draws separately. Builder quantity rolls do not imply that native
@@ -98,14 +99,16 @@ manual pack edits as source changes. Actor/world copies remain independent of co
 
 ## 5. Exercise upgrade and recovery paths
 
-For an alpha.5 world, confirm that the same 20 whole-shop tables are retained while normal builds
+For an alpha.5 world, confirm that all 20 existing whole-shop identities are retained while normal builds
 preserve the 100 superseded category tables. Cleanup is optional and separately confirmed:
 
 1. Back up the world and ensure the compact shop tables are current.
 2. Preview legacy cleanup for the intended scope and read the exact removal/protection list.
 3. Review links outside the scanned stock pack/world RollTables, particularly journals, macros
    and other compendiums. Protected edited tables may legitimately remain.
-4. Confirm the reviewed IDs. A pristine full cleanup removes 100 category tables and retains 20.
+4. Confirm the reviewed IDs. Remove only the eligible IDs shown by the current preview; retain all 32 active tables.
+   Older category names/membership may no longer match the expanded catalogue, so even unedited
+   historical tables can remain protected. Do not promise removal of all 100 or bypass this check.
 5. Re-preview after interruption; check lock restoration and the independent cleanup report.
 
 Also test rebuild recovery, permission denial and real read-back differences in a disposable copy.
@@ -121,7 +124,7 @@ unit tests passed.
 
 ```sh
 npm run package
-unzip -l dist/devils-table-v0.2.0-alpha.6.zip
+unzip -l dist/devils-table-v0.2.0-alpha.7.zip
 ```
 
 `npm run package` reruns checks and builds the runtime allowlist. Use the filename generated from
@@ -136,7 +139,7 @@ the candidate's actual version when it changes. Verify:
 
 Do not install GitHub's generic source-code ZIP as a substitute for this runtime package. An Actions
 download may wrap the module ZIP in another ZIP; extract the artifact first and import the inner
-`devils-table-v0.2.0-alpha.6.zip` with The Forge's custom-package Import Wizard. The
+`devils-table-v0.2.0-alpha.7.zip` with The Forge's custom-package Import Wizard. The
 [Forge custom-package guide](https://forums.forge-vtt.com/t/how-to-upload-a-modified-version-of-a-module-system/10510)
 describes that installation route.
 

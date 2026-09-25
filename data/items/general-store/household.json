@@ -342,5 +342,329 @@
       "type": "loot",
       "subtype": "gear"
     }
+  },
+  {
+    "id": "DT_ITEM_GS_RAGS_CLOTH",
+    "name": "Cloth Rags",
+    "description": "Six clean offcuts of plain cloth wipe tools, polish dry surfaces or soak up small spills. The pieces are assorted shapes but large enough to fold around a hand.\n\nThey are domestic cleaning supplies, not sterile dressings or a healer's kit. Washing, drying and replacing worn pieces are ordinary household work.",
+    "saleUnit": "One tied bundle of six clean cloth rags",
+    "price": {
+      "value": 3,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 0.25,
+      "units": "lb",
+      "notes": "A quarter pound for six light cloth pieces and their tie."
+    },
+    "icon": "icons/commodities/cloth/cloth-bolt-gold-orange.webp",
+    "category": "household",
+    "tags": [
+      "mundane",
+      "cloth",
+      "cleaning",
+      "bundle"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "core",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original project design. Original wording, project price and adjusted weight. See docs/SPRINT_3_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_TOWEL_HAND",
+    "name": "Hand Towel",
+    "description": "A hemmed rectangle of absorbent linen dries hands, dishes or small cleaned objects. A sewn loop allows it to hang near a wash place.\n\nThe towel is supplied dry and clean. It has no cleansing or medical effect of its own; soap and wash water are separate.",
+    "saleUnit": "One linen hand towel, two by one foot",
+    "price": {
+      "value": 7,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 0.2,
+      "units": "lb",
+      "notes": "One fifth of a pound for a single small hemmed linen towel."
+    },
+    "icon": "icons/commodities/cloth/cloth-bolt-gold-orange.webp",
+    "category": "household",
+    "tags": [
+      "mundane",
+      "linen",
+      "washing",
+      "reusable"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "core",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original project design. Original wording, project price and adjusted weight. See docs/SPRINT_3_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_PEGS_CLOTHES",
+    "name": "Clothes Pegs",
+    "description": "Twelve split hardwood pegs pin light washing to a clothes line. Their tapered slots grip the fabric and cord without separate metal springs.\n\nThe line and washing are separate. Strong wind or a heavy wet blanket can still pull a poorly fitted peg loose.",
+    "saleUnit": "One set of twelve split wooden clothes pegs",
+    "price": {
+      "value": 2,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 0.15,
+      "units": "lb",
+      "notes": "Fifteen hundredths of a pound for twelve small pegs."
+    },
+    "icon": "modules/devils-table/assets/icons/clothes-pegs.webp",
+    "category": "household",
+    "tags": [
+      "mundane",
+      "wood",
+      "laundry",
+      "set"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "core",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original project design. Original wording, project price and adjusted weight. See docs/SPRINT_3_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_BUTTONS_WOOD",
+    "name": "Wooden Buttons",
+    "description": "Twelve plain two-hole wooden buttons repair everyday shirts, wraps and cloth bags. Their rounded edges are smoothed to reduce snagging.\n\nA needle and thread are separate. The packet contains fastening pieces rather than a complete garment or a set of metal armour fittings.",
+    "saleUnit": "One packet of twelve plain wooden buttons",
+    "price": {
+      "value": 3,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 0.03,
+      "units": "lb",
+      "notes": "Three hundredths of a pound for twelve small wooden buttons and a paper fold."
+    },
+    "icon": "modules/devils-table/assets/icons/buttons.webp",
+    "category": "household",
+    "tags": [
+      "mundane",
+      "wood",
+      "sewing",
+      "set"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "core",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original project design. Original wording, project price and adjusted weight. See docs/SPRINT_3_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_THIMBLE",
+    "name": "Thimble",
+    "description": "A dimpled brass cap protects a fingertip while pushing a sewing needle through ordinary fabric. Its shallow open rim fits one adult finger.\n\nNeedles and thread are separate. It is a mending aid rather than a proficiency tool set, protective armour or a means of handling dangerous substances.",
+    "saleUnit": "One brass sewing thimble",
+    "price": {
+      "value": 3,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 0.02,
+      "units": "lb",
+      "notes": "Two hundredths of a pound for a thin brass finger cap."
+    },
+    "icon": "modules/devils-table/assets/icons/thimble.webp",
+    "category": "household",
+    "tags": [
+      "mundane",
+      "brass",
+      "sewing",
+      "reusable"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "core",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original project design. Original wording, project price and adjusted weight. See docs/SPRINT_3_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_COMB",
+    "name": "Comb",
+    "description": "A small polished bone comb has coarse teeth at one end and finer teeth at the other. It loosens ordinary tangles and helps keep hair tidy.\n\nThis is personal grooming equipment, distinct from the horse's metal Curry Comb. It removes no condition or infestation automatically.",
+    "saleUnit": "One bone hair comb",
+    "price": {
+      "value": 4,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 0.05,
+      "units": "lb",
+      "notes": "Five hundredths of a pound for one small polished bone comb."
+    },
+    "icon": "modules/devils-table/assets/icons/comb.webp",
+    "category": "household",
+    "tags": [
+      "mundane",
+      "bone",
+      "grooming",
+      "reusable"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "core",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original project design. Original wording, project price and adjusted weight. See docs/SPRINT_3_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_HINGES_DOOR",
+    "name": "Door Hinges",
+    "description": "Two plain iron strap hinges and twelve fitting nails suit a small wooden door, shutter or sturdy box lid. Their broad leaves spread the load over the timber.\n\nA hammer, door and latch are separate. Suitability depends on the timber and fitting; the hinges do not themselves secure or lock an opening.",
+    "saleUnit": "One pair of small iron strap hinges with twelve nails",
+    "price": {
+      "value": 4,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 1,
+      "units": "lb",
+      "notes": "One pound for both small hinges, pins and their fitting nails."
+    },
+    "icon": "modules/devils-table/assets/icons/hinges.webp",
+    "category": "household",
+    "tags": [
+      "mundane",
+      "iron",
+      "repair",
+      "set"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original project design. Original wording, project price and adjusted weight. See docs/SPRINT_3_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_PADLOCK",
+    "name": "Padlock",
+    "description": "An iron padlock closes through a suitable hasp or pair of chain links. One fitted key is supplied; a spare key or fitting a door hasp is separate work.\n\nUse the 2014 ordinary-lock benchmark: a creature proficient with thieves' tools can pick it with a successful DC 15 Dexterity check. Apply that check manually; it is not proof against breaking its mounting.",
+    "saleUnit": "One ordinary iron padlock with one key",
+    "price": {
+      "value": 4,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 0.5,
+      "units": "lb",
+      "notes": "Half a pound for the small lock and its included key."
+    },
+    "icon": "icons/sundries/misc/lock-bronze-reinforced.webp",
+    "category": "household",
+    "tags": [
+      "mundane",
+      "iron",
+      "security",
+      "reusable"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "2014 SRD 5.1 lock: DC 15 Dexterity check using thieves' tools by a proficient creature; project price and weight. Original wording, project price and adjusted weight. See docs/SPRINT_3_REVIEW.md.",
+      "license": "Original project text: distribution license pending; referenced SRD 5.1 rules: CC-BY-4.0."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_MORTAR_PESTLE",
+    "name": "Mortar and Pestle",
+    "description": "A shallow stone bowl and rounded hand pestle crush dry herbs, spice seeds and similar kitchen ingredients. The rough working surfaces help break pieces down under steady pressure.\n\nIngredients are separate. This is ordinary preparation equipment, not an alchemist's proficiency set and not a device that creates potions or identifies substances.",
+    "saleUnit": "One small stone mortar with matching pestle",
+    "price": {
+      "value": 5,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 2,
+      "units": "lb",
+      "notes": "Two pounds for the small bowl and matching pestle, with no ingredients included."
+    },
+    "icon": "modules/devils-table/assets/icons/mortar-pestle.webp",
+    "category": "household",
+    "tags": [
+      "mundane",
+      "stone",
+      "kitchen",
+      "preparation"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original project design. Original wording, project price and adjusted weight. See docs/SPRINT_3_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
   }
 ]

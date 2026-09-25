@@ -9,7 +9,7 @@ test("General Store production catalogue validates without including fixtures", 
   const data = await loadCatalogue({ readJson });
   const result = validateCatalogue(data);
   assert.equal(result.valid, true);
-  assert.equal(result.count, 69);
+  assert.equal(result.count, 144);
   assert.equal(result.warnings.length, 0);
   assert.ok(data.entries.every(({ item }) => !item.id.includes("TEST")));
 });
@@ -39,6 +39,7 @@ const invalid = {
   "duplicate shop tags": item => { item.shops = ["tavern", "tavern"]; },
   "unknown category": item => { item.category = "unknown"; },
   "duplicate tags": item => { item.tags = ["test", "test"]; },
+  "empty tags": item => { item.tags = []; },
   "remote icon": item => { item.icon = "https://example.com/icon.png"; },
   "icon traversal": item => { item.icon = "icons/../secret.png"; },
   "unknown property": item => { item.prcie = 10; },
@@ -107,6 +108,6 @@ test("schema catches extra nested fields and zero remains a valid weight", async
   assert.equal(validateCatalogue(data).valid, false);
 });
 test("5,000-item catalogue validates with unique document identities", async () => {
-  const items = Array.from({ length: 5000 }, (_, i) => ({ ...fixture, id: `DT_ITEM_TEST_SCALE_${i}` }));
+  const items = Array.from({ length: 5000 }, (_, i) => ({ ...fixture, id: `DT_ITEM_TEST_SCALE_${i}`, name: `Scale parcel ${i}` }));
   assert.equal(validateCatalogue(await catalogue(items)).valid, true);
 });

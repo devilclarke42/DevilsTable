@@ -4,13 +4,13 @@ This is the official versioned milestone plan. Milestones describe outcomes and 
 not promised dates. Each catalogue is built in curated, reviewable categories; permanent identities,
 source provenance and the development standards apply throughout.
 
-Current work is **0.2.0 in development**, with runtime candidate `0.2.0-alpha.6`. The 69-item
+Current work is **0.2.0 in development**, with runtime candidate `0.2.0-alpha.7`. The 144-item
 General Store and basic stock tools are implemented. Detailed live acceptance remains open.
 Some framework work intentionally precedes the milestone where it will be expanded and completed.
 
 | Milestone | Focus | Status |
 | --- | --- | --- |
-| 0.2.0 | General Store | In development; curated content accepted, release verification ongoing |
+| 0.2.0 | General Store | In development; Sprint 3 implemented, live acceptance and review pending |
 | 0.3.0 | Tavern | Planned; existing shared goods are only a partial catalogue |
 | 0.4.0 | Alchemist | Planned; dedicated content and mechanics remain |
 | 0.5.0 | Blacksmith | Planned; dedicated content and mechanics remain |
@@ -22,13 +22,14 @@ Some framework work intentionally precedes the milestone where it will be expand
 
 ## 0.2.0 — General Store
 
-Deliver the complete agreed eight-category catalogue: Containers, Fire & Lighting, Rope & Climbing,
-Camping, Writing, Household, Animal and Travel. Retain permanent IDs, polished descriptions,
+Deliver the ten-category General Store: Containers, Lighting & Fire, Rope & Climbing, Camping,
+Writing, Tools, Household, Animal Supplies, Travel and Trade Goods. Retain permanent IDs, polished descriptions,
 explicit purchase units, copper/silver-friendly prices, adjusted weights and shared icon references.
 
-The current 69 goods, Item builder, validation, settings, logging, native supported mappings and
-packaging provide this foundation. Stock tools now use 20 active tables with weighted quantities.
-The documentation foundation establishes the official standards without changing runtime behaviour.
+The current 144 goods, Item builder, validation, settings, logging, native supported mappings and
+packaging provide this foundation. Stock tools use 32 active tables with weighted quantities: sixteen for Village, Town, City and Wagon,
+and sixteen for existing partial merchant catalogues. Sprint 3 adds 75 goods and completes this
+authoring scope. The Tavern milestone has not begun; milestone numbers are unchanged.
 
 **Exit gate:** complete the detailed V14 / D&D5e 5.3.3 Forge checks, verify unchanged rebuilds and
 upgrades, review quantity balance/cleanup, and resolve any content or runtime issues before declaring

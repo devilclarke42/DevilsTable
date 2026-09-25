@@ -26,12 +26,12 @@ GitHub Release or installation manifest exists. No release dates are invented fo
 
 - Documentation now distinguishes normative authoring standards, automated checks and future
   milestones explicitly. Root records retain their existing detailed build history.
-- The documentation sprint changes Markdown only; weighted-quantity and compact-table code was
+- The Documentation Foundation sprint changed Markdown only; weighted-quantity and compact-table code was
   completed in the preceding stock feature commit.
 
 ## [0.2.0] — In Development
 
-Current runtime candidate: **0.2.0-alpha.6**. The numbered General Store milestone is not yet a
+Current runtime candidate: **0.2.0-alpha.7**. The numbered General Store milestone is not yet a
 stable public release.
 
 ### Added
@@ -40,8 +40,10 @@ stable public release.
   identities, Item/RollTable builders, repeatable reconciliation and Forge-oriented ZIP packaging.
 - Five merchant definitions with builder-only Merchant Notes and one canonical product shared
   across appropriate shop assignments.
-- All 69 approved General Store goods across eight curated categories, with permanent IDs,
+- 144 finished General Store goods across ten curated categories, with permanent IDs,
   original descriptions, prices, adjusted weights, icons, availability and source attribution.
+- 75 Sprint 3 additions, twelve lightweight 256×256 WebP icons, merchant-specific exclusions,
+  tier overrides and private notes, required sale units/nonempty tags and duplicate-name validation.
 - Native supported container and mundane consumable mappings, explicit purchase units,
   constrained utility activities and informational light metadata.
 - Separate stock-table settings controls, guaranteed core stock, rotating availability and
@@ -53,10 +55,11 @@ stable public release.
 
 ### Changed
 
-- Active RollTable generation was reduced from 120 to 20, retaining four whole-shop tables per
-  merchant and filtering their pools for category rolls. No quantity tables are generated.
-- Existing Item records/economics and retained whole-shop table identities are preserved by this
-  optimisation. All retired table IDs remain reserved.
+- Alpha.6 reduced active generation from 120 to 20. Sprint 3 extends that compact framework
+  to 32 tables for eight profiles, including Village, Town, City and Wagon. Category rolls
+  filter shared pools; no quantity tables or duplicate Item documents are generated.
+- All 69 accepted Item identities/economics are preserved; thirteen Containers gain explicit
+  sale units. The existing twenty whole-shop table identities remain, with three Village pool updates. All retired table IDs remain reserved.
 
 ### Fixed
 
@@ -68,8 +71,9 @@ stable public release.
 - The 100 alpha.5 category-specific tables. Normal builds preserve existing copies until the GM
   reviews the separate cleanup action; protected or externally referenced tables may remain.
 
-Verification at the current stock feature commit: **204 automated tests passed**. The owner reported
-successful prior goods/table builds. Detailed live testing of weighted quantities and cleanup
+Sprint 3 verification: **226 automated tests**, 144 Items and 32 active tables. Both alpha.6
+upgrade paths and unchanged repeat builds are covered. The owner reported
+successful prior goods/table builds. Detailed live testing of the new catalogue, variants, quantities and cleanup
 remains required, and no verified-compatibility claim is inferred from the automated result.
 
 ## [0.1.0] — Foundation milestone

@@ -4,7 +4,7 @@
   "description": "Plain-text descriptions, 2014 mechanics, and author-supplied adjusted weights in pounds.",
   "type": "object",
   "additionalProperties": false,
-  "required": ["id", "name", "description", "price", "weight", "icon", "category", "tags", "shops", "availability", "source", "mechanics"],
+  "required": ["id", "name", "description", "saleUnit", "price", "weight", "icon", "category", "tags", "shops", "availability", "source", "mechanics"],
   "properties": {
     "id": { "type": "string", "pattern": "^DT_ITEM_[A-Z0-9]+(?:_[A-Z0-9]+)+$", "maxLength": 128 },
     "name": { "type": "string", "minLength": 1, "maxLength": 200, "pattern": "\\S" },
@@ -27,7 +27,7 @@
     },
     "icon": { "type": "string", "pattern": "^(icons/|modules/devils-table/assets/)[A-Za-z0-9_/-]+\\.(svg|webp|png|jpg|jpeg)$" },
     "category": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
-    "tags": { "type": "array", "uniqueItems": true, "items": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" } },
+    "tags": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" } },
     "shops": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" } },
     "availability": { "type": "string", "enum": ["core", "variable", "special-order"] },
     "source": {

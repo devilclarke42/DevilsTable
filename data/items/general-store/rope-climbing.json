@@ -230,5 +230,149 @@
         "condition": "Requires a suitable anchor. Apply the 25-foot movement and fall limits manually; no climbing proficiency is granted."
       }
     }
+  },
+  {
+    "id": "DT_ITEM_GS_BLOCK_TACKLE",
+    "name": "Block and Tackle",
+    "description": "Two pulley blocks, hooks and a thirty-foot working rope form a lifting tackle. Attach it securely above the load and thread the line before applying force.\n\nUnder the 2014 equipment rule, properly rigged tackle lets you hoist up to four times the weight you could normally lift. The support must bear the load; this is not a climbing-speed bonus or an automatic check success.",
+    "saleUnit": "One pair of pulley blocks with thirty feet of lifting rope",
+    "price": {
+      "value": 8,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 3,
+      "units": "lb",
+      "notes": "Three pounds for the complete small lifting tackle, including its working rope."
+    },
+    "icon": "icons/sundries/survival/climbing-anchor-steel-grey.webp",
+    "category": "rope-climbing",
+    "tags": [
+      "mundane",
+      "rope",
+      "lifting",
+      "pulley"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "2014 SRD 5.1 equipment: properly rigged block and tackle allows lifting four times normal weight; adjudicate manually. Original wording, project price and adjusted weight. See docs/SPRINT_3_REVIEW.md.",
+      "license": "Original project text: distribution license pending; referenced SRD 5.1 rules: CC-BY-4.0."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_CHAIN",
+    "name": "Chain",
+    "description": "Ten feet of linked iron chain for securing a gate, binding a load or other heavy fastening work. Both ends are plain links; hooks and locks are separate purchases.\n\nRetains the 2014 chain rule of 10 hit points and a DC 20 Strength check to burst it. Track damage and checks manually; fastening it does not automatically restrain a creature.",
+    "saleUnit": "One ten-foot length of iron chain",
+    "price": {
+      "value": 3,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 5,
+      "units": "lb",
+      "notes": "Five pounds for the complete ten-foot chain; fittings and any attached load are separate."
+    },
+    "icon": "icons/tools/fasteners/chain-steel-grey.webp",
+    "category": "rope-climbing",
+    "tags": [
+      "mundane",
+      "iron",
+      "securing",
+      "lifting"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "2014 SRD 5.1 equipment: chain has 10 hit points and can be burst with a DC 20 Strength check. Original wording, project price and adjusted weight. See docs/SPRINT_3_REVIEW.md.",
+      "license": "Original project text: distribution license pending; referenced SRD 5.1 rules: CC-BY-4.0."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_LADDER_ROPE",
+    "name": "Rope Ladder",
+    "description": "Two hemp side ropes support closely spaced hardwood rungs along a twenty-foot ladder. Extended ends allow it to be lashed to a sound overhead support before use.\n\nThe listed weight includes the rungs and lashings. Anchors are separate, and climbing still follows ordinary movement and checks; a swinging ladder grants no automatic climbing speed.",
+    "saleUnit": "One twenty-foot rope ladder with wooden rungs",
+    "price": {
+      "value": 4,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 6,
+      "units": "lb",
+      "notes": "Six pounds for twenty feet of side ropes, wooden rungs and lashings."
+    },
+    "icon": "icons/sundries/misc/ladder-improvised.webp",
+    "category": "rope-climbing",
+    "tags": [
+      "mundane",
+      "rope",
+      "wood",
+      "climbing"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original project design. Original wording, project price and adjusted weight. See docs/SPRINT_3_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_PIN_BELAYING",
+    "name": "Belaying Pin",
+    "description": "A tapered hardwood pin with a rounded grip provides a removable point around which a line can be made fast when fitted into a suitable rail or socket.\n\nThe supporting rail is not included. It is a rope-handling fitting rather than a freestanding ground anchor or a substitute for a climber's kit.",
+    "saleUnit": "One twelve-inch hardwood belaying pin",
+    "price": {
+      "value": 4,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 0.3,
+      "units": "lb",
+      "notes": "One solid hardwood pin, with no mounting rail or line included."
+    },
+    "icon": "icons/commodities/wood/wood-pole.webp",
+    "category": "rope-climbing",
+    "tags": [
+      "mundane",
+      "wood",
+      "rope",
+      "securing"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original project design. Original wording, project price and adjusted weight. See docs/SPRINT_3_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
   }
 ]

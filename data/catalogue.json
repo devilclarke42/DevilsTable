@@ -10,12 +10,34 @@
     "data/items/general-store/writing.json",
     "data/items/general-store/household.json",
     "data/items/general-store/animal.json",
-    "data/items/general-store/travel.json"
+    "data/items/general-store/travel.json",
+    "data/items/general-store/tools.json",
+    "data/items/general-store/trade-goods.json"
   ],
-  "shops": ["tavern", "general-store", "alchemist", "blacksmith", "black-market"],
+  "shops": [
+    "tavern",
+    "general-store",
+    "alchemist",
+    "blacksmith",
+    "black-market"
+  ],
   "categories": [
-    "containers", "fire-lighting", "rope-climbing", "camping", "writing", "household", "animal", "travel",
-    "tools", "clothing", "trade-goods", "food", "drink",
-    "alchemical-goods", "weapons", "armour", "contraband"
+    "containers",
+    "fire-lighting",
+    "rope-climbing",
+    "camping",
+    "writing",
+    "household",
+    "animal",
+    "travel",
+    "tools",
+    "clothing",
+    "trade-goods",
+    "food",
+    "drink",
+    "alchemical-goods",
+    "weapons",
+    "armour",
+    "contraband"
   ]
 }

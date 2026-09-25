@@ -12,7 +12,7 @@ export function createBuilder({ load = loadCatalogue, adapter = null, now = () =
   prepare = null, collection = PACK_COLLECTION, planner = planBuild, verificationError = readBackError,
   adapterFactory = createFoundryAdapter } = {}) {
   let busy = false;
-  return async function rebuild({ dryRun = true, onProgress = () => {}, shopId = null, categoryId = null } = {}) {
+  return async function rebuild({ dryRun = true, onProgress = () => {}, shopId = null, categoryId = null, profileId = null } = {}) {
     if (busy) throw new Error("A Devil's Table build is already running in this client.");
     busy = true;
     // Progress observers must not be able to interrupt persistence or lock restoration.
@@ -34,7 +34,9 @@ export function createBuilder({ load = loadCatalogue, adapter = null, now = () =
         error.details = validation.errors;
         throw error;
       }
-      const prepared = prepare ? await prepare(catalogue, { shopId, categoryId }) : null;
+      if (profileId && !prepare) throw new Error("Stock profile selection applies only to the RollTable builder.");
+      const scope = { shopId, categoryId, ...(profileId ? { profileId } : {}) };
+      const prepared = prepare ? await prepare(catalogue, scope) : null;
       const documents = prepared?.documents ?? selectEntries(catalogue, { shopId, categoryId }).map(({ item }) => catalogueEntryToItem(item));
       progress(`Preflighting ${documents.length} documents…`);
       await io.validateDocuments(documents);
@@ -42,7 +44,7 @@ export function createBuilder({ load = loadCatalogue, adapter = null, now = () =
       const existing = pack ? await io.readPack(pack) : [];
       const plan = planner(documents, existing);
       summary = {
-        status: dryRun ? "preview" : "complete", at: now(), pack: collection, scope: { shopId, categoryId },
+        status: dryRun ? "preview" : "complete", at: now(), pack: collection, scope,
         count: documents.length, create: plan.create.length, update: plan.update.length,
         unchanged: plan.unchanged, preserved: plan.preserved, written: 0, warnings: [...validation.warnings, ...(prepared?.warnings ?? [])]
       };

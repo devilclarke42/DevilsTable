@@ -73,6 +73,10 @@ make quality review harder.
 plans do not create inventory, and future categories need deliberate scope and review. “Complete”
 means the agreed curated list, not every object that any general store could sell.
 
+**Amendment — 2026-09-25:** Sprint 3 deliberately expands the agreed scope to 144 goods in ten
+categories, including Tools and Trade Goods. It preserves the original 69 identities and economics,
+completes one merchant, and stops before Tavern. The category-first rationale remains unchanged.
+
 ## 6. One canonical item is shared between merchants
 
 **Decision:** use multiple `shops` tags and optional stock-tier overrides on one Item rather than
@@ -110,6 +114,10 @@ bundle composition or silently changes currency. Price bands guide supply but do
 mechanics or magical rarity. Existing thirteen Containers retain their documented legacy `saleUnit`
 exception; all new records follow [CONTENT_STANDARD.md](CONTENT_STANDARD.md).
 
+**Amendment — 2026-09-25:** all thirteen original Containers gain explicit sale units. The schema
+now requires the field on every Item, ending the legacy exception. Only the generated sale-unit
+metadata changes for those records; purchase contents, IDs, economics and mechanics are preserved.
+
 ## 9. Stock uses compact shared tables and separate quantity rolls
 
 **Decision:** as of alpha.6, generate four tables per shop—20 total—and filter their pools for
@@ -124,6 +132,11 @@ rotating defaults stay 80% Often, 15% Rarely and 5% no extra stock. Empty/exhaus
 Current Rare quantity defaults are one at 95% and two at 5%; cheaper/common goods use larger weighted
 profiles. Native draws provide availability; the builder supplies category filtering and quantities.
 Stock lists remain suggestions, not saved merchant inventory.
+
+**Amendment — 2026-09-25:** four General Store merchant profiles require sixteen tables; together
+with the other shops there are 32 active tables. All twenty existing whole-shop identities remain.
+The three Village item pools update to include the larger catalogue. Category and quantity tables
+remain unnecessary, and all 100 retired category IDs remain reserved.
 
 ## 10. Rebuild safety and retirement are explicit
 
@@ -175,6 +188,21 @@ schema limits, current behaviour and planned milestones.
 editorial rule, merchant condition or release procedure is already automated.
 
 **Consequences:** the weighted-quantity/compact-table work was committed before this documentation
-sprint. The documentation sprint changes Markdown only. The official milestone roadmap/changelog
+sprint. That documentation sprint changed Markdown only. The official milestone roadmap/changelog
 live under `/docs`; the existing root records retain detailed implementation and alpha-build history.
 Future changes must update the relevant standard, implementation, validation and evidence together.
+
+## 14. Merchant variants inherit one catalogue and stock policy
+
+**Accepted — 2026-09-25.** Village, Town, City and Wagon share one General Store catalogue. A small
+optional variant definition supplies a permanent profile prefix, draw defaults, exclusions,
+availability overrides and private Merchant Notes. Existing conversion and persistence stay intact.
+
+**Why:** these are different merchant assortments, not different products. Inheritance avoids copied
+catalogues and keeps future price/weight corrections consistent. Effective availability also selects
+the existing quantity policy, so a locally common product can have larger suggested stock.
+
+**Consequences:** base APIs remain compatible; table previews/builds can select all variants, while
+a stock roll selects one. Four tables per profile hold Item references; no duplicate Item documents
+or category/quantity tables are introduced. Merchant Notes never enter compendium metadata. The
+Wagon excludes bulky stock explicitly rather than silently changing canonical shop tags.

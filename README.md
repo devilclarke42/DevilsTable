@@ -6,29 +6,32 @@ Foundry compendiums are generated from it and must never be edited as source dat
 
 ## Current status
 
-Stock quantity build, `0.2.0-alpha.6`. The catalogue contains **69 authored items** across
-all eight approved categories, unchanged from alpha.4. The builder generates **20 stock
-RollTables**: four per shop. Category rolls filter those shared tables, and stock lists include
-weighted quantities. A separate cleanup action can remove the 100 superseded category tables.
+Sprint 3 build, `0.2.0-alpha.7`: **144 authored General Store items across ten categories**.
+The builder generates **32 stock RollTables**: four per merchant profile, including Village,
+Town, City and Merchant Wagon. Category rolls filter shared tables, and stock lists include
+weighted quantities. The General Store authoring scope is complete; live acceptance remains open.
 See [Stock RollTables](docs/STOCK_TABLES.md) for the stock rules and the
-[General Store review](docs/GENERAL_STORE_REVIEW.md) for the newer
-items' prices, purchase units, weights and mechanics, and the
-[Containers review table](docs/CONTAINERS_REVIEW.md) for the original batch.
+[Sprint 3 review](docs/SPRINT_3_REVIEW.md) for all 144 items, merchant policies and upgrade details.
+The [alpha.4 review](docs/GENERAL_STORE_REVIEW.md) records the accepted earlier expansion, and the
+[Containers review table](docs/CONTAINERS_REVIEW.md) records the original batch.
 Automated tests also use a synthetic parcel that is excluded from the module ZIP.
 
 The user reported that alpha.4's goods and alpha.5's RollTables worked. This build retains
-the earlier read-back fix and field diagnostics. Quantities and legacy cleanup require live acceptance.
+the earlier read-back fix and field diagnostics. The 75 additions, variant controls, quantities
+and legacy cleanup require detailed live acceptance. No Tavern content is added.
 
 | Category | Items |
 | --- | ---: |
 | Containers | 13 |
-| Fire & Lighting | 12 |
-| Rope & Climbing | 6 |
-| Camping | 11 |
-| Writing | 7 |
-| Household | 9 |
-| Animal | 6 |
-| Travel | 5 |
+| Lighting & Fire | 17 |
+| Rope & Climbing | 10 |
+| Camping | 21 |
+| Writing | 13 |
+| Household | 18 |
+| Animal Supplies | 12 |
+| Travel | 13 |
+| Tools | 16 |
+| Trade Goods | 11 |
 
 The target is Foundry V14 and D&D5e **5.3.3**, with the **2014 rules** baseline and
 author-supplied adjusted weights for Variant Encumbrance. No world encumbrance settings
@@ -54,7 +57,7 @@ is still required. The manifest deliberately does not claim verified compatibili
 - The builder never deletes items. Inactive catalogue entries stay in the pack until an explicit retirement workflow is added.
 
 New records define one purchase explicitly: a 50-foot rope, ten pitons, four horseshoes or one
-day's animal feed, for example. Quantity 1 means that complete sale unit. Eight consumable goods
+day's animal feed, for example. Quantity 1 means that complete sale unit. Eleven consumable goods
 have a native activity that removes one unit when its use is complete; lights are marked spent
 after burning out, not when first lit. Reusable lights and the climber's kit have non-consuming
 activities. Token lighting, elapsed burn time, fuel transfer and partial quantities remain manual.
@@ -71,27 +74,29 @@ an item from the Item compendium build.
 1. Obtain the packaged ZIP from the successful **Validate and package** GitHub Actions run
    (artifact: `devils-table-framework`), or build it using the development commands below.
    Downloading an Actions artifact may wrap the module ZIP in another ZIP: extract the artifact
-   first and select `devils-table-v0.2.0-alpha.6.zip` for import.
+   first and select `devils-table-v0.2.0-alpha.7.zip` for import.
 2. Back up your test world. In The Forge's Import Wizard, import that module ZIP as a custom package.
    See the [Forge custom-package guide](https://forums.forge-vtt.com/t/how-to-upload-a-modified-version-of-a-module-system/10510).
 3. In a V14 / D&D5e 5.3.3 test world, enable **Devil's Table: Goods & Provisions** and reload.
 4. As the active GM, open **Configure Settings → Devil's Table → Build/Rebuild Compendiums → Open Builder**.
 5. Select **Village General Store → All categories**, then **Validate / Preview**. In a fresh world,
-   expect 69 creates. An existing complete alpha.4 pack should report **69 unchanged**.
-   A Containers-only pack needs 56 creates and retains its 13 unchanged Items. Preview is read-only.
+   expect **144 creates**. A complete alpha.4–alpha.6 pack should report **75 creates, 13 updates,
+   56 unchanged**. The thirteen updates add Container sale-unit metadata. A Containers-only pack
+   needs 131 creates and 13 sale-unit updates. Preview is read-only.
 6. Choose **Build / Rebuild** and confirm. The builder adds the selected items to
-   `world.devils-table-items`. Run it again: expect 69 unchanged Items and no duplicates.
+   `world.devils-table-items`. Run it again: expect 144 unchanged Items and no duplicates.
 7. Open the separate **Configure Settings → Devil's Table → Build/Rebuild Stock RollTables →
    Open RollTable Builder** button. Select **All shops → All categories**,
-   then **Validate / Preview Tables**: expect 20 creates in a fresh world. A complete alpha.5
-   pack reports 20 unchanged and 100 preserved legacy tables.
-8. Choose **Build / Rebuild Tables** and confirm. Repeat: expect 20 unchanged active tables.
-   Each shop uses four tables, regardless of the category selected for rolling stock.
-9. Select one shop, optionally a category, and click **Roll Stock & Quantities**. The list includes
+   then **Validate / Preview Tables**: expect **32 creates** in a fresh world. An alpha.6 pack
+   reports **12 creates, 3 updates, 17 unchanged**. Normal builds preserve any legacy tables.
+8. Choose **Build / Rebuild Tables** and confirm. Repeat: expect 32 unchanged active tables.
+   Each merchant profile uses four tables, regardless of the category selected for rolling stock.
+9. Select one shop and merchant profile, optionally a category, and click **Roll Stock & Quantities**. The list includes
    weighted quantities in complete sale units. Inventory transfers remain under GM control.
-10. To reduce an alpha.5 pack to 20 tables, choose **All shops → All categories → Preview Legacy
-    Cleanup**, review the removal/protection report, then confirm. Edited tables and known incoming
-    RollTable links are protected. Check other saved references and keep a world backup first.
+10. For old category tables, use **Preview Legacy Cleanup**, review the removal/protection report,
+    then confirm only eligible removals. Changed historical memberships/names, manual edits and known
+    incoming RollTable links protect tables. Cleanup may therefore retain old tables. Check other
+    saved references and keep a world backup first.
    Follow [the table guide](docs/STOCK_TABLES.md) and [live checklist](docs/TESTING.md).
 
 The archive contains exactly one `devils-table/module.json`, alongside its runtime folders.
@@ -102,9 +107,10 @@ the live acceptance test and an actual versioned release exist.
 ### Recovering from the alpha.2 read-back error
 
 Keep the existing generated compendium. Import the updated module ZIP using the same Forge
-custom-package method, restart/reload the test world and confirm the module shows `0.2.0-alpha.6`.
+custom-package method, restart/reload the test world and confirm the module shows `0.2.0-alpha.7`.
 Run **Village General Store → Containers → Validate / Preview**, then **Build / Rebuild**.
-If all 13 Items were saved, equivalent description formatting should now report 13 unchanged.
+If all 13 Items were saved, equivalent description formatting is accepted. The first alpha.7
+rebuild adds thirteen sale-unit flags, then reports thirteen unchanged on the next build.
 If any are missing or genuinely different, the normal rebuild creates/updates them with their
 existing permanent identities. If verification still fails, copy the full builder report: it now
 includes source IDs, field paths and shortened expected/saved values. Do not delete the pack.
@@ -168,9 +174,9 @@ The corresponding documents under `docs/` govern milestone history and release s
 
 ## Source contract
 
-Every item requires `id`, `name`, `description`, `price`, `weight`, `icon`, `category`,
+Every item requires `id`, `name`, `description`, `saleUnit`, `price`, `weight`, `icon`, `category`,
 `tags`, `shops`, `availability`, `source`, and an explicit supported `mechanics` mapping.
-Every new General Store item also specifies `saleUnit`; it is optional for the unchanged original batch.
+Sale units and at least one meaningful tag are required for every record; normalized names must be unique.
 Names and shop membership may change; IDs such as `DT_ITEM_GS_ROPE_HEMP` must not.
 Reserve IDs in the append-only `data/id-ledger.json`; never recycle an old ID.
 Stock policy lives in `data/stock.json`, weighted quantity profiles in `data/stock-quantities.json`;

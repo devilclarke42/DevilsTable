@@ -164,18 +164,18 @@ test("table adapter enforces target pack and active-GM restrictions", async t =>
 test("create keeps embedded IDs, locks its pack and saves the separate table summary", async t => {
   const { catalogue, state, tablePack } = await environment(t);
   const build = createStockTableBuilder({ load: () => catalogue });
-  const result = await build({ dryRun: false, shopId: "general-store", categoryId: "writing" });
+  const result = await build({ dryRun: false, shopId: "general-store", categoryId: "writing", profileId: "DT_TABLE_GS" });
   assert.equal(result.create, 4);
   assert.equal(state.writes[0].options.keepId, true);
   assert.equal(state.writes[0].options.keepEmbeddedIds, true);
   assert.equal(state.settings[0][1], "lastTableBuildSummary");
   assert.equal(tablePack.locked, true);
-  assert.equal((await build({ dryRun: false, shopId: "general-store", categoryId: "writing" })).unchanged, 4);
+  assert.equal((await build({ dryRun: false, shopId: "general-store", categoryId: "writing", profileId: "DT_TABLE_GS" })).unchanged, 4);
 });
 
 test("tier changes reconcile owned rows and preserve table identity, folder and foreign flags", async t => {
   const { catalogue, state, tablePack } = await environment(t);
-  const scope = { dryRun: false, shopId: "general-store", categoryId: "writing" };
+  const scope = { dryRun: false, shopId: "general-store", categoryId: "writing", profileId: "DT_TABLE_GS" };
   const build = createStockTableBuilder({ load: () => catalogue });
   await build(scope);
   const table = [...state.tables.values()].find(t => t.data.flags["devils-table"].tier === "always");
@@ -199,7 +199,7 @@ test("tier changes reconcile owned rows and preserve table identity, folder and 
 
 test("an embedded-row failure relocks the pack and retry converges", async t => {
   const { catalogue, state, tablePack } = await environment(t);
-  const scope = { dryRun: false, shopId: "general-store", categoryId: "writing" };
+  const scope = { dryRun: false, shopId: "general-store", categoryId: "writing", profileId: "DT_TABLE_GS" };
   const build = createStockTableBuilder({ load: () => catalogue });
   await build(scope);
   catalogue.entries.find(({ item }) => item.id === "DT_ITEM_GS_PAPER").item.availability = "variable";
@@ -213,12 +213,12 @@ test("an embedded-row failure relocks the pack and retry converges", async t => 
 
 test("large new result pools are split into bounded embedded-document batches", async t => {
   const { catalogue, state, items } = await environment(t);
-  const scope = { dryRun: false, shopId: "general-store", categoryId: "writing" };
+  const scope = { dryRun: false, shopId: "general-store", categoryId: "writing", profileId: "DT_TABLE_GS" };
   const build = createStockTableBuilder({ load: () => catalogue });
   await build(scope);
   const base = catalogue.entries.find(({ item }) => item.id === "DT_ITEM_GS_PAPER").item;
   for (let i = 0; i < 205; i++) {
-    const item = { ...structuredClone(base), id: `DT_ITEM_TEST_STOCK_${i}`, availability: "variable" };
+    const item = { ...structuredClone(base), id: `DT_ITEM_TEST_STOCK_${i}`, name: `Stock fixture ${i}`, availability: "variable" };
     catalogue.entries.push({ item, location: `synthetic[${i}]` });
     catalogue.ledger.ids.push(item.id);
     items.push(catalogueEntryToItem(item));

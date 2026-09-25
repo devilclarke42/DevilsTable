@@ -1,0 +1,579 @@
+[
+  {
+    "id": "DT_ITEM_GS_HAMMER",
+    "name": "Hammer",
+    "description": "A small steel head with a flat striking face and curved claw is fitted to an ash handle. It drives ordinary nails and lifts loose nail heads during repairs.\n\nNails are separate. This entry is a hand tool rather than a weapon or a complete artisan's tool set; any improvised attack is resolved by the GM.",
+    "saleUnit": "One small steel claw hammer",
+    "price": {
+      "value": 5,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 1.5,
+      "units": "lb",
+      "notes": "One and a half pounds for the head and fitted wooden handle."
+    },
+    "icon": "icons/tools/hand/hammer-cobbler-steel.webp",
+    "category": "tools",
+    "tags": [
+      "mundane",
+      "steel",
+      "wood",
+      "hand-tool"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "core",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original project design. Original wording, project price and adjusted weight. See docs/SPRINT_3_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_CROWBAR",
+    "name": "Crowbar",
+    "description": "A two-foot iron bar ends in flattened, curved tips that fit beneath lids, boards or similar obstructions. It needs a sound fulcrum and enough room to apply force.\n\nUnder the 2014 equipment rule, it gives advantage on Strength checks where its leverage applies. The GM decides applicability; the Item does not automatically toggle advantage or unlock anything.",
+    "saleUnit": "One two-foot iron crowbar",
+    "price": {
+      "value": 8,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 3,
+      "units": "lb",
+      "notes": "Three pounds for a practical two-foot iron lever, adjusted from heavier demolition bars."
+    },
+    "icon": "modules/devils-table/assets/icons/crowbar.webp",
+    "category": "tools",
+    "tags": [
+      "mundane",
+      "iron",
+      "leverage",
+      "hand-tool"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "2014 SRD 5.1 equipment: advantage on Strength checks where a crowbar's leverage applies; handled manually. Original wording, project price and adjusted weight. See docs/SPRINT_3_REVIEW.md.",
+      "license": "Original project text: distribution license pending; referenced SRD 5.1 rules: CC-BY-4.0."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_SAW_HAND",
+    "name": "Hand Saw",
+    "description": "A toothed steel blade and shaped wooden grip make a portable saw for cutting dry boards and small timber. Its teeth are intended for wood, not stone or metal.\n\nA blade wrap is included in the weight. Work needs time and a secure support; this single implement does not constitute a carpenter's proficiency tool set.",
+    "saleUnit": "One steel hand saw with wooden grip",
+    "price": {
+      "value": 2,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 1.25,
+      "units": "lb",
+      "notes": "One and a quarter pounds including the wooden grip and simple blade wrap."
+    },
+    "icon": "icons/tools/hand/saw-steel-grey.webp",
+    "category": "tools",
+    "tags": [
+      "mundane",
+      "steel",
+      "wood",
+      "hand-tool"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original project design. Original wording, project price and adjusted weight. See docs/SPRINT_3_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_CHISEL",
+    "name": "Chisel",
+    "description": "A narrow steel cutting edge is fitted to a hardwood handle for paring joints and shaping wood. A simple leather cover protects the edge during carriage.\n\nA mallet is separate. The chisel is intended for woodwork, not masonry, and grants no tool proficiency by itself.",
+    "saleUnit": "One woodcutting chisel with edge cover",
+    "price": {
+      "value": 4,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 0.3,
+      "units": "lb",
+      "notes": "Three tenths of a pound for the blade, handle and included cover."
+    },
+    "icon": "icons/tools/hand/chisel-steel-brown.webp",
+    "category": "tools",
+    "tags": [
+      "mundane",
+      "steel",
+      "wood",
+      "hand-tool"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original project design. Original wording, project price and adjusted weight. See docs/SPRINT_3_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_MALLET_WOOD",
+    "name": "Wooden Mallet",
+    "description": "A broad hardwood head on a short handle drives wooden pegs and taps joints together without a steel hammer face. The head is a replaceable working surface and can split under unsuitable blows.\n\nPegs and chisels are separate. This is a domestic working tool, with no weapon statistics or automatic check bonus.",
+    "saleUnit": "One hardwood mallet",
+    "price": {
+      "value": 2,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 1,
+      "units": "lb",
+      "notes": "One pound for the seasoned hardwood head and handle."
+    },
+    "icon": "icons/tools/hand/hammer-cobbler-steel.webp",
+    "category": "tools",
+    "tags": [
+      "mundane",
+      "wood",
+      "hand-tool",
+      "camping"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "core",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original project design. Original wording, project price and adjusted weight. See docs/SPRINT_3_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_SHOVEL",
+    "name": "Shovel",
+    "description": "A broad iron blade and wooden shaft turn loose soil, clear shallow drains and move ash or gravel. The pointed edge can cut into ordinary turf with steady work.\n\nDigging speed depends on ground and conditions. The shovel does not automatically breach stone, remove a buried hazard or grant a burrowing speed.",
+    "saleUnit": "One iron-bladed shovel with wooden shaft",
+    "price": {
+      "value": 7,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 3,
+      "units": "lb",
+      "notes": "Three pounds for the complete travel-sized shovel and shaft."
+    },
+    "icon": "icons/tools/hand/shovel-spade-steel-grey.webp",
+    "category": "tools",
+    "tags": [
+      "mundane",
+      "iron",
+      "wood",
+      "digging"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "core",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original project design. Original wording, project price and adjusted weight. See docs/SPRINT_3_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_PICK_MINER",
+    "name": "Miner's Pick",
+    "description": "A pointed steel head on a tough wooden handle breaks hard soil and works loosened rock. It is heavy enough to need room for a controlled swing.\n\nThe pick is a working implement rather than a weapon entry or a complete mining kit. Striking stone creates noise and debris; excavation remains subject to the GM.",
+    "saleUnit": "One pointed steel mining pick",
+    "price": {
+      "value": 2,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 5,
+      "units": "lb",
+      "notes": "Five pounds for the complete head and handle, retaining the burden of a substantial digging tool."
+    },
+    "icon": "icons/tools/hand/pickaxe-steel-white.webp",
+    "category": "tools",
+    "tags": [
+      "mundane",
+      "steel",
+      "wood",
+      "digging"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original project design. Original wording, project price and adjusted weight. See docs/SPRINT_3_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_HAMMER_SLEDGE",
+    "name": "Sledgehammer",
+    "description": "A heavy, flat-faced steel head on a long wooden handle drives stakes and performs coarse breaking work. It is poorly suited to delicate fittings or confined spaces.\n\nThis entry supplies the implement only. It gives no automatic damage roll, demolition success or weapon proficiency; those uses need the GM's ruling.",
+    "saleUnit": "One two-handed steel sledgehammer",
+    "price": {
+      "value": 2,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 7,
+      "units": "lb",
+      "notes": "Seven pounds for the complete heavy head and long handle."
+    },
+    "icon": "icons/tools/smithing/hammer-sledge-steel-grey.webp",
+    "category": "tools",
+    "tags": [
+      "mundane",
+      "steel",
+      "wood",
+      "hand-tool",
+      "bulky"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original project design. Original wording, project price and adjusted weight. See docs/SPRINT_3_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_WHETSTONE",
+    "name": "Whetstone",
+    "description": "A flat abrasive stone with a coarse and a smoother working face maintains the edge on suitable steel blades. A little water and controlled strokes lift ordinary wear from an edge.\n\nSharpening restores routine working condition; it does not add damage, repair a broken blade or create a magical edge. Water and blades are separate.",
+    "saleUnit": "One palm-sized sharpening stone",
+    "price": {
+      "value": 3,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 0.5,
+      "units": "lb",
+      "notes": "Half a pound for the complete natural abrasive block."
+    },
+    "icon": "modules/devils-table/assets/icons/whetstone.webp",
+    "category": "tools",
+    "tags": [
+      "mundane",
+      "stone",
+      "maintenance",
+      "hand-tool"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "core",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original project design. Original wording, project price and adjusted weight. See docs/SPRINT_3_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_NAILS_IRON",
+    "name": "Iron Nails",
+    "description": "Twenty square-shanked iron nails secure light timber, patches and ordinary wooden fittings. Their broad heads resist pulling through thin boards.\n\nA hammer is separate. Nails are not climbing pitons, and a few nails alone do not give a makeshift structure a guaranteed load rating.",
+    "saleUnit": "One packet of twenty two-inch iron nails",
+    "price": {
+      "value": 4,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 0.25,
+      "units": "lb",
+      "notes": "A quarter pound for twenty small nails and the paper packet."
+    },
+    "icon": "icons/tools/fasteners/nail-steel.webp",
+    "category": "tools",
+    "tags": [
+      "mundane",
+      "iron",
+      "fastener",
+      "bundle"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "core",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original project design. Original wording, project price and adjusted weight. See docs/SPRINT_3_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_SPIKES_IRON",
+    "name": "Iron Spikes",
+    "description": "Four thick pointed spikes with broad striking heads secure heavier timber or serve as rough fixings in suitable ground. Their size calls for a substantial hammer.\n\nThese are straight spikes, not eyed climbing pitons. The support, placement and attached line determine what a fixing can hold; no automatic creature restraint is supplied.",
+    "saleUnit": "One bundle of four eight-inch iron spikes",
+    "price": {
+      "value": 3,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 2,
+      "units": "lb",
+      "notes": "Four half-pound spikes; total bundle mass is two pounds."
+    },
+    "icon": "icons/tools/fasteners/nails-steel-brown.webp",
+    "category": "tools",
+    "tags": [
+      "mundane",
+      "iron",
+      "fastener",
+      "bundle"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original project design. Original wording, project price and adjusted weight. See docs/SPRINT_3_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_CORD_MEASURING",
+    "name": "Measuring Cord",
+    "description": "A light linen cord is marked at one-foot intervals, with longer knots every five feet. It measures a room, planned fence line or other modest distance when stretched straight without excessive tension.\n\nIts marks are approximate under stretch or damp. This thin cord is not load-bearing rope and grants no navigation or surveying bonus.",
+    "saleUnit": "One fifty-foot knotted measuring cord",
+    "price": {
+      "value": 1,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 0.15,
+      "units": "lb",
+      "notes": "Fifteen hundredths of a pound for the complete thin marked cord."
+    },
+    "icon": "icons/sundries/survival/rope-wrapped-brown.webp",
+    "category": "tools",
+    "tags": [
+      "mundane",
+      "linen",
+      "measuring",
+      "hand-tool"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "core",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original project design. Original wording, project price and adjusted weight. See docs/SPRINT_3_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_RULE_WOOD",
+    "name": "Wooden Rule",
+    "description": "A straight hardwood strip bears shallow inch and foot marks along one edge. It provides a convenient reference for cutting short pieces and comparing small dimensions.\n\nThis is an ordinary workshop measure, not a precision surveying instrument. The GM determines whether local measures agree with those used elsewhere.",
+    "saleUnit": "One two-foot hardwood measuring rule",
+    "price": {
+      "value": 5,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 0.1,
+      "units": "lb",
+      "notes": "One tenth of a pound for a thin two-foot hardwood strip."
+    },
+    "icon": "icons/commodities/wood/wood-pole.webp",
+    "category": "tools",
+    "tags": [
+      "mundane",
+      "wood",
+      "measuring",
+      "hand-tool"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original project design. Original wording, project price and adjusted weight. See docs/SPRINT_3_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_WRAP_TOOL",
+    "name": "Tool Wrap",
+    "description": "A flat canvas sheet with stitched pockets folds around a few small hand tools and closes with attached cords. It separates sharp working ends from other packed goods.\n\nTools are not included. The wrap is ordinary gear rather than a second capacity-bearing container; count the carried tools separately and do not reduce their weight.",
+    "saleUnit": "One empty canvas tool wrap with tie cords",
+    "price": {
+      "value": 3,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 0.3,
+      "units": "lb",
+      "notes": "Three tenths of a pound for the empty cloth wrap and attached cords."
+    },
+    "icon": "icons/commodities/cloth/cloth-bolt-gold-orange.webp",
+    "category": "tools",
+    "tags": [
+      "mundane",
+      "canvas",
+      "storage",
+      "sold-empty"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "core",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original project design. Original wording, project price and adjusted weight. See docs/SPRINT_3_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_WEDGES_WOOD",
+    "name": "Wooden Wedges",
+    "description": "Six short tapered hardwood pieces tighten loose joints, level small work or hold an ordinary door ajar. Different faces can be shaved to suit the gap.\n\nA cutting tool is not included. A wedge can slip or split and is not an automatic lock, trap disabler or safe support for a heavy load.",
+    "saleUnit": "One set of six hardwood wedges",
+    "price": {
+      "value": 3,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 0.3,
+      "units": "lb",
+      "notes": "Six small hardwood wedges at roughly five hundredths of a pound each."
+    },
+    "icon": "icons/commodities/wood/wood-pole.webp",
+    "category": "tools",
+    "tags": [
+      "mundane",
+      "wood",
+      "fastener",
+      "set"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "core",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original project design. Original wording, project price and adjusted weight. See docs/SPRINT_3_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_SCALE_MERCHANT",
+    "name": "Merchant's Scale",
+    "description": "A compact balance uses paired pans and a small set of marked weights to compare goods up to two pounds. Its folding support and weights pack into an included cloth wrap.\n\nUse a level surface. The scale measures mass rather than purity or value, and supplies no automatic appraisal result or assurance that a stranger's weights are honest.",
+    "saleUnit": "One balance with pans and weights up to two pounds",
+    "price": {
+      "value": 4,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 2,
+      "units": "lb",
+      "notes": "Two pounds for the balance, pans, full weight set and wrap."
+    },
+    "icon": "icons/tools/hand/scale-balances-merchant-brown.webp",
+    "category": "tools",
+    "tags": [
+      "mundane",
+      "brass",
+      "measuring",
+      "trade"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original project design. Original wording, project price and adjusted weight. See docs/SPRINT_3_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  }
+]

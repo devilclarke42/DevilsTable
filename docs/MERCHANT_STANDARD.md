@@ -1,7 +1,7 @@
 # Merchant Standard
 
 **Status:** official merchant design and stock-authoring standard.  
-**Current implementation:** alpha.6, five shop definitions, 20 active RollTables and weighted quantity suggestions.
+**Current implementation:** alpha.7, five shop definitions, eight merchant profiles, 32 active RollTables and weighted quantity suggestions.
 
 A merchant should feel like a believable business: essentials are dependable, useful extras vary,
 and scarce goods are memorable. Players should be able to make ordinary purchases without a
@@ -16,7 +16,7 @@ base price, weight and description. A merchant-specific display, quote or availa
 to that merchant's stock instance, not a duplicate catalogue record.
 
 Current shop types are Tavern, General Store, Alchemist, Blacksmith and Black Market. General Store
-contains the agreed 69 goods. Other shops currently expose only the shared goods already authored:
+contains 144 goods across ten curated categories. Other shops currently expose only the shared goods already authored:
 31 Tavern, 6 Alchemist, 7 Blacksmith and 4 Black Market. Their coverage is explicitly partial.
 Do not invent stock from a category plan or a sentence in Merchant Notes to make a shop look complete.
 
@@ -71,11 +71,11 @@ do not drift apart.
 
 ## Current selection algorithm
 
-Each shop uses four native compendium tables: Always Stock, Often Stock, Rarely Stock and Rotating
-Stock. Five shops therefore need **20 tables**, regardless of category count. The builder uses the
+Each merchant profile uses four native compendium tables: Always Stock, Often Stock, Rarely Stock and Rotating
+Stock. Eight merchant profiles therefore need **32 tables**, regardless of category count. The builder uses the
 same tables for category-filtered lists; no quantity or category tables are generated.
 
-1. Resolve the selected shop and optional category against validated canonical data.
+1. Resolve the selected shop, merchant profile and optional category against validated canonical data.
 2. Include every eligible Always good.
 3. Make the shop's suggested number of rotating attempts: d100 1–80 selects Often, 81–95 selects
    Rarely, and 96–100 adds no item.
@@ -85,13 +85,36 @@ same tables for category-filtered lists; no quantity or category tables are gene
 5. Stop at the attempt limit or when both rotating pools are exhausted. Then roll each selected
    product's quantity separately.
 
-Defaults are stored in `data/stock.json`: Tavern 10 whole-shop / 3 category attempts; General Store
+Defaults are stored in `data/stock.json`: Tavern 10 whole-shop / 3 category attempts; Village General Store
 8 / 3; Alchemist 4 / 2; Blacksmith 3 / 2; Black Market 6 / 2. An API draw-count override is bounded
 to 0–50. Chances describe attempts, not the final probability of seeing any particular item.
 
 Per-shop overrides may change effective tiers without changing base item availability. Current
 examples: Lamp Oil is Often at the Alchemist; Lockbox is Often at the Blacksmith; Lockbox and Silk
-Rope are Often at the Black Market. The General Store retains its base assignments.
+Rope are Often at the Black Market. Village retains its base assignments; variants use the explicit policy below.
+
+## General Store merchant profiles
+
+All four profiles reference the same canonical General Store Items. Village retains the original
+profile identity and source availability. Town and City promote selected useful goods to regular
+stock; Wagon excludes eleven bulky goods and rotates fifteen others instead of guaranteeing them.
+An assortment count is a count of distinct products; quantity rolls happen separately.
+
+| Profile | Eligible items | Always / Often / Rarely | Whole-shop / category attempts |
+| --- | ---: | --- | --- |
+| Village General Store | 144 | 82 / 54 / 8 | 8 / 3 |
+| Town General Store | 144 | 87 / 49 / 8 | 14 / 4 |
+| City General Store | 144 | 90 / 53 / 1 | 22 / 6 |
+| Merchant Wagon | 133 | 66 / 59 / 8 | 6 / 2 |
+
+Select one profile to roll stock. **All profiles** builds or previews the sixteen General Store
+tables together but cannot produce one merchant's stock list. Other shops keep their existing
+four-table sets and partial coverage. No Tavern content is added in Sprint 3.
+
+Variant descriptions and Merchant Notes live in `data/stock.json`, while base merchant guidance
+remains in `data/shops.json`. Both are builder-only. These notes describe believable supply;
+only structured exclusions and overrides change table membership. See [SPRINT_3_REVIEW.md](SPRINT_3_REVIEW.md)
+for the exact profile differences and item review.
 
 ## Weighted quantity policy
 
@@ -146,8 +169,9 @@ The current module continues to use compendiums and does not automatically creat
 ## Maintenance and future acceptance
 
 Normal rebuilds update generated compendium data from JSON. They preserve Items, unrelated tables
-and retired category tables. A separately confirmed legacy cleanup can remove the 100 superseded
-alpha.5 category tables after reviewing edited-data and known-reference protections. All permanent
+and retired category tables. A separately confirmed legacy cleanup can remove eligible superseded
+alpha.5 category tables after reviewing edited-data and known-reference protections. Historical
+tables whose membership or names differ from current source remain protected, even without manual edits. All permanent
 table IDs stay reserved. See [STOCK_TABLES.md](STOCK_TABLES.md) for exact steps and reference-check limits.
 
 The 0.7.0 milestone must formalise Common/Uncommon distinctions and contextual availability across

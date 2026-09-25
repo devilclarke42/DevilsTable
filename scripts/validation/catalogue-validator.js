@@ -22,6 +22,7 @@ export function validateCatalogue(catalogue) {
   }
   const registered = new Set(ledger.ids);
   const ids = new Map();
+  const names = new Map();
   const documents = new Map();
   const shops = new Set(index.shops);
   const categories = new Set(index.categories);
@@ -38,6 +39,9 @@ export function validateCatalogue(catalogue) {
     errors.push(...validateItemRules(item, location));
     if (ids.has(item.id)) add(`${location}.id`, `Duplicate ${item.id}; first seen at ${ids.get(item.id)}.`);
     ids.set(item.id, location);
+    const name = item.name.normalize("NFKC").trim().replace(/\s+/gu, " ").toLowerCase();
+    if (names.has(name)) add(`${location}.name`, `Duplicate display name; first seen at ${names.get(name)}. Use one canonical product or a meaningful distinguishing name.`);
+    names.set(name, location);
     if (!registered.has(item.id)) add(`${location}.id`, "Permanent ID must be reserved in data/id-ledger.json.");
     if (!categories.has(item.category)) add(`${location}.category`, "Category is not in the catalogue registry.");
     for (const shop of item.shops) {

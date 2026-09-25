@@ -183,5 +183,293 @@
       "type": "loot",
       "subtype": "gear"
     }
+  },
+  {
+    "id": "DT_ITEM_GS_MIRROR_STEEL",
+    "name": "Steel Mirror",
+    "description": "A palm-sized polished steel face gives a serviceable reflection without a glass pane. Its plain backing has a small grip, and an included cloth sleeve protects the polished surface.\n\nOrdinary scratches and dirt reduce clarity. It is a reflective tool, with no divination, detection or automatic signalling range.",
+    "saleUnit": "One polished steel hand mirror with cloth sleeve",
+    "price": {
+      "value": 2,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 0.2,
+      "units": "lb",
+      "notes": "One fifth of a pound for the small mirror and protective sleeve."
+    },
+    "icon": "icons/sundries/survival/mirror-plain.webp",
+    "category": "travel",
+    "tags": [
+      "mundane",
+      "steel",
+      "grooming",
+      "travel"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original project design. Original wording, project price and adjusted weight. See docs/SPRINT_3_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_HOURGLASS",
+    "name": "Hourglass",
+    "description": "Two joined glass bulbs sit within a small wooden frame. When upright and undisturbed, their measured dry sand takes about one hour to pass through the neck.\n\nMovement, tilt and damp can disturb the result. The timer neither tracks calendar time nor pauses spell durations; it is an ordinary approximate measure.",
+    "saleUnit": "One protected one-hour sand timer",
+    "price": {
+      "value": 6,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 0.5,
+      "units": "lb",
+      "notes": "Half a pound for the glass, sand and protective frame."
+    },
+    "icon": "icons/tools/navigation/hourglass-grey.webp",
+    "category": "travel",
+    "tags": [
+      "mundane",
+      "glass",
+      "timekeeping",
+      "specialist"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "special-order",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original project design. Original wording, project price and adjusted weight. See docs/SPRINT_3_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_MAP_ROAD",
+    "name": "Road Map",
+    "description": "A copied paper map marks the principal roads, settlements and crossings in one district named at purchase. A merchant or the GM identifies the covered area before the sheet is useful in play.\n\nNo world map is generated automatically. The map may omit recent changes, hidden routes and hazards, and its presence does not replace navigation checks.",
+    "saleUnit": "One paper route map for a named local district",
+    "price": {
+      "value": 4,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 0.02,
+      "units": "lb",
+      "notes": "Two hundredths of a pound for a single folded route sheet."
+    },
+    "icon": "icons/sundries/documents/paper-plain-white.webp",
+    "category": "travel",
+    "tags": [
+      "mundane",
+      "paper",
+      "navigation",
+      "local"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original project design. Original wording, project price and adjusted weight. See docs/SPRINT_3_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_WRAP_DOCUMENT_WATERPROOF",
+    "name": "Waterproof Document Wrap",
+    "description": "A waxed cloth square folds around a few flat papers and ties shut with an attached cord. Overlapping folds protect against ordinary rain and splashes when packed carefully.\n\nDocuments are separate. Despite its trade name, the wrap is not an immersion-proof seal; track enclosed sheets separately and do not treat it as weightless storage.",
+    "saleUnit": "One waxed cloth wrap for folded documents",
+    "price": {
+      "value": 2,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 0.1,
+      "units": "lb",
+      "notes": "One tenth of a pound for the empty treated cloth and attached tie."
+    },
+    "icon": "icons/commodities/cloth/cloth-bolt-gold-orange.webp",
+    "category": "travel",
+    "tags": [
+      "mundane",
+      "canvas",
+      "writing",
+      "weatherproof"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original project design. Original wording, project price and adjusted weight. See docs/SPRINT_3_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_CLOAK_TRAVEL",
+    "name": "Travel Cloak",
+    "description": "A plain hooded wool cloak closes with a wooden toggle and hangs over ordinary clothes. Its dense weave reduces wind and sheds light rain for a time.\n\nIt is travel clothing, not armour or equipment for extreme cold. It grants no resistance, stealth bonus or automatic protection from exposure.",
+    "saleUnit": "One hooded wool travel cloak sized for one Medium wearer",
+    "price": {
+      "value": 9,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 2,
+      "units": "lb",
+      "notes": "Two pounds for the complete single-person wool cloak and fastening."
+    },
+    "icon": "icons/commodities/cloth/cloth-bolt-gold-orange.webp",
+    "category": "travel",
+    "tags": [
+      "mundane",
+      "wool",
+      "clothing",
+      "travel"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "core",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original project design. Original wording, project price and adjusted weight. See docs/SPRINT_3_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_COVER_PACK",
+    "name": "Pack Cover",
+    "description": "An oiled canvas hood fits over an ordinary backpack and tightens with a sewn-in draw cord. It protects the pack's exposed upper surface from ordinary rain and road dirt.\n\nThe backpack is separate. A cover is not a sealed flotation bag and does not enlarge carrying capacity or protect against immersion.",
+    "saleUnit": "One draw-cord oiled canvas cover for a backpack",
+    "price": {
+      "value": 3,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 0.35,
+      "units": "lb",
+      "notes": "Thirty-five hundredths of a pound for the cover and draw cord, without a pack."
+    },
+    "icon": "icons/commodities/cloth/cloth-bolt-gold-orange.webp",
+    "category": "travel",
+    "tags": [
+      "mundane",
+      "canvas",
+      "travel",
+      "weatherproof"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "core",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original project design. Original wording, project price and adjusted weight. See docs/SPRINT_3_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_PATCHES_REPAIR",
+    "name": "Canvas Repair Patches",
+    "description": "Four hemmed squares of waxed canvas patch small worn areas in a groundsheet, tent or pack. Their prepared edges make them convenient to stitch over sound surrounding material.\n\nA needle, thread and any sealing wax are separate. A patch requires ordinary repair work and cannot automatically restore a destroyed shelter or grant weather immunity.",
+    "saleUnit": "One packet of four waxed canvas patches, six inches square",
+    "price": {
+      "value": 6,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 0.15,
+      "units": "lb",
+      "notes": "Fifteen hundredths of a pound for four prepared cloth patches and their paper wrap."
+    },
+    "icon": "icons/commodities/cloth/cloth-bolt-gold-orange.webp",
+    "category": "travel",
+    "tags": [
+      "mundane",
+      "canvas",
+      "repair",
+      "set"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "core",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original project design. Original wording, project price and adjusted weight. See docs/SPRINT_3_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_RIBBON_MARKING",
+    "name": "Marking Ribbon",
+    "description": "A narrow roll of plainly dyed cloth can be cut into markers for a trail, baggage or agreed camp signals. Its colour is chosen from the merchant's ordinary stock.\n\nMarkers can be moved, hidden or weathered away. Ribbon provides no automatic tracking result and is too light for load-bearing work.",
+    "saleUnit": "One ten-yard roll of plain coloured cloth ribbon",
+    "price": {
+      "value": 5,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 0.05,
+      "units": "lb",
+      "notes": "Five hundredths of a pound for ten yards of thin ribbon and its small winding card."
+    },
+    "icon": "icons/commodities/cloth/cloth-bolt-gold-orange.webp",
+    "category": "travel",
+    "tags": [
+      "mundane",
+      "cloth",
+      "navigation",
+      "marking"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "core",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original project design. Original wording, project price and adjusted weight. See docs/SPRINT_3_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
   }
 ]

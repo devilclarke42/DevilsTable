@@ -442,5 +442,371 @@
       "type": "loot",
       "subtype": "gear"
     }
+  },
+  {
+    "id": "DT_ITEM_GS_GROUNDSHEET",
+    "name": "Groundsheet",
+    "description": "A waxed canvas sheet placed beneath one bedroll to limit damp rising from the ground. Reinforced corners allow it to be pegged or tied in place.\n\nThe purchase includes the sheet only. It is not a mattress, blanket or sealed sleeping bag, and standing water can still reach its upper surface.",
+    "saleUnit": "One waxed canvas groundsheet, six by three feet",
+    "price": {
+      "value": 6,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 1.5,
+      "units": "lb",
+      "notes": "One compact travel sheet with reinforced corners; pegs and bedding excluded."
+    },
+    "icon": "icons/commodities/cloth/cloth-bolt-gold-orange.webp",
+    "category": "camping",
+    "tags": [
+      "mundane",
+      "canvas",
+      "bedding",
+      "weatherproof"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "core",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original project design. Original wording, project price and adjusted weight. See docs/SPRINT_3_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_TARPAULIN",
+    "name": "Tarpaulin",
+    "description": "A broad oiled canvas sheet with sewn edge loops, suitable for covering stores or rigging a simple rain shelter. A sloping pitch sheds ordinary rain better than a flat sheet that collects water.\n\nRopes, poles and pegs are separate. The material is not fireproof and supplies no automatic protection against extreme weather.",
+    "saleUnit": "One oiled canvas sheet, ten by eight feet",
+    "price": {
+      "value": 2,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 4,
+      "units": "lb",
+      "notes": "Four pounds for the treated sheet and reinforced loops, without supporting equipment."
+    },
+    "icon": "icons/commodities/cloth/cloth-bolt-gold-orange.webp",
+    "category": "camping",
+    "tags": [
+      "mundane",
+      "canvas",
+      "shelter",
+      "weatherproof"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original project design. Original wording, project price and adjusted weight. See docs/SPRINT_3_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_HAMMOCK",
+    "name": "Hammock",
+    "description": "A sling of strong canvas with gathering loops and two short suspension cords for one adult. It keeps a sleeper off wet ground when two sound supports can be found.\n\nThe cords are included in the weight. Supports, weather cover and bedding are not; safe rigging and a suitable site still matter.",
+    "saleUnit": "One canvas hammock with two ten-foot suspension cords",
+    "price": {
+      "value": 9,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 2,
+      "units": "lb",
+      "notes": "Two pounds for the canvas sling and both cords, without separate bedding."
+    },
+    "icon": "icons/commodities/cloth/cloth-bolt-gold-orange.webp",
+    "category": "camping",
+    "tags": [
+      "mundane",
+      "canvas",
+      "bedding",
+      "suspension"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original project design. Original wording, project price and adjusted weight. See docs/SPRINT_3_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_PEGS_TENT",
+    "name": "Tent Pegs",
+    "description": "Six pointed hardwood pegs with notched heads for securing tent loops and light guy lines in ordinary soil. They replace lost pegs or support a separate groundsheet.\n\nA mallet is not included. These are camping fittings, not rock pitons or anchors rated to hold a falling climber.",
+    "saleUnit": "One set of six hardwood tent pegs",
+    "price": {
+      "value": 5,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 0.6,
+      "units": "lb",
+      "notes": "Six small wooden pegs at approximately one tenth of a pound each."
+    },
+    "icon": "icons/commodities/wood/wood-pole.webp",
+    "category": "camping",
+    "tags": [
+      "mundane",
+      "wood",
+      "shelter",
+      "set"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "core",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original project design. Original wording, project price and adjusted weight. See docs/SPRINT_3_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_TRIPOD_COOKING",
+    "name": "Cooking Tripod",
+    "description": "Three jointed iron legs support a short hanging chain and hook above a small campfire. A suitable handled pot can be raised or lowered along the chain to manage its distance from the coals.\n\nThe tripod includes its chain and hook but no pot, fuel or cookware. Place it on firm ground before loading it.",
+    "saleUnit": "One folding iron tripod with hanging chain and hook",
+    "price": {
+      "value": 2,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 4,
+      "units": "lb",
+      "notes": "Four pounds for the legs, joints, chain and hook; cookware is separate."
+    },
+    "icon": "icons/tools/fasteners/chain-steel-grey.webp",
+    "category": "camping",
+    "tags": [
+      "mundane",
+      "iron",
+      "cooking",
+      "camping"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original project design. Original wording, project price and adjusted weight. See docs/SPRINT_3_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_SKILLET",
+    "name": "Skillet",
+    "description": "A shallow iron frying pan with a long handle, suited to browning food over a hearth or cooking coals. Its flat base rests on a support or a suitable bed of embers.\n\nFood, grease and a lid are not included. The handle becomes hot in use; the pan is cookware rather than a sealed storage vessel.",
+    "saleUnit": "One empty eight-inch iron skillet",
+    "price": {
+      "value": 6,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 2,
+      "units": "lb",
+      "notes": "Two pounds for a small travel skillet including its integral handle."
+    },
+    "icon": "icons/tools/laboratory/cauldron-filled-gold.webp",
+    "category": "camping",
+    "tags": [
+      "mundane",
+      "iron",
+      "cooking",
+      "reusable"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "core",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original project design. Original wording, project price and adjusted weight. See docs/SPRINT_3_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_LADLE",
+    "name": "Ladle",
+    "description": "A long-handled wooden scoop for serving broth or stirring a small cooking pot. The smooth bowl is shallow enough to rinse clean between uses.\n\nIt is larger than an eating spoon but is not a sealed measuring vessel. Food, pots and bowls are separate.",
+    "saleUnit": "One carved wooden serving ladle",
+    "price": {
+      "value": 3,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 0.1,
+      "units": "lb",
+      "notes": "A light carved hardwood scoop and handle, counted as one object."
+    },
+    "icon": "modules/devils-table/assets/icons/spoon.svg",
+    "category": "camping",
+    "tags": [
+      "mundane",
+      "wood",
+      "cooking",
+      "reusable"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "core",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original project design. Original wording, project price and adjusted weight. See docs/SPRINT_3_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_BOARD_CHOPPING",
+    "name": "Chopping Board",
+    "description": "A flat hardwood board with a rounded edge provides a working surface for cutting food. A hanging hole allows it to dry after washing.\n\nA knife is not included. Keep raw food preparation and ready-to-eat food separate through ordinary cleaning; the board provides no special preservation effect.",
+    "saleUnit": "One hardwood chopping board, twelve by eight inches",
+    "price": {
+      "value": 8,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 1,
+      "units": "lb",
+      "notes": "One modest hardwood board, without a knife or other kitchen tools."
+    },
+    "icon": "modules/devils-table/assets/icons/plate.svg",
+    "category": "camping",
+    "tags": [
+      "mundane",
+      "wood",
+      "cooking",
+      "reusable"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original project design. Original wording, project price and adjusted weight. See docs/SPRINT_3_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_RATIONS_TRAVEL",
+    "name": "Travel Rations",
+    "description": "Hard biscuit, dried fruit, nuts and salted meat wrapped as one day's travelling provisions. The foods can be eaten cold and tolerate ordinary travel when kept dry.\n\nThe ration includes its light wrapping but no drinking water. Dietary substitutions of comparable value are a GM choice; eating it supplies food rather than healing or a special resting bonus.",
+    "saleUnit": "One day's dry rations for one Medium traveller",
+    "price": {
+      "value": 3,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 2,
+      "units": "lb",
+      "notes": "Two pounds for the complete day's food and paper wrapping; water remains a separate carried load."
+    },
+    "icon": "icons/consumables/grains/bread-loaf-boule-rustic-brown.webp",
+    "category": "camping",
+    "tags": [
+      "mundane",
+      "food",
+      "travel",
+      "preserved"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "core",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original project design. Original wording, project price and adjusted weight. See docs/SPRINT_3_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record daily rations eaten",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the complete sale unit has been consumed; track partial use manually."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_TACKLE_FISHING",
+    "name": "Fishing Tackle",
+    "description": "A wooden rod and wound line are supplied with hooks, cork floats, small sinkers, reusable lures and a narrow landing net. The tackle packs together with a simple cloth tie.\n\nLive bait is not included. A suitable place, time and the GM's foraging rulings determine a catch; the kit does not automatically provide food.",
+    "saleUnit": "One rod, line, hooks, floats, sinkers, lures and landing net",
+    "price": {
+      "value": 8,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 2.5,
+      "units": "lb",
+      "notes": "Two and a half pounds for the complete tackle and net; caught fish and live bait are additional."
+    },
+    "icon": "icons/tools/fishing/rod-brown-gold.webp",
+    "category": "camping",
+    "tags": [
+      "mundane",
+      "fishing",
+      "food-gathering",
+      "kit"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "2014 SRD 5.1 adventuring gear: fishing tackle components; no automatic fishing success. Original wording, project price and adjusted weight. See docs/SPRINT_3_REVIEW.md.",
+      "license": "Original project text: distribution license pending; referenced SRD 5.1 rules: CC-BY-4.0."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
   }
 ]

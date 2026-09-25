@@ -10,20 +10,20 @@ import { readJson, catalogue, fakeAdapter } from "./helpers.js";
 
 const production = () => loadCatalogue({ readJson });
 
-test("all eight curated General Store categories contain exactly their approved items", async () => {
+test("all ten curated General Store categories contain exactly their approved items", async () => {
   const data = await production();
   assert.deepEqual(data.categoryDefinitions.map(category => category.name), [
-    "Containers", "Fire & Lighting", "Rope & Climbing", "Camping", "Writing", "Household", "Animal", "Travel"
+    "Containers", "Lighting & Fire", "Rope & Climbing", "Camping", "Writing", "Household", "Animal Supplies", "Travel", "Tools", "Trade Goods"
   ]);
   for (const category of data.categoryDefinitions) {
     assert.deepEqual(data.entries.filter(({ item }) => item.category === category.id).map(({ item }) => item.name), category.plannedItems);
   }
-  assert.equal(data.entries.length, 69);
+  assert.equal(data.entries.length, 144);
   assert.ok(data.entries.every(({ item }) => item.shops.includes("general-store")));
   assert.deepEqual(new Set(data.entries.map(({ item }) => item.id)), new Set(data.ledger.ids));
   const view = shopView(data, { shopId: "general-store" });
-  assert.deepEqual(view.categories.map(category => category.count), [13, 12, 6, 11, 7, 9, 6, 5]);
-  assert.deepEqual(view.priceBands.map(band => band.count), [31, 27, 9, 2]);
+  assert.deepEqual(view.categories.map(category => category.count), [13, 17, 10, 21, 13, 18, 12, 13, 16, 11]);
+  assert.deepEqual(view.priceBands.map(band => band.count), [58, 61, 23, 2]);
 });
 
 test("every registered shop has three Merchant Notes tiers, including the requested village profile", async () => {
@@ -143,7 +143,7 @@ test("notes and category plans never enter Item documents or trigger Item update
   await build({ dryRun: false });
   data.shopDefinitions[0].merchantNotes.alwaysStocks.push("MERCHANT_ONLY_SENTINEL");
   data.categoryDefinitions[0].plannedItems.push("PLAN_ONLY_SENTINEL");
-  assert.equal((await build()).unchanged, 69);
+  assert.equal((await build()).unchanged, 144);
   assert.ok(!JSON.stringify(state.docs).includes("SENTINEL"));
   for (const doc of state.docs) {
     assert.equal(Object.hasOwn(doc.flags["devils-table"], "merchantNotes"), false);

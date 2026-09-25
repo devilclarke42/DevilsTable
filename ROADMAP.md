@@ -25,7 +25,21 @@ implemented and verified in the preceding stock feature change.
 
 Implementation is available for acceptance testing; the target environment is not yet verified.
 
-## Current — Complete General Store review
+## Sprint 3 — Complete the General Store
+
+- [x] Finish 144 goods across ten categories, including Tools and Trade Goods.
+- [x] Preserve all 69 existing permanent IDs, prices, weights and descriptions.
+- [x] Add explicit sale units to the 13 original Containers; require sale units and nonempty tags.
+- [x] Reject duplicate normalized display names across the catalogue.
+- [x] Add Village, Town, City and Wagon stock selection using shared canonical Items.
+- [x] Reuse icons and add twelve lightweight 256×256 WebPs with editable masters.
+- [x] Verify the 69-to-144 Item and 20-to-32 table upgrades and unchanged repeat builds.
+- [x] Update standards, review tables, changelogs, API guidance and packaging.
+- [ ] Record detailed Foundry V14 / D&D5e 5.3.3 / Forge acceptance and Sprint 3 owner review.
+
+Implementation stops at the General Store. Tavern authoring has not started.
+
+## Accepted baseline — Containers and seven-category expansion
 
 - [x] Define all eight curated General Store categories and their planned item lists.
 - [x] Require builder-only Merchant Notes for Tavern, General Store, Alchemist, Blacksmith and Black Market.
@@ -40,7 +54,7 @@ Implementation is available for acceptance testing; the target environment is no
 - [ ] Live V14 / D&D5e 5.3.3 Forge acceptance, including contained-item encumbrance.
 - [ ] Live actor-import, completed-use consumption, reusable activity and light metadata checks.
 
-All eight General Store categories now have accepted authored stock. Successful user reports
+The original eight General Store categories have accepted alpha.4 authored stock. Successful user reports
 for alpha.3 and alpha.4 do not complete the detailed live checklist.
 
 ## Current — Stock RollTables
@@ -57,7 +71,7 @@ for alpha.3 and alpha.4 do not complete the detailed live checklist.
 - [ ] Review stock tier overrides, 80/15/5 chances and suggested draw counts.
 - [ ] Complete live V14 / D&D5e 5.3.3 Forge table build, native draw and repeat-build checks.
 
-There are 20 active tables covering existing source goods. Tavern, Alchemist, Blacksmith and Black
+Alpha.6 reduced output to 20 active tables. Sprint 3 adds twelve variant tables for 32 active tables. Tavern, Alchemist, Blacksmith and Black
 Market remain partial catalogues. Table generation does not create missing shop-specific content.
 
 ## After review — Curated content

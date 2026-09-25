@@ -49,7 +49,9 @@ Use familiar English names in title case: **Clay Jug**, **Hempen Rope**, **Hoode
 Use a singular name for one object; a conventional plural is appropriate for a set, such as
 **Pitons** or **Horseshoes**. Keep sizes and pack counts in `saleUnit` unless needed to distinguish
 two different products. Avoid merchant prefixes, marketing claims, rarity labels and revision numbers.
-Display-name changes are allowed, but must not conceal a changed product.
+Display-name changes are allowed, but must not conceal a changed product. Names must be globally
+unique after Unicode NFKC normalization, lowercasing and whitespace normalization; validation
+rejects visually equivalent duplicates.
 
 Descriptions are original plain text, generally one or two short paragraphs:
 
@@ -74,20 +76,19 @@ descriptions must be nonblank and at most 20,000 characters, though normal entri
 | `id` | Reserved permanent identity, unique across the entire catalogue. |
 | `name` | Clear product name following the conventions above. |
 | `description` | Original plain text explaining use, inclusions and meaningful limits. |
-| `saleUnit` | Required for every new item; nonblank, at most 200 characters. |
+| `saleUnit` | Required for every item; nonblank, at most 200 characters. |
 | `price` | Positive whole `value` and `denomination` of `cp`, `sp` or `gp`; see [PRICE_GUIDE.md](PRICE_GUIDE.md). |
 | `weight` | Finite nonnegative `value`, `units: "lb"`, and a nonblank rationale in `notes`; see [WEIGHT_GUIDE.md](WEIGHT_GUIDE.md). |
 | `icon` | A permitted local shared icon path; see [ICON_STANDARD.md](ICON_STANDARD.md). |
 | `category` | Exactly one registered functional category slug. |
-| `tags` | Unique lowercase descriptive slugs; use meaningful shared vocabulary. |
+| `tags` | One or more unique lowercase descriptive slugs; use meaningful shared vocabulary. |
 | `shops` | One or more registered shop slugs, without duplicates. |
 | `availability` | Exactly `core`, `variable` or `special-order` under the current schema. |
 | `source` | Nonblank `title`, `reference` and `license` describing provenance honestly. |
 | `mechanics` | An explicitly supported D&D5e mapping, even for ordinary nonmagical goods. |
 
-The original thirteen Containers records predate `saleUnit`. Their descriptions define their
-contents, and the schema retains compatibility with them. This exception is limited to that
-existing batch; it is not a reason to omit `saleUnit` from future content.
+Sprint 3 adds explicit `saleUnit` values to the original thirteen Containers. All 144 records now
+meet the same required-field schema; there is no legacy sale-unit exception.
 
 Price examples: `{ "value": 7, "denomination": "sp" }`. Weight examples:
 `{ "value": 5, "units": "lb", "notes": "Dry weight of one complete 50-foot coil." }`.
@@ -104,13 +105,15 @@ category when it appears in another merchant's view.
 | Display category | Canonical slug | Scope |
 | --- | --- | --- |
 | Containers | `containers` | General storage vessels, bags and boxes |
-| Fire & Lighting | `fire-lighting` | Light sources, fuels and fire-making goods |
+| Lighting & Fire | `fire-lighting` | Light sources, fuels and fire-making goods |
 | Rope & Climbing | `rope-climbing` | Cordage, anchors and climbing equipment |
 | Camping | `camping` | Shelter, bedding and camp cooking/tableware |
 | Writing | `writing` | Paper, ink and sealing supplies |
 | Household | `household` | Cleaning, sewing and laundry goods |
-| Animal | `animal` | Feed, grooming and tack care |
+| Animal Supplies | `animal` | Feed, grooming and tack care |
 | Travel | `travel` | Walking, navigation and signalling goods |
+| Tools | `tools` | Ordinary hand tools, measuring aids and workshop supplies |
+| Trade Goods | `trade-goods` | Measured raw materials and household processing supplies |
 
 Choose the primary use: Cooking Pot belongs in Camping while its mechanics can still be
 `container`. Tags express cross-cutting properties. Do not duplicate an item to make it appear
@@ -129,8 +132,8 @@ Tags use lowercase kebab-case matching `^[a-z0-9]+(?:-[a-z0-9]+)*$`. Reuse exist
 introducing synonyms. Prefer a few useful tags for material, use and purchase form, for example
 `mundane`, `leather`, `container`, `sold-empty`, `bundle`, `fuel`, `reusable`. Avoid duplicate tags,
 sentences, prices, names masquerading as tags and contradictory pairs such as `sold-empty` with
-`filled-vessel`. Although an empty array is structurally valid, reviewers should expect useful tags
-on normal authored goods. Descriptive tags do not silently grant game mechanics.
+`filled-vessel`. An empty tag array fails validation. Reviewers also check that the tags
+are useful and accurate. Descriptive tags do not silently grant game mechanics.
 
 Valid shop assignments are `tavern`, `general-store`, `alchemist`, `blacksmith` and `black-market`.
 Assign a shop because that kind of merchant plausibly sells the product, not merely because a

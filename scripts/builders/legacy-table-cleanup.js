@@ -50,12 +50,12 @@ const sameIds = (a, b) => Array.isArray(a) && a.length === b.length
 
 /** Explicit preview/approval is required. Ordinary builds never delete whole tables. */
 export function createLegacyTableCleanup({ load = loadStockCatalogue, adapter = null } = {}) {
-  return withStockOperation(async function ({ dryRun = true, approvedIds = [], shopId = null, categoryId = null } = {}) {
+  return withStockOperation(async function ({ dryRun = true, approvedIds = [], shopId = null, categoryId = null, profileId = null } = {}) {
     const io = adapter ?? createRollTableAdapter();
     io.assertCanBuild();
     const catalogue = await load();
     requireValidStock(catalogue);
-    const selection = { shopId, categoryId };
+    const selection = { shopId, categoryId, ...(profileId ? { profileId } : {}) };
     const active = stockTableDocuments(catalogue, selection);
     await io.validateDocuments(active);
     const pack = await io.getPack();

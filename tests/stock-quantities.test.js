@@ -40,7 +40,7 @@ test("price bands and effective shop tiers lower expected quantities without cha
 test("category rolls use four whole-shop tables and count complete bundles, not components", async () => {
   const data = await production();
   const { adapter, state } = fakeAdapter({ existing: stockTableDocuments(data) });
-  const stock = await rollStockList({ load: () => data, adapter, categoryId: "rope-climbing", rollDie: async () => 1 });
+  const stock = await rollStockList({ load: () => data, adapter, categoryId: "rope-climbing", rollDie: async sides => sides === 100 ? 1 : sides });
   assert.equal(stock.draws, 3);
   const eligible = new Set(data.entries.filter(({ item }) => item.category === "rope-climbing").map(({ item }) => item.id));
   assert.ok(stock.items.every(item => eligible.has(item.id)));
@@ -53,10 +53,11 @@ test("category rolls use four whole-shop tables and count complete bundles, not 
 
 test("empty category pools never force rare stock and quantity rolls follow selection", async () => {
   const data = await production();
+  for (const { item } of data.entries) if (item.category === "travel" && item.availability === "variable") item.availability = "special-order";
   const { adapter } = fakeAdapter({ existing: stockTableDocuments(data) });
-  let rolls = [80, 80, 80, 100, 100, 100];
+  let rolls = [80, 80, 80, ...Array(7).fill(100)];
   const stock = await rollStockList({ load: () => data, adapter, categoryId: "travel", rollDie: async () => rolls.shift() });
-  assert.equal(stock.items.length, 3);
+  assert.equal(stock.items.length, 7);
   assert.ok(stock.items.every(item => item.tier === "always"));
   assert.equal(rolls.length, 0);
 });

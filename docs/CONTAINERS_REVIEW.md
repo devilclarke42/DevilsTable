@@ -1,5 +1,8 @@
 # General Store: Containers review
 
+> Historical review of the accepted earlier batch. Current catalogue and upgrade details are in
+> [Sprint 3 Review](SPRINT_3_REVIEW.md). Sprint 3 adds explicit sale units to the original Containers.
+
 Original batch, preserved unchanged in **0.2.0-alpha.4**. These 13 Containers are now part of the
 69-item General Store; see the [complete review](GENERAL_STORE_REVIEW.md). The canonical records
 are in [containers.json](../data/items/general-store/containers.json).

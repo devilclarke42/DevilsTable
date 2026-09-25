@@ -6,13 +6,16 @@ The Item builder and table builder run separately. Build Items first so table re
 
 ## Coverage
 
-Each shop has one four-table set, for **20 active tables** in `world.devils-table-stock-tables`.
+Each merchant profile has one four-table set, for **32 active tables** in `world.devils-table-stock-tables`.
 Category selection filters these shared tables when rolling stock. It does not generate another set.
 
 | Shop | Authored goods | Always / Often / Rarely | Active tables | Whole-shop / category draws |
 | --- | ---: | --- | ---: | --- |
 | Tavern | 31 | 25 / 6 / 0 | 4 | 10 / 3 |
-| General Store | 69 | 47 / 16 / 6 | 4 | 8 / 3 |
+| Village General Store | 144 | 82 / 54 / 8 | 4 | 8 / 3 |
+| Town General Store | 144 | 87 / 49 / 8 | 4 | 14 / 4 |
+| City General Store | 144 | 90 / 53 / 1 | 4 | 22 / 6 |
+| Merchant Wagon | 133 | 66 / 59 / 8 | 4 | 6 / 2 |
 | Alchemist | 6 | 4 / 2 / 0 | 4 | 4 / 2 |
 | Blacksmith | 7 | 3 / 4 / 0 | 4 | 3 / 2 |
 | Black Market | 4 | 0 / 2 / 2 | 4 | 6 / 2 |
@@ -24,10 +27,10 @@ invented to fill a table. Empty tiers remain available for future reviewed sourc
 
 | Shop | Categories |
 | --- | --- |
-| Tavern | Containers; Fire & Lighting; Rope & Climbing; Camping; Household; Animal; Travel |
-| General Store | All eight categories, including Writing |
-| Alchemist | Containers; Fire & Lighting; Writing |
-| Blacksmith | Containers; Fire & Lighting; Rope & Climbing; Animal |
+| Tavern | Containers; Lighting & Fire; Rope & Climbing; Camping; Household; Animal Supplies; Travel |
+| General Store | All ten categories, including Tools and Trade Goods |
+| Alchemist | Containers; Lighting & Fire; Writing |
+| Blacksmith | Containers; Lighting & Fire; Rope & Climbing; Animal Supplies |
 | Black Market | Containers; Rope & Climbing; Travel |
 
 ## How stock works
@@ -47,21 +50,22 @@ bought. The builder suggests quantities separately; the GM controls actual inven
 
 Default tiers come from item availability: `core` → Always, `variable` → Often, `special-order` →
 Rarely. Explicit local overrides make Lamp Oil Often at the Alchemist, Lockbox Often at the
-Blacksmith, and Lockbox/Silk Rope Often at the Black Market. The General Store keeps all original
-availability assignments. Merchant Notes remain builder guidance and never become table content.
+Blacksmith, and Lockbox/Silk Rope Often at the Black Market. Village keeps all source availability assignments. Town, City and Wagon apply
+their explicit overrides/exclusions; quantity profiles use the resulting effective tier. Merchant Notes remain builder guidance and never become table content.
 
 ## Build and roll
 
-1. Build/rebuild the 69 Items using the existing Compendium Builder. An accepted alpha.4 pack
-   should report 69 unchanged, with the same UUIDs, prices and weights.
+1. Build/rebuild all 144 Items using the existing Compendium Builder. An alpha.4–alpha.6 pack
+   previews 75 creates, 13 Container sale-unit updates and 56 unchanged. Existing UUIDs, prices
+   and weights remain intact; a repeat build reports 144 unchanged.
 2. Open the separate RollTable Builder. Select **All shops → All categories**.
-3. **Validate / Preview Tables** should show 20 creates on a new pack, with partial-catalogue
-   notices for the four unfinished shops. Preview performs no writes. Each shop uses four tables.
+3. **Validate / Preview Tables** should show 32 creates on a new pack, with partial-catalogue
+   notices for the four unfinished shops. Preview performs no writes. Each merchant profile uses four tables.
 4. **Build / Rebuild Tables** creates the separate Stock RollTables compendium. Repeating the
-   same build should show 20 unchanged. A missing referenced Item blocks preflight with its ID.
-5. Select one shop, and optionally one category, then click **Roll Stock & Quantities**. The report
-   lists Always goods and rotating choices with quantities, prices and purchase units. All-shops selection
-   disables this action because a stock list belongs to one shop.
+   same build should show 32 unchanged. A missing referenced Item blocks preflight with its ID.
+5. Select one shop and merchant profile, and optionally one category, then click **Roll Stock & Quantities**. The report
+   lists Always goods and rotating choices with quantities, prices and purchase units. All-shops and All-profiles selections
+   disable this action because a stock list belongs to one merchant profile.
 
 **Roll Stock** reads and checks the built tables, rolls Foundry dice, and samples without duplicates.
 Each successful tier roll chooses one remaining eligible item from that tier. An empty/exhausted
@@ -69,9 +73,25 @@ tier consumes an attempt without promoting a rare item; attempts stop early if b
 exhausted. The action makes no chat messages, saved stock record, inventory changes, or table
 drawn-state changes. It refuses missing or outdated tables until they are rebuilt.
 
-For example, the General Store list always contains its 47 core goods, with up to eight additional
-distinct goods. Travel always contains Walking Stick, Bell and Signal Whistle. Its Often pool is
-empty, so an Often result adds nothing; Compass or Spyglass can appear only on a Rarely result.
+For example, Village includes its 82 Always goods with up to eight distinct extras. City includes
+90 Always goods with up to twenty-two extras; Spyglass is its only Rarely good. Village Compass
+is Rarely, but City Compass is Often. Wagon excludes eleven bulky products before sampling.
+Category selection filters these same pools and uses the selected profile's category attempt count.
+
+General Store offers **All profiles** for building sixteen tables at once, or one named profile
+for building four. A category filter changes stock selection, not which table set is generated.
+Merchant Notes shown for Village, Town, City and Wagon remain private builder guidance.
+
+The API preserves base-profile defaults for existing callers and adds explicit variant selection:
+
+```js
+const api = game.modules.get("devils-table").api;
+await api.rebuildStockTables({ shopId: "general-store", profileId: "DT_TABLE_GS_CITY" }); // preview
+await api.rollStock({ shopId: "general-store", profileId: "DT_TABLE_GS_CITY", categoryId: "travel" });
+```
+
+Omitting `profileId` from a table build includes all selected shop profiles; omitting it from a
+stock roll uses that shop's base profile. Invalid cross-shop profile selections fail before writes.
 
 ## Weighted quantities
 
@@ -117,12 +137,17 @@ Foundry controls, separate from the builder action. Imported world-table copies 
 and are not refreshed by a later compendium rebuild.
 Native draws provide availability only. Use the builder for category filtering and weighted quantities.
 
-## Upgrade from alpha.5
+## Upgrade from alpha.5 or alpha.6
 
-Normal builds recognise the same 20 whole-shop tables and preserve the 100 old category tables.
-To remove the latter, select **All shops → All categories → Preview Legacy Cleanup**. The report
-lists each proposed removal and protected table; confirm only after reviewing it and backing up
-the world. A pristine alpha.5 pack then contains 20 tables. A protected pack may retain more.
+Normal builds retain all twenty existing whole-shop identities, update the three Village item
+pools and create twelve variant tables: 12 creates, 3 updates and 17 unchanged. A repeat build
+reports 32 unchanged active tables. Any of the 100 old category tables remain preserved.
+
+For cleanup, select **All shops → All categories → Preview Legacy Cleanup**. The report lists
+each proposed removal and protected table; confirm only after review and a world backup. Legacy
+comparison uses current canonical source. Older category names or memberships that no longer match
+are protected even if nobody edited them. The expanded catalogue therefore does not promise
+removal of all 100 historical tables; never bypass the protection to force a target count.
 
 Cleanup requires current compact tables and removes only exact, reserved legacy category tables
 whose generated fields still match. Edited results/names, assigned folders and foreign flags are
@@ -134,7 +159,7 @@ cleanup record reports success/failure. Ordinary rebuilding does not recreate re
 
 ## Source and rebuild policy
 
-Edit `data/stock.json` and `data/stock-quantities.json`. New shops require table reservations in
+Edit `data/stock.json` and `data/stock-quantities.json`. New merchant profiles require table reservations in
 `data/table-id-ledger.json`; new category filters do not. Retired IDs remain reserved forever.
 The [source contract](SOURCE_DATA.md) documents every field and identity rule. Build Items before
 tables when item identity, membership or names change. Never hand-edit generated pack data as source.

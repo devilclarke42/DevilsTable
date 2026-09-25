@@ -126,7 +126,7 @@ test("permission failure occurs before loading catalogue", async () => {
   await assert.rejects(createBuilder({ load: () => { throw new Error("Must not load"); }, adapter })(), /Permission denied/);
 });
 test("writes are batched and retry converges after partial failure", async () => {
-  const items = Array.from({ length: 205 }, (_, i) => ({ ...fixture, id: `DT_ITEM_TEST_BATCH_${i}` }));
+  const items = Array.from({ length: 205 }, (_, i) => ({ ...fixture, id: `DT_ITEM_TEST_BATCH_${i}`, name: `Batch parcel ${i}` }));
   const { adapter, state } = fakeAdapter();
   state.hooks.create = () => { if (state.docs.length === 100) throw new Error("Disconnected"); };
   const build = createBuilder({ load: () => catalogue(items), adapter });

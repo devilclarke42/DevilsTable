@@ -1,0 +1,281 @@
+{
+  "commit": "006e10f38bc83612209c911df3298fbc420a981d",
+  "items": [
+    {
+      "id": "DT_ITEM_GS_BACKPACK",
+      "sha256": "2bf1e139ddba2e394827b6a82b4c6efdbf4c1dc0c96fd74fc14dd2ea0e0ad2e0"
+    },
+    {
+      "id": "DT_ITEM_GS_POUCH",
+      "sha256": "c57de7a679d0bc908597998b0fbc11cec40c94d7dc46565f675f6e2a2c02afe3"
+    },
+    {
+      "id": "DT_ITEM_GS_SACK",
+      "sha256": "e9c3db424b23d4de5764cbf96cb59a6b594a84b22d9e3b4c4ddb9206e75753ba"
+    },
+    {
+      "id": "DT_ITEM_GS_CHEST",
+      "sha256": "b7fe3900cf575f4c91fc1a5663d3c378ae3d9723cb88896e0e1b973152302af2"
+    },
+    {
+      "id": "DT_ITEM_GS_LOCKBOX",
+      "sha256": "c56352c5b668fa40b3f1f2ffc1a950e79cb833f3f89ace1d67f385b50d837f41"
+    },
+    {
+      "id": "DT_ITEM_GS_BARREL",
+      "sha256": "efdf3b44c7e8223c9d9b65a68263de0a560a3799260273f72c89d7d0665a4b72"
+    },
+    {
+      "id": "DT_ITEM_GS_CRATE",
+      "sha256": "8b392468a577a9ad0598d609c9dcec6c4806798e652e530544fb825b4a4af094"
+    },
+    {
+      "id": "DT_ITEM_GS_BASKET",
+      "sha256": "0d8260d5f0eb3a157439f600a077e6385bdb499343d91047836a9fa812a94abf"
+    },
+    {
+      "id": "DT_ITEM_GS_BOTTLE",
+      "sha256": "4ba0ce97793c9e46802ece40c2e06888070ebb08727a08663d7c09b39ee3f060"
+    },
+    {
+      "id": "DT_ITEM_GS_FLASK",
+      "sha256": "be58db7958fd6b9379f8d9b74ab4ee57bb94eeee0641ba5f8d5ba4bed5e20081"
+    },
+    {
+      "id": "DT_ITEM_GS_WATERSKIN",
+      "sha256": "774eb6581ae95792f9bb3d2c3201d0b7320ab7d7e4af554add2fac5e4b691c5e"
+    },
+    {
+      "id": "DT_ITEM_GS_JUG_CLAY",
+      "sha256": "4867d786d2ce080df0f152003ef50d4703b93318d309e911413eb38fd271123b"
+    },
+    {
+      "id": "DT_ITEM_GS_JAR_CERAMIC",
+      "sha256": "528397c1777d8cbbed8b2ce7df01e442e57f896574f2449e14cbfc4e37498606"
+    },
+    {
+      "id": "DT_ITEM_GS_TORCH",
+      "sha256": "01b8166328c13e05ba6a12e4fe6dabdd5ee69f3ff8719c7b347d6be36abec314"
+    },
+    {
+      "id": "DT_ITEM_GS_CANDLE",
+      "sha256": "3ad66598e0c36c0670581d03354ed5f6369686fb182c2fd2cc07a40df264e848"
+    },
+    {
+      "id": "DT_ITEM_GS_CANDLE_BEESWAX",
+      "sha256": "bb2626e0ddc413ec5178d6695e26d9728c319be93a5a73892f40855782ca1c8a"
+    },
+    {
+      "id": "DT_ITEM_GS_CANDLE_TALLOW",
+      "sha256": "269586046dfed9def0c3a02fadcfc89dee740ddf11801db4806b233256a34efb"
+    },
+    {
+      "id": "DT_ITEM_GS_LANTERN",
+      "sha256": "7e17c24169cc7d317901906b6b2a030a8048c9e2c3c81412f90467786b5b7a2d"
+    },
+    {
+      "id": "DT_ITEM_GS_LANTERN_HOODED",
+      "sha256": "d99f11f80d2f14c28a79d25340cd167b6df8703557dcde9d451048178a6b5da2"
+    },
+    {
+      "id": "DT_ITEM_GS_LANTERN_BULLSEYE",
+      "sha256": "ac073fa224b4df250fbdca420741971b3c77d1982c8e47698e794f5454c166e6"
+    },
+    {
+      "id": "DT_ITEM_GS_LAMP",
+      "sha256": "85de97f51ec2c0e0d86ea06fbe56e2e7c30623eb2f127f956222f57aecbfb401"
+    },
+    {
+      "id": "DT_ITEM_GS_OIL_LAMP",
+      "sha256": "a1bd0f504373218844bbf4d69a24bf03596ae14de30cb206e7123656781d288c"
+    },
+    {
+      "id": "DT_ITEM_GS_TINDERBOX",
+      "sha256": "3e8c5f85c72f70e70a547e1ef36390b3aea049196d7ac73621086d9c0250d12b"
+    },
+    {
+      "id": "DT_ITEM_GS_FLINT_STEEL",
+      "sha256": "d25e40f3f5461c4ba580e16721b51c7bfa1369412abaa8a722d25a3ad0235b07"
+    },
+    {
+      "id": "DT_ITEM_GS_CHARCOAL",
+      "sha256": "0b6909a5e3e0ecb68d889f7dfd4c4fc97b7bfd11ffa71546358588f859c01092"
+    },
+    {
+      "id": "DT_ITEM_GS_ROPE_HEMP",
+      "sha256": "2b0426a66b7185ca40fedcfa621dee6b24a5d25f8f0a4e94c8d9f8319481d010"
+    },
+    {
+      "id": "DT_ITEM_GS_ROPE_SILK",
+      "sha256": "203906891c235dae0c7dc608d935d9a94eb8273f4a6c686a31af0259f9ea4fa6"
+    },
+    {
+      "id": "DT_ITEM_GS_TWINE",
+      "sha256": "a78946471ec7f8bdde794a6a707ddc0552782e878be296a0afebe42e404fe7de"
+    },
+    {
+      "id": "DT_ITEM_GS_GRAPPLING_HOOK",
+      "sha256": "d6df2b6c1d698ee9ea5c98c539cc6bfaf27592a073598c5cdb22630efad6e89e"
+    },
+    {
+      "id": "DT_ITEM_GS_PITONS",
+      "sha256": "7ab8bc635e333730e37f681f4e1f5399d4212ac0987333772fedc0282f9fc882"
+    },
+    {
+      "id": "DT_ITEM_GS_CLIMBERS_KIT",
+      "sha256": "d8a6799d660c3e9b1cc1eeb4d11d66b3b2d0ea1729c5f3074a4f5baa03e9e11c"
+    },
+    {
+      "id": "DT_ITEM_GS_BLANKET",
+      "sha256": "836cd8a911eab7d74bfced992270b92810827005b1ce4581de0aff773e1bd2fd"
+    },
+    {
+      "id": "DT_ITEM_GS_BEDROLL",
+      "sha256": "23f97d4bb2f8a16a338d9db40a2796b3aa029f79e566eea3343e49abf1ef18d3"
+    },
+    {
+      "id": "DT_ITEM_GS_TENT",
+      "sha256": "10392fc0623687e850e10f5163ca7eba83b09fa18d77131014d609ec0c423ef2"
+    },
+    {
+      "id": "DT_ITEM_GS_BEDROLL_STRAP",
+      "sha256": "7d35afcb297615d34857955c3a86a07a30b9d4e7ce8b99203a2d3cd2bf8bb0e9"
+    },
+    {
+      "id": "DT_ITEM_GS_MESS_KIT",
+      "sha256": "03facf7c34a1c24057fbe6275c5e15bcecb9fd5ee866301a1f085dc4797a5818"
+    },
+    {
+      "id": "DT_ITEM_GS_POT_COOKING",
+      "sha256": "c6078d0c31fd18fe0067b5f993dcf7f0c94963cfd06f0663dec8933be141f47f"
+    },
+    {
+      "id": "DT_ITEM_GS_KETTLE_CAMP",
+      "sha256": "27ebfb789487001f7901e18db2ad52e9f23f06e599314bcdcfe210ef3548d0ed"
+    },
+    {
+      "id": "DT_ITEM_GS_CUP",
+      "sha256": "a7d2847002d64f06ecbf723f0469a9081887b72d7576ab1598bd7b9923d06d98"
+    },
+    {
+      "id": "DT_ITEM_GS_BOWL",
+      "sha256": "6a8d4c5405939222697e04f7574985d416a17fe3a2656e2116abd84fd935552b"
+    },
+    {
+      "id": "DT_ITEM_GS_SPOON",
+      "sha256": "508e3babae7f97cbd7a2e09d2d5bc7ee8fda1421e67181839ebe7d25d52b4ceb"
+    },
+    {
+      "id": "DT_ITEM_GS_PLATE_WOOD",
+      "sha256": "7c9fcdbf231b0c21ca7c7dc8a7fb7e12cfaa6c39ed007ee11c56a114a7ce570f"
+    },
+    {
+      "id": "DT_ITEM_GS_PARCHMENT",
+      "sha256": "9681278ae2f8fecf3642857f6581c86769775968aa6df896d73f6774ce1400e6"
+    },
+    {
+      "id": "DT_ITEM_GS_PAPER",
+      "sha256": "4e0f0257222034f84c21419193d9ad102965f95205d1085450649a9dbe38bf7a"
+    },
+    {
+      "id": "DT_ITEM_GS_INK",
+      "sha256": "afd3ad52a7379bc44782cec86492322792bcfb5db3c6e3236bd936bb5e9dd7b5"
+    },
+    {
+      "id": "DT_ITEM_GS_INK_PEN",
+      "sha256": "184ab1a802d6c22cb8684bf3fa582998f9f00e37f1b469ccb1787dff374a9664"
+    },
+    {
+      "id": "DT_ITEM_GS_CHALK",
+      "sha256": "2fd80a8cc2f06c4d190817b82c6ff53a4eab61881627f555de01ace270fc4865"
+    },
+    {
+      "id": "DT_ITEM_GS_WAX",
+      "sha256": "c005a6313b2b4964fc0d6048b14c6af236b21b6b099c27078bed0e0c955193b3"
+    },
+    {
+      "id": "DT_ITEM_GS_SEALING_STAMP",
+      "sha256": "36279e435e667427a2c3a3aba6a7c4fc775f857355b102a78e6645bb094aeecb"
+    },
+    {
+      "id": "DT_ITEM_GS_SOAP",
+      "sha256": "e971958e743069d73e9a2d1eb62033fac2c55ec43e89ea26a0113b69cafb880c"
+    },
+    {
+      "id": "DT_ITEM_GS_NEEDLE",
+      "sha256": "ced95363681fddb370440dc9f9a571aa6c0b59267adf553427b0c30b71db1001"
+    },
+    {
+      "id": "DT_ITEM_GS_THREAD",
+      "sha256": "7c3e18869a9c1259fb8d8aa697435f91d976244cd36c6d255cb28f6b0db45534"
+    },
+    {
+      "id": "DT_ITEM_GS_SEWING_KIT",
+      "sha256": "155e712ac810fcdf194938e318b3514452ac202936dc8ff768a6480c5e098c7b"
+    },
+    {
+      "id": "DT_ITEM_GS_BROOM",
+      "sha256": "77f6a0f2fb50c1c15855d63434f71b61f90d5f6c3ef6d136b6362d6523384f85"
+    },
+    {
+      "id": "DT_ITEM_GS_MOP",
+      "sha256": "8cd51ca60ed10f1e4da87a1bb1a244549f7ebf2ee5acdf20f7e4bcb8cf3d45d8"
+    },
+    {
+      "id": "DT_ITEM_GS_BUCKET_WASH",
+      "sha256": "9d3589c0480b4e6a1816362400f563c518c98075af851923d0b960911a5cf4b8"
+    },
+    {
+      "id": "DT_ITEM_GS_BOARD_WASH",
+      "sha256": "1805d98d9850fe216959ecbdad4f0ce0dc1a62c5eac1eb2d6dfca27de65c0392"
+    },
+    {
+      "id": "DT_ITEM_GS_CLOTHES_LINE",
+      "sha256": "c1334a54f17fe594f7663b0b16e44f4d1adb703893aeff87dd422f78dad09557"
+    },
+    {
+      "id": "DT_ITEM_GS_FEED_HORSE",
+      "sha256": "d73802934f4c0322ab55ec9058daacfb2ef4f5a11918bd25543ef396b63cfbd3"
+    },
+    {
+      "id": "DT_ITEM_GS_BAG_FEED",
+      "sha256": "d4a468241cd8f28afb70537f7cba9333040e522291a08bd0d8852964970c0e41"
+    },
+    {
+      "id": "DT_ITEM_GS_BRUSH",
+      "sha256": "63a103ab880f291b5a1f72af99b052af4886ddd44043edfcb0e59a36d259e69b"
+    },
+    {
+      "id": "DT_ITEM_GS_CURRY_COMB",
+      "sha256": "a2a3b2047cf99311218c01124edaee4ac2314adcbadc383dd74accdab6bd2541"
+    },
+    {
+      "id": "DT_ITEM_GS_HORSESHOES",
+      "sha256": "6a948bdeda06d9a6e0a26e3863c41e9541bff4079a52f9e0535cc3173d22e797"
+    },
+    {
+      "id": "DT_ITEM_GS_TACK_REPAIR_KIT",
+      "sha256": "4a954b2871e85d339ea6214c813e56f380bf667e350717318d48e61f6126d837"
+    },
+    {
+      "id": "DT_ITEM_GS_WALKING_STICK",
+      "sha256": "62f2f0c3fbe770291aa78b631f6ab8163876c6fddae0ccba06fde28487d53c4d"
+    },
+    {
+      "id": "DT_ITEM_GS_COMPASS",
+      "sha256": "0609baedbd1c9b937da3ccaff2a19daddfc9adfaf1cb0fc49fedbe66dad4dcc7"
+    },
+    {
+      "id": "DT_ITEM_GS_SPYGLASS",
+      "sha256": "7299781a04e0d0e34e438be90f5171e47a0aa8e59fd2ebc16d25381ecef74140"
+    },
+    {
+      "id": "DT_ITEM_GS_BELL",
+      "sha256": "a1b6e000b69ac0bfe2d8b043fd116ce62e7b0c2741738b38f4688f07ac788aeb"
+    },
+    {
+      "id": "DT_ITEM_GS_WHISTLE_SIGNAL",
+      "sha256": "a68f7bcb5e8e0e5d25e7078b2c6c42c909d412f7cc449552f548ebffefd246ca"
+    }
+  ]
+}

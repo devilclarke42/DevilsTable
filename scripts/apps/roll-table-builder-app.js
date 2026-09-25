@@ -1,7 +1,7 @@
 import { MODULE_ID, TABLE_PACK_COLLECTION } from "../constants.js";
 import { loadStockCatalogue } from "../data/stock-loader.js";
 import { shopView } from "../data/shop-catalogue.js";
-import { stockScopes } from "../data/stock-catalogue.js";
+import { stockProfiles, stockScopes } from "../data/stock-catalogue.js";
 import { requireValidStock, rebuildStockTables } from "../builders/roll-table-builder.js";
 import { rollStockList } from "../stock/stock-roller.js";
 import { cleanupLegacyStockTables } from "../builders/legacy-table-cleanup.js";
@@ -13,7 +13,7 @@ const { ApplicationV2, HandlebarsApplicationMixin } = foundry.applications.api;
 /** Separate settings menu and window; the Item builder never implicitly writes RollTables. */
 export class RollTableBuilderApplication extends HandlebarsApplicationMixin(ApplicationV2) {
   #busy = false;
-  #scope = { shopId: "general-store", categoryId: null };
+  #scope = { shopId: "general-store", categoryId: null, profileId: "DT_TABLE_GS" };
   #report = "Build the Item compendium first. Preview the stock tables before building.";
   #data = null;
 
@@ -22,6 +22,7 @@ export class RollTableBuilderApplication extends HandlebarsApplicationMixin(Appl
     position: { width: 760, height: "auto" },
     window: { title: "Devil's Table — Stock RollTable Builder", icon: "fa-solid fa-dice", resizable: true },
     actions: { selectShop: RollTableBuilderApplication.#selectShop, selectCategory: RollTableBuilderApplication.#selectCategory,
+      selectProfile: RollTableBuilderApplication.#selectProfile,
       preview: RollTableBuilderApplication.#preview, build: RollTableBuilderApplication.#build, rollStock: RollTableBuilderApplication.#rollStock,
       cleanup: RollTableBuilderApplication.#cleanup }
   };
@@ -36,24 +37,43 @@ export class RollTableBuilderApplication extends HandlebarsApplicationMixin(Appl
       const scopes = stockScopes(this.#data, this.#scope);
       view.tableCount = scopes.length * 4;
       view.setCount = scopes.length;
+      if (scopes.length === 1) {
+        const { profile, groups } = scopes[0];
+        const eligible = Object.values(groups).flat();
+        view.categories = view.categories.map(category => ({ ...category,
+          count: eligible.filter(item => item.category === category.id).length }));
+        view.scopeLabel = `${profile.name} / ${view.categories.find(category => category.selected)?.name ?? "All categories"}`;
+      }
       view.oftenChance = this.#data.stock.oftenChance;
       view.rarelyChance = this.#data.stock.rarelyChance;
       view.noneChance = 100 - view.oftenChance - view.rarelyChance;
-      view.profiles = this.#data.stock.profiles.filter(profile => !this.#scope.shopId || profile.shop === this.#scope.shopId).map(profile => ({
-        name: this.#data.shopDefinitions.find(shop => shop.id === profile.shop).name,
+      view.profileChoices = stockProfiles(this.#data).filter(profile => profile.shop === this.#scope.shopId)
+        .map(profile => ({ id: profile.id, name: profile.name, selected: profile.id === this.#scope.profileId }));
+      view.hasVariants = view.profileChoices.length > 1;
+      view.allProfiles = !this.#scope.profileId;
+      view.profiles = scopes.map(({ profile }) => ({
+        name: profile.name, description: profile.description, merchantNotes: profile.merchantNotes,
         draws: this.#scope.categoryId ? profile.categoryDraws : profile.draws, partial: profile.coverage === "partial"
       }));
     } catch (error) { this.#data = null; catalogueError = error.message; }
     return { ...await super._prepareContext(options), ...view, catalogueError, busy: this.#busy,
-      blocked: this.#busy || Boolean(catalogueError), rollBlocked: this.#busy || Boolean(catalogueError) || !this.#scope.shopId,
+      blocked: this.#busy || Boolean(catalogueError), rollBlocked: this.#busy || Boolean(catalogueError) || !this.#scope.shopId || view.setCount !== 1,
       report: this.#report, lastBuild: game.settings.get(MODULE_ID, "lastTableBuildSummary") || "No table builds recorded.",
       lastCleanup: game.settings.get(MODULE_ID, "lastTableCleanupSummary") || "No legacy cleanup recorded." };
   }
 
   static async #selectShop(_event, target) {
     if (this.#busy) return;
-    this.#scope = { shopId: target.dataset.shop || null, categoryId: null };
+    const shopId = target.dataset.shop || null;
+    this.#scope = { shopId, categoryId: null,
+      profileId: this.#data?.stock.profiles.find(profile => profile.shop === shopId)?.id ?? null };
     this.#report = "Selection changed. Preview the selected stock tables.";
+    await this.render();
+  }
+  static async #selectProfile(_event, target) {
+    if (this.#busy) return;
+    this.#scope.profileId = target.dataset.profile || null;
+    this.#report = "Stock profile changed. Preview before building or rolling.";
     await this.render();
   }
   static async #selectCategory(_event, target) {
@@ -76,7 +96,7 @@ export class RollTableBuilderApplication extends HandlebarsApplicationMixin(Appl
       if (mode === "build") {
         const confirmed = await foundry.applications.api.DialogV2.confirm({
           window: { title: "Build stock RollTables?" },
-          content: `<p>Selection: ${escapeHtml(scope.shopId ?? "all shops")} / ${escapeHtml(scope.categoryId ?? "all categories")}.</p><p>This writes generated tables to <strong>${TABLE_PACK_COLLECTION}</strong> and refreshes their owned result rows, including removing obsolete generated rows. Existing Items, unrelated tables and actor inventories are unaffected. Keep custom table results in separate tables.</p>`
+          content: `<p>Selection: ${escapeHtml(scope.profileId ? stockProfiles(this.#data).find(profile => profile.id === scope.profileId).name : "All selected profiles")} / ${escapeHtml(scope.categoryId ?? "all categories")}.</p><p>This writes generated tables to <strong>${TABLE_PACK_COLLECTION}</strong> and refreshes their owned result rows, including removing obsolete generated rows. Existing Items, unrelated tables and actor inventories are unaffected. Keep custom table results in separate tables.</p>`
         });
         if (!confirmed) return;
       }
@@ -97,7 +117,7 @@ export class RollTableBuilderApplication extends HandlebarsApplicationMixin(Appl
       } else if (mode === "stock") {
         const stock = await rollStockList(scope);
         this.#report = [
-          `Stock list — ${stock.items.length} distinct goods; ${stock.outcomes.length} rotating attempts.`,
+          `${stock.profileName} — ${stock.items.length} distinct goods; ${stock.outcomes.length} rotating attempts.`,
           "Quantities count complete sale units. These are stock suggestions; no inventory or chat was changed.",
           ...stock.items.map(item => `${item.tier.toUpperCase()}: ${item.quantity} × ${item.name} — ${item.price.value} ${item.price.denomination} each (${item.saleUnit})`)
         ].join("\n");

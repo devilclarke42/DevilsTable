@@ -1,0 +1,246 @@
+{
+  "system": "dnd5e 5.3.3",
+  "purpose": "Known core references checked against official source or the accepted alpha.4 icon review; this is not a bundled artwork library or a live file-existence claim.",
+  "icons": [
+    {
+      "icon": "icons/commodities/cloth/cloth-bolt-gold-orange.webp",
+      "source": "docs/GENERAL_STORE_REVIEW.md; docs/CONTAINERS_REVIEW.md"
+    },
+    {
+      "icon": "icons/commodities/leather/leather-buckle-steel-tan.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/tool/leatherworkers-tools.yml"
+    },
+    {
+      "icon": "icons/commodities/materials/bowl-liquid-white.webp",
+      "source": "docs/GENERAL_STORE_REVIEW.md; docs/CONTAINERS_REVIEW.md"
+    },
+    {
+      "icon": "icons/commodities/metal/ingot-stamped-bronze.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/tradegoods/copper.yml"
+    },
+    {
+      "icon": "icons/commodities/metal/ingot-stamped-silver.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/tradegoods/iron.yml"
+    },
+    {
+      "icon": "icons/commodities/wood/wood-pole.webp",
+      "source": "docs/GENERAL_STORE_REVIEW.md; docs/CONTAINERS_REVIEW.md"
+    },
+    {
+      "icon": "icons/consumables/drinks/alcohol-jar-spirits-gray.webp",
+      "source": "docs/GENERAL_STORE_REVIEW.md; docs/CONTAINERS_REVIEW.md"
+    },
+    {
+      "icon": "icons/consumables/grains/bread-loaf-boule-rustic-brown.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/food/rations.yml"
+    },
+    {
+      "icon": "icons/consumables/grains/sack-rice-flour-brown.webp",
+      "source": "docs/GENERAL_STORE_REVIEW.md; docs/CONTAINERS_REVIEW.md"
+    },
+    {
+      "icon": "icons/consumables/potions/bottle-bulb-empty-glass.webp",
+      "source": "docs/GENERAL_STORE_REVIEW.md; docs/CONTAINERS_REVIEW.md"
+    },
+    {
+      "icon": "icons/consumables/potions/potion-bottle-labeled-medicine-capped-red-black.webp",
+      "source": "docs/GENERAL_STORE_REVIEW.md; docs/CONTAINERS_REVIEW.md"
+    },
+    {
+      "icon": "icons/containers/bags/pack-leather-black-brown.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/container/saddlebags/_container.yml"
+    },
+    {
+      "icon": "icons/containers/bags/pack-leather-white-tan.webp",
+      "source": "docs/GENERAL_STORE_REVIEW.md; docs/CONTAINERS_REVIEW.md"
+    },
+    {
+      "icon": "icons/containers/bags/pouch-rounded-leather-gold-tan.webp",
+      "source": "docs/GENERAL_STORE_REVIEW.md; docs/CONTAINERS_REVIEW.md"
+    },
+    {
+      "icon": "icons/containers/bags/sack-cloth-orange.webp",
+      "source": "docs/GENERAL_STORE_REVIEW.md; docs/CONTAINERS_REVIEW.md"
+    },
+    {
+      "icon": "icons/containers/barrels/barrel-oak-banded-tan.webp",
+      "source": "docs/GENERAL_STORE_REVIEW.md; docs/CONTAINERS_REVIEW.md"
+    },
+    {
+      "icon": "icons/containers/chest/chest-elm-steel-brown.webp",
+      "source": "docs/GENERAL_STORE_REVIEW.md; docs/CONTAINERS_REVIEW.md"
+    },
+    {
+      "icon": "icons/containers/chest/chest-simple-box-brown.webp",
+      "source": "docs/GENERAL_STORE_REVIEW.md; docs/CONTAINERS_REVIEW.md"
+    },
+    {
+      "icon": "icons/containers/kitchenware/stein-empty.webp",
+      "source": "docs/GENERAL_STORE_REVIEW.md; docs/CONTAINERS_REVIEW.md"
+    },
+    {
+      "icon": "icons/containers/kitchenware/vase-clay-cracked-white.webp",
+      "source": "docs/GENERAL_STORE_REVIEW.md; docs/CONTAINERS_REVIEW.md"
+    },
+    {
+      "icon": "icons/containers/misc/basket-handle-woven-yellow.webp",
+      "source": "docs/GENERAL_STORE_REVIEW.md; docs/CONTAINERS_REVIEW.md"
+    },
+    {
+      "icon": "icons/containers/misc/bucket-steel.webp",
+      "source": "docs/GENERAL_STORE_REVIEW.md; docs/CONTAINERS_REVIEW.md"
+    },
+    {
+      "icon": "icons/environment/wilderness/camp-improvised.webp",
+      "source": "docs/GENERAL_STORE_REVIEW.md; docs/CONTAINERS_REVIEW.md"
+    },
+    {
+      "icon": "icons/sundries/books/book-rounded-red.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/loot/book.yml"
+    },
+    {
+      "icon": "icons/sundries/documents/paper-plain-white.webp",
+      "source": "docs/GENERAL_STORE_REVIEW.md; docs/CONTAINERS_REVIEW.md"
+    },
+    {
+      "icon": "icons/sundries/lights/candle-unlit-red.webp",
+      "source": "docs/GENERAL_STORE_REVIEW.md; docs/CONTAINERS_REVIEW.md"
+    },
+    {
+      "icon": "icons/sundries/lights/candle-unlit-tan.webp",
+      "source": "docs/GENERAL_STORE_REVIEW.md; docs/CONTAINERS_REVIEW.md"
+    },
+    {
+      "icon": "icons/sundries/lights/lantern-iron-yellow.webp",
+      "source": "docs/GENERAL_STORE_REVIEW.md; docs/CONTAINERS_REVIEW.md"
+    },
+    {
+      "icon": "icons/sundries/lights/torch-black.webp",
+      "source": "docs/GENERAL_STORE_REVIEW.md; docs/CONTAINERS_REVIEW.md"
+    },
+    {
+      "icon": "icons/sundries/misc/ladder-improvised.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/loot/ladder-10-foot.yml"
+    },
+    {
+      "icon": "icons/sundries/misc/lock-bronze-reinforced.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/trinket/lock.yml"
+    },
+    {
+      "icon": "icons/sundries/scrolls/scroll-plain-tan.webp",
+      "source": "docs/GENERAL_STORE_REVIEW.md; docs/CONTAINERS_REVIEW.md"
+    },
+    {
+      "icon": "icons/sundries/survival/bedroll-grey.webp",
+      "source": "docs/GENERAL_STORE_REVIEW.md; docs/CONTAINERS_REVIEW.md"
+    },
+    {
+      "icon": "icons/sundries/survival/climbing-anchor-steel-grey.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/trinket/block-and-tackle.yml"
+    },
+    {
+      "icon": "icons/sundries/survival/mirror-plain.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/loot/steel-mirror.yml"
+    },
+    {
+      "icon": "icons/sundries/survival/rope-wrapped-brown.webp",
+      "source": "docs/GENERAL_STORE_REVIEW.md; docs/CONTAINERS_REVIEW.md"
+    },
+    {
+      "icon": "icons/sundries/survival/soap.webp",
+      "source": "docs/GENERAL_STORE_REVIEW.md; docs/CONTAINERS_REVIEW.md"
+    },
+    {
+      "icon": "icons/sundries/survival/wetskin-leather-purple.webp",
+      "source": "docs/GENERAL_STORE_REVIEW.md; docs/CONTAINERS_REVIEW.md"
+    },
+    {
+      "icon": "icons/tools/cooking/fork-steel-tan.webp",
+      "source": "docs/GENERAL_STORE_REVIEW.md; docs/CONTAINERS_REVIEW.md"
+    },
+    {
+      "icon": "icons/tools/fasteners/chain-steel-grey.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/trinket/chain-10-feet.yml"
+    },
+    {
+      "icon": "icons/tools/fasteners/nail-steel.webp",
+      "source": "docs/GENERAL_STORE_REVIEW.md; docs/CONTAINERS_REVIEW.md"
+    },
+    {
+      "icon": "icons/tools/fasteners/nails-steel-brown.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/trinket/iron-spike.yml"
+    },
+    {
+      "icon": "icons/tools/fishing/hook-multi-steel-brown.webp",
+      "source": "docs/GENERAL_STORE_REVIEW.md; docs/CONTAINERS_REVIEW.md"
+    },
+    {
+      "icon": "icons/tools/fishing/rod-brown-gold.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/loot/fishing-tackle.yml"
+    },
+    {
+      "icon": "icons/tools/hand/broom-straw-brown.webp",
+      "source": "docs/GENERAL_STORE_REVIEW.md; docs/CONTAINERS_REVIEW.md"
+    },
+    {
+      "icon": "icons/tools/hand/chisel-steel-brown.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/tool/woodcarvers-tools.yml"
+    },
+    {
+      "icon": "icons/tools/hand/hammer-cobbler-steel.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/loot/hammer.yml"
+    },
+    {
+      "icon": "icons/tools/hand/pickaxe-steel-white.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/loot/crowbar.yml"
+    },
+    {
+      "icon": "icons/tools/hand/saw-steel-grey.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/tool/carpenters-tools.yml"
+    },
+    {
+      "icon": "icons/tools/hand/scale-balances-merchant-brown.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/loot/merchants-scale.yml"
+    },
+    {
+      "icon": "icons/tools/hand/shovel-spade-steel-grey.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/loot/shovel.yml"
+    },
+    {
+      "icon": "icons/tools/instruments/bell-brass-brown.webp",
+      "source": "docs/GENERAL_STORE_REVIEW.md; docs/CONTAINERS_REVIEW.md"
+    },
+    {
+      "icon": "icons/tools/instruments/pipe-flute-brown.webp",
+      "source": "docs/GENERAL_STORE_REVIEW.md; docs/CONTAINERS_REVIEW.md"
+    },
+    {
+      "icon": "icons/tools/laboratory/cauldron-filled-gold.webp",
+      "source": "docs/GENERAL_STORE_REVIEW.md; docs/CONTAINERS_REVIEW.md"
+    },
+    {
+      "icon": "icons/tools/navigation/hourglass-grey.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/loot/hourglass.yml"
+    },
+    {
+      "icon": "icons/tools/navigation/spyglass-telescope-brass.webp",
+      "source": "docs/GENERAL_STORE_REVIEW.md; docs/CONTAINERS_REVIEW.md"
+    },
+    {
+      "icon": "icons/tools/scribal/pen-steel-grey-brown.webp",
+      "source": "docs/GENERAL_STORE_REVIEW.md; docs/CONTAINERS_REVIEW.md"
+    },
+    {
+      "icon": "icons/tools/smithing/hammer-sledge-steel-grey.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/loot/sledgehammer.yml"
+    },
+    {
+      "icon": "icons/tools/smithing/horsehoe-worn-steel-grey.webp",
+      "source": "docs/GENERAL_STORE_REVIEW.md; docs/CONTAINERS_REVIEW.md"
+    },
+    {
+      "icon": "icons/weapons/sickles/sickle-hooked-wood.webp",
+      "source": "docs/GENERAL_STORE_REVIEW.md; docs/CONTAINERS_REVIEW.md"
+    }
+  ]
+}

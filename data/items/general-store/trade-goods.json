@@ -1,0 +1,398 @@
+[
+  {
+    "id": "DT_ITEM_GS_LINEN",
+    "name": "Linen",
+    "description": "Plain undyed linen sold as a one-yard square for sewing and household repairs. The weave suits light shirts, towels and bag linings when cut and stitched appropriately.\n\nThis is raw cloth, not a finished garment. Thread, tools, patterns and labour are separate; no crafting output or proficiency is granted automatically.",
+    "saleUnit": "One square yard of plain undyed linen",
+    "price": {
+      "value": 4,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 0.3,
+      "units": "lb",
+      "notes": "Three tenths of a pound for one square yard of light linen; a whole bolt is not implied."
+    },
+    "icon": "icons/commodities/cloth/cloth-bolt-gold-orange.webp",
+    "category": "trade-goods",
+    "tags": [
+      "mundane",
+      "linen",
+      "textile",
+      "trade"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "core",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original project design. Original wording, project price and adjusted weight. See docs/SPRINT_3_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "trade"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_CANVAS",
+    "name": "Canvas",
+    "description": "Heavy plain canvas sold in a one-yard square for bags, covers and practical repairs. The untreated fabric is strong but absorbs water until properly treated.\n\nWax, oil, thread and fittings are separate. This raw piece is not a finished tarpaulin or tent and has no automatic weatherproofing effect.",
+    "saleUnit": "One square yard of untreated heavy canvas",
+    "price": {
+      "value": 6,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 0.6,
+      "units": "lb",
+      "notes": "Six tenths of a pound for one square yard of heavy untreated canvas."
+    },
+    "icon": "icons/commodities/cloth/cloth-bolt-gold-orange.webp",
+    "category": "trade-goods",
+    "tags": [
+      "mundane",
+      "canvas",
+      "textile",
+      "trade"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "core",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original project design. Original wording, project price and adjusted weight. See docs/SPRINT_3_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "trade"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_CLOTH_WOOL",
+    "name": "Wool Cloth",
+    "description": "A one-yard square of medium-weight woven wool for making or repairing warm clothing. The edges are left unfinished so a worker can cut to the required pattern.\n\nThread, tools and labour are separate. It is material stock rather than a finished blanket and grants no protection from cold until put to practical use.",
+    "saleUnit": "One square yard of woven wool cloth",
+    "price": {
+      "value": 8,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 0.5,
+      "units": "lb",
+      "notes": "Half a pound for one square yard of medium-weight wool cloth."
+    },
+    "icon": "icons/commodities/cloth/cloth-bolt-gold-orange.webp",
+    "category": "trade-goods",
+    "tags": [
+      "mundane",
+      "wool",
+      "textile",
+      "trade"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original project design. Original wording, project price and adjusted weight. See docs/SPRINT_3_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "trade"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_LEATHER",
+    "name": "Leather",
+    "description": "A one-foot square of plain tanned leather for patches, straps and small fittings. Its moderate thickness suits domestic work and ordinary tack repairs.\n\nBuckles, rivets, wax and tools are separate. It is not hardened armour leather or a complete leatherworker's tool set; crafting is handled normally.",
+    "saleUnit": "One square foot of plain tanned leather",
+    "price": {
+      "value": 6,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 0.25,
+      "units": "lb",
+      "notes": "A quarter pound for one square foot of moderate-thickness tanned leather."
+    },
+    "icon": "icons/commodities/leather/leather-buckle-steel-tan.webp",
+    "category": "trade-goods",
+    "tags": [
+      "mundane",
+      "leather",
+      "material",
+      "trade"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "core",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original project design. Original wording, project price and adjusted weight. See docs/SPRINT_3_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "trade"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_BAR_IRON",
+    "name": "Iron Bar",
+    "description": "A small bar of ordinary wrought iron sold by its one-pound mass for a smith's repair or fitting work. It is unshaped stock with no finished edge or mounting holes.\n\nHeating, fuel, suitable tools and labour are separate. This is neither a finished weapon nor a guarantee of a particular crafting yield.",
+    "saleUnit": "One one-pound bar of ordinary wrought iron",
+    "price": {
+      "value": 1,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 1,
+      "units": "lb",
+      "notes": "The full one-pound sold mass is retained; raw metal is not reduced by the adjusted equipment policy."
+    },
+    "icon": "icons/commodities/metal/ingot-stamped-silver.webp",
+    "category": "trade-goods",
+    "tags": [
+      "mundane",
+      "iron",
+      "metal",
+      "trade"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original project design. Original wording, project price and adjusted weight. See docs/SPRINT_3_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "trade"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_BAR_COPPER",
+    "name": "Copper Bar",
+    "description": "A one-pound copper bar provides stock for small fittings, vessel repairs and similar metalwork. Its stated mass describes the whole bar rather than a coin denomination.\n\nTools and workshop labour are separate. Market acceptance and purity are matters for the GM; the Item does not create coins or apply an automatic resale price.",
+    "saleUnit": "One one-pound bar of ordinary copper",
+    "price": {
+      "value": 5,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 1,
+      "units": "lb",
+      "notes": "One pound of copper; no hidden bulk package or mass reduction."
+    },
+    "icon": "icons/commodities/metal/ingot-stamped-bronze.webp",
+    "category": "trade-goods",
+    "tags": [
+      "mundane",
+      "copper",
+      "metal",
+      "trade"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original project design. Original wording, project price and adjusted weight. See docs/SPRINT_3_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "trade"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_SALT",
+    "name": "Salt",
+    "description": "Coarse ordinary salt wrapped for kitchen use and practical food preparation. The one-pound packet is convenient to divide into smaller working amounts.\n\nSalt alone is not a day's food or an automatic preservation effect. Ingredients, suitable storage, recipes and labour remain separate; track partial use manually.",
+    "saleUnit": "One one-pound paper packet of coarse salt",
+    "price": {
+      "value": 4,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 1,
+      "units": "lb",
+      "notes": "One pound for the filled packet, with light paper packaging absorbed by practical rounding."
+    },
+    "icon": "icons/containers/bags/sack-cloth-orange.webp",
+    "category": "trade-goods",
+    "tags": [
+      "mundane",
+      "salt",
+      "ingredient",
+      "trade"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "core",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original project design. Original wording, project price and adjusted weight. See docs/SPRINT_3_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "trade"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_BEESWAX",
+    "name": "Beeswax",
+    "description": "A plain block of beeswax for treating thread, maintaining suitable surfaces or a craftsperson's wax work. Unlike the sealing Wax entry, it is uncoloured bulk material without prepared seal additives.\n\nWicks, tools and other ingredients are separate. A block of raw wax is not a candle and has no listed light or burn duration.",
+    "saleUnit": "One one-pound block of plain beeswax",
+    "price": {
+      "value": 2,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 1,
+      "units": "lb",
+      "notes": "One pound for the complete block; cut portions require manual inventory tracking."
+    },
+    "icon": "icons/sundries/lights/candle-unlit-red.webp",
+    "category": "trade-goods",
+    "tags": [
+      "mundane",
+      "wax",
+      "material",
+      "trade"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original project design. Original wording, project price and adjusted weight. See docs/SPRINT_3_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "trade"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_PITCH",
+    "name": "Pitch",
+    "description": "A dark block of wood pitch softens with controlled warming for ordinary sealing and repair work. Its stiff paper wrapping keeps it from sticking to other supplies in the pack.\n\nIt is not ready lamp fuel, alchemist's fire or a weapon. Application takes appropriate tools and care, and the GM resolves its suitability for a particular surface.",
+    "saleUnit": "One half-pound wrapped block of wood pitch",
+    "price": {
+      "value": 8,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 0.5,
+      "units": "lb",
+      "notes": "Half a pound for the pitch block and light wrapper; warming equipment is separate."
+    },
+    "icon": "modules/devils-table/assets/icons/charcoal.svg",
+    "category": "trade-goods",
+    "tags": [
+      "mundane",
+      "resin",
+      "material",
+      "trade"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original project design. Original wording, project price and adjusted weight. See docs/SPRINT_3_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "trade"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_DYE_CLOTH",
+    "name": "Cloth Dye",
+    "description": "A small packet of prepared plant-based dye colours compatible cloth when used with water, heat and the usual setting process. The merchant names the available colour at purchase.\n\nTools, fuel and fixing agents are separate. Colourfastness depends on the cloth and work; it is not a poison, magical disguise or automatic crafting result.",
+    "saleUnit": "One two-ounce packet of ordinary textile dye",
+    "price": {
+      "value": 2,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 0.125,
+      "units": "lb",
+      "notes": "One eighth of a pound for the two-ounce packet; the light wrapper is included."
+    },
+    "icon": "icons/containers/bags/sack-cloth-orange.webp",
+    "category": "trade-goods",
+    "tags": [
+      "mundane",
+      "dye",
+      "textile",
+      "trade"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original project design. Original wording, project price and adjusted weight. See docs/SPRINT_3_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "trade"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_CLOTH_SILK",
+    "name": "Silk Cloth",
+    "description": "A one-yard square of fine plain silk is folded around a clean paper backing for careful storage. Its smooth light weave suits skilled work on delicate linings and decorative garments.\n\nThe cloth is uncut material, not a finished luxury garment or climbing rope. Sewing supplies and labour are separate; local supply may depend on a merchant's trading route.",
+    "saleUnit": "One square yard of plain woven silk",
+    "price": {
+      "value": 8,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 0.15,
+      "units": "lb",
+      "notes": "Fifteen hundredths of a pound for one square yard of fine silk and its light backing."
+    },
+    "icon": "icons/commodities/cloth/cloth-bolt-gold-orange.webp",
+    "category": "trade-goods",
+    "tags": [
+      "mundane",
+      "silk",
+      "textile",
+      "imported"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "special-order",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original project design. Original wording, project price and adjusted weight. See docs/SPRINT_3_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "trade"
+    }
+  }
+]

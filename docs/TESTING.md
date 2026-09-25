@@ -6,24 +6,27 @@ Run `npm run check` with Node 20+; CI uses Node 24. Tests cover schema failure c
 cross-file IDs, source paths, HTML escaping, stable IDs, 2014 rules and weight preservation,
 read-only preview, conflict detection, no duplicates on rerun, preservation of unrelated data,
 lock restoration, partial-write recovery, permission guards and a synthetic 5,000-item validation.
-Containers coverage adds all eight category plans, all five Merchant Notes definitions, pricing
+Curated coverage checks all ten category plans, all five Merchant Notes definitions, pricing
 boundaries, native capacities and US liquid conversions, metadata isolation, empty-category builds,
 full-catalogue validation before filtered writes and stable shared identities across shop builds.
 The full General Store adds exact curated-category coverage, sale-unit preservation, six more
 native vessels, strict consumable/light validation, stable utility activity IDs, owning-item
-consumption targets, reusable actions and a simulated upgrade from 13 to 69 without rewriting
-the original Items. The alpha.4 baseline had 133 passing automated tests.
+consumption targets, reusable actions and simulated upgrades from both the thirteen Containers and the accepted 69-item catalogue.
+The alpha.4 baseline had 133 passing automated tests.
 Read-back regressions simulate equivalent HTML entity/break-tag serialization, verify stable
 reruns and require real price/weight/capacity/identity drift to remain detectable. Mismatch details
 are checked for missing Items, bounded output, saved reports and failure during lock restoration.
-Stock coverage adds 20 active tables with all 120 IDs still reserved, real compendium references, Always guarantees,
+Stock coverage checks 32 active tables with all 132 IDs reserved, real compendium references, Always guarantees,
 80/15/5 ranges, per-shop overrides, empty/exhausted tiers, duplicate-free lists, profile validation
 and Merchant Notes isolation. Persistence tests cover table previews, native model preflight,
 missing Items, result order, embedded-row changes, foreign metadata preservation, 100-row batches,
 partial failure/retry, custom-row protection, independent settings menus and permission guards.
-All 204 automated tests pass for alpha.6; validation reports 69 source Items and 20 active tables.
+Alpha.7 has 226 automated tests; validation reports 144 source Items and 32 active tables.
+Sprint 3 checks frozen hashes of all 69 accepted records (except Container sale-unit additions),
+75/13/56 Item upgrades, 12/3/17 table upgrades, normalized name uniqueness, icon references, variant
+inheritance/exclusions, private notes and effective-tier quantity rolls. Both rebuilds converge.
 Quantity tests exhaust all 100 percentile outcomes per tier/price rule, check complete sale units,
-category filtering and invalid distributions. Cleanup tests cover 120-to-20 upgrades, protected
+category filtering and invalid distributions. Cleanup tests cover eligible legacy-table retirement and protection of historical source differences, protected
 edits/references, exact approval, partial deletion/retry, read-back, locks and the shared guard.
 Foundry globals are injected/mocked where needed. These tests do **not** execute the proprietary
 Foundry server or prove Forge compatibility.
@@ -41,18 +44,18 @@ Use a backed-up/disposable world. Do not mark the manifest `verified` until resu
 | Forge custom-package import | Module appears with the expected title/version | Pending |
 | Enable on V14 / D&D5e 5.3.3 | No module-origin console errors | Pending |
 | GM settings menu | Builder opens; report is legible in light/dark themes | Pending |
-| Shop/category controls | Eight categories with counts 13 / 12 / 6 / 11 / 7 / 9 / 6 / 5 | Pending for alpha.4 |
+| Shop/category controls | Ten categories with counts 13 / 17 / 10 / 21 / 13 / 18 / 12 / 13 / 16 / 11 | Pending for alpha.7 |
 | Merchant Notes | Five shop profiles display the three stock tiers; no stock notes in Item data | Pending |
-| Preview General Store / All categories | Fresh world: 69 creates; existing complete Containers pack: 56 creates, 0 updates, 13 unchanged; no preview writes | Pending |
+| Preview General Store / All categories | Fresh world: 144 creates; alpha.6 pack: 75 creates, 13 updates, 56 unchanged; no preview writes | Pending |
 | Build Containers, then rebuild | 13 native container Items, then 13 unchanged; stable UUIDs | User reported alpha.3 fix worked; full test details unavailable |
-| Build all categories, then rebuild | 69 Items, then 69 unchanged; original Containers UUIDs retained | Pending |
+| Build all categories, then rebuild | 144 Items, then 144 unchanged; original Containers UUIDs retained | Pending |
 | Container sheets | Correct names, descriptions, icons, price, empty mass and capacities | Pending |
 | Contained-item encumbrance | Added contents contribute mass once; empty shell remains after contents are removed | Pending |
 | Waterskin | Empty 0.5 lb; separately tracked 4 lb water gives 4.5 lb total | Pending |
 | Category-only build | Selected category changes; other categories remain untouched | Pending |
 | Shared shop build | Alchemist selects Bottle, Flask, Ceramic Jar, Lamp Oil, Charcoal and Ink; no duplicates | Pending |
-| New item sheets and icons | All 56 new descriptions, sale units, prices and weights are correct; all 15 SVGs render | Pending |
-| New native vessels | Pot, kettle, cup, bowl, wash bucket and feed bag count empty weight plus contents once | Pending |
+| New item sheets and icons | All 144 descriptions, sale units, prices and weights are correct; core icons, 15 SVGs and 12 WebPs render | Pending |
+| New native vessels | All 21 containers count empty mass plus contents once, including Document Case and Saddlebags | Pending |
 | Actor import and use | Import a consumable stack of 3; completed-use action leaves 2, then 1, then removes the final unit; no stale compendium target | Pending |
 | Candle/torch timing | Lighting does not auto-remove the item; use its completed-burn action only when spent | Pending |
 | Reusable activities | Lamp/lantern/climbing-kit action leaves quantity unchanged and spends no spell slot | Pending |
@@ -63,26 +66,26 @@ Use a backed-up/disposable world. Do not mark the manifest `verified` until resu
 | Wrong target version | Build blocked with an actionable error | Pending |
 | Reload world | Settings persist; no automatic pack builds | Pending |
 
-### Stock RollTables and quantities — alpha.6
+### Stock RollTables and quantities — alpha.7
 
 Use the separate **Build/Rebuild Stock RollTables → Open RollTable Builder** settings button.
 Retain the accepted Item pack; stock generation should not change its Items.
 
 | Check | Expected result | Status |
 | --- | --- | --- |
-| Upgrade from complete alpha.4 Items | Item preview reports 69 unchanged; prices, weights and UUIDs retained | Pending |
+| Upgrade from complete alpha.4 Items | Item preview reports 75 creates, 13 sale-unit updates, 56 unchanged; existing prices, weights and UUIDs retained | Pending |
 | Separate settings button | Both builder windows open independently; table controls/report work in light/dark themes | Pending |
 | Missing Item preflight | Missing referenced Item produces an actionable source-ID error before table writes | Pending |
-| All-shop table preview | 20 creates in a fresh world; no pack, lock or settings writes | Pending |
-| All-shop table build/rebuild | 20 creates then 20 unchanged, stable parent/result IDs, new pack locked | Pending |
-| General Store filter | Four whole-shop tables | Pending |
+| All-shop table preview | 32 creates in a fresh world; no pack, lock or settings writes | Pending |
+| All-shop table build/rebuild | 32 creates then 32 unchanged, stable parent/result IDs, new pack locked | Pending |
+| General Store filter | All profiles previews sixteen tables; each named profile previews four | Pending |
 | Category filter | Same four tables; stock results contain only the selected category | Pending |
 | Partial shops | Tavern/Alchemist/Blacksmith/Black Market show shared-goods-only notices and no invented products | Pending |
 | Item results and nested pools | Native references open actual generated Items; rotating results recurse into the correct pool | Pending |
-| Always native draw | Imported General Store Always table returns all 47 core goods in one draw; never Normalize | Pending |
+| Always native draw | Imported General Store Always table returns all 82 Village Always goods in one draw; never Normalize | Pending |
 | Rotating ranges | 1–80 Often, 81–95 Rarely, 96–100 no extra; empty pools produce text, not invented goods | Pending |
-| Roll Stock | General Store has 47 Always goods and up to eight distinct extras; category selection uses its own defaults | Pending |
-| Empty Often pool | Travel retains its three Always goods; Often outcomes never force Compass or Spyglass | Pending |
+| Roll Stock | Village has 82 Always goods and up to eight distinct extras; category selection uses its own defaults | Pending |
+| Exhausted/empty pool | An empty eligible tier consumes the attempt without promoting rare goods | Pending |
 | Read-only rolling | No Item/actor changes, chat messages, saved stock or changed drawn-state | Pending |
 | Stale/missing tables | Roll Stock asks for a rebuild and does not silently use an outdated pool | Pending |
 | Merchant Notes | Visible in the builder only, absent from table/Item descriptions and flags | Pending |
@@ -92,11 +95,24 @@ Retain the accepted Item pack; stock generation should not change its Items.
 | Weighted quantities | Positive whole sale-unit counts; price/tier select the documented profile | Pending |
 | Rare quantity boundary | Quantity d100 1–95 gives one; 96–100 gives two | Pending |
 | Bundle display | Quantity 4 Pitons means four bundles of ten, with 5 sp shown per bundle | Pending |
-| Alpha.5 upgrade | 20 existing whole-shop tables unchanged; normal builds preserve 100 category tables | Pending |
+| Alpha.5 upgrade | 12 new tables, 3 Village pool updates, 17 unchanged; normal builds preserve all old category tables | Pending |
 | Legacy cleanup preview/cancel | Exact proposed/protected names shown; cancelling changes no tables or lock | Pending |
-| Confirmed pristine cleanup | 100 category tables removed; 20 active tables and all Items retained | Pending |
+| Confirmed eligible cleanup | Only previewed eligible tables removed; all 32 active tables and all Items retained; changed historical sets protected | Pending |
 | Protected legacy tables | Edited fields/rows, folders, foreign flags or known incoming links prevent removal | Pending |
 | Cleanup repeat/failure | Repeat deletes nothing; interrupted cleanup relocks and requires a fresh preview | Pending |
+
+### Sprint 3 merchant and content acceptance
+
+| Check | Expected result | Status |
+| --- | --- | --- |
+| Profile selection | Village, Town, City and Wagon buttons change guidance/counts; All profiles disables rolling | Pending |
+| Per-profile assortment | Tier counts match the Stock RollTables guide; no duplicate product in a list | Pending |
+| Wagon exclusions | No Chest, Barrel, Crate, Firewood, Cooking Tripod, Sledgehammer, Miner's Pick, Wash Board, Door Hinges, Iron Bar or Copper Bar | Pending |
+| Effective quantities | Compass uses Rare quantities in Village and Scarce quantities in City; canonical Item is shared | Pending |
+| Original content | Accepted 69 IDs, descriptions, prices and weights unchanged; Containers display explicit units | Pending |
+| New manual tools | Crowbar, Chain, Block and Tackle and Padlock show their described rules without invented automatic effects | Pending |
+| Fuel/rations | Completed sale-unit consumption works for Kindling, Firewood and Travel Rations after actor import | Pending |
+| Packaging | No missing source files or module assets; no developer masters or generated databases | Pending |
 
 ### Reported alpha.2 failure
 
@@ -116,8 +132,8 @@ That is catalogue acceptance and a successful build report, without detailed evi
 live check. The user also reported alpha.5 worked; the detailed environment/checklist was not
 supplied. Alpha.6 quantities and cleanup still require target-environment testing.
 
-Keep the existing pack when installing alpha.6. Preview/build should recognise all 69 already saved
-Items and the 20 whole-shop tables unchanged. If verification fails,
+Keep existing packs when installing alpha.7. The upgrade adds 75 Items and thirteen sale-unit flags,
+and adds twelve tables while updating three Village pools. Prior Item and table identities survive. If verification fails,
 record the full item/field report and module version before making another change.
 
 ## Recovery and upgrade checks — disposable development copy only

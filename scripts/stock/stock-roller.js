@@ -6,6 +6,7 @@ import { createRollTableAdapter } from "../builders/roll-table-adapter.js";
 import { planRollTables } from "../builders/roll-table-plan.js";
 import { selectEntries } from "../data/shop-catalogue.js";
 import { rollStockQuantity } from "./stock-quantities.js";
+import { stockProfiles } from "../data/stock-catalogue.js";
 
 async function checkedRoll(rollDie, sides) {
   const value = await rollDie(sides);
@@ -41,15 +42,18 @@ export async function rollStockFromTables(tables, { draws, rollDie, eligibleIds 
 }
 
 /** Quantity suggestions are returned with the list; no chat, pack or inventory writes. */
-export async function rollStockList({ shopId = "general-store", categoryId = null, draws = null,
+export async function rollStockList({ shopId = "general-store", categoryId = null, profileId = null, draws = null,
   load = loadStockCatalogue, adapter = null, rollDie = async sides => (await new Roll(`1d${sides}`).evaluate()).total } = {}) {
   const io = adapter ?? createRollTableAdapter();
   io.assertCanBuild();
   if (!shopId) throw new Error("Select one shop before rolling stock.");
   const catalogue = await load();
   requireValidStock(catalogue);
+  const profiles = stockProfiles(catalogue);
+  const profile = profiles.find(entry => entry.shop === shopId && (profileId ? entry.id === profileId : !entry.isVariant));
+  if (!profile) throw new Error(`Unknown stock profile selection: ${profileId ?? shopId}.`);
   const eligibleIds = new Set(selectEntries(catalogue, { shopId, categoryId }).map(({ item }) => item.id));
-  const expected = stockTableDocuments(catalogue, { shopId, categoryId });
+  const expected = stockTableDocuments(catalogue, { shopId, categoryId, profileId: profile.id });
   if (expected.length !== 4) throw new Error("This shop has no authored stock category matching the selection.");
   await io.validateDocuments(expected);
   const pack = await io.getPack();
@@ -58,7 +62,6 @@ export async function rollStockList({ shopId = "general-store", categoryId = nul
   if (plan.create.length || plan.update.length) throw new Error("Build/Rebuild Stock RollTables for this selection before rolling; its tables are missing or outdated.");
   const ids = new Set(expected.map(table => table._id));
   const tables = actual.filter(table => ids.has(table._id));
-  const profile = catalogue.stock.profiles.find(profile => profile.shop === shopId);
   const count = draws ?? (categoryId ? profile.categoryDraws : profile.draws);
   const rolled = await rollStockFromTables(tables, { draws: count, rollDie, eligibleIds });
   const items = new Map(catalogue.entries.map(({ item }) => [item.id, item]));
@@ -71,7 +74,7 @@ export async function rollStockList({ shopId = "general-store", categoryId = nul
       ...await rollStockQuantity(catalogue.quantities, item, tier, rollDie) });
   }
   return {
-    shopId, categoryId, draws: count, outcomes: rolled.outcomes,
+    shopId, categoryId, profileId: profile.id, profileName: profile.name, draws: count, outcomes: rolled.outcomes,
     items: stock
   };
 }

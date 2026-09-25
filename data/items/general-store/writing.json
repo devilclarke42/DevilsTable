@@ -258,5 +258,230 @@
       "type": "loot",
       "subtype": "gear"
     }
+  },
+  {
+    "id": "DT_ITEM_GS_BOOK_BLANK",
+    "name": "Blank Book",
+    "description": "Forty blank paper leaves are stitched into a plain board-backed book, giving eighty writing faces. A cloth covering protects the spine and a cord closes the covers during travel.\n\nInk and pens are separate. This is ordinary stationery, without prepared spells, special ink or the fittings of a wizard's spellbook.",
+    "saleUnit": "One bound book containing forty blank paper leaves",
+    "price": {
+      "value": 3,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 1.25,
+      "units": "lb",
+      "notes": "One and a quarter pounds for forty paper leaves, boards, binding and cover."
+    },
+    "icon": "icons/sundries/books/book-rounded-red.webp",
+    "category": "writing",
+    "tags": [
+      "mundane",
+      "paper",
+      "writing",
+      "reusable"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original project design. Original wording, project price and adjusted weight. See docs/SPRINT_3_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_LEDGER",
+    "name": "Ledger",
+    "description": "Twenty paper leaves are ruled into columns for dates, goods, quantities and sums. A firm cover supports writing at a counter and keeps loose edges together.\n\nThe book starts empty. Prices, debts and calculations must be recorded by its owner; it supplies neither an automatic account nor proof that a written transaction occurred.",
+    "saleUnit": "One ruled account book containing twenty paper leaves",
+    "price": {
+      "value": 2,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 0.75,
+      "units": "lb",
+      "notes": "Three quarters of a pound for twenty ruled leaves and the protective binding."
+    },
+    "icon": "icons/sundries/books/book-rounded-red.webp",
+    "category": "writing",
+    "tags": [
+      "mundane",
+      "paper",
+      "accounting",
+      "trade"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original project design. Original wording, project price and adjusted weight. See docs/SPRINT_3_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_TABLET_WAX",
+    "name": "Wax Tablet",
+    "description": "Two shallow wooden panels hold smooth wax writing surfaces and fold face-to-face for carrying. The included wooden stylus marks the wax; its broad end smooths out notes for reuse.\n\nHeat can soften the wax and pressure can damage the writing. This temporary surface is not a sealed document, permanent archive or magical writing device.",
+    "saleUnit": "One folding wax tablet with wooden stylus",
+    "price": {
+      "value": 5,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 0.5,
+      "units": "lb",
+      "notes": "Half a pound for both wax-filled panels, hinges and included stylus."
+    },
+    "icon": "modules/devils-table/assets/icons/writing-tablet.webp",
+    "category": "writing",
+    "tags": [
+      "mundane",
+      "wax",
+      "writing",
+      "reusable"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "core",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original project design. Original wording, project price and adjusted weight. See docs/SPRINT_3_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_SLATE",
+    "name": "Slate",
+    "description": "A thin dark slate in a wooden frame takes chalk marks for tallies, lessons or messages. One ordinary chalk stick is supplied with it.\n\nWipe the face clean to reuse it. Rain, rubbing and hard knocks can destroy the writing; it is not intended as a durable travel map or legal record.",
+    "saleUnit": "One framed writing slate with one chalk stick",
+    "price": {
+      "value": 4,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 1,
+      "units": "lb",
+      "notes": "One pound for the slate, wooden frame and included chalk stick."
+    },
+    "icon": "modules/devils-table/assets/icons/writing-tablet.webp",
+    "category": "writing",
+    "tags": [
+      "mundane",
+      "stone",
+      "writing",
+      "reusable"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original project design. Original wording, project price and adjusted weight. See docs/SPRINT_3_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_SAND_BLOTTING",
+    "name": "Blotting Sand",
+    "description": "Fine dry sand dusted across fresh ink helps take up surface moisture before a sheet is handled. Shake off the surplus carefully once the ink has settled.\n\nThe packet includes its light wrapping. Sand does not remove an established mark or preserve ink against later soaking; manage its gradual use manually.",
+    "saleUnit": "One quarter-pound packet of fine dry blotting sand",
+    "price": {
+      "value": 2,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 0.25,
+      "units": "lb",
+      "notes": "A quarter-pound packet of fine sand; its thin paper wrapper is included."
+    },
+    "icon": "icons/containers/bags/sack-cloth-orange.webp",
+    "category": "writing",
+    "tags": [
+      "mundane",
+      "sand",
+      "writing",
+      "supply"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "core",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original project design. Original wording, project price and adjusted weight. See docs/SPRINT_3_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_CASE_DOCUMENT",
+    "name": "Document Case",
+    "description": "A stiff leather tube with a tied cap protects rolled sheets from ordinary crushing and handling. It holds up to ten rolled paper sheets or five thicker parchment sheets, subject to their actual size.\n\nThe case is sold empty. Its cap sheds a splash but is not an immersion seal; the stated paper count does not bypass the tube's physical fit.",
+    "saleUnit": "One empty leather tube for rolled documents",
+    "price": {
+      "value": 7,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 0.5,
+      "units": "lb",
+      "notes": "Half a pound for the empty tube, cap and tie; documents are weighed separately."
+    },
+    "icon": "modules/devils-table/assets/icons/document-case.webp",
+    "category": "writing",
+    "tags": [
+      "mundane",
+      "leather",
+      "writing",
+      "sold-empty"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "2014 SRD 5.1 map or scroll case: up to ten paper sheets or five parchment sheets; project native mass/volume limits. Original wording, project price and adjusted weight. See docs/SPRINT_3_REVIEW.md.",
+      "license": "Original project text: distribution license pending; referenced SRD 5.1 rules: CC-BY-4.0."
+    },
+    "mechanics": {
+      "type": "container",
+      "capacity": {
+        "weight": {
+          "value": 1,
+          "units": "lb"
+        },
+        "volume": {
+          "value": 0.04,
+          "units": "cubicFoot"
+        }
+      }
+    }
   }
 ]

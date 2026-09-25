@@ -573,5 +573,198 @@
         "condition": "Use only after the full 5 lb bag is expended; track partial fuel use manually."
       }
     }
+  },
+  {
+    "id": "DT_ITEM_GS_KINDLING",
+    "name": "Kindling",
+    "description": "Thin splits of dry softwood catch a prepared flame and help establish a cooking fire. The bundle supplies small starting pieces rather than enough fuel for a full night's fire.\n\nKeep it dry. Tinder and a means of ignition are separate; damp conditions and the time needed to light a fire remain matters for the GM.",
+    "saleUnit": "One tied one-pound bundle of dry split kindling",
+    "price": {
+      "value": 2,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 1,
+      "units": "lb",
+      "notes": "One pound for the complete dry bundle and light binding cord."
+    },
+    "icon": "icons/commodities/wood/wood-pole.webp",
+    "category": "fire-lighting",
+    "tags": [
+      "mundane",
+      "wood",
+      "fuel",
+      "bundle"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "core",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original project design. Original wording, project price and adjusted weight. See docs/SPRINT_3_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "trinket",
+      "use": {
+        "name": "Record kindling bundle used",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the complete sale unit has been consumed; track partial use manually."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_WICK_LAMP",
+    "name": "Lamp Wick",
+    "description": "A yard of loosely woven cotton braid for replacing the wick in an ordinary oil lamp or compatible lantern. Cut a length to suit the holder and soak the working end in its fuel.\n\nOil and the light itself are separate purchases. The wick supplies neither extra light range nor a longer burn time than the lamp's listed fuel allowance.",
+    "saleUnit": "One yard of woven cotton lamp wick",
+    "price": {
+      "value": 3,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 0.02,
+      "units": "lb",
+      "notes": "A light cotton strip sold by the yard; offcuts remain part of this sale unit."
+    },
+    "icon": "modules/devils-table/assets/icons/thread.svg",
+    "category": "fire-lighting",
+    "tags": [
+      "mundane",
+      "cotton",
+      "lighting",
+      "repair"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "core",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original project design. Original wording, project price and adjusted weight. See docs/SPRINT_3_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_CANDLE_HOLDER",
+    "name": "Candle Holder",
+    "description": "A low iron cup and wide drip tray hold one ordinary candle upright on a level surface. A small handle lets the holder be moved after the metal has cooled.\n\nThe candle is separate. This open holder offers no protection against wind and does not improve the candle's light or burning time.",
+    "saleUnit": "One iron candle holder with drip tray",
+    "price": {
+      "value": 8,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 0.4,
+      "units": "lb",
+      "notes": "A compact iron holder and tray, without a candle."
+    },
+    "icon": "modules/devils-table/assets/icons/candle-holder.webp",
+    "category": "fire-lighting",
+    "tags": [
+      "mundane",
+      "iron",
+      "lighting",
+      "reusable"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "core",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original project design. Original wording, project price and adjusted weight. See docs/SPRINT_3_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_CANDLE_SNUFFER",
+    "name": "Candle Snuffer",
+    "description": "A small brass cone on a slender handle fits over a candle flame to smother it without blowing hot wax across a table. It is useful where several candles are kept burning indoors.\n\nThis is a household implement for reachable small flames, not a way to extinguish a large fire or alter a light's remaining fuel.",
+    "saleUnit": "One brass bell snuffer on a short handle",
+    "price": {
+      "value": 2,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 0.15,
+      "units": "lb",
+      "notes": "Thin brass cone and short handle; no candle or holder included."
+    },
+    "icon": "modules/devils-table/assets/icons/candle-snuffer.webp",
+    "category": "fire-lighting",
+    "tags": [
+      "mundane",
+      "brass",
+      "lighting",
+      "reusable"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original project design. Original wording, project price and adjusted weight. See docs/SPRINT_3_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_FIREWOOD",
+    "name": "Firewood",
+    "description": "Seasoned split logs tied into a carryable bundle for a hearth or cooking fire. Dry wood burns more readily than fresh-cut timber, but its useful duration depends on the fire, weather and the size of the heated space.\n\nKindling and ignition supplies are separate. Mark the bundle spent after its wood has been burned; a partial bundle needs manual tracking.",
+    "saleUnit": "One tied ten-pound bundle of seasoned firewood",
+    "price": {
+      "value": 5,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 10,
+      "units": "lb",
+      "notes": "Ten pounds of dry fuel including the negligible tying cord; bulky supplies retain meaningful carried mass."
+    },
+    "icon": "icons/commodities/wood/wood-pole.webp",
+    "category": "fire-lighting",
+    "tags": [
+      "mundane",
+      "wood",
+      "fuel",
+      "bundle",
+      "bulky"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "core",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original project design. Original wording, project price and adjusted weight. See docs/SPRINT_3_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "trinket",
+      "use": {
+        "name": "Record firewood bundle used",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the complete sale unit has been consumed; track partial use manually."
+      }
+    }
   }
 ]

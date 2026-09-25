@@ -1,5 +1,8 @@
 # General Store review — complete approved categories
 
+> Historical review of the accepted earlier batch. Current catalogue and upgrade details are in
+> [Sprint 3 Review](SPRINT_3_REVIEW.md). Sprint 3 adds explicit sale units to the original Containers.
+
 Build: **0.2.0-alpha.4**. There are **69 authored General Store items**: the original
 [13 Containers](CONTAINERS_REVIEW.md), unchanged, and the 56 additions below.
 Canonical JSON remains the source of truth; these tables are a review aid.

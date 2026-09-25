@@ -8,8 +8,8 @@ existing content. Editorial requirements may be stricter than current automated 
 
 Edit catalogue JSON in this repository. Do not edit generated pack data directly. A rebuild
 overwrites builder-controlled fields; imports already owned by an actor or the world are independent.
-The 69 General Store items live in eight category files under `data/items/general-store/`.
-The original 13 Containers records are unchanged by the seven-category expansion.
+The 144 General Store items live in ten category files under `data/items/general-store/`.
+Sprint 3 preserves all 69 accepted records, adding only explicit sale units to the 13 Containers.
 `tests/fixtures/item.json` is synthetic test material only.
 
 ## Required fields
@@ -19,11 +19,12 @@ The original 13 Containers records are unchanged by the seven-category expansion
 | `id` | Permanent uppercase identity, e.g. `DT_ITEM_GS_ROPE_HEMP`. Reserve once; never rename or reuse. |
 | `name` | Nonblank display name; safe to rename without changing identity. |
 | `description` | Plain text. The converter escapes HTML and preserves paragraph/line breaks. |
+| `saleUnit` | Required nonblank purchase description, at most 200 characters. |
 | `price` | `{value, denomination}`; positive whole amount in cp/sp/gp. cp and sp amounts must be 1–9. |
 | `weight` | `{value, units: "lb", notes}`; finite nonnegative adjusted weight and rationale. |
 | `icon` | Local `icons/…` reference or module-owned `modules/devils-table/assets/…` path; no remote URLs or traversal. |
 | `category` | One category from the registry. |
-| `tags` | Unique descriptive lowercase slug strings; an empty array is allowed. |
+| `tags` | One or more unique descriptive lowercase slug strings. |
 | `shops` | One or more unique shop slugs from the registry. A shared item occurs once in source. |
 | `availability` | `core`, `variable`, or `special-order`; stock frequency, not D&D magic rarity. |
 | `source` | `{title, reference, license}`; all nonblank. Attribute the original or project source honestly. |
@@ -33,12 +34,12 @@ The authoritative structural definitions are in `schemas/`. Unknown fields fail 
 helping catch misspellings. Extend the schema, converter, docs and tests together when needed.
 Do not work around an unsupported potion/weapon by labelling it as ordinary loot.
 
-`saleUnit` is an optional nonblank description of one purchase, present on all 56 new items.
+`saleUnit` is a required nonblank description of one purchase, present on all 144 items.
 Generated quantity 1, price and weight describe that complete unit: ten pitons are one bundle,
 four horseshoes are one set and Horse Feed is one ten-pound daily ration. A bundle is not ten
 copies of a single piton, and a kit does not create nested component Items. Split bundles and
 partially used supplies manually in actor inventory; never change their permanent catalogue IDs.
-The original Containers descriptions already state what is supplied, so their records stay unchanged.
+The original Containers now also have explicit sale units; their descriptions, economics and identities are unchanged.
 
 ## Pricing conventions
 
@@ -119,9 +120,9 @@ phrase cannot appear in multiple tiers of the same shop. They do not generate It
 quantities, override item availability or become compendium metadata.
 
 `data/categories.json` defines each shop's curated categories, descriptions and `plannedItems`
-names. These lists are editorial plans, not permanent identities or item records. The eight
-General Store categories are Containers, Fire & Lighting, Rope & Climbing, Camping, Writing,
-Household, Animal and Travel. Other shop category plans can be added later. For a shop with
+names. These lists are editorial plans, not permanent identities or item records. The ten
+General Store categories are Containers, Lighting & Fire, Rope & Climbing, Camping, Writing,
+Household, Animal Supplies, Travel, Tools and Trade Goods. Other shop category plans can be added later. For a shop with
 defined categories, each tagged item must use one of those categories. A shared good exists once,
 with multiple `shops` tags; its category and permanent ID stay the same across filtered builds.
 
@@ -137,18 +138,30 @@ existing catalogue. Stock validation runs in the browser and packaging/CI.
 | `schemaVersion` | Currently 1. |
 | `oftenChance`, `rarelyChance` | Positive whole percentages; Often must exceed Rarely and their sum cannot exceed 100. The remainder means no extra stock. Current defaults: 80 / 15 / 5. |
 | `profiles[].id` | Permanent table identity prefix, such as `DT_TABLE_GS`; never rename or reuse. |
-| `shop` | Exactly one profile per registered shop slug. |
+| `shop` | Exactly one base profile per registered shop slug; optional variants inherit that shop. |
 | `coverage` | `complete` for the agreed authored catalogue, or `partial` to show its limitations. This is an editorial assertion, not an automatic completeness test. |
 | `draws`, `categoryDraws` | Suggested rotating attempts for a whole shop and one category; integers 1–50. |
 | `categories` | Unique registered category slugs. Include every category used by an item tagged for this shop. These are stock filters; one whole-shop table set is generated. |
 | `overrides` | Explicit `{itemId, tier}` exceptions; `tier` is `always`, `often` or `rarely`. Each ID must be an active item tagged for this shop, with at most one override per shop. |
+
+A base profile may contain `variants`. Each variant requires a permanent `id`, unique `name`,
+builder-only `description`, `draws`, `categoryDraws`, `excludedItems`, `overrides` and `merchantNotes`.
+Notes use the same three nonempty lists as shop definitions. A variant inherits its parent's shop,
+coverage, categories and overrides; its own override wins for the same item. Exclusions reference
+unique active items belonging to that shop. An excluded item cannot also have a variant override.
+Names and IDs must be unique across effective profiles. Draw counts remain integers from 1 to 50.
+Unknown fields and unsupported nested variants fail validation.
+
+Village uses the existing `DT_TABLE_GS` identity. Town, City and Wagon reserve `DT_TABLE_GS_TOWN`,
+`DT_TABLE_GS_CITY` and `DT_TABLE_GS_WAGON` prefixes. Their twelve table IDs join the existing 120
+reservations: 32 active tables and 100 retired IDs. Variants never create duplicate source Items.
 
 Without an override, `core` maps to Always, `variable` to Often and `special-order` to Rarely.
 An override changes only that shop's table membership. It never changes item price, weight,
 identity or base availability. Current overrides make Lamp Oil Often at the Alchemist, Lockbox
 Often at the Blacksmith, and Lockbox/Silk Rope Often at the Black Market.
 
-Every shop generates four tables, even when a tier is empty. Category rolls filter the shared
+Every effective merchant profile generates four tables, even when a tier is empty. Category rolls filter the shared
 pools without creating category tables. Empty pools carry
 an explicit text result and rotating draws do not redirect their probability to another tier.
 Generated tables contain operational instructions and item/table UUIDs, never Merchant Notes.

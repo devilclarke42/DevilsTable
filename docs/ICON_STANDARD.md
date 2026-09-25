@@ -75,9 +75,9 @@ same as for other artwork. Creation method is not a reason to add a duplicate or
 
 ## Existing assets and compatibility
 
-The accepted catalogue currently references core WebP assets and **15 original module-owned SVGs**.
+The catalogue references core assets, **15 original module-owned SVGs** and **12 new WebP icons**.
 Those SVGs are documented in [FILE_MAP.md](FILE_MAP.md) and the General Store review. They remain
-valid legacy assets; this documentation-only sprint does not convert, replace or duplicate them.
+valid legacy assets; Sprint 3 neither replaces nor duplicates them.
 Core assets are also consumed at their supplied dimensions and formats without repackaging.
 
 The 256×256 WebP requirement applies to newly introduced module-owned raster icons. New work should
@@ -89,7 +89,14 @@ without a compatibility reason.
 The current schema accepts SVG, WebP, PNG, JPG and JPEG paths for compatibility. That broad schema
 does not make every accepted format the preferred authoring standard. Current tooling checks
 permitted paths and the existence of module-owned files; pixel dimensions, visual consistency,
-byte budgets, deduplication and rights still require review.
+deduplication and rights still require review. Sprint 3 tests also check WebP headers and a 50 KiB
+ceiling. Pixel dimensions were checked with Pillow; core paths are checked against a reviewed
+reference inventory, which is not a substitute for resolving icons in the supported live installation.
+
+The twelve Sprint 3 icons extend the existing muted vector style. Editable masters and export
+instructions are in `tools/render-general-store-icons.py`; Inkscape and Pillow are optional artwork
+development dependencies, not Foundry requirements. Only the 256×256 WebPs enter the runtime ZIP.
+See [SPRINT_3_REVIEW.md](SPRINT_3_REVIEW.md) for subjects, reuse and provenance.
 
 ## Acceptance checklist
 

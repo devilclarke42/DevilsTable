@@ -235,5 +235,230 @@
       "type": "loot",
       "subtype": "gear"
     }
+  },
+  {
+    "id": "DT_ITEM_GS_HALTER",
+    "name": "Halter",
+    "description": "An adjustable leather headcollar gives a handler a place to attach a lead rope on a horse or mule. Plain buckles allow a sensible fit around the animal's head.\n\nThe lead rope is separate. A halter contains no bit and is not a riding bridle; fitting it does not tame an animal or replace handling checks.",
+    "saleUnit": "One adjustable leather halter for a horse or mule",
+    "price": {
+      "value": 5,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 0.75,
+      "units": "lb",
+      "notes": "Three quarters of a pound for the leather straps, buckles and attachment ring."
+    },
+    "icon": "icons/commodities/leather/leather-buckle-steel-tan.webp",
+    "category": "animal",
+    "tags": [
+      "mundane",
+      "leather",
+      "handling",
+      "tack"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "core",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original project design. Original wording, project price and adjusted weight. See docs/SPRINT_3_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_ROPE_LEAD",
+    "name": "Lead Rope",
+    "description": "A ten-foot hemp lead has a reinforced loop for fastening to a suitable halter. Its short length lets a handler guide a standing or walking pack animal without carrying a full climbing coil.\n\nThe halter is separate. This working lead is not a certified climbing rope, and attaching it grants no automatic control of a frightened animal.",
+    "saleUnit": "One ten-foot hemp lead with attachment loop",
+    "price": {
+      "value": 2,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 0.75,
+      "units": "lb",
+      "notes": "Three quarters of a pound for the short lead, reinforced loop and binding."
+    },
+    "icon": "icons/sundries/survival/rope-wrapped-brown.webp",
+    "category": "animal",
+    "tags": [
+      "mundane",
+      "hemp",
+      "handling",
+      "tack"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "core",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original project design. Original wording, project price and adjusted weight. See docs/SPRINT_3_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_BLANKET_SADDLE",
+    "name": "Saddle Blanket",
+    "description": "A dense wool pad lies beneath a properly fitted saddle to cushion pressure and take up sweat. Its broad rectangular shape can be folded to suit ordinary horse or mule tack.\n\nThe saddle and girth are separate. Padding cannot correct an unsuitable saddle or make an overloaded animal able to carry more.",
+    "saleUnit": "One thick saddle pad for a horse or mule",
+    "price": {
+      "value": 7,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 2.5,
+      "units": "lb",
+      "notes": "Two and a half pounds for the thick wool pad, without saddle or fastening straps."
+    },
+    "icon": "icons/commodities/cloth/cloth-bolt-gold-orange.webp",
+    "category": "animal",
+    "tags": [
+      "mundane",
+      "wool",
+      "tack",
+      "padding"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original project design. Original wording, project price and adjusted weight. See docs/SPRINT_3_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_HOBBLES_HORSE",
+    "name": "Horse Hobbles",
+    "description": "Two broad padded leather loops are joined by a short link to limit the stride of a trained resting horse. They are used with supervision and a suitable place for the animal to stand or graze.\n\nThey are not combat restraints and do not automatically restrain a creature. The GM resolves fitting, resistance and any risk to an unsuitable or frightened animal.",
+    "saleUnit": "One pair of padded leather hobbles",
+    "price": {
+      "value": 4,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 0.4,
+      "units": "lb",
+      "notes": "Four tenths of a pound for the padded straps and short joining link."
+    },
+    "icon": "modules/devils-table/assets/icons/bedroll-strap.svg",
+    "category": "animal",
+    "tags": [
+      "mundane",
+      "leather",
+      "handling",
+      "tack"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original project design. Original wording, project price and adjusted weight. See docs/SPRINT_3_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_LINE_PICKET",
+    "name": "Picket Line",
+    "description": "A stout thirty-foot line and two driven stakes establish a temporary tethering point in suitable ground. Individual animal leads attach separately along the line with enough spacing to avoid tangling.\n\nLeads, halters and a hammer are separate. The purchase offers no fixed animal capacity or automatic restraint; soil, anchoring and behaviour determine safe use.",
+    "saleUnit": "One thirty-foot hemp line with two iron stakes",
+    "price": {
+      "value": 7,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 4,
+      "units": "lb",
+      "notes": "Four pounds for the full line and both stakes; separate leads are excluded."
+    },
+    "icon": "icons/sundries/survival/rope-wrapped-brown.webp",
+    "category": "animal",
+    "tags": [
+      "mundane",
+      "hemp",
+      "iron",
+      "camp-tether"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original project design. Original wording, project price and adjusted weight. See docs/SPRINT_3_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_SADDLEBAGS",
+    "name": "Saddlebags",
+    "description": "Two lidded leather bags are joined by a broad strap to hang on opposite sides of a suitable saddle. They are sold and weighed as one matched pair.\n\nBalance the contents and count their weight against the mount's carried load. The pair holds up to 20 pounds within one cubic foot in total; the saddle and contents are separate.",
+    "saleUnit": "One empty matched pair of leather saddlebags",
+    "price": {
+      "value": 3,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 3,
+      "units": "lb",
+      "notes": "Three pounds for the empty joined pair, including straps and closures."
+    },
+    "icon": "icons/containers/bags/pack-leather-black-brown.webp",
+    "category": "animal",
+    "tags": [
+      "mundane",
+      "leather",
+      "storage",
+      "sold-empty"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original project design. Original wording, project price and adjusted weight. See docs/SPRINT_3_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "container",
+      "capacity": {
+        "weight": {
+          "value": 20,
+          "units": "lb"
+        },
+        "volume": {
+          "value": 1,
+          "units": "cubicFoot"
+        }
+      }
+    }
   }
 ]

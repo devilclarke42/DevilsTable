@@ -29,6 +29,7 @@ export function validateStockCatalogue(catalogue) {
   const items = new Map(catalogue.entries.map(({ item }) => [item.id, item]));
   const shops = new Set();
   const prefixes = new Set();
+  const names = new Set(catalogue.shopDefinitions.map(shop => shop.name.trim().replace(/\s+/gu, " ").toLowerCase()));
   const reserved = new Set(tableLedger.ids);
   const active = new Set();
   for (const [index, profile] of stock.profiles.entries()) {
@@ -60,6 +61,39 @@ export function validateStockCatalogue(catalogue) {
       }
     }
     if (profile.coverage === "partial") warnings.push(`${profile.shop}: tables cover authored shared goods only; this shop's full catalogue is not yet authored.`);
+    for (const [variantIndex, variant] of (profile.variants ?? []).entries()) {
+      const variantPath = `${path}.variants[${variantIndex}]`;
+      if (prefixes.has(variant.id)) add(`${variantPath}.id`, "Stock profile identity is duplicated.");
+      prefixes.add(variant.id);
+      const name = variant.name.trim().replace(/\s+/gu, " ").toLowerCase();
+      if (names.has(name)) add(`${variantPath}.name`, "Stock profile display name is duplicated.");
+      names.add(name);
+      if (variant.draws > 50 || variant.categoryDraws > 50) add(variantPath, "Suggested draw counts must be between 1 and 50.");
+      const excluded = new Set(variant.excludedItems);
+      for (const id of excluded) {
+        if (!items.get(id)?.shops.includes(profile.shop)) add(`${variantPath}.excludedItems`, `${id} must be an active item tagged for this shop.`);
+      }
+      const changed = new Set();
+      for (const override of variant.overrides) {
+        if (changed.has(override.itemId)) add(`${variantPath}.overrides`, `Duplicate override for ${override.itemId}.`);
+        changed.add(override.itemId);
+        if (!items.get(override.itemId)?.shops.includes(profile.shop) || excluded.has(override.itemId)) {
+          add(`${variantPath}.overrides`, `${override.itemId} must be an eligible, non-excluded shop item.`);
+        }
+      }
+      const notes = new Set();
+      for (const tier of Object.values(variant.merchantNotes)) for (const note of tier) {
+        const key = note.trim().replace(/\s+/gu, " ").toLowerCase();
+        if (notes.has(key)) add(`${variantPath}.merchantNotes`, `Repeated stock guidance: ${note}.`);
+        notes.add(key);
+      }
+      for (const kind of STOCK_KINDS) {
+        const id = stockTableId(variant, null, kind);
+        if (active.has(id)) add(variantPath, `Duplicate generated table identity: ${id}.`);
+        active.add(id);
+        if (!reserved.has(id)) add("data/table-id-ledger.json", `Reserve the permanent table ID: ${id}.`);
+      }
+    }
   }
   for (const shop of catalogue.index.shops) if (!shops.has(shop)) add("data/stock.json.profiles", `Missing stock profile: ${shop}.`);
   const hashed = new Map();

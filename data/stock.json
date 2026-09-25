@@ -34,9 +34,245 @@
         "writing",
         "household",
         "animal",
-        "travel"
+        "travel",
+        "tools",
+        "trade-goods"
       ],
-      "overrides": []
+      "overrides": [],
+      "variants": [
+        {
+          "id": "DT_TABLE_GS_TOWN",
+          "name": "Town General Store",
+          "description": "A settled market shop with steady repair trade, writing supplies and wider rotating stock.",
+          "draws": 14,
+          "categoryDraws": 4,
+          "excludedItems": [],
+          "overrides": [
+            {
+              "itemId": "DT_ITEM_GS_BLANKET",
+              "tier": "always"
+            },
+            {
+              "itemId": "DT_ITEM_GS_LANTERN",
+              "tier": "always"
+            },
+            {
+              "itemId": "DT_ITEM_GS_SAW_HAND",
+              "tier": "always"
+            },
+            {
+              "itemId": "DT_ITEM_GS_SLATE",
+              "tier": "always"
+            },
+            {
+              "itemId": "DT_ITEM_GS_BAR_IRON",
+              "tier": "always"
+            }
+          ],
+          "merchantNotes": {
+            "alwaysStocks": [
+              "Rope, sacks and candles",
+              "Blankets and plain lanterns",
+              "Basic woodwork supplies",
+              "Writing slates and iron stock"
+            ],
+            "oftenStocks": [
+              "Shelter and lifting equipment",
+              "Account books and repair fittings",
+              "Household preparation tools"
+            ],
+            "rarelyStocks": [
+              "Precision optics",
+              "Silk cloth and rope",
+              "Specialist climbing equipment"
+            ]
+          }
+        },
+        {
+          "id": "DT_TABLE_GS_CITY",
+          "name": "City General Store",
+          "description": "A well-connected city supplier with broader choice, regular stationery and access to specialist travel goods.",
+          "draws": 22,
+          "categoryDraws": 6,
+          "excludedItems": [],
+          "overrides": [
+            {
+              "itemId": "DT_ITEM_GS_BLANKET",
+              "tier": "always"
+            },
+            {
+              "itemId": "DT_ITEM_GS_LANTERN",
+              "tier": "always"
+            },
+            {
+              "itemId": "DT_ITEM_GS_SAW_HAND",
+              "tier": "always"
+            },
+            {
+              "itemId": "DT_ITEM_GS_SLATE",
+              "tier": "always"
+            },
+            {
+              "itemId": "DT_ITEM_GS_BAR_IRON",
+              "tier": "always"
+            },
+            {
+              "itemId": "DT_ITEM_GS_INK",
+              "tier": "always"
+            },
+            {
+              "itemId": "DT_ITEM_GS_CHISEL",
+              "tier": "always"
+            },
+            {
+              "itemId": "DT_ITEM_GS_PADLOCK",
+              "tier": "always"
+            },
+            {
+              "itemId": "DT_ITEM_GS_COMPASS",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_ROPE_SILK",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_LANTERN_BULLSEYE",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_CLIMBERS_KIT",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_LOCKBOX",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_HOURGLASS",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_CLOTH_SILK",
+              "tier": "often"
+            }
+          ],
+          "merchantNotes": {
+            "alwaysStocks": [
+              "Rations, soap and portable lights",
+              "Common hand tools and padlocks",
+              "Writing ink and slate supplies"
+            ],
+            "oftenStocks": [
+              "Compasses and sand timers",
+              "Fine textiles and silk rope",
+              "Climbing kits and secure boxes"
+            ],
+            "rarelyStocks": [
+              "Spyglasses"
+            ]
+          }
+        },
+        {
+          "id": "DT_TABLE_GS_WAGON",
+          "name": "Merchant Wagon",
+          "description": "A travelling seller prioritising portable provisions, replacements and mending supplies; bulky workshop stock stays at fixed shops.",
+          "draws": 6,
+          "categoryDraws": 2,
+          "excludedItems": [
+            "DT_ITEM_GS_CHEST",
+            "DT_ITEM_GS_BARREL",
+            "DT_ITEM_GS_CRATE",
+            "DT_ITEM_GS_FIREWOOD",
+            "DT_ITEM_GS_TRIPOD_COOKING",
+            "DT_ITEM_GS_HAMMER_SLEDGE",
+            "DT_ITEM_GS_PICK_MINER",
+            "DT_ITEM_GS_BOARD_WASH",
+            "DT_ITEM_GS_HINGES_DOOR",
+            "DT_ITEM_GS_BAR_IRON",
+            "DT_ITEM_GS_BAR_COPPER"
+          ],
+          "overrides": [
+            {
+              "itemId": "DT_ITEM_GS_FEED_HORSE",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_POT_COOKING",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_SKILLET",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_BUCKET_WASH",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_BROOM",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_MOP",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_SHOVEL",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_JUG_CLAY",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_JAR_CERAMIC",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_TABLET_WAX",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_CANDLE_HOLDER",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_LINEN",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_CANVAS",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_LEATHER",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_SALT",
+              "tier": "often"
+            }
+          ],
+          "merchantNotes": {
+            "alwaysStocks": [
+              "Rope, sacks and portable lights",
+              "Travel rations and dry kindling",
+              "Mending supplies and weather covers"
+            ],
+            "oftenStocks": [
+              "Small cookware and animal feed",
+              "Useful hand tools",
+              "Measured cloth and leather"
+            ],
+            "rarelyStocks": [
+              "Compact specialist navigation goods",
+              "Fine silk purchases",
+              "Goods carried against a previous order"
+            ]
+          }
+        }
+      ]
     },
     {
       "id": "DT_TABLE_ALC",

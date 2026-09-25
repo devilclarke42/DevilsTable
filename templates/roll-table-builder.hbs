@@ -12,6 +12,15 @@
         <button type="button" data-action="selectShop" data-shop="{{id}}" aria-pressed="{{#if selected}}true{{else}}false{{/if}}">{{name}}</button>
       {{/each}}
     </fieldset>
+    {{#if hasVariants}}
+      <fieldset class="dt-filters" {{#if busy}}disabled{{/if}}>
+        <legend>Stock profile</legend>
+        <button type="button" data-action="selectProfile" data-profile="" aria-pressed="{{#if allProfiles}}true{{else}}false{{/if}}">All profiles</button>
+        {{#each profileChoices}}
+          <button type="button" data-action="selectProfile" data-profile="{{id}}" aria-pressed="{{#if selected}}true{{else}}false{{/if}}">{{name}}</button>
+        {{/each}}
+      </fieldset>
+    {{/if}}
     <fieldset class="dt-categories" {{#if busy}}disabled{{/if}}>
       <legend>Category for stock rolls and legacy cleanup</legend>
       <button type="button" data-action="selectCategory" data-category="" aria-pressed="{{#if allCategories}}true{{else}}false{{/if}}">All categories</button>
@@ -21,22 +30,21 @@
     </fieldset>
     <p><strong>{{scopeLabel}}</strong> — {{tableCount}} tables in {{setCount}} sets.</p>
     <p>Each set: Always Stock, Often Stock, Rarely Stock and Rotating Stock.</p>
-    <p>Builds create four tables per shop. Category rolls filter those shared tables; no category tables are needed.</p>
+    <p>Builds create four tables per stock profile. Category rolls filter those shared tables; no category tables are needed. Select one profile to roll stock.</p>
     <p>Rotating draws: Often {{oftenChance}}% · Rarely {{rarelyChance}}% · No extra stock {{noneChance}}%. Empty or exhausted tiers add no item.</p>
     {{#each profiles}}
       <p>{{name}}: up to {{draws}} rotating draws. {{#if partial}}<strong>Partial catalogue: authored shared goods only.</strong>{{/if}}</p>
-    {{/each}}
-    {{#if shop}}
+      <p>{{description}}</p>
       <details class="dt-merchant-notes">
-        <summary>Merchant Notes — {{shop.name}}</summary>
+        <summary>Merchant Notes — {{name}}</summary>
         <p>Builder guidance only; these notes are not exported into table or Item documents.</p>
         <div class="dt-stock-tiers">
-          <section><h3>Always Stocks</h3><ul>{{#each shop.merchantNotes.alwaysStocks}}<li>{{this}}</li>{{/each}}</ul></section>
-          <section><h3>Often Stocks</h3><ul>{{#each shop.merchantNotes.oftenStocks}}<li>{{this}}</li>{{/each}}</ul></section>
-          <section><h3>Rarely Stocks</h3><ul>{{#each shop.merchantNotes.rarelyStocks}}<li>{{this}}</li>{{/each}}</ul></section>
+          <section><h3>Always Stocks</h3><ul>{{#each merchantNotes.alwaysStocks}}<li>{{this}}</li>{{/each}}</ul></section>
+          <section><h3>Often Stocks</h3><ul>{{#each merchantNotes.oftenStocks}}<li>{{this}}</li>{{/each}}</ul></section>
+          <section><h3>Rarely Stocks</h3><ul>{{#each merchantNotes.rarelyStocks}}<li>{{this}}</li>{{/each}}</ul></section>
         </div>
       </details>
-    {{/if}}
+    {{/each}}
   {{/if}}
   <fieldset {{#if busy}}disabled{{/if}}>
     <legend>GM actions</legend>

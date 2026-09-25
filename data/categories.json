@@ -1,42 +1,226 @@
 [
   {
-    "id": "containers", "shop": "general-store", "name": "Containers",
+    "id": "containers",
+    "shop": "general-store",
+    "name": "Containers",
     "description": "Bags, boxes and vessels sold empty, with explicit carrying capacities.",
-    "plannedItems": ["Backpack", "Pouch", "Sack", "Chest", "Lockbox", "Barrel", "Crate", "Basket", "Bottle", "Flask", "Waterskin", "Clay Jug", "Ceramic Jar"]
+    "plannedItems": [
+      "Backpack",
+      "Pouch",
+      "Sack",
+      "Chest",
+      "Lockbox",
+      "Barrel",
+      "Crate",
+      "Basket",
+      "Bottle",
+      "Flask",
+      "Waterskin",
+      "Clay Jug",
+      "Ceramic Jar"
+    ]
   },
   {
-    "id": "fire-lighting", "shop": "general-store", "name": "Fire & Lighting",
+    "id": "fire-lighting",
+    "shop": "general-store",
+    "name": "Lighting & Fire",
     "description": "Portable lights, fuel and everyday fire-making supplies.",
-    "plannedItems": ["Torch", "Candle", "Beeswax Candle", "Tallow Candle", "Lantern", "Hooded Lantern", "Bullseye Lantern", "Lamp", "Lamp Oil", "Tinderbox", "Flint & Steel", "Charcoal"]
+    "plannedItems": [
+      "Torch",
+      "Candle",
+      "Beeswax Candle",
+      "Tallow Candle",
+      "Lantern",
+      "Hooded Lantern",
+      "Bullseye Lantern",
+      "Lamp",
+      "Lamp Oil",
+      "Tinderbox",
+      "Flint & Steel",
+      "Charcoal",
+      "Kindling",
+      "Lamp Wick",
+      "Candle Holder",
+      "Candle Snuffer",
+      "Firewood"
+    ]
   },
   {
-    "id": "rope-climbing", "shop": "general-store", "name": "Rope & Climbing",
+    "id": "rope-climbing",
+    "shop": "general-store",
+    "name": "Rope & Climbing",
     "description": "Cordage, anchors and equipment for secured climbing.",
-    "plannedItems": ["Hempen Rope", "Silk Rope", "Twine", "Grappling Hook", "Pitons", "Climber's Kit"]
+    "plannedItems": [
+      "Hempen Rope",
+      "Silk Rope",
+      "Twine",
+      "Grappling Hook",
+      "Pitons",
+      "Climber's Kit",
+      "Block and Tackle",
+      "Chain",
+      "Rope Ladder",
+      "Belaying Pin"
+    ]
   },
   {
-    "id": "camping", "shop": "general-store", "name": "Camping",
+    "id": "camping",
+    "shop": "general-store",
+    "name": "Camping",
     "description": "Shelter, bedding and reusable camp kitchen equipment.",
-    "plannedItems": ["Blanket", "Bedroll", "Tent", "Bedroll Strap", "Mess Kit", "Cooking Pot", "Camp Kettle", "Cup", "Bowl", "Spoon", "Wooden Plate"]
+    "plannedItems": [
+      "Blanket",
+      "Bedroll",
+      "Tent",
+      "Bedroll Strap",
+      "Mess Kit",
+      "Cooking Pot",
+      "Camp Kettle",
+      "Cup",
+      "Bowl",
+      "Spoon",
+      "Wooden Plate",
+      "Groundsheet",
+      "Tarpaulin",
+      "Hammock",
+      "Tent Pegs",
+      "Cooking Tripod",
+      "Skillet",
+      "Ladle",
+      "Chopping Board",
+      "Travel Rations",
+      "Fishing Tackle"
+    ]
   },
   {
-    "id": "writing", "shop": "general-store", "name": "Writing",
+    "id": "writing",
+    "shop": "general-store",
+    "name": "Writing",
     "description": "Writing surfaces, marking supplies and seals.",
-    "plannedItems": ["Parchment", "Paper", "Ink", "Ink Pen", "Chalk", "Wax", "Sealing Stamp"]
+    "plannedItems": [
+      "Parchment",
+      "Paper",
+      "Ink",
+      "Ink Pen",
+      "Chalk",
+      "Wax",
+      "Sealing Stamp",
+      "Blank Book",
+      "Ledger",
+      "Wax Tablet",
+      "Slate",
+      "Blotting Sand",
+      "Document Case"
+    ]
   },
   {
-    "id": "household", "shop": "general-store", "name": "Household",
+    "id": "household",
+    "shop": "general-store",
+    "name": "Household",
     "description": "Cleaning, sewing and other ordinary household needs.",
-    "plannedItems": ["Soap", "Needle", "Thread", "Sewing Kit", "Broom", "Mop", "Wash Bucket", "Wash Board", "Clothes Line"]
+    "plannedItems": [
+      "Soap",
+      "Needle",
+      "Thread",
+      "Sewing Kit",
+      "Broom",
+      "Mop",
+      "Wash Bucket",
+      "Wash Board",
+      "Clothes Line",
+      "Cloth Rags",
+      "Hand Towel",
+      "Clothes Pegs",
+      "Wooden Buttons",
+      "Thimble",
+      "Comb",
+      "Door Hinges",
+      "Padlock",
+      "Mortar and Pestle"
+    ]
   },
   {
-    "id": "animal", "shop": "general-store", "name": "Animal",
+    "id": "animal",
+    "shop": "general-store",
+    "name": "Animal Supplies",
     "description": "Feed, grooming supplies and routine tack maintenance.",
-    "plannedItems": ["Horse Feed", "Feed Bag", "Brush", "Curry Comb", "Horseshoes", "Tack Repair Kit"]
+    "plannedItems": [
+      "Horse Feed",
+      "Feed Bag",
+      "Brush",
+      "Curry Comb",
+      "Horseshoes",
+      "Tack Repair Kit",
+      "Halter",
+      "Lead Rope",
+      "Saddle Blanket",
+      "Horse Hobbles",
+      "Picket Line",
+      "Saddlebags"
+    ]
   },
   {
-    "id": "travel", "shop": "general-store", "name": "Travel",
+    "id": "travel",
+    "shop": "general-store",
+    "name": "Travel",
     "description": "Navigation aids, signalling tools and practical travelling accessories.",
-    "plannedItems": ["Walking Stick", "Compass", "Spyglass", "Bell", "Signal Whistle"]
+    "plannedItems": [
+      "Walking Stick",
+      "Compass",
+      "Spyglass",
+      "Bell",
+      "Signal Whistle",
+      "Steel Mirror",
+      "Hourglass",
+      "Road Map",
+      "Waterproof Document Wrap",
+      "Travel Cloak",
+      "Pack Cover",
+      "Canvas Repair Patches",
+      "Marking Ribbon"
+    ]
+  },
+  {
+    "id": "tools",
+    "shop": "general-store",
+    "name": "Tools",
+    "description": "Individual hand tools, measuring aids and workshop fittings; no implied artisan proficiency sets.",
+    "plannedItems": [
+      "Hammer",
+      "Crowbar",
+      "Hand Saw",
+      "Chisel",
+      "Wooden Mallet",
+      "Shovel",
+      "Miner's Pick",
+      "Sledgehammer",
+      "Whetstone",
+      "Iron Nails",
+      "Iron Spikes",
+      "Measuring Cord",
+      "Wooden Rule",
+      "Tool Wrap",
+      "Wooden Wedges",
+      "Merchant's Scale"
+    ]
+  },
+  {
+    "id": "trade-goods",
+    "shop": "general-store",
+    "name": "Trade Goods",
+    "description": "Clearly measured cloth, leather, metals and ordinary materials for local trade and craft work.",
+    "plannedItems": [
+      "Linen",
+      "Canvas",
+      "Wool Cloth",
+      "Leather",
+      "Iron Bar",
+      "Copper Bar",
+      "Salt",
+      "Beeswax",
+      "Pitch",
+      "Cloth Dye",
+      "Silk Cloth"
+    ]
   }
 ]

@@ -47,7 +47,7 @@ Use the [development standards](../README.md#development-standards) when proposi
     validation. Compare only equivalent quote entities and break-tag spellings in description
     fields; do not strip HTML or relax other generated fields. Remaining differences produce
     bounded source-ID/field diagnostics using the same comparison rules as preview and rebuild.
-14. **One purchase, one quantity.** Optional `saleUnit` text is retained in module flags. Prices,
+14. **One purchase, one quantity.** Required `saleUnit` text is retained in module flags. Prices,
     weight and any consumption apply to the whole authored purchase, including listed packaging
     or kit parts. No nested component generation or automatic bundle splitting is introduced.
 15. **Small consumable boundary.** `consumable-factory.js` maps only `food` and `trinket` with
@@ -77,7 +77,7 @@ Use the [development standards](../README.md#development-standards) when proposi
     It does not retry empty tiers into another tier or promote rare goods when Often is exhausted.
     Draw counts are bounded. Stock persistence, merchant actors and purchasing await separate
     requirements. Table build and cleanup share a client guard; use one operation/tab.
-20. **Compact table set.** Generate four tables per shop, preserving the original whole-shop UUIDs.
+20. **Compact table set.** Generate four tables per merchant profile, preserving the original whole-shop UUIDs.
     Filter category-eligible item IDs before sampling these shared pools. Category draw defaults
     still apply, and an empty filtered tier never borrows items from another category or tier.
 21. **Weighted quantities after presence.** Canonical quantity profiles and a complete tier/price
@@ -133,6 +133,13 @@ await api.cleanupLegacyStockTables({
 });
 ```
 
+Stock APIs accept an optional `profileId` for a specific merchant variant. `rebuildStockTables`
+without it includes all profiles for the selected shop (or all shops); `rollStock` without it uses
+the selected shop's base profile for backward compatibility. `profileId` must belong to `shopId`.
+The Item builder rejects profile filters because there is one shared canonical Item catalogue.
+`stockProfiles` expands inherited variant policy without mutating source records. The General Store
+settings window offers Village, Town, City, Wagon and an All profiles build/preview selection.
+
 `loadCatalogue` returns the registry, item/catalogue/shop/category schemas, ledger,
 `shopDefinitions`, `categoryDefinitions` and `{item, location}` entries.
 `validateCatalogue` returns `{valid, count, errors, warnings}`; errors contain a `path` and `message`.
@@ -152,13 +159,13 @@ does not change table output. Its preflight requires referenced Items to have
 already been built. Stock profile validation supplements full catalogue validation.
 
 `rollStock` requires one shop (General Store by default) and current built tables. It returns
-`{shopId, categoryId, draws, outcomes, items}`; item entries include permanent `id`, `name`,
+`{shopId, profileId, profileName, categoryId, draws, outcomes, items}`; item entries include permanent `id`, `name`,
 compendium `uuid`, `tier`, `price`, `saleUnit`, `quantity`, `quantityProfile` and `quantityRoll`.
 `draws` optionally overrides the whole-shop or category profile default
 with an integer from 0 to 50. It uses Foundry dice and actual built ranges, with no chat, drawn-state,
 pack, setting, actor or inventory writes. See [the stock guide](STOCK_TABLES.md) for native draws.
 
-`cleanupLegacyStockTables` accepts the shop/category filters, `dryRun` (default true) and explicit
+`cleanupLegacyStockTables` accepts the shop/category/profile filters, `dryRun` (default true) and explicit
 `approvedIds` for writes. It returns `removable`, `preserved` reasons, `deleted`, warnings and scope.
 It never creates a pack or modifies Items. A changed removal list requires a fresh preview.
 
