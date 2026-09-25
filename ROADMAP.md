@@ -39,6 +39,19 @@ Implementation is available for acceptance testing; the target environment is no
 
 Implementation stops at the General Store. Tavern authoring has not started.
 
+## Sprint 4 — Merchant System specification (review requested)
+
+- [x] Draft the Actor/Item, relationship, wallet, checkout, negotiation, inventory, permission,
+  migration and transaction-history model in [the design proposal](docs/merchant/MERCHANT_SYSTEM_SPECIFICATION.md).
+- [x] Draft accessible [UI wireframes](docs/merchant/UI_WIREFRAMES.md),
+  [workflow diagrams](docs/merchant/WORKFLOW_DIAGRAMS.md) and a
+  [phased implementation roadmap](docs/merchant/IMPLEMENTATION_ROADMAP.md).
+- [x] Challenge complexity and record [Foundry-native decisions and feasibility gates](docs/merchant/TECHNICAL_JUSTIFICATION.md).
+- [ ] Review and approve or revise the specification before Sprint 5 code begins.
+- [ ] Resolve the versioned milestone order for Merchant System work before Tavern authoring.
+
+Sprint 4 changes documentation only. The current merchant feature is still unimplemented.
+
 ## Accepted baseline — Containers and seven-category expansion
 
 - [x] Define all eight curated General Store categories and their planned item lists.
@@ -86,7 +99,7 @@ Market remain partial catalogues. Table generation does not create missing shop-
 
 - Add Tavern, Alchemist, Blacksmith and Black Market catalogues incrementally.
 - Expand category plans to other shops without multiplying item identities.
-- Design saved stock, merchant actors, settlement/quality variations and purchasing workflows.
+- Implement the approved merchant-actor, saved-stock, purchasing and recovery workflows in phases.
 - Add a reviewed retirement/migration workflow, backups and stronger multi-session coordination.
 - Profile read/write memory use and responsiveness inside Foundry with thousands of real items.
 - Add localisation and wider runtime compatibility only after tests and review.

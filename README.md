@@ -20,6 +20,13 @@ The user reported that alpha.4's goods and alpha.5's RollTables worked. This bui
 the earlier read-back fix and field diagnostics. The 75 additions, variant controls, quantities
 and legacy cleanup require detailed live acceptance. No Tavern content is added.
 
+**Sprint 4 is a design proposal:** the [Merchant System Specification](docs/merchant/MERCHANT_SYSTEM_SPECIFICATION.md)
+and its [data model](docs/merchant/DATA_MODEL.md), [wireframes](docs/merchant/UI_WIREFRAMES.md),
+[workflow diagrams](docs/merchant/WORKFLOW_DIAGRAMS.md), [technical decisions](docs/merchant/TECHNICAL_JUSTIFICATION.md)
+and [implementation roadmap](docs/merchant/IMPLEMENTATION_ROADMAP.md) describe persistent NPC
+merchants for review. They do not add a merchant runtime, revise the module version or change
+the existing catalogue, stock builders or packaging.
+
 | Category | Items |
 | --- | ---: |
 | Containers | 13 |

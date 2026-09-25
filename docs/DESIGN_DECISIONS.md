@@ -206,3 +206,12 @@ the existing quantity policy, so a locally common product can have larger sugges
 a stock roll selects one. Four tables per profile hold Item references; no duplicate Item documents
 or category/quantity tables are introduced. Merchant Notes never enter compendium metadata. The
 Wagon excludes bulky stock explicitly rather than silently changing canonical shop tags.
+
+## Sprint 4 proposal awaiting review
+
+The [Merchant System specification](merchant/MERCHANT_SYSTEM_SPECIFICATION.md) proposes NPC Actors
+with native Items and wallets, GM-only relationship records, an approval-led checkout and an
+auditable transaction ledger. The [technical justification](merchant/TECHNICAL_JUSTIFICATION.md)
+records challenged assumptions and blocking Foundry V14 proof points. These are **proposals**,
+not accepted numbered decisions or implemented features. Add dated decisions here only after
+the owner reviews the design before Sprint 5.

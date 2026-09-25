@@ -12,6 +12,9 @@ GitHub Release or installation manifest exists. No release dates are invented fo
 
 ### Added
 
+- Sprint 4's proposed [Merchant System design](merchant/MERCHANT_SYSTEM_SPECIFICATION.md),
+  data model, UI wireframes, workflow diagrams, technical trade-offs and implementation roadmap.
+  This is documentation for owner review; the merchant feature is not implemented.
 - The Documentation Foundation: complete Content Standard, Price Guide, Weight Guide, Merchant
   Standard, Icon Standard, Design Decisions, Release Process, milestone Roadmap and this Changelog.
 - Official conventions for permanent IDs, sale units, plain-language descriptions, categories,

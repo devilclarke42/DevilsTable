@@ -3,6 +3,22 @@
 This file retains detailed repository build history. The official milestone/release record is
 [docs/CHANGELOG.md](docs/CHANGELOG.md). Versions here do not imply a public GitHub Release exists.
 
+## Sprint 4 — Merchant System specification — 2026-09-25
+
+### Added
+
+- Six review-ready design documents covering persistent NPC merchants, native inventory and
+  currency, private PC relationships, GM-authorized trading, temporary baskets, advisory
+  negotiation, editable templates, stock top-ups, transaction recovery and history search.
+- Player/GM wireframes, checkout/negotiation/restock workflow diagrams, requirement challenges,
+  Foundry V14/D&D5e 5.3.3 source references and a phased implementation/acceptance plan.
+
+### Changed
+
+- Linked the design from the README and roadmaps. The current runtime remains `0.2.0-alpha.7`;
+  no source items, generated tables, settings, runtime code, manifest or test expectations changed.
+- Merchant System work is proposed before Tavern content; version-number changes remain for review.
+
 ## 0.2.0-alpha.7 — 2026-09-25 — Complete General Store
 
 ### Added

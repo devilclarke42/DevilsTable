@@ -8,6 +8,12 @@ Current work is **0.2.0 in development**, with runtime candidate `0.2.0-alpha.7`
 General Store and basic stock tools are implemented. Detailed live acceptance remains open.
 Some framework work intentionally precedes the milestone where it will be expanded and completed.
 
+**Sprint 4 planning note:** the owner has requested a Merchant System specification as the next
+development priority, before Tavern content. The proposed
+[Merchant System roadmap](merchant/IMPLEMENTATION_ROADMAP.md) documents this sequencing, proof
+gates and a milestone-numbering choice for review. The table below records the existing approved
+version plan; no milestone has been silently renumbered or merchant code shipped.
+
 | Milestone | Focus | Status |
 | --- | --- | --- |
 | 0.2.0 | General Store | In development; Sprint 3 implemented, live acceptance and review pending |
