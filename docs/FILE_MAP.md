@@ -132,11 +132,12 @@ Generated compendiums and ZIPs are not included in this inventory.
 | `docs/SPRINT_3_REVIEW.md` | Current 144-item review table, category totals, profile decisions, artwork provenance and upgrade evidence. |
 | `docs/STOCK_TABLES.md` | Stock coverage, table counts, tier rules, separate settings workflow, native draws, defaults for review and rebuild policy. |
 | `docs/merchant/MERCHANT_SYSTEM_SPECIFICATION.md` | Approved Sprint 4 persistent NPC merchant experience, access, state and validation boundaries. |
-| `docs/merchant/DATA_MODEL.md` | Proposed Actor/embedded Item flags, PC relationships, receipts, wallet and coin modes. |
+| `docs/merchant/DATA_MODEL.md` | Approved Actor/embedded Item flags, PC relationships, receipts, native wallet and retention policy. |
 | `docs/merchant/UI_WIREFRAMES.md` | Player, GM, negotiation, restock and history interface sketches in accessible tables. |
 | `docs/merchant/WORKFLOW_DIAGRAMS.md` | Checkout, negotiation, restock, multiplayer authority and recovery paths. |
 | `docs/merchant/TECHNICAL_JUSTIFICATION.md` | Requirement challenges, native Foundry decisions, limits and primary references. |
 | `docs/merchant/IMPLEMENTATION_ROADMAP.md` | Review gate, blocking V14 proofs, phased implementation and migration/performance plan. |
+| `docs/merchant/SPRINT_5_VALIDATION.md` | Observed prerequisite status, live Foundry test setup, multiplayer proofs and native currency schema evidence. |
 
 ## Original module artwork
 

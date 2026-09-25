@@ -63,7 +63,7 @@ overrides or rejects the proposal; the override is logged.
 | Greetings | Editable neutral suggestions associated with relationship states. The GM controls tone and can disable a suggestion. Greetings grant no discount or attitude effect. |
 | Transactions | One proposal can include purchases, sales and a net currency transfer. The GM sees a full diff and a single final decision. A rejected request never transfers Items or currency; a GM rejection always creates a private audit entry. |
 | Negotiation | A request, optional GM-chosen skill/DC, player roll, advisory discount and GM acceptance/edit/rejection. No automatic NPC social checks or involuntary pricing. |
-| History | GM-only, searchable approved/rejected/interrupted records in a dedicated world ledger; browsing and basket edits never create entries. Rejections record date, character, merchant, attempted lines, negotiation result, decision and final outcome; players cannot read them. |
+| History | GM-only, searchable approved/rejected/interrupted records in a dedicated world ledger; browsing and basket edits never create entries. Rejections record date, character, merchant, attempted lines, negotiation result, decision and final outcome; players cannot read them. Retention is configurable: Last 100, Last 500 (default), Last 1000 or Unlimited; pending recovery cannot be discarded. Actor flags hold a ledger pointer and optional per-merchant retention override, not copied receipts. |
 
 ### Proposed advisory policy
 
@@ -160,3 +160,5 @@ checkout is admitted for the same merchant. Record actual setup, steps, results 
 design change in [IMPLEMENTATION_ROADMAP.md](IMPLEMENTATION_ROADMAP.md). These behaviours are
 **unverified design requirements**, not claims about current Foundry support. The other security
 and recovery proofs in the roadmap remain required before transaction implementation.
+Record evidence in [the Sprint 5 validation report](SPRINT_5_VALIDATION.md), which currently
+marks live tests as blocked because this workspace has no Foundry world or player sessions.

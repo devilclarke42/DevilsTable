@@ -35,7 +35,7 @@ these primitives. The transaction compendium is a world store, never a generated
 | `greetings` | editable state → sentence | Plain-language suggestions; use neutral default if missing. No game effect. |
 | `relationships` | map keyed by world PC Actor ID | Bounded summaries; details below. Unbounded history stays in the ledger. |
 | `companionLinks` | optional map of companion Actor ID → owning PC Actor ID | GM-approved relationship lookup only; neither Actor's relationship record is copied or merged. |
-| `revision`, `historyRef` | monotonic integer, optional ledger reference | Helps detect stale proposals and locate this merchant's receipts. No claim of atomic compare-and-swap. |
+| `revision`, `historyRef`, `historyRetention` | monotonic integer, optional ledger reference, optional retention override | Helps detect stale proposals and locate receipts; retention defaults to the GM setting. Full receipts never live in Actor flags. No claim of atomic compare-and-swap. |
 
 Native Actor and Item sheets remain usable. Replacing the merchant's entire NPC or Item array from
 a stock table is forbidden. Multiple linked tokens may represent the same merchant; unlinked
@@ -105,6 +105,11 @@ for a bounded compendium index query. Fetch full receipts only for the selected 
 customer/status page. The compendium is GM-only, separate from generated Items/RollTables.
 Rejection entries are made only after an explicit GM decision. A checkout request waiting on the GM
 exists in client memory, not as a persistent Item, reservation or journal entry.
+The GM-configured history policy is **Last 500** by default, or Last 100, Last 1000 or Unlimited;
+an individual merchant may override it. It applies to final approved and rejected decisions,
+but never removes an active `needs-recovery` record. Define exact retention and export behaviour
+after verifying the proposed ledger store in live Foundry. No receipt body is duplicated in the
+Actor merchant flag.
 Each explicit rejection must save date, PC, merchant, attempted trade, any negotiation result,
 approval status `rejected` and final outcome, visible only to GMs. If the ledger is unavailable,
 the GM receives an error and must reconcile the decision before the service slot is released.

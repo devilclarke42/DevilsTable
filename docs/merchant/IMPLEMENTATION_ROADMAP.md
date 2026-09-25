@@ -35,6 +35,9 @@ limitation and propose a token-scoped alternative for owner review. Concurrent c
 require a GM-authoritative service slot, since independent client locks are insufficient.
 If any proof fails, revise the specification with the owner. Do not silently weaken checkout
 attribution or call a multi-document write atomic to meet a schedule.
+The current environment and pending checks are recorded in
+[SPRINT_5_VALIDATION.md](SPRINT_5_VALIDATION.md). A disposable Foundry world with two player
+accounts is required before implementation begins.
 
 ## Proposed implementation slices after approval
 

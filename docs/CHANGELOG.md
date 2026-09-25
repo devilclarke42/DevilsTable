@@ -12,6 +12,9 @@ GitHub Release or installation manifest exists. No release dates are invented fo
 
 ### Added
 
+- Sprint 5 prerequisite [validation report](merchant/SPRINT_5_VALIDATION.md) documenting the
+  unavailable live Foundry environment, exact multiplayer proof steps and D&D5e 5.3.3 native
+  currency schema inspection; merchant implementation is still gated.
 - Sprint 4's approved [Merchant System design](merchant/MERCHANT_SYSTEM_SPECIFICATION.md),
   data model, UI wireframes, workflow diagrams, technical trade-offs and implementation roadmap.
   Live Foundry validation remains pending; the merchant feature is not implemented.
@@ -27,6 +30,8 @@ GitHub Release or installation manifest exists. No release dates are invented fo
 
 ### Changed
 
+- Merchant design specifies transaction history retention choices (Last 100, Last 500 by
+  default, Last 1000 and Unlimited) without copying receipts into merchant Actor flags.
 - Sprint 4 review specified a GM-only merchant Actor, dedicated player Shop UI, native D&D5e
   currency with optional change checking, per-character memory with companion links, private
   rejected-trade receipts and five merchant availability states. Live multiplayer proofs precede code.
