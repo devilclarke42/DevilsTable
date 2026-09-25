@@ -1,10 +1,14 @@
-# Merchant UI wireframes — Sprint 4 proposal
+# Merchant UI wireframes — Sprint 4 approved design
 
-**Status:** interaction design for review. Tables describe screen regions and actions, not current
+**Status:** approved interaction design pending live Foundry checks. Tables describe screen regions and actions, not current
 HTML templates or shipped UI. Player and GM windows should use Foundry V14 ApplicationV2 patterns,
 keyboard controls, clear focus, readable light/dark themes and text alongside icons.
 
 ## 1. Token entry and player browse window
+
+This dedicated module **Shop UI** is the only player-facing merchant window. Players cannot open
+the GM-only NPC Actor sheet, including from the token; the public projection contains no Actor
+flags or private notes. Confirm this on a non-owned token before runtime implementation.
 
 On right-click of a **visible, nearby merchant token**, show a token-scoped action labelled
 **Browse Merchant**. Keep Foundry's normal token controls intact. If the PC is too far away,
@@ -13,11 +17,11 @@ their character. Test this flow on a player who does **not** own the merchant to
 
 | Region | Content and behaviour |
 | --- | --- |
-| Header | Merchant name and portrait, optional public description, scene distance and neutral/suggested greeting. |
+| Header | Merchant name and portrait, optional public description, scene distance, availability (Open, Closed, Busy, Travelling or Sleeping) and neutral/suggested greeting. |
 | Search/filter | Search public name and description; optional category/price sorting. Page the results; no GM-private stock tiers or relationships. |
 | Stock row | Icon, Item name, sale unit, GM-approved public description, quoted price, available count or “available,” plus Add button. Unpriced or unreviewed external Items show “ask the merchant,” with no price or private description guessed. |
 | Basket panel | Product, requested quantity, current quote, subtotal, Remove/change buttons and “prices/stock confirmed at checkout” label. The basket is local to the player's session. |
-| Actions | **Request negotiation** (advisory), **Checkout**, **Close**. Disable Checkout when out of range, GM offline, merchant occupied, no valid PC, or basket empty. |
+| Actions | **Request negotiation** (advisory), **Checkout**, **Close**. Disable Checkout when out of range, GM offline, merchant not Open, service slot Busy, no valid PC, or basket empty. Busy still allows browsing. Closed, Travelling and Sleeping may show only a GM-approved read-only catalogue/message. |
 | Feedback | “Another customer bought the last copy; review your basket,” “Merchant occupied,” and explicit pending/approved/rejected/recovery messages. |
 
 Before checkout, a PC may switch from purchasing to **Offer Items for Sale**. The panel lists only
@@ -34,9 +38,9 @@ its native sheet.
 
 | Tab | Fields and controls |
 | --- | --- |
-| Profile | Enabled, merchant ID, template, shop/stock profile, scene access distance, finite/infinite wallet, currency mode. “Preview template” never overwrites a configured NPC. |
+| Profile | Enabled, merchant ID, template, shop/stock profile, scene access distance, availability, finite/infinite wallet, buy/sell modifiers and optional exact-change policy. “Preview template” never overwrites a configured NPC. |
 | Inventory | Native embedded Items, source linkage, quantity, sale unit, offer price/override, unlimited flag, restock target/suppression and last reviewed edit. Seed stock, add manual offer, suppress and reconcile. |
-| Wallet | Native cp/sp/gp (plus supported world denominations), balance, denomination limits, coin handling mode and projected result of a proposed settlement. |
+| Wallet | Native D&D5e Actor currency (all supported denominations), finite/infinite funding, optional change validation and projected result of a proposed settlement. No separate coin Item inventory. |
 | Notes & greetings | Public Notes, private GM Notes, and editable greetings for the nine relationship states. Source Merchant Notes are a starting prompt, not a synchronized override. |
 | Customers | Search PC name/ID; first/last confirmed visit, state, counters and private relationship note. GM can record an encounter or correct a record with a reason. |
 | History | Search status, merchant, PC and date; show receipts in bounded pages, not an ever-growing Actor flag. |
@@ -59,13 +63,16 @@ One active request per merchant, with the focused decision window showing:
 | Negotiation | GM-selected skill and DC or no roll; visible result; suggested percentage/amount; editable or discardable discount. |
 | Relationships | Private state, prior transaction count, money spent/received, last visit and editable customer note. |
 | Notes | GM Notes and trading-relevant guidance; Public Notes alongside for context. None leaks to the player window. |
-| Currency | Gross buy/sell totals, discount, net due, tender, change or payout, merchant and PC coin counts before/after, explicit mode and any shortfall. |
+| Currency | Gross buy/sell totals, applied buy/sell modifiers, discount, net due, native currency deltas, optional change check, merchant and PC denomination counts before/after and any shortfall. |
 | Final actions | **Approve & commit**, **Reject**, **Edit transaction**, **Request exact payment**, **Set manual settlement**, **Cancel/close**. Approval is disabled until every discrepancy has a documented resolution. |
 
 The window re-renders a diff if the merchant/PC state changed while it was open. GM edits to
 quantities or prices refresh the coin solver and final preview; they cannot directly change Actor
 documents before approval. If an approval partially fails, replace success with a recovery view
 showing saved stages and current Actor values. Do not offer a blind second Apply button.
+An explicit **Reject** creates a GM-only audit entry with date, character, merchant, attempted
+lines, negotiation result and outcome. Neither rejected requests nor rejection reasons appear
+in any other player's Shop UI.
 
 ## 4. Negotiation dialog
 

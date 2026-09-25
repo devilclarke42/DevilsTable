@@ -12,9 +12,9 @@ GitHub Release or installation manifest exists. No release dates are invented fo
 
 ### Added
 
-- Sprint 4's proposed [Merchant System design](merchant/MERCHANT_SYSTEM_SPECIFICATION.md),
+- Sprint 4's approved [Merchant System design](merchant/MERCHANT_SYSTEM_SPECIFICATION.md),
   data model, UI wireframes, workflow diagrams, technical trade-offs and implementation roadmap.
-  This is documentation for owner review; the merchant feature is not implemented.
+  Live Foundry validation remains pending; the merchant feature is not implemented.
 - The Documentation Foundation: complete Content Standard, Price Guide, Weight Guide, Merchant
   Standard, Icon Standard, Design Decisions, Release Process, milestone Roadmap and this Changelog.
 - Official conventions for permanent IDs, sale units, plain-language descriptions, categories,
@@ -27,6 +27,9 @@ GitHub Release or installation manifest exists. No release dates are invented fo
 
 ### Changed
 
+- Sprint 4 review specified a GM-only merchant Actor, dedicated player Shop UI, native D&D5e
+  currency with optional change checking, per-character memory with companion links, private
+  rejected-trade receipts and five merchant availability states. Live multiplayer proofs precede code.
 - Documentation now distinguishes normative authoring standards, automated checks and future
   milestones explicitly. Root records retain their existing detailed build history.
 - The Documentation Foundation sprint changed Markdown only; weighted-quantity and compact-table code was

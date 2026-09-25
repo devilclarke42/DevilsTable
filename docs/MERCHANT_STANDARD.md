@@ -154,7 +154,7 @@ policy rather than an undocumented multiplier.
 
 **Roll Stock & Quantities** returns a suggestion. It does not save merchant state, deduct purchases,
 transfer Items, charge coins, send chat or schedule restocking. Each click samples a new list.
-The [Sprint 4 Merchant System proposal](merchant/MERCHANT_SYSTEM_SPECIFICATION.md) describes how a
+The [approved Sprint 4 Merchant System design](merchant/MERCHANT_SYSTEM_SPECIFICATION.md) describes how a
 future GM-controlled NPC could persist one accepted suggestion and trade with PCs. It is design
 only; it does not change the current stock action or generated tables.
 The GM should record the accepted list for the relevant merchant and trading period; a new roll

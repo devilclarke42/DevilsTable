@@ -131,7 +131,7 @@ Generated compendiums and ZIPs are not included in this inventory.
 | `docs/GENERAL_STORE_REVIEW.md` | All 56 additional prices, weights, purchase units and IDs; mechanics choices and source/icon references. |
 | `docs/SPRINT_3_REVIEW.md` | Current 144-item review table, category totals, profile decisions, artwork provenance and upgrade evidence. |
 | `docs/STOCK_TABLES.md` | Stock coverage, table counts, tier rules, separate settings workflow, native draws, defaults for review and rebuild policy. |
-| `docs/merchant/MERCHANT_SYSTEM_SPECIFICATION.md` | Sprint 4 proposed persistent NPC merchant experience, access, state and review boundaries. |
+| `docs/merchant/MERCHANT_SYSTEM_SPECIFICATION.md` | Approved Sprint 4 persistent NPC merchant experience, access, state and validation boundaries. |
 | `docs/merchant/DATA_MODEL.md` | Proposed Actor/embedded Item flags, PC relationships, receipts, wallet and coin modes. |
 | `docs/merchant/UI_WIREFRAMES.md` | Player, GM, negotiation, restock and history interface sketches in accessible tables. |
 | `docs/merchant/WORKFLOW_DIAGRAMS.md` | Checkout, negotiation, restock, multiplayer authority and recovery paths. |

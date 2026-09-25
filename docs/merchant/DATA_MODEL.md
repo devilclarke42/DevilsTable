@@ -1,6 +1,6 @@
-# Merchant data model — Sprint 4 proposal
+# Merchant data model — Sprint 4 approved design
 
-**Status:** review draft; these are design contracts, not current JSON schema or shipped Actor flags.
+**Status:** approved design pending live Foundry proofs; these are design contracts, not current JSON schema or shipped Actor flags.
 All quantities and coin counts below are nonnegative safe integers. Identifiers are stable within a
 world. Names and prices are mutable. Schema versions apply to merchant state and ledger entries
 independently; unknown future fields remain untouched during migration.
@@ -9,12 +9,12 @@ independently; unknown future fields remain untouched during migration.
 
 | Document / location | Source of truth | Read / write access |
 | --- | --- | --- |
-| World D&D5e `npc` Actor | Existing NPC identity; merchant configuration and bounded relationship map under `flags.devils-table.merchant`; native `system.currency` for physical coins | GM writes; players receive only a sanitized response |
+| World D&D5e `npc` Actor | Existing NPC identity; merchant configuration and bounded relationship map under `flags.devils-table.merchant`; native `system.currency` wallet | GM writes and opens Actor sheet; players see only a sanitized Shop UI response |
 | NPC embedded Item | Actual sale stock, `system.quantity`, item description/mechanics, per-offer flag for price, unlimited supply, origin and restock policy | GM writes; player sees a whitelisted stock view |
 | Linked scene Token | Shop entry point and position/elevation; refers to the world merchant Actor | No merchant wallet or relationship state copied to token flags |
 | Player world Actor and embedded Item | Owned funds and possessions; source for goods offered in sale | GM commits approved trades; owner can still edit through normal Foundry permissions |
 | Dedicated GM-only world JournalEntry compendium | One transaction receipt per GM decision, including recovery stages and searchable metadata | GM writes/reads; no player access |
-| GM settings | Default range, currency mode and retention/display policy | GM configures; not merchant inventory |
+| GM settings | Default range, optional change policy and retention/display policy | GM configures; not merchant inventory |
 | Source JSON | Item catalogue, shop profiles and future editable template definitions | Repository authoring only; never current world inventory |
 
 **Why no custom Document type:** Foundry already supplies Actors, embedded Items, JournalEntries,
@@ -29,10 +29,12 @@ these primitives. The transaction compendium is a world store, never a generated
 | `merchantId` | unique permanent world identifier | Retained across renames and token replacements; copy/import collision triggers an explicit new identity or deliberate migration. |
 | `shopProfileId`, `stockProfileId` | registered shop/profile identifiers, nullable only by GM review | Select catalogue stock suggestion; the Actor Item remains authoritative. |
 | `templateId` | optional template identifier | Records starting preset, not continuing ownership of notes/stock. |
-| `enabled`, `walletMode` | booleans/enums | Actor merchant opt-in; finite or infinite merchant funds. Currency policy can override world default per merchant. |
+| `enabled`, `walletMode`, `availability` | boolean / enums | Actor merchant opt-in; finite or infinite merchant funds; GM-selected Open, Closed, Busy, Travelling or Sleeping. The active checkout service slot provides effective Busy without overwriting this field. |
+| `buyModifier`, `sellModifier` | bounded, GM-editable price factors | Apply to merchant buying from the PC and selling to the PC respectively. Default 100%; calculate integer copper values with a displayed rounding rule, then permit GM line overrides. These are offer prices, not rewrites of Item source prices. |
 | `publicNotes`, `gmNotes` | sanitized text, length-limited | Public flavour and private GM editing. Both remain local to this Actor. |
 | `greetings` | editable state → sentence | Plain-language suggestions; use neutral default if missing. No game effect. |
 | `relationships` | map keyed by world PC Actor ID | Bounded summaries; details below. Unbounded history stays in the ledger. |
+| `companionLinks` | optional map of companion Actor ID → owning PC Actor ID | GM-approved relationship lookup only; neither Actor's relationship record is copied or merged. |
 | `revision`, `historyRef` | monotonic integer, optional ledger reference | Helps detect stale proposals and locate this merchant's receipts. No claim of atomic compare-and-swap. |
 
 Native Actor and Item sheets remain usable. Replacing the merchant's entire NPC or Item array from
@@ -75,6 +77,12 @@ States: **Unknown** (implicit when no record exists), **Recognises**, **Regular*
 transaction count alone does not promote a state. A banned customer cannot checkout unless the
 GM explicitly overrides the block. State influences greeting and advisory negotiation DC only.
 Relationships have no character-sheet bonus, automatic refusal or player-visible raw state.
+An independently controlled PC always has its own record even when its User account matches
+another PC. The optional companion link affects which record a merchant uses for a specific
+interaction, not ownership of either Actor; the GM can unlink it without deleting history.
+Future identity selection must keep actual Actor ID and an optional apparent encounter identity
+separate in private receipts, so disguise rules can be added without retroactive relationship
+merging. No detection roll or disguise rule is implemented now.
 If a merchant grows beyond a reviewed actor-flag size or relationship count, a later version
 migrates older records to GM-only ledger pages with bounded current summaries; it never silently
 truncates notes or duplicates customer records.
@@ -82,7 +90,7 @@ truncates notes or duplicates customer records.
 ### Transaction receipt
 
 Each ledger JournalEntry has a permanent `transactionId` used for retry/idempotency, merchantId,
-merchant Actor UUID, PC Actor UUID, requester User ID, GM approver ID, requested/decided/committed
+merchant Actor UUID, actual PC Actor UUID, optional apparent identity reference, requester User ID, GM approver ID, requested/decided/committed
 UTC timestamps (as applicable), optional world time, source scene/token IDs, mode and schema
 version. Its metadata includes status: `rejected`, `approved-pending`, `committing`, `completed`
 or `needs-recovery`. Retain the proposed and GM-final lines: Item ID/UUID, full display name and
@@ -97,23 +105,29 @@ for a bounded compendium index query. Fetch full receipts only for the selected 
 customer/status page. The compendium is GM-only, separate from generated Items/RollTables.
 Rejection entries are made only after an explicit GM decision. A checkout request waiting on the GM
 exists in client memory, not as a persistent Item, reservation or journal entry.
+Each explicit rejection must save date, PC, merchant, attempted trade, any negotiation result,
+approval status `rejected` and final outcome, visible only to GMs. If the ledger is unavailable,
+the GM receives an error and must reconcile the decision before the service slot is released.
 
-## Coin model and modes
+## Native D&D5e wallet and settlement
 
-D&D5e 5.3.3 NPCs use a shared native Actor currency template. Supported baseline counts are
+D&D5e 5.3.3 PCs and NPCs use the native Actor currency model. Supported baseline counts are
 `cp`, `sp` and `gp`, with integer values **1, 10 and 100 copper**. D&D5e also defines `ep`
 and `pp`; other compatible denominations can be added through a validated, reversible integer
 conversion map. Never use floating-point gold for settlement. Reject unknown or fractional
 conversion instead of silently dropping coins. Keep the actor's other currency keys intact.
+The module never creates coin Items, a separate wallet database or an alternative character-sheet
+currency field. An infinite wallet is a merchant policy for affordability, not a second balance;
+display the native currency values and leave unlimited funding transparent to the GM.
 
-| Mode | Suggested transaction and required GM approval |
+| Settlement policy | Suggested transaction and required GM approval |
 | --- | --- |
-| **Physical Coins** (default) | Buyer offers actual coin counts; GM sees exact tender, required change, seller payouts and projected native coin counts. A finite merchant must have the needed denominations, including tender already received, to make change or buy player goods. Infinite merchant ignores its own count limits but still debits/credits the player's real coins. |
-| **Abstract Currency** | Use exact minor-unit values and total purchasing power. Denominations can be exchanged virtually; after GM approval, write an explicit canonical breakdown back to native `system.currency` on affected finite Actors. A finite merchant still needs enough total value, even if its existing denominations cannot make exact change. |
-| **GM Controlled** | GM chooses explicit final coin transfers or an expressly recorded barter/no-cash settlement. The module executes only those approved deltas. Unsettled cash cannot be marked a completed purchase; the GM may leave a recovery state while settling outside the module. |
+| **Native currency** (default) | Quote and check value using D&D5e Actor currency. Show a GM-reviewable denomination breakdown and write approved changes to the existing Actor currency fields. A finite merchant must have enough total value to buy goods; an infinite merchant bypasses only its own funds limit. Respect the installed system's verified conversion rules. |
+| **Optional exact-change check** | On the same native wallet, require a possible tender/change combination from available denominations before approval. If none exists, the GM chooses a revised tender, overpayment, barter or manual settlement. This is an optional validation policy, not a separate coin system. |
+| **GM-edited settlement** | The GM may edit the proposed native currency deltas or approve explicit barter; the final receipt shows the adjustment. Never mark unsettled payment completed. |
 
-For a 7 sp purchase paid with 1 gp, the merchant owes 3 sp (or 30 cp, if available) in Physical
-Coins mode. If it has neither and the buyer lacks exact tender, the GM chooses exact payment,
+For a 7 sp purchase paid with 1 gp, the merchant owes 3 sp (or 30 cp, if available) when
+exact-change checking is enabled. If it has neither and the buyer lacks exact tender, the GM chooses exact payment,
 explicit overpayment/tip, another supported mix of coins, goods in lieu of change, or a manual
 edit. There is no automatic completion. A net sale to the merchant reverses the coin direction;
 selling and buying in one basket may be settled as a net trade, with both directions shown.
@@ -124,7 +138,7 @@ All coin deltas must balance or carry an explicit GM-authorized gift/fee/barter 
 affect native coin weight according to the world's D&D5e currency-weight setting; the module
 does not alter that setting.
 
-The coin solver must search finite combinations without inventing denominations. If a request
+When exact-change checking is enabled, the solver must search finite combinations without inventing denominations. If a request
 exceeds its safe search budget, return “GM settlement required,” **not** “insufficient change.”
 Native system helpers may be used only after verifying their exact 5.3.3 semantics for physical
 coin handling. The GM sees an independent pre/post coin-count diff in every mode.

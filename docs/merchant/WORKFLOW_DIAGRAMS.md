@@ -1,6 +1,6 @@
-# Merchant workflows — Sprint 4 proposal
+# Merchant workflows — Sprint 4 approved design
 
-**Status:** state transitions for review, not current runtime behaviour. In these diagrams a
+**Status:** approved state transitions pending live proofs, not current runtime behaviour. In these diagrams a
 “write” occurs only on the GM's client after an explicit decision; merely viewing or proposing
 never transfers stock or coins.
 
@@ -10,11 +10,11 @@ never transfers stock or coins.
 flowchart TD
   A["Right-click visible merchant"] --> B{"PC in range?"}
   B -->|No| C["Explain distance or PC selection"]
-  B -->|Yes| D["Fetch public stock projection"]
+  B -->|Yes| D["Open Shop UI; fetch public stock"]
   D --> E["Local basket edits"]
   E --> F{"Checkout requested?"}
   F -->|No| E
-  F -->|Yes| G{"Merchant slot free?"}
+  F -->|Yes| G{"Open and slot free?"}
   G -->|No| H["Occupied; basket retained"]
   G -->|Yes| I["GM decision window"]
   I --> J{"GM decision"}
@@ -34,6 +34,11 @@ customer may browse but cannot queue a simultaneous checkout to the same merchan
 approved **commit** has priority on limited stock. The basket retains the user's choices after
 an occupied/stale result so the player can try again; it never contains live Actor references that
 authorize a write by themselves.
+The GM's configured availability is Open, Closed, Busy, Travelling or Sleeping. The checkout slot
+adds an effective Busy state, leaving the configured state intact. Closed, Travelling and Sleeping
+refuse checkout; the GM may allow a public read-only view. If availability changes during review,
+the GM must revisit the decision. Explicit rejection produces a private audit receipt and does
+not alter the two Actors.
 
 ## Negotiation inside an open checkout
 
@@ -95,6 +100,11 @@ until the GM chooses whether that edit represents depletion or a permanent adjus
 5. If the GM disconnects before approving, release the request without a write. If the GM
    disconnects during commit, leave that merchant/customer locked for explicit GM recovery after
    reconnect. A second GM must not independently replay the pending request.
+
+Before implementing this coordinator, live-test two non-GM players browsing the same GM-only
+merchant Actor through the Shop UI, then simultaneously requesting checkout. Record whether
+right-click on the non-owned token opens the UI and whether a single GM service slot can reliably
+reject the second request. Independent client-local locks cannot enforce exclusivity.
 
 Foundry document changes across two Actors and one ledger entry are not database-atomic. This
 design gives an auditable, single-writer module workflow and recoverable failures; it does not

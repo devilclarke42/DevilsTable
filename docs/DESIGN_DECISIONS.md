@@ -207,11 +207,19 @@ a stock roll selects one. Four tables per profile hold Item references; no dupli
 or category/quantity tables are introduced. Merchant Notes never enter compendium metadata. The
 Wagon excludes bulky stock explicitly rather than silently changing canonical shop tags.
 
-## Sprint 4 proposal awaiting review
+## Sprint 4 merchant design approved with live proofs pending (2026-09-25)
 
-The [Merchant System specification](merchant/MERCHANT_SYSTEM_SPECIFICATION.md) proposes NPC Actors
-with native Items and wallets, GM-only relationship records, an approval-led checkout and an
-auditable transaction ledger. The [technical justification](merchant/TECHNICAL_JUSTIFICATION.md)
-records challenged assumptions and blocking Foundry V14 proof points. These are **proposals**,
-not accepted numbered decisions or implemented features. Add dated decisions here only after
-the owner reviews the design before Sprint 5.
+**Decision:** persistent merchants use GM-only standard NPC Actors; players shop in a separate
+public Shop UI. Wallets use native D&D5e Actor currency, with optional change validation, finite
+or infinite merchant funds and buy/sell modifiers. Relationships belong to PCs, with explicit
+GM companion links and room for future apparent identities; no disguise mechanics ship now.
+Explicit GM rejections generate private audit entries. Open, Closed, Busy, Travelling and Sleeping
+control availability; a service slot temporarily makes a merchant effectively Busy.
+
+**Why:** reuse system data and actor permissions, preserve privacy and distinct character
+relationships, and make GM decisions auditable without a second currency or custom Actor model.
+
+**Consequences:** the [Merchant System specification](merchant/MERCHANT_SYSTEM_SPECIFICATION.md)
+is approved as design only. The [implementation roadmap](merchant/IMPLEMENTATION_ROADMAP.md)
+requires live V14 tests of non-owned token access, dedicated Shop UI browsing and concurrent
+checkout before implementation. No merchant runtime or migration has shipped.

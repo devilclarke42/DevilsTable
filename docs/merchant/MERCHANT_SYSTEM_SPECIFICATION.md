@@ -1,6 +1,6 @@
-# Merchant System Specification — Sprint 4 proposal
+# Merchant System Specification — Sprint 4 approved design
 
-**Status:** proposed for review, 2026-09-25. **Implementation:** none in Sprint 4.  
+**Status:** approved with required changes, 2026-09-25; live integration proofs pending. **Implementation:** none in Sprint 4.  
 **Target:** Foundry VTT V14, D&D5e 5.3.3, 2014 rules and The Forge.  
 **Existing baseline:** the 144-item catalogue, 32 stock tables and read-only stock roller remain as documented in [the architecture guide](../ARCHITECTURE.md).
 
@@ -19,6 +19,11 @@ transaction ledger. Templates provide editable defaults for Innkeeper, General S
 and Alchemist. They are authoring presets, not new Actor types, generated campaign histories or
 extra item identities. The GM may change a merchant's name, prices, stock, notes and greeting text.
 
+Merchant Actors remain **GM-only**: players never open their Actor sheets. Players interact
+through a dedicated module **Shop UI** that exposes only approved public data. The Shop UI handles
+stock browsing and search, item information, a temporary basket, checkout requests and optional
+negotiation requests; it can evolve without changing the native NPC sheet.
+
 Players open a **Browse Merchant** action by right-clicking a visible merchant token when controlling
 an eligible PC token in range. The default distance is 5 feet, configurable by the GM. Opening,
 searching, reading descriptions and editing a local basket are read-only operations. Checkout and
@@ -36,19 +41,29 @@ coin balances, sold-item ownership and the GM's final choices. If anything chang
 shows the difference. The first approved **and successfully committed** trade receives the last
 limited unit. An approval alone does not reserve stock ahead of validation and writes.
 
+The merchant's availability is **Open**, **Closed**, **Busy**, **Travelling** or **Sleeping**.
+Open permits browsing and checkout; Busy permits browsing but refuses additional checkout requests.
+Closed, Travelling and Sleeping block checkout, and the Shop UI may display a GM-approved public
+message and read-only catalogue when the GM enables browsing in those states. Availability never
+changes inventory or advances automatically; the GM sets it. An active checkout sets an effective
+Busy state for new requests without overwriting the GM's chosen availability. Changing availability
+while a proposal is pending stops approval until the GM reviews the new state and explicitly
+overrides or rejects the proposal; the override is logged.
+
 ## Features in scope
 
 | Feature | Proposed behaviour |
 | --- | --- |
 | Merchant and shop profiles | One world NPC with an editable `shopProfileId`, optional existing stock-profile prefix, merchant template ID and public display name. Shop selection guides seeding and future restock suggestions; it does not duplicate catalogue Items. |
 | Inventory | Native embedded D&D5e Items with quantities. Supports authored and compatible non-Devil's Table Items, manual additions/deletions, merchant price overrides, finite/unlimited offers and explicit restock targets. |
-| Wallet | Native `system.currency` coin counts. Finite or infinite merchant funds; actual player funds are always finite. Abstract, Physical Coins and GM Controlled settlement policies are defined in [the data model](DATA_MODEL.md). |
+| Wallet | Native D&D5e Actor `system.currency` for both merchant and PC. Finite or infinite merchant funds; player funds remain finite. Editable buy and sell price modifiers; optional denomination-aware change check. No custom currency store or coin Items. See [the data model](DATA_MODEL.md). |
+| Availability | GM-selected Open, Closed, Busy, Travelling or Sleeping, plus an effective Busy state while a checkout is active. Browsing continues while Busy; only Open merchants accept new checkout requests. |
 | Notes | Public flavour sent in the browsing view; editable GM notes and per-PC relationship notes remain GM-only. Source Merchant Notes can seed editable text but never overwrite it during rebuilds. |
-| Customers | One record per **PC Actor**, with optional last-seen User ID as context. A player's two characters have separate relationships; multiple users of one PC share its relationship. |
+| Customers | One record per **PC Actor**, with optional last-seen User ID as context. A player's two characters have separate relationships; multiple users of one PC share its relationship. A companion can use its owner's record only through an explicit GM-approved link. Future disguise/false-identity support must be able to select an encounter identity without merging records; no disguise rules ship now. |
 | Greetings | Editable neutral suggestions associated with relationship states. The GM controls tone and can disable a suggestion. Greetings grant no discount or attitude effect. |
-| Transactions | One proposal can include purchases, sales and a net coin transfer. The GM sees a full diff and a single final decision. A rejected request never transfers Items or coins. GM-authorized rejection may be logged as a rejected decision. |
+| Transactions | One proposal can include purchases, sales and a net currency transfer. The GM sees a full diff and a single final decision. A rejected request never transfers Items or currency; a GM rejection always creates a private audit entry. |
 | Negotiation | A request, optional GM-chosen skill/DC, player roll, advisory discount and GM acceptance/edit/rejection. No automatic NPC social checks or involuntary pricing. |
-| History | GM-only, searchable approved/rejected/interrupted records in a dedicated world ledger; browsing and basket edits never create entries. |
+| History | GM-only, searchable approved/rejected/interrupted records in a dedicated world ledger; browsing and basket edits never create entries. Rejections record date, character, merchant, attempted lines, negotiation result, decision and final outcome; players cannot read them. |
 
 ### Proposed advisory policy
 
@@ -90,7 +105,7 @@ right-click entry for a visible, nearby merchant with normal token use preserved
 
 The Actor holds only merchant configuration and short, current relationship records. Its Items
 are the single source of truth for live stock; `system.currency` is the single source of truth
-for physical balances. A purchase reduces one embedded Item's quantity; an unlimited offer does
+for both wallets. A purchase reduces one embedded Item's quantity; an unlimited offer does
 not decrement. A GM manual removal is explicit and is not silently recreated. Ordinary restock
 tops up only missing units for opted-in offers, using a configurable target and schedule; it
 leaves manual stock, prices, uses, attachments and unrelated Items intact. Changes made directly
@@ -128,16 +143,20 @@ are detected or sent to recovery rather than silently merged.
 
 - **Approved and committed:** both inventories and wallets reflect the approved settlement; the
   transaction has a durable receipt; relationships and counts update exactly once.
-- **Rejected:** stock and money stay unchanged. If the GM confirms rejection, its status may be
-  recorded without treating the request as a completed purchase.
+- **Rejected:** stock and money stay unchanged. Every explicit GM rejection writes a GM-only
+  receipt with the attempted trade, negotiation result (if any) and final outcome. If ledger
+  writing fails, report it to the GM and hold the service slot for reconciliation; never report
+  the decision as durably logged when it is not.
 - **Stale or interrupted:** no success notice. A durable stage record permits a GM to compare
   actual documents and resume or correct manually. Foundry's multi-document updates are not a
   database transaction, so a successful click is not sufficient proof of a completed trade.
 
-## Review gate
+## Sprint 5 validation gate
 
-The proposed decisions in [TECHNICAL_JUSTIFICATION.md](TECHNICAL_JUSTIFICATION.md) require owner
-review before Sprint 5. In particular, review the GM-only Actor/public projection, PC-specific
-relationships, the three money modes, GM-authorized rejection logging, and the requirement that
-the right-click action work for non-owned tokens. [IMPLEMENTATION_ROADMAP.md](IMPLEMENTATION_ROADMAP.md)
-defines the evidence needed before any automation is released.
+Before writing merchant runtime code, test in live Foundry V14 / D&D5e 5.3.3 whether an ordinary
+player can right-click a merchant token they do not own, open the Shop UI and browse an approved
+inventory view without Actor ownership. Also test two players browsing at once while only one
+checkout is admitted for the same merchant. Record actual setup, steps, results and any required
+design change in [IMPLEMENTATION_ROADMAP.md](IMPLEMENTATION_ROADMAP.md). These behaviours are
+**unverified design requirements**, not claims about current Foundry support. The other security
+and recovery proofs in the roadmap remain required before transaction implementation.
