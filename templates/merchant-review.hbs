@@ -4,7 +4,7 @@
     <strong>Player:</strong> {{claimedUser}}</p>
   <p class="dt-warning">{{note}}</p>
   <h3>Basket</h3>
-  {{#each basket}}<div data-trade-line data-id="{{id}}" data-direction="{{direction}}>
+  {{#each basket}}<div data-trade-line data-id="{{id}}" data-direction="{{direction}}">
     <strong>{{direction}}: {{name}}</strong> ({{priceLabel}} each)
     <label>Quantity <input name="quantity" type="number" min="0" step="1" value="{{quantity}}"></label>
     <label>Unit price (cp) <input name="copper" type="number" min="0" step="1" value="{{copper}}"></label>

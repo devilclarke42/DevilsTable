@@ -47,27 +47,45 @@ export class MerchantReviewApplication extends HandlebarsApplicationMixin(Applic
     await this.close();
   }
   #readEdits() {
-    return [...this.element.querySelectorAll("[data-trade-line]")].map(row => ({
-      id: row.dataset.id, direction: row.dataset.direction,
-      quantity: Number(row.querySelector("[name=quantity]").value), copper: Number(row.querySelector("[name=copper]").value)
-    }));
+    const rows = [...this.element.querySelectorAll("[data-trade-line]")];
+    if (!rows.length) throw Error("The review form has no item rows. Close it and request checkout again.");
+    return rows.map(row => {
+      const quantity = row.querySelector("[name=quantity]");
+      const copper = row.querySelector("[name=copper]");
+      if (!quantity || !copper || !quantity.value.trim() || !copper.value.trim()) {
+        throw Error("The review form is missing a quantity or price. Close it and request checkout again.");
+      }
+      const result = { id: row.dataset.id, direction: row.dataset.direction,
+        quantity: Number(quantity.value), copper: Number(copper.value) };
+      if (![result.quantity, result.copper].every(n => Number.isSafeInteger(n) && n >= 0)) {
+        throw Error("Quantities and prices must be whole, nonnegative numbers.");
+      }
+      return result;
+    });
   }
   static async #recalculate() {
-    if (this.#saving) return;
+    if (this.#saving) return false;
     try {
-      this.#edits = this.#readEdits();
-      this.#data.proposal = quoteTrade(this.#data.actor, this.#data.character, this.#data.request, this.#edits);
+      const edits = this.#readEdits();
+      const proposal = quoteTrade(this.#data.actor, this.#data.character, this.#data.request, edits);
+      this.#edits = edits;
+      this.#data.proposal = proposal;
       await this.render();
-    } catch (error) { ui.notifications.error(error.message); }
+      return true;
+    } catch (error) { ui.notifications.error(error.message); return false; }
   }
   static async #approve() {
-    const edits = this.#readEdits();
-    if (JSON.stringify(edits) !== JSON.stringify(this.#edits)) {
-      await MerchantReviewApplication.#recalculate.call(this);
-      ui.notifications.info("Review the recalculated totals and coin balances, then approve.");
-      return;
-    }
-    await this.#complete("approved");
+    if (this.#saving || this.#finished) return;
+    try {
+      const edits = this.#readEdits();
+      if (JSON.stringify(edits) !== JSON.stringify(this.#edits)) {
+        if (await MerchantReviewApplication.#recalculate.call(this)) {
+          ui.notifications.info("Review the recalculated totals and coin balances, then approve.");
+        }
+        return;
+      }
+      await this.#complete("approved");
+    } catch (error) { ui.notifications.error(error.message); }
   }
   static async #reject() { await this.#complete("rejected"); }
   static async #dismiss() { await this.#complete("close"); }

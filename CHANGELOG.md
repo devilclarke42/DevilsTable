@@ -3,6 +3,21 @@
 This file retains detailed repository build history. The official milestone/release record is
 [docs/CHANGELOG.md](docs/CHANGELOG.md). Versions here do not imply a public GitHub Release exists.
 
+## 0.2.0-alpha.15 — 2026-09-26 — Approval form repair
+
+### Fixed
+
+- Close the missing quote on the review row's direction attribute. Malformed HTML had
+  caused Approve to read a missing quantity input before the transaction started.
+- Validate missing, blank and invalid fields and report a usable error without invoking
+  settlement. Recalculation commits edited values only after the quote succeeds.
+
+### Validation
+
+- 256 tests pass, including parsing the actual template row as HTML and rejecting a
+  malformed review form. The HTML regression test uses Python 3's standard-library parser.
+- Live purchase approval requires retest; the reported failure occurred before transfers.
+
 ## 0.2.0-alpha.14 — 2026-09-26 — Sprint 6 transaction candidate
 
 ### Added

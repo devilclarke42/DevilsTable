@@ -171,3 +171,12 @@ Use a backed-up test world, one active GM session and the exact target Foundry/s
 
 Record Foundry/system versions, other enabled modules and each observed result. These live tests
 have not been performed by the assistant and must not be marked passed from the automated suite.
+
+## Alpha.15 approval correction
+
+The first live approval report exposed malformed HTML: a missing closing quote on the
+trade row's direction attribute caused the quantity-input lookup to return null. This
+failed before settlement. Alpha.15 fixes the attribute, validates the form fields and
+keeps failed recalculations from replacing the last reviewed edits. The suite now has
+256 passing tests, including a real HTML parse of the template row. Live approval still
+requires retesting; no successful transfer is inferred from this fix.

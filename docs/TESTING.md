@@ -163,3 +163,7 @@ Synthetic fixtures are not proposed game content. Do not commit or publish an in
 Record the commit SHA, Foundry build, D&D5e version, Forge import method, enabled modules,
 browser, date, checks passed/failed and relevant console errors. Never include account tokens
 or private campaign data. Update this document and the changelog with the real results.
+
+The merchant review template regression uses `python3` and its standard-library
+`html.parser`; no Python packages are required. Install Python 3 alongside Node to run
+the complete test suite.
