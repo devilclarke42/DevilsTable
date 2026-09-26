@@ -3,6 +3,57 @@
 This file retains detailed repository build history. The official milestone/release record is
 [docs/CHANGELOG.md](docs/CHANGELOG.md). Versions here do not imply a public GitHub Release exists.
 
+## 0.2.0-alpha.11 — 2026-09-26 — Optional merchant population
+
+### Added
+
+- Merchant Setup can roll a profile's existing stock RollTables, show an inventory preview,
+  and add its referenced compendium Items with weighted quantities after explicit GM action.
+- Existing source IDs, manual quantities and prices remain unchanged. Reapplying the same
+  preview skips existing goods; missing references fail before any creation begins.
+
+### Fixed
+
+- GM-local shop requests are handled locally without relying on a socket echo. Player stock
+  requests now show a timeout message if the GM does not respond.
+
+## 0.2.0-alpha.10 — 2026-09-26 — Shop window first render
+
+### Fixed
+
+- Force the Shop UI's initial ApplicationV2 render. Previously a valid click and stock request
+  could complete without mounting the shop window, producing no visible player response.
+- Added a regression test that models Foundry's first-render contract and requires the window
+  to be mounted before a stock request is sent. Live player acceptance remains pending.
+
+## 0.2.0-alpha.9 — 2026-09-26 — Merchant token entry fix
+
+### Fixed
+
+- Right-click entry now listens on the canvas DOM element and resolves visible merchant tokens
+  using Foundry V14's native client-to-canvas coordinates. It requires no Actor access, ignores
+  right-drag panning, and removes its listeners when the scene is torn down.
+- Enabled the module socket channel required for stock and checkout messages.
+- Added regression checks for unowned tokens, zoomed coordinates, visibility, active layer and
+  cancelled/dragged clicks. Live acceptance of the corrected entry remains pending.
+
+## 0.2.0-alpha.8 — 2026-09-25 — Sprint 5 merchant proof build
+
+### Added
+
+- GM merchant setup for existing NPC Actors and linked scene tokens; separate player Shop UI
+  with read-only public offers, search, category filters and a temporary basket.
+- Checkout requests, one GM-side merchant service slot, GM approval/rejection/close window,
+  native currency display and bounded GM-only demonstration receipts (default Last 500).
+- Multiplayer validation instructions and isolated basket/projection/retention checks.
+
+### Limits
+
+- Foundry V14 multiplayer and non-owner right-click require live acceptance. Socket sender
+  identity is not authenticated for real transfers; the review explicitly marks it unverified.
+- Approval does not transfer Items or currency. There is no negotiation, relationship update,
+  restock or live settlement in this build.
+
 ## Sprint 4 — Merchant System specification — 2026-09-25
 
 ### Added

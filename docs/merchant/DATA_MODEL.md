@@ -1,6 +1,8 @@
 # Merchant data model — Sprint 4 approved design
 
-**Status:** approved design pending live Foundry proofs; these are design contracts, not current JSON schema or shipped Actor flags.
+**Status:** approved long-term design pending live Foundry proofs. Sprint 5 alpha.8 ships a small
+NPC flag with configuration and bounded demonstration decision summaries; this document's
+full ledger, transfers and relationships are not yet runtime features.
 All quantities and coin counts below are nonnegative safe integers. Identifiers are stable within a
 world. Names and prices are mutable. Schema versions apply to merchant state and ledger entries
 independently; unknown future fields remain untouched during migration.

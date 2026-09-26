@@ -1,6 +1,6 @@
 # Merchant System implementation roadmap — Sprint 4 approved design
 
-**Status:** owner-approved direction with required changes; live proofs precede Sprint 5 merchant code. The existing
+**Status:** Sprint 5 proof build implemented after owner authorised building a module for self-testing; live acceptance remains pending. The existing
 [versioned roadmap](../ROADMAP.md) currently lists Tavern as 0.3.0 and Merchant Builder as 0.8.0.
 The user requested merchant-system work before Tavern. Review the version ordering with this
 specification; do not renumber published milestones or start Tavern as part of Sprint 4.
@@ -29,13 +29,16 @@ specification; do not renumber published milestones or start Tavern as part of S
 | Ledger and confidentiality | Read-only player cannot read merchant relationship notes, GM notes or ledger, including via Actor flags/API; GM can index and open receipts without scanning every record. |
 | Public projection delivery | Another player's client cannot extract restricted stock or private relationship context from a socket packet. Only GM-approved universally public stock may use the normal broadcast path. |
 
-Run and document the first three proofs **before writing any Merchant System code**. If live
+The original gate required live proofs before code; the owner subsequently authorised a limited
+module build so they can run those proofs. The alpha.8 request pipeline makes no inventory or
+currency transfers and explicitly labels claimed socket identity as unverified. Run and
+document the first three proofs **before approving real transfers**. If live
 Foundry cannot provide a suitable right-click entry without Actor ownership, document the
 limitation and propose a token-scoped alternative for owner review. Concurrent checkout may
 require a GM-authoritative service slot, since independent client locks are insufficient.
 If any proof fails, revise the specification with the owner. Do not silently weaken checkout
 attribution or call a multi-document write atomic to meet a schedule.
-The current environment and pending checks are recorded in
+The current environment, alpha.8 proof build and pending checks are recorded in
 [SPRINT_5_VALIDATION.md](SPRINT_5_VALIDATION.md). A disposable Foundry world with two player
 accounts is required before implementation begins.
 

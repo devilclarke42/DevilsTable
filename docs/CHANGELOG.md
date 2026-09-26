@@ -12,6 +12,9 @@ GitHub Release or installation manifest exists. No release dates are invented fo
 
 ### Added
 
+- `0.2.0-alpha.8` Sprint 5 proof build: GM NPC merchant setup, separate player Shop UI, public
+  Actor Item projection, local basket, checkout requests and GM review with one service slot.
+  Approvals/rejections record GM-only demonstration receipts; Items and currency are unchanged.
 - Sprint 5 prerequisite [validation report](merchant/SPRINT_5_VALIDATION.md) documenting the
   unavailable live Foundry environment, exact multiplayer proof steps and D&D5e 5.3.3 native
   currency schema inspection; merchant implementation is still gated.

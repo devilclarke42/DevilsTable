@@ -1,0 +1,21 @@
+<div class="dt-shop">
+  <h2>Enable an NPC merchant</h2>
+  <p>Only GMs can open or edit the NPC sheet. Players browse public stock through the separate Shop UI.</p>
+  <label>NPC <select name="npc" {{#if busy}}disabled{{/if}}>{{#each npcs}}<option value="{{id}}" {{#if selected}}selected{{/if}}>{{name}}{{#if enabled}} (enabled){{/if}}</option>{{/each}}</select></label>
+  <label>Availability <select name="availability"><option value="open">Open</option><option value="closed">Closed</option>
+    <option value="busy">Busy</option><option value="travelling">Travelling</option><option value="sleeping">Sleeping</option></select></label>
+  <button type="button" data-action="enable" {{#if busy}}disabled{{/if}}>Enable / update linked tokens</button>
+  <p role="status">{{message}}</p>
+  <p>Only Items copied from Devil's Table or manually given an approved public description and price appear in player stock.</p>
+  <hr>
+  <h3>Optional starting stock</h3>
+  <p>Build the Item compendium and Stock RollTables first. Roll a preview, then add the chosen assortment with its weighted quantities. Existing inventory and prices are preserved.</p>
+  {{#if stockError}}<p role="alert">{{stockError}}</p>{{/if}}
+  <label>Stock profile <select name="profile" {{#if stockBlocked}}disabled{{/if}}>{{#each profiles}}<option value="{{id}}" {{#if selected}}selected{{/if}}>{{name}}</option>{{/each}}</select></label>
+  <button type="button" data-action="previewStock" {{#if stockBlocked}}disabled{{/if}}>Roll stock preview</button>
+  {{#if preview}}
+    <h3>{{previewMerchant}} — {{preview.profileName}}</h3>
+    <ul class="dt-report">{{#each preview.items}}<li>{{#if skip}}Keep existing: {{else}}Add {{quantity}} × {{/if}}{{name}} — {{price.value}} {{price.denomination}} per {{saleUnit}}</li>{{/each}}</ul>
+    <button type="button" data-action="addStock" {{#if busy}}disabled{{/if}}>Add previewed stock to {{previewMerchant}}</button>
+  {{/if}}
+</div>

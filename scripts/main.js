@@ -9,6 +9,9 @@ import { RollTableBuilderApplication } from "./apps/roll-table-builder-app.js";
 import { rebuildStockTables } from "./builders/roll-table-builder.js";
 import { rollStockList } from "./stock/stock-roller.js";
 import { cleanupLegacyStockTables } from "./builders/legacy-table-cleanup.js";
+import { MerchantManagerApplication } from "./merchant/manager-app.js";
+import { enableMerchant, initialiseMerchantService } from "./merchant/service.js";
+import { openMerchantShop, registerMerchantTokenEntry } from "./merchant/token-entry.js";
 
 Hooks.once("init", () => {
   registerSettings();
@@ -18,6 +21,12 @@ Hooks.once("init", () => {
     rebuildCompendiums,
     rebuildStockTables,
     cleanupLegacyStockTables,
+    enableMerchant,
+    openMerchantShop,
+    openMerchantManager: () => {
+      if (!game.user.isGM) throw new Error("Only a GM can set up merchants.");
+      return new MerchantManagerApplication().render({ force: true });
+    },
     rollStock: rollStockList,
     openStockBuilder: () => {
       if (!game.user.isGM) throw new Error("Only a GM can open the stock table builder.");
@@ -32,5 +41,7 @@ Hooks.once("init", () => {
 });
 
 Hooks.once("ready", () => {
+  initialiseMerchantService();
+  registerMerchantTokenEntry();
   if (game.user.isGM) logger.debug("GM builder API is ready.");
 });

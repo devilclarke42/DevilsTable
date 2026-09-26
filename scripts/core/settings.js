@@ -1,8 +1,21 @@
 import { MODULE_ID } from "../constants.js";
 import { CompendiumBuilderApplication } from "../apps/compendium-builder-app.js";
 import { RollTableBuilderApplication } from "../apps/roll-table-builder-app.js";
+import { MerchantManagerApplication } from "../merchant/manager-app.js";
 
 export function registerSettings() {
+  game.settings.register(MODULE_ID, "merchantHistoryRetention", {
+    name: "Merchant history retention", hint: "Keep GM-only checkout decisions per merchant; recovery entries are protected in later transfer stages.",
+    scope: "world", config: true, type: new foundry.data.fields.StringField(),
+    choices: { last100: "Last 100", last500: "Last 500", last1000: "Last 1000", unlimited: "Unlimited" },
+    default: "last500"
+  });
+
+  game.settings.registerMenu(MODULE_ID, "merchantManager", {
+    name: "Set Up NPC Merchants", label: "Open Merchant Setup",
+    hint: "Enable an existing NPC and its linked tokens for the Sprint 5 Shop UI.",
+    icon: "fa-solid fa-store", type: MerchantManagerApplication, restricted: true
+  });
   game.settings.register(MODULE_ID, "debugLogging", {
     name: "Enable debug logging",
     hint: "Write detailed Devil's Table diagnostics to the browser console.",
