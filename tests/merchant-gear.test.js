@@ -17,7 +17,7 @@ class NativeItem extends Item {
     Object.defineProperty(system, "preCreateGear", { configurable: true, enumerable: false, value: () => {
       const properties = this.data.system.properties ?? [];
       this.data.system.properties = this.parent.type === "npc" && system.type?.value !== "natural"
-        ? [...new Set([...properties, "gear"])] : properties.filter(p => p !== "gear");
+        ? [...properties, "gear"] : properties.filter(p => p !== "gear");
     } });
     return system;
   }
@@ -43,23 +43,30 @@ test("backpack and strap purchase predicts native gear removal and selling predi
   const bag = [...pc.items].find(i => i.type === "container");
   const sale = { id: "sell", userId: "player", lines: [], sales: [{ id: bag.id, quantity: 1 }] };
   await executeTrade({ merchant: m, character: pc, request: sale, quote: quoteTrade(m, pc, sale), receiptAdapter: ledger() });
-  assert.deepEqual([...m.items].find(i => i.type === "container").system.properties, ["gear"]);
+  assert.deepEqual([...new Set([...m.items].find(i => i.type === "container").system.properties)], ["gear"]);
 });
-for (const conflict of [false, true]) test(`legacy gear recovery ${conflict ? "preserves genuine edits" : "restores inventory and balances, then is idempotent"}`, async () => {
+for (const conflict of [false, true, "property", "restored"]) test(`legacy gear recovery ${conflict ? "preserves genuine edits" : "restores inventory and balances, then is idempotent"}`, async () => {
   const { m, pc, request } = world();
   const steps = makeSteps(m, pc, quoteTrade(m, pc, request));
   const index = steps.findIndex(s => s.kind === "item" && s.actorId === pc.id);
   const target = steps[index]; target.after.system.properties = ["gear"]; // alpha.18 receipt
   await pc.createEmbeddedDocuments("Item", [target.after]);
   m.items.delete("bag"); // observed partial transfer, wallets already at original balances
-  if (conflict) pc.items.get(target.itemId).data.system.description.value = "Player edit";
+  if (conflict === true) pc.items.get(target.itemId).data.system.description.value = "Player edit";
+  if (conflict === "property") pc.items.get(target.itemId).data.system.properties.push("mgc");
+  if (conflict === "restored") {
+    pc.items.delete(target.itemId);
+    const source = steps.find(s => s.kind === "item" && s.actorId === m.id);
+    await m.createEmbeddedDocuments("Item", [source.before]);
+    m.items.get("bag").data.system.properties = ["gear", "gear"];
+  }
   let record = { id: request.id, date: "test", merchantId: m.id, characterId: pc.id,
     status: "needs-recovery", steps, attempted: index };
   const doc = { uuid: "Receipt.gear", pages: [], getFlag: () => structuredClone(record),
     async update(data) { record = structuredClone(data["flags.devils-table.transaction"]); } };
   globalThis.fromUuid = async () => doc; game.actors = new Map([[m.id, m], [pc.id, pc]]);
   for (const a of [m, pc]) await a.setFlag("devils-table", "transactionPending", doc.uuid);
-  if (conflict) {
+  if (conflict === true || conflict === "property") {
     await assert.rejects(recoverTrade(m), /Conflicting edit/);
     assert.equal(pc.items.size, 1); assert.equal(m.items.has("bag"), false);
     assert.equal(m.getFlag("devils-table", "transactionPending"), doc.uuid);

@@ -8,6 +8,9 @@ const inventoryData = item => item?.toObject() ?? null;
 function itemState(data) {
   if (!data) return null;
   const copy = clone(data); delete copy._stats; delete copy.sort;
+  // D&D5e declares properties as a SetField; source arrays may retain duplicates
+  // after preCreateGear. Compare membership, without mutating stored Item data.
+  if (Array.isArray(copy.system?.properties)) copy.system.properties = [...new Set(copy.system.properties)].sort();
   return copy;
 }
 function snapshot(actor, step) {
@@ -42,6 +45,7 @@ function difference(expected, actual, path = "value") {
   return path;
 }
 function verifyStep(actor, step, expected, phase) {
+  if (step.kind === "item") expected = itemState(expected);
   const actual = snapshot(actor, step);
   if (equal(actual, expected)) return;
   const detail = difference(expected, actual);
@@ -173,7 +177,9 @@ export async function executeTrade({ merchant, character, quote, request, receip
 }
 async function restoreSteps(record, actors) {
   for (let i = record.attempted; i >= 0; i--) {
-    const step = record.steps[i], actor = actors.find(a => a.id === step.actorId);
+    const saved = record.steps[i];
+    const step = saved.kind === "item" ? { ...saved, before: itemState(saved.before), after: itemState(saved.after) } : saved;
+    const actor = actors.find(a => a.id === step.actorId);
     const current = snapshot(actor, step);
     // Old receipts predate gear prediction. Accept only that native creation change;
     // quantities, other properties and all other saved data must still match exactly.

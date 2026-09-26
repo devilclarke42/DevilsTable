@@ -3,6 +3,22 @@
 This file retains detailed repository build history. The official milestone/release record is
 [docs/CHANGELOG.md](docs/CHANGELOG.md). Versions here do not imply a public GitHub Release exists.
 
+## 0.2.0-alpha.21 — 2026-09-26 — Compare native property sets
+
+### Fixed
+
+- Compare Item properties by sorted unique membership, matching D&D5e's SetField semantics.
+  Native gear creation can leave duplicate gear entries in serialized source arrays.
+- Apply the same comparison to legacy receipt snapshots during recovery without rewriting
+  receipts or current Item properties. Unrelated field or property membership edits still block.
+
+### Validation
+
+- Corrected the native creation fixture to append gear without assuming source deduplication.
+  It reproduces a pre-fix transfer verification failure on NPC creation.
+- Added already-restored duplicate-gear recovery and changed-property rejection coverage.
+- All 265 tests pass. Live recovery and approval remain pending.
+
 ## 0.2.0-alpha.20 — 2026-09-26 — Isolate Item constructor defaults
 
 ### Fixed

@@ -273,3 +273,18 @@ Install alpha.20 and repeat Check / recover interrupted trade before another che
 A previous recovery may already have moved some Items back; saved before-state checks make
 retry safe when those Items match. Stop on any further conflict and report its full message.
 Live recovery and a fresh successful transaction still require confirmation.
+
+## Alpha.21 property-set comparisons
+
+The restored merchant backpack contains `properties: ["gear", "gear"]`. Native preCreateGear
+appends gear even when it is already present. The previous fixture incorrectly assumed that
+serialized source data was deduplicated. D&D5e defines properties as a SetField, so comparison
+now uses sorted unique membership for this field alone, for both actual Items and receipt
+snapshots. No source arrays or receipt history are rewritten. Added or removed property
+membership and every other gameplay field remain checked.
+
+The corrected fixture reproduces a native NPC transfer mismatch before the fix. All 265 tests
+pass, including recovery when the backpack has already returned with duplicate gear entries
+and refusal to recover after an unrelated property was added. Live verification is pending.
+Install alpha.21, reload, and run the same recovery action. Confirm rolled-back, inventories,
+and balances before requesting a fresh purchase. Do not manually remove the returned backpack.
