@@ -21,10 +21,10 @@
       {{else}}<p>No matching public offers.</p>{{/each}}
     </section>
     <aside class="dt-shop-basket" aria-label="Your basket"><h3>Basket</h3>
-      {{#each basket}}<p>{{count}} × {{name}} — {{subtotal}} cp
+      {{#each basket}}<p>{{count}} × {{name}} — {{subtotalLabel}}
         <button type="button" data-action="remove" data-id="{{id}}" aria-label="Remove one {{name}}">Remove one</button></p>
       {{else}}<p>Empty. Items are not reserved.</p>{{/each}}
-      <p><strong>Total: {{total}} cp</strong></p>
+      <p><strong>Total: {{totalLabel}}</strong></p>
       <button type="button" data-action="checkout" {{#unless canCheckout}}disabled{{/unless}}>Request checkout</button>
       <p>Prices and stock are confirmed by the GM. Approval in this test build does not move goods or coins.</p>
     </aside>

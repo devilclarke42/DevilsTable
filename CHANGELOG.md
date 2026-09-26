@@ -3,6 +3,23 @@
 This file retains detailed repository build history. The official milestone/release record is
 [docs/CHANGELOG.md](docs/CHANGELOG.md). Versions here do not imply a public GitHub Release exists.
 
+## 0.2.0-alpha.12 — 2026-09-26 — Stock relay diagnostics and readable totals
+
+### Changed
+
+- Basket subtotals and totals, and GM review prices, display gp/sp/cp with zero
+  denominations omitted. Calculations and native Actor wallets remain unchanged.
+- Module socket sends include Foundry's acknowledgement callback. Debug logging
+  records send, acknowledgement and receipt without logging inventory payloads.
+- Relay rejection and GM processing errors now return actionable messages where
+  possible; stock timeout guidance includes a full game-server restart.
+
+### Validation
+
+- 238 automated tests pass, including separate GM/player service instances with no
+  player access to the merchant Actor. Live player stock delivery remains unverified;
+  screenshots confirm GM stock and a player timeout, not the cause of that timeout.
+
 ## 0.2.0-alpha.11 — 2026-09-26 — Optional merchant population
 
 ### Added

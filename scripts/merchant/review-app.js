@@ -1,3 +1,4 @@
+import { formatCopper } from "./currency.js";
 const { ApplicationV2, HandlebarsApplicationMixin } = foundry.applications.api;
 
 export class MerchantReviewApplication extends HandlebarsApplicationMixin(ApplicationV2) {
@@ -17,7 +18,8 @@ export class MerchantReviewApplication extends HandlebarsApplicationMixin(Applic
   async _prepareContext(options) {
     return { ...await super._prepareContext(options), merchant: this.#data.actor.name,
       character: this.#data.character.name, claimedUser: this.#data.user.name,
-      basket: this.#data.proposal.basket, total: this.#data.proposal.total,
+      basket: this.#data.proposal.basket.map(row => ({ ...row, priceLabel: formatCopper(row.copper) })),
+      totalLabel: formatCopper(this.#data.proposal.total),
       currency: { ...this.#data.character.system.currency },
       note: "Request identity is unverified on the module socket. This sprint does not move Items or currency." };
   }

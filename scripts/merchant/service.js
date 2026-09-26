@@ -11,7 +11,21 @@ function coordinator() {
   return [...game.users].filter(user => user.active && user.isGM).sort((a, b) => a.id.localeCompare(b.id))[0];
 }
 
-function send(message) { game.socket.emit(SOCKET_CHANNEL, message); }
+function send(message) {
+  logger.debug("Merchant socket sent", { type: message.type, id: message.id });
+  // Supply the acknowledgement callback used by Foundry's module socket contract.
+  game.socket.emit(SOCKET_CHANNEL, message, response => {
+    logger.debug("Merchant socket acknowledged", { type: message.type, id: message.id });
+    if (response?.error) {
+      logger.error("Merchant socket relay rejected packet", response.error);
+      const callback = requests.get(message.id);
+      if (callback) {
+        requests.delete(message.id);
+        void callback({ id: message.id, error: "Foundry could not relay the merchant request. Restart the game server after installing the update." });
+      }
+    }
+  });
+}
 function notify(id, message) {
   const packet = { type: "result", to: id, ...message };
   // Foundry relays module packets to other clients; a GM browsing locally needs local delivery.
@@ -33,6 +47,7 @@ function resolveRequest(msg) {
 
 async function receive(msg) {
   if (!msg || typeof msg !== "object") return;
+  logger.debug("Merchant socket received", { type: msg.type, id: msg.id, to: msg.to });
   if (msg.type === "stock" || msg.type === "result") {
     if (msg.to !== game.user.id) return;
     const entry = requests.get(msg.id);
@@ -113,7 +128,7 @@ export function merchantRequest(type, details, callback) {
   if (typeof callback === "function") {
     const timer = type === "browse" ? setTimeout(() => {
       if (!requests.delete(id)) return;
-      void callback({ id, error: "The GM did not respond. Keep the GM connected, reload both clients after an update, then Refresh stock." });
+      void callback({ id, error: "No stock reply arrived from the GM. Restart the game server after updating (a browser refresh alone may not reload the module socket), reconnect GM and player, then Refresh stock. If this persists, enable debug logging and check both consoles." });
     }, 12000) : null;
     timer?.unref?.();
     requests.set(id, result => { if (timer) clearTimeout(timer); return callback(result); });
@@ -131,7 +146,13 @@ export function merchantRequest(type, details, callback) {
 
 export function initialiseMerchantService() {
   if (listening) return;
-  game.socket.on(SOCKET_CHANNEL, message => { void receive(message).catch(error => logger.error("Merchant socket error", error)); });
+  game.socket.on(SOCKET_CHANNEL, message => { void receive(message).catch(error => {
+    logger.error("Merchant socket error", error);
+    if (game.user.isGM && coordinator()?.id === game.user.id && inspect(message) &&
+        ["browse", "checkout"].includes(message.type)) {
+      notify(message.userId, { id: message.id, error: "The GM could not process this request. Check the GM console for the merchant error." });
+    }
+  }); });
   listening = true;
 }
 

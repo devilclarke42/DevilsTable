@@ -1,3 +1,4 @@
+import { formatCopper } from "./currency.js";
 import { logger } from "../core/logger.js";
 import { merchantRequest } from "./service.js";
 
@@ -31,12 +32,13 @@ export class MerchantShopApplication extends HandlebarsApplicationMixin(Applicat
       (!this.#query || `${item.name} ${item.description}`.toLocaleLowerCase().includes(this.#query.toLocaleLowerCase())));
     const basket = [...this.#basket].map(([id, count]) => {
       const item = this.#items.find(offer => offer.id === id);
-      return item ? { ...item, count, subtotal: count * item.copper } : null;
+      return item ? { ...item, count, subtotal: count * item.copper, subtotalLabel: formatCopper(count * item.copper) } : null;
     }).filter(Boolean);
     return { ...await super._prepareContext(options), merchant: this.#merchant, availability: this.#availability,
       items: filtered, basket, message: this.#message, query: this.#query,
       categories: [...new Set(this.#items.map(item => item.category))].map(id => ({ id, selected: id === this.#category })),
       total: basket.reduce((n, row) => n + row.subtotal, 0),
+      totalLabel: formatCopper(basket.reduce((n, row) => n + row.subtotal, 0)),
       canCheckout: !this.#pending && this.#availability === "open" && basket.length > 0 };
   }
 

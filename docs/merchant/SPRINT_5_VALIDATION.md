@@ -101,3 +101,24 @@ receipt retention and recovery records need live ledger proof before Sprint 6.
 outcomes above. Do not claim merchant acceptance or implement real transfers before that.
 Actual inventory/currency transfers,
 negotiation, relationship mutations and restocking remain outside Sprint 5.
+
+
+### Alpha.12: player stock timeout follow-up
+
+User screenshots show 101 public offers on the GM and a stock timeout on the player.
+This confirms local inventory projection, but not cross-client delivery. The cause
+is not established by the screenshots. Alpha.12 supplies the acknowledgement callback
+shown in Foundry's module socket example and logs packet send/acknowledgement/receipt
+when debug logging is enabled. GM processing failures return a safe error response.
+Reference: https://github.com/foundryvtt/foundryvtt/issues/582
+
+Retest after installing alpha.12 and fully stopping/starting the Forge game server,
+then reconnecting GM and player. Refresh stock on the player. A server restart tests
+whether previously loaded module socket configuration was stale; it is not a proven
+root cause. If the timeout persists, capture both clients' console entries with debug
+logging enabled, including any errors. Do not change Actor ownership.
+
+A separate-client automated relay test passes with the player's Actor collection
+inaccessible. It verifies application message handling, not a live Foundry server.
+Basket and review display now convert copper accounting totals to gp/sp/cp; wallets
+are neither converted nor updated. Total suite: 238 passing tests.

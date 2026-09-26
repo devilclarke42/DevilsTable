@@ -3,8 +3,8 @@
   <p><strong>Merchant:</strong> {{merchant}}<br><strong>Character:</strong> {{character}}<br>
     <strong>Claimed requester:</strong> {{claimedUser}}</p>
   <p class="dt-warning">{{note}}</p>
-  <h3>Basket</h3><ul>{{#each basket}}<li>{{quantity}} × {{name}} — {{copper}} cp per unit</li>{{/each}}</ul>
-  <p><strong>Request total:</strong> {{total}} cp</p>
+  <h3>Basket</h3><ul>{{#each basket}}<li>{{quantity}} × {{name}} — {{priceLabel}} per unit</li>{{/each}}</ul>
+  <p><strong>Request total:</strong> {{totalLabel}}</p>
   <h3>Character currency (read-only)</h3>
   <ul>{{#each currency}}<li>{{@key}}: {{this}}</li>{{/each}}</ul>
   <p>Approval and rejection only record this request. No Items or currency transfer in Sprint 5.</p>
