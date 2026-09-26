@@ -21,10 +21,15 @@ function snapshot(actor, step) {
   return itemState(inventoryData(actor.items.get(step.itemId)));
 }
 function equal(a, b) { return stable(a) === stable(b); }
-/** Predict only the native gear property change, on a detached Item with no world writes. */
-function createdItemState(actor, data) {
+/** Predict native creation adjustments on a detached Item with no world writes. */
+function createdItemState(actor, data, creatorId = game.user.id) {
   if (!data) return data;
   const copy = clone(data);
+  // Legacy receipts may omit the OWNER entry added for the document creator.
+  // Only that recorded creator is eligible; other ownership entries remain strict.
+  if (creatorId && copy.ownership && !(creatorId in copy.ownership)) {
+    copy.ownership[creatorId] = CONST.DOCUMENT_OWNERSHIP_LEVELS.OWNER;
+  }
   // Constructors may mutate their input with document defaults. Keep those defaults
   // separate from the saved comparison state; only gear properties are predicted.
   const item = new CONFIG.Item.documentClass(clone(copy), { parent: actor });
@@ -96,7 +101,8 @@ export function makeSteps(merchant, character, quote, now = new Date().toISOStri
     Object.assign(data, createdItemState(target, data));
     const canStack = !data.effects?.length && !data.system.uses?.max && data.type !== "container";
     const match = canStack && [...virtual.get(target.id).values()].find(i => equal(comparableItem(i), comparableItem(data)));
-    const created = { ...data, _id: foundry.utils.randomID() };
+    const created = { ...data, _id: foundry.utils.randomID(),
+      ownership: { default: CONST.DOCUMENT_OWNERSHIP_LEVELS.NONE, [game.user.id]: CONST.DOCUMENT_OWNERSHIP_LEVELS.OWNER } };
     const after = match ? clone(match) : itemState(new CONFIG.Item.documentClass(created, { parent: target }).toObject());
     if (match) after.system.quantity += row.quantity;
     if (!Number.isSafeInteger(after.system.quantity)) throw Error("Stack quantity is too large.");
@@ -186,7 +192,7 @@ async function restoreSteps(record, actors) {
     // Old receipts predate gear prediction. Accept only that native creation change;
     // quantities, other properties and all other saved data must still match exactly.
     const before = step.kind === "item" && step.after === null ? createdItemState(actor, step.before) : step.before;
-    const after = step.kind === "item" && step.before === null ? createdItemState(actor, step.after) : step.after;
+    const after = step.kind === "item" && step.before === null ? createdItemState(actor, step.after, record.gmId ?? null) : step.after;
     if (equal(current, step.before) || equal(current, before)) continue;
     if (!equal(current, step.after) && !equal(current, after)) {
       const expected = after === null && current !== null ? before : after;

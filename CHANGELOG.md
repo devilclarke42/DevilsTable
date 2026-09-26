@@ -3,6 +3,23 @@
 This file retains detailed repository build history. The official milestone/release record is
 [docs/CHANGELOG.md](docs/CHANGELOG.md). Versions here do not imply a public GitHub Release exists.
 
+## 0.2.0-alpha.23 — 2026-09-26 — Explicit creator ownership
+
+### Fixed
+
+- Specify GM creator ownership on new transfer Items before creation, so expected data
+  agrees with native document ownership initialization.
+- For legacy creation steps, recognise a missing OWNER entry only for the receipt's recorded
+  GM creator. Do not ignore ownership or accept unrelated permission changes.
+
+### Validation
+
+- User confirms recovery appeared successful in alpha.22; fresh approval identified creator
+  ownership missing from the expected destination Item.
+- Native lifecycle fixture reproduces that failure and legacy recovery rejection before fix.
+- All 267 tests pass after fix, including rejection of an unrelated player ownership addition.
+- Live recovery of the latest trade and fresh approval still require confirmation.
+
 ## 0.2.0-alpha.22 — 2026-09-26 — Serializable Item comparisons
 
 ### Fixed

@@ -34,6 +34,7 @@ export function good(id = "rope", quantity = 1, price = 10) {
 }
 export function setup() {
   let count = 0;
+  globalThis.CONST = { DOCUMENT_OWNERSHIP_LEVELS: { NONE: 0, OWNER: 3 } };
   globalThis.foundry = { utils: { randomID: () => `new${++count}` } };
   globalThis.CONFIG = { Item: { documentClass: Item } };
   const gm = { id: "gm", isGM: true, active: true };

@@ -302,3 +302,21 @@ recovery. Conflicting restored Items now report their difference from the saved 
 All 266 automated tests pass. Install alpha.22, reload both clients and run Check / recover
 interrupted trade. Confirm rolled-back, original inventories and balances before a fresh
 checkout. Live completion has not yet been demonstrated.
+
+## Alpha.23 creator ownership
+
+The user reports alpha.22 recovery appeared successful. Fresh approval then failed on an
+added `ownership.<GM user ID>` entry on the destination Item. New Item plans now explicitly
+set default NONE and the executing GM as OWNER using native ownership constants, rather
+than constructing an expectation with no creator entry. Merchant Actor permissions remain
+unchanged; player access still uses the separate public shop projection.
+
+For legacy creation-step recovery, the expected Item may acquire an absent OWNER entry only
+for the GM ID saved on the transaction receipt. Other entries and existing permission values
+remain strict. Receipts missing a creator ID do not get this recovery adjustment. Recreating
+an original Item accounts for the current recovering GM. No permission is broadly ignored.
+
+All 267 tests pass. The native lifecycle fixture now initializes creator ownership and covers
+both successful transfer and legacy recovery; an unrelated player ownership entry still
+blocks recovery. Install alpha.23, reload both clients, recover the latest interrupted trade,
+and check inventories and wallets before a new checkout. Live success remains pending.
