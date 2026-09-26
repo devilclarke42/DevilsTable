@@ -209,3 +209,23 @@ sections hides existing panels instead of rerendering, preserving unsaved form v
 selector and status remain visible. Applying stock and running recovery require native DialogV2
 confirmation; cancelling the prompt makes no world changes. Existing item/table builder menus
 remain separate to avoid coupling catalogue generation to merchant configuration.
+
+## Alpha.18 native container handling
+
+The alpha.17 screenshot reports `value.system.quantity: expected 0, received 1` on the
+merchant Item. D&D5e 5.3.3's [ContainerData source](https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/module/data/item/container.mjs)
+defines quantity with minimum and maximum one and migrates quantity to one. Keeping a
+sold-out container with quantity zero is therefore incompatible with the native system.
+
+Sold-out containers are now deleted through the native embedded-document API. The existing
+receipt and rollback restore their original ID and data if a later step fails. Non-container
+merchant goods still retain zero-stock entries. Container stock generation creates one native
+Item per unit, so multiple containers appear as separate offers. No parallel inventory is stored.
+A fully sold-out container source can be added again by an explicit GM population action;
+this is not automatic restocking. Previously clamped quantities are not reconstructed.
+
+Validation covers container purchase and rollback while simulating the native quantity-one
+restriction, plus population and retry. Live validation: repeat the failing purchase, confirm
+one container reaches the character, disappears from the merchant, and currency settles once.
+The screenshot does not identify the Item type; if the failed Item was not a container,
+additional live investigation is needed. No live success is claimed by this build.

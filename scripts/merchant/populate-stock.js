@@ -55,17 +55,21 @@ export async function applyMerchantStock(actor, preview, { resolve = uuid => fro
       data.flags[MODULE_ID] ??= {};
       data.flags[MODULE_ID].offer = { origin: "generated", sourceUuid: row.uuid,
         stockProfileId: preview.profileId, restockEnabled: false };
-      planned.push({ sourceId: row.id, data });
+      // Native D&D5e containers cannot stack: each is an independent embedded Item.
+      const count = data.type === "container" ? row.quantity : 1;
+      if (data.type === "container") data.system.quantity = 1;
+      planned.push({ sourceId: row.id, data, count });
     }
     // Re-read after asynchronous resolution; manual additions since preview must not be duplicated.
     authorize(actor);
     const current = sourceIds(actor);
     const additions = planned.filter(row => !current.has(row.sourceId));
     if (additions.length) {
-      await actor.createEmbeddedDocuments("Item", additions.map(row => row.data));
-      for (const { sourceId, data } of additions) {
+      await actor.createEmbeddedDocuments("Item", additions.flatMap(row =>
+        Array.from({ length: row.count }, () => structuredClone(row.data))));
+      for (const { sourceId, data, count } of additions) {
         const found = actor.items.filter(item => item.getFlag(MODULE_ID, "sourceId") === sourceId);
-        if (found.length !== 1 || found[0].system.quantity !== data.system.quantity) {
+        if (found.length !== count || found.some(item => item.system.quantity !== data.system.quantity)) {
           throw new Error("Stock read-back failed. Some additions may have succeeded; review inventory before retrying. Existing source IDs will be skipped.");
         }
       }

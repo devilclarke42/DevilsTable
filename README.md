@@ -6,7 +6,7 @@ Foundry compendiums are generated from it and must never be edited as source dat
 
 ## Current status
 
-**Sprint 6 transaction candidate (`0.2.0-alpha.17`):** GM-approved buying and selling now
+**Sprint 6 transaction candidate (`0.2.0-alpha.18`):** GM-approved buying and selling now
 transfer native currency and embedded Items. Checkout is disabled when the selected character
 cannot afford the net basket. Both wallets and stock are rechecked at GM approval.
 
@@ -120,7 +120,7 @@ an item from the Item compendium build.
 1. Obtain the packaged ZIP from the successful **Validate and package** GitHub Actions run
    (artifact: `devils-table-framework`), or build it using the development commands below.
    Downloading an Actions artifact may wrap the module ZIP in another ZIP: extract the artifact
-   first and select `devils-table-v0.2.0-alpha.17.zip` for import.
+   first and select `devils-table-v0.2.0-alpha.18.zip` for import.
 2. Back up your test world. In The Forge's Import Wizard, import that module ZIP as a custom package.
    See the [Forge custom-package guide](https://forums.forge-vtt.com/t/how-to-upload-a-modified-version-of-a-module-system/10510).
 3. In a V14 / D&D5e 5.3.3 test world, enable **Devil's Table: Goods & Provisions** and reload.
@@ -153,7 +153,7 @@ the live acceptance test and an actual versioned release exist.
 ### Recovering from the alpha.2 read-back error
 
 Keep the existing generated compendium. Import the updated module ZIP using the same Forge
-custom-package method, restart/reload the test world and confirm the module shows `0.2.0-alpha.17`.
+custom-package method, restart/reload the test world and confirm the module shows `0.2.0-alpha.18`.
 Run **Village General Store → Containers → Validate / Preview**, then **Build / Rebuild**.
 If all 13 Items were saved, equivalent description formatting is accepted. The first alpha.7
 rebuild adds thirteen sale-unit flags, then reports thirteen unchanged on the next build.
@@ -250,3 +250,8 @@ both consoles. Player Actor ownership is not required and should not be granted.
 Merchant Setup now groups controls under Merchant, Trade, Stock and Recovery tabs.
 Switching tabs preserves unsaved form values. Adding previewed stock and running recovery
 require confirmation; previews and ordinary navigation do not.
+
+Alpha.18 fixes sold-out native containers: they leave the merchant inventory rather than
+being assigned quantity zero. Generated containers are separate quantity-one Items.
+Other goods retain zero-stock offers. All 260 automated tests pass; live approval still
+requires confirmation in the test world. Existing container stock is not automatically changed.

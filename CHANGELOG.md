@@ -3,6 +3,25 @@
 This file retains detailed repository build history. The official milestone/release record is
 [docs/CHANGELOG.md](docs/CHANGELOG.md). Versions here do not imply a public GitHub Release exists.
 
+## 0.2.0-alpha.18 — 2026-09-26 — Native container stock
+
+### Fixed
+
+- Remove sold-out native container Items instead of attempting to set their quantity to zero.
+  D&D5e 5.3.3 forces container quantity to one. Failed trades restore deleted containers
+  with their saved ID and data through the existing rollback pipeline.
+- Generate multiple containers as separate quantity-one Items, preserving native container
+  behaviour. Existing source IDs remain protected from duplicate population on retry.
+- Other merchant goods retain their existing zero-stock behaviour. Currency and verification
+  safeguards are unchanged.
+
+### Validation
+
+- All 260 tests pass. Added regression coverage for native container quantity enforcement, successful purchase,
+  rollback after destination creation failure, and multiple-container population/retry.
+- The live screenshot identifies a merchant quantity mismatch (expected 0, received 1).
+  The native container restriction explains this failure for container goods; live retest required.
+
 ## 0.2.0-alpha.17 — 2026-09-26 — Transfer diagnostics and setup tabs
 
 ### Changed

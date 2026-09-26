@@ -51,3 +51,18 @@ test("a manual addition after preview is preserved and skipped at apply", async 
   assert.deepEqual(await applyMerchantStock(actor, preview, { resolve }), { created: 0, skipped: 2 });
   assert.equal(actor.items[1].system.quantity, 22);
 });
+
+test("container population creates individual quantity-one Items and skips them on retry", async t => {
+  const { actor, roll, resolve } = setup(t);
+  const containers = async uuid => {
+    const doc = await resolve(uuid);
+    const data = doc.toObject(); data.type = "container";
+    return { ...doc, toObject: () => structuredClone(data) };
+  };
+  const preview = await previewMerchantStock(actor, {}, { roll });
+  assert.deepEqual(await applyMerchantStock(actor, preview, { resolve: containers }), { created: 1, skipped: 1 });
+  assert.equal(actor.items.length, 8);
+  assert.ok(actor.items.slice(1).every(item => item.system.quantity === 1));
+  assert.deepEqual(await applyMerchantStock(actor, preview, { resolve: containers }), { created: 0, skipped: 2 });
+  assert.equal(actor.items.length, 8);
+});

@@ -92,3 +92,33 @@ test("a silently cancelled native write identifies the operation, Actor and diff
   await assert.rejects(trade(m, pc), /Transfer read-back failed: currency on pc; value.cp: expected 40, received 50/);
   assert.equal(pc.system.currency.cp, 50); assert.equal(m.items.get("rope").system.quantity, 1);
 });
+
+test("native quantity-one containers transfer individually and restore after failure", async () => {
+  for (const fail of [false, true]) {
+    setup();
+    const bag = { ...good(), type: "container" };
+    const m = new Actor("merchant", 0, [bag]), pc = new Actor("pc", 50);
+    const original = m.items.get("rope").toObject();
+    // D&D5e 5.3.3 ContainerData migration forces quantity to one on updates.
+    const update = m.updateEmbeddedDocuments.bind(m);
+    m.updateEmbeddedDocuments = async (...args) => {
+      await update(...args);
+      for (const item of m.items) if (item.type === "container") item.data.system.quantity = 1;
+    };
+    if (fail) pc.createEmbeddedDocuments = async () => { throw Error("container creation failed"); };
+    if (fail) {
+      await assert.rejects(trade(m, pc), /container creation failed/);
+      assert.deepEqual(m.items.get("rope").toObject(), original);
+      assert.equal(pc.items.size, 0);
+      assert.equal(walletValue(pc.system.currency), 50);
+      assert.equal(walletValue(m.system.currency), 0);
+    } else {
+      await trade(m, pc);
+      assert.equal(m.items.has("rope"), false);
+      assert.equal(pc.items.size, 1);
+      assert.equal([...pc.items][0].system.quantity, 1);
+      assert.equal(walletValue(pc.system.currency), 40);
+      assert.equal(walletValue(m.system.currency), 10);
+    }
+  }
+});

@@ -63,8 +63,9 @@ export function makeSteps(merchant, character, quote, now = new Date().toISOStri
     const sourceData = virtual.get(source.id).get(row.id);
     if (!Number.isSafeInteger(sourceData.system.quantity) || sourceData.system.quantity < row.quantity) throw Error("Stock changed before approval.");
     let remaining = clone(sourceData); remaining.system.quantity -= row.quantity;
-    // Keep sold-out merchant offers for future restock; fully sold PC possessions leave the sheet.
-    if (source === character && remaining.system.quantity === 0) remaining = null;
+    // D&D5e containers always have quantity 1; an exhausted container must be deleted.
+    // Other merchant goods retain zero-stock offers for future restock.
+    if ((source === character || sourceData.type === "container") && remaining.system.quantity === 0) remaining = null;
     steps.push({ kind: "item", actorId: source.id, itemId: row.id, before: clone(sourceData), after: remaining });
     if (remaining) virtual.get(source.id).set(row.id, remaining); else virtual.get(source.id).delete(row.id);
     const data = clone(sourceData);
