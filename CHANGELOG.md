@@ -3,6 +3,24 @@
 This file retains detailed repository build history. The official milestone/release record is
 [docs/CHANGELOG.md](docs/CHANGELOG.md). Versions here do not imply a public GitHub Release exists.
 
+## 0.2.0-alpha.16 — 2026-09-26 — Existing receipt review handling
+
+### Fixed
+
+- Close/Reject now resolve the existing checkout receipt instead of creating it again.
+  Completed results remain completed; pre-transfer and rolled-back attempts can be cancelled.
+- Closing an interrupted transfer preserves its recovery plan and ensures both Actors remain
+  blocked for recovery. Closing the review does not replay or reverse a completed transfer.
+- Receipt writes use detached JSON data, matching transport serialization. Failed read-back
+  identifies the mismatching path and retains the saved receipt for failure handling.
+
+### Validation
+
+- 257 tests pass, including existing receipts in committing, completed, rolled-back, rejected
+  and needs-recovery states. Dismissal never changes money or creates duplicate receipts.
+- The user's screenshot establishes the duplicate-receipt Close/Reject loop. The original
+  approval exception is not shown; successful live settlement is still unconfirmed.
+
 ## 0.2.0-alpha.15 — 2026-09-26 — Approval form repair
 
 ### Fixed

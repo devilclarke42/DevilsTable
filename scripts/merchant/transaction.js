@@ -105,6 +105,7 @@ export async function executeTrade({ merchant, character, quote, request, receip
     record.status = "completed";
     await receiptAdapter.save(doc, record);
   } catch (error) {
+    doc ??= error.receipt;
     if (doc && record) {
       record.error = error.message;
       try {
@@ -113,6 +114,11 @@ export async function executeTrade({ merchant, character, quote, request, receip
         await receiptAdapter.save(doc, record);
       } catch (recoveryError) {
         record.status = "needs-recovery"; record.error += ` Recovery: ${recoveryError.message}`;
+        for (const actor of actors) {
+          try {
+            if (!actor.getFlag(MODULE_ID, "transactionPending")) await actor.setFlag(MODULE_ID, "transactionPending", doc.uuid);
+          } catch (markerError) { logger.error("Could not persist recovery block", markerError); }
+        }
         try { await receiptAdapter.save(doc, record); } catch (saveError) { logger.error("Recovery receipt unavailable", saveError); }
         throw Error(`Trade needs GM recovery. Actors remain blocked. ${record.error}`);
       }

@@ -1,7 +1,7 @@
 import { quoteTrade, purchaseOffers, stable } from "./trade-model.js";
 import { tradeSettings } from "./settlement.js";
 import { executeTrade } from "./transaction.js";
-import { createReceipt, trimReceipts } from "./ledger.js";
+import { finishReceiptReview, trimReceipts } from "./ledger.js";
 import { MODULE_ID } from "../constants.js";
 import { logger } from "../core/logger.js";
 import { isMerchantToken, merchantConfig, ServiceSlots, SOCKET_CHANNEL } from "./model.js";
@@ -130,10 +130,10 @@ async function finish(actor, character, request, proposal, decision, edits) {
       if (!edits && stable(quote.basket) !== stable(proposal.basket)) throw Error("Prices changed. Close and resubmit this trade.");
       await executeTrade({ merchant: actor, character, quote, request });
     } else {
-      await createReceipt({ schemaVersion: 1, id: request.id, date: new Date().toISOString(), merchantId: actor.id,
+      decision = await finishReceiptReview({ schemaVersion: 1, id: request.id, date: new Date().toISOString(), merchantId: actor.id,
         characterId: character.id, merchantName: actor.name, characterName: character.name,
         userId: request.userId, gmId: game.user.id, request, quote: proposal,
-        status: decision === "close" ? "closed" : "rejected" });
+        status: decision === "close" ? "closed" : "rejected" }, [actor, character]);
       try { await trimReceipts(actor); } catch (error) { logger.warn("History retention deferred", error); }
     }
   } catch (error) {

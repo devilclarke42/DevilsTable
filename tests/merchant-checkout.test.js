@@ -69,3 +69,36 @@ for (const count of [2, 3, 5]) test(`${count} checkout clients: one GM review, b
     assert.equal([...docs.values()].filter(d => d.getFlag("devils-table", "transaction").status === "rejected").length, 1);
   }
 });
+
+test("existing receipts can be dismissed without replaying trades or losing recovery", async () => {
+  setup(); const gm = game.user; game.users = [gm]; game.users.activeGM = gm;
+  globalThis.ui = { notifications: { info: () => {} } };
+  const { pack, docs } = journalPack(); game.packs = new Map([[pack.collection, pack]]);
+  const { createReceipt, finishReceiptReview } = await import("../scripts/merchant/ledger.js");
+  for (const [status, attempted, expected, finalStatus, blocked] of [
+    ["committing", -1, "close", "closed", false],
+    ["committing", 0, "close", "committing", true],
+    ["needs-recovery", 2, "close", "needs-recovery", true],
+    ["completed", 4, "approved", "completed", false],
+    ["rolled-back", 2, "close", "closed", false],
+    ["rejected", undefined, "rejected", "rejected", false]
+  ]) {
+    const merchant = new Actor("merchant", 10), pc = new Actor("pc", 50);
+    const record = { id: `existing-${status}-${attempted}`, merchantId: merchant.id, characterId: pc.id,
+      merchantName: merchant.name, characterName: pc.name, date: "2026-09-26", status, attempted,
+      steps: [], quote: { total: 0, basket: [] } };
+    const doc = await createReceipt(record);
+    const before = docs.size;
+    const result = await finishReceiptReview({ ...record, status: "closed" }, [merchant, pc]);
+    assert.equal(result, expected); assert.equal(docs.size, before);
+    assert.equal(doc.getFlag("devils-table", "transaction").status, finalStatus);
+    assert.equal(Boolean(merchant.getFlag("devils-table", "transactionPending")), blocked);
+    assert.equal(Boolean(pc.getFlag("devils-table", "transactionPending")), blocked);
+    assert.equal(pc.system.currency.cp, 50); assert.equal(merchant.system.currency.cp, 10);
+  }
+  const m = new Actor("merchant"), pc = new Actor("pc");
+  const record = { id: "prewrite-reject", merchantId: m.id, characterId: pc.id, date: "2026-09-26", status: "committing", attempted: -1 };
+  const doc = await createReceipt(record);
+  assert.equal(await finishReceiptReview({ ...record, status: "rejected" }, [m, pc]), "rejected");
+  assert.equal(doc.getFlag("devils-table", "transaction").status, "rejected");
+});

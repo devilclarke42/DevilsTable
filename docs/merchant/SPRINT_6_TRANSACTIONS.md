@@ -180,3 +180,18 @@ failed before settlement. Alpha.15 fixes the attribute, validates the form field
 keeps failed recalculations from replacing the last reviewed edits. The suite now has
 256 passing tests, including a real HTML parse of the template row. Live approval still
 requires retesting; no successful transfer is inferred from this fix.
+
+## Alpha.16 existing receipt correction
+
+The owner reported that approval failed and Close/Reject then trapped the review. The supplied
+stack is from dismissal: an existing receipt prevented another receipt with the same request ID.
+The original approval exception is not visible. Alpha.16 resolves existing receipts by state:
+completed remains completed; a pre-write attempt (`attempted: -1`) or rolled-back attempt can be
+closed/rejected; a potentially partial attempt can be dismissed while retaining its recovery
+plan and blocking both Actors. No duplicate trade is performed. Reload both clients after
+installation. If Merchant Setup reports pending recovery, use its recovery action before
+requesting another trade. Do not delete private receipts to bypass recovery.
+
+Receipt verification now uses detached JSON snapshots and reports the first differing path.
+The suite passes 257 tests. Live approval remains to be retested; if it fails, capture the first
+approval error before trying Close so the original failure can be distinguished from dismissal.
