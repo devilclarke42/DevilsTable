@@ -6,7 +6,12 @@ import { quoteTrade } from "../scripts/merchant/trade-model.js";
 
 // Reproduce PhysicalItemTemplate.preCreateGear from D&D5e 5.3.3.
 class NativeItem extends Item {
-  constructor(data, { parent } = {}) { super(data); this.parent = parent; }
+  constructor(data, { parent } = {}) {
+    // Foundry constructors may clean/default their input object in place.
+    data.sort ??= 0;
+    data._stats ??= { modifiedTime: 123 };
+    super(data); this.parent = parent;
+  }
   get system() {
     const system = super.system;
     Object.defineProperty(system, "preCreateGear", { configurable: true, enumerable: false, value: () => {

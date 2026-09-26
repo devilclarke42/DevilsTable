@@ -20,12 +20,14 @@ function equal(a, b) { return stable(a) === stable(b); }
 function createdItemState(actor, data) {
   if (!data) return data;
   const copy = clone(data);
-  const item = new CONFIG.Item.documentClass(copy, { parent: actor });
+  // Constructors may mutate their input with document defaults. Keep those defaults
+  // separate from the saved comparison state; only gear properties are predicted.
+  const item = new CONFIG.Item.documentClass(clone(copy), { parent: actor });
   if (typeof item.system.preCreateGear === "function") {
     item.system.preCreateGear(copy, {}, game.user);
     copy.system.properties = item.toObject().system.properties;
   }
-  return copy;
+  return itemState(copy);
 }
 function difference(expected, actual, path = "value") {
   if (equal(expected, actual)) return null;

@@ -3,6 +3,21 @@
 This file retains detailed repository build history. The official milestone/release record is
 [docs/CHANGELOG.md](docs/CHANGELOG.md). Versions here do not imply a public GitHub Release exists.
 
+## 0.2.0-alpha.20 — 2026-09-26 — Isolate Item constructor defaults
+
+### Fixed
+
+- Isolate the native gear helper's constructor input from expected Item state. Constructor
+  defaults must not introduce sort or bookkeeping fields into recovery comparisons.
+- Apply the same existing Item-state normalization to the helper's result as to read-back.
+  All gameplay fields remain checked.
+
+### Validation
+
+- Strengthened the native gear regression fixture to mutate constructor inputs with sort
+  and bookkeeping defaults. It reproduces the pre-fix missing-sort recovery failure.
+- All 263 tests pass after the fix. Live recovery remains to be confirmed.
+
 ## 0.2.0-alpha.19 — 2026-09-26 — Native gear conversion and recovery
 
 ### Fixed

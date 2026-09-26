@@ -257,3 +257,19 @@ If any field still conflicts, leave the receipt and inventory intact and report 
 263 automated tests pass. Tests simulate native gear creation, both directions of transfer,
 legacy receipt recovery with wallets already restored, idempotence, and genuine-edit rejection.
 These are not live Foundry acceptance results; the user must confirm recovery and a fresh trade.
+
+## Alpha.20 constructor-default isolation
+
+The next live recovery message reports `value.sort: field missing` on Test Merchant.
+Alpha.19's native gear prediction passed its expected-state object directly to the Item
+constructor, allowing constructor defaults to enter a comparison which otherwise excludes
+sort and bookkeeping. A fixture that mutates constructor input reproduces this defect.
+
+The helper now gives the constructor a separate clone, copies back only gear properties,
+and applies the existing Item-state normalization before comparison. No additional gameplay
+fields are ignored. All 263 tests pass, including legacy recovery and genuine-edit refusal.
+
+Install alpha.20 and repeat Check / recover interrupted trade before another checkout.
+A previous recovery may already have moved some Items back; saved before-state checks make
+retry safe when those Items match. Stop on any further conflict and report its full message.
+Live recovery and a fresh successful transaction still require confirmation.
