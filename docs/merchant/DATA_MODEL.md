@@ -1,8 +1,9 @@
 # Merchant data model — Sprint 4 approved design
 
-**Status:** approved long-term design pending live Foundry proofs. Sprint 5 alpha.8 ships a small
-NPC flag with configuration and bounded demonstration decision summaries; this document's
-full ledger, transfers and relationships are not yet runtime features.
+**Status:** approved long-term design. Alpha.14 implements the transfer subset described in
+[the Sprint 6 report](SPRINT_6_TRANSACTIONS.md). Legacy Sprint 5 summaries remain untouched on
+Actors; new full receipts use a private JournalEntry compendium. Some fields below remain future
+design, notably apparent identities, negotiation details, unlimited stock and restocking.
 All quantities and coin counts below are nonnegative safe integers. Identifiers are stable within a
 world. Names and prices are mutable. Schema versions apply to merchant state and ledger entries
 independently; unknown future fields remain untouched during migration.

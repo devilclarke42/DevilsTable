@@ -3,7 +3,7 @@ import assert from "node:assert/strict";
 import { readJson } from "./helpers.js";
 
 test("startup registers a restricted V2 menu and a read-only-default API without building", async t => {
-  const names = ["foundry", "Hooks", "game", "canvas"];
+  const names = ["foundry", "Hooks", "game", "canvas", "CONFIG"];
   const previous = names.map(name => [name, Object.getOwnPropertyDescriptor(globalThis, name)]);
   t.after(() => {
     for (const [name, descriptor] of previous) {
@@ -13,6 +13,7 @@ test("startup registers a restricted V2 menu and a read-only-default API without
   });
   const hooks = new Map();
   const settings = [];
+  globalThis.CONFIG = { queries: {} };
   const menus = [];
   const module = {};
   class ApplicationV2 {

@@ -140,3 +140,10 @@ includes the actual error in the GM notification. A failed save leaves the revie
 open for retry or Close. Tests cover failure, retry, rejection receipt, preserved
 relationships and lock release. If live rejection still fails, collect the complete
 new notification or expanded original history exception. Total: 239 passing tests.
+
+
+### Owner acceptance before Sprint 6
+
+The owner reported alpha.13 worked and authorized Sprint 6 real transfers. This records their
+acceptance of the preceding fix; it does not imply that five-player contention or currency
+transfers were live-tested during Sprint 5. Sprint 6 evidence is recorded separately.

@@ -10,11 +10,12 @@ import { rebuildStockTables } from "./builders/roll-table-builder.js";
 import { rollStockList } from "./stock/stock-roller.js";
 import { cleanupLegacyStockTables } from "./builders/legacy-table-cleanup.js";
 import { MerchantManagerApplication } from "./merchant/manager-app.js";
-import { enableMerchant, initialiseMerchantService } from "./merchant/service.js";
+import { enableMerchant, initialiseMerchantService, registerCheckoutProof } from "./merchant/service.js";
 import { openMerchantShop, registerMerchantTokenEntry } from "./merchant/token-entry.js";
 
 Hooks.once("init", () => {
   registerSettings();
+  registerCheckoutProof();
   game.modules.get(MODULE_ID).api = Object.freeze({
     loadCatalogue,
     validateCatalogue,

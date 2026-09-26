@@ -1,5 +1,9 @@
 # Technical justification and requirement challenges — Sprint 4 approved design
 
+> Runtime update: alpha.14 implements the Sprint 6 transaction subset. See
+> [operation, limitations and validation](SPRINT_6_TRANSACTIONS.md). The remaining text
+> records the approved long-term design and historical proof gates.
+
 **Status:** approved design choices; live Foundry proofs remain outstanding. The requirements below describe player experience;
 implementation details remain provisional until Foundry V14 / D&D5e 5.3.3 integration checks pass.
 

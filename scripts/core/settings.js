@@ -5,7 +5,7 @@ import { MerchantManagerApplication } from "../merchant/manager-app.js";
 
 export function registerSettings() {
   game.settings.register(MODULE_ID, "merchantHistoryRetention", {
-    name: "Merchant history retention", hint: "Keep GM-only checkout decisions per merchant; recovery entries are protected in later transfer stages.",
+    name: "Merchant history retention", hint: "Keep private transaction receipts per merchant. Unresolved recovery entries are never trimmed.",
     scope: "world", config: true, type: new foundry.data.fields.StringField(),
     choices: { last100: "Last 100", last500: "Last 500", last1000: "Last 1000", unlimited: "Unlimited" },
     default: "last500"
@@ -13,7 +13,7 @@ export function registerSettings() {
 
   game.settings.registerMenu(MODULE_ID, "merchantManager", {
     name: "Set Up NPC Merchants", label: "Open Merchant Setup",
-    hint: "Enable an existing NPC and its linked tokens for the Sprint 5 Shop UI.",
+    hint: "Enable an existing NPC and its linked tokens for the Merchant Shop UI.",
     icon: "fa-solid fa-store", type: MerchantManagerApplication, restricted: true
   });
   game.settings.register(MODULE_ID, "debugLogging", {

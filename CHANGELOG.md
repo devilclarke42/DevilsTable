@@ -3,6 +3,29 @@
 This file retains detailed repository build history. The official milestone/release record is
 [docs/CHANGELOG.md](docs/CHANGELOG.md). Versions here do not imply a public GitHub Release exists.
 
+## 0.2.0-alpha.14 — 2026-09-26 — Sprint 6 transaction candidate
+
+### Added
+
+- Buying, selling and mixed baskets, with UI affordability blocking and GM-side funds rechecks.
+- Native D&D5e currency planning, finite/infinite merchant funds, buy/sell multipliers,
+  optional bounded denomination/change validation and GM price/quantity review.
+- Recoverable embedded Item transfers, conservative stacking, data preservation, final read-back,
+  persistent pending markers and an explicit GM recovery action.
+- Private JournalEntry transaction compendium, deterministic receipt IDs, retained rejection
+  records and configurable completed-history retention. Recovery records are never trimmed.
+- Character-keyed visits, money spent/earned, transaction count and successful purchase counters.
+- Request confirmation through native User.query before review and approval; unconfirmed
+  socket claims cannot authorize transfers.
+
+### Validation
+
+- 254 automated tests pass, including two-, three- and five-client checkout races, continued
+  browsing, insufficient funds, missing request confirmation, duplicate receipts, rejection,
+  stacking, partial failure, rollback and conflicting external edits.
+- Live Sprint 6 transfers have not been tested in Foundry. See the operation/validation report.
+- No new catalogue content, automatic restocking, negotiation or advanced reputation.
+
 ## 0.2.0-alpha.13 — 2026-09-26 — Review persistence and control alignment
 
 ### Fixed

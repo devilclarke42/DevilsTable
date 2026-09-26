@@ -12,15 +12,19 @@ GitHub Release or installation manifest exists. No release dates are invented fo
 
 ### Added
 
+- `0.2.0-alpha.14` Sprint 6 transaction candidate: real buying/selling, native currency,
+  funds checks, GM price review, recoverable inventory writes, private ledger and merchant
+  counters. 254 automated tests pass; live acceptance is pending.
+
 - `0.2.0-alpha.8` Sprint 5 proof build: GM NPC merchant setup, separate player Shop UI, public
   Actor Item projection, local basket, checkout requests and GM review with one service slot.
   Approvals/rejections record GM-only demonstration receipts; Items and currency are unchanged.
 - Sprint 5 prerequisite [validation report](merchant/SPRINT_5_VALIDATION.md) documenting the
   unavailable live Foundry environment, exact multiplayer proof steps and D&D5e 5.3.3 native
-  currency schema inspection; merchant implementation is still gated.
+  currency schema inspection; historical prerequisite findings; subsequent user tests confirmed browsing and rejection.
 - Sprint 4's approved [Merchant System design](merchant/MERCHANT_SYSTEM_SPECIFICATION.md),
   data model, UI wireframes, workflow diagrams, technical trade-offs and implementation roadmap.
-  Live Foundry validation remains pending; the merchant feature is not implemented.
+  This remains the long-term design; current runtime status is documented in the Sprint 6 report.
 - The Documentation Foundation: complete Content Standard, Price Guide, Weight Guide, Merchant
   Standard, Icon Standard, Design Decisions, Release Process, milestone Roadmap and this Changelog.
 - Official conventions for permanent IDs, sale units, plain-language descriptions, categories,
@@ -45,7 +49,7 @@ GitHub Release or installation manifest exists. No release dates are invented fo
 
 ## [0.2.0] — In Development
 
-Current runtime candidate: **0.2.0-alpha.7**. The numbered General Store milestone is not yet a
+Current runtime candidate: **0.2.0-alpha.14**. The numbered General Store milestone is not yet a
 stable public release.
 
 ### Added

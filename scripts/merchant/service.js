@@ -1,14 +1,30 @@
+import { quoteTrade, purchaseOffers, stable } from "./trade-model.js";
+import { tradeSettings } from "./settlement.js";
+import { executeTrade } from "./transaction.js";
+import { createReceipt, trimReceipts } from "./ledger.js";
 import { MODULE_ID } from "../constants.js";
 import { logger } from "../core/logger.js";
-import { appendHistory, isMerchantToken, merchantConfig, publicOffers, sanitizeBasket, ServiceSlots, SOCKET_CHANNEL } from "./model.js";
+import { isMerchantToken, merchantConfig, ServiceSlots, SOCKET_CHANNEL } from "./model.js";
 
 const requests = new Map();
 const locks = new ServiceSlots();
 const subscribers = new Map();
 let listening = false;
+const proofs = new Map();
+export function registerCheckoutProof() {
+  CONFIG.queries[`${MODULE_ID}.checkoutProof`] = ({ id }) => proofs.get(id) ?? null;
+}
+async function verifyRequester(msg) {
+  const user = game.users.get(msg.userId);
+  if (!user?.active) throw Error("The requesting player is offline.");
+  const proof = user.id === game.user.id ? proofs.get(msg.id)
+    : await user.query(`${MODULE_ID}.checkoutProof`, { id: msg.id }, { timeout: 10000 });
+  if (!proof || stable(proof) !== stable(msg)) throw Error("The requesting player could not confirm this checkout. Submit it again.");
+}
+
 
 function coordinator() {
-  return [...game.users].filter(user => user.active && user.isGM).sort((a, b) => a.id.localeCompare(b.id))[0];
+  return game.users.activeGM ?? [...game.users].filter(user => user.active && user.isGM).sort((a, b) => a.id.localeCompare(b.id))[0];
 }
 
 function send(message) {
@@ -52,7 +68,7 @@ async function receive(msg) {
     if (msg.to !== game.user.id) return;
     const entry = requests.get(msg.id);
     if (entry) {
-      if (msg.status !== "pending") requests.delete(msg.id);
+      if (msg.status !== "pending") { requests.delete(msg.id); proofs.delete(msg.id); }
       entry(msg);
     }
     return;
@@ -64,7 +80,7 @@ async function receive(msg) {
   if (msg.type === "browse") {
     logger.debug("Merchant opened", { merchant: actor.id });
     return notify(msg.userId, { id: msg.id, type: "stock", merchant: actor.name,
-      availability: merchantConfig(actor).availability ?? "open", items: publicOffers(actor) });
+      availability: merchantConfig(actor).availability ?? "open", items: purchaseOffers(actor), buyModifier: tradeSettings(actor).buyModifier });
   }
   if (msg.type !== "checkout") return;
   logger.debug("Checkout requested", { merchant: actor.id });
@@ -78,15 +94,20 @@ async function receive(msg) {
       pcToken?.actorId !== character.id || token.actorId !== actor.id) {
     return notify(msg.userId, { id: msg.id, error: "Select an owned character beside the merchant." });
   }
+  if (actor.getFlag(MODULE_ID, "transactionPending") || character.getFlag(MODULE_ID, "transactionPending")) {
+    return notify(msg.userId, { id: msg.id, error: "A previous trade needs GM recovery before checkout." });
+  }
   let proposal;
-  try { proposal = sanitizeBasket(msg.lines, publicOffers(actor)); }
+  try { proposal = quoteTrade(actor, character, msg); }
   catch (error) { return notify(msg.userId, { id: msg.id, error: error.message }); }
   if (!locks.acquire(actor.id, msg.id)) return notify(msg.userId, { id: msg.id, error: "Merchant occupied." });
   logger.debug("Merchant lock acquired", { merchant: actor.id, request: msg.id });
+  try { await verifyRequester(msg); }
+  catch (error) { locks.release(actor.id, msg.id); return notify(msg.userId, { id: msg.id, error: error.message }); }
   notify(msg.userId, { id: msg.id, status: "pending" });
   const { MerchantReviewApplication } = await import("./review-app.js");
   const app = new MerchantReviewApplication({ actor, character, user, request: msg, proposal,
-    onFinish: result => finish(actor, msg, proposal, result) });
+    onFinish: (result, edits) => finish(actor, character, msg, proposal, result, edits) });
   subscribers.set(msg.id, app);
   try { await app.render({ force: true }); }
   catch (error) {
@@ -96,29 +117,32 @@ async function receive(msg) {
   }
 }
 
-async function finish(actor, request, proposal, decision) {
-  if (!locks.owns(actor.id, request.id)) return;
-  if (decision !== "close") {
-    const policy = game.settings.get(MODULE_ID, "merchantHistoryRetention");
-    const old = merchantConfig(actor);
-    const entry = { id: request.id, date: new Date().toISOString(), merchantId: actor.id,
-      characterId: request.characterId, claimedUserId: request.userId,
-      items: proposal.basket, copper: proposal.total, status: decision,
-      outcome: "Sprint 5 request demonstration; no Items or currency transferred" };
-    try {
-      await actor.setFlag(MODULE_ID, "merchant.history",
-        appendHistory(old.history, entry, old.historyRetention ?? policy));
-    } catch (error) {
-      logger.error("Merchant history failed", error);
-      const reason = error instanceof Error ? error.message : String(error);
-      ui.notifications.error(`Merchant history could not be saved: ${reason}. The review remains open; retry or close it.`);
-      return false;
+async function finish(actor, character, request, proposal, decision, edits) {
+  if (!locks.owns(actor.id, request.id)) return false;
+  if (!game.user.isGM || coordinator()?.id !== game.user.id) throw Error("Only the active GM may decide this trade.");
+  try {
+    if (decision === "approved") {
+      await verifyRequester(request);
+      if (!character.testUserPermission(game.users.get(request.userId), "OWNER")) throw Error("Character ownership changed.");
+      if ((merchantConfig(actor)?.availability ?? "closed") !== "open") throw Error("Merchant is no longer open.");
+      const quote = quoteTrade(actor, character, request, edits);
+      // A changed quote must be resubmitted, unless the GM explicitly supplied line edits.
+      if (!edits && stable(quote.basket) !== stable(proposal.basket)) throw Error("Prices changed. Close and resubmit this trade.");
+      await executeTrade({ merchant: actor, character, quote, request });
+    } else {
+      await createReceipt({ schemaVersion: 1, id: request.id, date: new Date().toISOString(), merchantId: actor.id,
+        characterId: character.id, merchantName: actor.name, characterName: character.name,
+        userId: request.userId, gmId: game.user.id, request, quote: proposal,
+        status: decision === "close" ? "closed" : "rejected" });
+      try { await trimReceipts(actor); } catch (error) { logger.warn("History retention deferred", error); }
     }
+  } catch (error) {
+    logger.error("Merchant transaction failed", error);
+    ui.notifications.error(`${error.message} The review remains open; retry or close it.`);
+    return false;
   }
   locks.release(actor.id, request.id); subscribers.delete(request.id);
-  logger.debug(decision === "approved" ? "Approval granted" : decision === "rejected" ? "Approval rejected" : "Merchant review closed",
-    { merchant: actor.id, request: request.id });
-  logger.debug("Merchant lock released", { merchant: actor.id });
+  logger.debug("Merchant decision", { merchant: actor.id, request: request.id, decision });
   notify(request.userId, { id: request.id, status: decision });
   return true;
 }
@@ -127,14 +151,16 @@ async function finish(actor, request, proposal, decision) {
 export function merchantRequest(type, details, callback) {
   const id = crypto.randomUUID();
   if (typeof callback === "function") {
-    const timer = type === "browse" ? setTimeout(() => {
+    const timer = setTimeout(() => {
       if (!requests.delete(id)) return;
+      proofs.delete(id);
       void callback({ id, error: "No stock reply arrived from the GM. Restart the game server after updating (a browser refresh alone may not reload the module socket), reconnect GM and player, then Refresh stock. If this persists, enable debug logging and check both consoles." });
-    }, 12000) : null;
+    }, 20000);
     timer?.unref?.();
     requests.set(id, result => { if (timer) clearTimeout(timer); return callback(result); });
   }
   const packet = { type, ...details, id, userId: game.user.id };
+  if (type === "checkout") proofs.set(id, structuredClone(packet));
   if (game.user.isGM && coordinator()?.id === game.user.id) {
     void receive(packet).catch(error => {
       logger.error("Local merchant request failed", error);

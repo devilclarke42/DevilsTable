@@ -6,44 +6,44 @@ Foundry compendiums are generated from it and must never be edited as source dat
 
 ## Current status
 
-**Sprint 5 proof build (`0.2.0-alpha.13`):** merchant setup, player Shop UI, temporary basket and
-GM checkout-review pipeline are available for live validation. Approval does not move Items or
-currency. Two-player behaviour, non-owner token right-click and sender authentication have not
-been verified in a live Foundry world. See the
-[Sprint 5 validation checklist](docs/merchant/SPRINT_5_VALIDATION.md) before using merchant
-checkout in a campaign.
+**Sprint 6 transaction candidate (`0.2.0-alpha.14`):** GM-approved buying and selling now
+transfer native currency and embedded Items. Checkout is disabled when the selected character
+cannot afford the net basket. Both wallets and stock are rechecked at GM approval.
 
-### Testing the merchant foundation
+Player browsing and the Sprint 5 rejection fix were confirmed by the owner. Sprint 6 has
+254 passing automated tests; live transfer and multiplayer acceptance remain pending.
+See [Sprint 6 operation and validation](docs/merchant/SPRINT_6_TRANSACTIONS.md).
 
-**Optional population:** after enabling an NPC in Merchant Setup, select a stock profile and
-click **Roll stock preview**. Review the assortment and weighted quantities, then click **Add
-previewed stock**. Build/rebuild the Item compendium and Stock RollTables first if prompted.
-Existing catalogue goods (including quantity-zero offers) are skipped; manual stock and prices
-are preserved. This is GM-approved starting stock, not automatic restocking. Use **Refresh
-stock** in an already-open Shop UI after adding goods.
+### Using merchants
 
-1. Install `devils-table-v0.2.0-alpha.13.zip` into a **disposable** Foundry V14 / D&D5e 5.3.3
-   world and enable Devil's Table. Existing worlds keep their normal catalogue and tables.
-2. As GM, create an ordinary world NPC, place a **linked** token in a scene and give it Items
-   copied from the generated Devil's Table Item compendium. The NPC must remain GM-only.
-3. In module settings, open **Set Up NPC Merchants**, select that NPC and choose **Open**. This
-   tags its linked tokens as shop entry points. A new linked token receives the same marker.
-4. Log in as a player with an owned character and token beside the merchant. Right-click the
-   merchant token. The Shop UI should open without access to the NPC sheet. Browse, filter, search,
-   add and remove products. This view reads NPC Items; it does not reserve or update them.
-5. Control the character token and request checkout. The GM sees a review window with the quoted
-   basket, native character currency and **unverified claimed requester**. Approve or reject;
-   check the NPC Item quantities and currency did not change. Rejection/approval writes a
-   GM-only demonstration receipt to the NPC's module flag, capped by the retention setting.
-6. Repeat with two players at once. Record whether both can browse, whether only one request
-   reaches GM review, and what happens if the GM closes the window or disconnects. Send those
-   observed results back before using the next sprint's real transfers.
+1. Install the ZIP in a backed-up test world using Foundry V14 and D&D5e 5.3.3. Reconnect the
+   GM and players. Use one browser session for the active GM during transaction testing.
+2. Keep the merchant NPC GM-only and place a linked token. Enable it in **Merchant Setup**.
+3. Optionally build Items and Stock RollTables, then **Roll stock preview** and **Add previewed
+   stock**. Existing catalogue goods, including zero-quantity offers, are preserved.
+4. Select the NPC and click **Load selected merchant settings**. Set finite/infinite funds,
+   denomination checking and buy/sell multipliers, then **Save trade settings**. A multiplier
+   of 1 means full price; 0.5 means half price. Fund finite merchants on their native sheets.
+5. As player, control your character token and right-click the merchant. Add purchases to the
+   basket. Expand **Sell from your selected character** to offer owned goods. Refresh stock
+   after changing the selected character or editing currency on its sheet.
+6. Checkout sends the proposal for GM review. The GM may reduce quantities or edit unit prices
+   in copper, recalculate, inspect before/after balances, then approve. Changed edits require
+   review of recalculated totals before approval. Rejection and Close do not move goods or coins.
+7. Approved transfers update character-specific merchant counters and create a private receipt
+   in **Devil's Table — Private Transactions**. Search that compendium by merchant, character,
+   date or outcome. The existing history-retention setting defaults to Last 500 per merchant.
 
-Current limits: only Devil's Table generated Items with valid prices are public by default;
-third-party Items require a reviewed `offer.publicDescription` module flag and valid price.
-No distance enforcement, authenticated socket sender or durable multi-GM arbitration ships in
-this proof build. Those are explicit live gates before real trading; do not use the GM review as
-evidence of a completed purchase.
+If a transaction is interrupted, **Check / recover interrupted trade** in Merchant Setup uses
+its saved before/after states. Conflicting edits are preserved and require manual reconciliation;
+blocked Actors cannot trade again until recovery is resolved. Never delete recovery receipts.
+
+Only identical mechanical Item states stack. Equipped, attuned and nested goods must first be
+unequipped, unattuned or removed from containers; containers must be empty. Fully sold character
+Items are removed; sold-out merchant offers remain at quantity zero for future restocking.
+Third-party Items require a reviewed public description to appear in merchant stock. They can
+be offered for sale using their native price. Automatic restocking and reputation changes are
+outside this sprint. Distance enforcement and same-GM multi-tab arbitration remain limitations.
 
 Sprint 3 build, `0.2.0-alpha.7`: **144 authored General Store items across ten categories**.
 The builder generates **32 stock RollTables**: four per merchant profile, including Village,
@@ -120,7 +120,7 @@ an item from the Item compendium build.
 1. Obtain the packaged ZIP from the successful **Validate and package** GitHub Actions run
    (artifact: `devils-table-framework`), or build it using the development commands below.
    Downloading an Actions artifact may wrap the module ZIP in another ZIP: extract the artifact
-   first and select `devils-table-v0.2.0-alpha.13.zip` for import.
+   first and select `devils-table-v0.2.0-alpha.14.zip` for import.
 2. Back up your test world. In The Forge's Import Wizard, import that module ZIP as a custom package.
    See the [Forge custom-package guide](https://forums.forge-vtt.com/t/how-to-upload-a-modified-version-of-a-module-system/10510).
 3. In a V14 / D&D5e 5.3.3 test world, enable **Devil's Table: Goods & Provisions** and reload.
@@ -153,7 +153,7 @@ the live acceptance test and an actual versioned release exist.
 ### Recovering from the alpha.2 read-back error
 
 Keep the existing generated compendium. Import the updated module ZIP using the same Forge
-custom-package method, restart/reload the test world and confirm the module shows `0.2.0-alpha.13`.
+custom-package method, restart/reload the test world and confirm the module shows `0.2.0-alpha.14`.
 Run **Village General Store → Containers → Validate / Preview**, then **Build / Rebuild**.
 If all 13 Items were saved, equivalent description formatting is accepted. The first alpha.7
 rebuild adds thirteen sale-unit flags, then reports thirteen unchanged on the next build.

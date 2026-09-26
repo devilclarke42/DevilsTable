@@ -8,6 +8,16 @@
   <p role="status">{{message}}</p>
   <p>Only Items copied from Devil's Table or manually given an approved public description and price appear in player stock.</p>
   <hr>
+  <h3>Trade settings</h3>
+  <button type="button" data-action="loadTerms">Load selected merchant settings</button>
+  <label><input type="checkbox" name="infinite" {{#if infinite}}checked{{/if}}>Infinite merchant funds (native balance unchanged)</label>
+  <label><input type="checkbox" name="exactChange" {{#if terms.exactChange}}checked{{/if}}>Require available denominations (finite wallets)</label>
+  <label>Merchant buys at multiplier <input name="buyModifier" type="number" min="0" max="100" step="0.01" value="{{terms.buyModifier}}"></label>
+  <label>Merchant sells at multiplier <input name="sellModifier" type="number" min="0" max="100" step="0.01" value="{{terms.sellModifier}}"></label>
+  <button type="button" data-action="saveTerms">Save trade settings</button>
+  <button type="button" data-action="recover">Check / recover interrupted trade</button>
+  <p>Receipts are in the private Devil's Table — Private Transactions compendium. Recovery restores an interrupted trade only when the saved changes still match; conflicting edits require manual GM reconciliation.</p>
+  <hr>
   <h3>Optional starting stock</h3>
   <p>Build the Item compendium and Stock RollTables first. Roll a preview, then add the chosen assortment with its weighted quantities. Existing inventory and prices are preserved.</p>
   {{#if stockError}}<p role="alert">{{stockError}}</p>{{/if}}

@@ -1,5 +1,9 @@
 # Merchant System implementation roadmap — Sprint 4 approved design
 
+> Runtime update: alpha.14 implements the Sprint 6 transaction subset. See
+> [operation, limitations and validation](SPRINT_6_TRANSACTIONS.md). The remaining text
+> records the approved long-term design and historical proof gates.
+
 **Status:** Sprint 5 proof build implemented after owner authorised building a module for self-testing; live acceptance remains pending. The existing
 [versioned roadmap](../ROADMAP.md) currently lists Tavern as 0.3.0 and Merchant Builder as 0.8.0.
 The user requested merchant-system work before Tavern. Review the version ordering with this
