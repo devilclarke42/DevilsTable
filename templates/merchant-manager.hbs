@@ -1,13 +1,21 @@
 <div class="dt-shop">
-  <h2>Enable an NPC merchant</h2>
+  <h2>Merchant Setup</h2>
   <p>Only GMs can open or edit the NPC sheet. Players browse public stock through the separate Shop UI.</p>
   <label>NPC <select name="npc" {{#if busy}}disabled{{/if}}>{{#each npcs}}<option value="{{id}}" {{#if selected}}selected{{/if}}>{{name}}{{#if enabled}} (enabled){{/if}}</option>{{/each}}</select></label>
+  <p role="status">{{message}}</p>
+  <nav class="dt-manager-tabs" aria-label="Merchant setup sections">
+    <button type="button" data-action="selectTab" data-tab="merchant" aria-pressed="{{tabs.merchant}}">Merchant</button>
+    <button type="button" data-action="selectTab" data-tab="trade" aria-pressed="{{tabs.trade}}">Trade</button>
+    <button type="button" data-action="selectTab" data-tab="stock" aria-pressed="{{tabs.stock}}">Stock</button>
+    <button type="button" data-action="selectTab" data-tab="recovery" aria-pressed="{{tabs.recovery}}">Recovery</button>
+  </nav>
+  <section data-panel="merchant" {{#unless tabs.merchant}}hidden{{/unless}}>
   <label>Availability <select name="availability"><option value="open">Open</option><option value="closed">Closed</option>
     <option value="busy">Busy</option><option value="travelling">Travelling</option><option value="sleeping">Sleeping</option></select></label>
   <button type="button" data-action="enable" {{#if busy}}disabled{{/if}}>Enable / update linked tokens</button>
-  <p role="status">{{message}}</p>
   <p>Only Items copied from Devil's Table or manually given an approved public description and price appear in player stock.</p>
-  <hr>
+  </section>
+  <section data-panel="trade" {{#unless tabs.trade}}hidden{{/unless}}>
   <h3>Trade settings</h3>
   <button type="button" data-action="loadTerms">Load selected merchant settings</button>
   <label><input type="checkbox" name="infinite" {{#if infinite}}checked{{/if}}>Infinite merchant funds (native balance unchanged)</label>
@@ -15,9 +23,13 @@
   <label>Merchant buys at multiplier <input name="buyModifier" type="number" min="0" max="100" step="0.01" value="{{terms.buyModifier}}"></label>
   <label>Merchant sells at multiplier <input name="sellModifier" type="number" min="0" max="100" step="0.01" value="{{terms.sellModifier}}"></label>
   <button type="button" data-action="saveTerms">Save trade settings</button>
+  </section>
+  <section data-panel="recovery" {{#unless tabs.recovery}}hidden{{/unless}}>
+  <h3>Recovery and history</h3>
   <button type="button" data-action="recover">Check / recover interrupted trade</button>
   <p>Receipts are in the private Devil's Table — Private Transactions compendium. Recovery restores an interrupted trade only when the saved changes still match; conflicting edits require manual GM reconciliation.</p>
-  <hr>
+  </section>
+  <section data-panel="stock" {{#unless tabs.stock}}hidden{{/unless}}>
   <h3>Optional starting stock</h3>
   <p>Build the Item compendium and Stock RollTables first. Roll a preview, then add the chosen assortment with its weighted quantities. Existing inventory and prices are preserved.</p>
   {{#if stockError}}<p role="alert">{{stockError}}</p>{{/if}}
@@ -28,4 +40,5 @@
     <ul class="dt-report">{{#each preview.items}}<li>{{#if skip}}Keep existing: {{else}}Add {{quantity}} × {{/if}}{{name}} — {{price.value}} {{price.denomination}} per {{saleUnit}}</li>{{/each}}</ul>
     <button type="button" data-action="addStock" {{#if busy}}disabled{{/if}}>Add previewed stock to {{previewMerchant}}</button>
   {{/if}}
+  </section>
 </div>

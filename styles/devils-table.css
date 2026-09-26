@@ -36,3 +36,7 @@
 .devils-table .dt-shop-controls > label { display: grid; gap: 0.25rem; margin: 0; }
 .devils-table .dt-shop-controls > button,
 .devils-table .dt-shop-controls input { margin: 0; }
+
+.devils-table .dt-manager-tabs { display: flex; gap: 0.4rem; flex-wrap: wrap; border-bottom: 1px solid currentColor; padding-bottom: 0.5rem; }
+.devils-table [data-panel]:not([hidden]) { display: grid; gap: 0.65rem; }
+.devils-table [data-panel][hidden] { display: none; }

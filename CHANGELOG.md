@@ -3,6 +3,22 @@
 This file retains detailed repository build history. The official milestone/release record is
 [docs/CHANGELOG.md](docs/CHANGELOG.md). Versions here do not imply a public GitHub Release exists.
 
+## 0.2.0-alpha.17 — 2026-09-26 — Transfer diagnostics and setup tabs
+
+### Changed
+
+- Merchant Setup groups controls into Merchant, Trade, Stock and Recovery tabs. Tab switches
+  preserve unsaved fields. Stock application and recovery use native confirmation dialogs.
+- Transfer verification errors identify the operation, Actor, Item (where applicable), field
+  and differing values. Strict verification and rollback remain enabled.
+
+### Validation
+
+- 258 tests pass, including a silently cancelled native currency write that names its failed field.
+- The owner confirms Close/Reject work. Approval still reports a transfer read-back failure;
+  its root cause is not established by the generic screenshot. Alpha.17 supplies the missing
+  operation-level diagnostic; it does not claim successful live approval.
+
 ## 0.2.0-alpha.16 — 2026-09-26 — Existing receipt review handling
 
 ### Fixed

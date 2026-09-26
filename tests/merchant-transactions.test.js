@@ -86,3 +86,9 @@ test("a later failure restores a fully sold character Item with its original dat
   assert.deepEqual(pc.items.get("sale").toObject(), original); assert.equal(m.items.size, 0);
   assert.equal(pc.system.currency.cp, 0); assert.equal(m.system.currency.cp, 100);
 });
+test("a silently cancelled native write identifies the operation, Actor and differing field", async () => {
+  setup(); const m = new Actor("merchant", 0, [good()]), pc = new Actor("pc", 50);
+  pc.update = async () => undefined;
+  await assert.rejects(trade(m, pc), /Transfer read-back failed: currency on pc; value.cp: expected 40, received 50/);
+  assert.equal(pc.system.currency.cp, 50); assert.equal(m.items.get("rope").system.quantity, 1);
+});

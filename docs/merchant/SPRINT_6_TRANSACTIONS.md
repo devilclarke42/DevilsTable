@@ -195,3 +195,17 @@ requesting another trade. Do not delete private receipts to bypass recovery.
 Receipt verification now uses detached JSON snapshots and reports the first differing path.
 The suite passes 257 tests. Live approval remains to be retested; if it fails, capture the first
 approval error before trying Close so the original failure can be distinguished from dismissal.
+
+## Alpha.17 transfer diagnostic and setup layout
+
+The owner confirms Close/Reject work in alpha.16. Approval reaches transfer verification but
+reports only `Transfer read-back failed`. The screenshot does not identify the failed operation
+or field. Alpha.17 adds those details to the GM error and console log without relaxing
+verification, accepting altered Item data or bypassing rollback. The cause remains unconfirmed;
+collect the new first error on live retest. The repository has 258 passing tests.
+
+Merchant Setup now uses Merchant, Trade, Stock and Recovery sections styled as tabs. Switching
+sections hides existing panels instead of rerendering, preserving unsaved form values. The NPC
+selector and status remain visible. Applying stock and running recovery require native DialogV2
+confirmation; cancelling the prompt makes no world changes. Existing item/table builder menus
+remain separate to avoid coupling catalogue generation to merchant configuration.

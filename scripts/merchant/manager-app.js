@@ -16,11 +16,12 @@ export class MerchantManagerApplication extends HandlebarsApplicationMixin(Appli
   #profileId = "DT_TABLE_GS";
   #preview = null;
   #busy = false;
+  #tab = "merchant";
   static DEFAULT_OPTIONS = {
     id: "devils-table-merchant-manager", classes: ["devils-table"], tag: "section",
     position: { width: 650, height: "auto" },
     window: { title: "Devil's Table — Merchant Setup", icon: "fa-solid fa-store", resizable: true },
-    actions: { enable: MerchantManagerApplication.#enable, previewStock: MerchantManagerApplication.#previewStock,
+    actions: { selectTab: MerchantManagerApplication.#selectTab, enable: MerchantManagerApplication.#enable, previewStock: MerchantManagerApplication.#previewStock,
       addStock: MerchantManagerApplication.#addStock, loadTerms: MerchantManagerApplication.#loadTerms, saveTerms: MerchantManagerApplication.#saveTerms, recover: MerchantManagerApplication.#recover }
   };
   static PARTS = { body: { template: "modules/devils-table/templates/merchant-manager.hbs" } };
@@ -28,13 +29,26 @@ export class MerchantManagerApplication extends HandlebarsApplicationMixin(Appli
     let stockError = "";
     try { this.#catalogue ??= await loadStockCatalogue(); }
     catch (error) { stockError = error.message; }
-    return { ...await super._prepareContext(options), npcs: game.actors.filter(actor => actor.type === "npc")
+    return { ...await super._prepareContext(options),
+      tabs: Object.fromEntries(["merchant", "trade", "stock", "recovery"].map(tab => [tab, tab === this.#tab])),
+      npcs: game.actors.filter(actor => actor.type === "npc")
       .map(actor => ({ id: actor.id, name: actor.name, selected: actor.id === this.#actorId, enabled: Boolean(merchantConfig(actor)) })),
       profiles: this.#catalogue ? stockProfiles(this.#catalogue).map(p => ({ id: p.id, name: p.name, selected: p.id === this.#profileId })) : [],
       terms: this.#actorId ? tradeSettings(game.actors.get(this.#actorId)) : { buyModifier: 1, sellModifier: 1 },
       infinite: this.#actorId && tradeSettings(game.actors.get(this.#actorId)).walletMode === "infinite",
       stockError, preview: this.#preview, previewMerchant: game.actors.get(this.#preview?.actorId)?.name,
       busy: this.#busy, stockBlocked: this.#busy || Boolean(stockError), message: this.#message };
+  }
+  static async #selectTab(_event, target) {
+    const tab = target.dataset.tab;
+    if (!["merchant", "trade", "stock", "recovery"].includes(tab)) return;
+    this.#tab = tab;
+    // Switch existing panels without rerendering and losing unsaved form values.
+    for (const panel of this.element.querySelectorAll("[data-panel]")) panel.hidden = panel.dataset.panel !== tab;
+    for (const button of this.element.querySelectorAll("[data-action=selectTab]")) button.setAttribute("aria-pressed", String(button.dataset.tab === tab));
+  }
+  async #confirm(title, content) {
+    return foundry.applications.api.DialogV2.confirm({ window: { title }, content, modal: true, rejectClose: false });
   }
   static async #enable() {
     if (this.#busy) return;
@@ -68,10 +82,15 @@ export class MerchantManagerApplication extends HandlebarsApplicationMixin(Appli
     await this.render();
   }
   static async #recover() {
+    if (this.#busy) return;
     const actor = game.actors.get(this.element.querySelector("[name=npc]").value);
-    try { this.#message = await recoverTrade(actor); }
+    this.#busy = true;
+    try {
+      if (!await this.#confirm("Recover interrupted trade?", "<p>This may restore the selected merchant and customer's saved inventory and currency. Conflicting edits will stop recovery. Continue?</p>")) return;
+      this.#message = await recoverTrade(actor);
+    }
     catch (error) { this.#message = error.message; }
-    await this.render();
+    finally { this.#busy = false; await this.render(); }
   }
 
   static async #previewStock() {
@@ -100,6 +119,7 @@ export class MerchantManagerApplication extends HandlebarsApplicationMixin(Appli
     this.#busy = true;
     try {
       await this.render();
+      if (!await this.#confirm("Add previewed stock?", "<p>Add the previewed goods and quantities to this merchant? Existing catalogue goods will be kept unchanged.</p>")) return;
       const result = await applyMerchantStock(game.actors.get(this.#preview.actorId), this.#preview);
       this.#message = `Added ${result.created} goods; skipped ${result.skipped} existing offers. Players can use Refresh stock to see the additions.`;
       this.#preview = null;

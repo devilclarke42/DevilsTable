@@ -16,6 +16,25 @@ function snapshot(actor, step) {
   return itemState(inventoryData(actor.items.get(step.itemId)));
 }
 function equal(a, b) { return stable(a) === stable(b); }
+function difference(expected, actual, path = "value") {
+  if (equal(expected, actual)) return null;
+  if (!expected || !actual || typeof expected !== "object" || typeof actual !== "object") {
+    return `${path}: expected ${JSON.stringify(expected)}, received ${JSON.stringify(actual)}`;
+  }
+  for (const key of new Set([...Object.keys(expected), ...Object.keys(actual)])) {
+    if (!(key in expected) || !(key in actual)) return `${path}.${key}: field ${key in actual ? "added" : "missing"}`;
+    const result = difference(expected[key], actual[key], `${path}.${key}`);
+    if (result) return result;
+  }
+  return path;
+}
+function verifyStep(actor, step, expected, phase) {
+  const actual = snapshot(actor, step);
+  if (equal(actual, expected)) return;
+  const detail = difference(expected, actual);
+  logger.error("Transfer verification mismatch", { actorId: actor.id, kind: step.kind, itemId: step.itemId, phase, detail });
+  throw Error(`${phase}: ${step.kind} on ${actor.name}${step.itemId ? ` (Item ${step.itemId})` : ""}; ${detail}`);
+}
 async function write(actor, step, target) {
   if (step.kind === "currency") return actor.update({ "system.currency": target });
   if (step.kind === "relationship") {
@@ -95,12 +114,12 @@ export async function executeTrade({ merchant, character, quote, request, receip
       record.attempted = i;
       await receiptAdapter.save(doc, record);
       await write(actor, step, step.after);
-      if (!equal(snapshot(actor, step), step.after)) throw Error("Transfer read-back failed.");
+      verifyStep(actor, step, step.after, "Transfer read-back failed");
     }
     const finalSteps = new Map(record.steps.map(step => [`${step.actorId}:${step.kind}:${step.itemId ?? step.customer ?? ""}`, step]));
     for (const step of finalSteps.values()) {
       const actor = actors.find(a => a.id === step.actorId);
-      if (!equal(snapshot(actor, step), step.after)) throw Error("An Actor changed before final verification.");
+      verifyStep(actor, step, step.after, "Final transfer verification failed");
     }
     record.status = "completed";
     await receiptAdapter.save(doc, record);
