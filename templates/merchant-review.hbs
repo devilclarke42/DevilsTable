@@ -11,11 +11,13 @@
   </div>{{/each}}
   <button type="button" data-action="recalculate">Recalculate offer</button>
   <p><strong>Request total:</strong> {{totalLabel}}</p>
-  <h3>Character currency (read-only)</h3>
+  <details><summary>Character currency (read-only)</summary>
   <ul>{{#each currency}}<li>{{@key}}: {{this}}</li>{{/each}}</ul>
-  <h3>Currency settlement</h3>
+  </details>
+  <details><summary>Currency settlement</summary>
   <table><thead><tr><th>Coin</th><th>Character before</th><th>After</th><th>Merchant before</th><th>After</th></tr></thead>
   <tbody>{{#each paymentRows}}<tr><td>{{coin}}</td><td>{{pcBefore}}</td><td>{{pcAfter}}</td><td>{{gmBefore}}</td><td>{{gmAfter}}</td></tr>{{/each}}</tbody></table>
+  </details>
   <p>Approval transfers these goods and coins. Rejection records a private receipt without moving them.</p>
   <div class="dt-shop-controls"><button type="button" data-action="approve">Approve request</button>
     <button type="button" data-action="reject">Reject</button><button type="button" data-action="dismiss">Close</button></div>

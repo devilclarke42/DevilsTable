@@ -1,4 +1,5 @@
 import { quoteTrade, purchaseOffers, stable } from "./trade-model.js";
+import { offerTerms, confirmRevisedOffer } from "./revised-offer.js";
 import { tradeSettings } from "./settlement.js";
 import { executeTrade } from "./transaction.js";
 import { finishReceiptReview, trimReceipts } from "./ledger.js";
@@ -13,6 +14,10 @@ let listening = false;
 const proofs = new Map();
 export function registerCheckoutProof() {
   CONFIG.queries[`${MODULE_ID}.checkoutProof`] = ({ id }) => proofs.get(id) ?? null;
+  CONFIG.queries[`${MODULE_ID}.revisedOffer`] = async payload => {
+    if (!proofs.has(payload.id)) return false;
+    return (await confirmRevisedOffer(payload)) === true && proofs.has(payload.id);
+  };
 }
 async function verifyRequester(msg) {
   const user = game.users.get(msg.userId);
@@ -106,8 +111,28 @@ async function receive(msg) {
   catch (error) { locks.release(actor.id, msg.id); return notify(msg.userId, { id: msg.id, error: error.message }); }
   notify(msg.userId, { id: msg.id, status: "pending" });
   const { MerchantReviewApplication } = await import("./review-app.js");
+  let accepted = offerTerms(proposal);
+  const revise = async revised => {
+    const terms = offerTerms(revised);
+    proposal = revised;
+    if (stable(terms) === stable(accepted)) return true;
+    await verifyRequester(msg);
+    logger.debug("Revised offer awaiting player", { merchant: actor.id, request: msg.id });
+    const payload = { id: msg.id, merchant: actor.name, previous: accepted, revised: terms };
+    const consent = user.id === game.user.id ? await confirmRevisedOffer(payload)
+      : await user.query(`${MODULE_ID}.revisedOffer`, payload, { timeout: 60000 });
+    if (consent !== true) {
+      logger.debug("Revised offer declined", { merchant: actor.id, request: msg.id });
+      return false;
+    }
+    if (!locks.owns(actor.id, msg.id)) throw Error("This checkout is no longer active.");
+    accepted = terms;
+    logger.debug("Revised offer accepted", { merchant: actor.id, request: msg.id });
+    return true;
+  };
   const app = new MerchantReviewApplication({ actor, character, user, request: msg, proposal,
-    onFinish: (result, edits) => finish(actor, character, msg, proposal, result, edits) });
+    onRecalculate: revise,
+    onFinish: (result, edits) => finish(actor, character, msg, proposal, result, edits, accepted) });
   subscribers.set(msg.id, app);
   try { await app.render({ force: true }); }
   catch (error) {
@@ -117,7 +142,7 @@ async function receive(msg) {
   }
 }
 
-async function finish(actor, character, request, proposal, decision, edits) {
+async function finish(actor, character, request, proposal, decision, edits, accepted) {
   if (!locks.owns(actor.id, request.id)) return false;
   if (!game.user.isGM || coordinator()?.id !== game.user.id) throw Error("Only the active GM may decide this trade.");
   try {
@@ -126,6 +151,7 @@ async function finish(actor, character, request, proposal, decision, edits) {
       if (!character.testUserPermission(game.users.get(request.userId), "OWNER")) throw Error("Character ownership changed.");
       if ((merchantConfig(actor)?.availability ?? "closed") !== "open") throw Error("Merchant is no longer open.");
       const quote = quoteTrade(actor, character, request, edits);
+      if (stable(offerTerms(quote)) !== stable(accepted)) throw Error("The player must accept these revised terms. Recalculate the offer first.");
       // A changed quote must be resubmitted, unless the GM explicitly supplied line edits.
       if (!edits && stable(quote.basket) !== stable(proposal.basket)) throw Error("Prices changed. Close and resubmit this trade.");
       await executeTrade({ merchant: actor, character, quote, request });

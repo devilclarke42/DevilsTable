@@ -7,6 +7,7 @@ export class MerchantReviewApplication extends HandlebarsApplicationMixin(Applic
   #finished = false;
   #saving = false;
   #edits = null;
+  #offerMessage = "";
   constructor(data, options = {}) {
     super(options); this.#data = data;
     this.#edits = data.proposal?.basket.map(({ id, direction, quantity, copper }) => ({ id, direction, quantity, copper })) ?? null;
@@ -32,7 +33,7 @@ export class MerchantReviewApplication extends HandlebarsApplicationMixin(Applic
         gmBefore: this.#data.actor.system.currency[coin] ?? 0,
         gmAfter: this.#data.proposal.payment.merchant[coin] ?? 0 })),
       currency: { ...this.#data.character.system.currency },
-      note: "Checkout confirmed with the requesting client. Approval transfers the displayed goods and native currency." };
+      note: this.#offerMessage || "Checkout confirmed with the requesting client. Approval transfers the displayed goods and native currency." };
   }
   async #complete(status) {
     if (this.#finished || this.#saving) return;
@@ -64,15 +65,32 @@ export class MerchantReviewApplication extends HandlebarsApplicationMixin(Applic
     });
   }
   static async #recalculate() {
-    if (this.#saving) return false;
+    if (this.#saving || this.#finished) return false;
+    let declined = false;
+    this.#saving = true;
     try {
       const edits = this.#readEdits();
       const proposal = quoteTrade(this.#data.actor, this.#data.character, this.#data.request, edits);
       this.#edits = edits;
       this.#data.proposal = proposal;
+      this.#offerMessage = "Waiting for the player to confirm any changed prices or quantities…";
+      await this.render();
+      if (!await this.#data.onRecalculate(proposal)) {
+        declined = true;
+        this.#offerMessage = "Player declined the revised offer. Checkout cancelled.";
+        return false;
+      }
+      this.#offerMessage = "The player has accepted these terms. Review and approve to complete the trade.";
       await this.render();
       return true;
-    } catch (error) { ui.notifications.error(error.message); return false; }
+    } catch (error) {
+      this.#offerMessage = "Player confirmation was not received. Recalculate to retry, or close the checkout.";
+      ui.notifications.error(error.message); return false;
+    } finally {
+      this.#saving = false;
+      if (declined) await this.#complete("rejected");
+      else await this.render();
+    }
   }
   static async #approve() {
     if (this.#saving || this.#finished) return;

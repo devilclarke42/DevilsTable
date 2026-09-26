@@ -129,7 +129,7 @@ export class MerchantShopApplication extends HandlebarsApplicationMixin(Applicat
       this.#pending = result.status === "pending";
       this.#message = result.error || ({ pending: "GM is reviewing the request; no stock is reserved.",
         approved: "Trade completed. Items and currency transferred.",
-        rejected: "GM rejected the request. Your basket remains available.",
+        rejected: "Checkout was rejected or the revised offer was declined. Your basket remains available.",
         close: "GM closed the request. Your basket remains available." }[result.status] ?? "Request complete.");
       if (result.status === "approved") { this.#basket.clear(); this.#sales.clear(); await this.refreshStock(); }
       await this.render();

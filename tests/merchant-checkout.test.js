@@ -53,9 +53,29 @@ for (const count of [2, 3, 5]) test(`${count} checkout clients: one GM review, b
   players.forEach((p,i) => receive({ type: "browse", id: `browse${i}`, userId: p.id, sceneId: "scene", tokenId: "merchant-token" }));
   await new Promise(r => setImmediate(r)); assert.equal(responses.filter(r => r.type === "stock").length, count);
   reviews[0].element = { querySelectorAll: () => [{ dataset: { id: "rope", direction: "buy" }, querySelector: selector => ({ value: selector.includes("quantity") ? "1" : "10" }) }] };
+  if (count === 2) {
+    let consent = null;
+    players[0].query = async (name, payload) => {
+      if (name.endsWith("checkoutProof")) return structuredClone(packets[0]);
+      assert.equal(name, "devils-table.revisedOffer");
+      assert.equal(payload.previous.total, 10); assert.equal(payload.revised.total, 8);
+      assert.equal(payload.revised.payment, undefined);
+      if (consent === null) throw Error("Player timed out");
+      return consent;
+    };
+    reviews[0].element = { querySelectorAll: () => [{ dataset: { id: "rope", direction: "buy" }, querySelector: selector => ({ value: selector.includes("quantity") ? "1" : "8" }) }] };
+    const actions = reviews[0].constructor.DEFAULT_OPTIONS.actions;
+    await actions.recalculate.call(reviews[0]);
+    await actions.approve.call(reviews[0]);
+    assert.equal(pcs[0].system.currency.cp, 50); assert.equal(merchant.items.get("rope").system.quantity, 1);
+    assert.ok(errors.some(e => /must accept/.test(e)));
+    consent = true; errors.length = 0;
+    await actions.recalculate.call(reviews[0]);
+    assert.equal(pcs[0].system.currency.cp, 50); // consent alone never transfers
+  }
   await reviews[0].constructor.DEFAULT_OPTIONS.actions.approve.call(reviews[0]);
   assert.deepEqual(errors, []); assert.equal(responses.filter(r => r.status === "approved").length, 1);
-  assert.equal(merchant.items.get("rope").system.quantity, 0); assert.equal(pcs[0].system.currency.cp, 40);
+  assert.equal(merchant.items.get("rope").system.quantity, 0); assert.equal(pcs[0].system.currency.cp, count === 2 ? 42 : 40);
   const completed = [...docs.values()][0].getFlag("devils-table", "transaction");
   assert.equal(completed.status, "completed");
   const { createReceipt } = await import("../scripts/merchant/ledger.js");
@@ -64,7 +84,9 @@ for (const count of [2, 3, 5]) test(`${count} checkout clients: one GM review, b
     merchant.items.get("rope").data.system.quantity = 1;
     const next = { ...packets[1], id: "rejected-new" }; players[1].query = async () => structuredClone(next);
     receive(next); for (let n = 0; n < 20 && reviews.length < 2; n++) await new Promise(r => setTimeout(r, 5));
-    await reviews[1].constructor.DEFAULT_OPTIONS.actions.reject.call(reviews[1]);
+    reviews[1].element = { querySelectorAll: () => [{ dataset: { id: "rope", direction: "buy" }, querySelector: selector => ({ value: selector.includes("quantity") ? "1" : "9" }) }] };
+    players[1].query = async name => name.endsWith("checkoutProof") ? structuredClone(next) : false;
+    await reviews[1].constructor.DEFAULT_OPTIONS.actions.recalculate.call(reviews[1]);
     assert.equal(merchant.items.get("rope").system.quantity, 1); assert.equal(pcs[1].system.currency.cp, 50);
     assert.equal([...docs.values()].filter(d => d.getFlag("devils-table", "transaction").status === "rejected").length, 1);
   }

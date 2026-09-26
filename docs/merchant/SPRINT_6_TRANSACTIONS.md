@@ -320,3 +320,33 @@ All 267 tests pass. The native lifecycle fixture now initializes creator ownersh
 both successful transfer and legacy recovery; an unrelated player ownership entry still
 blocks recovery. Install alpha.23, reload both clients, recover the latest interrupted trade,
 and check inventories and wallets before a new checkout. Live success remains pending.
+
+## Alpha.24 revised-offer consent and review layout
+
+The owner confirms successful purchases and rejections after successful recovery in alpha.23.
+This is live confirmation of those paths, not a claim that every multiplayer stress case has
+been exercised live.
+
+GM recalculation now compares the proposed public lines and total with the last accepted
+terms. A change sends a native User query to the checkout's requesting client, which must
+still retain its checkout proof. A native confirmation dialog shows previous and revised
+prices, quantities, buy/sell directions and net totals. It sends no wallets or private notes.
+Acceptance updates the GM's in-memory accepted terms; a separate GM approval rechecks those
+exact terms and live affordability/stock before transfer. Same-total line changes still need
+consent. Recalculating unchanged accepted terms does not prompt again.
+
+Decline or closing the player prompt records rejection using the revised proposal, releases
+the merchant lock and retains the player's basket. A remote query timeout after 60 seconds
+leaves the review open, moves nothing and permits recalculation or closure. Late replies do
+not authorise a transfer. While waiting, GM decision actions are guarded against overlap and
+the merchant remains occupied for checkout; all players can browse. A local GM acting as
+customer uses the same confirmation dialog directly.
+
+Character currency and Currency settlement are separate native details/summary disclosures,
+collapsed by default. Items and the net total remain visible. No new settings or dependencies.
+
+268 automated tests pass, including consent gating, timeout, decline, public payload filtering
+and escaping. Live acceptance: change a price, confirm the player sees both totals, decline and
+verify no writes; repeat, accept, then approve as GM and verify only the revised total moves.
+Also test a quantity change and open both collapsed currency sections. These new UI paths
+have not yet been confirmed in live Foundry.

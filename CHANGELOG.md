@@ -3,6 +3,29 @@
 This file retains detailed repository build history. The official milestone/release record is
 [docs/CHANGELOG.md](docs/CHANGELOG.md). Versions here do not imply a public GitHub Release exists.
 
+## 0.2.0-alpha.24 — 2026-09-26 — Player confirmation of revised offers
+
+### Added
+
+- GM Recalculate offer requests player confirmation when prices or quantities differ from
+  accepted terms. The native dialog shows previous and revised lines and totals.
+- Approval verifies the exact accepted public terms even when the GM supplies edits.
+  Acceptance alone transfers nothing. Decline/closing the prompt rejects checkout and
+  preserves the player's basket. Remote confirmation has a 60-second query timeout.
+- The merchant service lock remains held while waiting; browsing remains available.
+
+### Changed
+
+- Character currency and Currency settlement use native collapsed disclosure sections.
+- Only public offer terms are sent in the confirmation query, not wallet or settlement data.
+
+### Validation
+
+- Owner confirms recovery, purchases and rejections work in alpha.23.
+- 268 tests pass, covering revised-offer acceptance, timeout blocking approval, decline with
+  no transfers, public projection and HTML escaping, plus existing multiplayer coverage.
+- New prompt and disclosure UI require live validation on both clients.
+
 ## 0.2.0-alpha.23 — 2026-09-26 — Explicit creator ownership
 
 ### Fixed
