@@ -3,6 +3,26 @@
 This file retains detailed repository build history. The official milestone/release record is
 [docs/CHANGELOG.md](docs/CHANGELOG.md). Versions here do not imply a public GitHub Release exists.
 
+## 0.2.0-alpha.19 — 2026-09-26 — Native gear conversion and recovery
+
+### Fixed
+
+- Predict the native D&D5e `preCreateGear` property change using a detached Item before
+  planning a transfer or finding a compatible stack. NPC gear loses its gear property on
+  characters and gains it on qualifying NPCs.
+- Recover older creation/deletion receipt steps when the only mismatch is that native
+  creation property adjustment. All other saved fields remain strictly checked.
+- Rollback read-back failures now identify the Actor, Item and differing field. Conflicting
+  rollback edits include the differing path rather than only a generic error.
+
+### Validation
+
+- 263 tests pass, including backpack-plus-strap buying, selling to an NPC, recovery from
+  the legacy gear mismatch with unchanged wallets, repeated recovery, and refusal to
+  overwrite a genuine character Item edit.
+- Live recovery and approval remain unconfirmed. No inventory or currency was changed in
+  the user's world by this development work.
+
 ## 0.2.0-alpha.18 — 2026-09-26 — Native container stock
 
 ### Fixed

@@ -229,3 +229,31 @@ restriction, plus population and retry. Live validation: repeat the failing purc
 one container reaches the character, disappears from the merchant, and currency settles once.
 The screenshot does not identify the Item type; if the failed Item was not a container,
 additional live investigation is needed. No live success is claimed by this build.
+
+## Alpha.19 native gear conversion and legacy recovery
+
+The supplied needs-recovery receipt identifies a missing property on the newly created
+character backpack. D&D5e 5.3.3 [PhysicalItemTemplate.preCreateGear](https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/module/data/item/templates/physical-item.mjs)
+removes `gear` on non-NPC destinations and adds it on qualifying NPC destinations. All six
+supported physical Item types invoke this method during native creation. Constructing an
+Item alone does not invoke the creation lifecycle; the prior expectation was incomplete.
+
+The transaction planner now invokes that native method on a detached Item and copies back
+only the resulting properties. No world write or general creation hook runs during planning.
+This also lets stack matching compare destination gear state. Other properties remain checked.
+
+Recovery of a legacy receipt accepts native gear conversion only for steps which created or
+deleted an Item. It compares every other field exactly, preserves genuine edits by refusing
+recovery, and never treats a conflicting trade as successful. Original receipt snapshots remain
+intact. Restored Items use native creation semantics. Rollback diagnostics name failing fields.
+
+For the reported partial trade: install alpha.19, reload GM and player, select Test Merchant in
+Merchant Setup → Recovery, and confirm Check / recover interrupted trade. A successful recovery
+removes the transaction-created character backpack, restores the merchant backpack, leaves the
+unattempted strap unchanged, restores wallets where necessary, and marks the receipt rolled-back.
+Already restored balances are not charged again. Verify those results before a new checkout.
+If any field still conflicts, leave the receipt and inventory intact and report the full message.
+
+263 automated tests pass. Tests simulate native gear creation, both directions of transfer,
+legacy receipt recovery with wallets already restored, idempotence, and genuine-edit rejection.
+These are not live Foundry acceptance results; the user must confirm recovery and a fresh trade.

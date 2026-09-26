@@ -16,6 +16,17 @@ function snapshot(actor, step) {
   return itemState(inventoryData(actor.items.get(step.itemId)));
 }
 function equal(a, b) { return stable(a) === stable(b); }
+/** Predict only the native gear property change, on a detached Item with no world writes. */
+function createdItemState(actor, data) {
+  if (!data) return data;
+  const copy = clone(data);
+  const item = new CONFIG.Item.documentClass(copy, { parent: actor });
+  if (typeof item.system.preCreateGear === "function") {
+    item.system.preCreateGear(copy, {}, game.user);
+    copy.system.properties = item.toObject().system.properties;
+  }
+  return copy;
+}
 function difference(expected, actual, path = "value") {
   if (equal(expected, actual)) return null;
   if (!expected || !actual || typeof expected !== "object" || typeof actual !== "object") {
@@ -73,6 +84,8 @@ export function makeSteps(merchant, character, quote, now = new Date().toISOStri
     // A merchant's offer controls must not travel to a customer or change another shop's price.
     if (data.flags?.[MODULE_ID]) delete data.flags[MODULE_ID].offer;
     data.system.quantity = row.quantity;
+    // Native NPC gear is removed on characters and added on NPCs during creation.
+    Object.assign(data, createdItemState(target, data));
     const canStack = !data.effects?.length && !data.system.uses?.max && data.type !== "container";
     const match = canStack && [...virtual.get(target.id).values()].find(i => equal(comparableItem(i), comparableItem(data)));
     const created = { ...data, _id: foundry.utils.randomID() };
@@ -160,10 +173,14 @@ async function restoreSteps(record, actors) {
   for (let i = record.attempted; i >= 0; i--) {
     const step = record.steps[i], actor = actors.find(a => a.id === step.actorId);
     const current = snapshot(actor, step);
-    if (equal(current, step.before)) continue;
-    if (!equal(current, step.after)) throw Error(`Conflicting edit on ${actor.name}; manual reconciliation required.`);
+    // Old receipts predate gear prediction. Accept only that native creation change;
+    // quantities, other properties and all other saved data must still match exactly.
+    const before = step.kind === "item" && step.after === null ? createdItemState(actor, step.before) : step.before;
+    const after = step.kind === "item" && step.before === null ? createdItemState(actor, step.after) : step.after;
+    if (equal(current, step.before) || equal(current, before)) continue;
+    if (!equal(current, step.after) && !equal(current, after)) throw Error(`Conflicting edit on ${actor.name}; manual reconciliation required. ${difference(after, current)}`);
     await write(actor, step, step.before);
-    if (!equal(snapshot(actor, step), step.before)) throw Error("Rollback read-back failed.");
+    verifyStep(actor, step, before, "Rollback read-back failed");
   }
 }
 export async function recoverTrade(actor) {
