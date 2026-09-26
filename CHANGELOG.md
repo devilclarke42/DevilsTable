@@ -3,6 +3,22 @@
 This file retains detailed repository build history. The official milestone/release record is
 [docs/CHANGELOG.md](docs/CHANGELOG.md). Versions here do not imply a public GitHub Release exists.
 
+## 0.2.0-alpha.22 — 2026-09-26 — Serializable Item comparisons
+
+### Fixed
+
+- Normalize Item comparison snapshots through the same JSON representation used by saved
+  receipts. Optional undefined object keys no longer cause false recovery conflicts after
+  receipt persistence; actual values, nulls and empty strings remain checked.
+- When an expected deletion is already restored but differs from its original, report the
+  differing original-state field instead of dumping the whole Item against null.
+
+### Validation
+
+- Reproduced an undefined unidentified-name field causing rollback verification failure.
+- All 266 tests pass, including legacy recovery and rejection of a real unidentified-name edit.
+- Live recovery and fresh checkout remain to be confirmed.
+
 ## 0.2.0-alpha.21 — 2026-09-26 — Compare native property sets
 
 ### Fixed

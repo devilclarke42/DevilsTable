@@ -288,3 +288,17 @@ pass, including recovery when the backpack has already returned with duplicate g
 and refusal to recover after an unrelated property was added. Live verification is pending.
 Install alpha.21, reload, and run the same recovery action. Confirm rolled-back, inventories,
 and balances before requesting a fresh purchase. Do not manually remove the returned backpack.
+
+## Alpha.22 serializable optional fields
+
+The live comparison reports an extra `system.unidentified.name` key, while the same live
+Item's JSON omits it. This supports an undefined optional field differing from a missing
+receipt key. A fixture with that undefined field reproduces rollback read-back failure.
+Item comparison snapshots now use JSON serialization, matching the ledger's persistence
+boundary. Null, empty-string and actual name values are not removed. Source documents and
+saved receipts are not rewritten by comparison. A real unidentified-name edit still blocks
+recovery. Conflicting restored Items now report their difference from the saved original.
+
+All 266 automated tests pass. Install alpha.22, reload both clients and run Check / recover
+interrupted trade. Confirm rolled-back, original inventories and balances before a fresh
+checkout. Live completion has not yet been demonstrated.

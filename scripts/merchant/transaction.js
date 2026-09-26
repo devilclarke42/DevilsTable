@@ -7,7 +7,9 @@ const clone = value => structuredClone(value);
 const inventoryData = item => item?.toObject() ?? null;
 function itemState(data) {
   if (!data) return null;
-  const copy = clone(data); delete copy._stats; delete copy.sort;
+  // Receipts persist JSON: optional undefined keys disappear on save. Compare the
+  // same serializable representation, retaining null, empty strings and real values.
+  const copy = JSON.parse(JSON.stringify(data)); delete copy._stats; delete copy.sort;
   // D&D5e declares properties as a SetField; source arrays may retain duplicates
   // after preCreateGear. Compare membership, without mutating stored Item data.
   if (Array.isArray(copy.system?.properties)) copy.system.properties = [...new Set(copy.system.properties)].sort();
@@ -186,7 +188,10 @@ async function restoreSteps(record, actors) {
     const before = step.kind === "item" && step.after === null ? createdItemState(actor, step.before) : step.before;
     const after = step.kind === "item" && step.before === null ? createdItemState(actor, step.after) : step.after;
     if (equal(current, step.before) || equal(current, before)) continue;
-    if (!equal(current, step.after) && !equal(current, after)) throw Error(`Conflicting edit on ${actor.name}; manual reconciliation required. ${difference(after, current)}`);
+    if (!equal(current, step.after) && !equal(current, after)) {
+      const expected = after === null && current !== null ? before : after;
+      throw Error(`Conflicting edit on ${actor.name}; manual reconciliation required. ${difference(expected, current)}`);
+    }
     await write(actor, step, step.before);
     verifyStep(actor, step, before, "Rollback read-back failed");
   }
