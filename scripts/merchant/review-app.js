@@ -4,6 +4,7 @@ const { ApplicationV2, HandlebarsApplicationMixin } = foundry.applications.api;
 export class MerchantReviewApplication extends HandlebarsApplicationMixin(ApplicationV2) {
   #data;
   #finished = false;
+  #saving = false;
   constructor(data, options = {}) { super(options); this.#data = data; }
 
   static DEFAULT_OPTIONS = {
@@ -24,17 +25,29 @@ export class MerchantReviewApplication extends HandlebarsApplicationMixin(Applic
       note: "Request identity is unverified on the module socket. This sprint does not move Items or currency." };
   }
   async #complete(status) {
-    if (this.#finished) return;
-    const saved = await this.#data.onFinish(status);
-    if (saved === false) return;
-    this.#finished = true;
+    if (this.#finished || this.#saving) return;
+    this.#saving = true;
+    try {
+      const saved = await this.#data.onFinish(status);
+      if (saved === false) return;
+      this.#finished = true;
+    } finally {
+      this.#saving = false;
+    }
     await this.close();
   }
   static async #approve() { await this.#complete("approved"); }
   static async #reject() { await this.#complete("rejected"); }
   static async #dismiss() { await this.#complete("close"); }
   async close(options) {
-    if (!this.#finished) { await this.#data.onFinish("close"); this.#finished = true; }
+    if (this.#saving) return this;
+    if (!this.#finished) {
+      this.#saving = true;
+      try {
+        if (await this.#data.onFinish("close") === false) return this;
+        this.#finished = true;
+      } finally { this.#saving = false; }
+    }
     return super.close(options);
   }
 }

@@ -122,3 +122,21 @@ A separate-client automated relay test passes with the player's Actor collection
 inaccessible. It verifies application message handling, not a live Foundry server.
 Basket and review display now convert copper accounting totals to gp/sp/cp; wallets
 are neither converted nor updated. Total suite: 238 passing tests.
+
+
+### Alpha.13: live browsing confirmed; rejection write under investigation
+
+The user confirms players now see public offers. Their screenshot also shows the
+player waiting while the GM reviews checkout. This confirms player stock browsing
+and delivery into GM review; it does not prove simultaneous multi-player locking.
+
+Rejection reports a history-save failure. The provided screenshot omits the original
+`Merchant history failed` exception. A Setting permission error references
+`time-clock.mjs`; there is insufficient evidence to link that error to our Actor write.
+No permission changes or changes to other modules are made.
+
+Alpha.13 narrows the update to the history flag, serializes review decisions and
+includes the actual error in the GM notification. A failed save leaves the review
+open for retry or Close. Tests cover failure, retry, rejection receipt, preserved
+relationships and lock release. If live rejection still fails, collect the complete
+new notification or expanded original history exception. Total: 239 passing tests.

@@ -6,7 +6,7 @@ Foundry compendiums are generated from it and must never be edited as source dat
 
 ## Current status
 
-**Sprint 5 proof build (`0.2.0-alpha.12`):** merchant setup, player Shop UI, temporary basket and
+**Sprint 5 proof build (`0.2.0-alpha.13`):** merchant setup, player Shop UI, temporary basket and
 GM checkout-review pipeline are available for live validation. Approval does not move Items or
 currency. Two-player behaviour, non-owner token right-click and sender authentication have not
 been verified in a live Foundry world. See the
@@ -22,7 +22,7 @@ Existing catalogue goods (including quantity-zero offers) are skipped; manual st
 are preserved. This is GM-approved starting stock, not automatic restocking. Use **Refresh
 stock** in an already-open Shop UI after adding goods.
 
-1. Install `devils-table-v0.2.0-alpha.12.zip` into a **disposable** Foundry V14 / D&D5e 5.3.3
+1. Install `devils-table-v0.2.0-alpha.13.zip` into a **disposable** Foundry V14 / D&D5e 5.3.3
    world and enable Devil's Table. Existing worlds keep their normal catalogue and tables.
 2. As GM, create an ordinary world NPC, place a **linked** token in a scene and give it Items
    copied from the generated Devil's Table Item compendium. The NPC must remain GM-only.
@@ -120,7 +120,7 @@ an item from the Item compendium build.
 1. Obtain the packaged ZIP from the successful **Validate and package** GitHub Actions run
    (artifact: `devils-table-framework`), or build it using the development commands below.
    Downloading an Actions artifact may wrap the module ZIP in another ZIP: extract the artifact
-   first and select `devils-table-v0.2.0-alpha.12.zip` for import.
+   first and select `devils-table-v0.2.0-alpha.13.zip` for import.
 2. Back up your test world. In The Forge's Import Wizard, import that module ZIP as a custom package.
    See the [Forge custom-package guide](https://forums.forge-vtt.com/t/how-to-upload-a-modified-version-of-a-module-system/10510).
 3. In a V14 / D&D5e 5.3.3 test world, enable **Devil's Table: Goods & Provisions** and reload.
@@ -153,7 +153,7 @@ the live acceptance test and an actual versioned release exist.
 ### Recovering from the alpha.2 read-back error
 
 Keep the existing generated compendium. Import the updated module ZIP using the same Forge
-custom-package method, restart/reload the test world and confirm the module shows `0.2.0-alpha.12`.
+custom-package method, restart/reload the test world and confirm the module shows `0.2.0-alpha.13`.
 Run **Village General Store → Containers → Validate / Preview**, then **Build / Rebuild**.
 If all 13 Items were saved, equivalent description formatting is accepted. The first alpha.7
 rebuild adds thirteen sale-unit flags, then reports thirteen unchanged on the next build.

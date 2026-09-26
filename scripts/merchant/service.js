@@ -106,11 +106,12 @@ async function finish(actor, request, proposal, decision) {
       items: proposal.basket, copper: proposal.total, status: decision,
       outcome: "Sprint 5 request demonstration; no Items or currency transferred" };
     try {
-      await actor.setFlag(MODULE_ID, "merchant", { ...old,
-        history: appendHistory(old.history, entry, old.historyRetention ?? policy) });
+      await actor.setFlag(MODULE_ID, "merchant.history",
+        appendHistory(old.history, entry, old.historyRetention ?? policy));
     } catch (error) {
       logger.error("Merchant history failed", error);
-      ui.notifications.error("Merchant history could not be saved; resolve this before processing another request.");
+      const reason = error instanceof Error ? error.message : String(error);
+      ui.notifications.error(`Merchant history could not be saved: ${reason}. The review remains open; retry or close it.`);
       return false;
     }
   }

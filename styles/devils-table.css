@@ -30,3 +30,9 @@
 .devils-table .dt-shop button { min-height: 2rem; }
 .devils-table .dt-shop [aria-pressed="true"] { outline: 2px solid currentColor; }
 @media (max-width: 640px) { .devils-table .dt-shop-grid { grid-template-columns: 1fr; } }
+
+/* Align actions with the input, rather than the combined label/input height. */
+.devils-table .dt-shop-controls { align-items: flex-end; }
+.devils-table .dt-shop-controls > label { display: grid; gap: 0.25rem; margin: 0; }
+.devils-table .dt-shop-controls > button,
+.devils-table .dt-shop-controls input { margin: 0; }

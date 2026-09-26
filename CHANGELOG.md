@@ -3,6 +3,24 @@
 This file retains detailed repository build history. The official milestone/release record is
 [docs/CHANGELOG.md](docs/CHANGELOG.md). Versions here do not imply a public GitHub Release exists.
 
+## 0.2.0-alpha.13 — 2026-09-26 — Review persistence and control alignment
+
+### Fixed
+
+- Search actions align with the bottom of the input, with explicit label spacing.
+- History persistence updates only `merchant.history` rather than resubmitting all
+  merchant configuration. Failed writes show the actual error and leave review open.
+- Repeated approve/reject clicks and closing during a pending save cannot submit
+  competing decisions. Failed writes can be retried or the request closed.
+
+### Validation
+
+- User confirms live player browsing now works. Rejection failed during history
+  saving; the screenshot does not include the original history exception. A separate
+  Setting permission error references time-clock.mjs; causation is not established.
+- 239 tests pass, including rejection, failed write/retry, duplicate clicks, preserved
+  merchant configuration and service-lock release. Live rejection retest required.
+
 ## 0.2.0-alpha.12 — 2026-09-26 — Stock relay diagnostics and readable totals
 
 ### Changed
