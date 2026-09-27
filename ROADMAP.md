@@ -3,6 +3,18 @@
 This is the detailed implementation and acceptance checklist. The official versioned milestones
 and release outcomes are defined in [docs/ROADMAP.md](docs/ROADMAP.md).
 
+## Sprint 7 — Merchant interaction
+
+- [x] Signed percentage controls, stacking, original/adjusted previews and denomination labels.
+- [x] Shop/character pricing and next-purchase negotiation modifiers.
+- [x] GM-controlled negotiation/theft, native rolls and hidden DCs.
+- [x] Recoverable theft transfers, private counters and advisory confidence.
+- [x] Shared service locking, lifecycle/rollback tests and updated operation documentation.
+- [ ] Record live V14 / D&D5e 5.3.3 / Forge acceptance using the
+  [Sprint 7 checklist](docs/merchant/SPRINT_7_INTERACTIONS.md).
+
+Implementation candidate: `0.2.0-alpha.25`. No Tavern work begins here.
+
 ## Documentation Foundation
 
 - [x] Publish the nine complete development standards under `docs/`.
@@ -39,7 +51,7 @@ Implementation is available for acceptance testing; the target environment is no
 
 Implementation stops at the General Store. Tavern authoring has not started.
 
-## Sprint 4 — Merchant System specification (review requested)
+## Sprint 4 — Merchant System specification (approved)
 
 - [x] Draft the Actor/Item, relationship, wallet, checkout, negotiation, inventory, permission,
   migration and transaction-history model in [the design proposal](docs/merchant/MERCHANT_SYSTEM_SPECIFICATION.md).
@@ -47,10 +59,11 @@ Implementation stops at the General Store. Tavern authoring has not started.
   [workflow diagrams](docs/merchant/WORKFLOW_DIAGRAMS.md) and a
   [phased implementation roadmap](docs/merchant/IMPLEMENTATION_ROADMAP.md).
 - [x] Challenge complexity and record [Foundry-native decisions and feasibility gates](docs/merchant/TECHNICAL_JUSTIFICATION.md).
-- [ ] Review and approve or revise the specification before Sprint 5 code begins.
+- [x] Review and approve the specification with required changes before Sprint 5 code begins.
 - [ ] Resolve the versioned milestone order for Merchant System work before Tavern authoring.
 
-Sprint 4 changes documentation only. The current merchant feature is still unimplemented.
+Sprint 4 was documentation-only. Subsequent Sprint 5–7 runtime work is recorded in the
+merchant validation reports and release changelog.
 
 ## Accepted baseline — Containers and seven-category expansion
 

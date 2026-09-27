@@ -19,6 +19,7 @@ export class MerchantShopApplication extends HandlebarsApplicationMixin(Applicat
   #availability = "open";
   #message = "Loading stock…";
   #pending = false;
+  #stockCharacterId = null;
 
   constructor(token, options = {}) { super(options); this.#token = token; }
 
@@ -26,7 +27,7 @@ export class MerchantShopApplication extends HandlebarsApplicationMixin(Applicat
     id: "devils-table-merchant-shop", classes: ["devils-table"], tag: "section",
     position: { width: 740, height: "auto" },
     window: { title: "Devil's Table — Shop", icon: "fa-solid fa-store", resizable: true },
-    actions: { refresh: MerchantShopApplication.#refresh, search: MerchantShopApplication.#search,
+    actions: { negotiate: MerchantShopApplication.#negotiate, steal: MerchantShopApplication.#steal, refresh: MerchantShopApplication.#refresh, search: MerchantShopApplication.#search,
       category: MerchantShopApplication.#selectCategory, add: MerchantShopApplication.#add,
       remove: MerchantShopApplication.#remove, sell: MerchantShopApplication.#sell, unsell: MerchantShopApplication.#unsell, checkout: MerchantShopApplication.#checkout }
   };
@@ -51,23 +52,26 @@ export class MerchantShopApplication extends HandlebarsApplicationMixin(Applicat
     try { funds = walletValue(pc?.actor.system.currency); } catch (_) { /* Disable checkout below. */ }
     return { ...await super._prepareContext(options), sales, sellItems: offers.map(i => ({ ...i, priceLabel: formatCopper(i.copper) })),
       characterName: pc?.actor.name ?? "Select your character token", fundsLabel: formatCopper(funds),
-      fundsError: total > funds ? "Not enough money for this basket." : "",
+      fundsError: this.#stockCharacterId !== pc?.actor.id ? "Refresh stock for the selected character’s prices." : total > funds ? "Not enough money for this basket." : "",
       merchant: this.#merchant, availability: this.#availability,
-      items: filtered, basket, message: this.#message, query: this.#query,
+      items: filtered.map(item => ({ ...item, priceLabel: formatCopper(item.copper) })), basket, message: this.#message, query: this.#query,
       categories: [...new Set(this.#items.map(item => item.category))].map(id => ({ id, selected: id === this.#category })),
       total,
       totalLabel: `${total < 0 ? "You receive " : "You pay "}${formatCopper(Math.abs(total))}`,
-      canCheckout: Boolean(pc) && total <= funds && !this.#pending && this.#availability === "open" && (basket.length + sales.length > 0) };
+      canInteract: Boolean(pc) && !this.#pending && this.#availability === "open",
+      canCheckout: Boolean(pc) && this.#stockCharacterId === pc.actor.id && total <= funds && !this.#pending && this.#availability === "open" && (basket.length + sales.length > 0) };
   }
 
   async refreshStock() {
     this.#message = "Loading stock…";
     // ApplicationV2 will not mount a new window unless its first render is forced.
     await this.render({ force: true });
-    merchantRequest("browse", { sceneId: this.#token.document.parent.id, tokenId: this.#token.document.id }, async msg => {
+    merchantRequest("browse", { sceneId: this.#token.document.parent.id, tokenId: this.#token.document.id,
+      characterId: globalThis.canvas?.tokens?.controlled?.find(t => t.actor?.isOwner && t.actor.type === "character")?.actor.id }, async msg => {
       if (msg.error) this.#message = msg.error;
       else {
         this.#merchant = msg.merchant;
+        this.#stockCharacterId = msg.characterId === undefined ? globalThis.canvas?.tokens?.controlled?.find(t => t.actor?.isOwner && t.actor.type === "character")?.actor.id : msg.characterId;
         this.#items = msg.items;
         this.#buyModifier = msg.buyModifier ?? 1;
         this.#availability = msg.availability;
@@ -102,7 +106,7 @@ export class MerchantShopApplication extends HandlebarsApplicationMixin(Applicat
     await this.render();
   }
   static async #sell(_event, target) {
-    const pc = canvas.tokens.controlled.find(t => t.actor?.isOwner && t.actor.type === "character");
+    const pc = globalThis.canvas?.tokens?.controlled?.find(t => t.actor?.isOwner && t.actor.type === "character");
     const offer = saleOffers(pc?.actor, this.#buyModifier).find(i => i.id === target.dataset.id);
     if (!offer) return;
     this.#sales.set(offer.id, Math.min(offer.quantity, (this.#sales.get(offer.id) ?? 0) + 1));
@@ -113,9 +117,31 @@ export class MerchantShopApplication extends HandlebarsApplicationMixin(Applicat
     if (count <= 1) this.#sales.delete(target.dataset.id); else this.#sales.set(target.dataset.id, count - 1);
     await this.render();
   }
+  async requestInteraction(kind, itemId) {
+    if (this.#pending || this.#availability !== "open") return;
+    const pc = globalThis.canvas?.tokens?.controlled?.find(t => t.actor?.isOwner && t.actor.type === "character");
+    if (!pc) return ui.notifications.warn("Select your character token first.");
+    this.#pending = true; this.#message = "Waiting for the GM to allow the attempt…";
+    await this.render();
+    merchantRequest("interaction", { kind, itemId, sceneId: this.#token.document.parent.id, tokenId: this.#token.document.id,
+      characterId: pc.actor.id, characterTokenId: pc.document.id }, async result => {
+      this.#pending = result.status === "pending";
+      const outcomes = { success: kind === "theft" ? "Theft succeeded. The selected item was transferred." : "Negotiation completed. Refresh prices reflect the GM's offer.",
+        failure: "Negotiation failed. The GM has resolved the offer.", "failure-unnoticed": "Theft failed, unnoticed.",
+        "failure-noticed": "The theft attempt was noticed.", caught: "Caught immediately.", declined: "The GM declined the attempt.", completed: "Interaction already completed." };
+      const message = result.error || (this.#pending ? "The GM is reviewing your interaction request." : outcomes[result.outcome] ?? "Interaction complete.");
+      if (result.status === "interaction-complete") {
+        ui.notifications.info(message);
+        await this.refreshStock();
+      }
+      this.#message = message; await this.render();
+    });
+  }
+  static async #negotiate() { await this.requestInteraction("negotiation"); }
+  static async #steal(_event, target) { await this.requestInteraction("theft", target.dataset.id); }
   static async #checkout() {
     if (this.#pending || this.#availability !== "open" || (!this.#basket.size && !this.#sales.size)) return;
-    const pc = canvas.tokens.controlled.find(token => token.actor?.isOwner && token.actor.type === "character");
+    const pc = globalThis.canvas?.tokens?.controlled?.find(token => token.actor?.isOwner && token.actor.type === "character");
     if (!pc) { this.#message = "Control a character token near the merchant before checkout."; return this.render(); }
     const context = await this._prepareContext({});
     if (!context.canCheckout) { this.#message = context.fundsError || "Review your basket and selected character."; return this.render(); }

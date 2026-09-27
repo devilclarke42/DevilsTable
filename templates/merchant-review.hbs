@@ -1,16 +1,61 @@
+{{#if interaction}}
+<div class="dt-shop dt-review">
+  <h2>{{interaction.label}} request</h2>
+  <p><strong>{{merchant}}</strong> · {{character}} ({{claimedUser}}) · Relationship: {{relationship}}</p>
+  {{#if itemName}}<p>Attempt to steal one sale unit of <strong>{{itemName}}</strong>.</p>{{/if}}
+  <p role="status">{{note}}</p>
+  {{#unless interaction.result}}
+    <label>Skill <select name="skill">{{#each skills}}<option value="{{id}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}</select></label>
+    <label>Hidden suggested DC <input name="dc" type="number" min="0" max="50" step="1" value="{{interaction.dc}}"></label>
+    <p>Merchant confidence: {{interaction.confidence}}. Adjust the DC for the scene; it never leaves this GM review.</p>
+    <button type="button" data-action="allowInteraction">Allow attempt and request roll</button>
+  {{else}}
+    <p>Roll: <strong>{{interaction.result.total}}</strong> · Hidden DC: {{interaction.result.dc}} · Margin: {{interaction.result.margin}}</p>
+    <p>Suggested result: {{#if interaction.result.success}}Success{{else}}Failure{{/if}}. {{suggestedRelationship}}</p>
+    <label>GM final outcome <select name="outcome">{{#each outcomes}}<option value="{{value}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}</select></label>
+    {{#unless theft}}<label>Suggested modifier % (editable) <input name="interactionModifier" type="number" min="-100" max="500" step="0.01" value="{{interaction.result.modifier}}"></label>
+      <p>Set 0% to reject the suggested discount. The approved modifier applies to this character's next completed purchase.</p>
+    {{else}}<p>Only final Success transfers the selected item, with no currency movement. Other outcomes record private memory only.</p>{{/unless}}
+    <button type="button" data-action="resolveInteraction">Confirm GM outcome</button>
+  {{/unless}}
+  <button type="button" data-action="reject">Decline</button><button type="button" data-action="dismiss">Close</button>
+  <details><summary>Private merchant memory</summary>
+    <p>Lifetime spend: {{memory.spendLabel}} · Lifetime purchase savings: {{memory.discountLabel}}</p>
+    <p>Negotiations: {{memory.successfulNegotiations}} successful / {{memory.failedNegotiations}} failed.</p>
+    <p>Hidden successful thefts: {{memory.successfulThefts}} · Caught stealing: {{memory.caughtStealing}}</p>
+  </details>
+</div>
+{{else}}
 <div class="dt-shop dt-review">
   <h2>Checkout request</h2>
   <p><strong>Merchant:</strong> {{merchant}}<br><strong>Character:</strong> {{character}}<br>
     <strong>Player:</strong> {{claimedUser}}</p>
   <p class="dt-warning">{{note}}</p>
+  <p>Relationship: <strong>{{relationship}}</strong></p>
+  <div class="dt-shop-controls">
+    <label>Shop-wide % <input name="merchantModifier" type="number" min="-100" max="500" step="0.01" value="{{pricing.merchant}}"></label>
+    <label>Character % <input name="characterModifier" type="number" min="-100" max="500" step="0.01" value="{{pricing.character}}"></label>
+    <label>Negotiation % <input name="negotiationModifier" type="number" min="-100" max="500" step="0.01" value="{{pricing.negotiation}}"></label>
+    <label>This checkout % <input name="reviewModifier" type="number" min="-100" max="500" step="0.01" value="{{pricing.review}}"></label>
+    <label>Stacking <select name="stacking"><option value="additive" {{#unless compound}}selected{{/unless}}>Add percentages</option><option value="compound" {{#if compound}}selected{{/if}}>Compound percentages</option></select></label>
+  </div>
+  <p>Negative values discount; positive values add markup. Shop, character and negotiation modifiers apply to purchases; checkout and line modifiers also affect sale offers.</p>
+  <button type="button" data-action="saveModifiers">Save shop and character modifiers</button>
+  <p>Saving affects future quotes. Negotiation and checkout overrides here apply to this checkout only.</p>
   <h3>Basket</h3>
   {{#each basket}}<div data-trade-line data-id="{{id}}" data-direction="{{direction}}">
-    <strong>{{direction}}: {{name}}</strong> ({{priceLabel}} each)
+    <strong>{{direction}}: {{name}}</strong> (Original {{originalLabel}} → <span data-adjusted>{{priceLabel}}</span> each)
     <label>Quantity <input name="quantity" type="number" min="0" step="1" value="{{quantity}}"></label>
-    <label>Unit price (cp) <input name="copper" type="number" min="0" step="1" value="{{copper}}"></label>
+    <label>Line modifier % <input name="percent" type="number" min="-100" max="500" step="0.01" value="{{percent}}"></label>
   </div>{{/each}}
   <button type="button" data-action="recalculate">Recalculate offer</button>
-  <p><strong>Request total:</strong> {{totalLabel}}</p>
+  <p>Final purchase modifier: <strong data-preview="modifier">{{finalModifier}}</strong></p>
+  <p>Original net subtotal: <span data-preview="original">{{originalLabel}}</span> · Discount / markup: <span data-preview="adjustment">{{adjustmentLabel}}</span></p>
+  <p>Purchase savings: <span data-preview="discount">{{discountLabel}}</span></p>
+  <details><summary>Private merchant memory</summary><p>Lifetime spend: {{memory.spendLabel}} · Lifetime purchase savings: {{memory.discountLabel}}</p>
+    <p>Negotiations: {{memory.successfulNegotiations}} successful / {{memory.failedNegotiations}} failed. Hidden successful thefts: {{memory.successfulThefts}} · Caught stealing: {{memory.caughtStealing}}</p></details>
+  <p><strong data-preview="total">{{totalLabel}}</strong></p>
+  <p role="status" data-preview="error"></p>
   <details><summary>Character currency (read-only)</summary>
   <ul>{{#each currency}}<li>{{@key}}: {{this}}</li>{{/each}}</ul>
   </details>
@@ -22,3 +67,5 @@
   <div class="dt-shop-controls"><button type="button" data-action="approve">Approve request</button>
     <button type="button" data-action="reject">Reject</button><button type="button" data-action="dismiss">Close</button></div>
 </div>
+
+{{/if}}

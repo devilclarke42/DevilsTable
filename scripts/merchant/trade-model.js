@@ -1,5 +1,6 @@
 import { MODULE_ID } from "../constants.js";
 import { coinValue, publicOffers, sanitizeBasket } from "./model.js";
+import { pricingTerms, combinedPercent, priced, percent } from "./pricing.js";
 import { adjustedPrice, tradeSettings, planPayment } from "./settlement.js";
 
 export function saleOffers(character, modifier = 1) {
@@ -11,34 +12,44 @@ export function saleOffers(character, modifier = 1) {
       copper: adjustedPrice(copper, modifier), img: item.img }];
   });
 }
-export function purchaseOffers(merchant) {
+export function purchaseOffers(merchant, character = null) {
+  const terms = pricingTerms(merchant, character);
+  const modifier = combinedPercent([terms.merchant, terms.character, terms.negotiation], terms.stacking);
   return publicOffers(merchant).map(item => {
-    const copper = adjustedPrice(item.copper, tradeSettings(merchant).sellModifier);
+    const copper = priced(item.copper, modifier);
     return { ...item, copper, price: { value: copper, denomination: "cp" } };
   });
 }
-export function quoteTrade(merchant, character, request, edits = null) {
+export function quoteTrade(merchant, character, request, edits = null, { settlement = true } = {}) {
   const settings = tradeSettings(merchant);
-  const purchases = request.lines?.length ? sanitizeBasket(request.lines, purchaseOffers(merchant)).basket : [];
-  const sales = request.sales?.length ? sanitizeBasket(request.sales, saleOffers(character, settings.buyModifier)).basket : [];
+  const pricing = pricingTerms(merchant, character, edits?.pricing);
+  const purchases = request.lines?.length ? sanitizeBasket(request.lines, publicOffers(merchant)).basket : [];
+  const sales = request.sales?.length ? sanitizeBasket(request.sales, saleOffers(character, 1)).basket : [];
   if (!purchases.length && !sales.length) throw Error("The basket is empty.");
   const lines = [...purchases.map(row => ({ ...row, direction: "buy" })), ...sales.map(row => ({ ...row, direction: "sell" }))];
   for (const line of lines) {
-    const edit = edits?.find(row => row.id === line.id && row.direction === line.direction);
-    if (edit) {
-      if (!Number.isSafeInteger(edit.quantity) || edit.quantity < 0 || edit.quantity > line.quantity ||
-          !Number.isSafeInteger(edit.copper) || edit.copper < 0) throw Error("Invalid GM price or quantity.");
-      line.quantity = edit.quantity; line.copper = edit.copper;
-    }
+    const edit = edits?.lines?.find(row => row.id === line.id && row.direction === line.direction);
+    if (edit && (!Number.isSafeInteger(edit.quantity) || edit.quantity < 0 || edit.quantity > line.quantity)) throw Error("Invalid GM quantity.");
+    line.quantity = edit?.quantity ?? line.quantity;
+    line.percent = percent(edit?.percent ?? 0);
+    line.originalCopper = line.copper;
+    const factors = line.direction === "buy" ? [pricing.merchant, pricing.character, pricing.negotiation, pricing.review, line.percent]
+      : [Math.round((settings.buyModifier - 1) * 10000) / 100, pricing.review, line.percent];
+    line.finalModifier = combinedPercent(factors, pricing.stacking);
+    line.copper = priced(line.originalCopper, line.finalModifier);
   }
   const basket = lines.filter(row => row.quantity > 0);
   if (!basket.length) throw Error("At least one item is required.");
-  const bought = basket.filter(r => r.direction === "buy").reduce((n, r) => n + r.quantity * r.copper, 0);
-  const sold = basket.filter(r => r.direction === "sell").reduce((n, r) => n + r.quantity * r.copper, 0);
-  if (![bought, sold].every(Number.isSafeInteger)) throw Error("Trade value is too large.");
-  const total = bought - sold;
-  const payment = planPayment(character, merchant, total, settings);
-  return { basket, total, bought, sold, payment, settings };
+  const sum = (direction, key) => basket.filter(r => r.direction === direction).reduce((n, r) => n + r.quantity * r[key], 0);
+  const bought = sum("buy", "copper"), sold = sum("sell", "copper");
+  const originalBought = sum("buy", "originalCopper"), originalSold = sum("sell", "originalCopper");
+  if (![bought, sold, originalBought, originalSold].every(Number.isSafeInteger)) throw Error("Trade value is too large.");
+  const total = bought - sold, originalTotal = originalBought - originalSold;
+  const payment = settlement ? planPayment(character, merchant, total, settings) : null;
+  return { basket, total, bought, sold, originalBought, originalSold, originalTotal,
+    adjustment: total - originalTotal, discount: basket.filter(r => r.direction === "buy")
+      .reduce((n, r) => n + Math.max(0, r.originalCopper - r.copper) * r.quantity, 0),
+    pricing, finalModifier: combinedPercent([pricing.merchant, pricing.character, pricing.negotiation, pricing.review], pricing.stacking), payment, settings };
 }
 
 /** Full mechanical state participates in stacking; names/source IDs alone never establish equality. */

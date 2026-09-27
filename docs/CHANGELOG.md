@@ -12,6 +12,13 @@ GitHub Release or installation manifest exists. No release dates are invented fo
 
 ### Added
 
+- `0.2.0-alpha.25` Sprint 7 interaction candidate: percentage pricing and immediate previews,
+  independent character/shop modifiers, GM-approved native negotiation/theft rolls with private
+  DCs, recoverable theft transfer, private counters and advisory merchant confidence. See the
+  [operation and live acceptance report](merchant/SPRINT_7_INTERACTIONS.md). 282 automated tests
+  pass; Sprint 7 live acceptance remains pending. Purchases/rejections/recovery were confirmed
+  by the owner in the preceding transaction fixes.
+
 - `0.2.0-alpha.14` Sprint 6 transaction candidate: real buying/selling, native currency,
   funds checks, GM price review, recoverable inventory writes, private ledger and merchant
   counters. 254 automated tests pass; live acceptance is pending.

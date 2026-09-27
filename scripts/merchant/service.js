@@ -1,4 +1,7 @@
 import { quoteTrade, purchaseOffers, stable } from "./trade-model.js";
+import { INTERACTIONS } from "./interactions.js";
+import { publicOffers } from "./model.js";
+import { pricingTerms } from "./pricing.js";
 import { offerTerms, confirmRevisedOffer } from "./revised-offer.js";
 import { tradeSettings } from "./settlement.js";
 import { executeTrade } from "./transaction.js";
@@ -12,7 +15,20 @@ const locks = new ServiceSlots();
 const subscribers = new Map();
 let listening = false;
 const proofs = new Map();
+const interactionRolls = new Map();
 export function registerCheckoutProof() {
+  CONFIG.queries[`${MODULE_ID}.interactionRoll`] = async payload => {
+    const proof = proofs.get(payload.id);
+    if (!proof || proof.type !== "interaction" || proof.characterId !== payload.characterId || proof.kind !== payload.kind) return null;
+    const actor = game.actors.get(payload.characterId);
+    if (!actor?.isOwner || !CONFIG.DND5E.skills[payload.skill]) return null;
+    if (!interactionRolls.has(payload.id)) interactionRolls.set(payload.id, (async () => {
+      const rolls = await actor.rollSkill({ skill: payload.skill }, { configure: true }, { create: false });
+      if (!proofs.has(payload.id) || !rolls?.length || !Number.isFinite(rolls[0].total)) return null;
+      return { total: rolls[0].total };
+    })());
+    return interactionRolls.get(payload.id);
+  };
   CONFIG.queries[`${MODULE_ID}.checkoutProof`] = ({ id }) => proofs.get(id) ?? null;
   CONFIG.queries[`${MODULE_ID}.revisedOffer`] = async payload => {
     if (!proofs.has(payload.id)) return false;
@@ -73,7 +89,7 @@ async function receive(msg) {
     if (msg.to !== game.user.id) return;
     const entry = requests.get(msg.id);
     if (entry) {
-      if (msg.status !== "pending") { requests.delete(msg.id); proofs.delete(msg.id); }
+      if (msg.status !== "pending") { requests.delete(msg.id); proofs.delete(msg.id); interactionRolls.delete(msg.id); }
       entry(msg);
     }
     return;
@@ -84,10 +100,15 @@ async function receive(msg) {
   const { actor, scene, token } = source;
   if (msg.type === "browse") {
     logger.debug("Merchant opened", { merchant: actor.id });
-    return notify(msg.userId, { id: msg.id, type: "stock", merchant: actor.name,
-      availability: merchantConfig(actor).availability ?? "open", items: purchaseOffers(actor), buyModifier: tradeSettings(actor).buyModifier });
+    const customer = game.actors.get(msg.characterId);
+    const shopper = customer?.testUserPermission(game.users.get(msg.userId), "OWNER") ? customer : null;
+    return notify(msg.userId, { id: msg.id, type: "stock", merchant: actor.name, characterId: shopper?.id ?? null,
+      availability: merchantConfig(actor).availability ?? "open", items: purchaseOffers(actor, shopper), buyModifier: tradeSettings(actor).buyModifier });
   }
-  if (msg.type !== "checkout") return;
+  if (!["checkout", "interaction"].includes(msg.type)) return;
+  if (msg.type === "interaction" && (!INTERACTIONS[msg.kind] || (msg.kind === "theft" && !publicOffers(actor).some(item => item.id === msg.itemId)))) {
+    return notify(msg.userId, { id: msg.id, error: "This interaction or item is unavailable." });
+  }
   logger.debug("Checkout requested", { merchant: actor.id });
   if ((merchantConfig(actor).availability ?? "open") !== "open" || locks.occupied(actor.id)) {
     return notify(msg.userId, { id: msg.id, error: "The merchant is currently occupied. Your basket is saved." });
@@ -103,13 +124,29 @@ async function receive(msg) {
     return notify(msg.userId, { id: msg.id, error: "A previous trade needs GM recovery before checkout." });
   }
   let proposal;
-  try { proposal = quoteTrade(actor, character, msg); }
+  try { if (msg.type === "checkout") proposal = quoteTrade(actor, character, msg); }
   catch (error) { return notify(msg.userId, { id: msg.id, error: error.message }); }
   if (!locks.acquire(actor.id, msg.id)) return notify(msg.userId, { id: msg.id, error: "Merchant occupied." });
   logger.debug("Merchant lock acquired", { merchant: actor.id, request: msg.id });
   try { await verifyRequester(msg); }
   catch (error) { locks.release(actor.id, msg.id); return notify(msg.userId, { id: msg.id, error: error.message }); }
   notify(msg.userId, { id: msg.id, status: "pending" });
+  if (msg.type === "interaction") {
+    ui.notifications.info(`${user.name} requests ${INTERACTIONS[msg.kind].label.toLowerCase()} with ${actor.name}.`);
+    try {
+      const { interactionReview } = await import("./interaction-service.js");
+      const app = await interactionReview({ actor, character, user, request: msg,
+        verify: () => verifyRequester(msg), owns: () => locks.owns(actor.id, msg.id),
+        release: () => { locks.release(actor.id, msg.id); subscribers.delete(msg.id); },
+        notify: result => notify(msg.userId, { id: msg.id, ...result }) });
+      subscribers.set(msg.id, app); await app.render({ force: true });
+    } catch (error) {
+      locks.release(actor.id, msg.id); subscribers.delete(msg.id);
+      notify(msg.userId, { id: msg.id, error: "The GM could not open the interaction review." });
+      logger.error("Interaction review failed", error);
+    }
+    return;
+  }
   const { MerchantReviewApplication } = await import("./review-app.js");
   let accepted = offerTerms(proposal);
   const revise = async revised => {
@@ -132,6 +169,13 @@ async function receive(msg) {
   };
   const app = new MerchantReviewApplication({ actor, character, user, request: msg, proposal,
     onRecalculate: revise,
+    onSaveModifiers: async values => {
+      if (!game.user.isGM || coordinator()?.id !== game.user.id || !locks.owns(actor.id, msg.id)) throw Error("This GM review is no longer active.");
+      if (actor.getFlag(MODULE_ID, "transactionPending")) throw Error("Recover the pending trade before changing merchant memory.");
+      const terms = pricingTerms(actor, character, values);
+      await actor.setFlag(MODULE_ID, "merchant.settings", { ...tradeSettings(actor), merchantModifier: terms.merchant, stacking: terms.stacking });
+      await actor.setFlag(MODULE_ID, `merchant.relationships.${character.id}.pricingModifier`, terms.character);
+    },
     onFinish: (result, edits) => finish(actor, character, msg, proposal, result, edits, accepted) });
   subscribers.set(msg.id, app);
   try { await app.render({ force: true }); }
@@ -179,14 +223,14 @@ export function merchantRequest(type, details, callback) {
   if (typeof callback === "function") {
     const timer = setTimeout(() => {
       if (!requests.delete(id)) return;
-      proofs.delete(id);
+      proofs.delete(id); interactionRolls.delete(id);
       void callback({ id, error: "No stock reply arrived from the GM. Restart the game server after updating (a browser refresh alone may not reload the module socket), reconnect GM and player, then Refresh stock. If this persists, enable debug logging and check both consoles." });
     }, 20000);
     timer?.unref?.();
     requests.set(id, result => { if (timer) clearTimeout(timer); return callback(result); });
   }
   const packet = { type, ...details, id, userId: game.user.id };
-  if (type === "checkout") proofs.set(id, structuredClone(packet));
+  if (["checkout", "interaction"].includes(type)) proofs.set(id, structuredClone(packet));
   if (game.user.isGM && coordinator()?.id === game.user.id) {
     void receive(packet).catch(error => {
       logger.error("Local merchant request failed", error);
@@ -202,7 +246,7 @@ export function initialiseMerchantService() {
   game.socket.on(SOCKET_CHANNEL, message => { void receive(message).catch(error => {
     logger.error("Merchant socket error", error);
     if (game.user.isGM && coordinator()?.id === game.user.id && inspect(message) &&
-        ["browse", "checkout"].includes(message.type)) {
+        ["browse", "checkout", "interaction"].includes(message.type)) {
       notify(message.userId, { id: message.id, error: "The GM could not process this request. Check the GM console for the merchant error." });
     }
   }); });

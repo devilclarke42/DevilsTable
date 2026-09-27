@@ -3,6 +3,36 @@
 This file retains detailed repository build history. The official milestone/release record is
 [docs/CHANGELOG.md](docs/CHANGELOG.md). Versions here do not imply a public GitHub Release exists.
 
+## 0.2.0-alpha.25 — 2026-09-27 — Merchant interactions
+
+### Added
+
+- Signed percentage pricing with additive/compound stacking, shop-wide and character-specific
+  modifiers, per-checkout/line overrides and immediate original/adjusted total previews.
+- GM-approved negotiation and theft requests sharing the merchant checkout service slot.
+  Native character skill rolls omit private DCs and suppress chat creation; the GM chooses
+  the final outcome and negotiation modifier independently of advisory results.
+- One-purchase negotiated offers, private negotiation/theft counters, lifetime savings and
+  bounded merchant confidence affecting only suggested negotiation difficulty.
+- Successful theft transfers one sale unit through the existing recoverable executor without
+  moving coins. Declined attempts receive private receipts without changing memory.
+- [Sprint 7 operating rules and acceptance checklist](docs/merchant/SPRINT_7_INTERACTIONS.md).
+
+### Changed
+
+- GM review and Merchant Setup use percentage controls instead of copper-price/multiplier editors.
+- Public prices and review totals use gp/sp/cp labels; currency disclosures remain collapsed.
+- Character prices are projected from canonical Actor Items without duplicating inventory.
+- Roll queries cache one result per request. Changed availability/ownership does not trap a
+  dismissed interaction review; repeated GM actions are guarded.
+
+### Validation
+
+- 282 automated tests pass, including new pricing, privacy, GM override, interaction-lock,
+  theft and rollback tests plus existing two-, three- and five-client checkout scenarios.
+- Owner previously confirmed purchases, rejection and rollback. Sprint 7 live Foundry V14 /
+  D&D5e 5.3.3 / Forge acceptance remains pending; this build does not claim verified compatibility.
+
 ## 0.2.0-alpha.24 — 2026-09-26 — Player confirmation of revised offers
 
 ### Added

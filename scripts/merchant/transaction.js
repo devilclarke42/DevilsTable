@@ -1,3 +1,4 @@
+import { nextMemory, confidence } from "./interactions.js";
 import { MODULE_ID } from "../constants.js";
 import { comparableItem, stable, transferable } from "./trade-model.js";
 import { createReceipt, saveReceipt, trimReceipts } from "./ledger.js";
@@ -16,6 +17,7 @@ function itemState(data) {
   return copy;
 }
 function snapshot(actor, step) {
+  if (step.kind === "confidence") return actor.getFlag(MODULE_ID, "merchant.confidence") ?? null;
   if (step.kind === "currency") return { ...actor.system.currency };
   if (step.kind === "relationship") return clone(actor.getFlag(MODULE_ID, `merchant.relationships.${step.customer}`) ?? null);
   return itemState(inventoryData(actor.items.get(step.itemId)));
@@ -60,6 +62,7 @@ function verifyStep(actor, step, expected, phase) {
   throw Error(`${phase}: ${step.kind} on ${actor.name}${step.itemId ? ` (Item ${step.itemId})` : ""}; ${detail}`);
 }
 async function write(actor, step, target) {
+  if (step.kind === "confidence") return target === null ? actor.unsetFlag(MODULE_ID, "merchant.confidence") : actor.setFlag(MODULE_ID, "merchant.confidence", target);
   if (step.kind === "currency") return actor.update({ "system.currency": target });
   if (step.kind === "relationship") {
     if (target === null) return actor.unsetFlag(MODULE_ID, `merchant.relationships.${step.customer}`);
@@ -110,16 +113,13 @@ export function makeSteps(merchant, character, quote, now = new Date().toISOStri
     virtual.get(target.id).set(after._id, after);
   }
   const before = clone(merchant.getFlag(MODULE_ID, `merchant.relationships.${character.id}`) ?? null);
-  const old = before ?? {};
-  const after = { ...old, customerActorId: character.id, state: old.state ?? "Unknown",
-    firstMeetingAt: old.firstMeetingAt ?? now, lastVisitAt: now,
-    visits: (old.visits ?? 0) + 1, transactionCount: (old.transactionCount ?? 0) + 1,
-    successfulPurchases: (old.successfulPurchases ?? 0) + (quote.basket.some(row => row.direction === "buy") ? 1 : 0),
-    spentMinor: (old.spentMinor ?? 0) + quote.bought, receivedMinor: (old.receivedMinor ?? 0) + quote.sold };
-  for (const key of ["visits", "transactionCount", "successfulPurchases", "spentMinor", "receivedMinor"]) {
-    if (!Number.isSafeInteger(after[key])) throw Error("Relationship totals are invalid.");
-  }
+  const after = nextMemory(before ?? {}, quote, character.id, now);
   steps.push({ kind: "relationship", actorId: merchant.id, customer: character.id, before, after });
+  const change = quote.interaction?.kind === "negotiation" && quote.interaction.outcome === "success" ? 1
+    : !quote.interaction && quote.bought > 0 && !(quote.discount > 0) ? -1 : 0;
+  if (change) steps.push({ kind: "confidence", actorId: merchant.id,
+    before: merchant.getFlag(MODULE_ID, "merchant.confidence") ?? null,
+    after: Math.max(-5, Math.min(5, confidence(merchant) + change)) });
   return steps;
 }
 

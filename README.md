@@ -6,13 +6,15 @@ Foundry compendiums are generated from it and must never be edited as source dat
 
 ## Current status
 
-**Sprint 6 transaction candidate (`0.2.0-alpha.24`):** GM-approved buying and selling now
-transfer native currency and embedded Items. Checkout is disabled when the selected character
-cannot afford the net basket. Both wallets and stock are rechecked at GM approval.
+**Sprint 7 interaction candidate (`0.2.0-alpha.25`):** percentage pricing, character-specific
+modifiers, GM-approved negotiation and theft now extend the recoverable buy/sell pipeline.
+Players confirm revised checkout terms; currency details remain collapsed in the GM review.
 
-Player browsing and the Sprint 5 rejection fix were confirmed by the owner. Sprint 6 has
-254 passing automated tests; live transfer and multiplayer acceptance remain pending.
-See [Sprint 6 operation and validation](docs/merchant/SPRINT_6_TRANSACTIONS.md).
+The owner confirmed purchases, rejections and recovery before this sprint. Automated checks
+cover the new interaction lifecycle and existing two-, three- and five-client checkout scenarios.
+Live Sprint 7 Foundry/Forge acceptance remains pending. See
+[Sprint 7 operation and validation](docs/merchant/SPRINT_7_INTERACTIONS.md) and the earlier
+[Sprint 6 transfer design](docs/merchant/SPRINT_6_TRANSACTIONS.md).
 
 ### Using merchants
 
@@ -21,18 +23,23 @@ See [Sprint 6 operation and validation](docs/merchant/SPRINT_6_TRANSACTIONS.md).
 2. Keep the merchant NPC GM-only and place a linked token. Enable it in **Merchant Setup**.
 3. Optionally build Items and Stock RollTables, then **Roll stock preview** and **Add previewed
    stock**. Existing catalogue goods, including zero-quantity offers, are preserved.
-4. Select the NPC and click **Load selected merchant settings**. Set finite/infinite funds,
-   denomination checking and buy/sell multipliers, then **Save trade settings**. A multiplier
-   of 1 means full price; 0.5 means half price. Fund finite merchants on their native sheets.
+4. Select the NPC and optional customer, then load their settings. Configure finite/infinite
+   funds, denomination checking and signed percentage modifiers: 0% is full price, −50% is
+   half price. Fund finite merchants on their native sheets. Save trade settings.
 5. As player, control your character token and right-click the merchant. Add purchases to the
    basket. Expand **Sell from your selected character** to offer owned goods. Refresh stock
    after changing the selected character or editing currency on its sheet.
-6. Checkout sends the proposal for GM review. The GM may reduce quantities or edit unit prices
-   in copper, recalculate, inspect before/after balances, then approve. Changed edits require
-   review of recalculated totals before approval. Rejection and Close do not move goods or coins.
+6. Checkout sends the proposal for GM review. The GM may reduce quantities or edit percentage
+   modifiers; totals preview immediately. Recalculate asks the player to accept changed terms.
+   Approval transfers only accepted terms. Rejection and Close do not move goods or coins.
 7. Approved transfers update character-specific merchant counters and create a private receipt
    in **Devil's Table — Private Transactions**. Search that compendium by merchant, character,
    date or outcome. The existing history-retention setting defaults to Last 500 per merchant.
+
+Players can also request **Negotiate** or **Attempt theft** on one offer. The GM allows or
+declines the attempt, chooses a hidden DC and receives a native character skill roll. The GM
+selects the final result. Successful theft transfers one sale unit; negotiation sets the next
+purchase's modifier. Private memory never changes the relationship state automatically.
 
 If a transaction is interrupted, **Check / recover interrupted trade** in Merchant Setup uses
 its saved before/after states. Conflicting edits are preserved and require manual reconciliation;
@@ -63,8 +70,8 @@ and legacy cleanup require detailed live acceptance. No Tavern content is added.
 and its [data model](docs/merchant/DATA_MODEL.md), [wireframes](docs/merchant/UI_WIREFRAMES.md),
 [workflow diagrams](docs/merchant/WORKFLOW_DIAGRAMS.md), [technical decisions](docs/merchant/TECHNICAL_JUSTIFICATION.md)
 and [implementation roadmap](docs/merchant/IMPLEMENTATION_ROADMAP.md) describe persistent NPC
-merchants. Live V14 validation gates remain before implementation. These documents do not add a merchant runtime, revise the module version or change
-the existing catalogue, stock builders or packaging.
+merchants. These remain long-term design documents; the Sprint 6 and Sprint 7 reports describe
+the implemented runtime and outstanding live acceptance gates.
 
 | Category | Items |
 | --- | ---: |

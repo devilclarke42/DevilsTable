@@ -12,7 +12,7 @@ export function walletValue(wallet) {
 }
 export function tradeSettings(actor) {
   const settings = actor.getFlag(MODULE_ID, "merchant")?.settings ?? {};
-  return { walletMode: settings.walletMode ?? "finite", exactChange: settings.exactChange === true,
+  return { ...settings, walletMode: settings.walletMode ?? "finite", exactChange: settings.exactChange === true,
     buyModifier: settings.buyModifier ?? 1, sellModifier: settings.sellModifier ?? 1 };
 }
 export function adjustedPrice(value, factor) {

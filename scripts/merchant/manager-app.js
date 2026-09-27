@@ -1,5 +1,7 @@
+import { confidence } from "./interactions.js";
 import { MODULE_ID } from "../constants.js";
 import { recoverTrade } from "./transaction.js";
+import { pricingTerms, percent } from "./pricing.js";
 import { tradeSettings } from "./settlement.js";
 import { merchantConfig } from "./model.js";
 import { enableMerchant } from "./service.js";
@@ -13,6 +15,7 @@ export class MerchantManagerApplication extends HandlebarsApplicationMixin(Appli
   #message = "Choose an existing NPC and enable its linked tokens as shop entry points.";
   #catalogue = null;
   #actorId = "";
+  #characterId = "";
   #profileId = "DT_TABLE_GS";
   #preview = null;
   #busy = false;
@@ -36,6 +39,12 @@ export class MerchantManagerApplication extends HandlebarsApplicationMixin(Appli
       profiles: this.#catalogue ? stockProfiles(this.#catalogue).map(p => ({ id: p.id, name: p.name, selected: p.id === this.#profileId })) : [],
       terms: this.#actorId ? tradeSettings(game.actors.get(this.#actorId)) : { buyModifier: 1, sellModifier: 1 },
       infinite: this.#actorId && tradeSettings(game.actors.get(this.#actorId)).walletMode === "infinite",
+      characters: game.actors.filter(actor => actor.type === "character").map(actor => ({ id: actor.id, name: actor.name, selected: actor.id === this.#characterId })),
+      customer: this.#actorId && this.#characterId ? game.actors.get(this.#actorId).getFlag(MODULE_ID, `merchant.relationships.${this.#characterId}`) ?? {} : {},
+      confidence: this.#actorId ? confidence(game.actors.get(this.#actorId)) : 0,
+      pricing: this.#actorId ? pricingTerms(game.actors.get(this.#actorId)) : { merchant: 0, stacking: "additive" },
+      compound: this.#actorId && pricingTerms(game.actors.get(this.#actorId)).stacking === "compound",
+      buyPercent: this.#actorId ? Math.round((tradeSettings(game.actors.get(this.#actorId)).buyModifier - 1) * 10000) / 100 : 0,
       stockError, preview: this.#preview, previewMerchant: game.actors.get(this.#preview?.actorId)?.name,
       busy: this.#busy, stockBlocked: this.#busy || Boolean(stockError), message: this.#message };
   }
@@ -64,21 +73,39 @@ export class MerchantManagerApplication extends HandlebarsApplicationMixin(Appli
 
   static async #loadTerms() {
     this.#actorId = this.element.querySelector("[name=npc]").value;
+    this.#characterId = this.element.querySelector("[name=customer]").value;
     await this.render();
   }
   static async #saveTerms() {
-    if (!game.user.isGM) return;
+    if (!game.user.isGM || this.#busy) return;
     const actor = game.actors.get(this.element.querySelector("[name=npc]").value);
     try {
       if (!merchantConfig(actor)) throw Error("Enable the NPC first.");
-      const buyModifier = Number(this.element.querySelector("[name=buyModifier]").value);
-      const sellModifier = Number(this.element.querySelector("[name=sellModifier]").value);
-      if (![buyModifier, sellModifier].every(n => Number.isFinite(n) && n >= 0 && n <= 100)) throw Error("Modifiers must be between 0 and 100.");
-      await actor.setFlag(MODULE_ID, "merchant.settings", { ...tradeSettings(actor), buyModifier, sellModifier,
+      const buyModifier = 1 + percent(Number(this.element.querySelector("[name=buyModifier]").value)) / 100;
+      const merchantModifier = percent(Number(this.element.querySelector("[name=merchantModifier]").value));
+      const stacking = this.element.querySelector("[name=stacking]").value;
+      if (!["additive", "compound"].includes(stacking)) throw Error("Invalid stacking rule.");
+      const customerId = this.element.querySelector("[name=customer]").value;
+      const customerModifier = percent(Number(this.element.querySelector("[name=customerModifier]").value));
+      const negotiationModifier = percent(Number(this.element.querySelector("[name=negotiationModifier]").value));
+      const confidenceValue = Number(this.element.querySelector("[name=confidence]").value);
+      if (!Number.isInteger(confidenceValue) || confidenceValue < -5 || confidenceValue > 5) throw Error("Confidence must be an integer from -5 to 5.");
+      if (actor.getFlag(MODULE_ID, "transactionPending")) throw Error("Recover the pending trade before changing merchant memory.");
+      if (customerId && game.actors.get(customerId)?.type !== "character") throw Error("Select a valid character.");
+      this.#busy = true;
+      await actor.setFlag(MODULE_ID, "merchant.confidence", confidenceValue);
+      if (customerId) {
+        if (game.actors.get(customerId)?.type !== "character") throw Error("Select a valid character.");
+        await actor.setFlag(MODULE_ID, `merchant.relationships.${customerId}.pricingModifier`, customerModifier);
+        await actor.setFlag(MODULE_ID, `merchant.relationships.${customerId}.negotiationModifier`, negotiationModifier);
+      }
+      this.#actorId = actor.id; this.#characterId = customerId;
+      await actor.setFlag(MODULE_ID, "merchant.settings", { ...tradeSettings(actor), buyModifier, merchantModifier, stacking,
         walletMode: this.element.querySelector("[name=infinite]").checked ? "infinite" : "finite",
         exactChange: this.element.querySelector("[name=exactChange]").checked });
       this.#message = "Trade settings saved.";
     } catch (error) { this.#message = error.message; }
+    finally { this.#busy = false; }
     await this.render();
   }
   static async #recover() {

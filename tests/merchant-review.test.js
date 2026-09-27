@@ -27,7 +27,7 @@ from html.parser import HTMLParser
 from pathlib import Path
 text = Path('templates/merchant-review.hbs').read_text()
 row = text.split('{{#each basket}}')[1].split('{{/each}}')[0]
-for key, value in {'id':'rope','direction':'buy','name':'Rope','priceLabel':'1 sp','quantity':'1','copper':'10'}.items():
+for key, value in {'id':'rope','direction':'buy','name':'Rope','priceLabel':'1 sp','quantity':'1','percent':'0'}.items():
     row = row.replace('{{' + key + '}}', value)
 class ReviewParser(HTMLParser):
     def __init__(self):
@@ -41,7 +41,7 @@ class ReviewParser(HTMLParser):
         if tag=='div': self.inside=False
 parser=ReviewParser(); parser.feed(row)
 assert parser.direction=='buy', parser.direction
-assert parser.fields=={'quantity':'1','copper':'10'}, parser.fields
+assert parser.fields=={'quantity':'1','percent':'0'}, parser.fields
 `], { cwd: new URL("..", import.meta.url), encoding: "utf8" });
 });
 

@@ -4,7 +4,7 @@ This is the official versioned milestone plan. Milestones describe outcomes and 
 not promised dates. Each catalogue is built in curated, reviewable categories; permanent identities,
 source provenance and the development standards apply throughout.
 
-Current work is **0.2.0 in development**, with runtime candidate `0.2.0-alpha.14`. The 144-item
+Current work is **0.2.0 in development**, with runtime candidate `0.2.0-alpha.25`. The 144-item
 General Store and basic stock tools are implemented. Detailed live acceptance remains open.
 Some framework work intentionally precedes the milestone where it will be expanded and completed.
 
@@ -12,7 +12,9 @@ Some framework work intentionally precedes the milestone where it will be expand
 development priority, before Tavern content. The
 [Merchant System roadmap](merchant/IMPLEMENTATION_ROADMAP.md) documents this sequencing, live
 proof gates and the unresolved milestone-numbering choice. The table below records the existing approved
-version plan; no milestone has been silently renumbered. Sprint 6 transaction code now ships as an alpha candidate.
+version plan; no milestone has been silently renumbered. Sprint 6 transfers and Sprint 7 interactions now ship as alpha candidates. The owner confirmed
+purchases, rejection and recovery; live Sprint 7 acceptance remains open. See the
+[Sprint 7 report](merchant/SPRINT_7_INTERACTIONS.md).
 
 | Milestone | Focus | Status |
 | --- | --- | --- |

@@ -15,8 +15,9 @@
       {{#each items}}
         <article class="dt-shop-item">
           <img src="{{img}}" alt="" loading="lazy"><div><h3>{{name}}</h3><p>{{description}}</p>
-            <p>{{price.value}} {{price.denomination}} per {{saleUnit}} · {{quantity}} available</p></div>
-          <button type="button" data-action="add" data-id="{{id}}">Add</button>
+            <p>{{priceLabel}} per {{saleUnit}} · {{quantity}} available</p></div>
+          <div class="dt-item-actions"><button type="button" data-action="add" data-id="{{id}}">Add</button>
+          <button type="button" data-action="steal" data-id="{{id}}" {{#unless @root.canInteract}}disabled{{/unless}}>Attempt theft</button></div>
         </article>
       {{else}}<p>No matching public offers.</p>{{/each}}
     </section>
@@ -29,6 +30,7 @@
       <p>{{characterName}} · Available: {{fundsLabel}}</p>
       {{#if fundsError}}<p role="alert">{{fundsError}}</p>{{/if}}
       <p><strong>Total: {{totalLabel}}</strong></p>
+      <button type="button" data-action="negotiate" {{#unless canInteract}}disabled{{/unless}}>Request negotiation</button>
       <button type="button" data-action="checkout" {{#unless canCheckout}}disabled{{/unless}}>Request checkout</button>
       <p>The GM checks prices, funds and stock again before transferring goods and currency.</p>
     </aside>

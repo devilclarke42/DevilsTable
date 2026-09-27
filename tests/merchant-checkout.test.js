@@ -3,21 +3,8 @@ import assert from "node:assert/strict";
 import { setup, Actor, good } from "./support/trade-world.js";
 
 let currentReviews;
-function journalPack() {
-  const docs = new Map();
-  const index = new Map(); index[Symbol.iterator] = function () { return this.values(); };
-  const pack = { documentName: "JournalEntry", metadata: { packageType: "world" }, collection: "world.devils-table-transactions", index,
-    testUserPermission: () => false, configure: async () => {}, getIndex: async () => index, getDocument: async id => docs.get(id) };
-  globalThis.CONFIG.JournalEntry = { documentClass: { async create(data) {
-    if (docs.has(data._id)) throw Error("Duplicate receipt ID");
-    const doc = { uuid: `Compendium.${pack.collection}.JournalEntry.${data._id}`, data: structuredClone(data),
-      pages: [{ id: "page" }], getFlag: (ns, key) => doc.data.flags[ns][key],
-      async update(change) { if (change["flags.devils-table.transaction"]) doc.data.flags["devils-table"].transaction = structuredClone(change["flags.devils-table.transaction"]); },
-      async updateEmbeddedDocuments() {} };
-    docs.set(data._id, doc); index.set(data._id, { _id: data._id, flags: doc.data.flags }); return doc;
-  } } };
-  return { pack, docs };
-}
+import { journalPack } from "./support/journal-pack.js";
+
 for (const count of [2, 3, 5]) test(`${count} checkout clients: one GM review, browsing continues, approval transfers once`, async () => {
   setup(); const merchant = new Actor("merchant", 0, [good("rope", 1)]);
   const players = Array.from({ length: count }, (_, i) => ({ id: `user${i}`, active: true, isGM: false }));
@@ -52,7 +39,7 @@ for (const count of [2, 3, 5]) test(`${count} checkout clients: one GM review, b
   assert.equal(reviews.length, 1); assert.equal(responses.filter(r => /occupied/.test(r.error)).length, count - 1);
   players.forEach((p,i) => receive({ type: "browse", id: `browse${i}`, userId: p.id, sceneId: "scene", tokenId: "merchant-token" }));
   await new Promise(r => setImmediate(r)); assert.equal(responses.filter(r => r.type === "stock").length, count);
-  reviews[0].element = { querySelectorAll: () => [{ dataset: { id: "rope", direction: "buy" }, querySelector: selector => ({ value: selector.includes("quantity") ? "1" : "10" }) }] };
+  reviews[0].element = { querySelector: selector => ({ value: selector.includes("stacking") ? "additive" : "0" }), querySelectorAll: () => [{ dataset: { id: "rope", direction: "buy" }, querySelector: selector => ({ value: selector.includes("quantity") ? "1" : "0" }) }] };
   if (count === 2) {
     let consent = null;
     players[0].query = async (name, payload) => {
@@ -63,7 +50,7 @@ for (const count of [2, 3, 5]) test(`${count} checkout clients: one GM review, b
       if (consent === null) throw Error("Player timed out");
       return consent;
     };
-    reviews[0].element = { querySelectorAll: () => [{ dataset: { id: "rope", direction: "buy" }, querySelector: selector => ({ value: selector.includes("quantity") ? "1" : "8" }) }] };
+    reviews[0].element = { querySelector: selector => ({ value: selector.includes("stacking") ? "additive" : "0" }), querySelectorAll: () => [{ dataset: { id: "rope", direction: "buy" }, querySelector: selector => ({ value: selector.includes("quantity") ? "1" : "-20" }) }] };
     const actions = reviews[0].constructor.DEFAULT_OPTIONS.actions;
     await actions.recalculate.call(reviews[0]);
     await actions.approve.call(reviews[0]);
@@ -84,7 +71,7 @@ for (const count of [2, 3, 5]) test(`${count} checkout clients: one GM review, b
     merchant.items.get("rope").data.system.quantity = 1;
     const next = { ...packets[1], id: "rejected-new" }; players[1].query = async () => structuredClone(next);
     receive(next); for (let n = 0; n < 20 && reviews.length < 2; n++) await new Promise(r => setTimeout(r, 5));
-    reviews[1].element = { querySelectorAll: () => [{ dataset: { id: "rope", direction: "buy" }, querySelector: selector => ({ value: selector.includes("quantity") ? "1" : "9" }) }] };
+    reviews[1].element = { querySelector: selector => ({ value: selector.includes("stacking") ? "additive" : "0" }), querySelectorAll: () => [{ dataset: { id: "rope", direction: "buy" }, querySelector: selector => ({ value: selector.includes("quantity") ? "1" : "-10" }) }] };
     players[1].query = async name => name.endsWith("checkoutProof") ? structuredClone(next) : false;
     await reviews[1].constructor.DEFAULT_OPTIONS.actions.recalculate.call(reviews[1]);
     assert.equal(merchant.items.get("rope").system.quantity, 1); assert.equal(pcs[1].system.currency.cp, 50);

@@ -17,11 +17,17 @@
   </section>
   <section data-panel="trade" {{#unless tabs.trade}}hidden{{/unless}}>
   <h3>Trade settings</h3>
+  <label>Character <select name="customer"><option value="">No individual character</option>{{#each characters}}<option value="{{id}}" {{#if selected}}selected{{/if}}>{{name}}</option>{{/each}}</select></label>
   <button type="button" data-action="loadTerms">Load selected merchant settings</button>
   <label><input type="checkbox" name="infinite" {{#if infinite}}checked{{/if}}>Infinite merchant funds (native balance unchanged)</label>
   <label><input type="checkbox" name="exactChange" {{#if terms.exactChange}}checked{{/if}}>Require available denominations (finite wallets)</label>
-  <label>Merchant buys at multiplier <input name="buyModifier" type="number" min="0" max="100" step="0.01" value="{{terms.buyModifier}}"></label>
-  <label>Merchant sells at multiplier <input name="sellModifier" type="number" min="0" max="100" step="0.01" value="{{terms.sellModifier}}"></label>
+  <label>Merchant buy offer modifier % <input name="buyModifier" type="number" min="-100" max="500" step="0.01" value="{{buyPercent}}"></label>
+  <label>Shop-wide price modifier % <input name="merchantModifier" type="number" min="-100" max="500" step="0.01" value="{{pricing.merchant}}"></label>
+  <label>Stacking <select name="stacking"><option value="additive" {{#unless compound}}selected{{/unless}}>Add percentages</option><option value="compound" {{#if compound}}selected{{/if}}>Compound percentages</option></select></label>
+  <label>Character modifier % <input name="customerModifier" type="number" min="-100" max="500" step="0.01" value="{{#if customer.pricingModifier}}{{customer.pricingModifier}}{{else}}0{{/if}}"></label>
+  <label>Next purchase negotiation % <input name="negotiationModifier" type="number" min="-100" max="500" step="0.01" value="{{#if customer.negotiationModifier}}{{customer.negotiationModifier}}{{else}}0{{/if}}"></label>
+  <label>Merchant confidence (GM suggestion only) <input name="confidence" type="number" min="-5" max="5" step="1" value="{{confidence}}"></label>
+  <p>Choose a merchant and character, then Load selected merchant settings before editing. Confidence changes suggested DCs only.</p>
   <button type="button" data-action="saveTerms">Save trade settings</button>
   </section>
   <section data-panel="recovery" {{#unless tabs.recovery}}hidden{{/unless}}>

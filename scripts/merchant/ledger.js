@@ -27,6 +27,7 @@ function page(record) {
   return `<h2>${escape(record.status)}</h2><p>${escape(record.date)} · ${escape(record.characterName)} · ${escape(record.merchantName)}</p>`
     + `<ul>${lines.map(row => `<li>${escape(row.direction)}: ${row.quantity} × ${escape(row.name)} — ${escape(formatCopper(row.copper))} each</li>`).join("")}</ul>`
     + `<p>${record.quote?.total < 0 ? "Character receives" : "Character pays"}: ${escape(formatCopper(Math.abs(record.quote?.total ?? 0)))}</p>`
+    + (record.quote?.interaction ? `<p>Interaction: ${escape(record.quote.interaction.kind)} · GM outcome: ${escape(record.quote.interaction.outcome)} · Skill: ${escape(record.quote.interaction.skill)} · Roll: ${escape(record.quote.interaction.total)} · DC (private): ${escape(record.quote.interaction.dc)} · Modifier: ${escape(record.quote.interaction.modifier)}%</p>` : "")
     + `<p>${escape(record.error ?? record.status)}</p>`;
 }
 const serializable = value => value === undefined ? null : JSON.parse(JSON.stringify(value));
