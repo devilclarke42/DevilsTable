@@ -1,3 +1,4 @@
+import { catalogueRegistry } from "../catalogues/registry.js";
 import { MODULE_ID } from "../constants.js";
 
 export const SOCKET_CHANNEL = `module.${MODULE_ID}`;
@@ -38,6 +39,8 @@ export function coinValue(price) {
   return Number.isSafeInteger(copper) ? copper : null;
 }
 
+const stringList = value => Array.isArray(value) ? value.filter(entry => typeof entry === "string") : [];
+
 export function publicOffers(actor) {
   const offers = [];
   for (const item of actor.items ?? []) {
@@ -56,9 +59,11 @@ export function publicOffers(actor) {
     offers.push({ id: item.id, name: String(item.name).slice(0, 160), img: item.img,
       description, quantity, price: { value: price.value, denomination: price.denomination },
       copper: value, category: item.getFlag?.(MODULE_ID, "category") ?? item.type,
+      tags: stringList(item.getFlag?.(MODULE_ID, "tags")).slice(0, 50),
+      catalogues: stringList(item.getFlag?.(MODULE_ID, "shops")),
       saleUnit: item.getFlag?.(MODULE_ID, "saleUnit") ?? "each" });
   }
-  return offers.sort((a, b) => a.name.localeCompare(b.name));
+  return catalogueRegistry.project(actor, offers).items.sort((a, b) => a.name.localeCompare(b.name));
 }
 
 export function sanitizeBasket(lines, offers) {

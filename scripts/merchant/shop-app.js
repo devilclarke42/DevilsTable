@@ -1,3 +1,5 @@
+import { matchesOffer } from "../catalogues/registry.js";
+import { percentLabel } from "./pricing.js";
 import { DEFAULT_MERCHANT_PORTRAIT, subscribePresentation } from "./presentation.js";
 import { walletValue } from "./settlement.js";
 import { saleOffers } from "./trade-model.js";
@@ -14,6 +16,9 @@ export class MerchantShopApplication extends HandlebarsApplicationMixin(Applicat
   #tokenHook;
   #closed = false;
   #items = [];
+  #categories = [];
+  #catalogue = null;
+  #pricing = {};
   #basket = new Map();
   #sales = new Map();
   #buyModifier = 1;
@@ -48,6 +53,11 @@ export class MerchantShopApplication extends HandlebarsApplicationMixin(Applicat
   }
   _onRender(context, options) {
     super._onRender?.(context, options);
+    this.element.querySelector("[name=search]")?.addEventListener("input", event => {
+      this.#query = event.target.value.slice(0, 100);
+      // Update only visibility: preserve keyboard focus, caret and basket while typing.
+      this.#filterElements();
+    });
     const image = this.element.querySelector("[data-merchant-portrait]");
     image?.addEventListener("error", () => { image.src = DEFAULT_MERCHANT_PORTRAIT; }, { once: true });
   }
@@ -63,8 +73,7 @@ export class MerchantShopApplication extends HandlebarsApplicationMixin(Applicat
   static PARTS = { body: { template: "modules/devils-table/templates/merchant-shop.hbs" } };
 
   async _prepareContext(options) {
-    const filtered = this.#items.filter(item => (!this.#category || item.category === this.#category) &&
-      (!this.#query || `${item.name} ${item.description}`.toLocaleLowerCase().includes(this.#query.toLocaleLowerCase())));
+    const filtered = this.#items;
     const basket = [...this.#basket].map(([id, count]) => {
       const item = this.#items.find(offer => offer.id === id);
       return item ? { ...item, count, subtotal: count * item.copper, subtotalLabel: formatCopper(count * item.copper) } : null;
@@ -84,8 +93,14 @@ export class MerchantShopApplication extends HandlebarsApplicationMixin(Applicat
       fundsError: this.#stockCharacterId !== pc?.actor.id ? "Refresh stock for the selected character’s prices." : total > funds ? "Not enough money for this basket." : "",
       merchant: this.#token.document.name ?? this.#merchant, portrait: this.#portrait,
       availability: this.#availability.charAt(0).toUpperCase() + this.#availability.slice(1),
-      items: filtered.map(item => ({ ...item, priceLabel: formatCopper(item.copper) })), basket, message: this.#message, query: this.#query,
-      categories: [...new Set(this.#items.map(item => item.category))].map(id => ({ id, selected: id === this.#category })),
+      items: filtered.map(item => ({ ...item, hidden: !matchesOffer(item, this.#query, this.#category), priceLabel: formatCopper(item.copper) })), basket, message: this.#message, query: this.#query,
+      categories: this.#categories.map(row => ({ ...row, selected: row.id === this.#category })),
+      noMatches: !this.#items.some(item => matchesOffer(item, this.#query, this.#category)),
+      catalogue: this.#catalogue,
+      originalLabel: formatCopper(basket.reduce((n, row) => n + row.count * (row.originalCopper ?? row.copper), 0)),
+      adjustedLabel: formatCopper(basket.reduce((n, row) => n + row.subtotal, 0)),
+      modifiers: ["merchant", "character", "negotiation"].map(key => ({ name: key.charAt(0).toUpperCase() + key.slice(1), label: percentLabel(this.#pricing[key] ?? 0) })),
+      stacking: this.#pricing.stacking ?? "additive",
       total,
       totalLabel: `${total < 0 ? "You receive " : "You pay "}${formatCopper(Math.abs(total))}`,
       canInteract: Boolean(pc) && !this.#pending && this.#availability === "open",
@@ -105,6 +120,10 @@ export class MerchantShopApplication extends HandlebarsApplicationMixin(Applicat
         this.#portrait = msg.presentation?.portrait || DEFAULT_MERCHANT_PORTRAIT;
         this.#stockCharacterId = msg.characterId === undefined ? globalThis.canvas?.tokens?.controlled?.find(t => t.actor?.isOwner && t.actor.type === "character")?.actor.id : msg.characterId;
         this.#items = msg.items;
+        this.#categories = msg.categories ?? [];
+        this.#catalogue = msg.catalogue;
+        this.#pricing = msg.pricing ?? {};
+        if (!this.#categories.some(row => row.id === this.#category)) this.#category = "";
         this.#buyModifier = msg.buyModifier ?? 1;
         this.#availability = msg.availability;
         for (const [id, quantity] of this.#basket) {
@@ -118,6 +137,17 @@ export class MerchantShopApplication extends HandlebarsApplicationMixin(Applicat
     });
   }
 
+  #filterElements() {
+    let matches = 0;
+    const byId = new Map(this.#items.map(item => [item.id, item]));
+    for (const row of this.element.querySelectorAll("[data-offer-id]")) {
+      const item = byId.get(row.dataset.offerId);
+      row.hidden = !item || !matchesOffer(item, this.#query, this.#category);
+      if (!row.hidden) matches++;
+    }
+    const empty = this.element.querySelector("[data-no-matches]");
+    if (empty) empty.hidden = matches > 0;
+  }
   static async #refresh() { await this.refreshStock(); }
   static async #search() { this.#query = this.element?.querySelector("[name=search]")?.value.trim().slice(0, 100) ?? ""; await this.render(); }
   static async #selectCategory(_event, target) { this.#category = target.dataset.category ?? ""; await this.render(); }

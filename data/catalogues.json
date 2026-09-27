@@ -1,0 +1,118 @@
+[
+  {
+    "id": "general-store",
+    "name": "General Store",
+    "icon": "icons/svg/item-bag.svg",
+    "sort": 0,
+    "categories": [
+      "containers",
+      "fire-lighting",
+      "rope-climbing",
+      "camping",
+      "writing",
+      "household",
+      "animal",
+      "travel",
+      "tools",
+      "trade-goods"
+    ],
+    "fallbackCategory": {
+      "id": "other",
+      "name": "Other goods",
+      "icon": "icons/svg/item-bag.svg"
+    },
+    "metadata": {}
+  },
+  {
+    "id": "tavern",
+    "name": "Tavern",
+    "icon": "icons/svg/item-bag.svg",
+    "sort": 10,
+    "categories": [
+      "ale",
+      "beer",
+      "mead",
+      "wine",
+      "spirits",
+      "non-alcoholic-drinks",
+      "hot-drinks",
+      "breakfast",
+      "lunch",
+      "dinner",
+      "stews",
+      "roasts",
+      "bread",
+      "cheese",
+      "desserts",
+      "snacks",
+      "travel-meals",
+      "luxury-meals",
+      "animal-feed",
+      "animal",
+      "camping",
+      "containers",
+      "fire-lighting",
+      "household",
+      "rope-climbing",
+      "travel"
+    ],
+    "fallbackCategory": {
+      "id": "other",
+      "name": "Other goods",
+      "icon": "icons/svg/item-bag.svg"
+    },
+    "metadata": {}
+  },
+  {
+    "id": "alchemist",
+    "name": "Alchemist",
+    "icon": "icons/svg/item-bag.svg",
+    "sort": 20,
+    "categories": [
+      "containers",
+      "fire-lighting",
+      "writing"
+    ],
+    "fallbackCategory": {
+      "id": "other",
+      "name": "Other goods",
+      "icon": "icons/svg/item-bag.svg"
+    },
+    "metadata": {}
+  },
+  {
+    "id": "blacksmith",
+    "name": "Blacksmith",
+    "icon": "icons/svg/item-bag.svg",
+    "sort": 30,
+    "categories": [
+      "containers",
+      "fire-lighting",
+      "rope-climbing",
+      "animal"
+    ],
+    "fallbackCategory": {
+      "id": "other",
+      "name": "Other goods",
+      "icon": "icons/svg/item-bag.svg"
+    },
+    "metadata": {}
+  },
+  {
+    "id": "black-market",
+    "name": "Black Market",
+    "icon": "icons/svg/item-bag.svg",
+    "sort": 40,
+    "categories": [
+      "containers",
+      "rope-climbing",
+      "travel"
+    ],
+    "fallbackCategory": {
+      "id": "other",
+      "name": "Other goods",
+      "icon": "icons/svg/item-bag.svg"
+    },
+    "metadata": {}
+  }
+]

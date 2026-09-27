@@ -20,7 +20,7 @@ test("all ten curated General Store categories contain exactly their approved it
   }
   assert.equal(selectEntries(data, { shopId: "general-store" }).length, 144);
   assert.ok(selectEntries(data, { shopId: "general-store" }).every(({ item }) => item.id.startsWith("DT_ITEM_GS_")));
-  assert.deepEqual(new Set(data.entries.map(({ item }) => item.id)), new Set(data.ledger.ids));
+  assert.deepEqual(new Set(data.entries.map(({ item }) => item.id)), new Set(data.ledger.ids.filter(id => id.startsWith("DT_ITEM_GS_"))));
   const view = shopView(data, { shopId: "general-store" });
   assert.deepEqual(view.categories.map(category => category.count), [13, 17, 10, 21, 13, 18, 12, 13, 16, 11]);
   assert.deepEqual(view.priceBands.map(band => band.count), [58, 61, 23, 2]);
@@ -170,9 +170,10 @@ test("shared goods keep one identity across filtered and full builds", async () 
 
 test("empty shop/category intersections never create or clear a pack", async () => {
   const data = await production();
-  assert.equal(selectEntries(data, { shopId: "blacksmith", categoryId: "travel" }).length, 0);
+  data.entries = data.entries.filter(({ item }) => !(item.shops.includes("blacksmith") && item.category === "animal"));
+  assert.equal(selectEntries(data, { shopId: "blacksmith", categoryId: "animal" }).length, 0);
   const { adapter, state } = fakeAdapter({ hasPack: false });
-  const result = await createBuilder({ load: () => data, adapter })({ dryRun: false, shopId: "blacksmith", categoryId: "travel" });
+  const result = await createBuilder({ load: () => data, adapter })({ dryRun: false, shopId: "blacksmith", categoryId: "animal" });
   assert.equal(result.count, 0);
   assert.match(result.warnings.join(" "), /No authored items/);
   assert.equal(state.pack, null);

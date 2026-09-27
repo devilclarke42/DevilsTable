@@ -1,7 +1,9 @@
+import { registerCatalogueProvider, initialiseCatalogues } from "./catalogues/extensions.js";
+import { catalogueRegistry } from "./catalogues/registry.js";
 import { MODULE_ID } from "./constants.js";
 import { registerSettings } from "./core/settings.js";
 import { logger } from "./core/logger.js";
-import { loadCatalogue } from "./data/catalogue-loader.js";
+import { loadCatalogue, readModuleJson } from "./data/catalogue-loader.js";
 import { validateCatalogue } from "./validation/catalogue-validator.js";
 import { rebuildCompendiums } from "./builders/compendium-builder.js";
 import { CompendiumBuilderApplication } from "./apps/compendium-builder-app.js";
@@ -17,6 +19,8 @@ Hooks.once("init", () => {
   registerSettings();
   registerCheckoutProof();
   game.modules.get(MODULE_ID).api = Object.freeze({
+    registerCatalogueProvider,
+    catalogues: () => catalogueRegistry.list(),
     loadCatalogue,
     validateCatalogue,
     rebuildCompendiums,
@@ -41,7 +45,14 @@ Hooks.once("init", () => {
   logger.info("Framework initialised.");
 });
 
-Hooks.once("ready", () => {
+Hooks.once("ready", async () => {
+  try {
+    await initialiseCatalogues(readModuleJson);
+  } catch (error) {
+    logger.error("Catalogue startup failed", error);
+    ui.notifications.error("Devil’s Table catalogue validation failed. Check the GM console; merchant browsing is unavailable.");
+    return;
+  }
   initialiseMerchantService();
   registerMerchantTokenEntry();
   if (game.user.isGM) logger.debug("GM builder API is ready.");

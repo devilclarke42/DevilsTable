@@ -10,6 +10,7 @@ const KEYWORDS = new Set([
 const TYPES = {
   object: value => value !== null && typeof value === "object" && !Array.isArray(value),
   array: Array.isArray,
+  boolean: value => typeof value === "boolean",
   string: value => typeof value === "string",
   number: Number.isFinite,
   integer: Number.isSafeInteger

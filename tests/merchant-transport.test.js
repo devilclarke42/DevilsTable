@@ -1,3 +1,5 @@
+import { initialiseCatalogues } from "../scripts/catalogues/extensions.js";
+import { readJson } from "./helpers.js";
 import test from "node:test";
 import assert from "node:assert/strict";
 import { formatCopper } from "../scripts/merchant/currency.js";
@@ -13,6 +15,7 @@ test("cost display converts totals without changing coin accounting", () => {
 test("separate GM and player services relay public stock without player Actor access", async t => {
   const previous = globalThis.game;
   t.after(() => { globalThis.game = previous; });
+  await initialiseCatalogues(readJson);
   const gm = { id: "gm", isGM: true, active: true };
   const player = { id: "player", isGM: false, active: true };
   const users = [gm, player];
@@ -56,6 +59,9 @@ test("separate GM and player services relay public stock without player Actor ac
   assert.equal(result.merchant, "Test Merchant");
   assert.deepEqual(result.presentation, { portrait: "portraits/merrick.webp", availability: "open" });
   assert.ok(!JSON.stringify(result).includes("Private Actor Name"));
+  assert.equal(result.catalogue.name, "General Store");
+  assert.deepEqual(result.categories.map(c => c.name), ["Other goods"]);
+  assert.deepEqual(result.pricing, { merchant: 0, character: 0, negotiation: 0, stacking: "additive" });
   assert.equal(result.items[0].name, "Rope");
   assert.equal(result.items[0].copper, 14);
   assert.equal(acknowledgements, 2);

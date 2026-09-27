@@ -95,7 +95,7 @@ export function validateStockCatalogue(catalogue) {
       }
     }
   }
-  for (const shop of catalogue.index.shops) if (!shops.has(shop)) add("data/stock.json.profiles", `Missing stock profile: ${shop}.`);
+  for (const shop of catalogue.index.shops) if (!shops.has(shop) && !catalogue.externalCatalogueIds?.includes(shop)) add("data/stock.json.profiles", `Missing stock profile: ${shop}.`);
   const hashed = new Map();
   for (const id of reserved) {
     const hash = documentIdFor(id);

@@ -1,3 +1,4 @@
+import { catalogueRegistry } from "../catalogues/registry.js";
 import { confidence } from "./interactions.js";
 import { MODULE_ID } from "../constants.js";
 import { recoverTrade } from "./transaction.js";
@@ -16,7 +17,7 @@ export class MerchantManagerApplication extends HandlebarsApplicationMixin(Appli
   #catalogue = null;
   #actorId = "";
   #characterId = "";
-  #profileId = "DT_TABLE_GS";
+  #profileId = "";
   #preview = null;
   #busy = false;
   #tab = "merchant";
@@ -33,6 +34,7 @@ export class MerchantManagerApplication extends HandlebarsApplicationMixin(Appli
     try { this.#catalogue ??= await loadStockCatalogue(); }
     catch (error) { stockError = error.message; }
     return { ...await super._prepareContext(options),
+      catalogues: catalogueRegistry.list().map(row => ({ ...row, selected: row.id === catalogueRegistry.resolve(game.actors.get(this.#actorId) ?? {})?.id })),
       tabs: Object.fromEntries(["merchant", "trade", "stock", "recovery"].map(tab => [tab, tab === this.#tab])),
       npcs: game.actors.filter(actor => actor.type === "npc")
       .map(actor => ({ id: actor.id, name: actor.name, selected: actor.id === this.#actorId, enabled: Boolean(merchantConfig(actor)) })),
@@ -65,7 +67,10 @@ export class MerchantManagerApplication extends HandlebarsApplicationMixin(Appli
     this.#actorId = actor?.id ?? "";
     const availability = this.element?.querySelector("[name=availability]")?.value ?? "open";
     try {
+      const catalogueId = this.element.querySelector("[name=catalogue]")?.value;
+      if (!catalogueRegistry.get(catalogueId)) throw Error("Select a registered catalogue.");
       await enableMerchant(actor, availability);
+      await actor.setFlag(MODULE_ID, "merchant.catalogueId", catalogueId);
       this.#message = `${actor.name} is enabled. Its linked scene tokens open the Shop UI on right-click.`;
     } catch (error) { this.#message = error.message; }
     await this.render();

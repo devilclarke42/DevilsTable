@@ -195,7 +195,7 @@ test("alpha.6 table upgrade retains all 20 identities and converges to 32 active
   const { adapter, state } = fakeAdapter({ existing });
   const build = createStockTableBuilder({ load: () => data, adapter });
   const preview = await build();
-  assert.deepEqual([preview.create, preview.update, preview.unchanged], [12, 7, 13]);
+  assert.deepEqual([preview.create, preview.update, preview.unchanged], [12, 3, 17]);
   assert.deepEqual(state.writes, []);
   await build({ dryRun: false });
   assert.ok(existing.every(old => state.docs.some(doc => doc._id === old._id)));

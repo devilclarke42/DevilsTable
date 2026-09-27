@@ -17,19 +17,19 @@
 .devils-table .dt-category { display: grid; grid-template-columns: minmax(10rem, 1fr) 1fr; gap: 0.6rem; align-items: start; }
 .devils-table .dt-category button { min-height: 2.2rem; white-space: normal; }
 .devils-table .dt-category details p { margin-block: 0.3rem; }
-.devils-table .dt-shop { display: grid; gap: 0.65rem; padding: 1rem; max-height: 80vh; overflow: auto; }
+.devils-table .dt-shop { display: grid; gap: 0.65rem; padding: 1rem; max-height: 80vh; overflow: hidden; min-height: 0; grid-template-rows: auto auto auto auto minmax(0, 1fr) auto; }
 .devils-table .dt-shop p, .devils-table .dt-shop h2, .devils-table .dt-shop h3 { margin: 0.25rem 0; }
 .devils-table .dt-shop-controls, .devils-table .dt-shop-categories { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; }
 .devils-table .dt-shop-controls input { min-width: 12rem; }
-.devils-table .dt-shop-grid { display: grid; grid-template-columns: minmax(18rem, 2fr) minmax(12rem, 1fr); gap: 1rem; }
-.devils-table .dt-shop-stock { max-height: 48vh; overflow: auto; }
+.devils-table .dt-shop-grid { min-height: 0; display: grid; grid-template-columns: minmax(18rem, 2fr) minmax(12rem, 1fr); gap: 1rem; }
+.devils-table .dt-shop-stock { min-height: 0; overflow: auto; }
 .devils-table .dt-shop-item { display: grid; grid-template-columns: 2.5rem minmax(0, 1fr) auto; gap: 0.65rem; padding: 0.65rem 0; border-bottom: 1px solid var(--color-border-light-primary, #888); }
 .devils-table .dt-shop-item img { width: 2.5rem; height: 2.5rem; object-fit: cover; }
 .devils-table .dt-shop-item p { overflow-wrap: anywhere; }
-.devils-table .dt-shop-basket { border-inline-start: 1px solid var(--color-border-light-primary, #888); padding-inline-start: 0.75rem; }
+.devils-table .dt-shop-basket { min-height: 0; overflow: auto; border-inline-start: 1px solid var(--color-border-light-primary, #888); padding-inline-start: 0.75rem; }
 .devils-table .dt-shop button { min-height: 2rem; }
 .devils-table .dt-shop [aria-pressed="true"] { outline: 2px solid currentColor; }
-@media (max-width: 640px) { .devils-table .dt-shop-grid { grid-template-columns: 1fr; } }
+@media (max-width: 640px) { .devils-table .dt-shop-grid { grid-template-columns: minmax(0, 1fr) minmax(10rem, 1fr); } }
 
 /* Align actions with the input, rather than the combined label/input height. */
 .devils-table .dt-shop-controls { align-items: flex-end; }
@@ -50,3 +50,7 @@
 .devils-table .dt-merchant-identity h2 { margin: 0 0 0.3rem; overflow-wrap: anywhere; }
 .devils-table .dt-merchant-context { display: flex; flex-wrap: wrap; align-items: center; gap: 0.4rem 0.8rem; }
 .devils-table .dt-merchant-context p { margin: 0; }
+
+.devils-table .dt-shop [hidden] { display: none !important; }
+.devils-table .dt-category-icon { width: 1.1rem; height: 1.1rem; object-fit: contain; vertical-align: middle; }
+.devils-table .dt-shop > details { max-height: 12vh; overflow: auto; }

@@ -1,9 +1,27 @@
 # Complete repository file map
 
-This inventory covers the framework, 144-item General Store, 152-item Tavern expansion, stock RollTable workflow and official
+This inventory covers the framework, 144-item General Store, deferred 152-item Tavern draft, stock RollTable workflow and official
 development standards.
 Existing modules were extended in place, with separate table conversion, persistence and UI helpers.
 Generated compendiums and ZIPs are not included in this inventory.
+
+## Sprint 8 additions
+
+| File | Responsibility |
+| --- | --- |
+| `data/catalogues.json` | Merchant-type display definitions, category IDs, order and fallback category. |
+| `schemas/catalogues.schema.json` | Catalogue definition schema, distinct from the source-index schema. |
+| `data/deferred-tavern-stock.json` | Preserved prior candidate policy, excluded from active stock generation. |
+| `scripts/catalogues/registry.js` | Validated registry, legacy merchant resolution, public category projection and search predicate. |
+| `scripts/catalogues/extensions.js` | Provider lifecycle, combined authoring data, metadata-only startup and registry activation. |
+| `docs/CATALOGUE_FRAMEWORK.md` | Definition/extension contract, compatibility, services and future Builder boundaries. |
+| `docs/PROJECT_STATE.md` | Current scope, deferred content, evidence and owner acceptance steps. |
+| `tests/catalogue-framework.test.js` | Registry, provider building, visibility and deferred identity regressions. |
+| `tests/catalogue-shop-ui.test.js` | Immediate search, category labels and basket preservation through the actual Shop application. |
+
+`data/categories.json` now includes parent catalogue, icon, sort and visibility. `data/catalogue.json`
+separates active and deferred source files. Existing loader, validator, service, manager, Shop UI,
+templates and CSS consume these definitions. The transaction execution/recovery modules are unchanged.
 
 ## Root and automation
 

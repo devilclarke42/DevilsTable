@@ -18,7 +18,11 @@
       "Waterskin",
       "Clay Jug",
       "Ceramic Jar"
-    ]
+    ],
+    "catalogue": "general-store",
+    "sort": 0,
+    "visible": true,
+    "icon": "icons/containers/bags/pack-leather-white-tan.webp"
   },
   {
     "id": "fire-lighting",
@@ -43,7 +47,11 @@
       "Candle Holder",
       "Candle Snuffer",
       "Firewood"
-    ]
+    ],
+    "catalogue": "general-store",
+    "sort": 10,
+    "visible": true,
+    "icon": "icons/sundries/lights/torch-black.webp"
   },
   {
     "id": "rope-climbing",
@@ -61,7 +69,11 @@
       "Chain",
       "Rope Ladder",
       "Belaying Pin"
-    ]
+    ],
+    "catalogue": "general-store",
+    "sort": 20,
+    "visible": true,
+    "icon": "icons/sundries/survival/rope-wrapped-brown.webp"
   },
   {
     "id": "camping",
@@ -90,7 +102,11 @@
       "Chopping Board",
       "Travel Rations",
       "Fishing Tackle"
-    ]
+    ],
+    "catalogue": "general-store",
+    "sort": 30,
+    "visible": true,
+    "icon": "icons/commodities/cloth/cloth-bolt-gold-orange.webp"
   },
   {
     "id": "writing",
@@ -111,7 +127,11 @@
       "Slate",
       "Blotting Sand",
       "Document Case"
-    ]
+    ],
+    "catalogue": "general-store",
+    "sort": 40,
+    "visible": true,
+    "icon": "icons/sundries/scrolls/scroll-plain-tan.webp"
   },
   {
     "id": "household",
@@ -137,7 +157,11 @@
       "Door Hinges",
       "Padlock",
       "Mortar and Pestle"
-    ]
+    ],
+    "catalogue": "general-store",
+    "sort": 50,
+    "visible": true,
+    "icon": "icons/sundries/survival/soap.webp"
   },
   {
     "id": "animal",
@@ -157,7 +181,11 @@
       "Horse Hobbles",
       "Picket Line",
       "Saddlebags"
-    ]
+    ],
+    "catalogue": "general-store",
+    "sort": 60,
+    "visible": true,
+    "icon": "icons/consumables/grains/sack-rice-flour-brown.webp"
   },
   {
     "id": "travel",
@@ -178,7 +206,11 @@
       "Pack Cover",
       "Canvas Repair Patches",
       "Marking Ribbon"
-    ]
+    ],
+    "catalogue": "general-store",
+    "sort": 70,
+    "visible": true,
+    "icon": "icons/commodities/wood/wood-pole.webp"
   },
   {
     "id": "tools",
@@ -202,7 +234,11 @@
       "Tool Wrap",
       "Wooden Wedges",
       "Merchant's Scale"
-    ]
+    ],
+    "catalogue": "general-store",
+    "sort": 80,
+    "visible": true,
+    "icon": "icons/tools/hand/hammer-cobbler-steel.webp"
   },
   {
     "id": "trade-goods",
@@ -221,7 +257,11 @@
       "Pitch",
       "Cloth Dye",
       "Silk Cloth"
-    ]
+    ],
+    "catalogue": "general-store",
+    "sort": 90,
+    "visible": true,
+    "icon": "icons/commodities/cloth/cloth-bolt-gold-orange.webp"
   },
   {
     "id": "ale",
@@ -237,7 +277,11 @@
       "Harvest Ale",
       "Strong Cellar Ale",
       "Old Oak Ale"
-    ]
+    ],
+    "catalogue": "tavern",
+    "sort": 100,
+    "visible": true,
+    "icon": "icons/svg/item-bag.svg"
   },
   {
     "id": "beer",
@@ -253,7 +297,11 @@
       "Red Malt Beer",
       "Juniper Beer",
       "Double Malt Beer"
-    ]
+    ],
+    "catalogue": "tavern",
+    "sort": 110,
+    "visible": true,
+    "icon": "icons/svg/item-bag.svg"
   },
   {
     "id": "mead",
@@ -269,7 +317,11 @@
       "Spiced Winter Mead",
       "Oak-Aged Mead",
       "Rose Petal Mead"
-    ]
+    ],
+    "catalogue": "tavern",
+    "sort": 120,
+    "visible": true,
+    "icon": "icons/svg/item-bag.svg"
   },
   {
     "id": "wine",
@@ -285,7 +337,11 @@
       "Blackcurrant Wine",
       "Mulled Red Wine",
       "Reserve Vineyard Wine"
-    ]
+    ],
+    "catalogue": "tavern",
+    "sort": 130,
+    "visible": true,
+    "icon": "icons/svg/item-bag.svg"
   },
   {
     "id": "spirits",
@@ -301,7 +357,11 @@
       "Dark Cane Spirit",
       "Spiced Honey Liqueur",
       "Cask-Aged Grain Spirit"
-    ]
+    ],
+    "catalogue": "tavern",
+    "sort": 140,
+    "visible": true,
+    "icon": "icons/svg/item-bag.svg"
   },
   {
     "id": "non-alcoholic-drinks",
@@ -317,7 +377,11 @@
       "Pear Juice",
       "Honey Lemon Water",
       "Blackberry Shrub Drink"
-    ]
+    ],
+    "catalogue": "tavern",
+    "sort": 150,
+    "visible": true,
+    "icon": "icons/svg/item-bag.svg"
   },
   {
     "id": "hot-drinks",
@@ -333,7 +397,11 @@
       "Green Leaf Tea",
       "Strong Black Coffee",
       "Spiced Cocoa"
-    ]
+    ],
+    "catalogue": "tavern",
+    "sort": 160,
+    "visible": true,
+    "icon": "icons/svg/item-bag.svg"
   },
   {
     "id": "breakfast",
@@ -349,7 +417,11 @@
       "Cheese and Onion Omelette",
       "Kipper Breakfast",
       "Breakfast Sausage Plate"
-    ]
+    ],
+    "catalogue": "tavern",
+    "sort": 170,
+    "visible": true,
+    "icon": "icons/svg/item-bag.svg"
   },
   {
     "id": "lunch",
@@ -365,7 +437,11 @@
       "Smoked Fish Plate",
       "Cold Ham and Pickles",
       "Vegetable Turnover"
-    ]
+    ],
+    "catalogue": "tavern",
+    "sort": 180,
+    "visible": true,
+    "icon": "icons/svg/item-bag.svg"
   },
   {
     "id": "dinner",
@@ -381,7 +457,11 @@
       "Baked Bean Supper",
       "Mutton and Turnip Supper",
       "Eel and Onion Supper"
-    ]
+    ],
+    "catalogue": "tavern",
+    "sort": 190,
+    "visible": true,
+    "icon": "icons/svg/item-bag.svg"
   },
   {
     "id": "stews",
@@ -397,7 +477,11 @@
       "Pea and Ham Stew",
       "Fish Chowder",
       "Venison Juniper Stew"
-    ]
+    ],
+    "catalogue": "tavern",
+    "sort": 200,
+    "visible": true,
+    "icon": "icons/svg/item-bag.svg"
   },
   {
     "id": "roasts",
@@ -413,7 +497,11 @@
       "Roast Goose Portion",
       "Roast Rabbit Portion",
       "Roast Root Platter"
-    ]
+    ],
+    "catalogue": "tavern",
+    "sort": 210,
+    "visible": true,
+    "icon": "icons/svg/item-bag.svg"
   },
   {
     "id": "bread",
@@ -429,7 +517,11 @@
       "Onion Flatbread",
       "Seeded Brown Loaf",
       "Honey Hearth Buns"
-    ]
+    ],
+    "catalogue": "tavern",
+    "sort": 220,
+    "visible": true,
+    "icon": "icons/svg/item-bag.svg"
   },
   {
     "id": "cheese",
@@ -445,7 +537,11 @@
       "Blue-Veined Cheese",
       "Soft Rind Cheese",
       "Imported Sheep Cheese"
-    ]
+    ],
+    "catalogue": "tavern",
+    "sort": 230,
+    "visible": true,
+    "icon": "icons/svg/item-bag.svg"
   },
   {
     "id": "desserts",
@@ -461,7 +557,11 @@
       "Poached Pear",
       "Spice Cake Slice",
       "Cream and Preserves"
-    ]
+    ],
+    "catalogue": "tavern",
+    "sort": 240,
+    "visible": true,
+    "icon": "icons/svg/item-bag.svg"
   },
   {
     "id": "snacks",
@@ -477,7 +577,11 @@
       "Pork Cracklings",
       "Soft Pretzel",
       "Imported Olives"
-    ]
+    ],
+    "catalogue": "tavern",
+    "sort": 250,
+    "visible": true,
+    "icon": "icons/svg/item-bag.svg"
   },
   {
     "id": "travel-meals",
@@ -493,7 +597,11 @@
       "Smoked Meat and Rye Meal",
       "Hard Biscuit Provisions",
       "Dried Vegetable Soup Mix"
-    ]
+    ],
+    "catalogue": "tavern",
+    "sort": 260,
+    "visible": true,
+    "icon": "icons/svg/item-bag.svg"
   },
   {
     "id": "luxury-meals",
@@ -509,7 +617,11 @@
       "Spiced Quail Supper",
       "Stuffed Artichoke Plate",
       "Celebration Supper"
-    ]
+    ],
+    "catalogue": "tavern",
+    "sort": 270,
+    "visible": true,
+    "icon": "icons/svg/item-bag.svg"
   },
   {
     "id": "animal-feed",
@@ -525,7 +637,11 @@
       "Hound Biscuit Bundle",
       "Dried Apple Horse Treats",
       "Chopped Fodder"
-    ]
+    ],
+    "catalogue": "tavern",
+    "sort": 280,
+    "visible": true,
+    "icon": "icons/svg/item-bag.svg"
   },
   {
     "id": "animal",
@@ -534,7 +650,11 @@
     "description": "Feed, grooming supplies and routine tack maintenance.",
     "plannedItems": [
       "Horse Feed"
-    ]
+    ],
+    "catalogue": "tavern",
+    "sort": 290,
+    "visible": true,
+    "icon": "icons/consumables/grains/sack-rice-flour-brown.webp"
   },
   {
     "id": "camping",
@@ -549,7 +669,11 @@
       "Bowl",
       "Spoon",
       "Wooden Plate"
-    ]
+    ],
+    "catalogue": "tavern",
+    "sort": 300,
+    "visible": true,
+    "icon": "icons/commodities/cloth/cloth-bolt-gold-orange.webp"
   },
   {
     "id": "containers",
@@ -563,7 +687,11 @@
       "Flask",
       "Clay Jug",
       "Ceramic Jar"
-    ]
+    ],
+    "catalogue": "tavern",
+    "sort": 310,
+    "visible": true,
+    "icon": "icons/containers/bags/pack-leather-white-tan.webp"
   },
   {
     "id": "fire-lighting",
@@ -580,7 +708,11 @@
       "Lamp Oil",
       "Tinderbox",
       "Charcoal"
-    ]
+    ],
+    "catalogue": "tavern",
+    "sort": 320,
+    "visible": true,
+    "icon": "icons/sundries/lights/torch-black.webp"
   },
   {
     "id": "household",
@@ -594,7 +726,11 @@
       "Wash Bucket",
       "Wash Board",
       "Clothes Line"
-    ]
+    ],
+    "catalogue": "tavern",
+    "sort": 330,
+    "visible": true,
+    "icon": "icons/sundries/survival/soap.webp"
   },
   {
     "id": "rope-climbing",
@@ -603,7 +739,11 @@
     "description": "Cordage, anchors and equipment for secured climbing.",
     "plannedItems": [
       "Twine"
-    ]
+    ],
+    "catalogue": "tavern",
+    "sort": 340,
+    "visible": true,
+    "icon": "icons/sundries/survival/rope-wrapped-brown.webp"
   },
   {
     "id": "travel",
@@ -612,6 +752,261 @@
     "description": "Navigation aids, signalling tools and practical travelling accessories.",
     "plannedItems": [
       "Bell"
-    ]
+    ],
+    "catalogue": "tavern",
+    "sort": 350,
+    "visible": true,
+    "icon": "icons/commodities/wood/wood-pole.webp"
+  },
+  {
+    "id": "containers",
+    "shop": "alchemist",
+    "name": "Containers",
+    "description": "Bags, boxes and vessels sold empty, with explicit carrying capacities.",
+    "plannedItems": [
+      "Backpack",
+      "Pouch",
+      "Sack",
+      "Chest",
+      "Lockbox",
+      "Barrel",
+      "Crate",
+      "Basket",
+      "Bottle",
+      "Flask",
+      "Waterskin",
+      "Clay Jug",
+      "Ceramic Jar"
+    ],
+    "catalogue": "alchemist",
+    "sort": 360,
+    "visible": true,
+    "icon": "icons/containers/bags/pack-leather-white-tan.webp"
+  },
+  {
+    "id": "fire-lighting",
+    "shop": "alchemist",
+    "name": "Lighting & Fire",
+    "description": "Portable lights, fuel and everyday fire-making supplies.",
+    "plannedItems": [
+      "Torch",
+      "Candle",
+      "Beeswax Candle",
+      "Tallow Candle",
+      "Lantern",
+      "Hooded Lantern",
+      "Bullseye Lantern",
+      "Lamp",
+      "Lamp Oil",
+      "Tinderbox",
+      "Flint & Steel",
+      "Charcoal",
+      "Kindling",
+      "Lamp Wick",
+      "Candle Holder",
+      "Candle Snuffer",
+      "Firewood"
+    ],
+    "catalogue": "alchemist",
+    "sort": 370,
+    "visible": true,
+    "icon": "icons/sundries/lights/torch-black.webp"
+  },
+  {
+    "id": "writing",
+    "shop": "alchemist",
+    "name": "Writing",
+    "description": "Writing surfaces, marking supplies and seals.",
+    "plannedItems": [
+      "Parchment",
+      "Paper",
+      "Ink",
+      "Ink Pen",
+      "Chalk",
+      "Wax",
+      "Sealing Stamp",
+      "Blank Book",
+      "Ledger",
+      "Wax Tablet",
+      "Slate",
+      "Blotting Sand",
+      "Document Case"
+    ],
+    "catalogue": "alchemist",
+    "sort": 380,
+    "visible": true,
+    "icon": "icons/sundries/scrolls/scroll-plain-tan.webp"
+  },
+  {
+    "id": "containers",
+    "shop": "blacksmith",
+    "name": "Containers",
+    "description": "Bags, boxes and vessels sold empty, with explicit carrying capacities.",
+    "plannedItems": [
+      "Backpack",
+      "Pouch",
+      "Sack",
+      "Chest",
+      "Lockbox",
+      "Barrel",
+      "Crate",
+      "Basket",
+      "Bottle",
+      "Flask",
+      "Waterskin",
+      "Clay Jug",
+      "Ceramic Jar"
+    ],
+    "catalogue": "blacksmith",
+    "sort": 390,
+    "visible": true,
+    "icon": "icons/containers/bags/pack-leather-white-tan.webp"
+  },
+  {
+    "id": "fire-lighting",
+    "shop": "blacksmith",
+    "name": "Lighting & Fire",
+    "description": "Portable lights, fuel and everyday fire-making supplies.",
+    "plannedItems": [
+      "Torch",
+      "Candle",
+      "Beeswax Candle",
+      "Tallow Candle",
+      "Lantern",
+      "Hooded Lantern",
+      "Bullseye Lantern",
+      "Lamp",
+      "Lamp Oil",
+      "Tinderbox",
+      "Flint & Steel",
+      "Charcoal",
+      "Kindling",
+      "Lamp Wick",
+      "Candle Holder",
+      "Candle Snuffer",
+      "Firewood"
+    ],
+    "catalogue": "blacksmith",
+    "sort": 400,
+    "visible": true,
+    "icon": "icons/sundries/lights/torch-black.webp"
+  },
+  {
+    "id": "rope-climbing",
+    "shop": "blacksmith",
+    "name": "Rope & Climbing",
+    "description": "Cordage, anchors and equipment for secured climbing.",
+    "plannedItems": [
+      "Hempen Rope",
+      "Silk Rope",
+      "Twine",
+      "Grappling Hook",
+      "Pitons",
+      "Climber's Kit",
+      "Block and Tackle",
+      "Chain",
+      "Rope Ladder",
+      "Belaying Pin"
+    ],
+    "catalogue": "blacksmith",
+    "sort": 410,
+    "visible": true,
+    "icon": "icons/sundries/survival/rope-wrapped-brown.webp"
+  },
+  {
+    "id": "animal",
+    "shop": "blacksmith",
+    "name": "Animal Supplies",
+    "description": "Feed, grooming supplies and routine tack maintenance.",
+    "plannedItems": [
+      "Horse Feed",
+      "Feed Bag",
+      "Brush",
+      "Curry Comb",
+      "Horseshoes",
+      "Tack Repair Kit",
+      "Halter",
+      "Lead Rope",
+      "Saddle Blanket",
+      "Horse Hobbles",
+      "Picket Line",
+      "Saddlebags"
+    ],
+    "catalogue": "blacksmith",
+    "sort": 420,
+    "visible": true,
+    "icon": "icons/consumables/grains/sack-rice-flour-brown.webp"
+  },
+  {
+    "id": "containers",
+    "shop": "black-market",
+    "name": "Containers",
+    "description": "Bags, boxes and vessels sold empty, with explicit carrying capacities.",
+    "plannedItems": [
+      "Backpack",
+      "Pouch",
+      "Sack",
+      "Chest",
+      "Lockbox",
+      "Barrel",
+      "Crate",
+      "Basket",
+      "Bottle",
+      "Flask",
+      "Waterskin",
+      "Clay Jug",
+      "Ceramic Jar"
+    ],
+    "catalogue": "black-market",
+    "sort": 430,
+    "visible": true,
+    "icon": "icons/containers/bags/pack-leather-white-tan.webp"
+  },
+  {
+    "id": "rope-climbing",
+    "shop": "black-market",
+    "name": "Rope & Climbing",
+    "description": "Cordage, anchors and equipment for secured climbing.",
+    "plannedItems": [
+      "Hempen Rope",
+      "Silk Rope",
+      "Twine",
+      "Grappling Hook",
+      "Pitons",
+      "Climber's Kit",
+      "Block and Tackle",
+      "Chain",
+      "Rope Ladder",
+      "Belaying Pin"
+    ],
+    "catalogue": "black-market",
+    "sort": 440,
+    "visible": true,
+    "icon": "icons/sundries/survival/rope-wrapped-brown.webp"
+  },
+  {
+    "id": "travel",
+    "shop": "black-market",
+    "name": "Travel",
+    "description": "Navigation aids, signalling tools and practical travelling accessories.",
+    "plannedItems": [
+      "Walking Stick",
+      "Compass",
+      "Spyglass",
+      "Bell",
+      "Signal Whistle",
+      "Steel Mirror",
+      "Hourglass",
+      "Road Map",
+      "Waterproof Document Wrap",
+      "Travel Cloak",
+      "Pack Cover",
+      "Canvas Repair Patches",
+      "Marking Ribbon"
+    ],
+    "catalogue": "black-market",
+    "sort": 450,
+    "visible": true,
+    "icon": "icons/commodities/wood/wood-pole.webp"
   }
 ]

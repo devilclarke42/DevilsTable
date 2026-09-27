@@ -5,12 +5,12 @@ import { loadCatalogue, readModuleJson } from "../scripts/data/catalogue-loader.
 import { validateCatalogue } from "../scripts/validation/catalogue-validator.js";
 import { catalogue, fixture, readJson } from "./helpers.js";
 
-test("General Store and Tavern production catalogue validates without including fixtures", async () => {
+test("Active General Store production catalogue validates without including fixtures", async () => {
   const data = await loadCatalogue({ readJson });
   const result = validateCatalogue(data);
   assert.equal(result.valid, true);
-  assert.equal(result.count, 296);
-  assert.equal(result.warnings.length, 0);
+  assert.equal(result.count, 144);
+  assert.equal(result.warnings.length, 1);
   assert.ok(data.entries.every(({ item }) => !item.id.includes("TEST")));
 });
 

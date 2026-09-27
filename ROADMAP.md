@@ -3,18 +3,19 @@
 This is the detailed implementation and acceptance checklist. The official versioned milestones
 and release outcomes are defined in [docs/ROADMAP.md](docs/ROADMAP.md).
 
-## Sprint 8 — Tavern catalogue and merchant presentation
+## Sprint 8 — Catalogue framework and merchant UX
 
-- [x] Compact Actor portrait header with exact scene-token name and availability.
-- [x] Live updates through public projection; no merchant Actor permissions for players.
-- [x] Generic silhouette fallback and flexible future context area.
-- [x] 152 original products in 19 requested categories; 183 Tavern goods including shared stock.
-- [x] Explicit portions, contents-only service weights, copper/silver prices and native consumption.
-- [x] Complete Tavern profile; four existing tables, weighted quantities and builder-only notes.
-- [x] Item/table upgrade tests, preservation checks, full review and packaging.
-- [ ] Complete the live portrait and Tavern checks in [Tavern review](docs/TAVERN_REVIEW.md).
+- [x] Data-defined catalogue registry and validated category display metadata.
+- [x] Shared Items, compatible legacy memberships and optional merchant catalogue selection.
+- [x] Provider registration, ordinary shared-pack building and collision validation.
+- [x] Populated category tabs, public-field live search and independent basket scrolling.
+- [x] Actor portrait, exact token name, availability and formatted pricing summaries.
+- [x] Architecture, content standard, decisions, extension contract and project state.
+- [x] Preserve the earlier Tavern draft and IDs while deferring its active build.
+- [ ] Owner review and live Foundry acceptance using [Project State](docs/PROJECT_STATE.md).
+- [ ] Resume Tavern only after the framework is reviewed.
 
-Candidate: `0.3.0-alpha.1`. Further shop catalogues are not part of this sprint.
+Candidate: `0.3.0-alpha.2`. Services and Merchant Builder are design boundaries only.
 
 ## Sprint 7 — Merchant interaction
 
@@ -62,7 +63,7 @@ Implementation is available for acceptance testing; the target environment is no
 - [x] Update standards, review tables, changelogs, API guidance and packaging.
 - [ ] Record detailed Foundry V14 / D&D5e 5.3.3 / Forge acceptance and Sprint 3 owner review.
 
-Sprint 3 stopped at the General Store. Tavern authoring is now recorded under Sprint 8.
+Sprint 3 stopped at the General Store. Further Tavern authoring awaits review of the revised Sprint 8 catalogue framework.
 
 ## Sprint 4 — Merchant System specification (approved)
 

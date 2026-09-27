@@ -2,7 +2,7 @@
   <header class="dt-merchant-header">
     <img class="dt-merchant-portrait" data-merchant-portrait src="{{portrait}}" alt="Portrait of {{merchant}}" width="72" height="72">
     <div class="dt-merchant-identity"><h2>{{merchant}}</h2>
-      <div class="dt-merchant-context"><p>Status: <strong>{{availability}}</strong></p></div>
+      <div class="dt-merchant-context">{{#if catalogue}}<p><img class="dt-category-icon" src="{{catalogue.icon}}" alt=""> {{catalogue.name}}</p>{{/if}}<p>Status: <strong>{{availability}}</strong></p></div>
     </div>
   </header>
   <p role="status" aria-live="polite">{{message}}</p>
@@ -13,18 +13,18 @@
   </div>
   <div class="dt-shop-categories" aria-label="Stock filters">
     <button type="button" data-action="category" data-category="">All</button>
-    {{#each categories}}<button type="button" data-action="category" data-category="{{id}}" aria-pressed="{{selected}}">{{id}}</button>{{/each}}
+    {{#each categories}}<button type="button" data-action="category" data-category="{{id}}" aria-pressed="{{selected}}"><img class="dt-category-icon" src="{{icon}}" alt=""> {{name}}</button>{{/each}}
   </div>
   <div class="dt-shop-grid">
     <section class="dt-shop-stock" aria-label="Available stock">
       {{#each items}}
-        <article class="dt-shop-item">
+        <article class="dt-shop-item" data-offer-id="{{id}}" {{#if hidden}}hidden{{/if}}>
           <img src="{{img}}" alt="" loading="lazy"><div><h3>{{name}}</h3><p>{{description}}</p>
             <p>{{priceLabel}} per {{saleUnit}} · {{quantity}} available</p></div>
           <div class="dt-item-actions"><button type="button" data-action="add" data-id="{{id}}">Add</button>
           <button type="button" data-action="steal" data-id="{{id}}" {{#unless @root.canInteract}}disabled{{/unless}}>Attempt theft</button></div>
         </article>
-      {{else}}<p>No matching public offers.</p>{{/each}}
+      {{/each}}<p data-no-matches {{#unless noMatches}}hidden{{/unless}}>No matching public offers.</p>
     </section>
     <aside class="dt-shop-basket" aria-label="Your basket"><h3>Basket</h3>
       {{#each basket}}<p>{{count}} × {{name}} — {{subtotalLabel}}
@@ -34,6 +34,9 @@
       {{#each sales}}<p>{{count}} × {{name}} — {{subtotalLabel}} <button type="button" data-action="unsell" data-id="{{id}}">Remove one</button></p>{{/each}}
       <p>{{characterName}} · Available: {{fundsLabel}}</p>
       {{#if fundsError}}<p role="alert">{{fundsError}}</p>{{/if}}
+      <p>Subtotal: {{originalLabel}}</p>
+      <p>Modifiers ({{stacking}}): {{#each modifiers}}<span>{{name}} {{label}} </span>{{/each}}</p>
+      <p>Adjusted purchases: {{adjustedLabel}}</p>
       <p><strong>Total: {{totalLabel}}</strong></p>
       <button type="button" data-action="negotiate" {{#unless canInteract}}disabled{{/unless}}>Request negotiation</button>
       <button type="button" data-action="checkout" {{#unless canCheckout}}disabled{{/unless}}>Request checkout</button>

@@ -1,3 +1,4 @@
+import { extendCatalogue } from "../catalogues/extensions.js";
 import { MODULE_ID } from "../constants.js";
 import { compileSchema } from "../validation/schema-validator.js";
 
@@ -10,11 +11,11 @@ export async function readModuleJson(path) {
 }
 
 export async function loadCatalogue({ readJson = readModuleJson } = {}) {
-  const [index, itemSchema, catalogueSchema, ledger, shopDefinitions, categoryDefinitions, shopsSchema, categoriesSchema] = await Promise.all([
+  const [index, itemSchema, catalogueSchema, ledger, shopDefinitions, categoryDefinitions, shopsSchema, categoriesSchema, catalogueDefinitions, cataloguesSchema] = await Promise.all([
     readJson("data/catalogue.json"), readJson("schemas/item.schema.json"),
     readJson("schemas/catalogue.schema.json"), readJson("data/id-ledger.json"),
     readJson("data/shops.json"), readJson("data/categories.json"),
-    readJson("schemas/shops.schema.json"), readJson("schemas/categories.schema.json")
+    readJson("schemas/shops.schema.json"), readJson("schemas/categories.schema.json"), readJson("data/catalogues.json"), readJson("schemas/catalogues.schema.json")
   ]);
   const errors = compileSchema(catalogueSchema)(index, "data/catalogue.json");
   if (errors.length) throw new Error(errors.map(e => `${e.path}: ${e.message}`).join("\n"));
@@ -29,5 +30,5 @@ export async function loadCatalogue({ readJson = readModuleJson } = {}) {
     }));
     groups.push(...batch.flat());
   }
-  return { index, itemSchema, catalogueSchema, ledger, shopDefinitions, categoryDefinitions, shopsSchema, categoriesSchema, entries: groups };
+  return extendCatalogue({ catalogueDefinitions, cataloguesSchema, index, itemSchema, catalogueSchema, ledger, shopDefinitions, categoryDefinitions, shopsSchema, categoriesSchema, entries: groups });
 }

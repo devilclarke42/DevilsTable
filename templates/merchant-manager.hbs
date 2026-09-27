@@ -10,6 +10,7 @@
     <button type="button" data-action="selectTab" data-tab="recovery" aria-pressed="{{tabs.recovery}}">Recovery</button>
   </nav>
   <section data-panel="merchant" {{#unless tabs.merchant}}hidden{{/unless}}>
+  <label>Catalogue <select name="catalogue">{{#each catalogues}}<option value="{{id}}" {{#if selected}}selected{{/if}}>{{name}}</option>{{/each}}</select></label>
   <label>Availability <select name="availability"><option value="open">Open</option><option value="closed">Closed</option>
     <option value="busy">Busy</option><option value="travelling">Travelling</option><option value="sleeping">Sleeping</option></select></label>
   <button type="button" data-action="enable" {{#if busy}}disabled{{/if}}>Enable / update linked tokens</button>

@@ -10,6 +10,17 @@ GitHub Release or installation manifest exists. No release dates are invented fo
 
 ## [0.3.0] — In Development
 
+### Revised Sprint 8 scope
+
+- `0.3.0-alpha.2` introduces the catalogue framework and data-driven Merchant UX. The active
+  build returns to 144 General Store Items; the previous Tavern draft and every ID remain preserved
+  as deferred review material. Existing world documents are preserved. No new Tavern content.
+- Added provider registration, category metadata/visibility, live public-field search, catalogue
+  selection and persistent basket pricing summaries. One shared Item compendium remains.
+- Documented services and Merchant Builder integration boundaries without implementing them.
+- Added [Project State](PROJECT_STATE.md) and the [extension contract](CATALOGUE_FRAMEWORK.md).
+- Live acceptance of the framework candidate is pending. The alpha.1 entries below are historical.
+
 ### Added
 
 - `0.3.0-alpha.1`: Sprint 8 Tavern catalogue with 152 new products in 19 menu categories and

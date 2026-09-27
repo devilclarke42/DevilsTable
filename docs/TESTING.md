@@ -21,9 +21,9 @@ Stock coverage checks 32 active tables with all 132 IDs reserved, real compendiu
 and Merchant Notes isolation. Persistence tests cover table previews, native model preflight,
 missing Items, result order, embedded-row changes, foreign metadata preservation, 100-row batches,
 partial failure/retry, custom-row protection, independent settings menus and permission guards.
-The current candidate has 289 automated tests; validation reports 296 source Items and 32
-active tables. The tables below retain historical General Store acceptance checks; current
-Tavern and portrait checks are in [TAVERN_REVIEW.md](TAVERN_REVIEW.md).
+The current candidate has 294 automated tests; validation reports 144 active source Items and 32
+active tables. Deferred Tavern content retains its historical regression checks and 152 reserved IDs.
+Current live acceptance steps are in [Project State](PROJECT_STATE.md).
 Sprint 3 checks frozen hashes of all 69 accepted records (except Container sale-unit additions),
 75/13/56 Item upgrades, 12/3/17 table upgrades, normalized name uniqueness, icon references, variant
 inheritance/exclusions, private notes and effective-tier quantity rolls. Both rebuilds converge.
@@ -172,9 +172,14 @@ the complete test suite.
 
 ## Sprint 8 automated evidence
 
-The 144-to-296 Item upgrade creates only 152 new documents; General Store documents are equal
-before/after and repeated builds are unchanged. The Tavern table upgrade updates four existing
-identities with no new tables. All 19 menu filters are exercised, including the rule that an
-Often roll cannot force a Rarely luxury meal. All new food activities consume one complete unit
-without effects or stale document targets. Portrait tests cover a player with no Actor access,
-exact token naming, fallback and live update subscriptions; visual appearance remains a live check.
+Registry tests exercise category order, visibility, empty tabs, fallback goods and membership filters.
+A synthetic third-party data provider builds Items into the existing shared pack; repeated builds
+converge without duplication. Hidden offers fail checkout validation. Shop application tests verify
+immediate name/description/tag/category search without rerendering or losing the basket, including
+formatted original and adjusted totals. Transport tests pass registry data to a player without Actor
+access. Portrait tests retain exact token naming, fallback and listener cleanup.
+
+The former Tavern upgrade tests explicitly load deferred sources to guard their permanent identities
+and data integrity. They do not add those Items to current builds. Native transaction, rollback and
+two/three/five-client simulations remain unchanged. No live Foundry or visual-layout success is
+claimed; follow [Project State](PROJECT_STATE.md) for owner review.

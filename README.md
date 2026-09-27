@@ -6,22 +6,23 @@ Foundry compendiums are generated from it and must never be edited as source dat
 
 ## Current status
 
-**Sprint 8 Tavern candidate (`0.3.0-alpha.1`):** 152 new Tavern menu products across 19
-categories, plus 31 shared goods, give the Tavern 183 canonical offerings. The complete catalogue
-has 296 Items and still generates 32 Stock RollTables. General Store content is unchanged.
+**Sprint 8 framework candidate (`0.3.0-alpha.2`):** data-defined catalogues, category tabs,
+Actor portrait, exact token name, immediate search and a persistent priced basket. One shared
+Item compendium and the existing transaction pipeline are retained. Third-party data providers
+can register catalogues, categories and source Items without changing Shop UI code.
 
-The Shop UI now shows the linked Actor portrait beside the exact scene-token name and availability.
-Portrait and token-name changes update open shops; a generic silhouette covers missing portraits.
-The owner confirmed alpha.25's Sprint 7 features work. These new additions require live acceptance.
-See the [complete Tavern review and upgrade guide](docs/TAVERN_REVIEW.md),
-[Sprint 7 interaction rules](docs/merchant/SPRINT_7_INTERACTIONS.md) and
-[Sprint 6 transfer design](docs/merchant/SPRINT_6_TRANSACTIONS.md).
+The active build contains **144 General Store Items and 32 Stock RollTables**. The earlier Tavern
+draft is preserved with its IDs, but deferred from active builds until this framework is reviewed.
+Existing world Items are never deleted by this change. See [Project State](docs/PROJECT_STATE.md),
+[Catalogue framework and extension API](docs/CATALOGUE_FRAMEWORK.md),
+[Sprint 7 interactions](docs/merchant/SPRINT_7_INTERACTIONS.md) and
+[Sprint 6 transfers](docs/merchant/SPRINT_6_TRANSACTIONS.md). Live Sprint 8 acceptance is pending.
 
 ### Using merchants
 
 1. Install the ZIP in a backed-up test world using Foundry V14 and D&D5e 5.3.3. Reconnect the
    GM and players. Use one browser session for the active GM during transaction testing.
-2. Keep the merchant NPC GM-only and place a linked token. Enable it in **Merchant Setup**.
+2. Keep the merchant NPC GM-only and place a linked token. Choose its catalogue and enable it in **Merchant Setup**.
 3. Optionally build Items and Stock RollTables, then **Roll stock preview** and **Add previewed
    stock**. Existing catalogue goods, including zero-quantity offers, are preserved.
 4. Select the NPC and optional customer, then load their settings. Configure finite/infinite
@@ -65,7 +66,7 @@ Automated tests also use a synthetic parcel that is excluded from the module ZIP
 
 The user reported that alpha.4's goods and alpha.5's RollTables worked. This build retains
 the earlier read-back fix and field diagnostics. The 75 additions, variant controls, quantities
-and legacy cleanup require detailed live acceptance. Those historical builds did not add Tavern content; Sprint 8 now does.
+and legacy cleanup require detailed live acceptance. Those historical builds did not add Tavern content; the revised Sprint 8 defers Tavern authoring.
 
 **Sprint 4 design is approved with required changes:** the [Merchant System Specification](docs/merchant/MERCHANT_SYSTEM_SPECIFICATION.md)
 and its [data model](docs/merchant/DATA_MODEL.md), [wireframes](docs/merchant/UI_WIREFRAMES.md),
@@ -128,16 +129,16 @@ an item from the Item compendium build.
 1. Obtain the packaged ZIP from the successful **Validate and package** GitHub Actions run
    (artifact: `devils-table-framework`), or build it using the development commands below.
    Downloading an Actions artifact may wrap the module ZIP in another ZIP: extract the artifact
-   first and select `devils-table-v0.3.0-alpha.1.zip` for import.
+   first and select `devils-table-v0.3.0-alpha.2.zip` for import.
 2. Back up your test world. In The Forge's Import Wizard, import that module ZIP as a custom package.
    See the [Forge custom-package guide](https://forums.forge-vtt.com/t/how-to-upload-a-modified-version-of-a-module-system/10510).
 3. In a V14 / D&D5e 5.3.3 test world, enable **Devil's Table: Goods & Provisions** and reload.
 4. As the active GM, open **Configure Settings → Devil's Table → Build/Rebuild Compendiums → Open Builder**.
 5. Select **All shops → All categories**, then **Validate / Preview**. A fresh world previews
-   **296 creates**. A complete alpha.25 pack previews **152 creates, 0 updates, 144 unchanged**.
-   Tavern-only selection covers 183 goods. Preview is read-only.
+   **144 creates**. A complete alpha.25 pack previews **0 creates, 0 updates, 144 unchanged**.
+   Existing alpha.1 Tavern documents are preserved. Tavern selection covers 31 shared goods. Preview is read-only.
 6. Choose **Build / Rebuild** and confirm. The builder writes the selected Items to
-   `world.devils-table-items`. Repeat the all-shop build: expect 296 unchanged and no duplicates.
+   `world.devils-table-items`. Repeat the all-shop build: expect 144 unchanged and no duplicates.
 7. Open **Configure Settings → Devil's Table → Build/Rebuild Stock RollTables → Open RollTable
    Builder**. Preview All shops: 32 creates for a fresh pack, or four Tavern updates and 28
    unchanged against alpha.25. No new table IDs are needed; legacy tables remain protected.

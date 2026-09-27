@@ -4,10 +4,10 @@ This is the official versioned milestone plan. Milestones describe outcomes and 
 not promised dates. Each catalogue is built in curated, reviewable categories; permanent identities,
 source provenance and the development standards apply throughout.
 
-Current work is **0.3.0 in development**, with runtime candidate `0.3.0-alpha.1`. The 144-item
-General Store and 152 new Tavern products are implemented, with 31 shared Tavern supplies.
-The owner reports Sprint 7 works; Tavern and portrait live acceptance remain open.
-Some framework work intentionally precedes the milestone where it will be expanded and completed.
+Current work is the revised **Sprint 8 Catalogue Framework & Merchant UX**, candidate
+`0.3.0-alpha.2`. The active catalogue contains 144 General Store Items. The previously authored
+Tavern draft is preserved but deferred until framework review. Merchant services and the full
+Merchant Builder remain future work. See [Project State](PROJECT_STATE.md).
 
 **Sprint 4 review:** the owner approved the Merchant System design with required changes as the next
 development priority, before Tavern content. The
@@ -20,7 +20,7 @@ purchases, rejection and recovery; live Sprint 7 acceptance remains open. See th
 | Milestone | Focus | Status |
 | --- | --- | --- |
 | 0.2.0 | General Store | In development; Sprint 3 implemented, live acceptance and review pending |
-| 0.3.0 | Tavern | Sprint 8 implemented; 183 offerings including shared goods, live acceptance pending |
+| 0.3.0 | Tavern | Deferred draft preserved; framework review precedes further content |
 | 0.4.0 | Alchemist | Planned; dedicated content and mechanics remain |
 | 0.5.0 | Blacksmith | Planned; dedicated content and mechanics remain |
 | 0.6.0 | Black Market | Planned; dedicated content and access design remain |
@@ -38,7 +38,7 @@ explicit purchase units, copper/silver-friendly prices, adjusted weights and sha
 The current 144 goods, Item builder, validation, settings, logging, native supported mappings and
 packaging provide this foundation. Stock tools use 32 active tables with weighted quantities: sixteen for Village, Town, City and Wagon,
 and sixteen for existing partial merchant catalogues. Sprint 3 adds 75 goods and completes this
-authoring scope. Tavern authoring follows in Sprint 8; milestone numbers are unchanged.
+authoring scope. Tavern authoring resumes after Sprint 8 framework review; milestone numbers are unchanged.
 
 **Exit gate:** complete the detailed V14 / D&D5e 5.3.3 Forge checks, verify unchanged rebuilds and
 upgrades, review quantity balance/cleanup, and resolve any content or runtime issues before declaring
@@ -46,9 +46,10 @@ the numbered milestone complete. Successful user reports are recorded alongside 
 
 ## 0.3.0 — Tavern
 
-Sprint 8 implements 152 new menu products and reuses 31 shared goods. The four-table Tavern
-profile now has complete authored coverage. No automatic lodging, intoxication or rest bonuses
-are added. See [Tavern review](TAVERN_REVIEW.md) for the upgrade and acceptance gate.
+The earlier candidate authored 152 menu products; that draft and its IDs are preserved as deferred
+review material. Revised Sprint 8 builds the catalogue framework first. Its four Tavern tables
+currently select shared supplies only. Review the framework before resuming the Tavern scope.
+See [Tavern review](TAVERN_REVIEW.md) for the historical candidate.
 
 Author curated food, bread/staples, meals, drinks and travel provisions with clear portions, containers,
 prices and weights. Reuse existing vessels, lighting, household goods and animal supplies. Review
@@ -145,4 +146,4 @@ checklist. This document controls milestone numbering and intended release outco
 
 Buy/sell settlement, native wallets, private receipts and recovery are implemented in alpha.14.
 Automated two-, three- and five-client races pass. Live Foundry transfer/recovery acceptance is
-still required before declaring the merchant milestone stable. Tavern now has its Sprint 8 candidate; see [the review](TAVERN_REVIEW.md).
+still required before declaring the merchant milestone stable. The earlier Tavern candidate is deferred; see [Project State](PROJECT_STATE.md).

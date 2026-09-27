@@ -27,7 +27,7 @@ try {
   assert(!manifest.packs?.length, "Generated world compendiums must not be bundled in this framework release.");
   for (const path of [...manifest.esmodules, ...manifest.styles, ...await runtimeFiles()]) await access(resolve(ROOT, path));
   const sourceFiles = await listFiles(resolve(ROOT, "data/items"));
-  const registered = new Set(catalogue.index.files.map(file => resolve(ROOT, file)));
+  const registered = new Set([...catalogue.index.files, ...(catalogue.index.deferredFiles ?? [])].map(file => resolve(ROOT, file)));
   for (const path of sourceFiles.filter(file => file.endsWith(".json"))) assert(registered.has(path), `Unregistered catalogue file: ${path}`);
 
   for (const { item } of catalogue.entries) {

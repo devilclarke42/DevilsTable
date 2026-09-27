@@ -1,3 +1,4 @@
+import { validateRegistry } from "../catalogues/extensions.js";
 import { compileSchema } from "./schema-validator.js";
 import { documentIdFor } from "../builders/document-id.js";
 import { validateShopDefinitions } from "./shop-validator.js";
@@ -12,7 +13,8 @@ export function validateCatalogue(catalogue) {
   const add = (path, message) => errors.push({ path, message });
   if (!Array.isArray(entries)) { add("entries", "Expected loaded catalogue entries."); return result(); }
   if (errors.length) return result();
-  errors.push(...validateShopDefinitions(catalogue));
+  if (index.deferredFiles?.some(file => index.files.includes(file))) add("data/catalogue.json.deferredFiles", "A source file cannot be active and deferred.");
+  errors.push(...validateShopDefinitions(catalogue), ...validateRegistry(catalogue));
   if (errors.length) return result();
   if (ledger?.schemaVersion !== 1 || !Array.isArray(ledger?.ids) ||
       ledger.ids.some(id => typeof id !== "string" || !/^DT_ITEM_[A-Z0-9]+(?:_[A-Z0-9]+)+$/.test(id)) ||

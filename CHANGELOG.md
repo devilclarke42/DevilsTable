@@ -3,6 +3,32 @@
 This file retains detailed repository build history. The official milestone/release record is
 [docs/CHANGELOG.md](docs/CHANGELOG.md). Versions here do not imply a public GitHub Release exists.
 
+## 0.3.0-alpha.2 — 2026-09-27 — Catalogue framework and merchant UX
+
+### Added
+
+- Data-defined catalogue registry, category icons/order/visibility and schema validation.
+- Setup-time data provider API for catalogues, categories and canonical source Items; one shared pack.
+- Merchant catalogue selection, legacy inference and missing-provider protection.
+- Immediate search across names, public descriptions, tags and category labels; populated category tabs.
+- Basket original subtotal, pricing modifiers and adjusted/net totals with independent scrolling.
+- Framework contract, future services/builder boundaries, Project State and regression coverage.
+
+### Changed
+
+- Revised Sprint 8 to architecture before Tavern content. Preserve the 152 earlier Tavern source
+  records, stock policy and permanent IDs as deferred material; active builds contain 144 Items.
+  Existing world Items are preserved. Stock tables remain 32 with the shared-only Tavern policy.
+- Keep Actor portrait and exact token-name presentation from alpha.1. Shop UI reads category data;
+  checkout and theft validate against the same catalogue-visible public offers.
+- Metadata-only startup avoids loading the full Item catalogue in every browsing client.
+- Transaction settlement, recovery and shared compendium identities remain unchanged.
+
+### Validation
+
+- Automated catalogue, UI-state, provider, builder, transport and transaction regressions pass.
+- Live Foundry V14 / D&D5e 5.3.3 / Forge acceptance remains pending; no live success is claimed.
+
 ## 0.3.0-alpha.1 — 2026-09-27 — Tavern catalogue and merchant presentation
 
 ### Added

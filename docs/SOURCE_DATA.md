@@ -9,8 +9,9 @@ existing content. Editorial requirements may be stricter than current automated 
 Edit catalogue JSON in this repository. Do not edit generated pack data directly. A rebuild
 overwrites builder-controlled fields; imports already owned by an actor or the world are independent.
 The 144 General Store items live in ten category files under `data/items/general-store/`.
-The 152 new Tavern items live in nineteen category files under `data/items/tavern/`; 31 existing
-General Store records are shared by shop assignment, giving Tavern 183 goods.
+The earlier 152 Tavern records remain in nineteen deferred category files under `data/items/tavern/`.
+They are excluded from active builds pending framework review. Current Tavern selection contains
+31 shared General Store records. See [Catalogue framework](CATALOGUE_FRAMEWORK.md).
 Sprint 3 preserves all 69 accepted records, adding only explicit sale units to the 13 Containers.
 `tests/fixtures/item.json` is synthetic test material only.
 

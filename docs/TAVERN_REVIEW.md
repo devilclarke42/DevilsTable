@@ -1,5 +1,8 @@
 # Sprint 8 — Tavern catalogue and merchant presentation
 
+> Deferred historical candidate: Sprint 8 was revised to the catalogue framework. The material below
+> describes alpha.1, not the active alpha.2 build. Preserve its IDs and await framework review.
+
 **Candidate:** `0.3.0-alpha.1` · **Date:** 27 September 2026.  
 **Targets:** Foundry V14, D&D5e 5.3.3, 2014 mechanics, adjusted pounds for Variant Encumbrance.
 

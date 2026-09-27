@@ -1,5 +1,9 @@
 # Design Decisions
 
+## Catalogue framework decision — 2026-09-27
+
+Introduce catalogues as data-defined merchant types, distinct from categories and stock profiles. Retain JSON authoring, one generated Item compendium and Actor-owned live inventory. This lets new providers add metadata and source records through the ordinary validator rather than adding shop-specific UI code. Preserve `shops` and category `shop` as compatibility aliases instead of rewriting permanent identities. Infer legacy merchant selection read-only and allow an explicit GM selection. Services remain separate from Items; their future fulfillment needs its own reviewed transaction design. See [Catalogue framework](CATALOGUE_FRAMEWORK.md) for the full rationale and API.
+
 This is the project's durable decision record. The decisions below are accepted standards unless
 explicitly marked as planned. They explain the reasons and consequences behind the current design;
 implementation details remain in [ARCHITECTURE.md](ARCHITECTURE.md).

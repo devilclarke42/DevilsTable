@@ -1,5 +1,9 @@
 # Content Standard
 
+## Catalogue membership (Sprint 8)
+
+New merchant types must be defined in `data/catalogues.json`; category display metadata belongs in `data/categories.json`. Every category has `catalogue`, matching legacy `shop`, `id`, `name`, `icon`, `sort`, `visible`, `description` and `plannedItems`. Item `shops` tags are catalogue memberships, not separate copies of a product. Retain this compatibility field and all permanent IDs. Never duplicate an Item to place it in another catalogue. See the [complete definition and provider contract](CATALOGUE_FRAMEWORK.md). The earlier Tavern source below is deferred review material, not active Sprint 8 content.
+
 **Status:** official standard for all future Devil's Table content.  
 **Target:** Foundry VTT V14, D&D5e 5.3.3, 2014 mechanics, adjusted pounds for Variant Encumbrance.
 

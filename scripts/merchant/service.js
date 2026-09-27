@@ -1,3 +1,4 @@
+import { catalogueRegistry } from "../catalogues/registry.js";
 import { merchantPresentation, receivePresentation, registerPresentationUpdates } from "./presentation.js";
 import { quoteTrade, purchaseOffers, stable } from "./trade-model.js";
 import { INTERACTIONS } from "./interactions.js";
@@ -104,8 +105,11 @@ async function receive(msg) {
     logger.debug("Merchant opened", { merchant: actor.id });
     const customer = game.actors.get(msg.characterId);
     const shopper = customer?.testUserPermission(game.users.get(msg.userId), "OWNER") ? customer : null;
-    return notify(msg.userId, { id: msg.id, type: "stock", merchant: token.name ?? actor.name, presentation: merchantPresentation(actor), characterId: shopper?.id ?? null,
-      availability: merchantConfig(actor).availability ?? "open", items: purchaseOffers(actor, shopper), buyModifier: tradeSettings(actor).buyModifier });
+    const view = catalogueRegistry.project(actor, purchaseOffers(actor, shopper));
+    const pricing = pricingTerms(actor, shopper);
+    return notify(msg.userId, { id: msg.id, type: "stock", catalogue: view.catalogue, categories: view.categories,
+      pricing: { merchant: pricing.merchant, character: pricing.character, negotiation: pricing.negotiation, stacking: pricing.stacking }, merchant: token.name ?? actor.name, presentation: merchantPresentation(actor), characterId: shopper?.id ?? null,
+      availability: merchantConfig(actor).availability ?? "open", items: view.items, buyModifier: tradeSettings(actor).buyModifier });
   }
   if (!["checkout", "interaction"].includes(msg.type)) return;
   if (msg.type === "interaction" && (!INTERACTIONS[msg.kind] || (msg.kind === "theft" && !publicOffers(actor).some(item => item.id === msg.itemId)))) {

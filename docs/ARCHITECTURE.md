@@ -1,5 +1,9 @@
 # Architecture and API
 
+## Catalogue architecture (Sprint 8)
+
+Catalogues identify merchant types; categories organise their public inventory; Items retain one permanent identity and one shared compendium UUID. `scripts/catalogues/registry.js` validates and projects metadata, while `extensions.js` registers setup-time data bundles for the existing loader and builder. The Shop UI consumes only the GM projection. Actor inventory remains authoritative. See [Catalogue framework](CATALOGUE_FRAMEWORK.md) for storage, migration, permissions, performance and the services/Builder boundaries.
+
 The official [Design Decisions](DESIGN_DECISIONS.md) record explains the enduring project choices.
 This guide supplies their current technical implementation, API contract and operational limits.
 Use the [development standards](../README.md#development-standards) when proposing changes.

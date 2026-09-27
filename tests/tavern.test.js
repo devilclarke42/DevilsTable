@@ -11,9 +11,14 @@ import { stockTableDocuments } from "../scripts/builders/roll-table-factory.js";
 import { stockGroups, stockProfiles } from "../scripts/data/stock-catalogue.js";
 import { rollStockList } from "../scripts/stock/stock-roller.js";
 
-const load = () => loadStockCatalogue({ readJson });
+const load = async () => {
+  const data = await loadStockCatalogue({ readJson });
+  for (const file of data.index.deferredFiles) data.entries.push(...(await readJson(file)).map((item, i) => ({ item, location: `${file}[${i}]` })));
+  Object.assign(data.stock.profiles.find(p => p.shop === "tavern"), await readJson("data/deferred-tavern-stock.json"));
+  return data;
+};
 const categories = ["ale", "beer", "mead", "wine", "spirits", "non-alcoholic-drinks", "hot-drinks", "breakfast", "lunch", "dinner", "stews", "roasts", "bread", "cheese", "desserts", "snacks", "travel-meals", "luxury-meals", "animal-feed"];
-test("Tavern has 152 new menu products across all 19 categories and shares 31 existing goods", async () => {
+test("Deferred Tavern has 152 new menu products across all 19 categories and shares 31 existing goods", async () => {
   const data = await load(); assert.equal(validateStockCatalogue(data).valid, true);
   const tavern = selectEntries(data, { shopId: "tavern" }); assert.equal(tavern.length, 183);
   assert.equal(tavern.filter(({ item }) => item.id.startsWith("DT_ITEM_GS_")).length, 31);
@@ -32,7 +37,7 @@ test("Tavern has 152 new menu products across all 19 categories and shares 31 ex
   assert.equal(new Set(data.entries.map(({ item }) => item.id)).size, 296);
   assert.equal(new Set(data.entries.map(({ item }) => item.name.normalize("NFKC").toLowerCase())).size, 296);
 });
-test("Tavern consumables consume one sale unit without healing, effects or stale item references", async () => {
+test("Deferred Tavern consumables consume one sale unit without healing, effects or stale item references", async () => {
   const data = await load();
   for (const { item } of data.entries.filter(({ item }) => item.id.startsWith("DT_ITEM_TAV_"))) {
     const before = structuredClone(item), doc = catalogueEntryToItem(item);
@@ -46,7 +51,7 @@ test("Tavern consumables consume one sale unit without healing, effects or stale
     assert.deepEqual(item, before);
   }
 });
-test("alpha.25 catalogue upgrade creates only the 152 Tavern records and repeat builds converge", async () => {
+test("Deferred alpha.25 catalogue upgrade creates only the 152 Tavern records and repeat builds converge", async () => {
   const data = await load();
   const old = data.entries.filter(({ item }) => item.id.startsWith("DT_ITEM_GS_")).map(({ item }) => catalogueEntryToItem(item));
   const { adapter, state } = fakeAdapter({ existing: old }); const build = createBuilder({ load: () => data, adapter });
@@ -56,7 +61,7 @@ test("alpha.25 catalogue upgrade creates only the 152 Tavern records and repeat 
   assert.equal((await build({ dryRun: false })).unchanged, 296);
   assert.equal((await build({ dryRun: false, shopId: "tavern" })).unchanged, 183);
 });
-test("Tavern keeps four existing table identities; only its rows change and rebuild converges", async () => {
+test("Deferred Tavern keeps four existing table identities; only its rows change and rebuild converges", async () => {
   const data = await load(), previous = structuredClone(data);
   previous.entries = previous.entries.filter(({ item }) => item.id.startsWith("DT_ITEM_GS_"));
   Object.assign(previous.stock.profiles.find(p => p.shop === "tavern"), {

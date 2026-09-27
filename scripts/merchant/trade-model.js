@@ -17,7 +17,7 @@ export function purchaseOffers(merchant, character = null) {
   const modifier = combinedPercent([terms.merchant, terms.character, terms.negotiation], terms.stacking);
   return publicOffers(merchant).map(item => {
     const copper = priced(item.copper, modifier);
-    return { ...item, copper, price: { value: copper, denomination: "cp" } };
+    return { ...item, originalCopper: item.copper, modifier, copper, price: { value: copper, denomination: "cp" } };
   });
 }
 export function quoteTrade(merchant, character, request, edits = null, { settlement = true } = {}) {
