@@ -1,3 +1,4 @@
+import { DEFAULT_MERCHANT_PORTRAIT, subscribePresentation } from "./presentation.js";
 import { walletValue } from "./settlement.js";
 import { saleOffers } from "./trade-model.js";
 import { formatCopper } from "./currency.js";
@@ -8,6 +9,10 @@ const { ApplicationV2, HandlebarsApplicationMixin } = foundry.applications.api;
 
 export class MerchantShopApplication extends HandlebarsApplicationMixin(ApplicationV2) {
   #token;
+  #portrait = DEFAULT_MERCHANT_PORTRAIT;
+  #unsubscribe;
+  #tokenHook;
+  #closed = false;
   #items = [];
   #basket = new Map();
   #sales = new Map();
@@ -21,7 +26,31 @@ export class MerchantShopApplication extends HandlebarsApplicationMixin(Applicat
   #pending = false;
   #stockCharacterId = null;
 
-  constructor(token, options = {}) { super(options); this.#token = token; }
+  constructor(token, options = {}) {
+    super(options); this.#token = token;
+    this.#unsubscribe = subscribePresentation(token.document.actorId, data => {
+      this.#portrait = data.portrait || DEFAULT_MERCHANT_PORTRAIT;
+      this.#availability = data.availability;
+      if (this.rendered) void this.render();
+    });
+    this.#tokenHook = globalThis.Hooks?.on("updateToken", doc => {
+      if (doc.id === this.#token.document.id && doc.parent?.id === this.#token.document.parent.id) {
+        this.#merchant = doc.name;
+        if (this.rendered) void this.render();
+      }
+    });
+  }
+  async close(options) {
+    const result = await super.close(options);
+    this.#closed = true; this.#unsubscribe?.();
+    if (this.#tokenHook !== undefined) Hooks.off("updateToken", this.#tokenHook);
+    return result;
+  }
+  _onRender(context, options) {
+    super._onRender?.(context, options);
+    const image = this.element.querySelector("[data-merchant-portrait]");
+    image?.addEventListener("error", () => { image.src = DEFAULT_MERCHANT_PORTRAIT; }, { once: true });
+  }
 
   static DEFAULT_OPTIONS = {
     id: "devils-table-merchant-shop", classes: ["devils-table"], tag: "section",
@@ -53,7 +82,8 @@ export class MerchantShopApplication extends HandlebarsApplicationMixin(Applicat
     return { ...await super._prepareContext(options), sales, sellItems: offers.map(i => ({ ...i, priceLabel: formatCopper(i.copper) })),
       characterName: pc?.actor.name ?? "Select your character token", fundsLabel: formatCopper(funds),
       fundsError: this.#stockCharacterId !== pc?.actor.id ? "Refresh stock for the selected character’s prices." : total > funds ? "Not enough money for this basket." : "",
-      merchant: this.#merchant, availability: this.#availability,
+      merchant: this.#token.document.name ?? this.#merchant, portrait: this.#portrait,
+      availability: this.#availability.charAt(0).toUpperCase() + this.#availability.slice(1),
       items: filtered.map(item => ({ ...item, priceLabel: formatCopper(item.copper) })), basket, message: this.#message, query: this.#query,
       categories: [...new Set(this.#items.map(item => item.category))].map(id => ({ id, selected: id === this.#category })),
       total,
@@ -68,9 +98,11 @@ export class MerchantShopApplication extends HandlebarsApplicationMixin(Applicat
     await this.render({ force: true });
     merchantRequest("browse", { sceneId: this.#token.document.parent.id, tokenId: this.#token.document.id,
       characterId: globalThis.canvas?.tokens?.controlled?.find(t => t.actor?.isOwner && t.actor.type === "character")?.actor.id }, async msg => {
+      if (this.#closed) return;
       if (msg.error) this.#message = msg.error;
       else {
         this.#merchant = msg.merchant;
+        this.#portrait = msg.presentation?.portrait || DEFAULT_MERCHANT_PORTRAIT;
         this.#stockCharacterId = msg.characterId === undefined ? globalThis.canvas?.tokens?.controlled?.find(t => t.actor?.isOwner && t.actor.type === "character")?.actor.id : msg.characterId;
         this.#items = msg.items;
         this.#buyModifier = msg.buyModifier ?? 1;

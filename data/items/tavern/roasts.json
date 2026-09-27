@@ -1,0 +1,346 @@
+[
+  {
+    "id": "DT_ITEM_TAV_ROAST_CHICKEN_PORTION",
+    "name": "Roast Chicken Portion",
+    "description": "A leg and a slice of breast are carved from a herb-roasted chicken. The skin is browned, and a little pan juice is spooned over the cut meat.\n\nSold as one carved or plated roast portion for one diner. Price and weight cover the named food only; plates, bowls and cutlery remain with the inn. Drinks and unlisted sides are separate. This meal grants no automatic healing or resting bonus.",
+    "saleUnit": "One carved or plated roast portion for one diner",
+    "price": {
+      "value": 2,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 0.65,
+      "units": "lb",
+      "notes": "Adjusted ready-to-eat food weight for one carved or plated roast portion for one diner, including bones or inedible scraps where described. Excludes the inn's serving ware and any drink."
+    },
+    "icon": "icons/consumables/food/short-ribs-cooked-meat-brown.webp",
+    "category": "roasts",
+    "tags": [
+      "mundane",
+      "consumable",
+      "food",
+      "poultry",
+      "roasted"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record portion eaten",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_ROAST_PORK_WITH_APPLES",
+    "name": "Roast Pork with Apples",
+    "description": "Slices of pork come with soft roasted apple and a little crackling. The apple takes up some of the joint's savoury juices in the roasting pan.\n\nSold as one carved or plated roast portion for one diner. Price and weight cover the named food only; plates, bowls and cutlery remain with the inn. Drinks and unlisted sides are separate. This meal grants no automatic healing or resting bonus.",
+    "saleUnit": "One carved or plated roast portion for one diner",
+    "price": {
+      "value": 3,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 0.75,
+      "units": "lb",
+      "notes": "Adjusted ready-to-eat food weight for one carved or plated roast portion for one diner, including bones or inedible scraps where described. Excludes the inn's serving ware and any drink."
+    },
+    "icon": "icons/consumables/food/short-ribs-cooked-meat-brown.webp",
+    "category": "roasts",
+    "tags": [
+      "mundane",
+      "consumable",
+      "food",
+      "pork",
+      "apple"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record portion eaten",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_ROAST_BEEF_WITH_ONIONS",
+    "name": "Roast Beef with Onions",
+    "description": "Thick slices of beef are served with onions browned beneath the joint. This is a carved portion, not a purchase of the whole roast.\n\nSold as one carved or plated roast portion for one diner. Price and weight cover the named food only; plates, bowls and cutlery remain with the inn. Drinks and unlisted sides are separate. This meal grants no automatic healing or resting bonus.",
+    "saleUnit": "One carved or plated roast portion for one diner",
+    "price": {
+      "value": 4,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 0.75,
+      "units": "lb",
+      "notes": "Adjusted ready-to-eat food weight for one carved or plated roast portion for one diner, including bones or inedible scraps where described. Excludes the inn's serving ware and any drink."
+    },
+    "icon": "icons/consumables/food/short-ribs-cooked-meat-brown.webp",
+    "category": "roasts",
+    "tags": [
+      "mundane",
+      "consumable",
+      "food",
+      "beef",
+      "onion"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record portion eaten",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_ROAST_MUTTON_WITH_HERBS",
+    "name": "Roast Mutton with Herbs",
+    "description": "Mutton rubbed with herbs is carved while warm, with its juices collected on the plate. The flavour is fuller than the inn's usual chicken roast.\n\nSold as one carved or plated roast portion for one diner. Price and weight cover the named food only; plates, bowls and cutlery remain with the inn. Drinks and unlisted sides are separate. This meal grants no automatic healing or resting bonus.",
+    "saleUnit": "One carved or plated roast portion for one diner",
+    "price": {
+      "value": 3,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 0.75,
+      "units": "lb",
+      "notes": "Adjusted ready-to-eat food weight for one carved or plated roast portion for one diner, including bones or inedible scraps where described. Excludes the inn's serving ware and any drink."
+    },
+    "icon": "icons/consumables/food/short-ribs-cooked-meat-brown.webp",
+    "category": "roasts",
+    "tags": [
+      "mundane",
+      "consumable",
+      "food",
+      "mutton",
+      "herbal"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record portion eaten",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_ROAST_DUCK_PORTION",
+    "name": "Roast Duck Portion",
+    "description": "A portion of duck has crisp skin over rich dark meat. A little sharp fruit sauce is included to cut through the fat.\n\nSold as one carved or plated roast portion for one diner. Price and weight cover the named food only; plates, bowls and cutlery remain with the inn. Drinks and unlisted sides are separate. This meal grants no automatic healing or resting bonus.",
+    "saleUnit": "One carved or plated roast portion for one diner",
+    "price": {
+      "value": 5,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 0.65,
+      "units": "lb",
+      "notes": "Adjusted ready-to-eat food weight for one carved or plated roast portion for one diner, including bones or inedible scraps where described. Excludes the inn's serving ware and any drink."
+    },
+    "icon": "icons/consumables/food/short-ribs-cooked-meat-brown.webp",
+    "category": "roasts",
+    "tags": [
+      "mundane",
+      "consumable",
+      "food",
+      "poultry",
+      "roasted"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record portion eaten",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_ROAST_GOOSE_PORTION",
+    "name": "Roast Goose Portion",
+    "description": "Carved goose with browned skin and a spoonful of herb stuffing. The kitchen offers portions only when it has enough custom to roast a whole bird.\n\nSold as one carved or plated roast portion for one diner. Price and weight cover the named food only; plates, bowls and cutlery remain with the inn. Drinks and unlisted sides are separate. This meal grants no automatic healing or resting bonus.",
+    "saleUnit": "One carved or plated roast portion for one diner",
+    "price": {
+      "value": 6,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 0.75,
+      "units": "lb",
+      "notes": "Adjusted ready-to-eat food weight for one carved or plated roast portion for one diner, including bones or inedible scraps where described. Excludes the inn's serving ware and any drink."
+    },
+    "icon": "icons/consumables/food/short-ribs-cooked-meat-brown.webp",
+    "category": "roasts",
+    "tags": [
+      "mundane",
+      "consumable",
+      "food",
+      "poultry",
+      "seasonal"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "special-order",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record portion eaten",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_ROAST_RABBIT_PORTION",
+    "name": "Roast Rabbit Portion",
+    "description": "Rabbit pieces are roasted with onions and basted to keep the lean meat moist. The plated portion includes bones and the onions cooked alongside it.\n\nSold as one carved or plated roast portion for one diner. Price and weight cover the named food only; plates, bowls and cutlery remain with the inn. Drinks and unlisted sides are separate. This meal grants no automatic healing or resting bonus.",
+    "saleUnit": "One carved or plated roast portion for one diner",
+    "price": {
+      "value": 4,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 0.65,
+      "units": "lb",
+      "notes": "Adjusted ready-to-eat food weight for one carved or plated roast portion for one diner, including bones or inedible scraps where described. Excludes the inn's serving ware and any drink."
+    },
+    "icon": "icons/consumables/food/short-ribs-cooked-meat-brown.webp",
+    "category": "roasts",
+    "tags": [
+      "mundane",
+      "consumable",
+      "food",
+      "game",
+      "roasted"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record portion eaten",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_ROAST_ROOT_PLATTER",
+    "name": "Roast Root Platter",
+    "description": "Carrots, turnips and onions are roasted until their edges brown, then tossed with herbs. This vegetable plate can stand alone or accompany another order.\n\nSold as one carved or plated roast portion for one diner. Price and weight cover the named food only; plates, bowls and cutlery remain with the inn. Drinks and unlisted sides are separate. This meal grants no automatic healing or resting bonus.",
+    "saleUnit": "One carved or plated roast portion for one diner",
+    "price": {
+      "value": 9,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 0.8,
+      "units": "lb",
+      "notes": "Adjusted ready-to-eat food weight for one carved or plated roast portion for one diner, including bones or inedible scraps where described. Excludes the inn's serving ware and any drink."
+    },
+    "icon": "icons/consumables/food/bowl-stew-brown.webp",
+    "category": "roasts",
+    "tags": [
+      "mundane",
+      "consumable",
+      "food",
+      "vegetable",
+      "roasted"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record portion eaten",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  }
+]

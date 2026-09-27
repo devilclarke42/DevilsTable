@@ -3,6 +3,37 @@
 This file retains detailed repository build history. The official milestone/release record is
 [docs/CHANGELOG.md](docs/CHANGELOG.md). Versions here do not imply a public GitHub Release exists.
 
+## 0.3.0-alpha.1 — 2026-09-27 — Tavern catalogue and merchant presentation
+
+### Added
+
+- Compact Shop header using the linked Actor portrait, exact scene-token name and availability.
+  Missing/broken portraits fall back to the native silhouette. Native hooks update open shops;
+  GM projection sends only public portrait/status fields and releases listeners on close.
+- 152 original Tavern products across all 19 requested menu categories, each with permanent ID,
+  description, sale unit, project price, adjusted weight, shared icon, tags, source and native use.
+- Full [Tavern review](docs/TAVERN_REVIEW.md), including every new product, portion conventions,
+  pricing/weight decisions, stock policy and live acceptance steps.
+
+### Changed
+
+- Tavern now has 183 canonical offerings including 31 shared goods, with complete stock coverage.
+  Eight Always essentials plus 16 rotating attempts create a practical menu. Shared supplies are
+  Often locally; existing General Store records and all Item/table identities remain unchanged.
+- The total catalogue grows from 144 to 296 Items; Tavern continues using four tables and the
+  total stays 32. No new artwork or schema/converter architecture is needed.
+- Version advances to the planned 0.3.0 Tavern milestone as a prerelease. Current standards,
+  README, roadmap, file map, build instructions and validation documentation reflect the expansion.
+
+### Validation
+
+- 289 automated tests pass. Upgrade simulations create 152 Items, preserve all 144 existing
+  General Store Items, update only four Tavern tables and converge unchanged on repeat builds.
+- Portrait tests cover player-side Actor inaccessibility, token naming, fallback, update delivery
+  and listener cleanup. New consumables preserve native one-unit consumption without effects.
+- Owner reports alpha.25 works. This candidate's new portrait/Tavern features still require live
+  Foundry V14 / D&D5e 5.3.3 / Forge acceptance; no live pack build is claimed.
+
 ## 0.2.0-alpha.25 — 2026-09-27 — Merchant interactions
 
 ### Added

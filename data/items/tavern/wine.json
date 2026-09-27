@@ -1,0 +1,356 @@
+[
+  {
+    "id": "DT_ITEM_TAV_HOUSE_RED_WINE",
+    "name": "House Red Wine",
+    "description": "A rough red table wine with a little tannin and plenty of fruit. It is served from the house jug and makes no claim to a famous vineyard.\n\nOne purchase supplies one quarter-pint of wine. The inn retains its serving vessel; takeaway requires your own suitable container. Alcohol effects are left to the GM.",
+    "saleUnit": "One quarter-pint of wine",
+    "price": {
+      "value": 8,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 0.25,
+      "units": "lb",
+      "notes": "Contents-only weight of one quarter-pint of wine, using the project liquid allowance of 1 lb per pint (small spirit measures rounded to 0.06 lb). The inn retains its vessel; carried containers weigh separately."
+    },
+    "icon": "icons/consumables/drinks/wine-amphora-clay-red.webp",
+    "category": "wine",
+    "tags": [
+      "mundane",
+      "consumable",
+      "drink",
+      "alcoholic",
+      "grape",
+      "red"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record drink consumed",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_HOUSE_WHITE_WINE",
+    "name": "House White Wine",
+    "description": "A pale, dry wine with a sharp finish that cuts through rich food. The jug is kept in the coolest part of the pantry.\n\nOne purchase supplies one quarter-pint of wine. The inn retains its serving vessel; takeaway requires your own suitable container. Alcohol effects are left to the GM.",
+    "saleUnit": "One quarter-pint of wine",
+    "price": {
+      "value": 8,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 0.25,
+      "units": "lb",
+      "notes": "Contents-only weight of one quarter-pint of wine, using the project liquid allowance of 1 lb per pint (small spirit measures rounded to 0.06 lb). The inn retains its vessel; carried containers weigh separately."
+    },
+    "icon": "icons/consumables/drinks/wine-amphora-clay-red.webp",
+    "category": "wine",
+    "tags": [
+      "mundane",
+      "consumable",
+      "drink",
+      "alcoholic",
+      "grape",
+      "white"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record drink consumed",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_ROSY_TABLE_WINE",
+    "name": "Rosy Table Wine",
+    "description": "Brief contact with dark grape skins gives this light wine its dusty pink colour. The flavour is dry, with a small hint of red fruit.\n\nOne purchase supplies one quarter-pint of wine. The inn retains its serving vessel; takeaway requires your own suitable container. Alcohol effects are left to the GM.",
+    "saleUnit": "One quarter-pint of wine",
+    "price": {
+      "value": 1,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 0.25,
+      "units": "lb",
+      "notes": "Contents-only weight of one quarter-pint of wine, using the project liquid allowance of 1 lb per pint (small spirit measures rounded to 0.06 lb). The inn retains its vessel; carried containers weigh separately."
+    },
+    "icon": "icons/consumables/drinks/wine-amphora-clay-red.webp",
+    "category": "wine",
+    "tags": [
+      "mundane",
+      "consumable",
+      "drink",
+      "alcoholic",
+      "grape",
+      "rose"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record drink consumed",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_SWEET_RED_WINE",
+    "name": "Sweet Red Wine",
+    "description": "A dark wine retaining enough grape sweetness to serve with hard cheese or a small dessert. The finish is rounded rather than sharp.\n\nOne purchase supplies one quarter-pint of wine. The inn retains its serving vessel; takeaway requires your own suitable container. Alcohol effects are left to the GM.",
+    "saleUnit": "One quarter-pint of wine",
+    "price": {
+      "value": 2,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 0.25,
+      "units": "lb",
+      "notes": "Contents-only weight of one quarter-pint of wine, using the project liquid allowance of 1 lb per pint (small spirit measures rounded to 0.06 lb). The inn retains its vessel; carried containers weigh separately."
+    },
+    "icon": "icons/consumables/drinks/wine-amphora-clay-red.webp",
+    "category": "wine",
+    "tags": [
+      "mundane",
+      "consumable",
+      "drink",
+      "alcoholic",
+      "grape",
+      "sweet"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record drink consumed",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_ORCHARD_PEAR_WINE",
+    "name": "Orchard Pear Wine",
+    "description": "Pears make a pale country wine with a soft orchard scent and a dry finish. It is fruit wine, not a serving of fresh pear juice.\n\nOne purchase supplies one quarter-pint of wine. The inn retains its serving vessel; takeaway requires your own suitable container. Alcohol effects are left to the GM.",
+    "saleUnit": "One quarter-pint of wine",
+    "price": {
+      "value": 1,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 0.25,
+      "units": "lb",
+      "notes": "Contents-only weight of one quarter-pint of wine, using the project liquid allowance of 1 lb per pint (small spirit measures rounded to 0.06 lb). The inn retains its vessel; carried containers weigh separately."
+    },
+    "icon": "icons/consumables/drinks/wine-amphora-clay-red.webp",
+    "category": "wine",
+    "tags": [
+      "mundane",
+      "consumable",
+      "drink",
+      "alcoholic",
+      "pear",
+      "orchard"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record drink consumed",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_BLACKCURRANT_WINE",
+    "name": "Blackcurrant Wine",
+    "description": "A deep purple fruit wine with a tart bite and a strong berry scent. Its stain is a familiar nuisance on the inn's pale table linen.\n\nOne purchase supplies one quarter-pint of wine. The inn retains its serving vessel; takeaway requires your own suitable container. Alcohol effects are left to the GM.",
+    "saleUnit": "One quarter-pint of wine",
+    "price": {
+      "value": 2,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 0.25,
+      "units": "lb",
+      "notes": "Contents-only weight of one quarter-pint of wine, using the project liquid allowance of 1 lb per pint (small spirit measures rounded to 0.06 lb). The inn retains its vessel; carried containers weigh separately."
+    },
+    "icon": "icons/consumables/drinks/wine-amphora-clay-red.webp",
+    "category": "wine",
+    "tags": [
+      "mundane",
+      "consumable",
+      "drink",
+      "alcoholic",
+      "berry",
+      "seasonal"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record drink consumed",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_MULLED_RED_WINE",
+    "name": "Mulled Red Wine",
+    "description": "Red wine warmed with spices and a little honey, brought out fragrant from a covered pan. Heating is part of the service and does not make it non-alcoholic.\n\nOne purchase supplies one quarter-pint of wine. The inn retains its serving vessel; takeaway requires your own suitable container. Alcohol effects are left to the GM.",
+    "saleUnit": "One quarter-pint of wine",
+    "price": {
+      "value": 3,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 0.25,
+      "units": "lb",
+      "notes": "Contents-only weight of one quarter-pint of wine, using the project liquid allowance of 1 lb per pint (small spirit measures rounded to 0.06 lb). The inn retains its vessel; carried containers weigh separately."
+    },
+    "icon": "icons/consumables/drinks/wine-amphora-clay-red.webp",
+    "category": "wine",
+    "tags": [
+      "mundane",
+      "consumable",
+      "drink",
+      "alcoholic",
+      "grape",
+      "spiced",
+      "served-hot"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record drink consumed",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_RESERVE_VINEYARD_WINE",
+    "name": "Reserve Vineyard Wine",
+    "description": "A carefully stored wine brought in from an established vineyard beyond the local market. The innkeeper decants only what is ordered and keeps the rest stoppered.\n\nOne purchase supplies one quarter-pint of wine. The inn retains its serving vessel; takeaway requires your own suitable container. Alcohol effects are left to the GM.",
+    "saleUnit": "One quarter-pint of wine",
+    "price": {
+      "value": 1,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 0.25,
+      "units": "lb",
+      "notes": "Contents-only weight of one quarter-pint of wine, using the project liquid allowance of 1 lb per pint (small spirit measures rounded to 0.06 lb). The inn retains its vessel; carried containers weigh separately."
+    },
+    "icon": "icons/consumables/drinks/wine-amphora-clay-red.webp",
+    "category": "wine",
+    "tags": [
+      "mundane",
+      "consumable",
+      "drink",
+      "alcoholic",
+      "grape",
+      "imported",
+      "aged"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "special-order",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record drink consumed",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  }
+]

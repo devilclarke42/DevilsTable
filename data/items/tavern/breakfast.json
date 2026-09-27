@@ -1,0 +1,347 @@
+[
+  {
+    "id": "DT_ITEM_TAV_OAT_PORRIDGE",
+    "name": "Oat Porridge",
+    "description": "Oats cooked slowly in water until they thicken, finished with a small pinch of salt. The bowl is plain, filling and warm from the morning pot.\n\nSold as one individual breakfast portion. Price and weight cover the named food only; plates, bowls and cutlery remain with the inn. Drinks and unlisted sides are separate. This meal grants no automatic healing or resting bonus.",
+    "saleUnit": "One individual breakfast portion",
+    "price": {
+      "value": 4,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 0.75,
+      "units": "lb",
+      "notes": "Adjusted ready-to-eat food weight for one individual breakfast portion, including bones or inedible scraps where described. Excludes the inn's serving ware and any drink."
+    },
+    "icon": "icons/consumables/food/bowl-stew-brown.webp",
+    "category": "breakfast",
+    "tags": [
+      "mundane",
+      "consumable",
+      "food",
+      "oats",
+      "served-hot"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "core",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record portion eaten",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_HONEY_MILK_PORRIDGE",
+    "name": "Honey Milk Porridge",
+    "description": "A richer oat porridge loosened with milk and streaked with honey. The honey is stirred in at the table end of the kitchen rather than boiled away.\n\nSold as one individual breakfast portion. Price and weight cover the named food only; plates, bowls and cutlery remain with the inn. Drinks and unlisted sides are separate. This meal grants no automatic healing or resting bonus.",
+    "saleUnit": "One individual breakfast portion",
+    "price": {
+      "value": 8,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 0.8,
+      "units": "lb",
+      "notes": "Adjusted ready-to-eat food weight for one individual breakfast portion, including bones or inedible scraps where described. Excludes the inn's serving ware and any drink."
+    },
+    "icon": "icons/consumables/food/bowl-stew-brown.webp",
+    "category": "breakfast",
+    "tags": [
+      "mundane",
+      "consumable",
+      "food",
+      "oats",
+      "dairy",
+      "honey"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record portion eaten",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_FRIED_EGGS_ON_TOAST",
+    "name": "Fried Eggs on Toast",
+    "description": "Two fried eggs sit on a thick toasted slice, their edges browned in the pan. A little cooking fat soaks into the bread beneath them.\n\nSold as one individual breakfast portion. Price and weight cover the named food only; plates, bowls and cutlery remain with the inn. Drinks and unlisted sides are separate. This meal grants no automatic healing or resting bonus.",
+    "saleUnit": "One individual breakfast portion",
+    "price": {
+      "value": 1,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 0.6,
+      "units": "lb",
+      "notes": "Adjusted ready-to-eat food weight for one individual breakfast portion, including bones or inedible scraps where described. Excludes the inn's serving ware and any drink."
+    },
+    "icon": "icons/consumables/food/bowl-stew-brown.webp",
+    "category": "breakfast",
+    "tags": [
+      "mundane",
+      "consumable",
+      "food",
+      "eggs",
+      "bread"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record portion eaten",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_BACON_AND_EGGS",
+    "name": "Bacon and Eggs",
+    "description": "Two eggs and several strips of cured bacon share a warm plate. The bacon is salty and crisp at the edges; bread is not part of this order.\n\nSold as one individual breakfast portion. Price and weight cover the named food only; plates, bowls and cutlery remain with the inn. Drinks and unlisted sides are separate. This meal grants no automatic healing or resting bonus.",
+    "saleUnit": "One individual breakfast portion",
+    "price": {
+      "value": 2,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 0.65,
+      "units": "lb",
+      "notes": "Adjusted ready-to-eat food weight for one individual breakfast portion, including bones or inedible scraps where described. Excludes the inn's serving ware and any drink."
+    },
+    "icon": "icons/consumables/food/bowl-stew-brown.webp",
+    "category": "breakfast",
+    "tags": [
+      "mundane",
+      "consumable",
+      "food",
+      "pork",
+      "eggs"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record portion eaten",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_MUSHROOM_BREAKFAST_TOAST",
+    "name": "Mushroom Breakfast Toast",
+    "description": "Pan-browned cultivated mushrooms are spooned over toast with a little chopped onion. The bread catches the savoury juices before they run across the plate.\n\nSold as one individual breakfast portion. Price and weight cover the named food only; plates, bowls and cutlery remain with the inn. Drinks and unlisted sides are separate. This meal grants no automatic healing or resting bonus.",
+    "saleUnit": "One individual breakfast portion",
+    "price": {
+      "value": 8,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 0.55,
+      "units": "lb",
+      "notes": "Adjusted ready-to-eat food weight for one individual breakfast portion, including bones or inedible scraps where described. Excludes the inn's serving ware and any drink."
+    },
+    "icon": "icons/consumables/food/bowl-stew-brown.webp",
+    "category": "breakfast",
+    "tags": [
+      "mundane",
+      "consumable",
+      "food",
+      "mushroom",
+      "bread"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record portion eaten",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_CHEESE_AND_ONION_OMELETTE",
+    "name": "Cheese and Onion Omelette",
+    "description": "A folded two-egg omelette encloses soft onions and grated cheese. The outside is lightly browned while the filling remains warm and loose.\n\nSold as one individual breakfast portion. Price and weight cover the named food only; plates, bowls and cutlery remain with the inn. Drinks and unlisted sides are separate. This meal grants no automatic healing or resting bonus.",
+    "saleUnit": "One individual breakfast portion",
+    "price": {
+      "value": 1,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 0.6,
+      "units": "lb",
+      "notes": "Adjusted ready-to-eat food weight for one individual breakfast portion, including bones or inedible scraps where described. Excludes the inn's serving ware and any drink."
+    },
+    "icon": "icons/consumables/food/bowl-stew-brown.webp",
+    "category": "breakfast",
+    "tags": [
+      "mundane",
+      "consumable",
+      "food",
+      "eggs",
+      "dairy"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record portion eaten",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_KIPPER_BREAKFAST",
+    "name": "Kipper Breakfast",
+    "description": "A smoked herring portion is warmed through and served with a slice of coarse bread. The diner must watch for the fine bones.\n\nSold as one individual breakfast portion. Price and weight cover the named food only; plates, bowls and cutlery remain with the inn. Drinks and unlisted sides are separate. This meal grants no automatic healing or resting bonus.",
+    "saleUnit": "One individual breakfast portion",
+    "price": {
+      "value": 2,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 0.7,
+      "units": "lb",
+      "notes": "Adjusted ready-to-eat food weight for one individual breakfast portion, including bones or inedible scraps where described. Excludes the inn's serving ware and any drink."
+    },
+    "icon": "icons/consumables/food/bowl-stew-brown.webp",
+    "category": "breakfast",
+    "tags": [
+      "mundane",
+      "consumable",
+      "food",
+      "fish",
+      "bread"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record portion eaten",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_BREAKFAST_SAUSAGE_PLATE",
+    "name": "Breakfast Sausage Plate",
+    "description": "Two small pork sausages, fried onions and a slice of bread make a substantial morning plate. Their herb seasoning changes with the butcher's batch.\n\nSold as one individual breakfast portion. Price and weight cover the named food only; plates, bowls and cutlery remain with the inn. Drinks and unlisted sides are separate. This meal grants no automatic healing or resting bonus.",
+    "saleUnit": "One individual breakfast portion",
+    "price": {
+      "value": 2,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 0.8,
+      "units": "lb",
+      "notes": "Adjusted ready-to-eat food weight for one individual breakfast portion, including bones or inedible scraps where described. Excludes the inn's serving ware and any drink."
+    },
+    "icon": "icons/consumables/food/bowl-stew-brown.webp",
+    "category": "breakfast",
+    "tags": [
+      "mundane",
+      "consumable",
+      "food",
+      "pork",
+      "bread"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record portion eaten",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  }
+]

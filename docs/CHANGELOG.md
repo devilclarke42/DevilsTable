@@ -8,6 +8,24 @@ This is the official milestone/release changelog. The root [build changelog](../
 retains detailed alpha implementation history. A milestone entry does not assert that a public
 GitHub Release or installation manifest exists. No release dates are invented for unreleased work.
 
+## [0.3.0] — In Development
+
+### Added
+
+- `0.3.0-alpha.1`: Sprint 8 Tavern catalogue with 152 new products in 19 menu categories and
+  31 shared supplies (183 Tavern offerings, 296 unique catalogue Items).
+- Live merchant portrait header using the Actor image, exact scene-token name and status, with
+  a generic silhouette fallback and no new player Actor permissions.
+- [Complete Tavern review and acceptance checklist](TAVERN_REVIEW.md).
+
+### Changed
+
+- Existing Tavern profile has complete authored coverage, eight dependable essentials and
+  rotating menu choices with weighted quantities. Four Tavern tables and 32 total tables remain.
+- General Store source is preserved. The Item upgrade creates 152 and preserves 144; the table
+  upgrade updates four and preserves 28. Repeated builds converge. All 289 automated tests pass.
+- Owner confirms alpha.25 works in their setup. New Tavern/portrait live checks remain pending.
+
 ## [Unreleased]
 
 ### Added

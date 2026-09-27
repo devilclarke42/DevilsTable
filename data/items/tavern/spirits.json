@@ -1,0 +1,357 @@
+[
+  {
+    "id": "DT_ITEM_TAV_GRAIN_SPIRIT",
+    "name": "Grain Spirit",
+    "description": "A clear grain spirit with a sharp nose and little sweetness. The tapkeeper measures it into a small cup rather than filling a beer mug.\n\nOne purchase supplies one 1 fl oz measure of spirit. The inn retains its serving vessel; takeaway requires your own suitable container. Alcohol effects are left to the GM.",
+    "saleUnit": "One 1 fl oz measure of spirit",
+    "price": {
+      "value": 1,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 0.06,
+      "units": "lb",
+      "notes": "Contents-only weight of one 1 fl oz measure of spirit, using the project liquid allowance of 1 lb per pint (small spirit measures rounded to 0.06 lb). The inn retains its vessel; carried containers weigh separately."
+    },
+    "icon": "icons/consumables/drinks/alcohol-jar-spirits-gray.webp",
+    "category": "spirits",
+    "tags": [
+      "mundane",
+      "consumable",
+      "drink",
+      "alcoholic",
+      "grain",
+      "distilled"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record drink consumed",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_APPLE_BRANDY",
+    "name": "Apple Brandy",
+    "description": "Distilled apple drink with a lingering orchard aroma under its warmth. A little colour comes from the cask in which it was kept.\n\nOne purchase supplies one 1 fl oz measure of spirit. The inn retains its serving vessel; takeaway requires your own suitable container. Alcohol effects are left to the GM.",
+    "saleUnit": "One 1 fl oz measure of spirit",
+    "price": {
+      "value": 2,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 0.06,
+      "units": "lb",
+      "notes": "Contents-only weight of one 1 fl oz measure of spirit, using the project liquid allowance of 1 lb per pint (small spirit measures rounded to 0.06 lb). The inn retains its vessel; carried containers weigh separately."
+    },
+    "icon": "icons/consumables/drinks/alcohol-jar-spirits-gray.webp",
+    "category": "spirits",
+    "tags": [
+      "mundane",
+      "consumable",
+      "drink",
+      "alcoholic",
+      "apple",
+      "distilled"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record drink consumed",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_PEAR_BRANDY",
+    "name": "Pear Brandy",
+    "description": "A fragrant spirit whose first scent recalls ripe pears. The dry finish keeps it distinct from a sweet fruit cordial.\n\nOne purchase supplies one 1 fl oz measure of spirit. The inn retains its serving vessel; takeaway requires your own suitable container. Alcohol effects are left to the GM.",
+    "saleUnit": "One 1 fl oz measure of spirit",
+    "price": {
+      "value": 3,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 0.06,
+      "units": "lb",
+      "notes": "Contents-only weight of one 1 fl oz measure of spirit, using the project liquid allowance of 1 lb per pint (small spirit measures rounded to 0.06 lb). The inn retains its vessel; carried containers weigh separately."
+    },
+    "icon": "icons/consumables/drinks/alcohol-jar-spirits-gray.webp",
+    "category": "spirits",
+    "tags": [
+      "mundane",
+      "consumable",
+      "drink",
+      "alcoholic",
+      "pear",
+      "distilled"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record drink consumed",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_PLUM_SPIRIT",
+    "name": "Plum Spirit",
+    "description": "A strong clear spirit made from fermented plums. It smells faintly of stone fruit and is served in a deliberately small measure.\n\nOne purchase supplies one 1 fl oz measure of spirit. The inn retains its serving vessel; takeaway requires your own suitable container. Alcohol effects are left to the GM.",
+    "saleUnit": "One 1 fl oz measure of spirit",
+    "price": {
+      "value": 2,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 0.06,
+      "units": "lb",
+      "notes": "Contents-only weight of one 1 fl oz measure of spirit, using the project liquid allowance of 1 lb per pint (small spirit measures rounded to 0.06 lb). The inn retains its vessel; carried containers weigh separately."
+    },
+    "icon": "icons/consumables/drinks/alcohol-jar-spirits-gray.webp",
+    "category": "spirits",
+    "tags": [
+      "mundane",
+      "consumable",
+      "drink",
+      "alcoholic",
+      "plum",
+      "distilled"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record drink consumed",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_JUNIPER_SPIRIT",
+    "name": "Juniper Spirit",
+    "description": "Juniper and other kitchen botanicals give this grain spirit its resinous scent. It is a drink, not a tonic or an alchemical preparation.\n\nOne purchase supplies one 1 fl oz measure of spirit. The inn retains its serving vessel; takeaway requires your own suitable container. Alcohol effects are left to the GM.",
+    "saleUnit": "One 1 fl oz measure of spirit",
+    "price": {
+      "value": 2,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 0.06,
+      "units": "lb",
+      "notes": "Contents-only weight of one 1 fl oz measure of spirit, using the project liquid allowance of 1 lb per pint (small spirit measures rounded to 0.06 lb). The inn retains its vessel; carried containers weigh separately."
+    },
+    "icon": "icons/consumables/drinks/alcohol-jar-spirits-gray.webp",
+    "category": "spirits",
+    "tags": [
+      "mundane",
+      "consumable",
+      "drink",
+      "alcoholic",
+      "juniper",
+      "distilled"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record drink consumed",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_DARK_CANE_SPIRIT",
+    "name": "Dark Cane Spirit",
+    "description": "A dark spirit carried in from a cane-growing region, with a burnt-sugar aroma from its making and storage. The inn stocks it only when a trading shipment arrives.\n\nOne purchase supplies one 1 fl oz measure of spirit. The inn retains its serving vessel; takeaway requires your own suitable container. Alcohol effects are left to the GM.",
+    "saleUnit": "One 1 fl oz measure of spirit",
+    "price": {
+      "value": 4,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 0.06,
+      "units": "lb",
+      "notes": "Contents-only weight of one 1 fl oz measure of spirit, using the project liquid allowance of 1 lb per pint (small spirit measures rounded to 0.06 lb). The inn retains its vessel; carried containers weigh separately."
+    },
+    "icon": "icons/consumables/drinks/alcohol-jar-spirits-gray.webp",
+    "category": "spirits",
+    "tags": [
+      "mundane",
+      "consumable",
+      "drink",
+      "alcoholic",
+      "imported",
+      "cane",
+      "distilled"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "special-order",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record drink consumed",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_SPICED_HONEY_LIQUEUR",
+    "name": "Spiced Honey Liqueur",
+    "description": "Honey and warm spices soften a measured grain spirit into a thick after-supper drink. Its sweetness does not remove the alcohol.\n\nOne purchase supplies one 1 fl oz measure of spirit. The inn retains its serving vessel; takeaway requires your own suitable container. Alcohol effects are left to the GM.",
+    "saleUnit": "One 1 fl oz measure of spirit",
+    "price": {
+      "value": 3,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 0.06,
+      "units": "lb",
+      "notes": "Contents-only weight of one 1 fl oz measure of spirit, using the project liquid allowance of 1 lb per pint (small spirit measures rounded to 0.06 lb). The inn retains its vessel; carried containers weigh separately."
+    },
+    "icon": "icons/consumables/drinks/alcohol-jar-spirits-gray.webp",
+    "category": "spirits",
+    "tags": [
+      "mundane",
+      "consumable",
+      "drink",
+      "alcoholic",
+      "honey",
+      "spiced",
+      "distilled"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record drink consumed",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_CASK_AGED_GRAIN_SPIRIT",
+    "name": "Cask-Aged Grain Spirit",
+    "description": "Long cask storage has given this grain spirit an amber colour and a dry oak finish. The innkeeper keeps the serving bottle away from the common shelf.\n\nOne purchase supplies one 1 fl oz measure of spirit. The inn retains its serving vessel; takeaway requires your own suitable container. Alcohol effects are left to the GM.",
+    "saleUnit": "One 1 fl oz measure of spirit",
+    "price": {
+      "value": 8,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 0.06,
+      "units": "lb",
+      "notes": "Contents-only weight of one 1 fl oz measure of spirit, using the project liquid allowance of 1 lb per pint (small spirit measures rounded to 0.06 lb). The inn retains its vessel; carried containers weigh separately."
+    },
+    "icon": "icons/consumables/drinks/alcohol-jar-spirits-gray.webp",
+    "category": "spirits",
+    "tags": [
+      "mundane",
+      "consumable",
+      "drink",
+      "alcoholic",
+      "aged",
+      "grain",
+      "distilled"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "special-order",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record drink consumed",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  }
+]

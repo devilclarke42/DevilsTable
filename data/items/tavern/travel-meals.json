@@ -1,0 +1,354 @@
+[
+  {
+    "id": "DT_ITEM_TAV_BREAD_AND_CHEESE_BUNDLE",
+    "name": "Bread and Cheese Bundle",
+    "description": "Coarse bread and a firm cheese wedge are wrapped together for one road meal. The bundle is easier to carry than a served board and includes no drink.\n\nSold as one wrapped bread-and-cheese meal. Weight includes light disposable wrapping or tying where needed; reusable bags, vessels and drinking water are separate. Partial use is tracked manually.",
+    "saleUnit": "One wrapped bread-and-cheese meal",
+    "price": {
+      "value": 1,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 0.9,
+      "units": "lb",
+      "notes": "Adjusted total for one wrapped bread-and-cheese meal, including light wrapping or tying where applicable. Excludes reusable containers and water."
+    },
+    "icon": "icons/consumables/grains/bread-loaf-boule-rustic-brown.webp",
+    "category": "travel-meals",
+    "tags": [
+      "mundane",
+      "consumable",
+      "food",
+      "bread",
+      "dairy",
+      "packed"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record portion eaten",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_CURED_SAUSAGE_LUNCH",
+    "name": "Cured Sausage Lunch",
+    "description": "A cured sausage portion and two small rolls are wrapped for a traveller's midday stop. It is one meal rather than a full day's ration.\n\nSold as one wrapped sausage-and-rolls meal. Weight includes light disposable wrapping or tying where needed; reusable bags, vessels and drinking water are separate. Partial use is tracked manually.",
+    "saleUnit": "One wrapped sausage-and-rolls meal",
+    "price": {
+      "value": 2,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 0.85,
+      "units": "lb",
+      "notes": "Adjusted total for one wrapped sausage-and-rolls meal, including light wrapping or tying where applicable. Excludes reusable containers and water."
+    },
+    "icon": "icons/consumables/grains/bread-loaf-boule-rustic-brown.webp",
+    "category": "travel-meals",
+    "tags": [
+      "mundane",
+      "consumable",
+      "food",
+      "pork",
+      "bread",
+      "packed"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record portion eaten",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_DRIED_FISH_AND_OATCAKE_MEAL",
+    "name": "Dried Fish and Oatcake Meal",
+    "description": "Dried fish strips and oatcakes make a compact, salty meal. Drinking water is especially welcome with it but remains a separate supply.\n\nSold as one wrapped fish-and-oatcake meal. Weight includes light disposable wrapping or tying where needed; reusable bags, vessels and drinking water are separate. Partial use is tracked manually.",
+    "saleUnit": "One wrapped fish-and-oatcake meal",
+    "price": {
+      "value": 1,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 0.7,
+      "units": "lb",
+      "notes": "Adjusted total for one wrapped fish-and-oatcake meal, including light wrapping or tying where applicable. Excludes reusable containers and water."
+    },
+    "icon": "icons/consumables/food/dried-meat-jerky-fish-red.webp",
+    "category": "travel-meals",
+    "tags": [
+      "mundane",
+      "consumable",
+      "food",
+      "fish",
+      "oats",
+      "packed"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record portion eaten",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_NUT_AND_FRUIT_MEAL",
+    "name": "Nut and Fruit Meal",
+    "description": "A measured mix of edible nuts and dried fruit makes one dense travelling meal. It includes no meat and is kept dry in a folded paper packet.\n\nSold as one 0.6 lb packet for one meal. Weight includes light disposable wrapping or tying where needed; reusable bags, vessels and drinking water are separate. Partial use is tracked manually.",
+    "saleUnit": "One 0.6 lb packet for one meal",
+    "price": {
+      "value": 2,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 0.6,
+      "units": "lb",
+      "notes": "Adjusted total for one 0.6 lb packet for one meal, including light wrapping or tying where applicable. Excludes reusable containers and water."
+    },
+    "icon": "icons/consumables/grains/bread-loaf-boule-rustic-brown.webp",
+    "category": "travel-meals",
+    "tags": [
+      "mundane",
+      "consumable",
+      "food",
+      "nuts",
+      "fruit",
+      "packed"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record portion eaten",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_LENTIL_TRAVEL_CAKES",
+    "name": "Lentil Travel Cakes",
+    "description": "Lentils and grain are pressed into two savoury cakes and baked firm for carrying. They are fresh cooked food for a short journey, not indefinitely preserved rations.\n\nSold as two lentil cakes for one meal. Weight includes light disposable wrapping or tying where needed; reusable bags, vessels and drinking water are separate. Partial use is tracked manually.",
+    "saleUnit": "Two lentil cakes for one meal",
+    "price": {
+      "value": 8,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 0.65,
+      "units": "lb",
+      "notes": "Adjusted total for two lentil cakes for one meal, including light wrapping or tying where applicable. Excludes reusable containers and water."
+    },
+    "icon": "icons/consumables/grains/bread-loaf-boule-rustic-brown.webp",
+    "category": "travel-meals",
+    "tags": [
+      "mundane",
+      "consumable",
+      "food",
+      "lentil",
+      "grain",
+      "packed"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record portion eaten",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_SMOKED_MEAT_AND_RYE_MEAL",
+    "name": "Smoked Meat and Rye Meal",
+    "description": "Smoked meat slices and dense rye bread are wrapped as one meal. The paper keeps grease off other belongings but does not waterproof the food.\n\nSold as one wrapped meat-and-rye meal. Weight includes light disposable wrapping or tying where needed; reusable bags, vessels and drinking water are separate. Partial use is tracked manually.",
+    "saleUnit": "One wrapped meat-and-rye meal",
+    "price": {
+      "value": 2,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 0.85,
+      "units": "lb",
+      "notes": "Adjusted total for one wrapped meat-and-rye meal, including light wrapping or tying where applicable. Excludes reusable containers and water."
+    },
+    "icon": "icons/consumables/food/dried-meat-jerky-fish-red.webp",
+    "category": "travel-meals",
+    "tags": [
+      "mundane",
+      "consumable",
+      "food",
+      "meat",
+      "rye",
+      "packed"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record portion eaten",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_HARD_BISCUIT_PROVISIONS",
+    "name": "Hard Biscuit Provisions",
+    "description": "A packet of hard wheat biscuits can be eaten slowly or softened in broth. It is a bread provision, not a nutritionally complete daily ration.\n\nSold as one 0.75 lb packet of hard biscuits. Weight includes light disposable wrapping or tying where needed; reusable bags, vessels and drinking water are separate. Partial use is tracked manually.",
+    "saleUnit": "One 0.75 lb packet of hard biscuits",
+    "price": {
+      "value": 7,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 0.75,
+      "units": "lb",
+      "notes": "Adjusted total for one 0.75 lb packet of hard biscuits, including light wrapping or tying where applicable. Excludes reusable containers and water."
+    },
+    "icon": "icons/consumables/grains/bread-loaf-boule-rustic-brown.webp",
+    "category": "travel-meals",
+    "tags": [
+      "mundane",
+      "consumable",
+      "food",
+      "wheat",
+      "dry",
+      "packed"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record portion eaten",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_DRIED_VEGETABLE_SOUP_MIX",
+    "name": "Dried Vegetable Soup Mix",
+    "description": "Dried vegetables and a little seasoning are portioned for one bowl of soup. Preparation needs about a pint of water, heat and a cooking vessel, none of which is included.\n\nSold as one dry packet for one bowl of soup. Weight includes light disposable wrapping or tying where needed; reusable bags, vessels and drinking water are separate. Partial use is tracked manually.",
+    "saleUnit": "One dry packet for one bowl of soup",
+    "price": {
+      "value": 6,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 0.2,
+      "units": "lb",
+      "notes": "Adjusted total for one dry packet for one bowl of soup, including light wrapping or tying where applicable. Excludes reusable containers and water."
+    },
+    "icon": "icons/consumables/grains/sack-rice-flour-brown.webp",
+    "category": "travel-meals",
+    "tags": [
+      "mundane",
+      "consumable",
+      "food",
+      "vegetable",
+      "dried",
+      "packed"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record portion eaten",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  }
+]

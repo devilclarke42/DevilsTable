@@ -1,0 +1,347 @@
+[
+  {
+    "id": "DT_ITEM_TAV_FARMHOUSE_CHEESE",
+    "name": "Farmhouse Cheese",
+    "description": "A mild pressed cow-milk cheese with a pale interior and a simple cloth-marked rind. It is cut from the wheel for the common table.\n\nSold as one quarter-pound portion of cheese. Weight includes light disposable wrapping or tying where needed; reusable bags, vessels and drinking water are separate. Partial use is tracked manually.",
+    "saleUnit": "One quarter-pound portion of cheese",
+    "price": {
+      "value": 5,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 0.25,
+      "units": "lb",
+      "notes": "Adjusted total for one quarter-pound portion of cheese, including light wrapping or tying where applicable. Excludes reusable containers and water."
+    },
+    "icon": "icons/consumables/food/cheese-wedge-swiss-yellow.webp",
+    "category": "cheese",
+    "tags": [
+      "mundane",
+      "consumable",
+      "food",
+      "dairy",
+      "cow-milk"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "core",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record portion eaten",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_FRESH_GOAT_CHEESE",
+    "name": "Fresh Goat Cheese",
+    "description": "A soft white goat cheese with a clean, tangy flavour. The portion is scooped rather than cut into a rigid wedge.\n\nSold as one quarter-pound portion of cheese. Weight includes light disposable wrapping or tying where needed; reusable bags, vessels and drinking water are separate. Partial use is tracked manually.",
+    "saleUnit": "One quarter-pound portion of cheese",
+    "price": {
+      "value": 7,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 0.25,
+      "units": "lb",
+      "notes": "Adjusted total for one quarter-pound portion of cheese, including light wrapping or tying where applicable. Excludes reusable containers and water."
+    },
+    "icon": "icons/consumables/food/cheese-wedge-swiss-yellow.webp",
+    "category": "cheese",
+    "tags": [
+      "mundane",
+      "consumable",
+      "food",
+      "dairy",
+      "goat-milk"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record portion eaten",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_AGED_HARD_CHEESE",
+    "name": "Aged Hard Cheese",
+    "description": "A firm aged cheese that breaks into small flakes under the knife. Its concentrated saltiness suits a small portion with bread.\n\nSold as one quarter-pound portion of cheese. Weight includes light disposable wrapping or tying where needed; reusable bags, vessels and drinking water are separate. Partial use is tracked manually.",
+    "saleUnit": "One quarter-pound portion of cheese",
+    "price": {
+      "value": 1,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 0.25,
+      "units": "lb",
+      "notes": "Adjusted total for one quarter-pound portion of cheese, including light wrapping or tying where applicable. Excludes reusable containers and water."
+    },
+    "icon": "icons/consumables/food/cheese-wedge-swiss-yellow.webp",
+    "category": "cheese",
+    "tags": [
+      "mundane",
+      "consumable",
+      "food",
+      "dairy",
+      "aged"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record portion eaten",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_SMOKED_CHEESE",
+    "name": "Smoked Cheese",
+    "description": "A firm cheese with a brown smoked rind and a pale centre. The smoke is strongest near the outside edge of the cut portion.\n\nSold as one quarter-pound portion of cheese. Weight includes light disposable wrapping or tying where needed; reusable bags, vessels and drinking water are separate. Partial use is tracked manually.",
+    "saleUnit": "One quarter-pound portion of cheese",
+    "price": {
+      "value": 1,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 0.25,
+      "units": "lb",
+      "notes": "Adjusted total for one quarter-pound portion of cheese, including light wrapping or tying where applicable. Excludes reusable containers and water."
+    },
+    "icon": "icons/consumables/food/cheese-wedge-swiss-yellow.webp",
+    "category": "cheese",
+    "tags": [
+      "mundane",
+      "consumable",
+      "food",
+      "dairy",
+      "smoked"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record portion eaten",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_HERBED_CURD_CHEESE",
+    "name": "Herbed Curd Cheese",
+    "description": "Fresh curds are drained and mixed with finely chopped kitchen herbs. The soft cheese is meant to be eaten promptly rather than carried for weeks.\n\nSold as one quarter-pound portion of cheese. Weight includes light disposable wrapping or tying where needed; reusable bags, vessels and drinking water are separate. Partial use is tracked manually.",
+    "saleUnit": "One quarter-pound portion of cheese",
+    "price": {
+      "value": 8,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 0.25,
+      "units": "lb",
+      "notes": "Adjusted total for one quarter-pound portion of cheese, including light wrapping or tying where applicable. Excludes reusable containers and water."
+    },
+    "icon": "icons/consumables/food/cheese-wedge-swiss-yellow.webp",
+    "category": "cheese",
+    "tags": [
+      "mundane",
+      "consumable",
+      "food",
+      "dairy",
+      "herbal"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record portion eaten",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_BLUE_VEINED_CHEESE",
+    "name": "Blue-Veined Cheese",
+    "description": "A pungent cheese with blue veins running through a creamy centre. The inn wraps it separately to keep its aroma away from milder stock.\n\nSold as one quarter-pound portion of cheese. Weight includes light disposable wrapping or tying where needed; reusable bags, vessels and drinking water are separate. Partial use is tracked manually.",
+    "saleUnit": "One quarter-pound portion of cheese",
+    "price": {
+      "value": 2,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 0.25,
+      "units": "lb",
+      "notes": "Adjusted total for one quarter-pound portion of cheese, including light wrapping or tying where applicable. Excludes reusable containers and water."
+    },
+    "icon": "icons/consumables/food/cheese-wedge-swiss-yellow.webp",
+    "category": "cheese",
+    "tags": [
+      "mundane",
+      "consumable",
+      "food",
+      "dairy",
+      "aged"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record portion eaten",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_SOFT_RIND_CHEESE",
+    "name": "Soft Rind Cheese",
+    "description": "A small portion of soft ripened cheese has a delicate rind and a yielding centre. It is served cool enough to cut without losing its shape.\n\nSold as one quarter-pound portion of cheese. Weight includes light disposable wrapping or tying where needed; reusable bags, vessels and drinking water are separate. Partial use is tracked manually.",
+    "saleUnit": "One quarter-pound portion of cheese",
+    "price": {
+      "value": 2,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 0.25,
+      "units": "lb",
+      "notes": "Adjusted total for one quarter-pound portion of cheese, including light wrapping or tying where applicable. Excludes reusable containers and water."
+    },
+    "icon": "icons/consumables/food/cheese-wedge-swiss-yellow.webp",
+    "category": "cheese",
+    "tags": [
+      "mundane",
+      "consumable",
+      "food",
+      "dairy",
+      "soft"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record portion eaten",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_IMPORTED_SHEEP_CHEESE",
+    "name": "Imported Sheep Cheese",
+    "description": "A firm sheep-milk cheese brought from a distant dairy district. The nutty, salty wedge keeps better than fresh curds but is still ordinary food.\n\nSold as one quarter-pound portion of cheese. Weight includes light disposable wrapping or tying where needed; reusable bags, vessels and drinking water are separate. Partial use is tracked manually.",
+    "saleUnit": "One quarter-pound portion of cheese",
+    "price": {
+      "value": 4,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 0.25,
+      "units": "lb",
+      "notes": "Adjusted total for one quarter-pound portion of cheese, including light wrapping or tying where applicable. Excludes reusable containers and water."
+    },
+    "icon": "icons/consumables/food/cheese-wedge-swiss-yellow.webp",
+    "category": "cheese",
+    "tags": [
+      "mundane",
+      "consumable",
+      "food",
+      "dairy",
+      "imported",
+      "sheep-milk"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "special-order",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record portion eaten",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  }
+]

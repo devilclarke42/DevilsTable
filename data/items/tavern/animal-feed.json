@@ -1,0 +1,348 @@
+[
+  {
+    "id": "DT_ITEM_TAV_LOOSE_OATS",
+    "name": "Loose Oats",
+    "description": "A four-pound measure of dry oats is scooped from the stable bin. It supplements suitable fodder rather than claiming to feed every mount for a whole day.\n\nSold as one four-pound measure of oats. Weight includes light disposable wrapping or tying where needed; reusable bags, vessels and drinking water are separate. Partial use is tracked manually.",
+    "saleUnit": "One four-pound measure of oats",
+    "price": {
+      "value": 3,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 4.0,
+      "units": "lb",
+      "notes": "Adjusted total for one four-pound measure of oats, including light wrapping or tying where applicable. Excludes reusable containers and water; feed remains a meaningful carried load."
+    },
+    "icon": "icons/consumables/grains/sack-rice-flour-brown.webp",
+    "category": "animal-feed",
+    "tags": [
+      "mundane",
+      "consumable",
+      "animal-feed",
+      "animal-care",
+      "oats"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record feed used",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_HAY_BUNDLE",
+    "name": "Hay Bundle",
+    "description": "A tied ten-pound bundle of dry meadow hay is offered from the inn's stable loft. The string is included; a reusable carrying sack is not.\n\nSold as one ten-pound tied hay bundle. Weight includes light disposable wrapping or tying where needed; reusable bags, vessels and drinking water are separate. Partial use is tracked manually.",
+    "saleUnit": "One ten-pound tied hay bundle",
+    "price": {
+      "value": 4,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 10.0,
+      "units": "lb",
+      "notes": "Adjusted total for one ten-pound tied hay bundle, including light wrapping or tying where applicable. Excludes reusable containers and water; feed remains a meaningful carried load."
+    },
+    "icon": "icons/consumables/grains/sack-rice-flour-brown.webp",
+    "category": "animal-feed",
+    "tags": [
+      "mundane",
+      "consumable",
+      "animal-feed",
+      "animal-care",
+      "hay"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record feed used",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_BRAN_MASH",
+    "name": "Bran Mash",
+    "description": "Bran is mixed with water into a fresh three-pound mash for a suitable stable animal. It is prepared feed, not a remedy; the GM decides whether it suits the animal.\n\nSold as one three-pound prepared mash portion. Weight includes light disposable wrapping or tying where needed; reusable bags, vessels and drinking water are separate. Partial use is tracked manually.",
+    "saleUnit": "One three-pound prepared mash portion",
+    "price": {
+      "value": 3,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 3.0,
+      "units": "lb",
+      "notes": "Adjusted total for one three-pound prepared mash portion, including light wrapping or tying where applicable. Excludes reusable containers and water; feed remains a meaningful carried load."
+    },
+    "icon": "icons/consumables/grains/sack-rice-flour-brown.webp",
+    "category": "animal-feed",
+    "tags": [
+      "mundane",
+      "consumable",
+      "animal-feed",
+      "animal-care",
+      "bran",
+      "prepared"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record feed used",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_FEED_CARROTS",
+    "name": "Feed Carrots",
+    "description": "A pound of sound small carrots is set aside for animal treats or supplementary feed. They are not a complete daily ration.\n\nSold as one pound of feed carrots. Weight includes light disposable wrapping or tying where needed; reusable bags, vessels and drinking water are separate. Partial use is tracked manually.",
+    "saleUnit": "One pound of feed carrots",
+    "price": {
+      "value": 2,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 1.0,
+      "units": "lb",
+      "notes": "Adjusted total for one pound of feed carrots, including light wrapping or tying where applicable. Excludes reusable containers and water; feed remains a meaningful carried load."
+    },
+    "icon": "icons/consumables/grains/sack-rice-flour-brown.webp",
+    "category": "animal-feed",
+    "tags": [
+      "mundane",
+      "consumable",
+      "animal-feed",
+      "animal-care",
+      "root-vegetable"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record feed used",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_POULTRY_GRAIN",
+    "name": "Poultry Grain",
+    "description": "A one-pound measure of mixed grain is intended for suitable domestic birds. Portion needs depend on the birds rather than the size of a character's food ration.\n\nSold as one pound of mixed grain. Weight includes light disposable wrapping or tying where needed; reusable bags, vessels and drinking water are separate. Partial use is tracked manually.",
+    "saleUnit": "One pound of mixed grain",
+    "price": {
+      "value": 2,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 1.0,
+      "units": "lb",
+      "notes": "Adjusted total for one pound of mixed grain, including light wrapping or tying where applicable. Excludes reusable containers and water; feed remains a meaningful carried load."
+    },
+    "icon": "icons/consumables/grains/sack-rice-flour-brown.webp",
+    "category": "animal-feed",
+    "tags": [
+      "mundane",
+      "consumable",
+      "animal-feed",
+      "animal-care",
+      "grain"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record feed used",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_HOUND_BISCUIT_BUNDLE",
+    "name": "Hound Biscuit Bundle",
+    "description": "Hard baked biscuits made with grain and meat scraps are bundled for a working hound. The pound of biscuits is supplementary food; animal size and other feeding still matter.\n\nSold as one pound of hound biscuits. Weight includes light disposable wrapping or tying where needed; reusable bags, vessels and drinking water are separate. Partial use is tracked manually.",
+    "saleUnit": "One pound of hound biscuits",
+    "price": {
+      "value": 4,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 1.0,
+      "units": "lb",
+      "notes": "Adjusted total for one pound of hound biscuits, including light wrapping or tying where applicable. Excludes reusable containers and water; feed remains a meaningful carried load."
+    },
+    "icon": "icons/consumables/grains/sack-rice-flour-brown.webp",
+    "category": "animal-feed",
+    "tags": [
+      "mundane",
+      "consumable",
+      "animal-feed",
+      "animal-care",
+      "baked"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record feed used",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_DRIED_APPLE_HORSE_TREATS",
+    "name": "Dried Apple Horse Treats",
+    "description": "A half-pound packet of plain dried apple pieces is sold as occasional treats for a suitable mount. It does not replace ordinary feed or water.\n\nSold as one half-pound packet of horse treats. Weight includes light disposable wrapping or tying where needed; reusable bags, vessels and drinking water are separate. Partial use is tracked manually.",
+    "saleUnit": "One half-pound packet of horse treats",
+    "price": {
+      "value": 3,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 0.5,
+      "units": "lb",
+      "notes": "Adjusted total for one half-pound packet of horse treats, including light wrapping or tying where applicable. Excludes reusable containers and water; feed remains a meaningful carried load."
+    },
+    "icon": "icons/consumables/grains/sack-rice-flour-brown.webp",
+    "category": "animal-feed",
+    "tags": [
+      "mundane",
+      "consumable",
+      "animal-feed",
+      "animal-care",
+      "apple",
+      "dried"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record feed used",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_CHOPPED_FODDER",
+    "name": "Chopped Fodder",
+    "description": "A five-pound measure of chopped dry grass and straw is ready to mix with other appropriate feed. Its bulk still counts when packed for a journey.\n\nSold as one five-pound measure of chopped fodder. Weight includes light disposable wrapping or tying where needed; reusable bags, vessels and drinking water are separate. Partial use is tracked manually.",
+    "saleUnit": "One five-pound measure of chopped fodder",
+    "price": {
+      "value": 3,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 5.0,
+      "units": "lb",
+      "notes": "Adjusted total for one five-pound measure of chopped fodder, including light wrapping or tying where applicable. Excludes reusable containers and water; feed remains a meaningful carried load."
+    },
+    "icon": "icons/consumables/grains/sack-rice-flour-brown.webp",
+    "category": "animal-feed",
+    "tags": [
+      "mundane",
+      "consumable",
+      "animal-feed",
+      "animal-care",
+      "fodder"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record feed used",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  }
+]

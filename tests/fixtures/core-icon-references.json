@@ -241,6 +241,42 @@
     {
       "icon": "icons/weapons/sickles/sickle-hooked-wood.webp",
       "source": "docs/GENERAL_STORE_REVIEW.md; docs/CONTAINERS_REVIEW.md"
+    },
+    {
+      "icon": "icons/consumables/drinks/tea-jug-gourd-brown.webp",
+      "source": "https://raw.githubusercontent.com/foundryvtt/dnd5e/release-5.3.3/json/icon-migration.json"
+    },
+    {
+      "icon": "icons/consumables/food/dried-meat-jerky-fish-red.webp",
+      "source": "https://raw.githubusercontent.com/foundryvtt/dnd5e/release-5.3.3/json/icon-migration.json"
+    },
+    {
+      "icon": "icons/consumables/food/short-ribs-cooked-meat-brown.webp",
+      "source": "https://raw.githubusercontent.com/foundryvtt/dnd5e/release-5.3.3/json/icon-migration.json"
+    },
+    {
+      "icon": "icons/consumables/food/berries-ration-round-red.webp",
+      "source": "https://raw.githubusercontent.com/foundryvtt/dnd5e/release-5.3.3/json/icon-migration.json"
+    },
+    {
+      "icon": "icons/consumables/food/bowl-stew-brown.webp",
+      "source": "https://raw.githubusercontent.com/foundryvtt/dnd5e/release-5.3.3/json/icon-migration.json"
+    },
+    {
+      "icon": "icons/consumables/drinks/alcohol-beer-stein-wooden-brown.webp",
+      "source": "https://raw.githubusercontent.com/foundryvtt/dnd5e/release-5.3.3/json/icon-migration.json"
+    },
+    {
+      "icon": "icons/consumables/drinks/wine-amphora-clay-red.webp",
+      "source": "https://raw.githubusercontent.com/foundryvtt/dnd5e/release-5.3.3/json/icon-migration.json"
+    },
+    {
+      "icon": "icons/consumables/fruit/apple-red-tree-green.webp",
+      "source": "https://raw.githubusercontent.com/foundryvtt/dnd5e/release-5.3.3/json/icon-migration.json"
+    },
+    {
+      "icon": "icons/consumables/food/cheese-wedge-swiss-yellow.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/ed87b71c1f6ab8b0aa6351cb6a3f7ba017aa0cb2/packs/_source/spells/6th-level/heroes-feast.yml"
     }
   ]
 }

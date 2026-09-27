@@ -1,3 +1,4 @@
+import { merchantPresentation, receivePresentation, registerPresentationUpdates } from "./presentation.js";
 import { quoteTrade, purchaseOffers, stable } from "./trade-model.js";
 import { INTERACTIONS } from "./interactions.js";
 import { publicOffers } from "./model.js";
@@ -85,6 +86,7 @@ function resolveRequest(msg) {
 async function receive(msg) {
   if (!msg || typeof msg !== "object") return;
   logger.debug("Merchant socket received", { type: msg.type, id: msg.id, to: msg.to });
+  if (msg.type === "presentation") { receivePresentation(msg); return; }
   if (msg.type === "stock" || msg.type === "result") {
     if (msg.to !== game.user.id) return;
     const entry = requests.get(msg.id);
@@ -102,7 +104,7 @@ async function receive(msg) {
     logger.debug("Merchant opened", { merchant: actor.id });
     const customer = game.actors.get(msg.characterId);
     const shopper = customer?.testUserPermission(game.users.get(msg.userId), "OWNER") ? customer : null;
-    return notify(msg.userId, { id: msg.id, type: "stock", merchant: actor.name, characterId: shopper?.id ?? null,
+    return notify(msg.userId, { id: msg.id, type: "stock", merchant: token.name ?? actor.name, presentation: merchantPresentation(actor), characterId: shopper?.id ?? null,
       availability: merchantConfig(actor).availability ?? "open", items: purchaseOffers(actor, shopper), buyModifier: tradeSettings(actor).buyModifier });
   }
   if (!["checkout", "interaction"].includes(msg.type)) return;
@@ -250,6 +252,7 @@ export function initialiseMerchantService() {
       notify(message.userId, { id: message.id, error: "The GM could not process this request. Check the GM console for the merchant error." });
     }
   }); });
+  if (globalThis.Hooks?.on) registerPresentationUpdates(() => game.user.isGM && coordinator()?.id === game.user.id, send);
   listening = true;
 }
 

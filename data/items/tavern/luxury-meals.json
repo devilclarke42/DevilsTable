@@ -1,0 +1,348 @@
+[
+  {
+    "id": "DT_ITEM_TAV_SAFFRON_CHICKEN_PILAF",
+    "name": "Saffron Chicken Pilaf",
+    "description": "Chicken and grain are cooked with a small but costly pinch of saffron. The golden rice catches the bird's juices without being coloured by magic.\n\nSold as one individual fine meal. Price and weight cover the named food only; plates, bowls and cutlery remain with the inn. Drinks and unlisted sides are separate. This meal grants no automatic healing or resting bonus.",
+    "saleUnit": "One individual fine meal",
+    "price": {
+      "value": 1,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 1.0,
+      "units": "lb",
+      "notes": "Adjusted ready-to-eat food weight for one individual fine meal, including bones or inedible scraps where described. Excludes the inn's serving ware and any drink."
+    },
+    "icon": "icons/consumables/food/bowl-stew-brown.webp",
+    "category": "luxury-meals",
+    "tags": [
+      "mundane",
+      "consumable",
+      "food",
+      "poultry",
+      "grain",
+      "spiced"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "special-order",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record portion eaten",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_PEPPERED_VENISON_PLATE",
+    "name": "Peppered Venison Plate",
+    "description": "A tender venison portion is served with pepper sauce and glazed roots. Both the cut of meat and the generous spice make it an occasional kitchen offering.\n\nSold as one individual fine meal. Price and weight cover the named food only; plates, bowls and cutlery remain with the inn. Drinks and unlisted sides are separate. This meal grants no automatic healing or resting bonus.",
+    "saleUnit": "One individual fine meal",
+    "price": {
+      "value": 1,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 0.9,
+      "units": "lb",
+      "notes": "Adjusted ready-to-eat food weight for one individual fine meal, including bones or inedible scraps where described. Excludes the inn's serving ware and any drink."
+    },
+    "icon": "icons/consumables/food/bowl-stew-brown.webp",
+    "category": "luxury-meals",
+    "tags": [
+      "mundane",
+      "consumable",
+      "food",
+      "game",
+      "pepper"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "special-order",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record portion eaten",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_DUCK_WITH_CHERRY_SAUCE",
+    "name": "Duck with Cherry Sauce",
+    "description": "Carved duck is served with a sharp cherry sauce and a small grain accompaniment. This complete plate is distinct from the plain carved roast portion.\n\nSold as one individual fine meal. Price and weight cover the named food only; plates, bowls and cutlery remain with the inn. Drinks and unlisted sides are separate. This meal grants no automatic healing or resting bonus.",
+    "saleUnit": "One individual fine meal",
+    "price": {
+      "value": 1,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 0.9,
+      "units": "lb",
+      "notes": "Adjusted ready-to-eat food weight for one individual fine meal, including bones or inedible scraps where described. Excludes the inn's serving ware and any drink."
+    },
+    "icon": "icons/consumables/food/bowl-stew-brown.webp",
+    "category": "luxury-meals",
+    "tags": [
+      "mundane",
+      "consumable",
+      "food",
+      "poultry",
+      "fruit"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "special-order",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record portion eaten",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_TRUFFLED_MUSHROOM_PIE",
+    "name": "Truffled Mushroom Pie",
+    "description": "A carefully made mushroom pie is finished with a little shaved truffle beneath its lid. The rich scent escapes when the pastry is broken.\n\nSold as one individual fine meal. Price and weight cover the named food only; plates, bowls and cutlery remain with the inn. Drinks and unlisted sides are separate. This meal grants no automatic healing or resting bonus.",
+    "saleUnit": "One individual fine meal",
+    "price": {
+      "value": 2,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 0.8,
+      "units": "lb",
+      "notes": "Adjusted ready-to-eat food weight for one individual fine meal, including bones or inedible scraps where described. Excludes the inn's serving ware and any drink."
+    },
+    "icon": "icons/consumables/grains/bread-loaf-boule-rustic-brown.webp",
+    "category": "luxury-meals",
+    "tags": [
+      "mundane",
+      "consumable",
+      "food",
+      "mushroom",
+      "pastry"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "special-order",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record portion eaten",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_BUTTER_POACHED_SHELLFISH",
+    "name": "Butter-Poached Shellfish",
+    "description": "Prepared shellfish is gently poached in butter and served with bread for the pan juices. Supply depends on a suitable catch reaching the kitchen in good condition.\n\nSold as one individual fine meal. Price and weight cover the named food only; plates, bowls and cutlery remain with the inn. Drinks and unlisted sides are separate. This meal grants no automatic healing or resting bonus.",
+    "saleUnit": "One individual fine meal",
+    "price": {
+      "value": 2,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 0.65,
+      "units": "lb",
+      "notes": "Adjusted ready-to-eat food weight for one individual fine meal, including bones or inedible scraps where described. Excludes the inn's serving ware and any drink."
+    },
+    "icon": "icons/consumables/food/bowl-stew-brown.webp",
+    "category": "luxury-meals",
+    "tags": [
+      "mundane",
+      "consumable",
+      "food",
+      "shellfish",
+      "dairy"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "special-order",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record portion eaten",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_SPICED_QUAIL_SUPPER",
+    "name": "Spiced Quail Supper",
+    "description": "A small roasted quail comes with spiced grain and a spoonful of fruit relish. The bones remain; the portion is intended for one diner.\n\nSold as one individual fine meal. Price and weight cover the named food only; plates, bowls and cutlery remain with the inn. Drinks and unlisted sides are separate. This meal grants no automatic healing or resting bonus.",
+    "saleUnit": "One individual fine meal",
+    "price": {
+      "value": 1,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 0.8,
+      "units": "lb",
+      "notes": "Adjusted ready-to-eat food weight for one individual fine meal, including bones or inedible scraps where described. Excludes the inn's serving ware and any drink."
+    },
+    "icon": "icons/consumables/food/bowl-stew-brown.webp",
+    "category": "luxury-meals",
+    "tags": [
+      "mundane",
+      "consumable",
+      "food",
+      "poultry",
+      "spiced"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "special-order",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record portion eaten",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_STUFFED_ARTICHOKE_PLATE",
+    "name": "Stuffed Artichoke Plate",
+    "description": "An artichoke is filled with seasoned crumbs and herbs, then cooked until its leaves pull away. The diner eats the tender portions and leaves the tough scraps.\n\nSold as one individual fine meal. Price and weight cover the named food only; plates, bowls and cutlery remain with the inn. Drinks and unlisted sides are separate. This meal grants no automatic healing or resting bonus.",
+    "saleUnit": "One individual fine meal",
+    "price": {
+      "value": 8,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 0.8,
+      "units": "lb",
+      "notes": "Adjusted ready-to-eat food weight for one individual fine meal, including bones or inedible scraps where described. Excludes the inn's serving ware and any drink."
+    },
+    "icon": "icons/consumables/food/bowl-stew-brown.webp",
+    "category": "luxury-meals",
+    "tags": [
+      "mundane",
+      "consumable",
+      "food",
+      "vegetable",
+      "bread"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "special-order",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record portion eaten",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_CELEBRATION_SUPPER",
+    "name": "Celebration Supper",
+    "description": "One diner receives a modest soup, carved poultry with roots, and a small fruit tart. This is a three-course meal for one, not a feast for an entire party; drinks are separate.\n\nSold as one individual fine meal. Price and weight cover the named food only; plates, bowls and cutlery remain with the inn. Drinks and unlisted sides are separate. This meal grants no automatic healing or resting bonus.",
+    "saleUnit": "One individual fine meal",
+    "price": {
+      "value": 3,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 1.6,
+      "units": "lb",
+      "notes": "Adjusted ready-to-eat food weight for one individual fine meal, including bones or inedible scraps where described. Excludes the inn's serving ware and any drink."
+    },
+    "icon": "icons/consumables/food/bowl-stew-brown.webp",
+    "category": "luxury-meals",
+    "tags": [
+      "mundane",
+      "consumable",
+      "food",
+      "poultry",
+      "dairy",
+      "pastry"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "special-order",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record portion eaten",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  }
+]

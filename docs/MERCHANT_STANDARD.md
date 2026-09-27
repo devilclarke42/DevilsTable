@@ -1,7 +1,7 @@
 # Merchant Standard
 
 **Status:** official merchant design and stock-authoring standard.  
-**Current implementation:** alpha.7, five shop definitions, eight merchant profiles, 32 active RollTables and weighted quantity suggestions.
+**Current implementation:** 0.3.0-alpha.1, five shop definitions, eight merchant profiles, 32 active RollTables and weighted quantity suggestions.
 
 A merchant should feel like a believable business: essentials are dependable, useful extras vary,
 and scarce goods are memorable. Players should be able to make ordinary purchases without a
@@ -16,8 +16,9 @@ base price, weight and description. A merchant-specific display, quote or availa
 to that merchant's stock instance, not a duplicate catalogue record.
 
 Current shop types are Tavern, General Store, Alchemist, Blacksmith and Black Market. General Store
-contains 144 goods across ten curated categories. Other shops currently expose only the shared goods already authored:
-31 Tavern, 6 Alchemist, 7 Blacksmith and 4 Black Market. Their coverage is explicitly partial.
+contains 144 goods across ten curated categories. Tavern contains 152 authored menu products
+and 31 shared goods (183 total), with complete profile coverage. Alchemist, Blacksmith and Black
+Market expose 6, 7 and 4 shared goods respectively and remain explicitly partial.
 Do not invent stock from a category plan or a sentence in Merchant Notes to make a shop look complete.
 
 ## Stock language and intended experience
@@ -85,7 +86,7 @@ same tables for category-filtered lists; no quantity or category tables are gene
 5. Stop at the attempt limit or when both rotating pools are exhausted. Then roll each selected
    product's quantity separately.
 
-Defaults are stored in `data/stock.json`: Tavern 10 whole-shop / 3 category attempts; Village General Store
+Defaults are stored in `data/stock.json`: Tavern 16 whole-shop / 3 category attempts; Village General Store
 8 / 3; Alchemist 4 / 2; Blacksmith 3 / 2; Black Market 6 / 2. An API draw-count override is bounded
 to 0–50. Chances describe attempts, not the final probability of seeing any particular item.
 
@@ -109,7 +110,8 @@ An assortment count is a count of distinct products; quantity rolls happen separ
 
 Select one profile to roll stock. **All profiles** builds or previews the sixteen General Store
 tables together but cannot produce one merchant's stock list. Other shops keep their existing
-four-table sets and partial coverage. No Tavern content is added in Sprint 3.
+four-table sets. Tavern becomes complete in Sprint 8 with eight Always, 153 Often and 22 Rarely
+goods; the other three shops remain partial. See [Tavern review](TAVERN_REVIEW.md).
 
 Variant descriptions and Merchant Notes live in `data/stock.json`, while base merchant guidance
 remains in `data/shops.json`. Both are builder-only. These notes describe believable supply;

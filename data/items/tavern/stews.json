@@ -1,0 +1,347 @@
+[
+  {
+    "id": "DT_ITEM_TAV_VEGETABLE_POTTAGE",
+    "name": "Vegetable Pottage",
+    "description": "Roots, cabbage and a little grain simmer into a thick everyday pottage. The vegetables vary with the pantry, but the serving is always one full bowl.\n\nSold as one 1 lb bowl portion of stew. Price and weight cover the named food only; plates, bowls and cutlery remain with the inn. Drinks and unlisted sides are separate. This meal grants no automatic healing or resting bonus.",
+    "saleUnit": "One 1 lb bowl portion of stew",
+    "price": {
+      "value": 5,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 1.0,
+      "units": "lb",
+      "notes": "Adjusted ready-to-eat food weight for one 1 lb bowl portion of stew, including bones or inedible scraps where described. Excludes the inn's serving ware and any drink."
+    },
+    "icon": "icons/consumables/food/bowl-stew-brown.webp",
+    "category": "stews",
+    "tags": [
+      "mundane",
+      "consumable",
+      "food",
+      "vegetable",
+      "grain"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "core",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record portion eaten",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_BEEF_AND_BARLEY_STEW",
+    "name": "Beef and Barley Stew",
+    "description": "Small pieces of beef cook with barley until the broth thickens around them. A dark ring on the pot marks the day's slow simmer.\n\nSold as one 1 lb bowl portion of stew. Price and weight cover the named food only; plates, bowls and cutlery remain with the inn. Drinks and unlisted sides are separate. This meal grants no automatic healing or resting bonus.",
+    "saleUnit": "One 1 lb bowl portion of stew",
+    "price": {
+      "value": 2,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 1.0,
+      "units": "lb",
+      "notes": "Adjusted ready-to-eat food weight for one 1 lb bowl portion of stew, including bones or inedible scraps where described. Excludes the inn's serving ware and any drink."
+    },
+    "icon": "icons/consumables/food/bowl-stew-brown.webp",
+    "category": "stews",
+    "tags": [
+      "mundane",
+      "consumable",
+      "food",
+      "beef",
+      "barley"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record portion eaten",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_MUTTON_AND_LEEK_STEW",
+    "name": "Mutton and Leek Stew",
+    "description": "Mutton and leeks make a pale, savoury stew with soft chunks of turnip. The kitchen skims excess fat before filling the bowl.\n\nSold as one 1 lb bowl portion of stew. Price and weight cover the named food only; plates, bowls and cutlery remain with the inn. Drinks and unlisted sides are separate. This meal grants no automatic healing or resting bonus.",
+    "saleUnit": "One 1 lb bowl portion of stew",
+    "price": {
+      "value": 2,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 1.0,
+      "units": "lb",
+      "notes": "Adjusted ready-to-eat food weight for one 1 lb bowl portion of stew, including bones or inedible scraps where described. Excludes the inn's serving ware and any drink."
+    },
+    "icon": "icons/consumables/food/bowl-stew-brown.webp",
+    "category": "stews",
+    "tags": [
+      "mundane",
+      "consumable",
+      "food",
+      "mutton",
+      "leek"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record portion eaten",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_CHICKEN_AND_BEAN_STEW",
+    "name": "Chicken and Bean Stew",
+    "description": "White beans give body to a broth containing shredded chicken and onions. It is a modest meat serving stretched into a substantial bowl.\n\nSold as one 1 lb bowl portion of stew. Price and weight cover the named food only; plates, bowls and cutlery remain with the inn. Drinks and unlisted sides are separate. This meal grants no automatic healing or resting bonus.",
+    "saleUnit": "One 1 lb bowl portion of stew",
+    "price": {
+      "value": 1,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 1.0,
+      "units": "lb",
+      "notes": "Adjusted ready-to-eat food weight for one 1 lb bowl portion of stew, including bones or inedible scraps where described. Excludes the inn's serving ware and any drink."
+    },
+    "icon": "icons/consumables/food/bowl-stew-brown.webp",
+    "category": "stews",
+    "tags": [
+      "mundane",
+      "consumable",
+      "food",
+      "poultry",
+      "beans"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record portion eaten",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_LENTIL_AND_CARROT_STEW",
+    "name": "Lentil and Carrot Stew",
+    "description": "Lentils and diced carrots cook into a thick orange-brown stew. A spoon stands briefly in the pot before the surface settles around it.\n\nSold as one 1 lb bowl portion of stew. Price and weight cover the named food only; plates, bowls and cutlery remain with the inn. Drinks and unlisted sides are separate. This meal grants no automatic healing or resting bonus.",
+    "saleUnit": "One 1 lb bowl portion of stew",
+    "price": {
+      "value": 7,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 1.0,
+      "units": "lb",
+      "notes": "Adjusted ready-to-eat food weight for one 1 lb bowl portion of stew, including bones or inedible scraps where described. Excludes the inn's serving ware and any drink."
+    },
+    "icon": "icons/consumables/food/bowl-stew-brown.webp",
+    "category": "stews",
+    "tags": [
+      "mundane",
+      "consumable",
+      "food",
+      "lentil",
+      "root-vegetable"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record portion eaten",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_PEA_AND_HAM_STEW",
+    "name": "Pea and Ham Stew",
+    "description": "Split peas collapse into a thick green pot with pieces of smoked ham. The ham seasons the whole bowl rather than appearing as a separate joint.\n\nSold as one 1 lb bowl portion of stew. Price and weight cover the named food only; plates, bowls and cutlery remain with the inn. Drinks and unlisted sides are separate. This meal grants no automatic healing or resting bonus.",
+    "saleUnit": "One 1 lb bowl portion of stew",
+    "price": {
+      "value": 1,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 1.0,
+      "units": "lb",
+      "notes": "Adjusted ready-to-eat food weight for one 1 lb bowl portion of stew, including bones or inedible scraps where described. Excludes the inn's serving ware and any drink."
+    },
+    "icon": "icons/consumables/food/bowl-stew-brown.webp",
+    "category": "stews",
+    "tags": [
+      "mundane",
+      "consumable",
+      "food",
+      "pea",
+      "pork"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record portion eaten",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_FISH_CHOWDER",
+    "name": "Fish Chowder",
+    "description": "Fish flakes, onions and diced roots sit in a milk-enriched broth. The cook adds the fish late enough that it keeps some shape.\n\nSold as one 1 lb bowl portion of stew. Price and weight cover the named food only; plates, bowls and cutlery remain with the inn. Drinks and unlisted sides are separate. This meal grants no automatic healing or resting bonus.",
+    "saleUnit": "One 1 lb bowl portion of stew",
+    "price": {
+      "value": 2,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 1.0,
+      "units": "lb",
+      "notes": "Adjusted ready-to-eat food weight for one 1 lb bowl portion of stew, including bones or inedible scraps where described. Excludes the inn's serving ware and any drink."
+    },
+    "icon": "icons/consumables/food/bowl-stew-brown.webp",
+    "category": "stews",
+    "tags": [
+      "mundane",
+      "consumable",
+      "food",
+      "fish",
+      "dairy"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record portion eaten",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_VENISON_JUNIPER_STEW",
+    "name": "Venison Juniper Stew",
+    "description": "Venison is simmered with roots and a restrained pinch of crushed juniper. The pot appears when the inn has a sound supply of game, not every evening.\n\nSold as one 1 lb bowl portion of stew. Price and weight cover the named food only; plates, bowls and cutlery remain with the inn. Drinks and unlisted sides are separate. This meal grants no automatic healing or resting bonus.",
+    "saleUnit": "One 1 lb bowl portion of stew",
+    "price": {
+      "value": 4,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 1.0,
+      "units": "lb",
+      "notes": "Adjusted ready-to-eat food weight for one 1 lb bowl portion of stew, including bones or inedible scraps where described. Excludes the inn's serving ware and any drink."
+    },
+    "icon": "icons/consumables/food/bowl-stew-brown.webp",
+    "category": "stews",
+    "tags": [
+      "mundane",
+      "consumable",
+      "food",
+      "game",
+      "juniper",
+      "seasonal"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "special-order",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record portion eaten",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  }
+]

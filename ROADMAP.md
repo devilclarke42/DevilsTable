@@ -3,6 +3,19 @@
 This is the detailed implementation and acceptance checklist. The official versioned milestones
 and release outcomes are defined in [docs/ROADMAP.md](docs/ROADMAP.md).
 
+## Sprint 8 — Tavern catalogue and merchant presentation
+
+- [x] Compact Actor portrait header with exact scene-token name and availability.
+- [x] Live updates through public projection; no merchant Actor permissions for players.
+- [x] Generic silhouette fallback and flexible future context area.
+- [x] 152 original products in 19 requested categories; 183 Tavern goods including shared stock.
+- [x] Explicit portions, contents-only service weights, copper/silver prices and native consumption.
+- [x] Complete Tavern profile; four existing tables, weighted quantities and builder-only notes.
+- [x] Item/table upgrade tests, preservation checks, full review and packaging.
+- [ ] Complete the live portrait and Tavern checks in [Tavern review](docs/TAVERN_REVIEW.md).
+
+Candidate: `0.3.0-alpha.1`. Further shop catalogues are not part of this sprint.
+
 ## Sprint 7 — Merchant interaction
 
 - [x] Signed percentage controls, stacking, original/adjusted previews and denomination labels.
@@ -13,7 +26,7 @@ and release outcomes are defined in [docs/ROADMAP.md](docs/ROADMAP.md).
 - [ ] Record live V14 / D&D5e 5.3.3 / Forge acceptance using the
   [Sprint 7 checklist](docs/merchant/SPRINT_7_INTERACTIONS.md).
 
-Implementation candidate: `0.2.0-alpha.25`. No Tavern work begins here.
+Sprint 7 baseline: `0.2.0-alpha.25`; owner reports the features work in their live setup.
 
 ## Documentation Foundation
 
@@ -49,7 +62,7 @@ Implementation is available for acceptance testing; the target environment is no
 - [x] Update standards, review tables, changelogs, API guidance and packaging.
 - [ ] Record detailed Foundry V14 / D&D5e 5.3.3 / Forge acceptance and Sprint 3 owner review.
 
-Implementation stops at the General Store. Tavern authoring has not started.
+Sprint 3 stopped at the General Store. Tavern authoring is now recorded under Sprint 8.
 
 ## Sprint 4 — Merchant System specification (approved)
 
@@ -97,7 +110,7 @@ for alpha.3 and alpha.4 do not complete the detailed live checklist.
 - [ ] Review stock tier overrides, 80/15/5 chances and suggested draw counts.
 - [ ] Complete live V14 / D&D5e 5.3.3 Forge table build, native draw and repeat-build checks.
 
-Alpha.6 reduced output to 20 active tables. Sprint 3 adds twelve variant tables for 32 active tables. Tavern, Alchemist, Blacksmith and Black
+Alpha.6 reduced output to 20 active tables. Sprint 3 adds twelve variant tables for 32 active tables. Alchemist, Blacksmith and Black
 Market remain partial catalogues. Table generation does not create missing shop-specific content.
 
 ## After review — Curated content

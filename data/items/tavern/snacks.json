@@ -1,0 +1,347 @@
+[
+  {
+    "id": "DT_ITEM_TAV_SALTED_NUTS",
+    "name": "Salted Nuts",
+    "description": "A small portion of toasted edible nuts is tossed with salt. The dry, savoury handful is served in a shallow dish or a paper twist.\n\nSold as one 0.15 lb portion of salted nuts. Weight includes light disposable wrapping or tying where needed; reusable bags, vessels and drinking water are separate. Partial use is tracked manually.",
+    "saleUnit": "One 0.15 lb portion of salted nuts",
+    "price": {
+      "value": 4,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 0.15,
+      "units": "lb",
+      "notes": "Adjusted total for one 0.15 lb portion of salted nuts, including light wrapping or tying where applicable. Excludes reusable containers and water."
+    },
+    "icon": "icons/consumables/food/bowl-stew-brown.webp",
+    "category": "snacks",
+    "tags": [
+      "mundane",
+      "consumable",
+      "food",
+      "nuts",
+      "salted"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record portion eaten",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_PICKLED_EGGS",
+    "name": "Pickled Eggs",
+    "description": "Two peeled eggs have been kept in a sharp spiced pickle. They are drained before serving, so the price does not include a jar of brine.\n\nSold as two pickled eggs. Weight includes light disposable wrapping or tying where needed; reusable bags, vessels and drinking water are separate. Partial use is tracked manually.",
+    "saleUnit": "Two pickled eggs",
+    "price": {
+      "value": 5,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 0.2,
+      "units": "lb",
+      "notes": "Adjusted total for two pickled eggs, including light wrapping or tying where applicable. Excludes reusable containers and water."
+    },
+    "icon": "icons/consumables/food/bowl-stew-brown.webp",
+    "category": "snacks",
+    "tags": [
+      "mundane",
+      "consumable",
+      "food",
+      "eggs",
+      "pickled"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record portion eaten",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_PICKLED_ONIONS",
+    "name": "Pickled Onions",
+    "description": "A small dish of crisp pickled onions accompanies bread, cheese or a drink. The pickle stains the inn's wooden serving spoons over time.\n\nSold as one 0.15 lb portion of pickled onions. Weight includes light disposable wrapping or tying where needed; reusable bags, vessels and drinking water are separate. Partial use is tracked manually.",
+    "saleUnit": "One 0.15 lb portion of pickled onions",
+    "price": {
+      "value": 3,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 0.15,
+      "units": "lb",
+      "notes": "Adjusted total for one 0.15 lb portion of pickled onions, including light wrapping or tying where applicable. Excludes reusable containers and water."
+    },
+    "icon": "icons/consumables/food/bowl-stew-brown.webp",
+    "category": "snacks",
+    "tags": [
+      "mundane",
+      "consumable",
+      "food",
+      "onion",
+      "pickled"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record portion eaten",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_DRIED_APPLE_RINGS",
+    "name": "Dried Apple Rings",
+    "description": "Thin apple rings have been dried until leathery rather than brittle. Their tart sweetness makes a light snack that travels more easily than fresh fruit.\n\nSold as one 0.15 lb portion of dried apple rings. Weight includes light disposable wrapping or tying where needed; reusable bags, vessels and drinking water are separate. Partial use is tracked manually.",
+    "saleUnit": "One 0.15 lb portion of dried apple rings",
+    "price": {
+      "value": 4,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 0.15,
+      "units": "lb",
+      "notes": "Adjusted total for one 0.15 lb portion of dried apple rings, including light wrapping or tying where applicable. Excludes reusable containers and water."
+    },
+    "icon": "icons/consumables/food/berries-ration-round-red.webp",
+    "category": "snacks",
+    "tags": [
+      "mundane",
+      "consumable",
+      "food",
+      "apple",
+      "dried"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record portion eaten",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_ROASTED_CHICKPEAS",
+    "name": "Roasted Chickpeas",
+    "description": "Chickpeas roasted until crisp are dusted with salt and a little ground herb. A paper twist holds one small portion.\n\nSold as one 0.15 lb portion of roasted chickpeas. Weight includes light disposable wrapping or tying where needed; reusable bags, vessels and drinking water are separate. Partial use is tracked manually.",
+    "saleUnit": "One 0.15 lb portion of roasted chickpeas",
+    "price": {
+      "value": 3,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 0.15,
+      "units": "lb",
+      "notes": "Adjusted total for one 0.15 lb portion of roasted chickpeas, including light wrapping or tying where applicable. Excludes reusable containers and water."
+    },
+    "icon": "icons/consumables/food/bowl-stew-brown.webp",
+    "category": "snacks",
+    "tags": [
+      "mundane",
+      "consumable",
+      "food",
+      "legume",
+      "roasted"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record portion eaten",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_PORK_CRACKLINGS",
+    "name": "Pork Cracklings",
+    "description": "Small pieces of pork skin are cooked until crisp and drained of excess fat. They arrive in a modest salty portion, not as a meat course.\n\nSold as one 0.15 lb portion of cracklings. Weight includes light disposable wrapping or tying where needed; reusable bags, vessels and drinking water are separate. Partial use is tracked manually.",
+    "saleUnit": "One 0.15 lb portion of cracklings",
+    "price": {
+      "value": 4,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 0.15,
+      "units": "lb",
+      "notes": "Adjusted total for one 0.15 lb portion of cracklings, including light wrapping or tying where applicable. Excludes reusable containers and water."
+    },
+    "icon": "icons/consumables/food/short-ribs-cooked-meat-brown.webp",
+    "category": "snacks",
+    "tags": [
+      "mundane",
+      "consumable",
+      "food",
+      "pork",
+      "crisp"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record portion eaten",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_SOFT_PRETZEL",
+    "name": "Soft Pretzel",
+    "description": "A twisted bread knot has a browned, salted skin and a soft middle. It is best eaten fresh before the surface loses its chew.\n\nSold as one soft pretzel. Weight includes light disposable wrapping or tying where needed; reusable bags, vessels and drinking water are separate. Partial use is tracked manually.",
+    "saleUnit": "One soft pretzel",
+    "price": {
+      "value": 3,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 0.2,
+      "units": "lb",
+      "notes": "Adjusted total for one soft pretzel, including light wrapping or tying where applicable. Excludes reusable containers and water."
+    },
+    "icon": "icons/consumables/grains/bread-loaf-boule-rustic-brown.webp",
+    "category": "snacks",
+    "tags": [
+      "mundane",
+      "consumable",
+      "food",
+      "wheat",
+      "baked"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record portion eaten",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_IMPORTED_OLIVES",
+    "name": "Imported Olives",
+    "description": "A small portion of brined olives is drained from the inn's imported crock. Stones remain unless the kitchen has specifically removed them.\n\nSold as one 0.15 lb portion of olives. Weight includes light disposable wrapping or tying where needed; reusable bags, vessels and drinking water are separate. Partial use is tracked manually.",
+    "saleUnit": "One 0.15 lb portion of olives",
+    "price": {
+      "value": 1,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 0.15,
+      "units": "lb",
+      "notes": "Adjusted total for one 0.15 lb portion of olives, including light wrapping or tying where applicable. Excludes reusable containers and water."
+    },
+    "icon": "icons/consumables/food/bowl-stew-brown.webp",
+    "category": "snacks",
+    "tags": [
+      "mundane",
+      "consumable",
+      "food",
+      "olive",
+      "imported",
+      "pickled"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "special-order",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record portion eaten",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  }
+]

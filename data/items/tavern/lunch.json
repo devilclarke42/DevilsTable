@@ -1,0 +1,347 @@
+[
+  {
+    "id": "DT_ITEM_TAV_PLOUGHMAN_S_PLATE",
+    "name": "Ploughman's Plate",
+    "description": "Bread, a wedge of hard cheese, a pickle and half an onion arrive on one board. Each part keeps its own sharp flavour; there is no hot course included.\n\nSold as one individual lunch portion. Price and weight cover the named food only; plates, bowls and cutlery remain with the inn. Drinks and unlisted sides are separate. This meal grants no automatic healing or resting bonus.",
+    "saleUnit": "One individual lunch portion",
+    "price": {
+      "value": 1,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 0.9,
+      "units": "lb",
+      "notes": "Adjusted ready-to-eat food weight for one individual lunch portion, including bones or inedible scraps where described. Excludes the inn's serving ware and any drink."
+    },
+    "icon": "icons/consumables/food/bowl-stew-brown.webp",
+    "category": "lunch",
+    "tags": [
+      "mundane",
+      "consumable",
+      "food",
+      "bread",
+      "dairy",
+      "pickled"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record portion eaten",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_ONION_AND_CHEESE_PIE",
+    "name": "Onion and Cheese Pie",
+    "description": "A generous wedge of savoury pie holds soft onions beneath a browned cheese crust. The pastry is firm enough to lift but best eaten over a plate.\n\nSold as one individual lunch portion. Price and weight cover the named food only; plates, bowls and cutlery remain with the inn. Drinks and unlisted sides are separate. This meal grants no automatic healing or resting bonus.",
+    "saleUnit": "One individual lunch portion",
+    "price": {
+      "value": 1,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 0.75,
+      "units": "lb",
+      "notes": "Adjusted ready-to-eat food weight for one individual lunch portion, including bones or inedible scraps where described. Excludes the inn's serving ware and any drink."
+    },
+    "icon": "icons/consumables/grains/bread-loaf-boule-rustic-brown.webp",
+    "category": "lunch",
+    "tags": [
+      "mundane",
+      "consumable",
+      "food",
+      "pastry",
+      "dairy"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record portion eaten",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_PORK_HAND_PIE",
+    "name": "Pork Hand Pie",
+    "description": "A closed pastry encloses chopped pork and a little set gravy. Its crimped edge gives a worker something clean to hold during a short meal break.\n\nSold as one individual lunch portion. Price and weight cover the named food only; plates, bowls and cutlery remain with the inn. Drinks and unlisted sides are separate. This meal grants no automatic healing or resting bonus.",
+    "saleUnit": "One individual lunch portion",
+    "price": {
+      "value": 1,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 0.6,
+      "units": "lb",
+      "notes": "Adjusted ready-to-eat food weight for one individual lunch portion, including bones or inedible scraps where described. Excludes the inn's serving ware and any drink."
+    },
+    "icon": "icons/consumables/grains/bread-loaf-boule-rustic-brown.webp",
+    "category": "lunch",
+    "tags": [
+      "mundane",
+      "consumable",
+      "food",
+      "pastry",
+      "pork"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record portion eaten",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_MUSHROOM_HAND_PIE",
+    "name": "Mushroom Hand Pie",
+    "description": "A folded pastry holds mushrooms and onions cooked down until their juices thicken. It is a fresh pie, not a preserved trail ration.\n\nSold as one individual lunch portion. Price and weight cover the named food only; plates, bowls and cutlery remain with the inn. Drinks and unlisted sides are separate. This meal grants no automatic healing or resting bonus.",
+    "saleUnit": "One individual lunch portion",
+    "price": {
+      "value": 9,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 0.6,
+      "units": "lb",
+      "notes": "Adjusted ready-to-eat food weight for one individual lunch portion, including bones or inedible scraps where described. Excludes the inn's serving ware and any drink."
+    },
+    "icon": "icons/consumables/grains/bread-loaf-boule-rustic-brown.webp",
+    "category": "lunch",
+    "tags": [
+      "mundane",
+      "consumable",
+      "food",
+      "pastry",
+      "mushroom"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record portion eaten",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_LENTIL_AND_HERB_BOWL",
+    "name": "Lentil and Herb Bowl",
+    "description": "Lentils are simmered until tender, then dressed with onions and green herbs. A small slick of cooking oil keeps the serving from drying at the edges.\n\nSold as one individual lunch portion. Price and weight cover the named food only; plates, bowls and cutlery remain with the inn. Drinks and unlisted sides are separate. This meal grants no automatic healing or resting bonus.",
+    "saleUnit": "One individual lunch portion",
+    "price": {
+      "value": 7,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 0.85,
+      "units": "lb",
+      "notes": "Adjusted ready-to-eat food weight for one individual lunch portion, including bones or inedible scraps where described. Excludes the inn's serving ware and any drink."
+    },
+    "icon": "icons/consumables/food/bowl-stew-brown.webp",
+    "category": "lunch",
+    "tags": [
+      "mundane",
+      "consumable",
+      "food",
+      "lentil",
+      "herbal"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record portion eaten",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_SMOKED_FISH_PLATE",
+    "name": "Smoked Fish Plate",
+    "description": "Slices of smoked fish come with pickled onion and a little mustard. The sharp accompaniments are included; bread is a separate order.\n\nSold as one individual lunch portion. Price and weight cover the named food only; plates, bowls and cutlery remain with the inn. Drinks and unlisted sides are separate. This meal grants no automatic healing or resting bonus.",
+    "saleUnit": "One individual lunch portion",
+    "price": {
+      "value": 2,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 0.65,
+      "units": "lb",
+      "notes": "Adjusted ready-to-eat food weight for one individual lunch portion, including bones or inedible scraps where described. Excludes the inn's serving ware and any drink."
+    },
+    "icon": "icons/consumables/food/bowl-stew-brown.webp",
+    "category": "lunch",
+    "tags": [
+      "mundane",
+      "consumable",
+      "food",
+      "fish",
+      "pickled"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record portion eaten",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_COLD_HAM_AND_PICKLES",
+    "name": "Cold Ham and Pickles",
+    "description": "Thin slices of cooked ham are laid beside crisp pickled vegetables. This is a cold lunch plate cut from the kitchen's larger joint.\n\nSold as one individual lunch portion. Price and weight cover the named food only; plates, bowls and cutlery remain with the inn. Drinks and unlisted sides are separate. This meal grants no automatic healing or resting bonus.",
+    "saleUnit": "One individual lunch portion",
+    "price": {
+      "value": 2,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 0.65,
+      "units": "lb",
+      "notes": "Adjusted ready-to-eat food weight for one individual lunch portion, including bones or inedible scraps where described. Excludes the inn's serving ware and any drink."
+    },
+    "icon": "icons/consumables/food/bowl-stew-brown.webp",
+    "category": "lunch",
+    "tags": [
+      "mundane",
+      "consumable",
+      "food",
+      "pork",
+      "pickled"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record portion eaten",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_VEGETABLE_TURNOVER",
+    "name": "Vegetable Turnover",
+    "description": "A browned pastry folds around diced roots and cabbage. A vent in the crust lets steam escape without emptying the filling into the oven.\n\nSold as one individual lunch portion. Price and weight cover the named food only; plates, bowls and cutlery remain with the inn. Drinks and unlisted sides are separate. This meal grants no automatic healing or resting bonus.",
+    "saleUnit": "One individual lunch portion",
+    "price": {
+      "value": 8,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 0.6,
+      "units": "lb",
+      "notes": "Adjusted ready-to-eat food weight for one individual lunch portion, including bones or inedible scraps where described. Excludes the inn's serving ware and any drink."
+    },
+    "icon": "icons/consumables/grains/bread-loaf-boule-rustic-brown.webp",
+    "category": "lunch",
+    "tags": [
+      "mundane",
+      "consumable",
+      "food",
+      "pastry",
+      "vegetable"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record portion eaten",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  }
+]

@@ -1,0 +1,355 @@
+[
+  {
+    "id": "DT_ITEM_TAV_HOUSE_HONEY_MEAD",
+    "name": "House Honey Mead",
+    "description": "A straightforward honey mead with a warm golden colour and a soft floral finish. The innkeeper pours it from a covered earthenware jug.\n\nOne purchase supplies one half-pint of mead. The inn retains its serving vessel; takeaway requires your own suitable container. Alcohol effects are left to the GM.",
+    "saleUnit": "One half-pint of mead",
+    "price": {
+      "value": 1,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 0.5,
+      "units": "lb",
+      "notes": "Contents-only weight of one half-pint of mead, using the project liquid allowance of 1 lb per pint (small spirit measures rounded to 0.06 lb). The inn retains its vessel; carried containers weigh separately."
+    },
+    "icon": "icons/consumables/drinks/alcohol-beer-stein-wooden-brown.webp",
+    "category": "mead",
+    "tags": [
+      "mundane",
+      "consumable",
+      "drink",
+      "alcoholic",
+      "honey"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record drink consumed",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_DRY_MEADOW_MEAD",
+    "name": "Dry Meadow Mead",
+    "description": "Most of the honey's sweetness has fermented away, leaving a dry drink with a grassy scent. It is lighter on the tongue than its golden colour suggests.\n\nOne purchase supplies one half-pint of mead. The inn retains its serving vessel; takeaway requires your own suitable container. Alcohol effects are left to the GM.",
+    "saleUnit": "One half-pint of mead",
+    "price": {
+      "value": 1,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 0.5,
+      "units": "lb",
+      "notes": "Contents-only weight of one half-pint of mead, using the project liquid allowance of 1 lb per pint (small spirit measures rounded to 0.06 lb). The inn retains its vessel; carried containers weigh separately."
+    },
+    "icon": "icons/consumables/drinks/alcohol-beer-stein-wooden-brown.webp",
+    "category": "mead",
+    "tags": [
+      "mundane",
+      "consumable",
+      "drink",
+      "alcoholic",
+      "honey",
+      "dry"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record drink consumed",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_HEATHER_HONEY_MEAD",
+    "name": "Heather Honey Mead",
+    "description": "Heather honey gives this mead a dark amber shade and a faintly earthy edge. The honey source, rather than added perfume, supplies its character.\n\nOne purchase supplies one half-pint of mead. The inn retains its serving vessel; takeaway requires your own suitable container. Alcohol effects are left to the GM.",
+    "saleUnit": "One half-pint of mead",
+    "price": {
+      "value": 2,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 0.5,
+      "units": "lb",
+      "notes": "Contents-only weight of one half-pint of mead, using the project liquid allowance of 1 lb per pint (small spirit measures rounded to 0.06 lb). The inn retains its vessel; carried containers weigh separately."
+    },
+    "icon": "icons/consumables/drinks/alcohol-beer-stein-wooden-brown.webp",
+    "category": "mead",
+    "tags": [
+      "mundane",
+      "consumable",
+      "drink",
+      "alcoholic",
+      "honey",
+      "heather"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record drink consumed",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_APPLE_MEAD",
+    "name": "Apple Mead",
+    "description": "Apple juice fermented with honey gives this mead a sharp orchard finish. A slight cloudiness remains after the jug has stood overnight.\n\nOne purchase supplies one half-pint of mead. The inn retains its serving vessel; takeaway requires your own suitable container. Alcohol effects are left to the GM.",
+    "saleUnit": "One half-pint of mead",
+    "price": {
+      "value": 2,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 0.5,
+      "units": "lb",
+      "notes": "Contents-only weight of one half-pint of mead, using the project liquid allowance of 1 lb per pint (small spirit measures rounded to 0.06 lb). The inn retains its vessel; carried containers weigh separately."
+    },
+    "icon": "icons/consumables/drinks/alcohol-beer-stein-wooden-brown.webp",
+    "category": "mead",
+    "tags": [
+      "mundane",
+      "consumable",
+      "drink",
+      "alcoholic",
+      "honey",
+      "apple"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record drink consumed",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_BLACKBERRY_MEAD",
+    "name": "Blackberry Mead",
+    "description": "Blackberries stain this honey wine a deep purple and leave a tart edge beneath the sweetness. The kitchen offers it while the fruit batch lasts.\n\nOne purchase supplies one half-pint of mead. The inn retains its serving vessel; takeaway requires your own suitable container. Alcohol effects are left to the GM.",
+    "saleUnit": "One half-pint of mead",
+    "price": {
+      "value": 3,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 0.5,
+      "units": "lb",
+      "notes": "Contents-only weight of one half-pint of mead, using the project liquid allowance of 1 lb per pint (small spirit measures rounded to 0.06 lb). The inn retains its vessel; carried containers weigh separately."
+    },
+    "icon": "icons/consumables/drinks/alcohol-beer-stein-wooden-brown.webp",
+    "category": "mead",
+    "tags": [
+      "mundane",
+      "consumable",
+      "drink",
+      "alcoholic",
+      "honey",
+      "berry",
+      "seasonal"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record drink consumed",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_SPICED_WINTER_MEAD",
+    "name": "Spiced Winter Mead",
+    "description": "A sweet mead steeped with warming kitchen spices and served at cellar temperature. The spice blend varies with what the inn can obtain in winter.\n\nOne purchase supplies one half-pint of mead. The inn retains its serving vessel; takeaway requires your own suitable container. Alcohol effects are left to the GM.",
+    "saleUnit": "One half-pint of mead",
+    "price": {
+      "value": 3,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 0.5,
+      "units": "lb",
+      "notes": "Contents-only weight of one half-pint of mead, using the project liquid allowance of 1 lb per pint (small spirit measures rounded to 0.06 lb). The inn retains its vessel; carried containers weigh separately."
+    },
+    "icon": "icons/consumables/drinks/alcohol-beer-stein-wooden-brown.webp",
+    "category": "mead",
+    "tags": [
+      "mundane",
+      "consumable",
+      "drink",
+      "alcoholic",
+      "honey",
+      "spiced",
+      "seasonal"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record drink consumed",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_OAK_AGED_MEAD",
+    "name": "Oak-Aged Mead",
+    "description": "Time in a small oak cask has softened this strong mead and added a dry woody finish. It is kept apart from the open serving jugs.\n\nOne purchase supplies one half-pint of mead. The inn retains its serving vessel; takeaway requires your own suitable container. Alcohol effects are left to the GM.",
+    "saleUnit": "One half-pint of mead",
+    "price": {
+      "value": 5,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 0.5,
+      "units": "lb",
+      "notes": "Contents-only weight of one half-pint of mead, using the project liquid allowance of 1 lb per pint (small spirit measures rounded to 0.06 lb). The inn retains its vessel; carried containers weigh separately."
+    },
+    "icon": "icons/consumables/drinks/alcohol-beer-stein-wooden-brown.webp",
+    "category": "mead",
+    "tags": [
+      "mundane",
+      "consumable",
+      "drink",
+      "alcoholic",
+      "honey",
+      "aged"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "special-order",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record drink consumed",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_ROSE_PETAL_MEAD",
+    "name": "Rose Petal Mead",
+    "description": "A pale mead scented with edible rose petals, fragrant rather than heavily sweetened. The costly batch is poured sparingly from a stoppered jug.\n\nOne purchase supplies one half-pint of mead. The inn retains its serving vessel; takeaway requires your own suitable container. Alcohol effects are left to the GM.",
+    "saleUnit": "One half-pint of mead",
+    "price": {
+      "value": 4,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 0.5,
+      "units": "lb",
+      "notes": "Contents-only weight of one half-pint of mead, using the project liquid allowance of 1 lb per pint (small spirit measures rounded to 0.06 lb). The inn retains its vessel; carried containers weigh separately."
+    },
+    "icon": "icons/consumables/drinks/alcohol-beer-stein-wooden-brown.webp",
+    "category": "mead",
+    "tags": [
+      "mundane",
+      "consumable",
+      "drink",
+      "alcoholic",
+      "honey",
+      "floral"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "special-order",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record drink consumed",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  }
+]

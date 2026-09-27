@@ -222,5 +222,396 @@
       "Cloth Dye",
       "Silk Cloth"
     ]
+  },
+  {
+    "id": "ale",
+    "shop": "tavern",
+    "name": "Ale",
+    "description": "Locally brewed ales, from light table drinks to strong cellar pours.",
+    "plannedItems": [
+      "Small Ale",
+      "Brown Hearth Ale",
+      "Oat Ale",
+      "Heather Ale",
+      "Smoked Malt Ale",
+      "Harvest Ale",
+      "Strong Cellar Ale",
+      "Old Oak Ale"
+    ]
+  },
+  {
+    "id": "beer",
+    "shop": "tavern",
+    "name": "Beer",
+    "description": "Hopped and cool-fermented beers, separated from the ale menu for browsing.",
+    "plannedItems": [
+      "House Hopped Beer",
+      "Pale Bitter Beer",
+      "Dark Rye Beer",
+      "Cloudy Wheat Beer",
+      "Cool Cellar Beer",
+      "Red Malt Beer",
+      "Juniper Beer",
+      "Double Malt Beer"
+    ]
+  },
+  {
+    "id": "mead",
+    "shop": "tavern",
+    "name": "Mead",
+    "description": "Honey wines served by the half-pint; fruit and herb variants share the same unit.",
+    "plannedItems": [
+      "House Honey Mead",
+      "Dry Meadow Mead",
+      "Heather Honey Mead",
+      "Apple Mead",
+      "Blackberry Mead",
+      "Spiced Winter Mead",
+      "Oak-Aged Mead",
+      "Rose Petal Mead"
+    ]
+  },
+  {
+    "id": "wine",
+    "shop": "tavern",
+    "name": "Wine",
+    "description": "Table wines and scarce cellar wines by the quarter-pint.",
+    "plannedItems": [
+      "House Red Wine",
+      "House White Wine",
+      "Rosy Table Wine",
+      "Sweet Red Wine",
+      "Orchard Pear Wine",
+      "Blackcurrant Wine",
+      "Mulled Red Wine",
+      "Reserve Vineyard Wine"
+    ]
+  },
+  {
+    "id": "spirits",
+    "shop": "tavern",
+    "name": "Spirits",
+    "description": "Distilled drinks sold by a one-fluid-ounce measure, not a bottle.",
+    "plannedItems": [
+      "Grain Spirit",
+      "Apple Brandy",
+      "Pear Brandy",
+      "Plum Spirit",
+      "Juniper Spirit",
+      "Dark Cane Spirit",
+      "Spiced Honey Liqueur",
+      "Cask-Aged Grain Spirit"
+    ]
+  },
+  {
+    "id": "non-alcoholic-drinks",
+    "shop": "tavern",
+    "name": "Non-alcoholic Drinks",
+    "description": "Water, milk and unfermented fruit drinks for the table.",
+    "plannedItems": [
+      "Drinking Water",
+      "Barley Water",
+      "Fresh Cow Milk",
+      "Fresh Goat Milk",
+      "Pressed Apple Juice",
+      "Pear Juice",
+      "Honey Lemon Water",
+      "Blackberry Shrub Drink"
+    ]
+  },
+  {
+    "id": "hot-drinks",
+    "shop": "tavern",
+    "name": "Hot Drinks",
+    "description": "Small cups of prepared tea, infusions, coffee and warm milk.",
+    "plannedItems": [
+      "Mint Infusion",
+      "Chamomile Infusion",
+      "Roasted Barley Drink",
+      "Spiced Warm Milk",
+      "Black Leaf Tea",
+      "Green Leaf Tea",
+      "Strong Black Coffee",
+      "Spiced Cocoa"
+    ]
+  },
+  {
+    "id": "breakfast",
+    "shop": "tavern",
+    "name": "Breakfast",
+    "description": "Single morning meals, with accompaniments included only where named.",
+    "plannedItems": [
+      "Oat Porridge",
+      "Honey Milk Porridge",
+      "Fried Eggs on Toast",
+      "Bacon and Eggs",
+      "Mushroom Breakfast Toast",
+      "Cheese and Onion Omelette",
+      "Kipper Breakfast",
+      "Breakfast Sausage Plate"
+    ]
+  },
+  {
+    "id": "lunch",
+    "shop": "tavern",
+    "name": "Lunch",
+    "description": "Quick plates, pies and savoury bakes for the midday table.",
+    "plannedItems": [
+      "Ploughman's Plate",
+      "Onion and Cheese Pie",
+      "Pork Hand Pie",
+      "Mushroom Hand Pie",
+      "Lentil and Herb Bowl",
+      "Smoked Fish Plate",
+      "Cold Ham and Pickles",
+      "Vegetable Turnover"
+    ]
+  },
+  {
+    "id": "dinner",
+    "shop": "tavern",
+    "name": "Dinner",
+    "description": "Complete individual supper plates distinct from the roast and stew pots.",
+    "plannedItems": [
+      "Sausage and Mash",
+      "Braised Beef Supper",
+      "Pan-Fried Trout Supper",
+      "Chicken and Leek Supper",
+      "Stuffed Cabbage Supper",
+      "Baked Bean Supper",
+      "Mutton and Turnip Supper",
+      "Eel and Onion Supper"
+    ]
+  },
+  {
+    "id": "stews",
+    "shop": "tavern",
+    "name": "Stews",
+    "description": "Bowl portions from the inn kitchen; bowls are serving ware, not included goods.",
+    "plannedItems": [
+      "Vegetable Pottage",
+      "Beef and Barley Stew",
+      "Mutton and Leek Stew",
+      "Chicken and Bean Stew",
+      "Lentil and Carrot Stew",
+      "Pea and Ham Stew",
+      "Fish Chowder",
+      "Venison Juniper Stew"
+    ]
+  },
+  {
+    "id": "roasts",
+    "shop": "tavern",
+    "name": "Roasts",
+    "description": "Carved roast portions with their stated garnish, not whole animals.",
+    "plannedItems": [
+      "Roast Chicken Portion",
+      "Roast Pork with Apples",
+      "Roast Beef with Onions",
+      "Roast Mutton with Herbs",
+      "Roast Duck Portion",
+      "Roast Goose Portion",
+      "Roast Rabbit Portion",
+      "Roast Root Platter"
+    ]
+  },
+  {
+    "id": "bread",
+    "shop": "tavern",
+    "name": "Bread",
+    "description": "Loaves and counted bakes, with portions distinct from complete meals.",
+    "plannedItems": [
+      "Rye Bread",
+      "Barley Bread",
+      "White Wheat Loaf",
+      "Oatcakes",
+      "Caraway Rolls",
+      "Onion Flatbread",
+      "Seeded Brown Loaf",
+      "Honey Hearth Buns"
+    ]
+  },
+  {
+    "id": "cheese",
+    "shop": "tavern",
+    "name": "Cheese",
+    "description": "Quarter-pound portions, including simple fresh cheeses and rarer aged stock.",
+    "plannedItems": [
+      "Farmhouse Cheese",
+      "Fresh Goat Cheese",
+      "Aged Hard Cheese",
+      "Smoked Cheese",
+      "Herbed Curd Cheese",
+      "Blue-Veined Cheese",
+      "Soft Rind Cheese",
+      "Imported Sheep Cheese"
+    ]
+  },
+  {
+    "id": "desserts",
+    "shop": "tavern",
+    "name": "Desserts",
+    "description": "Individual sweet courses; no bonus effects or disguised magical food.",
+    "plannedItems": [
+      "Baked Apple",
+      "Honey Custard",
+      "Apple Pie Slice",
+      "Berry Tart",
+      "Bread Pudding",
+      "Poached Pear",
+      "Spice Cake Slice",
+      "Cream and Preserves"
+    ]
+  },
+  {
+    "id": "snacks",
+    "shop": "tavern",
+    "name": "Snacks",
+    "description": "Small accompaniments and table nibbles with explicit counts or weights.",
+    "plannedItems": [
+      "Salted Nuts",
+      "Pickled Eggs",
+      "Pickled Onions",
+      "Dried Apple Rings",
+      "Roasted Chickpeas",
+      "Pork Cracklings",
+      "Soft Pretzel",
+      "Imported Olives"
+    ]
+  },
+  {
+    "id": "travel-meals",
+    "shop": "tavern",
+    "name": "Travel Meals",
+    "description": "Packed individual meals and provisions; water and reusable vessels remain separate.",
+    "plannedItems": [
+      "Bread and Cheese Bundle",
+      "Cured Sausage Lunch",
+      "Dried Fish and Oatcake Meal",
+      "Nut and Fruit Meal",
+      "Lentil Travel Cakes",
+      "Smoked Meat and Rye Meal",
+      "Hard Biscuit Provisions",
+      "Dried Vegetable Soup Mix"
+    ]
+  },
+  {
+    "id": "luxury-meals",
+    "shop": "tavern",
+    "name": "Luxury Meals",
+    "description": "Single fine-dining portions requiring uncommon ingredients or extra kitchen work.",
+    "plannedItems": [
+      "Saffron Chicken Pilaf",
+      "Peppered Venison Plate",
+      "Duck with Cherry Sauce",
+      "Truffled Mushroom Pie",
+      "Butter-Poached Shellfish",
+      "Spiced Quail Supper",
+      "Stuffed Artichoke Plate",
+      "Celebration Supper"
+    ]
+  },
+  {
+    "id": "animal-feed",
+    "shop": "tavern",
+    "name": "Animal Feed",
+    "description": "Stable provisions and treats; the shared Horse Feed remains the canonical daily ration.",
+    "plannedItems": [
+      "Loose Oats",
+      "Hay Bundle",
+      "Bran Mash",
+      "Feed Carrots",
+      "Poultry Grain",
+      "Hound Biscuit Bundle",
+      "Dried Apple Horse Treats",
+      "Chopped Fodder"
+    ]
+  },
+  {
+    "id": "animal",
+    "shop": "tavern",
+    "name": "Animal Supplies",
+    "description": "Feed, grooming supplies and routine tack maintenance.",
+    "plannedItems": [
+      "Horse Feed"
+    ]
+  },
+  {
+    "id": "camping",
+    "shop": "tavern",
+    "name": "Camping",
+    "description": "Shelter, bedding and reusable camp kitchen equipment.",
+    "plannedItems": [
+      "Blanket",
+      "Cooking Pot",
+      "Camp Kettle",
+      "Cup",
+      "Bowl",
+      "Spoon",
+      "Wooden Plate"
+    ]
+  },
+  {
+    "id": "containers",
+    "shop": "tavern",
+    "name": "Containers",
+    "description": "Bags, boxes and vessels sold empty, with explicit carrying capacities.",
+    "plannedItems": [
+      "Barrel",
+      "Basket",
+      "Bottle",
+      "Flask",
+      "Clay Jug",
+      "Ceramic Jar"
+    ]
+  },
+  {
+    "id": "fire-lighting",
+    "shop": "tavern",
+    "name": "Lighting & Fire",
+    "description": "Portable lights, fuel and everyday fire-making supplies.",
+    "plannedItems": [
+      "Torch",
+      "Candle",
+      "Beeswax Candle",
+      "Tallow Candle",
+      "Lantern",
+      "Lamp",
+      "Lamp Oil",
+      "Tinderbox",
+      "Charcoal"
+    ]
+  },
+  {
+    "id": "household",
+    "shop": "tavern",
+    "name": "Household",
+    "description": "Cleaning, sewing and other ordinary household needs.",
+    "plannedItems": [
+      "Soap",
+      "Broom",
+      "Mop",
+      "Wash Bucket",
+      "Wash Board",
+      "Clothes Line"
+    ]
+  },
+  {
+    "id": "rope-climbing",
+    "shop": "tavern",
+    "name": "Rope & Climbing",
+    "description": "Cordage, anchors and equipment for secured climbing.",
+    "plannedItems": [
+      "Twine"
+    ]
+  },
+  {
+    "id": "travel",
+    "shop": "tavern",
+    "name": "Travel",
+    "description": "Navigation aids, signalling tools and practical travelling accessories.",
+    "plannedItems": [
+      "Bell"
+    ]
   }
 ]

@@ -26,7 +26,7 @@ test("all 69 accepted source records survive unchanged except explicit Container
     assert.equal(createHash("sha256").update(JSON.stringify(item)).digest("hex"), sha256, id);
   }
   for (const [shop, count] of [["tavern", 31], ["alchemist", 6], ["blacksmith", 7], ["black-market", 4]]) {
-    assert.equal(data.entries.filter(({ item }) => item.shops.includes(shop)).length, count);
+    assert.equal(data.entries.filter(({ item }) => item.id.startsWith("DT_ITEM_GS_") && item.shops.includes(shop)).length, count);
   }
 });
 
@@ -41,7 +41,8 @@ test("alpha.6 Item upgrade creates 75, adds 13 sale-unit flags and preserves 56 
   existing[0].folder = "personalFolder";
   existing[0].flags.other = { keep: true };
   const { adapter, state } = fakeAdapter({ existing });
-  const build = createBuilder({ load: () => data, adapter });
+  const rebuild = createBuilder({ load: () => data, adapter });
+  const build = (options = {}) => rebuild({ shopId: "general-store", ...options });
   const preview = await build();
   assert.deepEqual([preview.create, preview.update, preview.unchanged], [75, 13, 56]);
   assert.deepEqual(state.writes, []);
@@ -194,7 +195,7 @@ test("alpha.6 table upgrade retains all 20 identities and converges to 32 active
   const { adapter, state } = fakeAdapter({ existing });
   const build = createStockTableBuilder({ load: () => data, adapter });
   const preview = await build();
-  assert.deepEqual([preview.create, preview.update, preview.unchanged], [12, 3, 17]);
+  assert.deepEqual([preview.create, preview.update, preview.unchanged], [12, 7, 13]);
   assert.deepEqual(state.writes, []);
   await build({ dryRun: false });
   assert.ok(existing.every(old => state.docs.some(doc => doc._id === old._id)));

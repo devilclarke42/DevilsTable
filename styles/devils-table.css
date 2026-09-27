@@ -42,3 +42,11 @@
 .devils-table [data-panel][hidden] { display: none; }
 
 .devils-table .dt-item-actions { display: grid; gap: 0.35rem; align-content: start; }
+
+/* Compact identity header; context can accommodate future badges without resizing stock. */
+.devils-table .dt-merchant-header { display: flex; align-items: center; gap: 0.85rem; margin-bottom: 0.65rem; }
+.devils-table .dt-merchant-portrait { flex: 0 0 72px; width: 72px; height: 72px; object-fit: cover; object-position: center top; border-radius: 0.4rem; }
+.devils-table .dt-merchant-identity { flex: 1; min-width: 0; }
+.devils-table .dt-merchant-identity h2 { margin: 0 0 0.3rem; overflow-wrap: anywhere; }
+.devils-table .dt-merchant-context { display: flex; flex-wrap: wrap; align-items: center; gap: 0.4rem 0.8rem; }
+.devils-table .dt-merchant-context p { margin: 0; }

@@ -12,7 +12,7 @@ const findItem = (data, name) => data.entries.find(({ item }) => item.name === n
 
 test("new purchase units preserve whole-bundle prices and adjusted weights", async () => {
   const data = await production();
-  const added = data.entries.filter(({ item }) => item.category !== "containers");
+  const added = data.entries.filter(({ item }) => item.shops.includes("general-store") && item.category !== "containers");
   assert.equal(added.length, 131);
   for (const { item } of added) {
     assert.ok(item.saleUnit?.trim());
@@ -32,7 +32,7 @@ test("new purchase units preserve whole-bundle prices and adjusted weights", asy
 
 test("fuel and food consume exactly one owning sale unit without a stale actor reference", async () => {
   const data = await production();
-  const items = data.entries.filter(({ item }) => item.mechanics.use?.mode === "consume");
+  const items = data.entries.filter(({ item }) => item.shops.includes("general-store") && item.mechanics.use?.mode === "consume");
   assert.equal(items.length, 11);
   for (const { item } of items) {
     const doc = catalogueEntryToItem(item);
@@ -126,7 +126,7 @@ test("a current Containers build gains 131 items and retains its 13 documents", 
   assert.equal(result.written, 131);
   assert.equal(state.docs.length, 144);
   assert.deepEqual(state.docs.slice(0, 13), existing);
-  assert.equal((await build({ dryRun: false })).unchanged, 144);
+  assert.equal((await build({ dryRun: false, shopId: "general-store" })).unchanged, 144);
   assert.deepEqual(state.writes, [{ action: "create", count: 100 }, { action: "create", count: 31 }]);
 });
 
@@ -135,7 +135,7 @@ test("sequential category builds preserve earlier categories and shared-shop ide
   const { adapter, state } = fakeAdapter({ hasPack: false });
   const build = createBuilder({ load: () => data, adapter });
   let count = 0;
-  for (const category of data.categoryDefinitions) {
+  for (const category of data.categoryDefinitions.filter(category => category.shop === "general-store")) {
     const result = await build({ dryRun: false, shopId: "general-store", categoryId: category.id });
     assert.equal(result.create, category.plannedItems.length);
     assert.equal(result.preserved, count);

@@ -1,6 +1,6 @@
 # Complete repository file map
 
-This inventory covers the framework, 144-item General Store, stock RollTable workflow and official
+This inventory covers the framework, 144-item General Store, 152-item Tavern expansion, stock RollTable workflow and official
 development standards.
 Existing modules were extended in place, with separate table conversion, persistence and UI helpers.
 Generated compendiums and ZIPs are not included in this inventory.
@@ -23,7 +23,7 @@ Generated compendiums and ZIPs are not included in this inventory.
 | --- | --- |
 | `data/catalogue.json` | Versioned registry of source files, five shop tags, categories, rules baseline and weight policy. |
 | `data/shops.json` | Five shop definitions with required builder-only Merchant Notes in three stock tiers. |
-| `data/categories.json` | Ten curated General Store categories, descriptions and planned item names. |
+| `data/categories.json` | General Store and Tavern category definitions, descriptions and authored item names. |
 | `data/items/general-store/containers.json` | The 13 authored Containers records: identities, text, economics, empty weights, capacities, icons and metadata. |
 | `data/items/general-store/fire-lighting.json` | 17 lights, fuels and fire-making goods with explicit burn/use conventions. |
 | `data/items/general-store/rope-climbing.json` | Ten ropes, anchors and climbing supplies with explicit lengths and bundle sizes. |
@@ -34,7 +34,7 @@ Generated compendiums and ZIPs are not included in this inventory.
 | `data/items/general-store/travel.json` | 13 walking, navigation and signalling items, including the specialist compass and spyglass. |
 | `data/items/general-store/tools.json` | 16 ordinary hand tools, measuring aids and workshop supplies; no invented tool proficiency or weapon conversion. |
 | `data/items/general-store/trade-goods.json` | Eleven measured raw materials with explicit lengths, areas, mass and packaging conventions. |
-| `data/id-ledger.json` | Append-only reservations for permanent catalogue IDs, including retired IDs; now reserves all 144 General Store IDs. |
+| `data/id-ledger.json` | Append-only reservations for permanent catalogue IDs, including retired IDs; reserves 144 General Store and 152 Tavern IDs. |
 | `data/stock.json` | Canonical chances, five base shops plus three General Store variants, private variant notes, exclusions, draws and inherited tier overrides. |
 | `data/table-id-ledger.json` | Append-only reservations for 132 permanent stock table IDs (32 active, 100 retired), independent of the Item ledger. |
 | `data/stock-quantities.json` | Weighted percentile quantity profiles and the complete effective-tier/price-band matrix, measured in sale units. |
@@ -178,3 +178,21 @@ Generated `dist/` ZIPs are disposable developer output. `world.devils-table-item
 `world.devils-table-stock-tables` are generated inside each Foundry world. None is a canonical
 source. Empty scratch directories have
 no repository identity and are not committed or included in the runtime package.
+
+## Sprint 8 additions
+
+- `data/items/tavern/ale.json`, `beer.json`, `mead.json`, `wine.json`, `spirits.json`,
+  `non-alcoholic-drinks.json`, `hot-drinks.json`: eight original drink products per file, with
+  precise serving volumes and contents-only weights.
+- `data/items/tavern/breakfast.json`, `lunch.json`, `dinner.json`, `stews.json`, `roasts.json`:
+  eight individual plates or bowl/carved portions per file.
+- `data/items/tavern/bread.json`, `cheese.json`, `desserts.json`, `snacks.json`: eight bakes,
+  measured dairy portions, sweet courses or snack servings per file.
+- `data/items/tavern/travel-meals.json`, `luxury-meals.json`, `animal-feed.json`: eight packed
+  provisions, fine meals or stable supplements per file; existing shared goods are not copied.
+- `scripts/merchant/presentation.js`: public portrait/status projection, subscriptions and the
+  GM's native Actor-update hook; service and Shop UI integrate it without reading private Actors.
+- `tests/merchant-presentation.test.js`: projection privacy, token-name precedence, live updates
+  and listener cleanup. `tests/merchant-transport.test.js` also checks the GM/player boundary.
+- `tests/tavern.test.js`: category coverage, consumption, Item/table upgrades and stock filters.
+- `docs/TAVERN_REVIEW.md`: full 152-product review, decisions and live acceptance checklist.

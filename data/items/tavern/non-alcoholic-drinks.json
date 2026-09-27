@@ -1,0 +1,344 @@
+[
+  {
+    "id": "DT_ITEM_TAV_DRINKING_WATER",
+    "name": "Drinking Water",
+    "description": "A pint of the inn's drinking water, brought to the table in a clean serving vessel. The price covers service; no container is sold with it.\n\nOne purchase supplies one pint of prepared drink. The inn retains its serving vessel; takeaway requires your own suitable container. This drink grants no automatic healing or other bonus.",
+    "saleUnit": "One pint of prepared drink",
+    "price": {
+      "value": 1,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 1.0,
+      "units": "lb",
+      "notes": "Contents-only weight of one pint of prepared drink, using the project liquid allowance of 1 lb per pint (small spirit measures rounded to 0.06 lb). The inn retains its vessel; carried containers weigh separately."
+    },
+    "icon": "icons/consumables/drinks/tea-jug-gourd-brown.webp",
+    "category": "non-alcoholic-drinks",
+    "tags": [
+      "mundane",
+      "consumable",
+      "drink",
+      "water"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "core",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record drink consumed",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_BARLEY_WATER",
+    "name": "Barley Water",
+    "description": "Water simmered with barley, strained and allowed to cool. Its faint grain flavour offers a plain alternative to beer without deliberate fermentation.\n\nOne purchase supplies one pint of prepared drink. The inn retains its serving vessel; takeaway requires your own suitable container. This drink grants no automatic healing or other bonus.",
+    "saleUnit": "One pint of prepared drink",
+    "price": {
+      "value": 2,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 1.0,
+      "units": "lb",
+      "notes": "Contents-only weight of one pint of prepared drink, using the project liquid allowance of 1 lb per pint (small spirit measures rounded to 0.06 lb). The inn retains its vessel; carried containers weigh separately."
+    },
+    "icon": "icons/consumables/drinks/tea-jug-gourd-brown.webp",
+    "category": "non-alcoholic-drinks",
+    "tags": [
+      "mundane",
+      "consumable",
+      "drink",
+      "barley"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record drink consumed",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_FRESH_COW_MILK",
+    "name": "Fresh Cow Milk",
+    "description": "Fresh milk kept in the pantry's coolest corner and poured to order. A thin cream line may form if the jug has stood undisturbed.\n\nOne purchase supplies one pint of prepared drink. The inn retains its serving vessel; takeaway requires your own suitable container. This drink grants no automatic healing or other bonus.",
+    "saleUnit": "One pint of prepared drink",
+    "price": {
+      "value": 3,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 1.0,
+      "units": "lb",
+      "notes": "Contents-only weight of one pint of prepared drink, using the project liquid allowance of 1 lb per pint (small spirit measures rounded to 0.06 lb). The inn retains its vessel; carried containers weigh separately."
+    },
+    "icon": "icons/commodities/materials/bowl-liquid-white.webp",
+    "category": "non-alcoholic-drinks",
+    "tags": [
+      "mundane",
+      "consumable",
+      "drink",
+      "dairy",
+      "fresh"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record drink consumed",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_FRESH_GOAT_MILK",
+    "name": "Fresh Goat Milk",
+    "description": "A pint of goat milk with a fuller, slightly grassy taste than the cow-milk jug. It is fresh stock intended for prompt drinking.\n\nOne purchase supplies one pint of prepared drink. The inn retains its serving vessel; takeaway requires your own suitable container. This drink grants no automatic healing or other bonus.",
+    "saleUnit": "One pint of prepared drink",
+    "price": {
+      "value": 4,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 1.0,
+      "units": "lb",
+      "notes": "Contents-only weight of one pint of prepared drink, using the project liquid allowance of 1 lb per pint (small spirit measures rounded to 0.06 lb). The inn retains its vessel; carried containers weigh separately."
+    },
+    "icon": "icons/commodities/materials/bowl-liquid-white.webp",
+    "category": "non-alcoholic-drinks",
+    "tags": [
+      "mundane",
+      "consumable",
+      "drink",
+      "dairy",
+      "fresh"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record drink consumed",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_PRESSED_APPLE_JUICE",
+    "name": "Pressed Apple Juice",
+    "description": "Unfermented apple juice with a little fine pulp at the bottom. Its sweetness and sharpness depend on the orchard's current pressing.\n\nOne purchase supplies one pint of prepared drink. The inn retains its serving vessel; takeaway requires your own suitable container. This drink grants no automatic healing or other bonus.",
+    "saleUnit": "One pint of prepared drink",
+    "price": {
+      "value": 4,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 1.0,
+      "units": "lb",
+      "notes": "Contents-only weight of one pint of prepared drink, using the project liquid allowance of 1 lb per pint (small spirit measures rounded to 0.06 lb). The inn retains its vessel; carried containers weigh separately."
+    },
+    "icon": "icons/consumables/drinks/tea-jug-gourd-brown.webp",
+    "category": "non-alcoholic-drinks",
+    "tags": [
+      "mundane",
+      "consumable",
+      "drink",
+      "apple",
+      "seasonal"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record drink consumed",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_PEAR_JUICE",
+    "name": "Pear Juice",
+    "description": "Cloudy pressed pear juice, soft and sweet without added spirits. The kitchen makes small batches rather than leaving it beside the ale casks.\n\nOne purchase supplies one pint of prepared drink. The inn retains its serving vessel; takeaway requires your own suitable container. This drink grants no automatic healing or other bonus.",
+    "saleUnit": "One pint of prepared drink",
+    "price": {
+      "value": 5,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 1.0,
+      "units": "lb",
+      "notes": "Contents-only weight of one pint of prepared drink, using the project liquid allowance of 1 lb per pint (small spirit measures rounded to 0.06 lb). The inn retains its vessel; carried containers weigh separately."
+    },
+    "icon": "icons/consumables/drinks/tea-jug-gourd-brown.webp",
+    "category": "non-alcoholic-drinks",
+    "tags": [
+      "mundane",
+      "consumable",
+      "drink",
+      "pear",
+      "seasonal"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record drink consumed",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_HONEY_LEMON_WATER",
+    "name": "Honey Lemon Water",
+    "description": "Cool water stirred with honey and a squeeze of lemon. A piece of peel floats on top when citrus is available from the market.\n\nOne purchase supplies one pint of prepared drink. The inn retains its serving vessel; takeaway requires your own suitable container. This drink grants no automatic healing or other bonus.",
+    "saleUnit": "One pint of prepared drink",
+    "price": {
+      "value": 6,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 1.0,
+      "units": "lb",
+      "notes": "Contents-only weight of one pint of prepared drink, using the project liquid allowance of 1 lb per pint (small spirit measures rounded to 0.06 lb). The inn retains its vessel; carried containers weigh separately."
+    },
+    "icon": "icons/consumables/drinks/tea-jug-gourd-brown.webp",
+    "category": "non-alcoholic-drinks",
+    "tags": [
+      "mundane",
+      "consumable",
+      "drink",
+      "honey",
+      "citrus"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record drink consumed",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_BLACKBERRY_SHRUB_DRINK",
+    "name": "Blackberry Shrub Drink",
+    "description": "A berry-and-vinegar syrup diluted with water into a sweet, tart drink. The vinegar gives it bite; no ale, wine or spirit is added.\n\nOne purchase supplies one pint of prepared drink. The inn retains its serving vessel; takeaway requires your own suitable container. This drink grants no automatic healing or other bonus.",
+    "saleUnit": "One pint of prepared drink",
+    "price": {
+      "value": 6,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 1.0,
+      "units": "lb",
+      "notes": "Contents-only weight of one pint of prepared drink, using the project liquid allowance of 1 lb per pint (small spirit measures rounded to 0.06 lb). The inn retains its vessel; carried containers weigh separately."
+    },
+    "icon": "icons/consumables/drinks/tea-jug-gourd-brown.webp",
+    "category": "non-alcoholic-drinks",
+    "tags": [
+      "mundane",
+      "consumable",
+      "drink",
+      "berry",
+      "tart"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record drink consumed",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  }
+]

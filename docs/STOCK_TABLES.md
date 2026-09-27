@@ -11,7 +11,7 @@ Category selection filters these shared tables when rolling stock. It does not g
 
 | Shop | Authored goods | Always / Often / Rarely | Active tables | Whole-shop / category draws |
 | --- | ---: | --- | ---: | --- |
-| Tavern | 31 | 25 / 6 / 0 | 4 | 10 / 3 |
+| Tavern | 183 | 8 / 153 / 22 | 4 | 16 / 3 |
 | Village General Store | 144 | 82 / 54 / 8 | 4 | 8 / 3 |
 | Town General Store | 144 | 87 / 49 / 8 | 4 | 14 / 4 |
 | City General Store | 144 | 90 / 53 / 1 | 4 | 22 / 6 |
@@ -21,13 +21,13 @@ Category selection filters these shared tables when rolling stock. It does not g
 | Black Market | 4 | 0 / 2 / 2 | 4 | 6 / 2 |
 
 Goods are shared references, not copies; the same item can appear in several shops. General Store
-covers the complete agreed list. Other shops are explicitly **partial**, containing only their
-already-authored shared goods. No meals, potions, weapons or other future catalogue entries are
-invented to fill a table. Empty tiers remain available for future reviewed source content.
+and Tavern cover their authored catalogues. Alchemist, Blacksmith and Black Market remain
+explicitly **partial**, containing their shared goods only. No unimplemented potions or weapons
+are invented to fill tables.
 
 | Shop | Categories |
 | --- | --- |
-| Tavern | Containers; Lighting & Fire; Rope & Climbing; Camping; Household; Animal Supplies; Travel |
+| Tavern | Nineteen menu categories from Ale to Animal Feed, plus seven shared-supply categories; see [Tavern review](TAVERN_REVIEW.md) |
 | General Store | All ten categories, including Tools and Trade Goods |
 | Alchemist | Containers; Lighting & Fire; Writing |
 | Blacksmith | Containers; Lighting & Fire; Rope & Climbing; Animal Supplies |
@@ -55,12 +55,12 @@ their explicit overrides/exclusions; quantity profiles use the resulting effecti
 
 ## Build and roll
 
-1. Build/rebuild all 144 Items using the existing Compendium Builder. An alpha.4–alpha.6 pack
-   previews 75 creates, 13 Container sale-unit updates and 56 unchanged. Existing UUIDs, prices
-   and weights remain intact; a repeat build reports 144 unchanged.
+1. Build/rebuild all 296 Items. Against a complete alpha.25 pack, preview 152 creates and
+   144 unchanged, with zero updates. Repeat: 296 unchanged. General Store-only builds still
+   contain 144; Tavern selection contains 183 with shared IDs, never duplicates.
 2. Open the separate RollTable Builder. Select **All shops → All categories**.
 3. **Validate / Preview Tables** should show 32 creates on a new pack, with partial-catalogue
-   notices for the four unfinished shops. Preview performs no writes. Each merchant profile uses four tables.
+   notices for the three unfinished shops. Against alpha.25, expect four Tavern updates and 28 unchanged. Preview performs no writes. Each merchant profile uses four tables.
 4. **Build / Rebuild Tables** creates the separate Stock RollTables compendium. Repeating the
    same build should show 32 unchanged. A missing referenced Item blocks preflight with its ID.
 5. Select one shop and merchant profile, and optionally one category, then click **Roll Stock & Quantities**. The report

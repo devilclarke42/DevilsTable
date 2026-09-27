@@ -1,0 +1,346 @@
+[
+  {
+    "id": "DT_ITEM_TAV_RYE_BREAD",
+    "name": "Rye Bread",
+    "description": "A dense rye loaf with a dark crust and a close, slightly sour crumb. It cuts into sturdy slices that hold up beneath cheese or a ladle of gravy.\n\nSold as one 1 lb rye loaf. Weight includes light disposable wrapping or tying where needed; reusable bags, vessels and drinking water are separate. Partial use is tracked manually.",
+    "saleUnit": "One 1 lb rye loaf",
+    "price": {
+      "value": 4,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 1.0,
+      "units": "lb",
+      "notes": "Adjusted total for one 1 lb rye loaf, including light wrapping or tying where applicable. Excludes reusable containers and water."
+    },
+    "icon": "icons/consumables/grains/bread-loaf-boule-rustic-brown.webp",
+    "category": "bread",
+    "tags": [
+      "mundane",
+      "consumable",
+      "food",
+      "rye",
+      "baked"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "core",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record portion eaten",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_BARLEY_BREAD",
+    "name": "Barley Bread",
+    "description": "A coarse barley loaf, flatter and more crumbly than fine wheat bread. Its toasted crust gives way to a soft centre when freshly baked.\n\nSold as one 1 lb barley loaf. Weight includes light disposable wrapping or tying where needed; reusable bags, vessels and drinking water are separate. Partial use is tracked manually.",
+    "saleUnit": "One 1 lb barley loaf",
+    "price": {
+      "value": 3,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 1.0,
+      "units": "lb",
+      "notes": "Adjusted total for one 1 lb barley loaf, including light wrapping or tying where applicable. Excludes reusable containers and water."
+    },
+    "icon": "icons/consumables/grains/bread-loaf-boule-rustic-brown.webp",
+    "category": "bread",
+    "tags": [
+      "mundane",
+      "consumable",
+      "food",
+      "barley",
+      "baked"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record portion eaten",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_WHITE_WHEAT_LOAF",
+    "name": "White Wheat Loaf",
+    "description": "A pale wheat loaf made from more finely sifted flour. The crisp outer crust breaks into a light crumb suited to the inn's better table service.\n\nSold as one 1 lb wheat loaf. Weight includes light disposable wrapping or tying where needed; reusable bags, vessels and drinking water are separate. Partial use is tracked manually.",
+    "saleUnit": "One 1 lb wheat loaf",
+    "price": {
+      "value": 8,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 1.0,
+      "units": "lb",
+      "notes": "Adjusted total for one 1 lb wheat loaf, including light wrapping or tying where applicable. Excludes reusable containers and water."
+    },
+    "icon": "icons/consumables/grains/bread-loaf-boule-rustic-brown.webp",
+    "category": "bread",
+    "tags": [
+      "mundane",
+      "consumable",
+      "food",
+      "wheat",
+      "baked"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record portion eaten",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_OATCAKES",
+    "name": "Oatcakes",
+    "description": "Four thin oatcakes are baked dry enough to snap at the edges. They are a bread accompaniment or snack, not a complete day's ration.\n\nSold as four oatcakes. Weight includes light disposable wrapping or tying where needed; reusable bags, vessels and drinking water are separate. Partial use is tracked manually.",
+    "saleUnit": "Four oatcakes",
+    "price": {
+      "value": 3,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 0.25,
+      "units": "lb",
+      "notes": "Adjusted total for four oatcakes, including light wrapping or tying where applicable. Excludes reusable containers and water."
+    },
+    "icon": "icons/consumables/grains/bread-loaf-boule-rustic-brown.webp",
+    "category": "bread",
+    "tags": [
+      "mundane",
+      "consumable",
+      "food",
+      "oats",
+      "baked"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record portion eaten",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_CARAWAY_ROLLS",
+    "name": "Caraway Rolls",
+    "description": "Two small wheat rolls carry caraway seeds through the dough. Their split tops are browned while the centres remain soft.\n\nSold as two caraway rolls. Weight includes light disposable wrapping or tying where needed; reusable bags, vessels and drinking water are separate. Partial use is tracked manually.",
+    "saleUnit": "Two caraway rolls",
+    "price": {
+      "value": 5,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 0.4,
+      "units": "lb",
+      "notes": "Adjusted total for two caraway rolls, including light wrapping or tying where applicable. Excludes reusable containers and water."
+    },
+    "icon": "icons/consumables/grains/bread-loaf-boule-rustic-brown.webp",
+    "category": "bread",
+    "tags": [
+      "mundane",
+      "consumable",
+      "food",
+      "wheat",
+      "caraway"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record portion eaten",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_ONION_FLATBREAD",
+    "name": "Onion Flatbread",
+    "description": "A broad flatbread is pressed with sliced onions before baking. The onions darken at the edges and leave the middle faintly sweet.\n\nSold as one onion flatbread. Weight includes light disposable wrapping or tying where needed; reusable bags, vessels and drinking water are separate. Partial use is tracked manually.",
+    "saleUnit": "One onion flatbread",
+    "price": {
+      "value": 5,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 0.4,
+      "units": "lb",
+      "notes": "Adjusted total for one onion flatbread, including light wrapping or tying where applicable. Excludes reusable containers and water."
+    },
+    "icon": "icons/consumables/grains/bread-loaf-boule-rustic-brown.webp",
+    "category": "bread",
+    "tags": [
+      "mundane",
+      "consumable",
+      "food",
+      "onion",
+      "baked"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record portion eaten",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_SEEDED_BROWN_LOAF",
+    "name": "Seeded Brown Loaf",
+    "description": "A brown wheat loaf is studded with mixed edible seeds. Its firm crust keeps the slices together when spread or packed for a short journey.\n\nSold as one 1 lb seeded loaf. Weight includes light disposable wrapping or tying where needed; reusable bags, vessels and drinking water are separate. Partial use is tracked manually.",
+    "saleUnit": "One 1 lb seeded loaf",
+    "price": {
+      "value": 6,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 1.0,
+      "units": "lb",
+      "notes": "Adjusted total for one 1 lb seeded loaf, including light wrapping or tying where applicable. Excludes reusable containers and water."
+    },
+    "icon": "icons/consumables/grains/bread-loaf-boule-rustic-brown.webp",
+    "category": "bread",
+    "tags": [
+      "mundane",
+      "consumable",
+      "food",
+      "seeds",
+      "wheat"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record portion eaten",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_HONEY_HEARTH_BUNS",
+    "name": "Honey Hearth Buns",
+    "description": "Two soft buns are brushed with a thin honey glaze as they leave the oven. They are lightly sweet bread rather than a filled dessert.\n\nSold as two honey-glazed buns. Weight includes light disposable wrapping or tying where needed; reusable bags, vessels and drinking water are separate. Partial use is tracked manually.",
+    "saleUnit": "Two honey-glazed buns",
+    "price": {
+      "value": 7,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 0.4,
+      "units": "lb",
+      "notes": "Adjusted total for two honey-glazed buns, including light wrapping or tying where applicable. Excludes reusable containers and water."
+    },
+    "icon": "icons/consumables/grains/bread-loaf-boule-rustic-brown.webp",
+    "category": "bread",
+    "tags": [
+      "mundane",
+      "consumable",
+      "food",
+      "honey",
+      "wheat"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record portion eaten",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  }
+]

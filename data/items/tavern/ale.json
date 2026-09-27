@@ -1,0 +1,354 @@
+[
+  {
+    "id": "DT_ITEM_TAV_SMALL_ALE",
+    "name": "Small Ale",
+    "description": "A thin, lightly fermented barley ale with a faint bread-crust aroma. Drawn from the everyday cask rather than the innkeeper's strong stock.\n\nOne purchase supplies one pint of ale. The inn retains its serving vessel; takeaway requires your own suitable container. Alcohol effects are left to the GM.",
+    "saleUnit": "One pint of ale",
+    "price": {
+      "value": 2,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 1.0,
+      "units": "lb",
+      "notes": "Contents-only weight of one pint of ale, using the project liquid allowance of 1 lb per pint (small spirit measures rounded to 0.06 lb). The inn retains its vessel; carried containers weigh separately."
+    },
+    "icon": "icons/consumables/drinks/alcohol-beer-stein-wooden-brown.webp",
+    "category": "ale",
+    "tags": [
+      "mundane",
+      "consumable",
+      "drink",
+      "alcoholic",
+      "barley",
+      "light"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "core",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record drink consumed",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_BROWN_HEARTH_ALE",
+    "name": "Brown Hearth Ale",
+    "description": "Dark malt gives this brown ale a toasted crust flavour and a soft, earthy finish. A little sediment settles at the bottom of the mug.\n\nOne purchase supplies one pint of ale. The inn retains its serving vessel; takeaway requires your own suitable container. Alcohol effects are left to the GM.",
+    "saleUnit": "One pint of ale",
+    "price": {
+      "value": 4,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 1.0,
+      "units": "lb",
+      "notes": "Contents-only weight of one pint of ale, using the project liquid allowance of 1 lb per pint (small spirit measures rounded to 0.06 lb). The inn retains its vessel; carried containers weigh separately."
+    },
+    "icon": "icons/consumables/drinks/alcohol-beer-stein-wooden-brown.webp",
+    "category": "ale",
+    "tags": [
+      "mundane",
+      "consumable",
+      "drink",
+      "alcoholic",
+      "barley",
+      "toasted"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record drink consumed",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_OAT_ALE",
+    "name": "Oat Ale",
+    "description": "Brewed with oats as well as barley, this cloudy ale has a rounded texture and a modest head. The brewer leaves it unfiltered.\n\nOne purchase supplies one pint of ale. The inn retains its serving vessel; takeaway requires your own suitable container. Alcohol effects are left to the GM.",
+    "saleUnit": "One pint of ale",
+    "price": {
+      "value": 5,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 1.0,
+      "units": "lb",
+      "notes": "Contents-only weight of one pint of ale, using the project liquid allowance of 1 lb per pint (small spirit measures rounded to 0.06 lb). The inn retains its vessel; carried containers weigh separately."
+    },
+    "icon": "icons/consumables/drinks/alcohol-beer-stein-wooden-brown.webp",
+    "category": "ale",
+    "tags": [
+      "mundane",
+      "consumable",
+      "drink",
+      "alcoholic",
+      "oats",
+      "smooth"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record drink consumed",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_HEATHER_ALE",
+    "name": "Heather Ale",
+    "description": "Heather tips lend a floral bitterness to a pale country ale. The scent is strongest in the first pour, before the mug warms by the hearth.\n\nOne purchase supplies one pint of ale. The inn retains its serving vessel; takeaway requires your own suitable container. Alcohol effects are left to the GM.",
+    "saleUnit": "One pint of ale",
+    "price": {
+      "value": 7,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 1.0,
+      "units": "lb",
+      "notes": "Contents-only weight of one pint of ale, using the project liquid allowance of 1 lb per pint (small spirit measures rounded to 0.06 lb). The inn retains its vessel; carried containers weigh separately."
+    },
+    "icon": "icons/consumables/drinks/alcohol-beer-stein-wooden-brown.webp",
+    "category": "ale",
+    "tags": [
+      "mundane",
+      "consumable",
+      "drink",
+      "alcoholic",
+      "herbal",
+      "heather"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record drink consumed",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_SMOKED_MALT_ALE",
+    "name": "Smoked Malt Ale",
+    "description": "Malt dried over a smoky kiln gives this amber ale a smell of banked wood fires. Its dry finish suits salty supper dishes.\n\nOne purchase supplies one pint of ale. The inn retains its serving vessel; takeaway requires your own suitable container. Alcohol effects are left to the GM.",
+    "saleUnit": "One pint of ale",
+    "price": {
+      "value": 8,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 1.0,
+      "units": "lb",
+      "notes": "Contents-only weight of one pint of ale, using the project liquid allowance of 1 lb per pint (small spirit measures rounded to 0.06 lb). The inn retains its vessel; carried containers weigh separately."
+    },
+    "icon": "icons/consumables/drinks/alcohol-beer-stein-wooden-brown.webp",
+    "category": "ale",
+    "tags": [
+      "mundane",
+      "consumable",
+      "drink",
+      "alcoholic",
+      "smoked",
+      "barley"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record drink consumed",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_HARVEST_ALE",
+    "name": "Harvest Ale",
+    "description": "A fuller brew laid down after the grain harvest, with a sweet malt body and a copper-coloured head. Stock depends on the brewer's seasonal cask.\n\nOne purchase supplies one pint of ale. The inn retains its serving vessel; takeaway requires your own suitable container. Alcohol effects are left to the GM.",
+    "saleUnit": "One pint of ale",
+    "price": {
+      "value": 1,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 1.0,
+      "units": "lb",
+      "notes": "Contents-only weight of one pint of ale, using the project liquid allowance of 1 lb per pint (small spirit measures rounded to 0.06 lb). The inn retains its vessel; carried containers weigh separately."
+    },
+    "icon": "icons/consumables/drinks/alcohol-beer-stein-wooden-brown.webp",
+    "category": "ale",
+    "tags": [
+      "mundane",
+      "consumable",
+      "drink",
+      "alcoholic",
+      "seasonal",
+      "harvest"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record drink consumed",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_STRONG_CELLAR_ALE",
+    "name": "Strong Cellar Ale",
+    "description": "An ale kept longer in the cool cellar, deep brown and noticeably stronger than the table brew. The tapkeeper serves it slowly to leave the lees behind.\n\nOne purchase supplies one pint of ale. The inn retains its serving vessel; takeaway requires your own suitable container. Alcohol effects are left to the GM.",
+    "saleUnit": "One pint of ale",
+    "price": {
+      "value": 2,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 1.0,
+      "units": "lb",
+      "notes": "Contents-only weight of one pint of ale, using the project liquid allowance of 1 lb per pint (small spirit measures rounded to 0.06 lb). The inn retains its vessel; carried containers weigh separately."
+    },
+    "icon": "icons/consumables/drinks/alcohol-beer-stein-wooden-brown.webp",
+    "category": "ale",
+    "tags": [
+      "mundane",
+      "consumable",
+      "drink",
+      "alcoholic",
+      "strong",
+      "aged"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record drink consumed",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_OLD_OAK_ALE",
+    "name": "Old Oak Ale",
+    "description": "A scarce cask-aged ale with dry oak notes beneath its malt sweetness. The inn opens this stock for customers who ask what has been resting downstairs.\n\nOne purchase supplies one pint of ale. The inn retains its serving vessel; takeaway requires your own suitable container. Alcohol effects are left to the GM.",
+    "saleUnit": "One pint of ale",
+    "price": {
+      "value": 3,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 1.0,
+      "units": "lb",
+      "notes": "Contents-only weight of one pint of ale, using the project liquid allowance of 1 lb per pint (small spirit measures rounded to 0.06 lb). The inn retains its vessel; carried containers weigh separately."
+    },
+    "icon": "icons/consumables/drinks/alcohol-beer-stein-wooden-brown.webp",
+    "category": "ale",
+    "tags": [
+      "mundane",
+      "consumable",
+      "drink",
+      "alcoholic",
+      "aged",
+      "oak"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "special-order",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record drink consumed",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  }
+]

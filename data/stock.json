@@ -6,19 +6,159 @@
     {
       "id": "DT_TABLE_TAV",
       "shop": "tavern",
-      "coverage": "partial",
-      "draws": 10,
+      "coverage": "complete",
+      "draws": 16,
       "categoryDraws": 3,
       "categories": [
+        "ale",
+        "beer",
+        "mead",
+        "wine",
+        "spirits",
+        "non-alcoholic-drinks",
+        "hot-drinks",
+        "breakfast",
+        "lunch",
+        "dinner",
+        "stews",
+        "roasts",
+        "bread",
+        "cheese",
+        "desserts",
+        "snacks",
+        "travel-meals",
+        "luxury-meals",
+        "animal-feed",
+        "animal",
+        "camping",
         "containers",
         "fire-lighting",
-        "rope-climbing",
-        "camping",
         "household",
-        "animal",
+        "rope-climbing",
         "travel"
       ],
-      "overrides": []
+      "overrides": [
+        {
+          "itemId": "DT_ITEM_GS_BARREL",
+          "tier": "often"
+        },
+        {
+          "itemId": "DT_ITEM_GS_BASKET",
+          "tier": "often"
+        },
+        {
+          "itemId": "DT_ITEM_GS_BOTTLE",
+          "tier": "often"
+        },
+        {
+          "itemId": "DT_ITEM_GS_FLASK",
+          "tier": "often"
+        },
+        {
+          "itemId": "DT_ITEM_GS_JUG_CLAY",
+          "tier": "often"
+        },
+        {
+          "itemId": "DT_ITEM_GS_JAR_CERAMIC",
+          "tier": "often"
+        },
+        {
+          "itemId": "DT_ITEM_GS_TORCH",
+          "tier": "often"
+        },
+        {
+          "itemId": "DT_ITEM_GS_CANDLE",
+          "tier": "often"
+        },
+        {
+          "itemId": "DT_ITEM_GS_CANDLE_BEESWAX",
+          "tier": "often"
+        },
+        {
+          "itemId": "DT_ITEM_GS_CANDLE_TALLOW",
+          "tier": "often"
+        },
+        {
+          "itemId": "DT_ITEM_GS_LANTERN",
+          "tier": "often"
+        },
+        {
+          "itemId": "DT_ITEM_GS_LAMP",
+          "tier": "often"
+        },
+        {
+          "itemId": "DT_ITEM_GS_OIL_LAMP",
+          "tier": "often"
+        },
+        {
+          "itemId": "DT_ITEM_GS_TINDERBOX",
+          "tier": "often"
+        },
+        {
+          "itemId": "DT_ITEM_GS_CHARCOAL",
+          "tier": "often"
+        },
+        {
+          "itemId": "DT_ITEM_GS_TWINE",
+          "tier": "often"
+        },
+        {
+          "itemId": "DT_ITEM_GS_BLANKET",
+          "tier": "often"
+        },
+        {
+          "itemId": "DT_ITEM_GS_POT_COOKING",
+          "tier": "often"
+        },
+        {
+          "itemId": "DT_ITEM_GS_KETTLE_CAMP",
+          "tier": "often"
+        },
+        {
+          "itemId": "DT_ITEM_GS_CUP",
+          "tier": "often"
+        },
+        {
+          "itemId": "DT_ITEM_GS_BOWL",
+          "tier": "often"
+        },
+        {
+          "itemId": "DT_ITEM_GS_SPOON",
+          "tier": "often"
+        },
+        {
+          "itemId": "DT_ITEM_GS_PLATE_WOOD",
+          "tier": "often"
+        },
+        {
+          "itemId": "DT_ITEM_GS_SOAP",
+          "tier": "often"
+        },
+        {
+          "itemId": "DT_ITEM_GS_BROOM",
+          "tier": "often"
+        },
+        {
+          "itemId": "DT_ITEM_GS_MOP",
+          "tier": "often"
+        },
+        {
+          "itemId": "DT_ITEM_GS_BUCKET_WASH",
+          "tier": "often"
+        },
+        {
+          "itemId": "DT_ITEM_GS_BOARD_WASH",
+          "tier": "often"
+        },
+        {
+          "itemId": "DT_ITEM_GS_CLOTHES_LINE",
+          "tier": "often"
+        },
+        {
+          "itemId": "DT_ITEM_GS_BELL",
+          "tier": "often"
+        }
+      ]
     },
     {
       "id": "DT_TABLE_GS",

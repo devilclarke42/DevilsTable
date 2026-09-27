@@ -9,6 +9,8 @@ existing content. Editorial requirements may be stricter than current automated 
 Edit catalogue JSON in this repository. Do not edit generated pack data directly. A rebuild
 overwrites builder-controlled fields; imports already owned by an actor or the world are independent.
 The 144 General Store items live in ten category files under `data/items/general-store/`.
+The 152 new Tavern items live in nineteen category files under `data/items/tavern/`; 31 existing
+General Store records are shared by shop assignment, giving Tavern 183 goods.
 Sprint 3 preserves all 69 accepted records, adding only explicit sale units to the 13 Containers.
 `tests/fixtures/item.json` is synthetic test material only.
 
@@ -34,7 +36,7 @@ The authoritative structural definitions are in `schemas/`. Unknown fields fail 
 helping catch misspellings. Extend the schema, converter, docs and tests together when needed.
 Do not work around an unsupported potion/weapon by labelling it as ordinary loot.
 
-`saleUnit` is a required nonblank description of one purchase, present on all 144 items.
+`saleUnit` is a required nonblank description of one purchase, present on all 296 items.
 Generated quantity 1, price and weight describe that complete unit: ten pitons are one bundle,
 four horseshoes are one set and Horse Feed is one ten-pound daily ration. A bundle is not ten
 copies of a single piton, and a kit does not create nested component Items. Split bundles and

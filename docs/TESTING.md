@@ -21,7 +21,9 @@ Stock coverage checks 32 active tables with all 132 IDs reserved, real compendiu
 and Merchant Notes isolation. Persistence tests cover table previews, native model preflight,
 missing Items, result order, embedded-row changes, foreign metadata preservation, 100-row batches,
 partial failure/retry, custom-row protection, independent settings menus and permission guards.
-Alpha.7 has 226 automated tests; validation reports 144 source Items and 32 active tables.
+The current candidate has 289 automated tests; validation reports 296 source Items and 32
+active tables. The tables below retain historical General Store acceptance checks; current
+Tavern and portrait checks are in [TAVERN_REVIEW.md](TAVERN_REVIEW.md).
 Sprint 3 checks frozen hashes of all 69 accepted records (except Container sale-unit additions),
 75/13/56 Item upgrades, 12/3/17 table upgrades, normalized name uniqueness, icon references, variant
 inheritance/exclusions, private notes and effective-tier quantity rolls. Both rebuilds converge.
@@ -80,7 +82,7 @@ Retain the accepted Item pack; stock generation should not change its Items.
 | All-shop table build/rebuild | 32 creates then 32 unchanged, stable parent/result IDs, new pack locked | Pending |
 | General Store filter | All profiles previews sixteen tables; each named profile previews four | Pending |
 | Category filter | Same four tables; stock results contain only the selected category | Pending |
-| Partial shops | Tavern/Alchemist/Blacksmith/Black Market show shared-goods-only notices and no invented products | Pending |
+| Partial shops | Alchemist/Blacksmith/Black Market show shared-goods-only notices and no invented products | Pending |
 | Item results and nested pools | Native references open actual generated Items; rotating results recurse into the correct pool | Pending |
 | Always native draw | Imported General Store Always table returns all 82 Village Always goods in one draw; never Normalize | Pending |
 | Rotating ranges | 1–80 Often, 81–95 Rarely, 96–100 no extra; empty pools produce text, not invented goods | Pending |
@@ -167,3 +169,12 @@ or private campaign data. Update this document and the changelog with the real r
 The merchant review template regression uses `python3` and its standard-library
 `html.parser`; no Python packages are required. Install Python 3 alongside Node to run
 the complete test suite.
+
+## Sprint 8 automated evidence
+
+The 144-to-296 Item upgrade creates only 152 new documents; General Store documents are equal
+before/after and repeated builds are unchanged. The Tavern table upgrade updates four existing
+identities with no new tables. All 19 menu filters are exercised, including the rule that an
+Often roll cannot force a Rarely luxury meal. All new food activities consume one complete unit
+without effects or stale document targets. Portrait tests cover a player with no Actor access,
+exact token naming, fallback and live update subscriptions; visual appearance remains a live check.

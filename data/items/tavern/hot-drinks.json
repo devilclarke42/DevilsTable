@@ -1,0 +1,347 @@
+[
+  {
+    "id": "DT_ITEM_TAV_MINT_INFUSION",
+    "name": "Mint Infusion",
+    "description": "Mint leaves steeped in hot water and strained into a cup. The scent rises readily from the steam without promising any medicinal effect.\n\nOne purchase supplies one half-pint cup of prepared drink. The inn retains its serving vessel; takeaway requires your own suitable container. This drink grants no automatic healing or other bonus.",
+    "saleUnit": "One half-pint cup of prepared drink",
+    "price": {
+      "value": 3,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 0.5,
+      "units": "lb",
+      "notes": "Contents-only weight of one half-pint cup of prepared drink, using the project liquid allowance of 1 lb per pint (small spirit measures rounded to 0.06 lb). The inn retains its vessel; carried containers weigh separately."
+    },
+    "icon": "icons/consumables/drinks/tea-jug-gourd-brown.webp",
+    "category": "hot-drinks",
+    "tags": [
+      "mundane",
+      "consumable",
+      "drink",
+      "herbal",
+      "mint"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record drink consumed",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_CHAMOMILE_INFUSION",
+    "name": "Chamomile Infusion",
+    "description": "Dried chamomile flowers make a pale, gently fragrant cup. A few petals may escape the kitchen strainer.\n\nOne purchase supplies one half-pint cup of prepared drink. The inn retains its serving vessel; takeaway requires your own suitable container. This drink grants no automatic healing or other bonus.",
+    "saleUnit": "One half-pint cup of prepared drink",
+    "price": {
+      "value": 4,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 0.5,
+      "units": "lb",
+      "notes": "Contents-only weight of one half-pint cup of prepared drink, using the project liquid allowance of 1 lb per pint (small spirit measures rounded to 0.06 lb). The inn retains its vessel; carried containers weigh separately."
+    },
+    "icon": "icons/consumables/drinks/tea-jug-gourd-brown.webp",
+    "category": "hot-drinks",
+    "tags": [
+      "mundane",
+      "consumable",
+      "drink",
+      "herbal",
+      "floral"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record drink consumed",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_ROASTED_BARLEY_DRINK",
+    "name": "Roasted Barley Drink",
+    "description": "Roasted barley steeped dark gives this hot drink a toasted, slightly bitter flavour. It contains neither coffee beans nor alcohol.\n\nOne purchase supplies one half-pint cup of prepared drink. The inn retains its serving vessel; takeaway requires your own suitable container. This drink grants no automatic healing or other bonus.",
+    "saleUnit": "One half-pint cup of prepared drink",
+    "price": {
+      "value": 3,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 0.5,
+      "units": "lb",
+      "notes": "Contents-only weight of one half-pint cup of prepared drink, using the project liquid allowance of 1 lb per pint (small spirit measures rounded to 0.06 lb). The inn retains its vessel; carried containers weigh separately."
+    },
+    "icon": "icons/consumables/drinks/tea-jug-gourd-brown.webp",
+    "category": "hot-drinks",
+    "tags": [
+      "mundane",
+      "consumable",
+      "drink",
+      "barley",
+      "roasted"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record drink consumed",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_SPICED_WARM_MILK",
+    "name": "Spiced Warm Milk",
+    "description": "Milk warmed gently with a pinch of spice and a little honey. The cook watches the pan to keep the bottom from catching.\n\nOne purchase supplies one half-pint cup of prepared drink. The inn retains its serving vessel; takeaway requires your own suitable container. This drink grants no automatic healing or other bonus.",
+    "saleUnit": "One half-pint cup of prepared drink",
+    "price": {
+      "value": 5,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 0.5,
+      "units": "lb",
+      "notes": "Contents-only weight of one half-pint cup of prepared drink, using the project liquid allowance of 1 lb per pint (small spirit measures rounded to 0.06 lb). The inn retains its vessel; carried containers weigh separately."
+    },
+    "icon": "icons/consumables/drinks/tea-jug-gourd-brown.webp",
+    "category": "hot-drinks",
+    "tags": [
+      "mundane",
+      "consumable",
+      "drink",
+      "dairy",
+      "spiced"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record drink consumed",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_BLACK_LEAF_TEA",
+    "name": "Black Leaf Tea",
+    "description": "A small pot's worth of dark leaf tea, poured after the leaves have had time to open. It is served plain; sweetening is a kitchen choice rather than a magical ingredient.\n\nOne purchase supplies one half-pint cup of prepared drink. The inn retains its serving vessel; takeaway requires your own suitable container. This drink grants no automatic healing or other bonus.",
+    "saleUnit": "One half-pint cup of prepared drink",
+    "price": {
+      "value": 1,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 0.5,
+      "units": "lb",
+      "notes": "Contents-only weight of one half-pint cup of prepared drink, using the project liquid allowance of 1 lb per pint (small spirit measures rounded to 0.06 lb). The inn retains its vessel; carried containers weigh separately."
+    },
+    "icon": "icons/consumables/drinks/tea-jug-gourd-brown.webp",
+    "category": "hot-drinks",
+    "tags": [
+      "mundane",
+      "consumable",
+      "drink",
+      "tea",
+      "imported"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record drink consumed",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_GREEN_LEAF_TEA",
+    "name": "Green Leaf Tea",
+    "description": "A pale green tea steeped briefly to preserve its grassy flavour. The inn keeps the dry leaves sealed against damp and cooking smells.\n\nOne purchase supplies one half-pint cup of prepared drink. The inn retains its serving vessel; takeaway requires your own suitable container. This drink grants no automatic healing or other bonus.",
+    "saleUnit": "One half-pint cup of prepared drink",
+    "price": {
+      "value": 2,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 0.5,
+      "units": "lb",
+      "notes": "Contents-only weight of one half-pint cup of prepared drink, using the project liquid allowance of 1 lb per pint (small spirit measures rounded to 0.06 lb). The inn retains its vessel; carried containers weigh separately."
+    },
+    "icon": "icons/consumables/drinks/tea-jug-gourd-brown.webp",
+    "category": "hot-drinks",
+    "tags": [
+      "mundane",
+      "consumable",
+      "drink",
+      "tea",
+      "imported"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "special-order",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record drink consumed",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_STRONG_BLACK_COFFEE",
+    "name": "Strong Black Coffee",
+    "description": "Ground roasted beans simmered and settled into a strong, dark cup. A trace of fine grounds remains beneath the last mouthful.\n\nOne purchase supplies one half-pint cup of prepared drink. The inn retains its serving vessel; takeaway requires your own suitable container. This drink grants no automatic healing or other bonus.",
+    "saleUnit": "One half-pint cup of prepared drink",
+    "price": {
+      "value": 2,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 0.5,
+      "units": "lb",
+      "notes": "Contents-only weight of one half-pint cup of prepared drink, using the project liquid allowance of 1 lb per pint (small spirit measures rounded to 0.06 lb). The inn retains its vessel; carried containers weigh separately."
+    },
+    "icon": "icons/consumables/drinks/tea-jug-gourd-brown.webp",
+    "category": "hot-drinks",
+    "tags": [
+      "mundane",
+      "consumable",
+      "drink",
+      "coffee",
+      "imported"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "special-order",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record drink consumed",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_SPICED_COCOA",
+    "name": "Spiced Cocoa",
+    "description": "A rich drink made from ground cocoa, warm milk and a little sweetening spice. Its imported ingredients make it an occasional indulgence rather than the morning default.\n\nOne purchase supplies one half-pint cup of prepared drink. The inn retains its serving vessel; takeaway requires your own suitable container. This drink grants no automatic healing or other bonus.",
+    "saleUnit": "One half-pint cup of prepared drink",
+    "price": {
+      "value": 3,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 0.5,
+      "units": "lb",
+      "notes": "Contents-only weight of one half-pint cup of prepared drink, using the project liquid allowance of 1 lb per pint (small spirit measures rounded to 0.06 lb). The inn retains its vessel; carried containers weigh separately."
+    },
+    "icon": "icons/consumables/drinks/tea-jug-gourd-brown.webp",
+    "category": "hot-drinks",
+    "tags": [
+      "mundane",
+      "consumable",
+      "drink",
+      "cocoa",
+      "imported",
+      "dairy"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "special-order",
+    "source": {
+      "title": "Devil's Table: Goods & Provisions",
+      "reference": "Original Tavern recipe, description, portion, project price and adjusted weight. Mundane food/drink only; 2014 rules baseline. See docs/TAVERN_REVIEW.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record drink consumed",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole sale unit is consumed. Track partial use, preparation and any remaining packaging manually; no healing or status effects are applied."
+      }
+    }
+  }
+]

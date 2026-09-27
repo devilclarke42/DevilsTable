@@ -26,8 +26,8 @@ Use the permanent format `DT_ITEM_<ORIGIN>_<IDENTIFIER>`:
 | `BSM` | First authored for Blacksmith | Use this prefix when that catalogue is authored |
 | `BMK` | First authored for Black Market | Use this prefix when that catalogue is authored |
 
-Only the General Store example above is currently an authored record. Future examples are naming
-illustrations, not ID reservations or claims of shipped content.
+The General Store and Tavern examples above are authored records. The Alchemist example remains
+a naming illustration, not an ID reservation or a claim of shipped content.
 
 - Use uppercase ASCII letters, digits and underscores; no spaces, punctuation or accented letters.
 - The schema pattern is `^DT_ITEM_[A-Z0-9]+(?:_[A-Z0-9]+)+$`, with a 128-character maximum.
@@ -87,7 +87,7 @@ descriptions must be nonblank and at most 20,000 characters, though normal entri
 | `source` | Nonblank `title`, `reference` and `license` describing provenance honestly. |
 | `mechanics` | An explicitly supported D&D5e mapping, even for ordinary nonmagical goods. |
 
-Sprint 3 adds explicit `saleUnit` values to the original thirteen Containers. All 144 records now
+Sprint 3 adds explicit `saleUnit` values to the original thirteen Containers. Those 144 records and the 152 Tavern additions
 meet the same required-field schema; there is no legacy sale-unit exception.
 
 Price examples: `{ "value": 7, "denomination": "sp" }`. Weight examples:
@@ -114,6 +114,15 @@ category when it appears in another merchant's view.
 | Travel | `travel` | Walking, navigation and signalling goods |
 | Tools | `tools` | Ordinary hand tools, measuring aids and workshop supplies |
 | Trade Goods | `trade-goods` | Measured raw materials and household processing supplies |
+
+Tavern adds Ale (`ale`), Beer (`beer`), Mead (`mead`), Wine (`wine`), Spirits (`spirits`),
+Non-alcoholic Drinks (`non-alcoholic-drinks`), Hot Drinks (`hot-drinks`), Breakfast (`breakfast`),
+Lunch (`lunch`), Dinner (`dinner`), Stews (`stews`), Roasts (`roasts`), Bread (`bread`), Cheese
+(`cheese`), Desserts (`desserts`), Snacks (`snacks`), Travel Meals (`travel-meals`), Luxury Meals
+(`luxury-meals`) and Animal Feed (`animal-feed`). Its files live under `data/items/tavern/`.
+Shared General Store goods keep their original categories. Existing Horse Feed stays in Animal
+Supplies; the new Animal Feed category contains distinct supplemental products. See
+[Tavern portions and review](TAVERN_REVIEW.md) before authoring new food or drink.
 
 Choose the primary use: Cooking Pot belongs in Camping while its mechanics can still be
 `container`. Tags express cross-cutting properties. Do not duplicate an item to make it appear

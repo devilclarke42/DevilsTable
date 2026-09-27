@@ -12,14 +12,14 @@ const production = () => loadCatalogue({ readJson });
 
 test("all ten curated General Store categories contain exactly their approved items", async () => {
   const data = await production();
-  assert.deepEqual(data.categoryDefinitions.map(category => category.name), [
+  assert.deepEqual(data.categoryDefinitions.filter(category => category.shop === "general-store").map(category => category.name), [
     "Containers", "Lighting & Fire", "Rope & Climbing", "Camping", "Writing", "Household", "Animal Supplies", "Travel", "Tools", "Trade Goods"
   ]);
-  for (const category of data.categoryDefinitions) {
+  for (const category of data.categoryDefinitions.filter(category => category.shop === "general-store")) {
     assert.deepEqual(data.entries.filter(({ item }) => item.category === category.id).map(({ item }) => item.name), category.plannedItems);
   }
-  assert.equal(data.entries.length, 144);
-  assert.ok(data.entries.every(({ item }) => item.shops.includes("general-store")));
+  assert.equal(selectEntries(data, { shopId: "general-store" }).length, 144);
+  assert.ok(selectEntries(data, { shopId: "general-store" }).every(({ item }) => item.id.startsWith("DT_ITEM_GS_")));
   assert.deepEqual(new Set(data.entries.map(({ item }) => item.id)), new Set(data.ledger.ids));
   const view = shopView(data, { shopId: "general-store" });
   assert.deepEqual(view.categories.map(category => category.count), [13, 17, 10, 21, 13, 18, 12, 13, 16, 11]);
@@ -43,7 +43,7 @@ const invalidMetadata = {
   "missing Merchant Notes": data => { delete data.shopDefinitions[0].merchantNotes; },
   "missing stock tier": data => { delete data.shopDefinitions[0].merchantNotes.rarelyStocks; },
   "blank stock guidance": data => { data.shopDefinitions[0].merchantNotes.alwaysStocks = [" "]; },
-  "conflicting stock tiers": data => { data.shopDefinitions[0].merchantNotes.rarelyStocks.push(" bread "); },
+  "conflicting stock tiers": data => { data.shopDefinitions[0].merchantNotes.rarelyStocks.push(" " + data.shopDefinitions[0].merchantNotes.alwaysStocks[0].toLowerCase() + " "); },
   "duplicate category": data => data.categoryDefinitions.push(structuredClone(data.categoryDefinitions[0])),
   "undefined category shop": data => { data.categoryDefinitions[0].shop = "missing"; },
   "unregistered category": data => { data.categoryDefinitions[0].id = "missing"; },
@@ -143,7 +143,7 @@ test("notes and category plans never enter Item documents or trigger Item update
   await build({ dryRun: false });
   data.shopDefinitions[0].merchantNotes.alwaysStocks.push("MERCHANT_ONLY_SENTINEL");
   data.categoryDefinitions[0].plannedItems.push("PLAN_ONLY_SENTINEL");
-  assert.equal((await build()).unchanged, 144);
+  assert.equal((await build()).unchanged, data.entries.length);
   assert.ok(!JSON.stringify(state.docs).includes("SENTINEL"));
   for (const doc of state.docs) {
     assert.equal(Object.hasOwn(doc.flags["devils-table"], "merchantNotes"), false);

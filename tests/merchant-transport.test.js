@@ -30,14 +30,14 @@ test("separate GM and player services relay public stock without player Actor ac
     } };
   }
   const gmGame = client(gm), playerGame = client(player);
-  const actor = { id: "merchant", type: "npc", name: "Test Merchant",
+  const actor = { id: "merchant", type: "npc", name: "Private Actor Name", img: "portraits/merrick.webp",
     getFlag: () => ({ enabled: true, availability: "open" }),
     items: [{ id: "rope", name: "Rope", type: "loot", img: "rope.webp",
       system: { quantity: 3, price: { value: 14, denomination: "cp" } },
       getFlag: (_scope, key) => key === "offer" ? { publicDescription: "A rope." } : undefined }] };
   gmGame.actors = new Map([[actor.id, actor]]);
   gmGame.scenes = new Map([["scene", { tokens: new Map([["token", {
-    actorId: actor.id, actorLink: true, getFlag: () => true
+    actorId: actor.id, name: "Test Merchant", actorLink: true, getFlag: () => true
   }]]) }]]);
   // Any attempt to use the private merchant Actor on the player client fails this test.
   Object.defineProperty(playerGame, "actors", { get() { throw Error("Private Actors inaccessible"); } });
@@ -54,6 +54,8 @@ test("separate GM and player services relay public stock without player Actor ac
     await new Promise(resolve => setImmediate(resolve));
   }
   assert.equal(result.merchant, "Test Merchant");
+  assert.deepEqual(result.presentation, { portrait: "portraits/merrick.webp", availability: "open" });
+  assert.ok(!JSON.stringify(result).includes("Private Actor Name"));
   assert.equal(result.items[0].name, "Rope");
   assert.equal(result.items[0].copper, 14);
   assert.equal(acknowledgements, 2);
