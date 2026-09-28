@@ -1,8 +1,8 @@
 {
   "id": "devils-table",
-  "title": "Devil's Table: Goods & Provisions",
-  "description": "A scalable catalogue and compendium builder for grounded D&D 5e goods, provisions, and shop inventories.",
-  "version": "0.3.0-alpha.2",
+  "title": "Devil's Table: Trade & Merchants",
+  "description": "Persistent NPC merchants, shared item catalogues and GM-approved trading for D&D 5e.",
+  "version": "0.3.0-alpha.3",
   "socket": true,
   "compatibility": { "minimum": "14", "maximum": "14" },
   "authors": [{ "name": "Devil Clarke" }],

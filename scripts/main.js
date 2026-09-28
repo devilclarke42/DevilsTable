@@ -1,3 +1,5 @@
+import { registerInitialStockHooks } from "./merchant/initial-stock-hooks.js";
+import { applyCompendiumNames } from "./core/compendium-names.js";
 import { registerCatalogueProvider, initialiseCatalogues } from "./catalogues/extensions.js";
 import { catalogueRegistry } from "./catalogues/registry.js";
 import { MODULE_ID } from "./constants.js";
@@ -18,6 +20,7 @@ import { openMerchantShop, registerMerchantTokenEntry } from "./merchant/token-e
 Hooks.once("init", () => {
   registerSettings();
   registerCheckoutProof();
+  registerInitialStockHooks();
   game.modules.get(MODULE_ID).api = Object.freeze({
     registerCatalogueProvider,
     catalogues: () => catalogueRegistry.list(),
@@ -53,6 +56,8 @@ Hooks.once("ready", async () => {
     ui.notifications.error("Devil’s Table catalogue validation failed. Check the GM console; merchant browsing is unavailable.");
     return;
   }
+  applyCompendiumNames();
+  Hooks.on("createCompendium", applyCompendiumNames);
   initialiseMerchantService();
   registerMerchantTokenEntry();
   if (game.user.isGM) logger.debug("GM builder API is ready.");

@@ -12,7 +12,7 @@ export function registerSettings() {
   });
 
   game.settings.registerMenu(MODULE_ID, "merchantManager", {
-    name: "Set Up NPC Merchants", label: "Open Merchant Setup",
+    name: "Merchant Administration", label: "Open Merchant Administration",
     hint: "Enable an existing NPC and its linked tokens for the Merchant Shop UI.",
     icon: "fa-solid fa-store", type: MerchantManagerApplication, restricted: true
   });
@@ -34,8 +34,8 @@ export function registerSettings() {
   });
 
   game.settings.registerMenu(MODULE_ID, "compendiumBuilder", {
-    name: "Build/Rebuild Compendiums",
-    label: "Open Builder",
+    name: "Build/Rebuild Master Item Catalogue",
+    label: "Open Catalogue Builder",
     hint: "Validate the canonical JSON catalogue and rebuild generated world compendiums.",
     icon: "fa-solid fa-hammer",
     type: CompendiumBuilderApplication,
@@ -48,7 +48,7 @@ export function registerSettings() {
   });
   game.settings.registerMenu(MODULE_ID, "stockTableBuilder", {
     name: "Build/Rebuild Stock RollTables", label: "Open RollTable Builder",
-    hint: "Generate four tables per shop; roll stock and weighted quantities with optional category filters.",
+    hint: "Generate four tables per merchant profile; roll stock and weighted quantities with optional category filters.",
     icon: "fa-solid fa-dice", type: RollTableBuilderApplication, restricted: true
   });
   game.settings.register(MODULE_ID, "lastTableCleanupSummary", {

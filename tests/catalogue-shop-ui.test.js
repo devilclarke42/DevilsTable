@@ -22,6 +22,10 @@ test("live search preserves focus and basket while matching tags and category la
   await new Promise(resolve => setImmediate(resolve));
   await MerchantShopApplication.DEFAULT_OPTIONS.actions.add.call(app, null, { dataset: { id: "a" } });
   const context = await app._prepareContext({});
+  assert.equal(context.canAdmin, false);
+  assert.equal(context.administration, null);
+  await MerchantShopApplication.DEFAULT_OPTIONS.actions.toggleAdministration.call(app);
+  assert.equal((await app._prepareContext({})).administrationOpen, false);
   assert.equal(context.catalogue.name, "Custom Catalogue"); assert.equal(context.categories[0].name, "Handicrafts");
   assert.equal(context.originalLabel, "1 sp"); assert.equal(context.adjustedLabel, "9 cp"); assert.equal(context.basket[0].count, 1);
   const input = { addEventListener(_name, fn) { this.input = fn; } }, row = { dataset: { offerId: "a" } }, empty = {};

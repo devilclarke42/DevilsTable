@@ -41,7 +41,7 @@ right-clicking its token produces no menu or other interaction. Both PC and NPC 
 native currency boxes. The exact installed module version was not confirmed. These observations
 confirm the reported baseline permission behaviour and visible currency fields; they do not
 validate the alpha.8 custom token entry, Shop UI, currency update API or multiplayer service slot.
-The next live check is the packaged alpha.8 build after enabling the NPC in Merchant Setup.
+The next live check is the packaged alpha.8 build after enabling the NPC in Merchant Administration.
 
 The repository checkout supplies Node development tools, generated content and module source,
 but no running Foundry server, test world, installed V14 application, or GM/player logins.
@@ -69,7 +69,7 @@ Reading the schema confirms storage, **not** a verified public transfer or conve
 2. Create one world NPC merchant with **no player ownership**, a linked visible token and two
    ordinary embedded Items with distinct quantities and prices. Give each player a controlled
    PC token beside the merchant. Record world/system/module versions and Actor ownership levels.
-3. Install alpha.8, enable the NPC in the new Merchant Setup settings menu and test the
+3. Install alpha.8, enable the NPC in the new Merchant Administration settings menu and test the
    non-owned token right-click. If the token does not open the Shop UI, record the exact behaviour
    before changing the approved player flow.
 4. Test two simultaneous views and one service slot in the same world, including simultaneous

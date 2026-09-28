@@ -1,3 +1,6 @@
+import { merchantSummary, emptyMerchantStock, saveMerchantEconomy } from "./administration.js";
+import { economyPolicy, resolveEconomy } from "./economy.js";
+import { MODULE_ID } from "../constants.js";
 import { matchesOffer } from "../catalogues/registry.js";
 import { percentLabel } from "./pricing.js";
 import { DEFAULT_MERCHANT_PORTRAIT, subscribePresentation } from "./presentation.js";
@@ -11,6 +14,8 @@ const { ApplicationV2, HandlebarsApplicationMixin } = foundry.applications.api;
 
 export class MerchantShopApplication extends HandlebarsApplicationMixin(ApplicationV2) {
   #token;
+  #administrationOpen = false;
+  #adminBusy = false;
   #portrait = DEFAULT_MERCHANT_PORTRAIT;
   #unsubscribe;
   #tokenHook;
@@ -65,14 +70,26 @@ export class MerchantShopApplication extends HandlebarsApplicationMixin(Applicat
   static DEFAULT_OPTIONS = {
     id: "devils-table-merchant-shop", classes: ["devils-table"], tag: "section",
     position: { width: 740, height: "auto" },
-    window: { title: "Devil's Table — Shop", icon: "fa-solid fa-store", resizable: true },
-    actions: { negotiate: MerchantShopApplication.#negotiate, steal: MerchantShopApplication.#steal, refresh: MerchantShopApplication.#refresh, search: MerchantShopApplication.#search,
+    window: { title: "Devil's Table: Trade & Merchants — Shop", icon: "fa-solid fa-store", resizable: true },
+    actions: { toggleAdministration: MerchantShopApplication.#toggleAdministration, emptyStock: MerchantShopApplication.#emptyStock,
+      saveEconomy: MerchantShopApplication.#saveEconomy, setupMerchant: MerchantShopApplication.#setupMerchant, negotiate: MerchantShopApplication.#negotiate, steal: MerchantShopApplication.#steal, refresh: MerchantShopApplication.#refresh, search: MerchantShopApplication.#search,
       category: MerchantShopApplication.#selectCategory, add: MerchantShopApplication.#add,
       remove: MerchantShopApplication.#remove, sell: MerchantShopApplication.#sell, unsell: MerchantShopApplication.#unsell, checkout: MerchantShopApplication.#checkout }
   };
   static PARTS = { body: { template: "modules/devils-table/templates/merchant-shop.hbs" } };
 
   async _prepareContext(options) {
+    const canAdmin = globalThis.game?.user?.isGM === true;
+    let administration = null, adminError = "";
+    if (canAdmin && this.#administrationOpen) {
+      try {
+        const actor = game.actors.get(this.#token.document.actorId);
+        const policy = await economyPolicy(), inputs = resolveEconomy(policy, actor.getFlag(MODULE_ID, "merchant.economy"));
+        administration = { ...await merchantSummary(actor, { policy }),
+          fields: [["settlement", "Settlement", "settlements"], ["prosperity", "Prosperity", "prosperities"], ["profile", "Merchant profile", "profiles"]]
+            .map(([key, label, list]) => ({ key, label, choices: policy[list].map(row => ({ id: row.id, name: row.name, selected: row.id === inputs[key] })) })) };
+      } catch (error) { adminError = error.message; }
+    }
     const filtered = this.#items;
     const basket = [...this.#basket].map(([id, count]) => {
       const item = this.#items.find(offer => offer.id === id);
@@ -88,7 +105,8 @@ export class MerchantShopApplication extends HandlebarsApplicationMixin(Applicat
     const total = basket.reduce((n, row) => n + row.subtotal, 0) - sales.reduce((n, row) => n + row.count * row.copper, 0);
     let funds = 0;
     try { funds = walletValue(pc?.actor.system.currency); } catch (_) { /* Disable checkout below. */ }
-    return { ...await super._prepareContext(options), sales, sellItems: offers.map(i => ({ ...i, priceLabel: formatCopper(i.copper) })),
+    return { ...await super._prepareContext(options), canAdmin, administrationOpen: canAdmin && this.#administrationOpen,
+      administration, adminError, adminBusy: this.#adminBusy, sales, sellItems: offers.map(i => ({ ...i, priceLabel: formatCopper(i.copper) })),
       characterName: pc?.actor.name ?? "Select your character token", fundsLabel: formatCopper(funds),
       fundsError: this.#stockCharacterId !== pc?.actor.id ? "Refresh stock for the selected character’s prices." : total > funds ? "Not enough money for this basket." : "",
       merchant: this.#token.document.name ?? this.#merchant, portrait: this.#portrait,
@@ -105,6 +123,37 @@ export class MerchantShopApplication extends HandlebarsApplicationMixin(Applicat
       totalLabel: `${total < 0 ? "You receive " : "You pay "}${formatCopper(Math.abs(total))}`,
       canInteract: Boolean(pc) && !this.#pending && this.#availability === "open",
       canCheckout: Boolean(pc) && this.#stockCharacterId === pc.actor.id && total <= funds && !this.#pending && this.#availability === "open" && (basket.length + sales.length > 0) };
+  }
+
+  static async #toggleAdministration() {
+    if (!game.user.isGM) return;
+    this.#administrationOpen = !this.#administrationOpen;
+    await this.render();
+  }
+  async #adminAction(operation) {
+    if (!game.user.isGM || this.#adminBusy) return;
+    this.#adminBusy = true;
+    try { await operation(game.actors.get(this.#token.document.actorId)); }
+    catch (error) { ui.notifications.error(error.message); }
+    finally { this.#adminBusy = false; await this.render(); }
+  }
+  static async #emptyStock() {
+    await this.#adminAction(async actor => {
+      const result = await emptyMerchantStock(actor);
+      if (result.removed) { ui.notifications.info(`Removed ${result.removed} inventory entries.`); await this.refreshStock(); }
+    });
+  }
+  static async #saveEconomy() {
+    await this.#adminAction(async actor => {
+      const inputs = Object.fromEntries(["settlement", "prosperity", "profile"].map(key => [key, this.element.querySelector(`[name=${key}]`).value]));
+      await saveMerchantEconomy(actor, inputs);
+      ui.notifications.info("Economy settings saved. Existing cash is unchanged.");
+    });
+  }
+  static async #setupMerchant() {
+    if (!game.user.isGM) return;
+    const { MerchantManagerApplication } = await import("./manager-app.js");
+    await new MerchantManagerApplication({ actorId: this.#token.document.actorId }).render({ force: true });
   }
 
   async refreshStock() {

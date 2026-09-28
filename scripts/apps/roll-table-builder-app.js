@@ -20,7 +20,7 @@ export class RollTableBuilderApplication extends HandlebarsApplicationMixin(Appl
   static DEFAULT_OPTIONS = {
     id: "devils-table-stock-builder", classes: ["devils-table"], tag: "section",
     position: { width: 760, height: "auto" },
-    window: { title: "Devil's Table — Stock RollTable Builder", icon: "fa-solid fa-dice", resizable: true },
+    window: { title: "Devil's Table: Trade & Merchants — Stock RollTable Builder", icon: "fa-solid fa-dice", resizable: true },
     actions: { selectShop: RollTableBuilderApplication.#selectShop, selectCategory: RollTableBuilderApplication.#selectCategory,
       selectProfile: RollTableBuilderApplication.#selectProfile,
       preview: RollTableBuilderApplication.#preview, build: RollTableBuilderApplication.#build, rollStock: RollTableBuilderApplication.#rollStock,

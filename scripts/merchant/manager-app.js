@@ -1,3 +1,4 @@
+import { formatCopper } from "./currency.js";
 import { catalogueRegistry } from "../catalogues/registry.js";
 import { confidence } from "./interactions.js";
 import { MODULE_ID } from "../constants.js";
@@ -13,6 +14,7 @@ import { previewMerchantStock, applyMerchantStock } from "./populate-stock.js";
 const { ApplicationV2, HandlebarsApplicationMixin } = foundry.applications.api;
 
 export class MerchantManagerApplication extends HandlebarsApplicationMixin(ApplicationV2) {
+  constructor({ actorId = "", ...options } = {}) { super(options); this.#actorId = actorId; }
   #message = "Choose an existing NPC and enable its linked tokens as shop entry points.";
   #catalogue = null;
   #actorId = "";
@@ -24,7 +26,7 @@ export class MerchantManagerApplication extends HandlebarsApplicationMixin(Appli
   static DEFAULT_OPTIONS = {
     id: "devils-table-merchant-manager", classes: ["devils-table"], tag: "section",
     position: { width: 650, height: "auto" },
-    window: { title: "Devil's Table — Merchant Setup", icon: "fa-solid fa-store", resizable: true },
+    window: { title: "Devil's Table: Trade & Merchants — Merchant Administration", icon: "fa-solid fa-store", resizable: true },
     actions: { selectTab: MerchantManagerApplication.#selectTab, enable: MerchantManagerApplication.#enable, previewStock: MerchantManagerApplication.#previewStock,
       addStock: MerchantManagerApplication.#addStock, loadTerms: MerchantManagerApplication.#loadTerms, saveTerms: MerchantManagerApplication.#saveTerms, recover: MerchantManagerApplication.#recover }
   };
@@ -47,7 +49,7 @@ export class MerchantManagerApplication extends HandlebarsApplicationMixin(Appli
       pricing: this.#actorId ? pricingTerms(game.actors.get(this.#actorId)) : { merchant: 0, stacking: "additive" },
       compound: this.#actorId && pricingTerms(game.actors.get(this.#actorId)).stacking === "compound",
       buyPercent: this.#actorId ? Math.round((tradeSettings(game.actors.get(this.#actorId)).buyModifier - 1) * 10000) / 100 : 0,
-      stockError, preview: this.#preview, previewMerchant: game.actors.get(this.#preview?.actorId)?.name,
+      stockError, preview: this.#preview ? { ...this.#preview, floatLabel: this.#preview.float.status === "generated" ? `Initial cash: ${formatCopper(this.#preview.float.amountCp)}` : `Initial cash: ${this.#preview.float.status.replaceAll("-", " ")}` } : null, previewMerchant: game.actors.get(this.#preview?.actorId)?.name,
       busy: this.#busy, stockBlocked: this.#busy || Boolean(stockError), message: this.#message };
   }
   static async #selectTab(_event, target) {

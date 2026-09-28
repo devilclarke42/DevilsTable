@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "defaults": { "settlement": "village", "prosperity": "average", "profile": "standard" },
+  "settlements": [
+    { "id": "village", "name": "Village", "minCp": 2000, "maxCp": 6000 },
+    { "id": "town", "name": "Town", "minCp": 8000, "maxCp": 18000 },
+    { "id": "city", "name": "City", "minCp": 25000, "maxCp": 50000 }
+  ],
+  "prosperities": [
+    { "id": "poor", "name": "Struggling", "percent": 50 },
+    { "id": "average", "name": "Average", "percent": 100 },
+    { "id": "prosperous", "name": "Prosperous", "percent": 175 }
+  ],
+  "profiles": [
+    { "id": "modest", "name": "Modest trader", "percent": 75 },
+    { "id": "standard", "name": "Everyday merchant", "percent": 100 },
+    { "id": "specialist", "name": "Specialist merchant", "percent": 150 },
+    { "id": "luxury", "name": "Luxury merchant", "percent": 300 }
+  ],
+  "stockProfiles": {
+    "DT_TABLE_GS": { "settlement": "village", "profile": "standard" },
+    "DT_TABLE_GS_TOWN": { "settlement": "town", "profile": "standard" },
+    "DT_TABLE_GS_CITY": { "settlement": "city", "profile": "standard" },
+    "DT_TABLE_GS_WAGON": { "settlement": "village", "profile": "modest" }
+  },
+  "coinShares": { "gp": 80, "sp": 15, "cp": 5 }
+}

@@ -1,4 +1,16 @@
-# Devil's Table: Goods & Provisions
+# Devil's Table: Trade & Merchants
+
+## Sprint 8A — Project consolidation
+
+Current candidate: **0.3.0-alpha.3**. The project is now **Devil's Table: Trade & Merchants**.
+The GM Shop UI's **Administration** view includes a Merchant Summary, confirmed Empty Stock and
+settlement/prosperity/profile inputs for a one-time native cash float. Existing balances and merchant
+records are preserved. The module ID and compendium UUIDs remain unchanged.
+
+See [Merchant administration](docs/MERCHANT_ADMINISTRATION.md) for the complete behaviour,
+compendium review, economy formula, upgrade safeguards and live acceptance checklist.
+Tavern content and its current build/deferred state have not changed in this sprint.
+
 
 A long-term Foundry VTT module for reusable goods, provisions and shop catalogues.
 **This repository is the project's single source of truth.** Canonical JSON is authored here;
@@ -22,7 +34,7 @@ Existing world Items are never deleted by this change. See [Project State](docs/
 
 1. Install the ZIP in a backed-up test world using Foundry V14 and D&D5e 5.3.3. Reconnect the
    GM and players. Use one browser session for the active GM during transaction testing.
-2. Keep the merchant NPC GM-only and place a linked token. Choose its catalogue and enable it in **Merchant Setup**.
+2. Keep the merchant NPC GM-only and place a linked token. Choose its catalogue and enable it in **Merchant Administration**.
 3. Optionally build Items and Stock RollTables, then **Roll stock preview** and **Add previewed
    stock**. Existing catalogue goods, including zero-quantity offers, are preserved.
 4. Select the NPC and optional customer, then load their settings. Configure finite/infinite
@@ -35,7 +47,7 @@ Existing world Items are never deleted by this change. See [Project State](docs/
    modifiers; totals preview immediately. Recalculate asks the player to accept changed terms.
    Approval transfers only accepted terms. Rejection and Close do not move goods or coins.
 7. Approved transfers update character-specific merchant counters and create a private receipt
-   in **Devil's Table — Private Transactions**. Search that compendium by merchant, character,
+   in **Devil's Table — Transaction History (GM Only)**. Search that compendium by merchant, character,
    date or outcome. The existing history-retention setting defaults to Last 500 per merchant.
 
 Players can also request **Negotiate** or **Attempt theft** on one offer. The GM allows or
@@ -43,7 +55,7 @@ declines the attempt, chooses a hidden DC and receives a native character skill 
 selects the final result. Successful theft transfers one sale unit; negotiation sets the next
 purchase's modifier. Private memory never changes the relationship state automatically.
 
-If a transaction is interrupted, **Check / recover interrupted trade** in Merchant Setup uses
+If a transaction is interrupted, **Check / recover interrupted trade** in Merchant Administration uses
 its saved before/after states. Conflicting edits are preserved and require manual reconciliation;
 blocked Actors cannot trade again until recovery is resolved. Never delete recovery receipts.
 
@@ -132,7 +144,7 @@ an item from the Item compendium build.
    first and select `devils-table-v0.3.0-alpha.2.zip` for import.
 2. Back up your test world. In The Forge's Import Wizard, import that module ZIP as a custom package.
    See the [Forge custom-package guide](https://forums.forge-vtt.com/t/how-to-upload-a-modified-version-of-a-module-system/10510).
-3. In a V14 / D&D5e 5.3.3 test world, enable **Devil's Table: Goods & Provisions** and reload.
+3. In a V14 / D&D5e 5.3.3 test world, enable **Devil's Table: Trade & Merchants** and reload.
 4. As the active GM, open **Configure Settings → Devil's Table → Build/Rebuild Compendiums → Open Builder**.
 5. Select **All shops → All categories**, then **Validate / Preview**. A fresh world previews
    **144 creates**. A complete alpha.25 pack previews **0 creates, 0 updates, 144 unchanged**.
@@ -254,7 +266,7 @@ and player clients. If player stock times out while GM stock works, enable debug
 logging and capture the merchant socket send/acknowledgement/receipt entries from
 both consoles. Player Actor ownership is not required and should not be granted.
 
-Merchant Setup now groups controls under Merchant, Trade, Stock and Recovery tabs.
+Merchant Administration now groups controls under Merchant, Trade, Stock and Recovery tabs.
 Switching tabs preserves unsaved form values. Adding previewed stock and running recovery
 require confirmation; previews and ordinary navigation do not.
 
@@ -264,7 +276,7 @@ Other goods retain zero-stock offers. All 260 automated tests pass; live approva
 requires confirmation in the test world. Existing container stock is not automatically changed.
 
 Alpha.19 predicts D&D5e's native NPC gear property when transferring Items. For an existing
-gear-property failure, reload both clients, select the merchant in Merchant Setup → Recovery,
+gear-property failure, reload both clients, select the merchant in Merchant Administration → Recovery,
 and run Check / recover interrupted trade. Confirm the receipt says rolled-back, the backpack
 is back with the merchant, and both balances match their pre-trade values before a fresh
 checkout. Recovery still stops for unrelated changes. All 263 automated tests pass; live

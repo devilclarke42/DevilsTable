@@ -1,5 +1,5 @@
 export const MODULE_ID = "devils-table";
-export const MODULE_TITLE = "Devil's Table: Goods & Provisions";
+export const MODULE_TITLE = "Devil's Table: Trade & Merchants";
 export const CATALOGUE_INDEX = `modules/${MODULE_ID}/data/catalogue.json`;
 export const FLAG_SCOPE = MODULE_ID;
 export const PACK_NAME = "devils-table-items";

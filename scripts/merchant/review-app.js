@@ -21,7 +21,7 @@ export class MerchantReviewApplication extends HandlebarsApplicationMixin(Applic
   static DEFAULT_OPTIONS = {
     id: "devils-table-merchant-review", classes: ["devils-table"], tag: "section",
     position: { width: 560, height: "auto" },
-    window: { title: "Devil's Table — GM Merchant Review", icon: "fa-solid fa-clipboard-check", resizable: true },
+    window: { title: "Devil's Table: Trade & Merchants — GM Merchant Review", icon: "fa-solid fa-clipboard-check", resizable: true },
     actions: { approve: MerchantReviewApplication.#approve, reject: MerchantReviewApplication.#reject,
       allowInteraction: MerchantReviewApplication.#allowInteraction, resolveInteraction: MerchantReviewApplication.#resolveInteraction,
       saveModifiers: MerchantReviewApplication.#saveModifiers,

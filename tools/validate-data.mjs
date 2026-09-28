@@ -1,3 +1,4 @@
+import { loadEconomy } from "../scripts/merchant/economy.js";
 import { readFile, access } from "node:fs/promises";
 import { resolve, dirname, sep } from "node:path";
 import { spawnSync } from "node:child_process";
@@ -12,6 +13,7 @@ const readJson = async path => JSON.parse(await readFile(resolve(ROOT, path), "u
 const assert = (ok, message) => { if (!ok) throw new Error(message); };
 
 try {
+  await loadEconomy({ readJson });
   const catalogue = await loadStockCatalogue({ readJson });
   const report = validateStockCatalogue(catalogue);
   for (const error of report.errors) console.error(`${error.path}: ${error.message}`);

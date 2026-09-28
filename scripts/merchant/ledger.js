@@ -1,3 +1,4 @@
+import { COMPENDIUM_NAMES } from "../core/compendium-names.js";
 import { formatCopper } from "./currency.js";
 import { MODULE_ID } from "../constants.js";
 import { stable } from "./trade-model.js";
@@ -10,7 +11,7 @@ export async function transactionPack() {
   opening = (async () => {
     let pack = game.packs.get(COLLECTION);
     if (!pack) pack = await foundry.documents.collections.CompendiumCollection.createCompendium({
-      name: "devils-table-transactions", label: "Devil's Table — Private Transactions", type: "JournalEntry", package: "world"
+      name: "devils-table-transactions", label: COMPENDIUM_NAMES[COLLECTION].label, type: "JournalEntry", package: "world"
     });
     if (pack.documentName !== "JournalEntry" || pack.metadata.packageType !== "world") throw Error("Invalid transaction ledger pack.");
     await pack.configure({ locked: false, ownership: { PLAYER: "NONE", TRUSTED: "NONE", ASSISTANT: "OWNER", GAMEMASTER: "OWNER" } });
@@ -127,6 +128,6 @@ export async function finishReceiptReview(record, actors) {
   }
   for (const actor of actors) await actor.setFlag(MODULE_ID, "transactionPending", doc.uuid);
   await saveReceipt(doc, { ...old, reviewDecision: record.status, reviewDate: record.date });
-  ui.notifications.info("Review closed. This trade still needs recovery in Merchant Setup; its receipt and Actor blocks were preserved.");
+  ui.notifications.info("Review closed. This trade still needs recovery in Merchant Administration; its receipt and Actor blocks were preserved.");
   return "close";
 }

@@ -38,7 +38,7 @@ Typing changes previews only. **Recalculate offer** obtains player consent when 
 or quantities change. Approval rechecks the exact accepted terms, funds and stock. Character
 currency and settlement details remain collapsed. **Save shop and character modifiers** persists
 only those two modifiers and stacking; review negotiation/checkout edits affect that trade only.
-Merchant Setup also edits the next-purchase negotiation modifier and confidence directly.
+Merchant Administration also edits the next-purchase negotiation modifier and confidence directly.
 Refresh stock after switching characters or changing saved pricing.
 
 Legacy ordinary buy/sell multipliers are interpreted as percentages without rewriting stored

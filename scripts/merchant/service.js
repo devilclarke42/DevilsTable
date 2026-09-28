@@ -1,3 +1,4 @@
+import { merchantSlots as locks, administrationBusy } from "./operation-guard.js";
 import { catalogueRegistry } from "../catalogues/registry.js";
 import { merchantPresentation, receivePresentation, registerPresentationUpdates } from "./presentation.js";
 import { quoteTrade, purchaseOffers, stable } from "./trade-model.js";
@@ -10,10 +11,9 @@ import { executeTrade } from "./transaction.js";
 import { finishReceiptReview, trimReceipts } from "./ledger.js";
 import { MODULE_ID } from "../constants.js";
 import { logger } from "../core/logger.js";
-import { isMerchantToken, merchantConfig, ServiceSlots, SOCKET_CHANNEL } from "./model.js";
+import { isMerchantToken, merchantConfig, SOCKET_CHANNEL } from "./model.js";
 
 const requests = new Map();
-const locks = new ServiceSlots();
 const subscribers = new Map();
 let listening = false;
 const proofs = new Map();
@@ -116,7 +116,7 @@ async function receive(msg) {
     return notify(msg.userId, { id: msg.id, error: "This interaction or item is unavailable." });
   }
   logger.debug("Checkout requested", { merchant: actor.id });
-  if ((merchantConfig(actor).availability ?? "open") !== "open" || locks.occupied(actor.id)) {
+  if ((merchantConfig(actor).availability ?? "open") !== "open" || locks.occupied(actor.id) || administrationBusy(actor.id)) {
     return notify(msg.userId, { id: msg.id, error: "The merchant is currently occupied. Your basket is saved." });
   }
   const user = game.users.get(msg.userId);

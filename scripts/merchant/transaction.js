@@ -1,9 +1,9 @@
+import { activeActorWrites as active, administrationBusy } from "./operation-guard.js";
 import { nextMemory, confidence } from "./interactions.js";
 import { MODULE_ID } from "../constants.js";
 import { comparableItem, stable, transferable } from "./trade-model.js";
 import { createReceipt, saveReceipt, trimReceipts } from "./ledger.js";
 import { logger } from "../core/logger.js";
-const active = new Set();
 const clone = value => structuredClone(value);
 const inventoryData = item => item?.toObject() ?? null;
 function itemState(data) {
@@ -127,7 +127,7 @@ export function makeSteps(merchant, character, quote, now = new Date().toISOStri
 export async function executeTrade({ merchant, character, quote, request, receiptAdapter = { create: createReceipt, save: saveReceipt } }) {
   if (!game.user.isGM || (game.users.activeGM && game.users.activeGM.id !== game.user.id)) throw Error("Only the active GM can settle a trade.");
   const actors = [merchant, character];
-  if (actors.some(a => active.has(a.id) || a.getFlag(MODULE_ID, "transactionPending"))) throw Error("An Actor has an active trade or needs recovery.");
+  if (actors.some(a => active.has(a.id) || administrationBusy(a.id) || a.getFlag(MODULE_ID, "transactionPending"))) throw Error("An Actor has an active trade or needs recovery.");
   actors.forEach(a => active.add(a.id));
   let doc, record;
   try {
@@ -210,7 +210,7 @@ export async function recoverTrade(actor) {
   const record = clone(doc?.getFlag(MODULE_ID, "transaction"));
   if (!record) throw Error("Recovery receipt is missing; manual reconciliation required.");
   const actors = [game.actors.get(record.merchantId), game.actors.get(record.characterId)];
-  if (actors.some(a => !a || active.has(a.id))) throw Error("Actor missing or transaction still running.");
+  if (actors.some(a => !a || active.has(a.id) || administrationBusy(a.id))) throw Error("Actor missing or transaction still running.");
   actors.forEach(a => active.add(a.id));
   try {
     if (!["completed", "rolled-back"].includes(record.status)) {

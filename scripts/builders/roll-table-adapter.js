@@ -1,3 +1,4 @@
+import { COMPENDIUM_NAMES } from "../core/compendium-names.js";
 import { BATCH_SIZE, FLAG_SCOPE, MODULE_ID, MODULE_TITLE, TABLE_PACK_NAME, TABLE_PACK_COLLECTION } from "../constants.js";
 import { createFoundryAdapter } from "./foundry-adapter.js";
 import { assertManagedResults } from "./roll-table-plan.js";
@@ -40,7 +41,7 @@ export function createRollTableAdapter() {
       return pack;
     },
     createPack: () => foundry.documents.collections.CompendiumCollection.createCompendium({
-      name: TABLE_PACK_NAME, label: `${MODULE_TITLE} — Stock RollTables`, type: "RollTable", package: "world"
+      name: TABLE_PACK_NAME, label: COMPENDIUM_NAMES[TABLE_PACK_COLLECTION].label, type: "RollTable", package: "world"
     }),
     async readPack(pack) {
       const tables = await pack.getDocuments();

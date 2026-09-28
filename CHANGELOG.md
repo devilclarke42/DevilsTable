@@ -3,6 +3,27 @@
 This file retains detailed repository build history. The official milestone/release record is
 [docs/CHANGELOG.md](docs/CHANGELOG.md). Versions here do not imply a public GitHub Release exists.
 
+## 0.3.0-alpha.3 — 2026-09-28 — Project consolidation (Sprint 8A)
+
+### Added
+
+- GM Shop Administration view with Merchant Summary, economy inputs and confirmed Empty Stock.
+- Data-driven one-time native cash float, shared operation guards and manual first-stock hooks.
+- Administration/economy regression coverage and a documented live Foundry acceptance checklist.
+
+### Changed
+
+- Public name: **Devil's Table: Trade & Merchants**; stable module, source and collection IDs retained.
+- Descriptive Master Item Catalogue, Merchant Stock RollTables and private Transaction History labels.
+- Existing pack labels use a module-time display alias; stored metadata and UUIDs are unchanged.
+- Merchant Administration replaces Merchant Setup in UI and documentation.
+- Tavern content and its activation state are unchanged; no new merchant gameplay was added.
+
+### Validation
+
+- Validation passes for 144 active Items, 32 Stock RollTables and 306 automated tests; live Foundry acceptance remains required.
+- See [Merchant administration](docs/MERCHANT_ADMINISTRATION.md) for cash preservation and partial-operation limits.
+
 ## 0.3.0-alpha.2 — 2026-09-27 — Catalogue framework and merchant UX
 
 ### Added
@@ -77,7 +98,7 @@ This file retains detailed repository build history. The official milestone/rele
 
 ### Changed
 
-- GM review and Merchant Setup use percentage controls instead of copper-price/multiplier editors.
+- GM review and Merchant Administration use percentage controls instead of copper-price/multiplier editors.
 - Public prices and review totals use gp/sp/cp labels; currency disclosures remain collapsed.
 - Character prices are projected from canonical Actor Items without duplicating inventory.
 - Roll queries cache one result per request. Changed availability/ownership does not trap a
@@ -220,7 +241,7 @@ This file retains detailed repository build history. The official milestone/rele
 
 ### Changed
 
-- Merchant Setup groups controls into Merchant, Trade, Stock and Recovery tabs. Tab switches
+- Merchant Administration groups controls into Merchant, Trade, Stock and Recovery tabs. Tab switches
   preserve unsaved fields. Stock application and recovery use native confirmation dialogs.
 - Transfer verification errors identify the operation, Actor, Item (where applicable), field
   and differing values. Strict verification and rollback remain enabled.
@@ -327,7 +348,7 @@ This file retains detailed repository build history. The official milestone/rele
 
 ### Added
 
-- Merchant Setup can roll a profile's existing stock RollTables, show an inventory preview,
+- Merchant Administration can roll a profile's existing stock RollTables, show an inventory preview,
   and add its referenced compendium Items with weighted quantities after explicit GM action.
 - Existing source IDs, manual quantities and prices remain unchanged. Reapplying the same
   preview skips existing goods; missing references fail before any creation begins.

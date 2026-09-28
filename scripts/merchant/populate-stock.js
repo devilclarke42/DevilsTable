@@ -1,9 +1,10 @@
+import { withAdministration } from "./operation-guard.js";
+import { previewInitialFloat, assertFloatCurrent, applyInitialFloat } from "./economy.js";
 import { MODULE_ID, PACK_COLLECTION } from "../constants.js";
 import { rollStockList } from "../stock/stock-roller.js";
 import { merchantConfig } from "./model.js";
 import { logger } from "../core/logger.js";
 
-const busy = new Set();
 
 function authorize(actor) {
   if (!game.user.isGM || game.users.activeGM?.id !== game.user.id) throw new Error("Only the active GM may populate stock.");
@@ -15,11 +16,11 @@ function sourceIds(actor) {
 }
 
 /** Roll once for a GM preview. Existing source identities, including zero-stock offers, are preserved. */
-export async function previewMerchantStock(actor, scope, { roll = rollStockList } = {}) {
+export async function previewMerchantStock(actor, scope, { roll = rollStockList, planFloat = previewInitialFloat } = {}) {
   authorize(actor);
   const stock = await roll(scope);
   const existing = sourceIds(actor);
-  return { actorId: actor.id, profileName: stock.profileName, profileId: stock.profileId,
+  return { actorId: actor.id, float: await planFloat(actor, { profileId: stock.profileId }), profileName: stock.profileName, profileId: stock.profileId,
     items: stock.items.map(item => ({ ...item, skip: existing.has(item.id) })) };
 }
 
@@ -29,9 +30,9 @@ export async function applyMerchantStock(actor, preview, { resolve = uuid => fro
   if (preview?.actorId !== actor.id || !Array.isArray(preview.items) || preview.items.length > 500) {
     throw new Error("Invalid stock preview. Roll a new preview for this merchant.");
   }
-  if (busy.has(actor.id)) throw new Error("This merchant is already being populated.");
-  busy.add(actor.id);
-  try {
+  return withAdministration(actor, async () => {
+    const float = preview.float ?? await previewInitialFloat(actor, { profileId: preview.profileId });
+    assertFloatCurrent(actor, float);
     const seen = new Set();
     const existing = sourceIds(actor);
     const planned = [];
@@ -62,6 +63,7 @@ export async function applyMerchantStock(actor, preview, { resolve = uuid => fro
     }
     // Re-read after asynchronous resolution; manual additions since preview must not be duplicated.
     authorize(actor);
+    assertFloatCurrent(actor, float);
     const current = sourceIds(actor);
     const additions = planned.filter(row => !current.has(row.sourceId));
     if (additions.length) {
@@ -74,7 +76,13 @@ export async function applyMerchantStock(actor, preview, { resolve = uuid => fro
         }
       }
     }
+    if (additions.length) {
+      await applyInitialFloat(actor, float, {
+        [`flags.${MODULE_ID}.merchant.economy`]: float.inputs,
+        [`flags.${MODULE_ID}.merchant.administration.lastStockedAt`]: new Date().toISOString()
+      });
+    }
     logger.debug("Merchant stock populated", { merchant: actor.id, created: additions.length, profile: preview.profileId });
     return { created: additions.length, skipped: preview.items.length - additions.length };
-  } finally { busy.delete(actor.id); }
+  });
 }

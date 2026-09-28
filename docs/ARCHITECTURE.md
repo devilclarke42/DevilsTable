@@ -1,5 +1,20 @@
 # Architecture and API
 
+## Consolidation and administration (Sprint 8A)
+
+The public project is Devil's Table: Trade & Merchants; `devils-table` remains the stable namespace.
+`merchant/administration.js` provides GM-only summaries and confirmed inventory deletion;
+`inventory.js` defines physical stock; `economy.js` interprets validated `data/economy.json` policy.
+`operation-guard.js` shares checkout slots and Actor write guards with population, transactions and
+recovery. `initial-stock-hooks.js` connects native manual first stocking to the same float planner.
+The GM-only Shop view reads private Actor data locally; socket browse projections do not gain
+administration fields. Inventory and wallets remain native Actor data. Summary templates consume
+ordered label/value records. No new document type or duplicate inventory store is introduced.
+
+Compendium naming is centralised in `core/compendium-names.js`; builders use it for new packs and
+existing packs receive a runtime display-title alias. Collection IDs and stored metadata remain
+stable. Full storage, operation limits and acceptance checks: [Merchant administration](MERCHANT_ADMINISTRATION.md).
+
 ## Catalogue architecture (Sprint 8)
 
 Catalogues identify merchant types; categories organise their public inventory; Items retain one permanent identity and one shared compendium UUID. `scripts/catalogues/registry.js` validates and projects metadata, while `extensions.js` registers setup-time data bundles for the existing loader and builder. The Shop UI consumes only the GM projection. Actor inventory remains authoritative. See [Catalogue framework](CATALOGUE_FRAMEWORK.md) for storage, migration, permissions, performance and the services/Builder boundaries.

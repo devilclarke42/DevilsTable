@@ -66,7 +66,7 @@ Unknown category slugs do not create arbitrary tabs. Hidden categories are exclu
 same `publicOffers` function used for checkout and theft validation, so a forged basket cannot
 purchase a hidden item.
 
-Newly configured merchants save `merchant.catalogueId` through Merchant Setup. Legacy merchants
+Newly configured merchants save `merchant.catalogueId` through Merchant Administration. Legacy merchants
 are inferred from their embedded Items' `shops` memberships: greatest membership count wins,
 then catalogue sort order. An empty legacy merchant uses the first catalogue by sort order.
 This read-only fallback does not migrate or copy inventory. Review and explicitly select a

@@ -20,7 +20,7 @@ export class CompendiumBuilderApplication extends HandlebarsApplicationMixin(App
     classes: ["devils-table"],
     tag: "section",
     position: { width: 760, height: "auto" },
-    window: { title: "Devil's Table — Compendium Builder", icon: "fa-solid fa-hammer", resizable: true },
+    window: { title: "Devil's Table: Trade & Merchants — Compendium Builder", icon: "fa-solid fa-hammer", resizable: true },
     actions: {
       preview: CompendiumBuilderApplication.#onPreview,
       build: CompendiumBuilderApplication.#onBuild,

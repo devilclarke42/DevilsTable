@@ -227,3 +227,20 @@ relationships, and make GM decisions auditable without a second currency or cust
 is approved as design only. The [implementation roadmap](merchant/IMPLEMENTATION_ROADMAP.md)
 requires live V14 tests of non-owned token access, dedicated Shop UI browsing and concurrent
 checkout before implementation. No merchant runtime or migration has shipped.
+
+## Sprint 8A: stable identities, GM administration and a one-time native float
+
+Public branding can change without migrating module IDs, Item IDs or compendium UUIDs. New packs
+use descriptive names; existing collections receive display aliases because rewriting undocumented
+Foundry metadata is more fragile than preserving identity. Historical Item attribution remains intact.
+
+Administration is a private GM Shop view, using the existing Actor rather than a new dashboard
+store. Empty Stock deletes physical embedded goods after confirmation and shares transaction guards.
+Statistics derive from native inventory/currency, character relationships and the retained ledger;
+retained rejections are explicitly distinguished from lifetime counters.
+
+Settlement, prosperity and economic merchant profile are JSON policy inputs. Only an eligible
+first stocking grants a native currency float, with a persistent marker committed alongside cash.
+Preserving existing merchants and balances is more important than retroactively simulating an economy.
+Stock size, rare goods and restocking remain future consumers of the same inputs. See
+[Merchant administration](MERCHANT_ADMINISTRATION.md) for formulas, preservation and failure behaviour.

@@ -23,7 +23,7 @@ revised offer. Approval of edited fields first recalculates and requires another
 Reject and Close create private decision receipts without changing inventory or currency.
 If the player disconnected or no longer confirms the pending request, approval stops.
 
-Merchant Setup exposes finite/infinite funds, optional denomination checking and multipliers.
+Merchant Administration exposes finite/infinite funds, optional denomination checking and multipliers.
 Defaults are finite funds, ordinary value settlement and 1× in both directions. Fractions such
 as 0.5 are allowed; prices round to the nearest copper. Infinite funding leaves the merchant's
 native wallet unchanged and is recorded explicitly in the receipt. It does not waive the
@@ -189,7 +189,7 @@ The original approval exception is not visible. Alpha.16 resolves existing recei
 completed remains completed; a pre-write attempt (`attempted: -1`) or rolled-back attempt can be
 closed/rejected; a potentially partial attempt can be dismissed while retaining its recovery
 plan and blocking both Actors. No duplicate trade is performed. Reload both clients after
-installation. If Merchant Setup reports pending recovery, use its recovery action before
+installation. If Merchant Administration reports pending recovery, use its recovery action before
 requesting another trade. Do not delete private receipts to bypass recovery.
 
 Receipt verification now uses detached JSON snapshots and reports the first differing path.
@@ -204,7 +204,7 @@ or field. Alpha.17 adds those details to the GM error and console log without re
 verification, accepting altered Item data or bypassing rollback. The cause remains unconfirmed;
 collect the new first error on live retest. The repository has 258 passing tests.
 
-Merchant Setup now uses Merchant, Trade, Stock and Recovery sections styled as tabs. Switching
+Merchant Administration now uses Merchant, Trade, Stock and Recovery sections styled as tabs. Switching
 sections hides existing panels instead of rerendering, preserving unsaved form values. The NPC
 selector and status remain visible. Applying stock and running recovery require native DialogV2
 confirmation; cancelling the prompt makes no world changes. Existing item/table builder menus
@@ -248,7 +248,7 @@ recovery, and never treats a conflicting trade as successful. Original receipt s
 intact. Restored Items use native creation semantics. Rollback diagnostics name failing fields.
 
 For the reported partial trade: install alpha.19, reload GM and player, select Test Merchant in
-Merchant Setup → Recovery, and confirm Check / recover interrupted trade. A successful recovery
+Merchant Administration → Recovery, and confirm Check / recover interrupted trade. A successful recovery
 removes the transaction-created character backpack, restores the merchant backpack, leaves the
 unattempted strap unchanged, restores wallets where necessary, and marks the receipt rolled-back.
 Already restored balances are not charged again. Verify those results before a new checkout.

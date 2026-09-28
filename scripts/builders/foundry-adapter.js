@@ -1,3 +1,4 @@
+import { COMPENDIUM_NAMES } from "../core/compendium-names.js";
 import { MODULE_ID, MODULE_TITLE, PACK_NAME, PACK_COLLECTION } from "../constants.js";
 
 /** Keep all Foundry globals at this boundary; pure builder logic is testable in Node. */
@@ -27,7 +28,7 @@ export function createFoundryAdapter() {
     },
     async createPack() {
       return foundry.documents.collections.CompendiumCollection.createCompendium({
-        name: PACK_NAME, label: `${MODULE_TITLE} — Items`, type: "Item", system: "dnd5e", package: "world"
+        name: PACK_NAME, label: COMPENDIUM_NAMES[PACK_COLLECTION].label, type: "Item", system: "dnd5e", package: "world"
       });
     },
     async readPack(pack) {

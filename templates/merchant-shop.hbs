@@ -5,6 +5,28 @@
       <div class="dt-merchant-context">{{#if catalogue}}<p><img class="dt-category-icon" src="{{catalogue.icon}}" alt=""> {{catalogue.name}}</p>{{/if}}<p>Status: <strong>{{availability}}</strong></p></div>
     </div>
   </header>
+  {{#if canAdmin}}<nav class="dt-manager-tabs" aria-label="Merchant view">
+    <button type="button" data-action="toggleAdministration">{{#if administrationOpen}}Return to Inventory{{else}}Administration{{/if}}</button>
+  </nav>{{/if}}
+  {{#if administrationOpen}}
+  <section class="dt-administration" aria-label="Merchant administration">
+    <h3>Merchant Summary — {{merchant}}</h3>
+    {{#if adminError}}<p role="alert">{{adminError}}</p>{{/if}}
+    {{#if administration}}
+      <p>{{administration.catalogue}}</p>
+      <dl class="dt-summary-card">{{#each administration.rows}}<div><dt>{{label}}</dt><dd>{{value}}</dd></div>{{/each}}</dl>
+      {{#if administration.unpriced}}<p>{{administration.unpriced}} entries could not be valued; inventory value excludes them.</p>{{/if}}
+      <p>Initial float: {{administration.floatStatus}}. Values use base item/offer prices. Lifetime trade totals come from character relationships.</p>
+      <details><summary>Economy configuration</summary>
+        {{#each administration.fields}}<label>{{label}} <select name="{{key}}">{{#each choices}}<option value="{{id}}" {{#if selected}}selected{{/if}}>{{name}}</option>{{/each}}</select></label>{{/each}}
+        <button type="button" data-action="saveEconomy" {{#if adminBusy}}disabled{{/if}}>Save economy settings</button>
+        <p>These inputs determine the one-time initial cash float. Changing them does not refill an existing wallet.</p>
+      </details>
+      <button type="button" data-action="setupMerchant">Open Merchant Administration / Populate Inventory</button>
+      <button type="button" data-action="emptyStock" {{#if adminBusy}}disabled{{/if}}>Empty Stock</button>
+    {{/if}}
+  </section>
+  {{else}}
   <p role="status" aria-live="polite">{{message}}</p>
   <div class="dt-shop-controls">
     <label>Search <input name="search" type="search" value="{{query}}" maxlength="100"></label>
@@ -47,4 +69,5 @@
     <p>Unequip and unattune items; empty containers and remove nested items before selling.</p>
     {{#each sellItems}}<p>{{name}} · Offer {{priceLabel}} each · {{quantity}} owned <button type="button" data-action="sell" data-id="{{id}}">Offer one</button></p>{{else}}<p>Select a character with priced physical items, then Refresh stock.</p>{{/each}}
   </details>
+  {{/if}}
 </div>

@@ -8,6 +8,23 @@ This is the official milestone/release changelog. The root [build changelog](../
 retains detailed alpha implementation history. A milestone entry does not assert that a public
 GitHub Release or installation manifest exists. No release dates are invented for unreleased work.
 
+## [0.3.0-alpha.3] — 2026-09-28
+
+### Added
+
+- GM Merchant Summary and confirmed Empty Stock in the Shop Administration view.
+- JSON-driven initial native currency float with one-time initialization and preservation safeguards.
+- Shared administration/transaction guards and regression tests.
+
+### Changed
+
+- Public branding to Devil's Table: Trade & Merchants; internal identities remain stable.
+- Descriptive Item catalogue, stock RollTable and private transaction history display names.
+- Administration documentation, terminology, architecture and live acceptance checklist.
+- No Tavern content, catalogue activation or new merchant gameplay changes.
+
+This is a packaged development candidate, not a claim of a published GitHub Release or live validation.
+
 ## [0.3.0] — In Development
 
 ### Revised Sprint 8 scope

@@ -1,5 +1,18 @@
 # Roadmap
 
+## Sprint 8A — Consolidation candidate: 0.3.0-alpha.3
+
+- [x] Trade & Merchants branding with stable module/source/collection identities.
+- [x] Reviewed compendium names and documented existing-pack display aliases.
+- [x] GM Merchant Summary, confirmed Empty Stock and shared transaction guards.
+- [x] Data-driven initial native cash float with existing-wallet and repeat-grant protection.
+- [x] Documentation, regression coverage and unchanged Tavern content.
+- [ ] Live Foundry/Forge acceptance: [checklist](docs/MERCHANT_ADMINISTRATION.md#validation-and-live-acceptance).
+
+Future economy work may use settlement, prosperity and merchant profile for stock/rarity/restocking;
+none of those systems is implemented here. Existing catalogue milestones are unchanged.
+
+
 This is the detailed implementation and acceptance checklist. The official versioned milestones
 and release outcomes are defined in [docs/ROADMAP.md](docs/ROADMAP.md).
 

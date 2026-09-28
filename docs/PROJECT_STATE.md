@@ -1,8 +1,18 @@
 # Project state
 
-Updated 2026-09-27 for `0.3.0-alpha.2`.
+Updated 2026-09-28 for `0.3.0-alpha.3`.
 
-## Current candidate
+## Sprint 8A candidate
+
+Devil's Table: Trade & Merchants now includes GM Shop Administration, Merchant Summary, confirmed
+Empty Stock, economy policy inputs and a one-time native cash float. Stable IDs, live inventory,
+private merchant records and all Tavern source content are preserved. Compendium display labels
+have been reviewed; existing-pack labels are runtime aliases, not metadata migrations.
+Automated validation passes: 144 active Items, 32 Stock RollTables and 306 tests.
+See [Merchant administration](MERCHANT_ADMINISTRATION.md) for formulas, safeguards and live checks.
+The prior catalogue activation state below is unchanged. No new gameplay was added.
+
+## Catalogue baseline
 
 Sprint 8 is Catalogue Framework & Merchant UX. Data-defined catalogues and categories drive the
 Shop UI. Source JSON generates one shared Item compendium; merchant NPC embedded Items remain
@@ -30,7 +40,7 @@ and the previously documented distance-enforcement limitation.
 ## Review sequence
 
 1. Install `0.3.0-alpha.2`, restart/reconnect the test world and select the merchant's catalogue in
-   Merchant Setup. Existing merchant inventories remain intact.
+   Merchant Administration. Existing merchant inventories remain intact.
 2. Open the shop as a player without NPC ownership. Check portrait, token name, catalogue and status.
 3. Search by a tag and category label; confirm focus remains in the input and basket items remain.
 4. Empty a stocked category as GM, refresh the shop and verify its tab disappears. Check the basket
