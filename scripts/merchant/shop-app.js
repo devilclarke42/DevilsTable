@@ -29,6 +29,7 @@ export class MerchantShopApplication extends HandlebarsApplicationMixin(Applicat
   #sales = new Map();
   #buyModifier = 1;
   #sellerId = null;
+  #view = "inventory";
   #query = "";
   #category = "";
   #merchant = "Merchant";
@@ -72,7 +73,7 @@ export class MerchantShopApplication extends HandlebarsApplicationMixin(Applicat
     id: "devils-table-merchant-shop", classes: ["devils-table"], tag: "section",
     position: { width: 740, height: "auto" },
     window: { title: "Devil's Table: Trade & Merchants — Shop", icon: "fa-solid fa-store", resizable: true },
-    actions: { toggleAdministration: MerchantShopApplication.#toggleAdministration, emptyStock: MerchantShopApplication.#emptyStock,
+    actions: { view: MerchantShopApplication.#viewTab, toggleAdministration: MerchantShopApplication.#toggleAdministration, emptyStock: MerchantShopApplication.#emptyStock,
       saveEconomy: MerchantShopApplication.#saveEconomy, setupMerchant: MerchantShopApplication.#setupMerchant, negotiate: MerchantShopApplication.#negotiate, steal: MerchantShopApplication.#steal, refresh: MerchantShopApplication.#refresh, search: MerchantShopApplication.#search,
       category: MerchantShopApplication.#selectCategory, add: MerchantShopApplication.#add,
       remove: MerchantShopApplication.#remove, sell: MerchantShopApplication.#sell, unsell: MerchantShopApplication.#unsell, checkout: MerchantShopApplication.#checkout }
@@ -105,15 +106,15 @@ export class MerchantShopApplication extends HandlebarsApplicationMixin(Applicat
     const total = basket.reduce((n, row) => n + row.subtotal, 0) - sales.reduce((n, row) => n + row.count * row.copper, 0);
     let funds = 0;
     try { funds = walletValue(pc?.actor.system.currency); } catch (_) { /* Disable checkout below. */ }
-    return { ...await super._prepareContext(options), canAdmin, administrationOpen: canAdmin && this.#administrationOpen,
+    return { ...await super._prepareContext(options), canAdmin, inventoryView:this.#view==="inventory",servicesView:this.#view==="services", administrationOpen: canAdmin && this.#administrationOpen,
       administration, adminError, adminBusy: this.#adminBusy, sales, sellItems: offers.map(i => ({ ...i, priceLabel: formatCopper(i.copper) })),
       characterName: pc?.actor.name ?? "Select your character token", fundsLabel: formatCopper(funds),
       fundsError: this.#stockCharacterId !== pc?.actor.id ? "Refresh stock for the selected character’s prices." : total > funds ? "Not enough money for this basket." : "",
       merchant: this.#token.document.name ?? this.#merchant, portrait: this.#portrait,
       availability: this.#availability.charAt(0).toUpperCase() + this.#availability.slice(1),
-      items: filtered.map(item => ({ ...item, hidden: !matchesOffer(item, this.#query, this.#category), priceLabel: formatCopper(item.copper) })), basket, message: this.#message, query: this.#query,
-      categories: this.#categories.map(row => ({ ...row, selected: row.id === this.#category })),
-      noMatches: !this.#items.some(item => matchesOffer(item, this.#query, this.#category)),
+      items: filtered.map(item => ({ ...item, hidden: !this.#matches(item), priceLabel: formatCopper(item.copper) })), basket, message: this.#message, query: this.#query,
+      categories: (this.#view === "services" ? [...new Map(this.#items.filter(r=>r.isService).map(r=>[r.category,{id:r.category,name:r.categoryName,icon:r.img}])).values()] : this.#categories).map(row => ({ ...row, selected: row.id === this.#category })),
+      noMatches: !this.#items.some(item => this.#matches(item)),
       catalogue: this.#catalogue,
       originalLabel: formatCopper(basket.reduce((n, row) => n + row.count * (row.originalCopper ?? row.copper), 0)),
       adjustedLabel: formatCopper(basket.reduce((n, row) => n + row.subtotal, 0)),
@@ -186,12 +187,14 @@ export class MerchantShopApplication extends HandlebarsApplicationMixin(Applicat
     });
   }
 
+  #matches(item) { return matchesOffer(item,this.#query,this.#category) && (this.#query.trim() || (this.#view === "services" ? item.isService : !item.isService)); }
+  static async #viewTab(_event,target) { this.#view=target.dataset.view === "services" ? "services" : "inventory";this.#category="";await this.render(); }
   #filterElements() {
     let matches = 0;
     const byId = new Map(this.#items.map(item => [item.id, item]));
     for (const row of this.element.querySelectorAll("[data-offer-id]")) {
       const item = byId.get(row.dataset.offerId);
-      row.hidden = !item || !matchesOffer(item, this.#query, this.#category);
+      row.hidden = !item || !this.#matches(item);
       if (!row.hidden) matches++;
     }
     const empty = this.element.querySelector("[data-no-matches]");
@@ -267,7 +270,7 @@ export class MerchantShopApplication extends HandlebarsApplicationMixin(Applicat
       lines: [...this.#basket].map(([id, quantity]) => ({ id, quantity })) }, async result => {
       this.#pending = result.status === "pending";
       this.#message = result.error || ({ pending: "GM is reviewing the request; no stock is reserved.",
-        approved: "Trade completed. Items and currency transferred.",
+        approved: "Trade completed. Purchases and payment recorded; the GM resolves any service action requiring attention.",
         rejected: "Checkout was rejected or the revised offer was declined. Your basket remains available.",
         close: "GM closed the request. Your basket remains available." }[result.status] ?? "Request complete.");
       if (result.status === "approved") { this.#basket.clear(); this.#sales.clear(); await this.refreshStock(); }

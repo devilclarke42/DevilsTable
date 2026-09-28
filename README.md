@@ -2,11 +2,11 @@
 
 ## Sprint 9 — Merchant Builder
 
-Current candidate: **0.3.0-alpha.6**. The Builder now has Setup, Stock, Cash and Manage tabs, direct tab access and Back/Next navigation. Manual stock/cash overrides and a confirmed Reset Merchant action are included. Open **Merchant Builder** in module settings or the GM Shop UI.
+Current candidate: **0.3.0-alpha.7** — Merchant Services framework. Players can buy services alongside products; GMs configure definitions and offers through **Merchant Builder → Manage → Service Categories / Offerings**. See the [Merchant Services guide](docs/MERCHANT_SERVICES.md) for the JSON format, setup and execution rules.
 The editable tabbed builder converts NPCs without losing existing data, applies reusable presets, previews
 stock/cash, regenerates selected components and manages inventory. Custom templates are GM-only.
 See the [Merchant Guide](docs/MERCHANT_GUIDE.md) for the workflow, preservation rules and live checks.
-Restock scheduling, greetings and services remain future work; Tavern content is unchanged.
+Restock scheduling and greetings remain future work. No Tavern services are bundled; existing Tavern content is unchanged.
 
 
 ## Sprint 8A — Project consolidation

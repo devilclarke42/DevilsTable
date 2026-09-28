@@ -25,7 +25,7 @@ export class MerchantBuilderApplication extends HandlebarsApplicationMixin(Appli
   static DEFAULT_OPTIONS = {
     id:"devils-table-merchant-builder",classes:["devils-table"],tag:"section",position:{width:850,height:730},
     window:{title:"Devil's Table: Trade & Merchants — Merchant Builder",icon:"fa-solid fa-store",resizable:true},
-    actions:{editStock:MerchantBuilderApplication.#editStock,selectTab:MerchantBuilderApplication.#selectTab,stepTab:MerchantBuilderApplication.#stepTab,resetMerchant:MerchantBuilderApplication.#resetMerchant,save:MerchantBuilderApplication.#save,generateStock:MerchantBuilderApplication.#generateStock,
+    actions:{services:MerchantBuilderApplication.#services,editStock:MerchantBuilderApplication.#editStock,selectTab:MerchantBuilderApplication.#selectTab,stepTab:MerchantBuilderApplication.#stepTab,resetMerchant:MerchantBuilderApplication.#resetMerchant,save:MerchantBuilderApplication.#save,generateStock:MerchantBuilderApplication.#generateStock,
       generateFloat:MerchantBuilderApplication.#generateFloat,generateNotes:MerchantBuilderApplication.#generateNotes,
       applyStock:MerchantBuilderApplication.#applyStock,applyFloat:MerchantBuilderApplication.#applyFloat,
       editFloat:MerchantBuilderApplication.#editFloat,empty:MerchantBuilderApplication.#empty,
@@ -133,6 +133,7 @@ export class MerchantBuilderApplication extends HandlebarsApplicationMixin(Appli
     try{await operation();}catch(error){this.#message=error.message;ui.notifications.error(error.message);}
     finally{this.#busy=false;if(!this.#closed)await this.render();}
   }
+  static async #services(){await this.#run(async()=>{this.#requireSaved();const {MerchantServicesApplication}=await import("../../services/manager-app.js");await new MerchantServicesApplication(this.actor).render({force:true});});}
   static async #save(){await this.#run(async()=>{const preserve=Object.keys(this.#draft).every(key=>key==="notes"||this.#draft[key]===this.#saved[key]);this.#snapshot=await saveConfiguration(this.actor,this.#draft,this.#context,this.#snapshot);this.#saved=structuredClone(this.#draft);if(preserve){if(this.#stock)this.#stock.builderSnapshot=this.#snapshot;}else{this.#stock=null;this.#float=null;}this.#message="Merchant configured. Existing NPC data, inventory and cash preserved.";});}
   static async #generateStock(){await this.#run(async()=>{this.#requireSaved();this.#stock=await planBuilderStock(this.actor,this.#draft,this.#context,{float:this.#float});this.#float=this.#stock.float;this.#message="Review the assortment and cash below. Nothing has been applied.";});}
   static async #generateFloat(){await this.#run(async()=>{

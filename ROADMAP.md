@@ -1,5 +1,10 @@
 # Roadmap
 
+## Sprint 10A — Merchant Services framework candidate
+
+Implemented in `0.3.0-alpha.7`: separate definitions, shared basket/payment review, service administration, usage statistics and optional post-payment native integrations. Await live Foundry review before starting Tavern service content (Sprint 10B). No new trading mechanics or Tavern services are bundled.
+
+
 ## Sprint 9 — Merchant Builder candidate: 0.3.0-alpha.4
 
 - [x] Single editable panel; preserve existing NPC data during conversion.
@@ -9,7 +14,7 @@
 - [x] Documentation and automated regression coverage.
 - [ ] Live Foundry/Forge acceptance using the [Merchant Guide](docs/MERCHANT_GUIDE.md#maintenance-and-acceptance).
 
-Automatic restocking, greetings, services and template import/export remain future work.
+Automatic restocking, greetings and template import/export remain future work. The service framework is now implemented; merchant-specific service content follows review.
 Existing catalogue milestones and Tavern content are unchanged.
 
 

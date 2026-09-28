@@ -78,3 +78,10 @@
 .devils-table .dt-merchant-builder [role=tab][aria-selected=true] { font-weight: bold; outline: 2px solid var(--color-border-highlight, #bb853e); }
 .devils-table .dt-merchant-builder [role=tabpanel] { padding: .5rem 0; }
 .devils-table .dt-merchant-builder [data-stock-id] { max-width: 7rem; }
+
+/* Services remain separate from Item inventory while sharing the merchant layout. */
+.devils-table .dt-services-manager { overflow-y: auto; padding: 0.5rem; }
+.devils-table .dt-services-manager article { padding: 0.6rem; border-bottom: 1px solid var(--color-border-light-primary, #777); }
+.devils-table .dt-services-manager textarea { width: 100%; min-height: 16rem; font-family: monospace; }
+.devils-table .dt-services-manager input[type=number] { width: 6rem; }
+.devils-table .dt-manager-tabs button[aria-pressed=true] { font-weight: bold; outline: 1px solid currentColor; }

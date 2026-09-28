@@ -164,3 +164,13 @@ another merchant's receipts and refusal while checkout/recovery is active. Check
 preserves unsaved inputs, then reroll cash for an existing merchant and verify the confirmed amount
 matches its native wallet. Automated tests simulate these paths; live Foundry/Forge validation
 is still required.
+
+## Merchant Services (alpha.7)
+
+Open Builder **Manage → Service Categories / Offerings** after saving the merchant configuration.
+Author shared definitions as JSON, select service categories to generate eligible offers, or choose
+individual offerings and prices. Players use the Services tab and the same basket/approval flow.
+Service usage appears in Merchant Summary and the service administration window. Empty Stock only
+removes physical goods; Reset Merchant also removes service offerings and statistics.
+See [Merchant Services](MERCHANT_SERVICES.md) for a complete working definition example and optional
+execution behaviour. No Tavern-specific services ship in this framework candidate.

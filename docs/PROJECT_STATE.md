@@ -1,8 +1,18 @@
 # Project state
 
-Updated 2026-09-28 for `0.3.0-alpha.6`.
+Updated 2026-09-28 for `0.3.0-alpha.7`.
 
-## Current candidate — alpha.6
+## Current candidate — alpha.7 / Sprint 10A
+
+Services are a separate JSON registry with GM world authoring, catalogue/economy eligibility,
+Shop tab/search, mixed baskets, shared pricing/approval/native currency, guarded administration
+and verified usage counters. Optional native actions execute after payment with an auditable
+non-replay policy. No service Items or new compendiums exist. Tavern data is unchanged.
+All 341 automated tests pass; 144 production Items and 32 stock tables still validate.
+Live multiplayer and optional integration acceptance remains pending; see MERCHANT_SERVICES.md.
+
+## Previous candidate — alpha.6 (user confirmed working)
+
 
 Builder tabs replace the long single view. Stock quantities and final cash remain editable;
 manual cash rolls work for existing finite-funds merchants. Manage includes a confirmed merchant

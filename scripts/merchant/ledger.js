@@ -26,9 +26,10 @@ const escape = text => String(text).replace(/[&<>"']/g, c => ({ "&":"&amp;", "<"
 function page(record) {
   const lines = record.quote?.basket ?? [];
   return `<h2>${escape(record.status)}</h2><p>${escape(record.date)} · ${escape(record.characterName)} · ${escape(record.merchantName)}</p>`
-    + `<ul>${lines.map(row => `<li>${escape(row.direction)}: ${row.quantity} × ${escape(row.name)} — ${escape(formatCopper(row.copper))} each</li>`).join("")}</ul>`
+    + `<ul>${lines.map(row => `<li>${row.kind === "service" ? "Service" : "Product"} · ${escape(row.direction)}: ${row.quantity} × ${escape(row.name)} — ${escape(formatCopper(row.copper))} each</li>`).join("")}</ul>`
     + `<p>${record.quote?.total < 0 ? "Character receives" : "Character pays"}: ${escape(formatCopper(Math.abs(record.quote?.total ?? 0)))}</p>`
     + (record.quote?.interaction ? `<p>Interaction: ${escape(record.quote.interaction.kind)} · GM outcome: ${escape(record.quote.interaction.outcome)} · Skill: ${escape(record.quote.interaction.skill)} · Roll: ${escape(record.quote.interaction.total)} · DC (private): ${escape(record.quote.interaction.dc)} · Modifier: ${escape(record.quote.interaction.modifier)}%</p>` : "")
+    + (record.serviceExecution?.length ? `<h3>Service execution (after payment)</h3><ul>${record.serviceExecution.map(job=>`<li>${escape(job.name)} · ${escape(job.kind)} · ${escape(job.status)} ${escape(job.error??"")} ${escape(job.result??"")}</li>`).join("")}</ul><p>Attempted or needs-attention actions require GM inspection. Do not automatically replay.</p>` : "")
     + `<p>${escape(record.error ?? record.status)}</p>`;
 }
 const serializable = value => value === undefined ? null : JSON.parse(JSON.stringify(value));
@@ -97,10 +98,10 @@ export async function trimReceipts(merchant) {
   const limit = RETENTION[policy] ?? 500;
   if (limit === Infinity) return;
   const pack = await transactionPack();
-  const index = await pack.getIndex({ fields: [`flags.${MODULE_ID}.transaction.merchantId`, `flags.${MODULE_ID}.transaction.status`, `flags.${MODULE_ID}.transaction.date`] });
+  const index = await pack.getIndex({ fields: [`flags.${MODULE_ID}.transaction.merchantId`, `flags.${MODULE_ID}.transaction.status`, `flags.${MODULE_ID}.transaction.date`, `flags.${MODULE_ID}.transaction.serviceExecution`] });
   const rows = [...index].filter(row => {
     const record = row.flags?.[MODULE_ID]?.transaction;
-    return record?.merchantId === merchant.id && ["completed", "rejected", "rolled-back", "closed"].includes(record.status);
+    return record?.merchantId === merchant.id && !(record.status === "completed" && (record.serviceExecution??[]).some(job=>job.status!=="completed")) && ["completed", "rejected", "rolled-back", "closed"].includes(record.status);
   }).sort((a, b) => b.flags[MODULE_ID].transaction.date.localeCompare(a.flags[MODULE_ID].transaction.date));
   if (rows.length > limit) await CONFIG.JournalEntry.documentClass.deleteDocuments(rows.slice(limit).map(row => row._id), { pack: pack.collection });
 }

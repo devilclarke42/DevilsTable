@@ -1,3 +1,4 @@
+import { ServiceRegistry } from "../scripts/services/registry.js";
 import { loadBuilderPolicy } from "../scripts/merchant/builder/model.js";
 import { builtInTemplates, validateTemplate } from "../scripts/merchant/builder/templates.js";
 import { CatalogueRegistry } from "../scripts/catalogues/registry.js";
@@ -16,6 +17,7 @@ const readJson = async path => JSON.parse(await readFile(resolve(ROOT, path), "u
 const assert = (ok, message) => { if (!ok) throw new Error(message); };
 
 try {
+  new ServiceRegistry().register(await readJson("data/services.json"));
   const economy = await loadEconomy({ readJson });
   const policy = await loadBuilderPolicy({ readJson });
   const catalogue = await loadStockCatalogue({ readJson });

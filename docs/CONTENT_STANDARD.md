@@ -187,3 +187,9 @@ review verifies believable economics, honest weight adjustments, good writing, i
 and provenance. Current schema validation does not enforce every editorial rule in this document.
 Unknown JSON fields fail rather than being ignored. A failed check must be fixed at the source;
 never patch a generated compendium to make the validation report look clean.
+
+## Services are separate content
+
+This document governs Items. Merchant services use `DT_SERVICE_` identities and the separate
+[Merchant Services contract](MERCHANT_SERVICES.md). Never create zero-weight or fake Items for
+services. Shared catalogue assignments do not place services in the Master Item Catalogue.

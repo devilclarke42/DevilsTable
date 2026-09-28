@@ -106,11 +106,13 @@ async function receive(msg) {
     logger.debug("Merchant opened", { merchant: actor.id });
     const customer = game.actors.get(msg.characterId);
     const shopper = customer?.testUserPermission(game.users.get(msg.userId), "OWNER") ? customer : null;
-    const view = catalogueRegistry.project(actor, purchaseOffers(actor, shopper));
+    const offers = purchaseOffers(actor, shopper);
+    const view = catalogueRegistry.project(actor, offers.filter(row=>row.kind!=="service"));
+    const services=offers.filter(row=>row.kind==="service").map(({execution,...row})=>row);
     const pricing = pricingTerms(actor, shopper);
     return notify(msg.userId, { id: msg.id, type: "stock", catalogue: view.catalogue, categories: view.categories,
       pricing: { merchant: pricing.merchant, character: pricing.character, negotiation: pricing.negotiation, stacking: pricing.stacking }, merchant: token.name ?? actor.name, presentation: merchantPresentation(actor), characterId: shopper?.id ?? null,
-      availability: merchantConfig(actor).availability ?? "open", items: markOfferGroups(actor, view.items), buyModifier: tradeSettings(actor).buyModifier });
+      availability: merchantConfig(actor).availability ?? "open", items: [...markOfferGroups(actor, view.items), ...services], buyModifier: tradeSettings(actor).buyModifier });
   }
   if (!["checkout", "interaction"].includes(msg.type)) return;
   if (msg.type === "interaction" && (!INTERACTIONS[msg.kind] || (msg.kind === "theft" && !publicOffers(actor).some(item => item.id === msg.itemId)))) {
@@ -202,6 +204,8 @@ async function finish(actor, character, request, proposal, decision, edits, acce
       if (!character.testUserPermission(game.users.get(request.userId), "OWNER")) throw Error("Character ownership changed.");
       if ((merchantConfig(actor)?.availability ?? "closed") !== "open") throw Error("Merchant is no longer open.");
       const quote = quoteTrade(actor, character, request, edits);
+      const actions = value => value.basket.filter(row=>row.kind==="service").map(row=>({id:row.id,execution:row.execution}));
+      if (stable(actions(quote)) !== stable(actions(proposal))) throw Error("Service execution changed. Recalculate and review the service actions before approval.");
       if (stable(offerTerms(quote)) !== stable(accepted)) throw Error("The player must accept these revised terms. Recalculate the offer first.");
       // A changed quote must be resubmitted, unless the GM explicitly supplied line edits.
       if (!edits && stable(quote.basket) !== stable(proposal.basket)) throw Error("Prices changed. Close and resubmit this trade.");

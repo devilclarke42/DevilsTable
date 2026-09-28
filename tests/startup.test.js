@@ -40,7 +40,9 @@ test("startup registers a restricted V2 menu and a read-only-default API without
   hooks.get("init")();
   t.mock.method(globalThis, "fetch", async url => ({ ok: true, json: () => readJson(String(url).replace("modules/devils-table/", "")) }));
   await hooks.get("ready")();
-  assert.equal(settings.length, 5);
+  assert.equal(settings.length, 6);
+  assert.equal(settings.find(row=>row.key==="serviceDefinitions").config.config,false);
+  assert.equal(typeof module.api.registerServiceProvider,"function");
   assert.equal(menus.length, 3);
   assert.equal(menus.find(menu => menu.key === "stockTableBuilder").config.restricted, true);
   assert.equal(menus.find(menu => menu.key === "merchantManager").config.restricted, true);

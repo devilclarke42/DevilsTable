@@ -244,3 +244,13 @@ first stocking grants a native currency float, with a persistent marker committe
 Preserving existing merchants and balances is more important than retroactively simulating an economy.
 Stock size, rare goods and restocking remain future consumers of the same inputs. See
 [Merchant administration](MERCHANT_ADMINISTRATION.md) for formulas, preservation and failure behaviour.
+
+## Sprint 10A — Service definitions and post-payment execution
+
+Service definitions are separate JSON records; products and services are peers under catalogues.
+The existing checkout and verified currency pipeline remain authoritative. This avoids duplicated
+approval logic and fake Items. Service statistics use compensatable transaction steps.
+Arbitrary macros cannot be rolled back safely, so integrations run after committed payment and
+persist an attempt marker before execution. Failed/uncertain actions require GM inspection and
+are never automatically replayed. Native journals open privately for the GM; table draws remain
+private in receipts. No service-specific merchant branches or Tavern content were introduced.

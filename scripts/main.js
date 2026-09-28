@@ -1,3 +1,4 @@
+import { registerServiceProvider, initialiseServices } from "./services/registry.js";
 import { registerInitialStockHooks } from "./merchant/initial-stock-hooks.js";
 import { applyCompendiumNames } from "./core/compendium-names.js";
 import { registerCatalogueProvider, initialiseCatalogues } from "./catalogues/extensions.js";
@@ -23,6 +24,7 @@ Hooks.once("init", () => {
   registerInitialStockHooks();
   game.modules.get(MODULE_ID).api = Object.freeze({
     registerCatalogueProvider,
+    registerServiceProvider,
     catalogues: () => catalogueRegistry.list(),
     loadCatalogue,
     validateCatalogue,
@@ -55,6 +57,7 @@ Hooks.once("init", () => {
 Hooks.once("ready", async () => {
   try {
     await initialiseCatalogues(readModuleJson);
+    await initialiseServices(readModuleJson);
   } catch (error) {
     logger.error("Catalogue startup failed", error);
     ui.notifications.error("Devil’s Table catalogue validation failed. Check the GM console; merchant browsing is unavailable.");

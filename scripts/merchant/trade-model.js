@@ -1,3 +1,4 @@
+import { serviceOffers } from "../services/offers.js";
 import { MODULE_ID } from "../constants.js";
 import { coinValue, publicOffers, sanitizeBasket } from "./model.js";
 import { pricingTerms, combinedPercent, priced, percent } from "./pricing.js";
@@ -14,16 +15,20 @@ export function saleOffers(character, modifier = 1) {
 }
 export function purchaseOffers(merchant, character = null) {
   const terms = pricingTerms(merchant, character);
-  const modifier = combinedPercent([terms.merchant, terms.character, terms.negotiation], terms.stacking);
-  return publicOffers(merchant).map(item => {
-    const copper = priced(item.copper, modifier);
-    return { ...item, originalCopper: item.copper, modifier, copper, price: { value: copper, denomination: "cp" } };
+  return [...publicOffers(merchant), ...serviceOffers(merchant, character, { includeUnavailable: true })].map(item => {
+    const combined = combinedPercent([terms.merchant, terms.character, terms.negotiation, item.serviceModifier ?? 0], terms.stacking);
+    const copper = priced(item.copper, combined);
+    return { ...item, originalCopper: item.copper, modifier: combined, copper, price: { value: copper, denomination: "cp" } };
   });
 }
 export function quoteTrade(merchant, character, request, edits = null, { settlement = true } = {}) {
   const settings = tradeSettings(merchant);
   const pricing = pricingTerms(merchant, character, edits?.pricing);
-  const purchases = request.lines?.length ? sanitizeBasket(request.lines, publicOffers(merchant)).basket : [];
+  const offers = [...publicOffers(merchant), ...serviceOffers(merchant, character)];
+  const purchases = request.lines?.length ? sanitizeBasket(request.lines, offers).basket.map(row => {
+    const offer=offers.find(o=>o.id===row.id);
+    return offer.kind === "service" ? {...row, kind:"service", serviceId:offer.serviceId, serviceModifier:offer.serviceModifier, execution:offer.execution} : row;
+  }) : [];
   const sales = request.sales?.length ? sanitizeBasket(request.sales, saleOffers(character, 1)).basket : [];
   if (!purchases.length && !sales.length) throw Error("The basket is empty.");
   const lines = [...purchases.map(row => ({ ...row, direction: "buy" })), ...sales.map(row => ({ ...row, direction: "sell" }))];
@@ -33,8 +38,8 @@ export function quoteTrade(merchant, character, request, edits = null, { settlem
     line.quantity = edit?.quantity ?? line.quantity;
     line.percent = percent(edit?.percent ?? 0);
     line.originalCopper = line.copper;
-    const factors = line.direction === "buy" ? [pricing.merchant, pricing.character, pricing.negotiation, pricing.review, line.percent]
-      : [Math.round((settings.buyModifier - 1) * 10000) / 100, pricing.review, line.percent];
+    const factors = line.direction === "buy" ? [pricing.merchant, pricing.character, pricing.negotiation, pricing.review, line.percent, line.serviceModifier ?? 0]
+      : [Math.round((settings.buyModifier - 1) * 10000) / 100, pricing.review, line.percent, line.serviceModifier ?? 0];
     line.finalModifier = combinedPercent(factors, pricing.stacking);
     line.copper = priced(line.originalCopper, line.finalModifier);
   }

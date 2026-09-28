@@ -4,6 +4,7 @@ import { RollTableBuilderApplication } from "../apps/roll-table-builder-app.js";
 import { MerchantBuilderApplication } from "../merchant/builder/app.js";
 
 export function registerSettings() {
+  game.settings.register(MODULE_ID,"serviceDefinitions",{name:"Service definitions",scope:"world",config:false,type:Object,default:{categories:[],services:[]}});
   game.settings.register(MODULE_ID, "merchantHistoryRetention", {
     name: "Merchant history retention", hint: "Keep private transaction receipts per merchant. Unresolved recovery entries are never trimmed.",
     scope: "world", config: true, type: new foundry.data.fields.StringField(),

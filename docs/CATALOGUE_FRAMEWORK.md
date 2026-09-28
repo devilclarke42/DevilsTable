@@ -1,7 +1,7 @@
 # Catalogue framework
 
 Sprint 8 separates merchant type, category presentation and reusable Item identity. This document
-is the extension contract for `0.3.0-alpha.2`. Services and the future Merchant Builder are design
+is the extension contract for `0.3.0-alpha.2`. Historical Sprint 8 note: services and the Merchant Builder were design
 boundaries, not implemented features.
 
 ## Ownership of data
@@ -137,20 +137,13 @@ must not hold live stock. The future builder resolves one shared Item UUID per s
 and creates ordinary embedded Items only after GM approval. Availability and quantities remain
 stock-profile concerns. No new generator or restock behavior ships in Sprint 8.
 
-## Future services boundary
+## Services boundary (implemented in Sprint 10A)
 
-Services will be a separate registry and request kind, not Item records or hidden zero-weight
-inventory. A proposed service definition has a provider-qualified ID, catalogue IDs, public name,
-description, icon, pricing policy reference and fulfillment-handler key. Provider-owned
-`metadata.services` may reserve descriptive service references now, but no UI, pricing execution,
-handler registration or fulfillment is implemented.
-
-The future service registry should follow the same setup-time data registration, collision checks
-and immutable read APIs as catalogues. Handler implementations should be explicitly registered
-by modules, never evaluated from JSON. Requests will reference service IDs, not Item IDs, and
-use GM review with separate fulfillment/recovery semantics. Room rental duration and weapon
-repair targets must not be forced through Item quantity or stock transfer. Agree the service
-contract in its own sprint before enabling these proposed fields operationally.
+Services have a separate registry/category model and coexist with Item products in the Shop.
+They use the existing checkout and native currency pipeline, never an Item compendium.
+The current contract is [Merchant Services](MERCHANT_SERVICES.md); its setup-time provider API
+supports JSON definitions and optional native document integrations. The original future-only
+proposal is superseded by this implemented boundary.
 
 ## Acceptance and limitations
 

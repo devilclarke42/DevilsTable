@@ -3,6 +3,22 @@
 This file retains detailed repository build history. The official milestone/release record is
 [docs/CHANGELOG.md](docs/CHANGELOG.md). Versions here do not imply a public GitHub Release exists.
 
+## 0.3.0-alpha.7 — 2026-09-28 — Merchant Services framework
+
+### Added
+
+- Validated, separate service/category JSON definitions, world authoring and setup-time provider registration.
+- Services Shop tab, shared search and mixed product/service baskets with existing GM approval and pricing.
+- Builder service category generation, manual offerings, enabled controls and native-denomination price overrides.
+- Transactional service purchase/revenue counters, last purchase dates and popularity statistics.
+- Optional native Macro, JournalEntry, RollTable and ActiveEffect execution after payment, with persisted attempted/result states and no automatic replay.
+- Service integration tests, authoring guide and live Foundry acceptance checklist. No Tavern service content added.
+
+### Changed
+
+- Private receipts distinguish products/services and show post-payment execution outcomes.
+- Automatic retention preserves completed-payment receipts whose optional service actions still need attention.
+
 ## 0.3.0-alpha.6 — 2026-09-28 — Builder tabs, cash workflow and merchant reset
 
 ### Added

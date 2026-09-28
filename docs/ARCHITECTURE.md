@@ -253,3 +253,16 @@ guard. It selects receipts by merchant Actor ID, rejects unresolved receipts or 
 disables the shop, removes token entry flags, deletes only matching ledger documents, removes Item
 offer overrides and finally unsets the merchant flag. Pack lock state is restored. Partial failures
 remain disabled and retryable; native inventory, currency and non-module Actor data are preserved.
+
+## Merchant Services — Sprint 10A
+
+Products and services are peers under catalogue assignments, with separate category definitions.
+`services/registry.js` validates source/provider JSON; `services/offers.js` resolves world additions
+and projects authoritative offers. Merchant flags hold references/overrides, not Item copies.
+The existing quote and verified transaction pipeline includes service lines but skips Item writes.
+Service counters are compensatable plan steps. `services/execution.js` runs optional native actions
+only after payment, with persisted attempt markers rather than unsafe automatic retries.
+`services/administration.js` uses the existing checkout/write guards, and `manager-app.js` exposes
+GM controls from Builder Manage. Existing worlds migrate by absence: no service flags means no offers.
+See [Merchant Services](MERCHANT_SERVICES.md) for the field contract, permissions, failure semantics,
+statistics and extension registration. No additional compendium or custom Foundry document type is introduced.

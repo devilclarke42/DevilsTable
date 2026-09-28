@@ -74,6 +74,7 @@
         {{#if summary}}<dl class="dt-summary-card">{{#each summary.rows}}<div><dt>{{label}}</dt><dd>{{value}}</dd></div>{{/each}}</dl>{{else}}<p>Save / Convert to display merchant statistics. Existing inventory and currency will be preserved.</p>{{/if}}
       </details>
 
+    <button type="button" data-action="services" {{#if generationBlocked}}disabled{{/if}}>Service Categories / Offerings</button>
     <button type="button" data-action="empty" {{#if busy}}disabled{{/if}}>Empty Stock…</button>
     <button type="button" data-action="advanced">Advanced Trade Settings / Recovery</button>
     <details><summary>Reset NPC to a normal NPC</summary>

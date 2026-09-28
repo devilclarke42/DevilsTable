@@ -38,23 +38,26 @@
     <button type="button" data-action="category" data-category="">All</button>
     {{#each categories}}<button type="button" data-action="category" data-category="{{id}}" aria-pressed="{{selected}}"><img class="dt-category-icon" src="{{icon}}" alt=""> {{name}}</button>{{/each}}
   </div>
+  <nav class="dt-manager-tabs" aria-label="Shop offerings"><button type="button" data-action="view" data-view="inventory" aria-pressed="{{inventoryView}}">Inventory</button><button type="button" data-action="view" data-view="services" aria-pressed="{{servicesView}}">Services</button></nav>
+  <p>Search includes inventory and services. Your basket stays visible.</p>
   <div class="dt-shop-grid">
     <section class="dt-shop-stock" aria-label="Available stock">
       {{#each items}}
         <article class="dt-shop-item" data-offer-id="{{id}}" {{#if hidden}}hidden{{/if}}>
           <img src="{{img}}" alt="" loading="lazy"><div><h3>{{name}}</h3><p>{{description}}</p>
+            {{#if isService}}<p>Service · {{availability}} · {{requirements}}</p>{{/if}}
             <p>{{priceLabel}} per {{saleUnit}} · {{#if unlimited}}Unlimited ({{quantity}} per checkout){{else}}{{quantity}} available{{/if}}</p></div>
-          <div class="dt-item-actions"><button type="button" data-action="add" data-id="{{id}}">Add</button>
-          <button type="button" data-action="steal" data-id="{{id}}" {{#unless @root.canInteract}}disabled{{/unless}}>Attempt theft</button></div>
+          <div class="dt-item-actions"><button type="button" data-action="add" data-id="{{id}}" {{#unless quantity}}disabled{{/unless}}>Add</button>
+          {{#unless isService}}<button type="button" data-action="steal" data-id="{{id}}" {{#unless @root.canInteract}}disabled{{/unless}}>Attempt theft</button>{{/unless}}</div>
         </article>
       {{/each}}<p data-no-matches {{#unless noMatches}}hidden{{/unless}}>No matching public offers.</p>
     </section>
     <aside class="dt-shop-basket" aria-label="Your basket"><h3>Basket</h3>
-      {{#each basket}}<p>{{count}} × {{name}} — {{subtotalLabel}}
+      {{#each basket}}<p>{{#if isService}}Service: {{/if}}{{count}} × {{name}} — {{subtotalLabel}}
         <button type="button" data-action="remove" data-id="{{id}}" aria-label="Remove one {{name}}">Remove one</button></p>
       {{else}}<p>Empty. Items are not reserved.</p>{{/each}}
       <h4>Items you are selling</h4>
-      {{#each sales}}<p>{{count}} × {{name}} — {{subtotalLabel}} <button type="button" data-action="unsell" data-id="{{id}}">Remove one</button></p>{{/each}}
+      {{#each sales}}<p>{{#if isService}}Service: {{/if}}{{count}} × {{name}} — {{subtotalLabel}} <button type="button" data-action="unsell" data-id="{{id}}">Remove one</button></p>{{/each}}
       <p>{{characterName}} · Available: {{fundsLabel}}</p>
       {{#if fundsError}}<p role="alert">{{fundsError}}</p>{{/if}}
       <p>Subtotal: {{originalLabel}}</p>

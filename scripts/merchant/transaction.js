@@ -1,3 +1,4 @@
+import { prepareServiceExecution, executeServiceJobs } from "../services/execution.js";
 import { activeActorWrites as active, administrationBusy } from "./operation-guard.js";
 import { nextMemory, confidence } from "./interactions.js";
 import { MODULE_ID } from "../constants.js";
@@ -17,6 +18,7 @@ function itemState(data) {
   return copy;
 }
 function snapshot(actor, step) {
+  if (step.kind === "serviceStats") return clone(actor.getFlag(MODULE_ID, "merchant.serviceStats") ?? null);
   if (step.kind === "confidence") return actor.getFlag(MODULE_ID, "merchant.confidence") ?? null;
   if (step.kind === "currency") return { ...actor.system.currency };
   if (step.kind === "relationship") return clone(actor.getFlag(MODULE_ID, `merchant.relationships.${step.customer}`) ?? null);
@@ -62,6 +64,7 @@ function verifyStep(actor, step, expected, phase) {
   throw Error(`${phase}: ${step.kind} on ${actor.name}${step.itemId ? ` (Item ${step.itemId})` : ""}; ${detail}`);
 }
 async function write(actor, step, target) {
+  if (step.kind === "serviceStats") return target === null ? actor.unsetFlag(MODULE_ID, "merchant.serviceStats") : actor.setFlag(MODULE_ID, "merchant.serviceStats", target);
   if (step.kind === "confidence") return target === null ? actor.unsetFlag(MODULE_ID, "merchant.confidence") : actor.setFlag(MODULE_ID, "merchant.confidence", target);
   if (step.kind === "currency") return actor.update({ "system.currency": target });
   if (step.kind === "relationship") {
@@ -82,6 +85,7 @@ export function makeSteps(merchant, character, quote, now = new Date().toISOStri
     if (!equal(before, after)) steps.push({ kind: "currency", actorId: actor.id, before, after });
   }
   for (const row of quote.basket) {
+    if (row.kind === "service") continue;
     const source = row.direction === "buy" ? merchant : character;
     const target = source === merchant ? character : merchant;
     const original = source.items.get(row.id);
@@ -115,6 +119,17 @@ export function makeSteps(merchant, character, quote, now = new Date().toISOStri
     steps.push({ kind: "item", actorId: target.id, itemId: after._id, before: match ? clone(match) : null, after });
     virtual.get(target.id).set(after._id, after);
   }
+  const services = quote.basket.filter(row=>row.kind==="service");
+  if (services.length) {
+    const before = clone(merchant.getFlag(MODULE_ID,"merchant.serviceStats")??null), after=clone(before??{});
+    for(const row of services){
+      const old=after[row.serviceId]??{purchased:0,revenue:0,transactions:0};
+      const next={purchased:old.purchased+row.quantity,revenue:old.revenue+row.copper*row.quantity,transactions:old.transactions+1,lastPurchased:now};
+      if(![next.purchased,next.revenue,next.transactions].every(Number.isSafeInteger))throw Error("Service statistics exceed supported precision.");
+      after[row.serviceId]=next;
+    }
+    steps.push({kind:"serviceStats",actorId:merchant.id,before,after});
+  }
   const before = clone(merchant.getFlag(MODULE_ID, `merchant.relationships.${character.id}`) ?? null);
   const after = nextMemory(before ?? merchant.getFlag(MODULE_ID, "merchant.relationshipDefaults") ?? {}, quote, character.id, now);
   steps.push({ kind: "relationship", actorId: merchant.id, customer: character.id, before, after });
@@ -134,7 +149,8 @@ export async function executeTrade({ merchant, character, quote, request, receip
   actors.forEach(a => active.add(a.id));
   let doc, record;
   try {
-    record = { schemaVersion: 1, id: request.id, date: new Date().toISOString(), merchantId: merchant.id,
+    const jobs=await prepareServiceExecution(quote);
+    record = { serviceExecution:jobs.map(job=>({...job,status:"pending"})), schemaVersion: 1, id: request.id, date: new Date().toISOString(), merchantId: merchant.id,
       characterId: character.id, merchantName: merchant.name, characterName: character.name, userId: request.userId,
       gmId: game.user.id, status: "committing", request: clone(request), quote: clone(quote), steps: makeSteps(merchant, character, quote), attempted: -1 };
     doc = await receiptAdapter.create(record);
@@ -175,6 +191,10 @@ export async function executeTrade({ merchant, character, quote, request, receip
     }
     throw error;
   } finally {
+    if(record?.status === "completed") {
+      try { await executeServiceJobs(record,doc,character,merchant,receiptAdapter.save); }
+      catch(error) { logger.error("Service execution deferred; payment completed",error); }
+    }
     if (record && ["completed", "rolled-back"].includes(record.status)) {
       for (const actor of actors) {
         try { await actor.unsetFlag(MODULE_ID, "transactionPending"); }

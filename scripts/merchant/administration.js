@@ -89,6 +89,10 @@ export async function merchantSummary(actor, { policy, rejected = retainedReject
     { label: "Relationships", value: relationships.length },
     { label: "Last restock / inventory addition", value: ago === null || !Number.isFinite(ago) ? "Not recorded" : ago ? `${ago} days ago (${last})` : `Today (${last})` }
   ];
+  const serviceStats=Object.values(config.serviceStats??{});
+  rows.push({label:"Services purchased",value:serviceStats.reduce((n,r)=>n+(r.purchased??0),0)},
+    {label:"Service revenue",value:money(serviceStats.reduce((n,r)=>n+(r.revenue??0),0))},
+    {label:"Last service purchase",value:serviceStats.map(r=>r.lastPurchased).filter(Boolean).sort().at(-1)??"Never"});
   return { rows, catalogue: catalogueRegistry.resolve(actor)?.name ?? "Catalogue unavailable", unpriced,
     floatStatus: config.initialFloat?.status ?? "Not initialized" };
 }
