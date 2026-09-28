@@ -3,6 +3,21 @@
 This file retains detailed repository build history. The official milestone/release record is
 [docs/CHANGELOG.md](docs/CHANGELOG.md). Versions here do not imply a public GitHub Release exists.
 
+## 0.3.0-alpha.6 — 2026-09-28 — Builder tabs, cash workflow and merchant reset
+
+### Added
+
+- Setup, Stock, Cash and Manage tabs with direct access and Back/Next navigation.
+- Manual proposed-stock quantity overrides; zero omits an addition.
+- Confirmed Reset Merchant: clears merchant configuration, relationships, offer overrides and this NPC's retained receipts, while preserving ordinary NPC data, inventory and currency.
+- Reset refuses active checkout/recovery; partial failures leave the shop disabled for retry.
+
+### Fixed
+
+- Manual cash generation now rolls a replacement preview for existing finite-funds merchants instead of silently returning a preservation status.
+- When stock adds no new goods, its uncommitted cash preview remains available to apply separately.
+- Existing close-button and grouped-container behaviour retained.
+
 ## 0.3.0-alpha.5 — 2026-09-28 — Shop container display and Builder close fix
 
 ### Fixed

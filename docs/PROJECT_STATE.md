@@ -1,6 +1,14 @@
 # Project state
 
-Updated 2026-09-28 for `0.3.0-alpha.5`.
+Updated 2026-09-28 for `0.3.0-alpha.6`.
+
+## Current candidate — alpha.6
+
+Builder tabs replace the long single view. Stock quantities and final cash remain editable;
+manual cash rolls work for existing finite-funds merchants. Manage includes a confirmed merchant
+reset that clears this NPC's history/configuration while preserving ordinary Actor data and cash.
+Reset is guarded against active trades and unresolved recovery. All 329 automated tests pass.
+Live Foundry/Forge acceptance remains required.
 
 ## Current hotfix
 

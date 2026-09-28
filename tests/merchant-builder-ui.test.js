@@ -23,9 +23,16 @@ test("single-panel configuration updates estimates locally, saves explicitly and
   function node(name,value,type="select-one") {const n={name,value,type,checked:false,addEventListener(event,fn){this[event]=fn;}};nodes.set(`[name=${name}]`,n);return n;}
   node("builderNpc",actor.id);fields.push(node("settlement","village"));fields.push(node("prosperity","average"));
   const closeButton={disabled:false};
-  app.element={querySelector(selector){if(!nodes.has(selector))nodes.set(selector,{});return nodes.get(selector);},querySelectorAll(selector){return selector==="[data-config]"?fields:selector==="input, select, textarea, button"?[closeButton]:[];}};
+  const panels=["setup","stock","cash","manage"].map(id=>({dataset:{builderPanel:id},hidden:false}));
+  const tabs=panels.map(p=>({dataset:{builderTab:p.dataset.builderPanel},setAttribute(key,value){this[key]=value;}}));
+  app.element={querySelector(selector){if(!nodes.has(selector))nodes.set(selector,{});return nodes.get(selector);},querySelectorAll(selector){return selector==="[data-builder-panel]"?panels:selector==="[data-builder-tab]"?tabs:selector==="[data-config]"?fields:selector==="input, select, textarea, button"?[closeButton]:[];}};
   app._onRender({},{});fields[0].value="city";fields[0].input({target:fields[0]});
   assert.equal(nodes.get('[data-estimate="settlement"]').textContent,"city");assert.match(nodes.get('[data-estimate="dirty"]').textContent,/Unsaved/);
+  App.DEFAULT_OPTIONS.actions.stepTab.call(app,null,{dataset:{step:"1"}});
+  assert.equal(panels.find(p=>p.dataset.builderPanel==="stock").hidden,false);
+  App.DEFAULT_OPTIONS.actions.selectTab.call(app,null,{dataset:{builderTab:"cash"}});
+  assert.equal(panels.find(p=>p.dataset.builderPanel==="cash").hidden,false);
+  assert.equal(fields[0].value,"city");
   assert.equal(actor.getFlag("devils-table","merchant"),undefined);assert.equal(actor.system.currency.cp,0);
   await App.DEFAULT_OPTIONS.actions.save.call(app);assert.equal(actor.getFlag("devils-table","merchant.economy").settlement,"city");assert.equal(actor.system.currency.cp,0);
   context=await app._prepareContext({});assert.equal(context.generationBlocked,false);

@@ -1,14 +1,16 @@
 # Merchant Builder guide
 
-The Merchant Builder is a single GM configuration panel. Open it from **Merchant Builder** in
+The Merchant Builder is a GM tabbed workflow: **Setup → Stock → Cash → Manage**.
+Use Back/Next or jump directly to any tab. Tab switching preserves draft fields and performs no writes. Open it from **Merchant Builder** in
 module settings or the GM Shop UI. Advanced Trade Settings / Recovery opens the existing trade
 administration controls; no Actor sheet is needed for the normal builder workflow.
 
 ## Create a merchant
 
 1. Select a standard NPC Actor. Apply a preset or edit the configuration directly.
-2. Choose catalogue, settlement, prosperity, availability, funds mode and pricing. Save / Convert.
-3. Select Generate Stock. Review the actual goods, quantities, value and float before confirming.
+2. In Setup, choose catalogue, settlement, prosperity, availability, funds mode and pricing. Save / Convert.
+3. In Stock, select Generate Stock. Review goods, quantities, value and cash plan before confirming.
+   Override proposed quantities, then Update Stock Preview; zero omits a new good. Existing goods cannot be edited through a generation preview.
 4. Apply the preview. Existing catalogue goods are skipped, including sold-out entries.
 
 Conversion adds module flags and marks existing linked scene tokens as shop entry points. It
@@ -63,8 +65,11 @@ The builder reuses the native cash planner. Existing nonzero wallets, establishe
 infinite-funds merchants receive no automatic cash replacement. Initialization markers prevent
 repeat grants after spending or Empty Stock. Previewing never transfers coins.
 
-For an intentional GM cash reset, tick **Explicitly plan a replacement for existing cash**, then
-Regenerate Float. The confirmation explicitly identifies the replacement. Set a final amount and
+In the Cash tab, **Generate / Reroll Cash Preview** always rolls a proposed replacement wallet for
+a finite-funds merchant, including an existing merchant. This manual action no longer silently
+preserves the old wallet instead of rolling. The confirmation explicitly identifies the replacement.
+Infinite Funds must be disabled and saved before generating native cash. Automatic initial-stock
+float generation still preserves existing wallets. Set a final amount and
 native denomination, select **Update Float Preview**, then confirm. Whole-copper precision is
 required; there is no parallel wallet or coin Item system.
 
@@ -136,3 +141,26 @@ native D&D5e Items, and checkout still identifies each concrete container for sa
 with different mechanical data, prices, or contents are not combined. This needs no inventory rebuild.
 The Builder can be closed while work is pending; closing does not cancel an already-approved write,
 and completion does not reopen the window. Reopen it to inspect the current merchant state.
+
+## Reset Merchant (alpha.6)
+
+Manage → **Reset Merchant and Clear History** returns the selected Actor to an ordinary NPC.
+The confirmation shows the counts of relationships and retained receipts that will be removed.
+It permanently deletes this merchant's ledger receipts (including rejections), relationships,
+merchant notes, settings, initialization marker and Item offer overrides. It removes shop entry
+flags from its scene tokens and prototype token. Canonical Item IDs and source metadata remain.
+Biography, portrait, token appearance, ownership, all physical inventory and native cash remain.
+Use Empty Stock separately if you also want inventory removed. Shared templates and other
+merchants' receipts are unaffected.
+
+An active checkout, Actor recovery flag, unresolved receipt, or another Actor referencing a receipt
+blocks reset. Complete recovery first; reset never deletes the evidence needed for recovery.
+The operation disables the shop before deleting data. If a deletion fails, it reports partial
+completion and keeps the shop disabled; rerun Reset to finish. Already-deleted history cannot be
+restored. Existing pack lock state is restored afterward. No new history pack is created by reset.
+
+Live acceptance: test cancellation, a confirmed reset on a disposable merchant, preservation of
+another merchant's receipts and refusal while checkout/recovery is active. Check tab switching
+preserves unsaved inputs, then reroll cash for an existing merchant and verify the confirmed amount
+matches its native wallet. Automated tests simulate these paths; live Foundry/Forge validation
+is still required.

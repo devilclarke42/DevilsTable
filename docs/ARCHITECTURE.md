@@ -240,3 +240,16 @@ The API is framework-versioned but not yet a stable public integration contract.
 - [D&D5e 5.3.3 limited-use fields](https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/module/data/shared/uses-field.mjs)
 
 Documentation/source review is not a substitute for executing the module in the target environment.
+
+## Builder refinement (alpha.6)
+
+Tab changes toggle existing panels without a rerender, retaining draft form values. Back/Next is
+navigation only. Manual quantity overrides edit the local stock preview; the existing population
+validator still validates native application. Explicit manual cash generation uses replacement
+planning, while automatic stocking retains existing preservation rules.
+
+`merchant/reset-merchant.js` owns confirmed destructive teardown under the shared administration
+guard. It selects receipts by merchant Actor ID, rejects unresolved receipts or pending references,
+disables the shop, removes token entry flags, deletes only matching ledger documents, removes Item
+offer overrides and finally unsets the merchant flag. Pack lock state is restored. Partial failures
+remain disabled and retryable; native inventory, currency and non-module Actor data are preserved.

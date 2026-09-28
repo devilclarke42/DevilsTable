@@ -1,3 +1,5 @@
+import { resetMerchant } from "../reset-merchant.js";
+import { walletValue } from "../settlement.js";
 import { MODULE_ID } from "../../constants.js";
 import { catalogueRegistry } from "../../catalogues/registry.js";
 import { loadStockCatalogue } from "../../data/stock-loader.js";
@@ -10,19 +12,20 @@ import { stable } from "../trade-model.js";
 import { loadBuilderPolicy, readConfiguration, validateConfiguration, configurationSnapshot } from "./model.js";
 import { builtInTemplates, customTemplates, validateTemplate, saveTemplate } from "./templates.js";
 import { estimateGeneration, generateNotes } from "./generation.js";
-import { saveConfiguration, planBuilderStock, applyBuilderStock, editFloat, applyBuilderFloat } from "./service.js";
+import { saveConfiguration, planBuilderStock, applyBuilderStock, editFloat, applyBuilderFloat, editStockQuantities } from "./service.js";
 const { ApplicationV2, HandlebarsApplicationMixin } = foundry.applications.api;
 const choices = (rows, selected) => rows.map(r => ({ ...r, selected: r.id === selected }));
 
 /** Single editable panel. Drafts/previews are local; only explicit actions write native documents. */
 export class MerchantBuilderApplication extends HandlebarsApplicationMixin(ApplicationV2) {
+  #tab="setup";
   #actorId; #context; #draft; #saved; #snapshot; #templates=[]; #templateId="";
-  #stock=null; #float=null; #floatPending=false; #busy=false; #closed=false; #message="Select an NPC, adjust settings, then Save / Convert.";
+  #stockPending=false; #stock=null; #float=null; #floatPending=false; #busy=false; #closed=false; #message="Select an NPC, adjust settings, then Save / Convert.";
   constructor({actorId="",...options}={}) { super(options); this.#actorId=actorId; }
   static DEFAULT_OPTIONS = {
-    id:"devils-table-merchant-builder",classes:["devils-table"],tag:"section",position:{width:1000,height:800},
+    id:"devils-table-merchant-builder",classes:["devils-table"],tag:"section",position:{width:850,height:730},
     window:{title:"Devil's Table: Trade & Merchants — Merchant Builder",icon:"fa-solid fa-store",resizable:true},
-    actions:{save:MerchantBuilderApplication.#save,generateStock:MerchantBuilderApplication.#generateStock,
+    actions:{editStock:MerchantBuilderApplication.#editStock,selectTab:MerchantBuilderApplication.#selectTab,stepTab:MerchantBuilderApplication.#stepTab,resetMerchant:MerchantBuilderApplication.#resetMerchant,save:MerchantBuilderApplication.#save,generateStock:MerchantBuilderApplication.#generateStock,
       generateFloat:MerchantBuilderApplication.#generateFloat,generateNotes:MerchantBuilderApplication.#generateNotes,
       applyStock:MerchantBuilderApplication.#applyStock,applyFloat:MerchantBuilderApplication.#applyFloat,
       editFloat:MerchantBuilderApplication.#editFloat,empty:MerchantBuilderApplication.#empty,
@@ -66,7 +69,9 @@ export class MerchantBuilderApplication extends HandlebarsApplicationMixin(Appli
       ["restockProfile","Restock preference",policy.restockProfiles],
       ["relationshipState","New customer relationship",policy.relationshipStates.map(id=>({id,name:id}))]
     ].map(([key,label,rows])=>({key,label,choices:choices(rows,d[key])}));
-    return {...await super._prepareContext(options),actorName:this.actor?.name??"Choose an NPC",draft:d,selects,
+    return {...await super._prepareContext(options),actorName:this.actor?.name??"Choose an NPC",draft:d,selects:selects.filter(row=>["catalogueId","settlement","prosperity","availability"].includes(row.key)),
+      advancedSelects:selects.filter(row=>!["catalogueId","settlement","prosperity","availability"].includes(row.key)), cashLabel:formatCopper(walletValue(this.actor?.system.currency)),
+      tabs:Object.fromEntries(["setup","stock","cash","manage"].map(id=>[id,id===this.#tab])),
       npcs:game.actors.filter(a=>a.type==="npc").map(a=>({id:a.id,name:a.name,selected:a.id===this.#actorId})),
       templates:this.#templates.map(r=>({...r,selected:r.key===this.#templateId})),summary,summaryError,
       busy:this.#busy,message:this.#message,stock:this.#stock?{...this.#stock,items:this.#stock.items.map(i=>({...i,priceLabel:formatCopper(i.price.value*({cp:1,sp:10,ep:50,gp:100,pp:1000}[i.price.denomination]))})),
@@ -90,11 +95,17 @@ export class MerchantBuilderApplication extends HandlebarsApplicationMixin(Appli
       if(key==="catalogueId") {this.#draft.stockProfileId="";void this.render();}
       else this.#paintEstimate();
     });
+    this.#stockPending=false;
+    for (const input of this.element.querySelectorAll("[data-stock-id]")) input.addEventListener("input",()=>{
+      this.#stockPending=true;
+      const button=this.element.querySelector("[data-action=applyStock]");if(button)button.disabled=true;
+    });
     this.#floatPending=false;
     for (const selector of ["[name=floatValue]", "[name=floatDenomination]"]) this.element.querySelector(selector)?.addEventListener?.("input", () => {
       this.#floatPending=true;
       for (const action of ["applyStock", "applyFloat"]) {const button=this.element.querySelector(`[data-action=${action}]`);if(button)button.disabled=true;}
     });
+    this.#showTab();
     this.#paintEstimate();
   }
   #paintEstimate() {
@@ -124,13 +135,23 @@ export class MerchantBuilderApplication extends HandlebarsApplicationMixin(Appli
   }
   static async #save(){await this.#run(async()=>{const preserve=Object.keys(this.#draft).every(key=>key==="notes"||this.#draft[key]===this.#saved[key]);this.#snapshot=await saveConfiguration(this.actor,this.#draft,this.#context,this.#snapshot);this.#saved=structuredClone(this.#draft);if(preserve){if(this.#stock)this.#stock.builderSnapshot=this.#snapshot;}else{this.#stock=null;this.#float=null;}this.#message="Merchant configured. Existing NPC data, inventory and cash preserved.";});}
   static async #generateStock(){await this.#run(async()=>{this.#requireSaved();this.#stock=await planBuilderStock(this.actor,this.#draft,this.#context,{float:this.#float});this.#float=this.#stock.float;this.#message="Review the assortment and cash below. Nothing has been applied.";});}
-  static async #generateFloat(){const replace=this.element.querySelector("[name=replaceCash]")?.checked===true;await this.#run(async()=>{this.#requireSaved();this.#float=await previewInitialFloat(this.actor,{policy:this.#context.economy,replace});if(this.#stock)this.#stock.float=this.#float;this.#message="Float regenerated independently. Stock preview is unchanged.";});}
+  static async #generateFloat(){await this.#run(async()=>{
+    this.#requireSaved();
+    if (this.#draft.infiniteFunds) throw Error("Infinite Funds is enabled. Save with Infinite Funds disabled to generate a native cash float.");
+    this.#float=await previewInitialFloat(this.actor,{policy:this.#context.economy,replace:true});
+    if(this.#stock)this.#stock.float=this.#float;
+    this.#message="Cash preview ready. Review or override the amount, then Apply Float to replace the native wallet. Stock is unchanged.";
+  });}
   static async #editFloat(){const value=this.element.querySelector("[name=floatValue]")?.value,denom=this.element.querySelector("[name=floatDenomination]")?.value;await this.#run(async()=>{this.#requireSaved();this.#float=editFloat(this.#float,value,denom,this.#context);if(this.#stock)this.#stock.float=this.#float;this.#message="Preview amount edited. Confirm before applying.";});}
   static async #generateNotes(){await this.#run(async()=>{if(this.#draft.notes&&!await this.#confirm("Regenerate notes?","Replace the current draft notes with editable template or catalogue merchant notes?"))return;
     this.#draft.notes=generateNotes(this.#draft,this.#context,this.#templates.find(r=>r.key===this.#templateId));this.#message="Notes regenerated in the draft. Save to apply them.";});}
-  static async #applyStock(){await this.#run(async()=>{if(this.#floatPending)throw Error("Update Float Preview to commit your edited amount before applying.");this.#requireSaved();if(!this.#stock)throw Error("Generate stock first.");
+  static async #editStock() {
+    const edits=[...this.element.querySelectorAll("[data-stock-id]")].filter(el=>!el.disabled).map(el=>({id:el.dataset.stockId,quantity:el.value===""?NaN:Number(el.value)}));
+    await this.#run(async()=>{this.#requireSaved();this.#stock=editStockQuantities(this.#stock,edits,this.#context.policy.limits.maxQuantity);this.#message="Stock preview quantities updated. Zero quantities were omitted. No inventory changed.";});
+  }
+  static async #applyStock(){await this.#run(async()=>{if(this.#stockPending)throw Error("Update Stock Preview before applying edited quantities.");if(this.#floatPending)throw Error("Update Float Preview to commit your edited amount before applying.");this.#requireSaved();if(!this.#stock)throw Error("Generate stock first.");
     if(!await this.#confirm("Apply stock preview?",`Add missing goods and apply the displayed float if eligible? Existing goods are preserved.${this.#float?.replacement?" This also REPLACES the merchant's current cash with the displayed float.":""}`))return;
-    const result=await applyBuilderStock(this.actor,this.#stock);this.#snapshot=configurationSnapshot(this.actor);this.#stock=null;this.#float=null;this.#message=`Added ${result.created} goods; skipped ${result.skipped}. Cash is only applied when new goods were added. Use Apply Float separately if needed.`;});}
+    const result=await applyBuilderStock(this.actor,this.#stock);this.#snapshot=configurationSnapshot(this.actor);this.#stock=null;if(result.created)this.#float=null;this.#message=`Added ${result.created} goods; skipped ${result.skipped}. Cash is only applied when new goods were added. Use Apply Float separately if needed.`;});}
   static async #applyFloat(){await this.#run(async()=>{if(this.#floatPending)throw Error("Update Float Preview to commit your edited amount before applying.");this.#requireSaved();if(!this.#float)throw Error("Generate float first.");
     if(!await this.#confirm("Apply displayed cash?",`${this.#float.replacement?"REPLACE the current native wallet":"Initialize the native wallet"} with ${formatCopper(this.#float.amountCp)}? Stock will not change.`))return;
     await applyBuilderFloat(this.actor,this.#float);this.#snapshot=configurationSnapshot(this.actor);this.#float=null;if(this.#stock){this.#stock.float=await previewInitialFloat(this.actor,{policy:this.#context.economy});this.#stock.builderSnapshot=this.#snapshot;}
@@ -141,5 +162,22 @@ export class MerchantBuilderApplication extends HandlebarsApplicationMixin(Appli
     this.#draft=validateConfiguration(row.settings,this.#context);this.#templateId=key;this.#stock=null;this.#float=null;this.#message="Template applied to draft. Every setting remains editable.";});}
   static async #saveTemplate(){const name=this.element.querySelector("[name=templateName]")?.value;await this.#run(async()=>{const row=await saveTemplate(name,this.#draft,this.#context);this.#templateId=`world:${row.id}`;this.#message="Custom template saved for this world. Inventory, wallets and relationships were excluded.";});}
   static async #reload(){await this.#run(async()=>{if((this.#dirty()||this.#stock||this.#float)&&!await this.#confirm("Reload NPC?","Discard unsaved settings and generation previews?"))return;this.#loadActor();this.#message="Current merchant data loaded.";});}
+  #showTab() {
+    for (const panel of this.element.querySelectorAll("[data-builder-panel]")) panel.hidden=panel.dataset.builderPanel!==this.#tab;
+    for (const button of this.element.querySelectorAll("[data-builder-tab]")) button.setAttribute("aria-selected",String(button.dataset.builderTab===this.#tab));
+  }
+  static #selectTab(_event,target) {
+    if (!["setup","stock","cash","manage"].includes(target.dataset.builderTab)) return;
+    this.#tab=target.dataset.builderTab;this.#showTab();
+  }
+  static #stepTab(_event,target) {
+    const tabs=["setup","stock","cash","manage"],index=tabs.indexOf(this.#tab);
+    this.#tab=tabs[Math.max(0,Math.min(tabs.length-1,index+Number(target.dataset.step)))];this.#showTab();
+  }
+  static async #resetMerchant() {await this.#run(async()=>{
+    const done=await resetMerchant(this.actor,{confirm:({receipts,relationships})=>this.#confirm("Permanently reset this merchant?",
+      `Remove shop configuration, ${relationships} relationships, merchant notes, offer settings and ${receipts} history receipts? All retained merchant history will be permanently deleted. This NPC will no longer be a shop. Biography, portrait, ownership, inventory and cash will remain. This cannot be undone.`)});
+    if(done){this.#templateId="";this.#loadActor();this.#tab="setup";this.#message="NPC reset. Shop configuration and history cleared; ordinary NPC data, inventory and cash preserved.";}
+  });}
   static async #advanced(){this.#requireGM();const {MerchantManagerApplication}=await import("../manager-app.js");await new MerchantManagerApplication({actorId:this.#actorId}).render({force:true});}
 }

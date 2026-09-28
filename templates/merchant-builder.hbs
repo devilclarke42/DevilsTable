@@ -1,5 +1,13 @@
 <div class="dt-merchant-builder">
   <header><h2>Merchant Builder — {{actorName}}</h2><p role="status">{{message}}</p></header>
+  <nav class="dt-manager-tabs" role="tablist" aria-label="Merchant Builder steps">
+    <button type="button" role="tab" data-action="selectTab" data-builder-tab="setup" aria-selected="{{tabs.setup}}">1. Setup</button>
+    <button type="button" role="tab" data-action="selectTab" data-builder-tab="stock" aria-selected="{{tabs.stock}}">2. Stock</button>
+    <button type="button" role="tab" data-action="selectTab" data-builder-tab="cash" aria-selected="{{tabs.cash}}">3. Cash</button>
+    <button type="button" role="tab" data-action="selectTab" data-builder-tab="manage" aria-selected="{{tabs.manage}}">4. Manage</button>
+  </nav>
+  <p>Jump to any tab or use Back / Next. Settings remain manually editable; navigating never applies changes.</p>
+  <section role="tabpanel" data-builder-panel="setup" {{#unless tabs.setup}}hidden{{/unless}}>
   <fieldset {{#if busy}}disabled{{/if}}><legend>NPC and reusable templates</legend>
     <div class="dt-merchant-builder-fields">
       <label>NPC <select name="builderNpc"><option value="">Choose an NPC</option>{{#each npcs}}<option value="{{id}}" {{#if selected}}selected{{/if}}>{{name}}</option>{{/each}}</select></label>
@@ -9,53 +17,73 @@
       <button type="button" data-action="saveTemplate">Save as Template</button>
     </div>
   </fieldset>
-  <div class="dt-merchant-builder-columns">
-    <section><fieldset {{#if busy}}disabled{{/if}}><legend>Merchant configuration</legend>
+<fieldset {{#if busy}}disabled{{/if}}><legend>Merchant configuration</legend>
       <div class="dt-merchant-builder-fields">
         {{#each selects}}<label>{{label}} <select name="{{key}}" data-config>{{#each choices}}<option value="{{id}}" {{#if selected}}selected{{/if}}>{{name}}</option>{{/each}}</select></label>{{/each}}
         <label>Shop pricing modifier (%) <input data-config name="pricingModifier" type="number" min="-100" max="500" step="0.01" value="{{draft.pricingModifier}}"></label>
-        <label>New customer modifier (%) <input data-config name="relationshipModifier" type="number" min="-100" max="500" step="0.01" value="{{draft.relationshipModifier}}"></label>
         <label><input data-config name="infiniteFunds" type="checkbox" {{#if draft.infiniteFunds}}checked{{/if}}> Infinite Funds</label>
         <label><input data-config name="infiniteStock" type="checkbox" {{#if draft.infiniteStock}}checked{{/if}}> Infinite Stock</label>
       </div>
+      <details><summary>Manual profile overrides, relationships and notes</summary>
+      <div class="dt-merchant-builder-fields">
+        {{#each advancedSelects}}<label>{{label}} <select name="{{key}}" data-config>{{#each choices}}<option value="{{id}}" {{#if selected}}selected{{/if}}>{{name}}</option>{{/each}}</select></label>{{/each}}
+        <label>New customer modifier (%) <input data-config name="relationshipModifier" type="number" min="-100" max="500" step="0.01" value="{{draft.relationshipModifier}}"></label>
+      </div>
       <p>Relationship defaults affect new customers only. Restock preferences do not schedule automatic restocking.</p>
       <label>Merchant notes (GM only)<textarea data-config name="notes" maxlength="10000" rows="5">{{draft.notes}}</textarea></label>
+      </details>
       <p data-estimate="dirty"></p>
       <button type="button" data-action="save">Save / Convert NPC</button>
       <button type="button" data-action="reload">Reload NPC</button>
     </fieldset>
-    <fieldset {{#if busy}}disabled{{/if}}><legend>Regenerate Selected</legend>
-      <button type="button" data-action="generateStock" {{#if generationBlocked}}disabled{{/if}}>Generate / Regenerate Stock</button>
-      <button type="button" data-action="generateFloat" {{#if generationBlocked}}disabled{{/if}}>Regenerate Float</button>
-      <button type="button" data-action="generateNotes">Regenerate Notes</button>
-      <label><input name="replaceCash" type="checkbox"> Explicitly plan a replacement for existing cash on the next Float roll</label>
-      <p>Existing cash is preserved by default. Regeneration is preview-only. Greetings are reserved for a future sprint.</p>
-    </fieldset></section>
-    <aside aria-label="Merchant summary and generation estimate">
-      <h3>Live configuration summary</h3>
-      <dl class="dt-summary-card"><div><dt>Catalogue</dt><dd data-estimate="catalogue"></dd></div><div><dt>Settlement</dt><dd data-estimate="settlement"></dd></div><div><dt>Prosperity</dt><dd data-estimate="prosperity"></dd></div><div><dt>Availability</dt><dd data-estimate="availability"></dd></div></dl>
+
+    <button type="button" data-action="generateNotes" {{#if busy}}disabled{{/if}}>Regenerate Notes</button>
+  </section>
+  <section role="tabpanel" data-builder-panel="stock" {{#unless tabs.stock}}hidden{{/unless}}>
       <h3>Expected generation</h3>
       <dl><dt>Stock size</dt><dd data-estimate="size"></dd><dt>Stock value</dt><dd data-estimate="value"></dd><dt>Initial float range</dt><dd data-estimate="cash"></dd><dt>Rare item probability</dt><dd data-estimate="rare"></dd><dt>Category distribution (expected goods)</dt><dd data-estimate="distribution"></dd></dl>
       <p data-estimate="coverage"></p>
-      <details open><summary>Current merchant statistics</summary>
-        {{#if summaryError}}<p role="alert">{{summaryError}}</p>{{/if}}
-        {{#if summary}}<dl class="dt-summary-card">{{#each summary.rows}}<div><dt>{{label}}</dt><dd>{{value}}</dd></div>{{/each}}</dl>{{else}}<p>Save / Convert to display merchant statistics. Existing inventory and currency will be preserved.</p>{{/if}}
-      </details>
-    </aside>
-  </div>
+
+    <button type="button" data-action="generateStock" {{#if generationBlocked}}disabled{{/if}}>Generate / Regenerate Stock</button>
+    <p>Save changes in Setup first. Review the rolled items before applying; existing goods are preserved.</p>
   <section data-preview="stock" {{#unless stock}}hidden{{/unless}}><h3>Stock preview</h3>
     <p>{{stock.profileName}} · {{stock.added}} distinct goods to add · Estimated base value: {{stock.valueLabel}}</p>
-    <details><summary>Review items and quantities</summary><ul>{{#each stock.items}}<li>{{quantity}} × {{name}} — {{priceLabel}} each {{#if skip}}(already stocked; preserved){{/if}}</li>{{/each}}</ul></details>
+    <p>Cash plan: {{float.label}} {{#if float.replacement}}(replaces the current wallet){{/if}}. Use Cash to reroll or override it.</p>
+    <details><summary>Review items and quantities</summary><ul>{{#each stock.items}}<li><label>{{name}} — {{priceLabel}} each <input type="number" min="0" step="1" data-stock-id="{{id}}" value="{{quantity}}" {{#if skip}}disabled{{/if}}></label>{{#if skip}}Already stocked; preserved{{/if}}</li>{{/each}}</ul><p>Set a quantity to zero to omit a proposed addition.</p><button type="button" data-action="editStock" {{#if busy}}disabled{{/if}}>Update Stock Preview</button></details>
     <button type="button" data-action="applyStock" {{#if stockBlocked}}disabled{{/if}}>Confirm and Apply Stock</button>
   </section>
+
+  </section>
+  <section role="tabpanel" data-builder-panel="cash" {{#unless tabs.cash}}hidden{{/unless}}>
+    <h3>Merchant cash</h3><p>Current wallet: <strong>{{cashLabel}}</strong></p>
+    <p>Generate a cash preview, manually override its amount if desired, then confirm Apply Float.
+    Applying replaces the existing wallet with the displayed total; it does not add that amount on top.</p>
+    <button type="button" data-action="generateFloat" {{#if generationBlocked}}disabled{{/if}}>Generate / Reroll Cash Preview</button>
+    <p>Save Setup first. Infinite Funds must be disabled to generate physical cash.</p>
   <section data-preview="float" {{#unless float}}hidden{{/unless}}><h3>Float preview</h3><p>{{float.label}} {{#if float.replacement}}— replacement requested{{/if}}</p>
     {{#if float.generated}}<label>Final amount <input name="floatValue" type="number" min="0" step="0.01" value="{{float.amount}}"></label>
     <label>Denomination <select name="floatDenomination"><option value="gp">gp</option><option value="sp">sp</option><option value="cp">cp</option><option value="ep">ep</option><option value="pp">pp</option></select></label>
     <button type="button" data-action="editFloat" {{#if busy}}disabled{{/if}}>Update Float Preview</button>{{/if}}
     <button type="button" data-action="applyFloat" {{#if floatBlocked}}disabled{{/if}}>Confirm and Apply Float Only</button>
   </section>
-  <footer><button type="button" data-action="empty" {{#if busy}}disabled{{/if}}>Empty Stock…</button>
+
+  </section>
+  <section role="tabpanel" data-builder-panel="manage" {{#unless tabs.manage}}hidden{{/unless}}>
+      <details open><summary>Current merchant statistics</summary>
+        {{#if summaryError}}<p role="alert">{{summaryError}}</p>{{/if}}
+        {{#if summary}}<dl class="dt-summary-card">{{#each summary.rows}}<div><dt>{{label}}</dt><dd>{{value}}</dd></div>{{/each}}</dl>{{else}}<p>Save / Convert to display merchant statistics. Existing inventory and currency will be preserved.</p>{{/if}}
+      </details>
+
+    <button type="button" data-action="empty" {{#if busy}}disabled{{/if}}>Empty Stock…</button>
     <button type="button" data-action="advanced">Advanced Trade Settings / Recovery</button>
-    <p>Stock generation requires the shared Item Catalogue and Stock RollTables to be built in module settings.</p>
+    <details><summary>Reset NPC to a normal NPC</summary>
+      <p>Permanently remove this NPC's merchant configuration, relationships, notes and transaction history.
+      Inventory and currency remain. Resolve any interrupted trade first.</p>
+      <button type="button" data-action="resetMerchant" {{#if busy}}disabled{{/if}}>Reset Merchant and Clear History…</button>
+    </details>
+  </section>
+  <footer class="dt-manager-tabs">
+    <button type="button" data-action="stepTab" data-step="-1">Back</button>
+    <button type="button" data-action="stepTab" data-step="1">Next</button>
   </footer>
 </div>

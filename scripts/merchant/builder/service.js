@@ -52,3 +52,15 @@ export async function applyBuilderFloat(actor,plan) {
   if(!plan || plan.status!=="generated" || walletValue(plan.after)!==plan.amountCp) throw Error("Generate an eligible float first.");
   return withAdministration(actor,()=>applyInitialFloat(actor,plan));
 }
+
+/** Manual preview quantities never edit existing Actor inventory. Zero omits a proposed addition. */
+export function editStockQuantities(preview, edits, maximum) {
+  if (!preview || !Array.isArray(edits) || new Set(edits.map(e => e.id)).size !== edits.length) throw Error("Invalid stock quantity overrides.");
+  const rows = new Map(preview.items.map(row => [row.id, row]));
+  for (const edit of edits) {
+    const row = rows.get(edit.id);
+    if (!row || row.skip || !Number.isInteger(edit.quantity) || edit.quantity < 0 || edit.quantity > maximum) throw Error(`Stock quantities must be whole numbers from 0 to ${maximum}; existing offers cannot be edited here.`);
+  }
+  const overrides = new Map(edits.map(e => [e.id, e.quantity]));
+  return { ...preview, items: preview.items.map(row => ({ ...row, quantity: overrides.get(row.id) ?? row.quantity })).filter(row => row.quantity > 0) };
+}

@@ -74,3 +74,7 @@
 .devils-table .dt-merchant-builder button { width: auto; margin: .25rem 0; }
 .devils-table .dt-merchant-builder [hidden] { display: none !important; }
 @media (max-width: 760px) { .devils-table .dt-merchant-builder-columns { grid-template-columns: 1fr; } }
+
+.devils-table .dt-merchant-builder [role=tab][aria-selected=true] { font-weight: bold; outline: 2px solid var(--color-border-highlight, #bb853e); }
+.devils-table .dt-merchant-builder [role=tabpanel] { padding: .5rem 0; }
+.devils-table .dt-merchant-builder [data-stock-id] { max-width: 7rem; }
