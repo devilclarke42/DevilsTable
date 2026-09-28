@@ -12,7 +12,8 @@ test("single-panel configuration updates estimates locally, saves explicitly and
   globalThis.fetch=async url=>({ok:true,json:()=>readJson(String(url).replace("modules/devils-table/",""))});
   globalThis.Roll=class {async evaluate(){return {total:1};}};
   const errors=[];globalThis.ui={notifications:{error:msg=>errors.push(msg)}};
-  foundry.applications={api:{ApplicationV2:class {async _prepareContext(){return {};} async render(){return this;}},
+  let renders=0,closed=0;
+  foundry.applications={api:{ApplicationV2:class {async _prepareContext(){return {};} async render(){renders++;return this;} async close(){closed++;return this;}},
     HandlebarsApplicationMixin:Base=>Base,DialogV2:{confirm:async()=>true}}};
   catalogueRegistry.register({catalogues:await readJson("data/catalogues.json"),categories:await readJson("data/categories.json")});
   const {MerchantBuilderApplication:App}=await import("../scripts/merchant/builder/app.js");
@@ -21,7 +22,8 @@ test("single-panel configuration updates estimates locally, saves explicitly and
   const nodes=new Map(), fields=[];
   function node(name,value,type="select-one") {const n={name,value,type,checked:false,addEventListener(event,fn){this[event]=fn;}};nodes.set(`[name=${name}]`,n);return n;}
   node("builderNpc",actor.id);fields.push(node("settlement","village"));fields.push(node("prosperity","average"));
-  app.element={querySelector(selector){if(!nodes.has(selector))nodes.set(selector,{});return nodes.get(selector);},querySelectorAll(selector){return selector==="[data-config]"?fields:[];}};
+  const closeButton={disabled:false};
+  app.element={querySelector(selector){if(!nodes.has(selector))nodes.set(selector,{});return nodes.get(selector);},querySelectorAll(selector){return selector==="[data-config]"?fields:selector==="input, select, textarea, button"?[closeButton]:[];}};
   app._onRender({},{});fields[0].value="city";fields[0].input({target:fields[0]});
   assert.equal(nodes.get('[data-estimate="settlement"]').textContent,"city");assert.match(nodes.get('[data-estimate="dirty"]').textContent,/Unsaved/);
   assert.equal(actor.getFlag("devils-table","merchant"),undefined);assert.equal(actor.system.currency.cp,0);
@@ -32,5 +34,14 @@ test("single-panel configuration updates estimates locally, saves explicitly and
   node("floatValue","12.34","number");node("floatDenomination","gp");
   await App.DEFAULT_OPTIONS.actions.editFloat.call(app);context=await app._prepareContext({});assert.equal(context.float.label,"12 gp 3 sp 4 cp");
   await App.DEFAULT_OPTIONS.actions.applyFloat.call(app);assert.equal(actor.system.currency.gp*100+actor.system.currency.sp*10+actor.system.currency.cp,1234);
+  assert.equal(closeButton.disabled,false);
+  let finishRoll;
+  globalThis.Roll=class {async evaluate(){return new Promise(resolve=>{finishRoll=resolve;});}};
+  nodes.set("[name=replaceCash]",{checked:true});
+  const pending=App.DEFAULT_OPTIONS.actions.generateFloat.call(app);
+  await new Promise(resolve=>setImmediate(resolve));
+  const beforeClose=renders;
+  await app.close();assert.equal(closed,1);assert.equal(closeButton.disabled,false);
+  finishRoll({total:1});await pending;assert.equal(renders,beforeClose);
   assert.deepEqual(errors,[]);game.user.isGM=false;await assert.rejects(app._prepareContext({}),/GM-only/);
 });

@@ -1,3 +1,4 @@
+import { markOfferGroups } from "./offer-groups.js";
 import { merchantSlots as locks, administrationBusy } from "./operation-guard.js";
 import { catalogueRegistry } from "../catalogues/registry.js";
 import { merchantPresentation, receivePresentation, registerPresentationUpdates } from "./presentation.js";
@@ -109,7 +110,7 @@ async function receive(msg) {
     const pricing = pricingTerms(actor, shopper);
     return notify(msg.userId, { id: msg.id, type: "stock", catalogue: view.catalogue, categories: view.categories,
       pricing: { merchant: pricing.merchant, character: pricing.character, negotiation: pricing.negotiation, stacking: pricing.stacking }, merchant: token.name ?? actor.name, presentation: merchantPresentation(actor), characterId: shopper?.id ?? null,
-      availability: merchantConfig(actor).availability ?? "open", items: view.items, buyModifier: tradeSettings(actor).buyModifier });
+      availability: merchantConfig(actor).availability ?? "open", items: markOfferGroups(actor, view.items), buyModifier: tradeSettings(actor).buyModifier });
   }
   if (!["checkout", "interaction"].includes(msg.type)) return;
   if (msg.type === "interaction" && (!INTERACTIONS[msg.kind] || (msg.kind === "theft" && !publicOffers(actor).some(item => item.id === msg.itemId)))) {

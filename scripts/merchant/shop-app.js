@@ -1,3 +1,4 @@
+import { groupedOffers, groupedBasket, basketMember } from "./offer-groups.js";
 import { merchantSummary, emptyMerchantStock, saveMerchantEconomy } from "./administration.js";
 import { economyPolicy, resolveEconomy } from "./economy.js";
 import { MODULE_ID } from "../constants.js";
@@ -90,11 +91,10 @@ export class MerchantShopApplication extends HandlebarsApplicationMixin(Applicat
             .map(([key, label, list]) => ({ key, label, choices: policy[list].map(row => ({ id: row.id, name: row.name, selected: row.id === inputs[key] })) })) };
       } catch (error) { adminError = error.message; }
     }
-    const filtered = this.#items;
-    const basket = [...this.#basket].map(([id, count]) => {
-      const item = this.#items.find(offer => offer.id === id);
-      return item ? { ...item, count, subtotal: count * item.copper, subtotalLabel: formatCopper(count * item.copper) } : null;
-    }).filter(Boolean);
+    const filtered = groupedOffers(this.#items);
+    const basket = groupedBasket(this.#items, this.#basket).map(row => ({
+      ...row, subtotalLabel: formatCopper(row.subtotal)
+    }));
     const pc = globalThis.canvas?.tokens?.controlled?.find(token => token.actor?.isOwner && token.actor.type === "character");
     if (this.#sellerId !== pc?.actor.id) { this.#sales.clear(); this.#sellerId = pc?.actor.id; }
     const offers = saleOffers(pc?.actor, this.#buyModifier);
@@ -180,7 +180,7 @@ export class MerchantShopApplication extends HandlebarsApplicationMixin(Applicat
           if (!item) this.#basket.delete(id);
           else if (quantity > item.quantity) this.#basket.set(id, item.quantity);
         }
-        this.#message = `${this.#items.length} public offers. Browsing does not reserve stock.`;
+        this.#message = `${groupedOffers(this.#items).length} public offers. Browsing does not reserve stock.`;
       }
       await this.render();
     });
@@ -201,7 +201,7 @@ export class MerchantShopApplication extends HandlebarsApplicationMixin(Applicat
   static async #search() { this.#query = this.element?.querySelector("[name=search]")?.value.trim().slice(0, 100) ?? ""; await this.render(); }
   static async #selectCategory(_event, target) { this.#category = target.dataset.category ?? ""; await this.render(); }
   static async #add(_event, target) {
-    const offer = this.#items.find(item => item.id === target.dataset.id);
+    const offer = basketMember(this.#items, this.#basket, target.dataset.id, true);
     if (!offer) return;
     const next = (this.#basket.get(offer.id) ?? 0) + 1;
     if (next > offer.quantity) return;
@@ -210,9 +210,11 @@ export class MerchantShopApplication extends HandlebarsApplicationMixin(Applicat
     await this.render();
   }
   static async #remove(_event, target) {
-    const count = this.#basket.get(target.dataset.id) ?? 0;
-    if (count <= 1) this.#basket.delete(target.dataset.id);
-    else this.#basket.set(target.dataset.id, count - 1);
+    const offer = basketMember(this.#items, this.#basket, target.dataset.id, false);
+    if (!offer) return;
+    const count = this.#basket.get(offer.id) ?? 0;
+    if (count <= 1) this.#basket.delete(offer.id);
+    else this.#basket.set(offer.id, count - 1);
     logger.debug("Basket updated", { merchantToken: this.#token.id, distinct: this.#basket.size });
     await this.render();
   }

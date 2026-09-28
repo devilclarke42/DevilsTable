@@ -8,6 +8,14 @@ This is the official milestone/release changelog. The root [build changelog](../
 retains detailed alpha implementation history. A milestone entry does not assert that a public
 GitHub Release or installation manifest exists. No release dates are invented for unreleased work.
 
+## 0.3.0-alpha.5 — 2026-09-28 — Shop container display and Builder close fix
+
+### Fixed
+
+- Builder busy controls no longer disable Foundry's window close button; pending work does not reopen a closed panel.
+- Mechanically identical empty container offers display one Shop row and a combined available quantity.
+- Basket grouping retains separate native Item IDs for approval and safe transfer; distinct or occupied containers remain separate.
+
 ## [0.3.0-alpha.4] — 2026-09-28 — Merchant Builder (Sprint 9)
 
 ### Added

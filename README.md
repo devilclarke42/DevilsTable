@@ -2,7 +2,7 @@
 
 ## Sprint 9 — Merchant Builder
 
-Current candidate: **0.3.0-alpha.4**. Open **Merchant Builder** in module settings or the GM Shop UI.
+Current candidate: **0.3.0-alpha.5**. The Builder close button and duplicate container rows are fixed. Open **Merchant Builder** in module settings or the GM Shop UI.
 One editable panel converts NPCs without losing existing data, applies reusable presets, previews
 stock/cash, regenerates selected components and manages inventory. Custom templates are GM-only.
 See the [Merchant Guide](docs/MERCHANT_GUIDE.md) for the workflow, preservation rules and live checks.

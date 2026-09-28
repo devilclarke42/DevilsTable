@@ -128,3 +128,11 @@ They are simulations, not a live Foundry or Forge acceptance result. Before adop
 6. Buy finite and infinite offers, reject a checkout, and test simultaneous requests with two,
    three and five clients. Confirm normal funds checks and merchant locking still hold.
 7. Check the panel at your usual window size, including scrolling and partial-catalogue notices.
+
+### Container display and closing the Builder (alpha.5)
+
+Identical empty containers appear as one Shop offer with a combined quantity. They remain separate
+native D&D5e Items, and checkout still identifies each concrete container for safe transfer. Goods
+with different mechanical data, prices, or contents are not combined. This needs no inventory rebuild.
+The Builder can be closed while work is pending; closing does not cancel an already-approved write,
+and completion does not reopen the window. Reopen it to inspect the current merchant state.

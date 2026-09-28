@@ -17,7 +17,7 @@ const choices = (rows, selected) => rows.map(r => ({ ...r, selected: r.id === se
 /** Single editable panel. Drafts/previews are local; only explicit actions write native documents. */
 export class MerchantBuilderApplication extends HandlebarsApplicationMixin(ApplicationV2) {
   #actorId; #context; #draft; #saved; #snapshot; #templates=[]; #templateId="";
-  #stock=null; #float=null; #floatPending=false; #busy=false; #message="Select an NPC, adjust settings, then Save / Convert.";
+  #stock=null; #float=null; #floatPending=false; #busy=false; #closed=false; #message="Select an NPC, adjust settings, then Save / Convert.";
   constructor({actorId="",...options}={}) { super(options); this.#actorId=actorId; }
   static DEFAULT_OPTIONS = {
     id:"devils-table-merchant-builder",classes:["devils-table"],tag:"section",position:{width:1000,height:800},
@@ -30,6 +30,10 @@ export class MerchantBuilderApplication extends HandlebarsApplicationMixin(Appli
       reload:MerchantBuilderApplication.#reload,advanced:MerchantBuilderApplication.#advanced}
   };
   static PARTS={body:{template:"modules/devils-table/templates/merchant-builder.hbs"}};
+  async close(options = {}) {
+    this.#closed = true;
+    return super.close(options);
+  }
   get actor() { return game.actors.get(this.#actorId); }
   #requireGM() { if(!game.user?.isGM) throw Error("Merchant Builder is GM-only."); }
   #loadActor() {
@@ -114,9 +118,9 @@ export class MerchantBuilderApplication extends HandlebarsApplicationMixin(Appli
   async #confirm(title,text) {return foundry.applications.api.DialogV2.confirm({window:{title},content:`<p>${text}</p>`,modal:true,rejectClose:false});}
   async #run(operation) {
     this.#requireGM();if(this.#busy)return;this.#busy=true;
-    for (const el of this.element?.querySelectorAll?.("input, select, textarea, button") ?? []) el.disabled=true;
+    for (const el of this.element?.querySelectorAll?.(".dt-merchant-builder input, .dt-merchant-builder select, .dt-merchant-builder textarea, .dt-merchant-builder button") ?? []) el.disabled=true;
     try{await operation();}catch(error){this.#message=error.message;ui.notifications.error(error.message);}
-    finally{this.#busy=false;await this.render();}
+    finally{this.#busy=false;if(!this.#closed)await this.render();}
   }
   static async #save(){await this.#run(async()=>{const preserve=Object.keys(this.#draft).every(key=>key==="notes"||this.#draft[key]===this.#saved[key]);this.#snapshot=await saveConfiguration(this.actor,this.#draft,this.#context,this.#snapshot);this.#saved=structuredClone(this.#draft);if(preserve){if(this.#stock)this.#stock.builderSnapshot=this.#snapshot;}else{this.#stock=null;this.#float=null;}this.#message="Merchant configured. Existing NPC data, inventory and cash preserved.";});}
   static async #generateStock(){await this.#run(async()=>{this.#requireSaved();this.#stock=await planBuilderStock(this.actor,this.#draft,this.#context,{float:this.#float});this.#float=this.#stock.float;this.#message="Review the assortment and cash below. Nothing has been applied.";});}

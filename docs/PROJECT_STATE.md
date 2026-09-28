@@ -1,6 +1,12 @@
 # Project state
 
-Updated 2026-09-28 for `0.3.0-alpha.4`.
+Updated 2026-09-28 for `0.3.0-alpha.5`.
+
+## Current hotfix
+
+Alpha.5 fixes the Builder close button and groups identical empty containers in the Shop display,
+while preserving separate native document identities. No source Item or transaction storage migration.
+All 322 automated tests pass; live Foundry confirmation remains required.
 
 ## Sprint 9 candidate
 
