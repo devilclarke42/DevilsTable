@@ -1,6 +1,16 @@
 # Project state
 
-Updated 2026-09-28 for `0.3.0-alpha.3`.
+Updated 2026-09-28 for `0.3.0-alpha.4`.
+
+## Sprint 9 candidate
+
+The Merchant Builder is implemented as a single editable GM panel with data-driven configuration,
+stock estimates, independent regeneration and native stock/cash application. Five built-in presets
+and private custom templates are available. Existing NPC data and source catalogue identities are
+preserved. See [Merchant Guide](MERCHANT_GUIDE.md) for workflow and live acceptance requirements.
+Validation passes for 144 active Items, 32 Stock RollTables and 320 automated tests.
+The panel's actions and transaction additions have automated coverage; no live Foundry/Forge
+multiplayer session was available here. Restock profiles are preferences only, not a scheduler.
 
 ## Sprint 8A candidate
 

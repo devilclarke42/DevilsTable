@@ -1,7 +1,7 @@
 import { MODULE_ID } from "../constants.js";
 import { CompendiumBuilderApplication } from "../apps/compendium-builder-app.js";
 import { RollTableBuilderApplication } from "../apps/roll-table-builder-app.js";
-import { MerchantManagerApplication } from "../merchant/manager-app.js";
+import { MerchantBuilderApplication } from "../merchant/builder/app.js";
 
 export function registerSettings() {
   game.settings.register(MODULE_ID, "merchantHistoryRetention", {
@@ -12,9 +12,9 @@ export function registerSettings() {
   });
 
   game.settings.registerMenu(MODULE_ID, "merchantManager", {
-    name: "Merchant Administration", label: "Open Merchant Administration",
-    hint: "Enable an existing NPC and its linked tokens for the Merchant Shop UI.",
-    icon: "fa-solid fa-store", type: MerchantManagerApplication, restricted: true
+    name: "Merchant Builder", label: "Open Merchant Builder",
+    hint: "Configure NPC merchants, apply templates, preview stock and cash, and manage inventory.",
+    icon: "fa-solid fa-store", type: MerchantBuilderApplication, restricted: true
   });
   game.settings.register(MODULE_ID, "debugLogging", {
     name: "Enable debug logging",

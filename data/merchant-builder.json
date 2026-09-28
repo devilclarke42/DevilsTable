@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "availability": [
+    "open",
+    "closed",
+    "busy",
+    "travelling",
+    "sleeping"
+  ],
+  "relationshipStates": [
+    "Unknown",
+    "Recognises",
+    "Regular",
+    "Trusted",
+    "Friend",
+    "Suspicious",
+    "Dislikes",
+    "Hostile",
+    "Banned"
+  ],
+  "restockProfiles": [
+    {
+      "id": "manual",
+      "name": "Manual only",
+      "intervalDays": null
+    },
+    {
+      "id": "daily",
+      "name": "Daily (schedule preference)",
+      "intervalDays": 1
+    },
+    {
+      "id": "weekly",
+      "name": "Weekly (schedule preference)",
+      "intervalDays": 7
+    }
+  ],
+  "limits": {
+    "maxDraws": 50,
+    "maxQuantity": 100,
+    "maxCashCp": 100000000,
+    "maxTemplates": 100
+  },
+  "defaults": {
+    "availability": "open",
+    "infiniteFunds": false,
+    "infiniteStock": false,
+    "restockProfile": "manual",
+    "pricingModifier": 0,
+    "relationshipState": "Unknown",
+    "relationshipModifier": 0,
+    "notes": ""
+  }
+}

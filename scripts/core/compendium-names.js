@@ -1,5 +1,6 @@
 /** Display names are independent from collection IDs and saved document UUIDs. */
 export const COMPENDIUM_NAMES = Object.freeze({
+  "world.devils-table-merchant-templates": { type: "JournalEntry", label: "Devil's Table — Merchant Templates (GM Only)" },
   "world.devils-table-items": { type: "Item", label: "Devil's Table — Master Item Catalogue" },
   "world.devils-table-stock-tables": { type: "RollTable", label: "Devil's Table — Merchant Stock RollTables" },
   "world.devils-table-transactions": { type: "JournalEntry", label: "Devil's Table — Transaction History (GM Only)" }

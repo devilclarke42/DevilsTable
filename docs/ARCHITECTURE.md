@@ -1,5 +1,32 @@
 # Architecture and API
 
+## Merchant Builder (Sprint 9)
+
+`scripts/merchant/builder/` separates the ApplicationV2 panel (`app.js`), portable configuration and
+validation (`model.js`), generation estimates (`generation.js`), guarded application (`service.js`)
+and private presets (`templates.js`). The panel keeps local drafts and previews; native Actor Items
+and currency remain authoritative. No additional Item compendium or parallel merchant store exists.
+
+`data/merchant-builder.json` defines choices/limits, `data/merchant-templates.json` defines built-in
+presets, and `data/economy.json` defines generation factors. Generation uses the existing stock
+roller and quantity policy with optional draw/tier/quantity adjustments; default callers retain
+the previous behaviour. Expected counts use a capped binomial distribution for each stock tier.
+
+Configuration snapshots reject stale panel writes. The existing administration guards protect
+conversion, cash and stock writes against checkout/recovery. Conversion writes only merchant flags
+and linked-token entry flags. Independent cash replacement is an explicit GM action using the native
+wallet planner. Infinite-stock offers skip merchant depletion while retaining the existing delivery,
+settlement and rollback steps. Default relationship values seed new records only.
+
+Templates use a versioned settings allowlist and a private world JournalEntry pack. They exclude
+live Actor identities, inventory and customer/history state. A future sharing interface can reuse
+that portable payload. Catalogue providers need data and stock profiles, not new UI branches;
+missing generation profiles report an explicit limitation. Restock preferences and future services
+remain isolated metadata rather than new runtime schedulers or inventory Items.
+
+See [Merchant Guide](MERCHANT_GUIDE.md) for storage identities, workflows and acceptance checks.
+
+
 ## Consolidation and administration (Sprint 8A)
 
 The public project is Devil's Table: Trade & Merchants; `devils-table` remains the stable namespace.

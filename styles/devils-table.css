@@ -62,3 +62,15 @@
 .devils-table .dt-summary-card dt { font-size: 0.85em; opacity: 0.85; }
 .devils-table .dt-summary-card dd { margin: 0.25rem 0 0; font-weight: bold; overflow-wrap: anywhere; }
 .devils-table .dt-administration label { display: grid; gap: 0.3rem; margin: 0.5rem 0; }
+
+/* Single-panel Merchant Builder; drafts and generated previews remain visible together. */
+.devils-table .dt-merchant-builder { padding: 1rem; overflow: auto; min-height: 0; max-height: 85vh; }
+.devils-table .dt-merchant-builder fieldset, .devils-table .dt-merchant-builder section[data-preview] { margin: .75rem 0; padding: .75rem; }
+.devils-table .dt-merchant-builder-columns { display: grid; grid-template-columns: minmax(20rem, 1.2fr) minmax(16rem, 1fr); gap: 1rem; align-items: start; }
+.devils-table .dt-merchant-builder-fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .65rem; align-items: end; }
+.devils-table .dt-merchant-builder label { display: block; }
+.devils-table .dt-merchant-builder label select, .devils-table .dt-merchant-builder label input:not([type=checkbox]), .devils-table .dt-merchant-builder textarea { width: 100%; }
+.devils-table .dt-merchant-builder dd { margin: .2rem 0 .65rem; overflow-wrap: anywhere; }
+.devils-table .dt-merchant-builder button { width: auto; margin: .25rem 0; }
+.devils-table .dt-merchant-builder [hidden] { display: none !important; }
+@media (max-width: 760px) { .devils-table .dt-merchant-builder-columns { grid-template-columns: 1fr; } }

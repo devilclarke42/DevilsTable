@@ -8,6 +8,23 @@ This is the official milestone/release changelog. The root [build changelog](../
 retains detailed alpha implementation history. A milestone entry does not assert that a public
 GitHub Release or installation manifest exists. No release dates are invented for unreleased work.
 
+## [0.3.0-alpha.4] — 2026-09-28 — Merchant Builder (Sprint 9)
+
+### Added
+
+- Single-panel GM Merchant Builder, editable settings and live generation estimates.
+- Data-defined settlement/prosperity scaling, five built-in presets and private custom templates.
+- Independent stock, float and notes regeneration; editable confirmed native cash previews.
+- NPC-preserving conversion, stock maintenance, summaries and access to existing advanced controls.
+- Infinite-stock offer configuration and relationship defaults for new customers.
+- Merchant Guide and regression coverage for preservation, privacy, generation and panel actions.
+
+### Changed
+
+- Merchant Builder is the primary GM entry point; existing administration/recovery remains accessible.
+- Existing stock and cash planners accept builder policy without duplicating catalogue Items.
+- Tavern source content and activation state are unchanged. Restock scheduling and greetings remain deferred.
+
 ## [0.3.0-alpha.3] — 2026-09-28
 
 ### Added

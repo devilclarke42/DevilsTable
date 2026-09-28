@@ -1,3 +1,6 @@
+import { loadBuilderPolicy } from "../scripts/merchant/builder/model.js";
+import { builtInTemplates, validateTemplate } from "../scripts/merchant/builder/templates.js";
+import { CatalogueRegistry } from "../scripts/catalogues/registry.js";
 import { loadEconomy } from "../scripts/merchant/economy.js";
 import { readFile, access } from "node:fs/promises";
 import { resolve, dirname, sep } from "node:path";
@@ -13,8 +16,12 @@ const readJson = async path => JSON.parse(await readFile(resolve(ROOT, path), "u
 const assert = (ok, message) => { if (!ok) throw new Error(message); };
 
 try {
-  await loadEconomy({ readJson });
+  const economy = await loadEconomy({ readJson });
+  const policy = await loadBuilderPolicy({ readJson });
   const catalogue = await loadStockCatalogue({ readJson });
+  const registry = new CatalogueRegistry();
+  registry.register({ catalogues: catalogue.catalogueDefinitions, categories: catalogue.categoryDefinitions });
+  for (const template of await builtInTemplates({ readJson })) validateTemplate(template, { economy, policy, catalogue, registry });
   const report = validateStockCatalogue(catalogue);
   for (const error of report.errors) console.error(`${error.path}: ${error.message}`);
   assert(report.valid, `Catalogue failed with ${report.errors.length} error(s).`);

@@ -5,7 +5,7 @@ import { stockTableDocuments } from "../builders/roll-table-factory.js";
 import { createRollTableAdapter } from "../builders/roll-table-adapter.js";
 import { planRollTables } from "../builders/roll-table-plan.js";
 import { selectEntries } from "../data/shop-catalogue.js";
-import { rollStockQuantity } from "./stock-quantities.js";
+import { rollStockQuantity, scaledQuantity } from "./stock-quantities.js";
 import { stockProfiles } from "../data/stock-catalogue.js";
 
 async function checkedRoll(rollDie, sides) {
@@ -15,8 +15,9 @@ async function checkedRoll(rollDie, sides) {
 }
 
 /** Read-only sampling of built table ranges. Exhausted tiers never promote rare goods. */
-export async function rollStockFromTables(tables, { draws, rollDie, eligibleIds = null }) {
+export async function rollStockFromTables(tables, { draws, rollDie, eligibleIds = null, tierChances = null }) {
   if (!Number.isSafeInteger(draws) || draws < 0 || draws > 50) throw new Error("Draw count must be an integer from 0 to 50.");
+  if (tierChances && (![tierChances.often, tierChances.rarely].every(n => Number.isInteger(n) && n >= 0) || tierChances.often + tierChances.rarely > 100)) throw Error("Invalid stock tier chances.");
   const byTier = new Map(tables.map(table => [table.flags[FLAG_SCOPE].tier, table]));
   for (const tier of ["always", "often", "rarely", "rotating"]) if (!byTier.has(tier)) throw new Error(`Missing ${tier} stock table.`);
   const rows = tier => byTier.get(tier).results.filter(row => row.flags[FLAG_SCOPE].itemId
@@ -30,7 +31,8 @@ export async function rollStockFromTables(tables, { draws, rollDie, eligibleIds 
     const roll = await checkedRoll(rollDie, 100);
     const match = byTier.get("rotating").results.find(row => roll >= row.range[0] && roll <= row.range[1]);
     if (!match) throw new Error(`Rotating table has no result for ${roll}. Rebuild the tables.`);
-    const tier = ["often", "rarely"].find(key => match.documentUuid?.endsWith(`.RollTable.${byTier.get(key)._id}`));
+    const tier = tierChances ? (roll <= tierChances.often ? "often" : roll <= tierChances.often + tierChances.rarely ? "rarely" : null)
+      : ["often", "rarely"].find(key => match.documentUuid?.endsWith(`.RollTable.${byTier.get(key)._id}`));
     if (!tier || !pools[tier].length) { outcomes.push({ roll, itemId: null, reason: "No extra stock or this tier is exhausted." }); continue; }
     const index = (await checkedRoll(rollDie, pools[tier].length)) - 1;
     const [row] = pools[tier].splice(index, 1);
@@ -43,7 +45,7 @@ export async function rollStockFromTables(tables, { draws, rollDie, eligibleIds 
 
 /** Quantity suggestions are returned with the list; no chat, pack or inventory writes. */
 export async function rollStockList({ shopId = "general-store", categoryId = null, profileId = null, draws = null,
-  load = loadStockCatalogue, adapter = null, rollDie = async sides => (await new Roll(`1d${sides}`).evaluate()).total } = {}) {
+  tierChances = null, quantityScale = null, load = loadStockCatalogue, adapter = null, rollDie = async sides => (await new Roll(`1d${sides}`).evaluate()).total } = {}) {
   const io = adapter ?? createRollTableAdapter();
   io.assertCanBuild();
   if (!shopId) throw new Error("Select one shop before rolling stock.");
@@ -63,15 +65,17 @@ export async function rollStockList({ shopId = "general-store", categoryId = nul
   const ids = new Set(expected.map(table => table._id));
   const tables = actual.filter(table => ids.has(table._id));
   const count = draws ?? (categoryId ? profile.categoryDraws : profile.draws);
-  const rolled = await rollStockFromTables(tables, { draws: count, rollDie, eligibleIds });
+  const rolled = await rollStockFromTables(tables, { draws: count, rollDie, eligibleIds, tierChances });
   const items = new Map(catalogue.entries.map(({ item }) => [item.id, item]));
   const stock = [];
   // Presence is decided first; quantity dice cannot change the chosen assortment.
   for (const { row, tier } of rolled.selected) {
     const item = items.get(row.flags[FLAG_SCOPE].itemId);
+    const quantity = await rollStockQuantity(catalogue.quantities, item, tier, rollDie);
+    if (quantityScale) quantity.quantity = scaledQuantity(quantity.quantity, tier, quantityScale);
     stock.push({ id: item.id, name: item.name, uuid: row.documentUuid, tier,
       price: { ...item.price }, saleUnit: item.saleUnit ?? "one empty container",
-      ...await rollStockQuantity(catalogue.quantities, item, tier, rollDie) });
+      ...quantity });
   }
   return {
     shopId, categoryId, profileId: profile.id, profileName: profile.name, draws: count, outcomes: rolled.outcomes,

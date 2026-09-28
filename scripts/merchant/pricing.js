@@ -8,7 +8,7 @@ export function percent(value = 0) {
 }
 export function pricingTerms(merchant, character, override = {}) {
   const settings = merchant.getFlag(MODULE_ID, "merchant")?.settings ?? {};
-  const memory = character ? merchant.getFlag(MODULE_ID, `merchant.relationships.${character.id}`) ?? {} : {};
+  const memory = character ? merchant.getFlag(MODULE_ID, `merchant.relationships.${character.id}`) ?? merchant.getFlag(MODULE_ID, "merchant.relationshipDefaults") ?? {} : {};
   const result = { merchant: settings.merchantModifier ?? Math.round(((settings.sellModifier ?? 1) - 1) * 10000) / 100,
     character: memory.pricingModifier ?? 0, negotiation: memory.negotiationModifier ?? 0,
     review: 0, stacking: settings.stacking ?? "additive", ...override };

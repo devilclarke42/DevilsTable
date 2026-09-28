@@ -13,6 +13,9 @@ export function validateEconomy(data) {
     const rows = data[list];
     if (!Array.isArray(rows) || !rows.length || new Set(rows.map(r => r.id)).size !== rows.length) throw Error(`Invalid economy ${list}.`);
     for (const row of rows) {
+      for (const key of ["drawPercent", "quantityPercent", "rarePercent"]) {
+        if (row[key] !== undefined && (!Number.isInteger(row[key]) || row[key] < 0 || row[key] > 1000)) throw Error(`Invalid economy ${key}.`);
+      }
       if (!slug(row.id) || typeof row.name !== "string" || !row.name.trim()) throw Error(`Invalid economy ${list} label.`);
       if (list === "settlements" ? ![row.minCp, row.maxCp].every(n => Number.isSafeInteger(n) && n >= 0 && n <= 100000000)
           || row.maxCp < row.minCp : !Number.isSafeInteger(row.percent) || row.percent < 1 || row.percent > 1000) throw Error(`Invalid economy ${list} range.`);
@@ -52,13 +55,13 @@ export function floatCoins(amount, shares) {
 }
 /** Read-only planning. A single native Actor update later commits cash and its one-time marker. */
 export async function previewInitialFloat(actor, { policy, profileId = null, hadStock = stockItems(actor).length > 0,
-  roll = async sides => (await new Roll(`1d${sides}`).evaluate()).total } = {}) {
+  replace = false, roll = async sides => (await new Roll(`1d${sides}`).evaluate()).total } = {}) {
   policy ??= await economyPolicy();
   const config = actor.getFlag(MODULE_ID, "merchant") ?? {};
   const inputs = resolveEconomy(policy, config.economy, profileId);
   const before = { ...actor.system.currency };
   const balance = walletValue(before);
-  let status = config.initialFloat ? "already-initialized" : balance > 0 ? "preserved-wallet"
+  let status = replace && tradeSettings(actor).walletMode !== "infinite" ? "generated" : config.initialFloat ? "already-initialized" : balance > 0 ? "preserved-wallet"
     : hadStock || Object.keys(config.relationships ?? {}).length ? "preserved-existing-merchant"
       : tradeSettings(actor).walletMode === "infinite" ? "infinite-wallet" : "generated";
   let amountCp = 0;
@@ -66,7 +69,7 @@ export async function previewInitialFloat(actor, { policy, profileId = null, had
     const settlement = policy.settlements.find(row => row.id === inputs.settlement);
     amountCp = floatAmount(policy, inputs, await roll(settlement.maxCp - settlement.minCp + 1));
   }
-  return { status, inputs, profileId, before, amountCp, after: status === "generated" ? floatCoins(amountCp, policy.coinShares) : before,
+  return { status, replacement: replace, inputs, profileId, before, amountCp, after: status === "generated" ? floatCoins(amountCp, policy.coinShares) : before,
     configuration: stable(config.economy ?? null), walletMode: tradeSettings(actor).walletMode, marker: stable(config.initialFloat ?? null), policyVersion: policy.schemaVersion };
 }
 export function assertFloatCurrent(actor, plan) {

@@ -6,6 +6,7 @@
     </div>
   </header>
   {{#if canAdmin}}<nav class="dt-manager-tabs" aria-label="Merchant view">
+    <button type="button" data-action="setupMerchant">Merchant Builder</button>
     <button type="button" data-action="toggleAdministration">{{#if administrationOpen}}Return to Inventory{{else}}Administration{{/if}}</button>
   </nav>{{/if}}
   {{#if administrationOpen}}
@@ -22,7 +23,7 @@
         <button type="button" data-action="saveEconomy" {{#if adminBusy}}disabled{{/if}}>Save economy settings</button>
         <p>These inputs determine the one-time initial cash float. Changing them does not refill an existing wallet.</p>
       </details>
-      <button type="button" data-action="setupMerchant">Open Merchant Administration / Populate Inventory</button>
+      <button type="button" data-action="setupMerchant">Open Merchant Builder</button>
       <button type="button" data-action="emptyStock" {{#if adminBusy}}disabled{{/if}}>Empty Stock</button>
     {{/if}}
   </section>
@@ -42,7 +43,7 @@
       {{#each items}}
         <article class="dt-shop-item" data-offer-id="{{id}}" {{#if hidden}}hidden{{/if}}>
           <img src="{{img}}" alt="" loading="lazy"><div><h3>{{name}}</h3><p>{{description}}</p>
-            <p>{{priceLabel}} per {{saleUnit}} · {{quantity}} available</p></div>
+            <p>{{priceLabel}} per {{saleUnit}} · {{#if unlimited}}Unlimited ({{quantity}} per checkout){{else}}{{quantity}} available{{/if}}</p></div>
           <div class="dt-item-actions"><button type="button" data-action="add" data-id="{{id}}">Add</button>
           <button type="button" data-action="steal" data-id="{{id}}" {{#unless @root.canInteract}}disabled{{/unless}}>Attempt theft</button></div>
         </article>

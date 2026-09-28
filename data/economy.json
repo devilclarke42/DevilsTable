@@ -1,27 +1,142 @@
 {
   "schemaVersion": 1,
-  "defaults": { "settlement": "village", "prosperity": "average", "profile": "standard" },
+  "defaults": {
+    "settlement": "village",
+    "prosperity": "average",
+    "profile": "standard"
+  },
   "settlements": [
-    { "id": "village", "name": "Village", "minCp": 2000, "maxCp": 6000 },
-    { "id": "town", "name": "Town", "minCp": 8000, "maxCp": 18000 },
-    { "id": "city", "name": "City", "minCp": 25000, "maxCp": 50000 }
+    {
+      "id": "hamlet",
+      "name": "Hamlet",
+      "minCp": 800,
+      "maxCp": 2500,
+      "drawPercent": 50,
+      "quantityPercent": 60,
+      "rarePercent": 50
+    },
+    {
+      "id": "village",
+      "name": "Village",
+      "minCp": 2000,
+      "maxCp": 6000,
+      "drawPercent": 100,
+      "quantityPercent": 100,
+      "rarePercent": 100
+    },
+    {
+      "id": "town",
+      "name": "Town",
+      "minCp": 8000,
+      "maxCp": 18000,
+      "drawPercent": 150,
+      "quantityPercent": 125,
+      "rarePercent": 125
+    },
+    {
+      "id": "city",
+      "name": "City",
+      "minCp": 25000,
+      "maxCp": 50000,
+      "drawPercent": 200,
+      "quantityPercent": 150,
+      "rarePercent": 150
+    },
+    {
+      "id": "large-city",
+      "name": "Large City",
+      "minCp": 50000,
+      "maxCp": 100000,
+      "drawPercent": 250,
+      "quantityPercent": 200,
+      "rarePercent": 200
+    }
   ],
   "prosperities": [
-    { "id": "poor", "name": "Struggling", "percent": 50 },
-    { "id": "average", "name": "Average", "percent": 100 },
-    { "id": "prosperous", "name": "Prosperous", "percent": 175 }
+    {
+      "id": "poor",
+      "name": "Poor",
+      "percent": 50,
+      "drawPercent": 70,
+      "quantityPercent": 60,
+      "rarePercent": 50
+    },
+    {
+      "id": "average",
+      "name": "Average",
+      "percent": 100,
+      "drawPercent": 100,
+      "quantityPercent": 100,
+      "rarePercent": 100
+    },
+    {
+      "id": "prosperous",
+      "name": "Prosperous",
+      "percent": 175,
+      "drawPercent": 125,
+      "quantityPercent": 125,
+      "rarePercent": 125
+    },
+    {
+      "id": "wealthy",
+      "name": "Wealthy",
+      "percent": 250,
+      "drawPercent": 150,
+      "quantityPercent": 150,
+      "rarePercent": 150
+    },
+    {
+      "id": "luxury",
+      "name": "Luxury",
+      "percent": 400,
+      "drawPercent": 175,
+      "quantityPercent": 175,
+      "rarePercent": 200
+    }
   ],
   "profiles": [
-    { "id": "modest", "name": "Modest trader", "percent": 75 },
-    { "id": "standard", "name": "Everyday merchant", "percent": 100 },
-    { "id": "specialist", "name": "Specialist merchant", "percent": 150 },
-    { "id": "luxury", "name": "Luxury merchant", "percent": 300 }
+    {
+      "id": "modest",
+      "name": "Modest trader",
+      "percent": 75
+    },
+    {
+      "id": "standard",
+      "name": "Everyday merchant",
+      "percent": 100
+    },
+    {
+      "id": "specialist",
+      "name": "Specialist merchant",
+      "percent": 150
+    },
+    {
+      "id": "luxury",
+      "name": "Luxury merchant",
+      "percent": 300
+    }
   ],
   "stockProfiles": {
-    "DT_TABLE_GS": { "settlement": "village", "profile": "standard" },
-    "DT_TABLE_GS_TOWN": { "settlement": "town", "profile": "standard" },
-    "DT_TABLE_GS_CITY": { "settlement": "city", "profile": "standard" },
-    "DT_TABLE_GS_WAGON": { "settlement": "village", "profile": "modest" }
+    "DT_TABLE_GS": {
+      "settlement": "village",
+      "profile": "standard"
+    },
+    "DT_TABLE_GS_TOWN": {
+      "settlement": "town",
+      "profile": "standard"
+    },
+    "DT_TABLE_GS_CITY": {
+      "settlement": "city",
+      "profile": "standard"
+    },
+    "DT_TABLE_GS_WAGON": {
+      "settlement": "village",
+      "profile": "modest"
+    }
   },
-  "coinShares": { "gp": 80, "sp": 15, "cp": 5 }
+  "coinShares": {
+    "gp": 80,
+    "sp": 15,
+    "cp": 5
+  }
 }

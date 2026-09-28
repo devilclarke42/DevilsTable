@@ -50,11 +50,11 @@ export async function retainedRejections(actor) {
     return record?.merchantId === actor.id && record.status === "rejected" && record.request?.type !== "interaction";
   }).length;
 }
-export async function merchantSummary(actor, { policy, rejected = retainedRejections } = {}) {
+export async function merchantSummary(actor, { policy, rejected = retainedRejections, allowUnconverted = false } = {}) {
   if (!game.user?.isGM) throw Error("Merchant statistics are GM-only.");
-  if (!merchantConfig(actor)) throw Error("This NPC is not an enabled merchant.");
+  if (!merchantConfig(actor) && !(allowUnconverted && actor?.type === "npc")) throw Error("This NPC is not an enabled merchant.");
   policy ??= await economyPolicy();
-  const config = merchantConfig(actor), inputs = resolveEconomy(policy, config.economy);
+  const config = merchantConfig(actor) ?? {}, inputs = resolveEconomy(policy, config.economy);
   const physical = stockItems(actor);
   let units = 0, value = 0, unpriced = 0;
   for (const item of physical) {

@@ -43,9 +43,11 @@ const stringList = value => Array.isArray(value) ? value.filter(entry => typeof 
 
 export function publicOffers(actor) {
   const offers = [];
+  const unlimited = actor.getFlag?.(MODULE_ID, "merchant")?.settings?.infiniteStock === true;
   for (const item of actor.items ?? []) {
-    const quantity = Number(item.system?.quantity);
-    if (!Number.isSafeInteger(quantity) || quantity < 1) continue;
+    const storedQuantity = Number(item.system?.quantity);
+    if (!Number.isSafeInteger(storedQuantity) || storedQuantity < 0 || (!unlimited && storedQuantity < 1)) continue;
+    const quantity = unlimited ? Math.max(1, storedQuantity) : storedQuantity;
     const own = item.getFlag?.(MODULE_ID, "offer") ?? {};
     const canonical = item.getFlag?.(MODULE_ID, "generatedBy") === MODULE_ID;
     const price = Number.isSafeInteger(own.unitPrice) && own.unitPrice >= 0
@@ -57,7 +59,7 @@ export function publicOffers(actor) {
     const raw = canonical ? item.system?.description?.value ?? "" : own.publicDescription;
     const description = String(raw).replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim().slice(0, 1600);
     offers.push({ id: item.id, name: String(item.name).slice(0, 160), img: item.img,
-      description, quantity, price: { value: price.value, denomination: price.denomination },
+      description, quantity, unlimited, price: { value: price.value, denomination: price.denomination },
       copper: value, category: item.getFlag?.(MODULE_ID, "category") ?? item.type,
       tags: stringList(item.getFlag?.(MODULE_ID, "tags")).slice(0, 50),
       catalogues: stringList(item.getFlag?.(MODULE_ID, "shops")),

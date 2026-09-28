@@ -31,7 +31,7 @@ export class MerchantReviewApplication extends HandlebarsApplicationMixin(Applic
 
   async _prepareContext(options) {
     const memory = { successfulNegotiations: 0, failedNegotiations: 0, successfulThefts: 0, caughtStealing: 0,
-      ...this.#data.actor.getFlag(MODULE_ID, `merchant.relationships.${this.#data.character.id}`) };
+      ...(this.#data.actor.getFlag(MODULE_ID, `merchant.relationships.${this.#data.character.id}`) ?? this.#data.actor.getFlag(MODULE_ID, "merchant.relationshipDefaults")) };
     memory.spendLabel = formatCopper(memory.spentMinor ?? 0);
     memory.discountLabel = formatCopper(memory.lifetimeDiscountMinor ?? 0);
     if (this.#data.interaction) {

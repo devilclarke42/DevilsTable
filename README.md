@@ -1,5 +1,14 @@
 # Devil's Table: Trade & Merchants
 
+## Sprint 9 — Merchant Builder
+
+Current candidate: **0.3.0-alpha.4**. Open **Merchant Builder** in module settings or the GM Shop UI.
+One editable panel converts NPCs without losing existing data, applies reusable presets, previews
+stock/cash, regenerates selected components and manages inventory. Custom templates are GM-only.
+See the [Merchant Guide](docs/MERCHANT_GUIDE.md) for the workflow, preservation rules and live checks.
+Restock scheduling, greetings and services remain future work; Tavern content is unchanged.
+
+
 ## Sprint 8A — Project consolidation
 
 Current candidate: **0.3.0-alpha.3**. The project is now **Devil's Table: Trade & Merchants**.

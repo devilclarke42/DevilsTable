@@ -1,5 +1,18 @@
 # Roadmap
 
+## Sprint 9 — Merchant Builder candidate: 0.3.0-alpha.4
+
+- [x] Single editable panel; preserve existing NPC data during conversion.
+- [x] Data-driven configuration, stock estimates and independent stock/float/notes previews.
+- [x] Built-in presets and private portable custom templates.
+- [x] Native funds, infinite-stock configuration, relationship defaults and inventory administration.
+- [x] Documentation and automated regression coverage.
+- [ ] Live Foundry/Forge acceptance using the [Merchant Guide](MERCHANT_GUIDE.md#maintenance-and-acceptance).
+
+Automatic restocking, greetings, services and template import/export remain future work.
+Existing catalogue milestones and Tavern content are unchanged.
+
+
 ## Sprint 8A — Consolidation candidate: 0.3.0-alpha.3
 
 - [x] Trade & Merchants branding with stable module/source/collection identities.

@@ -20,7 +20,8 @@ packs, move documents, change access, or invalidate saved UUIDs. Foundry V14 has
 CompendiumCollection metadata-rename method; this avoids calling an invented update API.
 The existing-pack directory display remains a live Foundry acceptance check.
 
-Merchant Templates are future data, not an empty compendium created in this sprint. Relationships
+Sprint 9 adds a GM-only Merchant Templates JournalEntry compendium on first custom-template save;
+see [Merchant Guide](MERCHANT_GUIDE.md). Relationships
 remain private merchant Actor flags keyed by character Actor ID. No relationship compendium is
 necessary. The transaction history stays GM-only; renaming never changes its permissions.
 

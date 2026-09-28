@@ -15,3 +15,8 @@ export async function rollStockQuantity(policy, item, tier, rollDie) {
   }
   throw new Error(`Quantity profile ${profile.id} does not cover d100.`);
 }
+
+export function scaledQuantity(quantity, tier, options) {
+  // Rare goods retain the existing 95% one / 5% two distribution at every wealth level.
+  return tier === "rarely" ? quantity : Math.max(1, Math.min(options.maxQuantity, Math.round(quantity * options.quantityPercent / 100)));
+}

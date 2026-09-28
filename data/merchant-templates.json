@@ -1,0 +1,102 @@
+[
+  {
+    "schemaVersion": 1,
+    "id": "village-general-store",
+    "name": "Village General Store",
+    "settings": {
+      "catalogueId": "general-store",
+      "settlement": "village",
+      "prosperity": "average",
+      "profile": "standard",
+      "stockProfileId": "",
+      "availability": "open",
+      "infiniteFunds": false,
+      "infiniteStock": false,
+      "restockProfile": "manual",
+      "pricingModifier": 0,
+      "relationshipState": "Unknown",
+      "relationshipModifier": 0,
+      "notes": "Keep everyday essentials easy to find. Set aside specialist orders for the GM to review."
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "id": "roadside-tavern",
+    "name": "Roadside Tavern",
+    "settings": {
+      "catalogueId": "tavern",
+      "settlement": "village",
+      "prosperity": "average",
+      "profile": "standard",
+      "stockProfileId": "",
+      "availability": "open",
+      "infiniteFunds": false,
+      "infiniteStock": false,
+      "restockProfile": "manual",
+      "pricingModifier": 0,
+      "relationshipState": "Unknown",
+      "relationshipModifier": 0,
+      "notes": "Offer the current menu and travel provisions. Ask about meals, rooms and the stable yard; services are arranged by the GM."
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "id": "travelling-merchant",
+    "name": "Travelling Merchant",
+    "settings": {
+      "catalogueId": "general-store",
+      "settlement": "village",
+      "prosperity": "average",
+      "profile": "modest",
+      "stockProfileId": "DT_TABLE_GS_WAGON",
+      "availability": "open",
+      "infiniteFunds": false,
+      "infiniteStock": false,
+      "restockProfile": "manual",
+      "pricingModifier": 0,
+      "relationshipState": "Unknown",
+      "relationshipModifier": 0,
+      "notes": "Carry portable goods. Confirm bulky purchases and special orders before agreeing to delivery."
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "id": "town-blacksmith",
+    "name": "Town Blacksmith",
+    "settings": {
+      "catalogueId": "blacksmith",
+      "settlement": "town",
+      "prosperity": "average",
+      "profile": "specialist",
+      "stockProfileId": "",
+      "availability": "open",
+      "infiniteFunds": false,
+      "infiniteStock": false,
+      "restockProfile": "manual",
+      "pricingModifier": 0,
+      "relationshipState": "Unknown",
+      "relationshipModifier": 0,
+      "notes": "Keep practical metal goods on hand. Discuss repairs and commissions with the GM before promising completion."
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "id": "temple-quartermaster",
+    "name": "Temple Quartermaster",
+    "settings": {
+      "catalogueId": "general-store",
+      "settlement": "village",
+      "prosperity": "average",
+      "profile": "standard",
+      "stockProfileId": "",
+      "availability": "open",
+      "infiniteFunds": false,
+      "infiniteStock": false,
+      "restockProfile": "manual",
+      "pricingModifier": 0,
+      "relationshipState": "Unknown",
+      "relationshipModifier": 0,
+      "notes": "Issue practical supplies for approved work. The GM decides eligibility and any aid or discount."
+    }
+  }
+]

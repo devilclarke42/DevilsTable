@@ -88,13 +88,16 @@ export function makeSteps(merchant, character, quote, now = new Date().toISOStri
     if (!original) throw Error("An Item disappeared before approval.");
     transferable(original, source);
     const sourceData = virtual.get(source.id).get(row.id);
-    if (!Number.isSafeInteger(sourceData.system.quantity) || sourceData.system.quantity < row.quantity) throw Error("Stock changed before approval.");
+    const unlimited = source === merchant && quote.settings?.infiniteStock === true;
+    if (!Number.isSafeInteger(sourceData.system.quantity) || (unlimited ? Math.max(1, sourceData.system.quantity) : sourceData.system.quantity) < row.quantity) throw Error("Stock changed before approval.");
     let remaining = clone(sourceData); remaining.system.quantity -= row.quantity;
     // D&D5e containers always have quantity 1; an exhausted container must be deleted.
     // Other merchant goods retain zero-stock offers for future restock.
     if ((source === character || sourceData.type === "container") && remaining.system.quantity === 0) remaining = null;
-    steps.push({ kind: "item", actorId: source.id, itemId: row.id, before: clone(sourceData), after: remaining });
-    if (remaining) virtual.get(source.id).set(row.id, remaining); else virtual.get(source.id).delete(row.id);
+    if (!unlimited) {
+      steps.push({ kind: "item", actorId: source.id, itemId: row.id, before: clone(sourceData), after: remaining });
+      if (remaining) virtual.get(source.id).set(row.id, remaining); else virtual.get(source.id).delete(row.id);
+    }
     const data = clone(sourceData);
     for (const key of ["_id", "_stats", "folder", "ownership", "sort"]) delete data[key];
     // A merchant's offer controls must not travel to a customer or change another shop's price.
@@ -113,7 +116,7 @@ export function makeSteps(merchant, character, quote, now = new Date().toISOStri
     virtual.get(target.id).set(after._id, after);
   }
   const before = clone(merchant.getFlag(MODULE_ID, `merchant.relationships.${character.id}`) ?? null);
-  const after = nextMemory(before ?? {}, quote, character.id, now);
+  const after = nextMemory(before ?? merchant.getFlag(MODULE_ID, "merchant.relationshipDefaults") ?? {}, quote, character.id, now);
   steps.push({ kind: "relationship", actorId: merchant.id, customer: character.id, before, after });
   const change = quote.interaction?.kind === "negotiation" && quote.interaction.outcome === "success" ? 1
     : !quote.interaction && quote.bought > 0 && !(quote.discount > 0) ? -1 : 0;
