@@ -1,17 +1,17 @@
 # Devil's Table: Trade & Merchants
 
-## Sprint 9 — Merchant Builder
+## Current release — Tavern Services
 
-Current candidate: **0.3.0-alpha.7** — Merchant Services framework. Players can buy services alongside products; GMs configure definitions and offers through **Merchant Builder → Manage → Service Categories / Offerings**. See the [Merchant Services guide](docs/MERCHANT_SERVICES.md) for the JSON format, setup and execution rules.
+Current candidate: **0.3.0-alpha.8** — Tavern Services. Twelve services join the existing food/drink catalogue. Choose a Tavern preset in Merchant Builder and Save to add eligible services, then generate stock and cash. [Tavern Services guide](docs/TAVERN_SERVICES.md).
 The editable tabbed builder converts NPCs without losing existing data, applies reusable presets, previews
 stock/cash, regenerates selected components and manages inventory. Custom templates are GM-only.
 See the [Merchant Guide](docs/MERCHANT_GUIDE.md) for the workflow, preservation rules and live checks.
-Restock scheduling and greetings remain future work. No Tavern services are bundled; existing Tavern content is unchanged.
+Restock scheduling and greetings remain future work. Tavern services are now bundled, and the existing Tavern food/drink data is active.
 
 
 ## Sprint 8A — Project consolidation
 
-Current candidate: **0.3.0-alpha.3**. The project is now **Devil's Table: Trade & Merchants**.
+Historical Sprint 8A candidate: **0.3.0-alpha.3**. The project is now **Devil's Table: Trade & Merchants**.
 The GM Shop UI's **Administration** view includes a Merchant Summary, confirmed Empty Stock and
 settlement/prosperity/profile inputs for a one-time native cash float. Existing balances and merchant
 records are preserved. The module ID and compendium UUIDs remain unchanged.

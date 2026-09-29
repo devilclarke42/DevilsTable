@@ -61,7 +61,15 @@
       "name": "Other goods",
       "icon": "icons/svg/item-bag.svg"
     },
-    "metadata": {}
+    "metadata": {
+      "defaultServiceCategories": [
+        "tavern-accommodation",
+        "tavern-food-service",
+        "tavern-stable",
+        "tavern-facilities",
+        "tavern-hospitality"
+      ]
+    }
   },
   {
     "id": "alchemist",

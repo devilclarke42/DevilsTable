@@ -1,3 +1,5 @@
+import { seedDefaultServices } from "../../services/administration.js";
+import { catalogueRegistry } from "../../catalogues/registry.js";
 import { MODULE_ID } from "../../constants.js";
 import { withAdministration, assertAdministrator } from "../operation-guard.js";
 import { enableMerchant } from "../service.js";
@@ -27,6 +29,7 @@ export async function saveConfiguration(actor, draft, context, expected) {
     // Read back only fields managed here, leaving all other merchant metadata intact.
     const actual=readConfiguration(actor,context);
     if(Object.keys(config).some(k=>actual[k]!==config[k])) throw Error("Merchant configuration read-back failed. Reload before retrying.");
+    await seedDefaultServices(actor,(context.registry??catalogueRegistry).get(config.catalogueId));
     return configurationSnapshot(actor);
   },{allowUnconverted:true});
 }

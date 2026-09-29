@@ -1,3 +1,6 @@
+> Current status (alpha.8): the source catalogue described below is now active. No Item records
+> were rewritten during activation. See [Tavern Services](TAVERN_SERVICES.md) for current setup.
+
 # Sprint 8 — Tavern catalogue and merchant presentation
 
 > Deferred historical candidate: Sprint 8 was revised to the catalogue framework. The material below

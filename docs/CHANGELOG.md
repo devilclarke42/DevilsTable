@@ -8,6 +8,22 @@ This is the official milestone/release changelog. The root [build changelog](../
 retains detailed alpha implementation history. A milestone entry does not assert that a public
 GitHub Release or installation manifest exists. No release dates are invented for unreleased work.
 
+## 0.3.0-alpha.8 — 2026-09-29 — Tavern Services
+
+### Added
+
+- Twelve record-only Tavern services across Accommodation, Food Services, Stable, Facilities and Hospitality.
+- Recommended price ranges, purchase units and suggested durations, with backward-compatible service validation.
+- Data-driven default service seeding on Builder Save, preserving manual removals, disabled offers and price overrides.
+- Poor Hamlet Tavern, Town Inn and Luxury City Inn presets; updated Roadside Tavern notes.
+- Production service tests and Tavern setup/pricing documentation.
+
+### Changed
+
+- Activated the existing 152 Tavern food/drink source records and complete Tavern stock profile without editing Item identities or contents.
+- Shop and GM review display service units/durations; service availability text no longer implies unlimited room capacity.
+- Active totals: 296 Items, 12 services, 32 stock tables; one shared Item compendium.
+
 ## 0.3.0-alpha.7 — 2026-09-28 — Merchant Services framework
 
 ### Added

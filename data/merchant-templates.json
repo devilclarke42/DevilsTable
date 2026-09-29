@@ -36,7 +36,7 @@
       "pricingModifier": 0,
       "relationshipState": "Unknown",
       "relationshipModifier": 0,
-      "notes": "Offer the current menu and travel provisions. Ask about meals, rooms and the stable yard; services are arranged by the GM."
+      "notes": "Offer food and drinks from the current menu. Confirm room and stall capacity, kitchen hours and laundry collection before approval. Stable Horse excludes feed. Meal services are served on site; do not charge again for included menu portions."
     }
   },
   {
@@ -97,6 +97,66 @@
       "relationshipState": "Unknown",
       "relationshipModifier": 0,
       "notes": "Issue practical supplies for approved work. The GM decides eligibility and any aid or discount."
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "id": "poor-hamlet-tavern",
+    "name": "Poor Hamlet Tavern",
+    "settings": {
+      "catalogueId": "tavern",
+      "settlement": "hamlet",
+      "prosperity": "poor",
+      "profile": "modest",
+      "stockProfileId": "",
+      "availability": "open",
+      "infiniteFunds": false,
+      "infiniteStock": false,
+      "restockProfile": "manual",
+      "pricingModifier": 0,
+      "relationshipState": "Unknown",
+      "relationshipModifier": 0,
+      "notes": "Offer food and drinks from the current menu. Confirm room and stall capacity, kitchen hours and laundry collection before approval. Stable Horse excludes feed. Meal services are served on site; do not charge again for included menu portions."
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "id": "town-inn",
+    "name": "Town Inn",
+    "settings": {
+      "catalogueId": "tavern",
+      "settlement": "town",
+      "prosperity": "prosperous",
+      "profile": "standard",
+      "stockProfileId": "",
+      "availability": "open",
+      "infiniteFunds": false,
+      "infiniteStock": false,
+      "restockProfile": "manual",
+      "pricingModifier": 0,
+      "relationshipState": "Unknown",
+      "relationshipModifier": 0,
+      "notes": "Offer food and drinks from the current menu. Confirm room and stall capacity, kitchen hours and laundry collection before approval. Stable Horse excludes feed. Meal services are served on site; do not charge again for included menu portions."
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "id": "luxury-city-inn",
+    "name": "Luxury City Inn",
+    "settings": {
+      "catalogueId": "tavern",
+      "settlement": "city",
+      "prosperity": "luxury",
+      "profile": "luxury",
+      "stockProfileId": "",
+      "availability": "open",
+      "infiniteFunds": false,
+      "infiniteStock": false,
+      "restockProfile": "manual",
+      "pricingModifier": 0,
+      "relationshipState": "Unknown",
+      "relationshipModifier": 0,
+      "notes": "Offer food and drinks from the current menu. Confirm room and stall capacity, kitchen hours and laundry collection before approval. Stable Horse excludes feed. Meal services are served on site; do not charge again for included menu portions."
     }
   }
 ]

@@ -23,7 +23,7 @@ const draft=()=>structuredClone(builtins[0].settings);
 const nativeSnapshot=a=>structuredClone({system:a.system,img:a.img,ownership:a.ownership,prototypeToken:a.prototypeToken,items:[...a.items].map(i=>i.toObject())});
 
 test("all built-in presets validate and contain only portable editable configuration",()=>{
- assert.equal(builtins.length,5);for(const r of builtins)assert.deepEqual(validateTemplate(r,context).settings,r.settings);
+ assert.equal(builtins.length,8);for(const r of builtins)assert.deepEqual(validateTemplate(r,context).settings,r.settings);
  assert.throws(()=>validateTemplate({...builtins[0],settings:{...draft(),inventory:[]}},context),/Unknown/);
  assert.throws(()=>validateTemplate({...builtins[0],actorId:"secret"},context),/Invalid/);
 });
@@ -51,9 +51,9 @@ test("data-defined settlement and prosperity scale estimates without mutating so
  assert.equal(scaledQuantity(1,"rarely",generationSettings(high,context)),1);assert.equal(scaledQuantity(2,"rarely",generationSettings(high,context)),2);
  const options=await generateStock(high,context,{roll:async options=>options});assert.equal(options.shopId,high.catalogueId);assert.equal(options.draws,b.draws);assert.ok(options.tierChances.rarely>a.rarePerDraw);
 });
-test("estimate excludes existing source IDs and partial catalogue stays explicit",()=>{
+test("estimate excludes existing source IDs and Tavern has complete coverage",()=>{
  const a=world(),base=estimateGeneration(draft(),context);a.items.get("rope").data.flags["devils-table"].sourceId=catalogue.entries.find(e=>e.item.availability==="core"&&e.item.shops.includes("general-store")).item.id;
- assert.ok(estimateGeneration(draft(),context,a).count<base.count);assert.equal(estimateGeneration({...draft(),catalogueId:"tavern"},context).profile.coverage,"partial");
+ assert.ok(estimateGeneration(draft(),context,a).count<base.count);assert.equal(estimateGeneration({...draft(),catalogueId:"tavern"},context).profile.coverage,"complete");
 });
 test("tuned tier sampling uses existing pools and never edits RollTable data",async()=>{
  const tables=stockTableDocuments(catalogue,{shopId:"general-store",profileId:"DT_TABLE_GS"}),before=JSON.stringify(tables);

@@ -6,7 +6,7 @@
     <button type="button" data-action="generate">Preview / Generate Offers…</button>
   </fieldset>
   <fieldset {{#if busy}}disabled{{/if}}><legend>Offerings and manual overrides</legend>
-    {{#each services}}<article data-service-row="{{id}}"><h3>{{name}}</h3><p>{{description}}</p>
+    {{#each services}}<article data-service-row="{{id}}"><h3>{{name}}</h3><p>{{description}}</p><p>Unit: {{saleUnit}} · Suggested duration: {{duration}} · Recommended base range: {{rangeLabel}}</p>
       <label><input type="checkbox" name="offered" {{#if offered}}checked{{/if}}>Offer this service</label>
       <label><input type="checkbox" name="enabled" {{#if enabled}}checked{{/if}}>Enabled</label>
       {{#unless eligible}}<p>Unavailable for the merchant's current catalogue or economic profile.</p>{{/unless}}

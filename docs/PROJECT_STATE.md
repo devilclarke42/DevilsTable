@@ -1,8 +1,16 @@
 # Project state
 
-Updated 2026-09-28 for `0.3.0-alpha.7`.
+Updated 2026-09-29 for `0.3.0-alpha.8`.
 
-## Current candidate — alpha.7 / Sprint 10A
+## Current candidate — alpha.8 / Sprint 10B
+
+Twelve record-only Tavern services are available, with units, durations and suggested pricing.
+Builder Save seeds eligible defaults once per identity and preserves manual removals/overrides.
+Four Tavern presets vary settlement, prosperity and profile. The existing 152 Tavern food/drink
+Items are active, giving 296 total Items and 32 stock tables. No source Item contents changed.
+All 346 automated tests pass. See TAVERN_SERVICES.md for setup and live acceptance. Live Foundry validation remains pending.
+
+## Previous candidate — alpha.7 / Sprint 10A
 
 Services are a separate JSON registry with GM world authoring, catalogue/economy eligibility,
 Shop tab/search, mixed baskets, shared pricing/approval/native currency, guarded administration

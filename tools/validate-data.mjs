@@ -17,12 +17,21 @@ const readJson = async path => JSON.parse(await readFile(resolve(ROOT, path), "u
 const assert = (ok, message) => { if (!ok) throw new Error(message); };
 
 try {
-  new ServiceRegistry().register(await readJson("data/services.json"));
+  const services=new ServiceRegistry();
+  services.register(await readJson("data/services.json"));
   const economy = await loadEconomy({ readJson });
   const policy = await loadBuilderPolicy({ readJson });
   const catalogue = await loadStockCatalogue({ readJson });
   const registry = new CatalogueRegistry();
   registry.register({ catalogues: catalogue.catalogueDefinitions, categories: catalogue.categoryDefinitions });
+  for(const service of services.list()) {
+    assert(service.catalogues.every(id=>registry.get(id)), `Unknown service catalogue: ${service.id}`);
+    for(const [key,values] of Object.entries(service.availability??{})) assert(values.every(id=>economy[key].some(row=>row.id===id)), `Unknown service economy rule: ${service.id}`);
+  }
+  for(const cat of registry.list()) {
+    const defaults=cat.metadata?.defaultServiceCategories??[];
+    assert(Array.isArray(defaults)&&new Set(defaults).size===defaults.length&&defaults.every(id=>services.categories().some(row=>row.id===id&&row.catalogues.includes(cat.id))), `Invalid default services: ${cat.id}`);
+  }
   for (const template of await builtInTemplates({ readJson })) validateTemplate(template, { economy, policy, catalogue, registry });
   const report = validateStockCatalogue(catalogue);
   for (const error of report.errors) console.error(`${error.path}: ${error.message}`);
@@ -80,7 +89,7 @@ try {
     }
   }
   for (const warning of report.warnings) console.warn(`Note: ${warning}`);
-  console.log(`Validated ${report.count} production items, ${tables.length} stock tables, manifest, runtime files, imports and JavaScript syntax.`);
+  console.log(`Validated ${report.count} production items, ${services.list().length} services, ${tables.length} stock tables, manifest, runtime files, imports and JavaScript syntax.`);
 } catch (error) {
   console.error(error.message);
   process.exitCode = 1;

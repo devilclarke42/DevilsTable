@@ -1,4 +1,611 @@
 {
-  "categories": [],
-  "services": []
+  "categories": [
+    {
+      "id": "tavern-accommodation",
+      "name": "Accommodation",
+      "catalogues": [
+        "tavern"
+      ]
+    },
+    {
+      "id": "tavern-food-service",
+      "name": "Food Services",
+      "catalogues": [
+        "tavern"
+      ]
+    },
+    {
+      "id": "tavern-stable",
+      "name": "Stable",
+      "catalogues": [
+        "tavern"
+      ]
+    },
+    {
+      "id": "tavern-facilities",
+      "name": "Facilities",
+      "catalogues": [
+        "tavern"
+      ]
+    },
+    {
+      "id": "tavern-hospitality",
+      "name": "Hospitality",
+      "catalogues": [
+        "tavern"
+      ]
+    }
+  ],
+  "services": [
+    {
+      "id": "DT_SERVICE_TAV_COMMON_ROOM",
+      "name": "Rent Common Room",
+      "description": "A place on a shared sleeping-room bench or pallet, with a blanket and space beside it for your pack. Other guests may come and go. The price covers one person for one night, not the entire room. Meals, secure storage and stable care are separate. The GM decides whether the surroundings permit a rest; no rest is triggered automatically.",
+      "icon": "icons/sundries/survival/bedroll-grey.webp",
+      "category": "tavern-accommodation",
+      "catalogues": [
+        "tavern"
+      ],
+      "price": {
+        "value": 2,
+        "denomination": "sp"
+      },
+      "recommendedRange": {
+        "min": {
+          "value": 1,
+          "denomination": "sp"
+        },
+        "max": {
+          "value": 4,
+          "denomination": "sp"
+        }
+      },
+      "saleUnit": "one person for one night",
+      "duration": "One night; departure after breakfast",
+      "modifier": 0,
+      "maxQuantity": 12,
+      "availability": {
+        "profiles": [
+          "modest",
+          "standard",
+          "specialist"
+        ]
+      },
+      "requirements": {
+        "note": "The GM confirms space, staff and timing before approving."
+      },
+      "execution": {},
+      "tags": [
+        "lodging",
+        "shared",
+        "overnight"
+      ]
+    },
+    {
+      "id": "DT_SERVICE_TAV_PRIVATE_ROOM",
+      "name": "Rent Private Room",
+      "description": "A small private room with a bed, simple bedding, washbasin and an inside latch. One booking covers up to two guests sharing the room for one night. Breakfast, laundry and animal care are not included. Agree extra occupants with the GM before approval. The room grants privacy, not automatic safety or a rest benefit.",
+      "icon": "icons/sundries/survival/bedroll-grey.webp",
+      "category": "tavern-accommodation",
+      "catalogues": [
+        "tavern"
+      ],
+      "price": {
+        "value": 6,
+        "denomination": "sp"
+      },
+      "recommendedRange": {
+        "min": {
+          "value": 4,
+          "denomination": "sp"
+        },
+        "max": {
+          "value": 15,
+          "denomination": "sp"
+        }
+      },
+      "saleUnit": "one room for up to two guests for one night",
+      "duration": "One night; departure after breakfast",
+      "modifier": 0,
+      "maxQuantity": 6,
+      "availability": {
+        "prosperities": [
+          "average",
+          "prosperous",
+          "wealthy",
+          "luxury"
+        ],
+        "profiles": [
+          "standard",
+          "specialist",
+          "luxury"
+        ]
+      },
+      "requirements": {
+        "note": "The GM confirms space, staff and timing before approving."
+      },
+      "execution": {},
+      "tags": [
+        "lodging",
+        "private",
+        "overnight"
+      ]
+    },
+    {
+      "id": "DT_SERVICE_TAV_LUXURY_ROOM",
+      "name": "Rent Luxury Room",
+      "description": "A spacious private chamber with clean linen, a comfortable bed, a sitting corner and an attendant to bring hot washing water. One booking covers up to two guests for one night. Meals, full baths and personal errands cost extra. Fine furnishings confer no mechanical bonus, immunity from intrusion or guaranteed restful sleep.",
+      "icon": "icons/sundries/survival/bedroll-grey.webp",
+      "category": "tavern-accommodation",
+      "catalogues": [
+        "tavern"
+      ],
+      "price": {
+        "value": 3,
+        "denomination": "gp"
+      },
+      "recommendedRange": {
+        "min": {
+          "value": 2,
+          "denomination": "gp"
+        },
+        "max": {
+          "value": 8,
+          "denomination": "gp"
+        }
+      },
+      "saleUnit": "one room for up to two guests for one night",
+      "duration": "One night; departure after breakfast",
+      "modifier": 0,
+      "maxQuantity": 4,
+      "availability": {
+        "settlements": [
+          "town",
+          "city",
+          "large-city"
+        ],
+        "prosperities": [
+          "wealthy",
+          "luxury"
+        ],
+        "profiles": [
+          "luxury"
+        ]
+      },
+      "requirements": {
+        "note": "The GM confirms space, staff and timing before approving."
+      },
+      "execution": {},
+      "tags": [
+        "lodging",
+        "luxury",
+        "private"
+      ]
+    },
+    {
+      "id": "DT_SERVICE_TAV_MEAL_DAY",
+      "name": "Meal of the Day",
+      "description": "A seat at the table and a filling serving from today's pot, with a piece of bread and drinking water. The kitchen chooses the dish; the GM confirms ingredients and substitutions. This pays for a meal served and eaten here. It creates no carried food Item, and the inn retains the bowl and utensils. Ale and other drinks are separate.",
+      "icon": "icons/consumables/food/bowl-stew-brown.webp",
+      "category": "tavern-food-service",
+      "catalogues": [
+        "tavern"
+      ],
+      "price": {
+        "value": 8,
+        "denomination": "cp"
+      },
+      "recommendedRange": {
+        "min": {
+          "value": 5,
+          "denomination": "cp"
+        },
+        "max": {
+          "value": 2,
+          "denomination": "sp"
+        }
+      },
+      "saleUnit": "one served meal for one diner",
+      "duration": "About 30 minutes during kitchen hours",
+      "modifier": 0,
+      "maxQuantity": 12,
+      "availability": {},
+      "requirements": {
+        "note": "The GM confirms space, staff and timing before approving."
+      },
+      "execution": {},
+      "tags": [
+        "meal",
+        "served",
+        "daily"
+      ]
+    },
+    {
+      "id": "DT_SERVICE_TAV_BREAKFAST",
+      "name": "Breakfast",
+      "description": "A simple morning meal of porridge or bread with a small accompaniment and drinking water, served before the day's work. The kitchen fare determines the plate. This is one dine-in breakfast, not a takeaway portion or a daily ration. It creates no inventory Item; hot drinks, alcohol and additional plates are ordered separately.",
+      "icon": "icons/consumables/food/bowl-stew-brown.webp",
+      "category": "tavern-food-service",
+      "catalogues": [
+        "tavern"
+      ],
+      "price": {
+        "value": 5,
+        "denomination": "cp"
+      },
+      "recommendedRange": {
+        "min": {
+          "value": 3,
+          "denomination": "cp"
+        },
+        "max": {
+          "value": 1,
+          "denomination": "sp"
+        }
+      },
+      "saleUnit": "one served breakfast for one diner",
+      "duration": "About 20 minutes in the morning",
+      "modifier": 0,
+      "maxQuantity": 12,
+      "availability": {},
+      "requirements": {
+        "note": "The GM confirms space, staff and timing before approving."
+      },
+      "execution": {},
+      "tags": [
+        "meal",
+        "breakfast",
+        "served"
+      ]
+    },
+    {
+      "id": "DT_SERVICE_TAV_DINNER_PACKAGE",
+      "name": "Dinner Package",
+      "description": "A place for supper with a substantial main course, bread, a small sweet or cheese course and drinking water. One purchase feeds one diner. The GM agrees the evening menu before approval. This served package creates no food Items, does not include lodging or alcoholic drinks, and should not be charged again as individual menu portions.",
+      "icon": "icons/consumables/food/bowl-stew-brown.webp",
+      "category": "tavern-food-service",
+      "catalogues": [
+        "tavern"
+      ],
+      "price": {
+        "value": 3,
+        "denomination": "sp"
+      },
+      "recommendedRange": {
+        "min": {
+          "value": 2,
+          "denomination": "sp"
+        },
+        "max": {
+          "value": 6,
+          "denomination": "sp"
+        }
+      },
+      "saleUnit": "one two-course dinner for one diner",
+      "duration": "About one hour during evening kitchen hours",
+      "modifier": 0,
+      "maxQuantity": 12,
+      "availability": {
+        "prosperities": [
+          "average",
+          "prosperous",
+          "wealthy",
+          "luxury"
+        ],
+        "profiles": [
+          "standard",
+          "specialist",
+          "luxury"
+        ]
+      },
+      "requirements": {
+        "note": "The GM confirms space, staff and timing before approving."
+      },
+      "execution": {},
+      "tags": [
+        "meal",
+        "dinner",
+        "served"
+      ]
+    },
+    {
+      "id": "DT_SERVICE_TAV_STABLE_HORSE",
+      "name": "Stable Horse",
+      "description": "A sheltered stall with bedding, water and routine mucking-out for one horse for up to a day. The stablehand keeps ordinary watch but does not insure the animal or its tack. Feed is charged separately through Feed Horse, or supplied by the owner with GM agreement. Veterinary treatment, training and transport are not included.",
+      "icon": "icons/tools/smithing/horsehoe-worn-steel-grey.webp",
+      "category": "tavern-stable",
+      "catalogues": [
+        "tavern"
+      ],
+      "price": {
+        "value": 4,
+        "denomination": "sp"
+      },
+      "recommendedRange": {
+        "min": {
+          "value": 2,
+          "denomination": "sp"
+        },
+        "max": {
+          "value": 8,
+          "denomination": "sp"
+        }
+      },
+      "saleUnit": "one stall for one horse for up to 24 hours",
+      "duration": "Up to 24 hours from arrival",
+      "modifier": 0,
+      "maxQuantity": 8,
+      "availability": {
+        "settlements": [
+          "village",
+          "town",
+          "city",
+          "large-city"
+        ]
+      },
+      "requirements": {
+        "note": "The GM confirms space, staff and timing before approving."
+      },
+      "execution": {},
+      "tags": [
+        "stable",
+        "horse",
+        "shelter"
+      ]
+    },
+    {
+      "id": "DT_SERVICE_TAV_FEED_HORSE",
+      "name": "Feed Horse",
+      "description": "The staff supplies and sets out an ordinary day's hay or equivalent fodder for one horse, with clean water. The GM confirms the animal's needs and any special diet. This pays for feed used on site and the attendant's work; no feed Item enters the character's inventory. A sheltered stall is separate. Packaged Horse Feed remains a product for carrying away.",
+      "icon": "icons/tools/smithing/horsehoe-worn-steel-grey.webp",
+      "category": "tavern-stable",
+      "catalogues": [
+        "tavern"
+      ],
+      "price": {
+        "value": 8,
+        "denomination": "cp"
+      },
+      "recommendedRange": {
+        "min": {
+          "value": 5,
+          "denomination": "cp"
+        },
+        "max": {
+          "value": 2,
+          "denomination": "sp"
+        }
+      },
+      "saleUnit": "one day of ordinary feed and feeding for one horse",
+      "duration": "Feed supplied over one day",
+      "modifier": 0,
+      "maxQuantity": 8,
+      "availability": {},
+      "requirements": {
+        "note": "The GM confirms space, staff and timing before approving."
+      },
+      "execution": {},
+      "tags": [
+        "horse",
+        "feed",
+        "care"
+      ]
+    },
+    {
+      "id": "DT_SERVICE_TAV_BATH",
+      "name": "Bath",
+      "description": "A tub of warm water, a small measure of soap and a clean drying cloth in a screened bathing space. One purchase covers one person and one filling. The staff agrees a time before approval. The tub and cloth remain at the inn. Bathing has no automatic healing, disease removal or condition-clearing effect.",
+      "icon": "icons/commodities/materials/bowl-liquid-white.webp",
+      "category": "tavern-facilities",
+      "catalogues": [
+        "tavern"
+      ],
+      "price": {
+        "value": 2,
+        "denomination": "sp"
+      },
+      "recommendedRange": {
+        "min": {
+          "value": 1,
+          "denomination": "sp"
+        },
+        "max": {
+          "value": 5,
+          "denomination": "sp"
+        }
+      },
+      "saleUnit": "one bath for one person",
+      "duration": "About 30 minutes by arrangement",
+      "modifier": 0,
+      "maxQuantity": 6,
+      "availability": {
+        "settlements": [
+          "village",
+          "town",
+          "city",
+          "large-city"
+        ],
+        "prosperities": [
+          "average",
+          "prosperous",
+          "wealthy",
+          "luxury"
+        ],
+        "profiles": [
+          "standard",
+          "specialist",
+          "luxury"
+        ]
+      },
+      "requirements": {
+        "note": "The GM confirms space, staff and timing before approving."
+      },
+      "execution": {},
+      "tags": [
+        "bath",
+        "washing",
+        "facility"
+      ]
+    },
+    {
+      "id": "DT_SERVICE_TAV_LAUNDRY",
+      "name": "Laundry",
+      "description": "Staff washes and dries one ordinary outfit: shirt, trousers or skirt, underclothes and socks. The garments must be handed over and collected at an agreed time. Armour, leatherwork, delicate finery, heavy cloaks and repairs require a separate agreement. No equipment is automatically removed, repaired or replaced by checkout.",
+      "icon": "icons/commodities/cloth/cloth-bolt-gold-orange.webp",
+      "category": "tavern-facilities",
+      "catalogues": [
+        "tavern"
+      ],
+      "price": {
+        "value": 1,
+        "denomination": "sp"
+      },
+      "recommendedRange": {
+        "min": {
+          "value": 5,
+          "denomination": "cp"
+        },
+        "max": {
+          "value": 3,
+          "denomination": "sp"
+        }
+      },
+      "saleUnit": "one ordinary outfit washed and dried",
+      "duration": "Usually next day; weather may delay drying",
+      "modifier": 0,
+      "maxQuantity": 8,
+      "availability": {
+        "settlements": [
+          "village",
+          "town",
+          "city",
+          "large-city"
+        ],
+        "prosperities": [
+          "average",
+          "prosperous",
+          "wealthy",
+          "luxury"
+        ]
+      },
+      "requirements": {
+        "note": "The GM confirms space, staff and timing before approving."
+      },
+      "execution": {},
+      "tags": [
+        "laundry",
+        "washing",
+        "clothing"
+      ]
+    },
+    {
+      "id": "DT_SERVICE_TAV_PRIVATE_DINING",
+      "name": "Private Dining Room",
+      "description": "Exclusive use of a separate dining room with a laid table and routine table service for up to eight guests during one sitting. Food and drinks are ordered separately. The GM confirms the time, capacity and actual privacy before approval. Hiring the room does not reserve lodging or guarantee secrecy, soundproofing or protection.",
+      "icon": "icons/sundries/survival/bedroll-grey.webp",
+      "category": "tavern-hospitality",
+      "catalogues": [
+        "tavern"
+      ],
+      "price": {
+        "value": 2,
+        "denomination": "gp"
+      },
+      "recommendedRange": {
+        "min": {
+          "value": 1,
+          "denomination": "gp"
+        },
+        "max": {
+          "value": 5,
+          "denomination": "gp"
+        }
+      },
+      "saleUnit": "one room for up to eight guests for one sitting",
+      "duration": "Up to three hours at an agreed time",
+      "modifier": 0,
+      "maxQuantity": 1,
+      "availability": {
+        "settlements": [
+          "town",
+          "city",
+          "large-city"
+        ],
+        "prosperities": [
+          "prosperous",
+          "wealthy",
+          "luxury"
+        ],
+        "profiles": [
+          "standard",
+          "specialist",
+          "luxury"
+        ]
+      },
+      "requirements": {
+        "note": "The GM confirms space, staff and timing before approving."
+      },
+      "execution": {},
+      "tags": [
+        "hospitality",
+        "private",
+        "dining"
+      ]
+    },
+    {
+      "id": "DT_SERVICE_TAV_WEEKLY_LODGING",
+      "name": "Long-Term Lodging",
+      "description": "A seven-night booking of an ordinary private room for up to two guests, with fresh bedding once during the stay. Meals, baths, laundry and stable care remain separate. The GM confirms dates and room availability before approval. Do not also charge nightly private-room rental for the same nights. No calendar booking, tenancy rights or rest automation is created.",
+      "icon": "icons/sundries/survival/bedroll-grey.webp",
+      "category": "tavern-accommodation",
+      "catalogues": [
+        "tavern"
+      ],
+      "price": {
+        "value": 35,
+        "denomination": "sp"
+      },
+      "recommendedRange": {
+        "min": {
+          "value": 25,
+          "denomination": "sp"
+        },
+        "max": {
+          "value": 7,
+          "denomination": "gp"
+        }
+      },
+      "saleUnit": "one private room for up to two guests for seven nights",
+      "duration": "Seven consecutive nights; dates agreed with the GM",
+      "modifier": 0,
+      "maxQuantity": 1,
+      "availability": {
+        "settlements": [
+          "town",
+          "city",
+          "large-city"
+        ],
+        "prosperities": [
+          "average",
+          "prosperous",
+          "wealthy",
+          "luxury"
+        ],
+        "profiles": [
+          "standard",
+          "specialist",
+          "luxury"
+        ]
+      },
+      "requirements": {
+        "note": "The GM confirms space, staff and timing before approving."
+      },
+      "execution": {},
+      "tags": [
+        "lodging",
+        "weekly",
+        "private"
+      ]
+    }
+  ]
 }

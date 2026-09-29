@@ -45,8 +45,8 @@
       {{#each items}}
         <article class="dt-shop-item" data-offer-id="{{id}}" {{#if hidden}}hidden{{/if}}>
           <img src="{{img}}" alt="" loading="lazy"><div><h3>{{name}}</h3><p>{{description}}</p>
-            {{#if isService}}<p>Service · {{availability}} · {{requirements}}</p>{{/if}}
-            <p>{{priceLabel}} per {{saleUnit}} · {{#if unlimited}}Unlimited ({{quantity}} per checkout){{else}}{{quantity}} available{{/if}}</p></div>
+            {{#if isService}}<p>Service · {{availability}} · {{duration}} · {{requirements}}</p>{{/if}}
+            <p>{{priceLabel}} per {{saleUnit}} · {{#if isService}}{{quantity}} maximum per checkout; GM confirms capacity{{else}}{{#if unlimited}}Unlimited ({{quantity}} per checkout){{else}}{{quantity}} available{{/if}}{{/if}}</p></div>
           <div class="dt-item-actions"><button type="button" data-action="add" data-id="{{id}}" {{#unless quantity}}disabled{{/unless}}>Add</button>
           {{#unless isService}}<button type="button" data-action="steal" data-id="{{id}}" {{#unless @root.canInteract}}disabled{{/unless}}>Attempt theft</button>{{/unless}}</div>
         </article>

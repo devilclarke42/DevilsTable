@@ -20,7 +20,7 @@ test("all ten curated General Store categories contain exactly their approved it
   }
   assert.equal(selectEntries(data, { shopId: "general-store" }).length, 144);
   assert.ok(selectEntries(data, { shopId: "general-store" }).every(({ item }) => item.id.startsWith("DT_ITEM_GS_")));
-  assert.deepEqual(new Set(data.entries.map(({ item }) => item.id)), new Set(data.ledger.ids.filter(id => id.startsWith("DT_ITEM_GS_"))));
+  assert.deepEqual(new Set(selectEntries(data, { shopId: "general-store" }).map(({ item }) => item.id)), new Set(data.ledger.ids.filter(id => id.startsWith("DT_ITEM_GS_"))));
   const view = shopView(data, { shopId: "general-store" });
   assert.deepEqual(view.categories.map(category => category.count), [13, 17, 10, 21, 13, 18, 12, 13, 16, 11]);
   assert.deepEqual(view.priceBands.map(band => band.count), [58, 61, 23, 2]);

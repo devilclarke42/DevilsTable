@@ -174,3 +174,11 @@ Service usage appears in Merchant Summary and the service administration window.
 removes physical goods; Reset Merchant also removes service offerings and statistics.
 See [Merchant Services](MERCHANT_SERVICES.md) for a complete working definition example and optional
 execution behaviour. No Tavern-specific services ship in this framework candidate.
+
+## Tavern Services (alpha.8)
+
+Choose a Tavern preset, Save / Convert, then generate stock and cash. Save seeds eligible default
+services using catalogue metadata; GM removals, disabled offers and price overrides survive later
+saves. Rebuild Items and Stock RollTables after updating to activate the existing menu products.
+Use Manage → Service Categories / Offerings to review units, durations and suggested ranges.
+See [Tavern Services](TAVERN_SERVICES.md) for all twelve prices, four presets and fulfilment rules.

@@ -266,3 +266,15 @@ only after payment, with persisted attempt markers rather than unsafe automatic 
 GM controls from Builder Manage. Existing worlds migrate by absence: no service flags means no offers.
 See [Merchant Services](MERCHANT_SERVICES.md) for the field contract, permissions, failure semantics,
 statistics and extension registration. No additional compendium or custom Foundry document type is introduced.
+
+## Tavern service defaults — Sprint 10B
+
+Catalogue metadata `defaultServiceCategories` opts any catalogue into Builder default seeding.
+`seedDefaultServices` evaluates ordinary service availability against the saved economy inputs
+inside the Builder administration lock. Merchant flags retain processed identities per catalogue;
+explicit removals, disabled offers and overrides survive repeat saves. Newly eligible identities
+can be added on an upgrade. Nothing is seeded during browsing or world load.
+Optional `saleUnit`, `duration` and `recommendedRange` fields extend definitions without breaking
+existing providers. Units/durations are included in service quote snapshots; suggested ranges are
+GM guidance, not price limits. Tavern products are activated through the existing JSON source index,
+with no separate Item storage or Tavern-specific UI branches.

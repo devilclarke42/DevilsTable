@@ -9,8 +9,8 @@ export function definitions(){
   registry.register({categories:serviceRegistry.categories(),services:serviceRegistry.list()});
   registry.register(worldServices());return registry;
 }
-export function eligibleService(row,actor){
-  const catalogue=catalogueRegistry.resolve(actor)?.id;
+export function eligibleService(row,actor,{catalogueId=catalogueRegistry.resolve(actor)?.id}={}){
+  const catalogue=catalogueId;
   if(!row.catalogues.includes(catalogue))return false;
   const economy=actor.getFlag(MODULE_ID,"merchant.economy")??{};
   return Object.entries(row.availability??{}).every(([key,values])=>!values.length||values.includes(economy[{settlements:"settlement",prosperities:"prosperity",profiles:"profile"}[key]]));
@@ -30,7 +30,7 @@ export function serviceOffers(actor,character=null,{includeUnavailable=false}={}
     return [{id:`service:${id}`,serviceId:id,kind:"service",isService:true,name:row.name,img:row.icon,
       description:row.description,category:row.category,categoryName:registry.categories().find(c=>c.id===row.category)?.name,
       catalogues:row.catalogues,tags:row.tags,quantity:allowed?row.maxQuantity:0,unlimited:true,
-      saleUnit:"service",copper,serviceModifier:row.modifier??0,
+      saleUnit:row.saleUnit??"service",duration:row.duration??"",copper,serviceModifier:row.modifier??0,
       availability:allowed?"Available":"Requirements not met",requirements:r.note??"",
       execution:structuredClone(row.execution??{})}];
   });

@@ -1,6 +1,6 @@
 # Merchant services
 
-Sprint 10A introduces services in `0.3.0-alpha.7`. No Tavern services or other production service content are bundled in this framework release.
+Sprint 10A introduces services in `0.3.0-alpha.7`. That framework release contained no production services. Alpha.8 adds the [Tavern Services catalogue](TAVERN_SERVICES.md).
 
 ## Boundaries and storage
 
@@ -127,3 +127,13 @@ Before treating this candidate as live-validated, use GM and player sessions on 
 7. Make a test macro fail. Confirm payment remains complete, the receipt needs attention, and recovery does not replay it.
 
 These live checks cannot be replaced by Node mocks; no live Foundry session was available during implementation.
+
+## Optional content metadata and defaults (alpha.8)
+
+Definitions may provide `saleUnit` and `duration` as nonempty text up to 300 characters. Duration
+is descriptive and never advances time. `recommendedRange` is `{min: {value, denomination}, max:
+{value, denomination}}`; the base price must lie between those nonnegative values. Merchant price
+overrides and modifiers may exceed the guidance. Older definitions can omit these fields.
+Catalogue `metadata.defaultServiceCategories` names service categories to seed on explicit Builder
+Save, subject to normal catalogue/economy eligibility. Processed IDs live in
+`merchant.builder.serviceDefaults.<catalogueId>` and prevent unwanted recreation of removed offers.

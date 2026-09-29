@@ -1,3 +1,4 @@
+import { coinValue } from "../merchant/model.js";
 import { MODULE_ID } from "../constants.js";
 import { catalogueRegistry } from "../catalogues/registry.js";
 import { definitions, worldServices, eligibleService } from "./offers.js";
@@ -18,7 +19,7 @@ export class MerchantServicesApplication extends HandlebarsApplicationMixin(Appl
       categories:registry.categories().filter(c=>c.catalogues.includes(cat)),
       definitions:JSON.stringify(worldServices(),null,2),
       services:registry.list().filter(r=>r.catalogues.includes(cat)||offers[r.id]).map(r=>({
-        ...r,offered:Boolean(offers[r.id]),enabled:offers[r.id]?.enabled!==false,
+        ...r,rangeLabel:r.recommendedRange?`${formatCopper(coinValue(r.recommendedRange.min))}–${formatCopper(coinValue(r.recommendedRange.max))}`:"Not specified",offered:Boolean(offers[r.id]),enabled:offers[r.id]?.enabled!==false,
         eligible:eligibleService(r,this.#actor),price:offers[r.id]?.price??r.price,
         denominations:["cp","sp","ep","gp","pp"].map(id=>({id,selected:id===(offers[r.id]?.price??r.price).denomination})),
         purchased:stats[r.id]?.purchased??0,revenue:formatCopper(stats[r.id]?.revenue??0),last:stats[r.id]?.lastPurchased??"Never",

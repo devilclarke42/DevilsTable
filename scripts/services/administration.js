@@ -36,3 +36,26 @@ export async function saveWorldServices(bundle){
   const registry=new ServiceRegistry();registry.register({categories:serviceRegistry.categories(),services:serviceRegistry.list()});registry.register(bundle);
   await game.settings.set(MODULE_ID,"serviceDefinitions",structuredClone(bundle));
 }
+
+/** Called within the Builder's existing administration lock. Seed once per service identity,
+ * preserving explicit removals, disabled offers and overrides across repeated saves.
+ * A newly eligible service can be introduced after a prosperity/profile upgrade.
+ */
+export async function seedDefaultServices(actor,catalogue){
+  const categories=catalogue?.metadata?.defaultServiceCategories??[];
+  if(!categories.length)return 0;
+  const registry=definitions();
+  if(!Array.isArray(categories)||categories.some(id=>!registry.categories().some(c=>c.id===id&&c.catalogues.includes(catalogue.id))))throw Error("Invalid catalogue default service categories.");
+  const old=actor.getFlag(MODULE_ID,"merchant.services")??{},next=structuredClone(old);
+  const seen=[...(actor.getFlag(MODULE_ID,`merchant.builder.serviceDefaults.${catalogue.id}`)??[])];
+  let added=0;
+  for(const row of registry.list())if(categories.includes(row.category)&&eligibleService(row,actor,{catalogueId:catalogue.id})&&!seen.includes(row.id)){
+    if(!Object.hasOwn(next,row.id)){next[row.id]={enabled:true};added++;}
+    seen.push(row.id);
+  }
+  // Offers precede the marker: a failed marker write can be retried without duplicates.
+  if(added){await actor.setFlag(MODULE_ID,"merchant.services",next);if(stable(actor.getFlag(MODULE_ID,"merchant.services"))!==stable(next))throw Error("Default service offers read-back failed. Reload before retrying.");}
+  await actor.setFlag(MODULE_ID,`merchant.builder.serviceDefaults.${catalogue.id}`,seen);
+  if(stable(actor.getFlag(MODULE_ID,`merchant.builder.serviceDefaults.${catalogue.id}`))!==stable(seen))throw Error("Default service marker read-back failed. Reload before retrying.");
+  return added;
+}

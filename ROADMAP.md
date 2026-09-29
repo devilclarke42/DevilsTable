@@ -1,5 +1,10 @@
 # Roadmap
 
+## Sprint 10B — Tavern Services candidate
+
+Implemented in `0.3.0-alpha.8`: twelve services, editable Tavern presets and data-driven default selection. Existing food/drink sources are active. Await live Foundry review; reservations, capacity scheduling and service automation remain future work.
+
+
 ## Sprint 10A — Merchant Services framework candidate
 
 Implemented in `0.3.0-alpha.7`: separate definitions, shared basket/payment review, service administration, usage statistics and optional post-payment native integrations. Await live Foundry review before starting Tavern service content (Sprint 10B). No new trading mechanics or Tavern services are bundled.

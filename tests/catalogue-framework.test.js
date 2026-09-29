@@ -38,12 +38,12 @@ test("bad or colliding registry bundles fail atomically", () => {
   assert.throws(() => r.register({ catalogues: [catalogue], categories }), /duplicate/);
   assert.equal(r.list().length, 1);
 });
-test("active source excludes deferred Tavern while retaining every permanent identity", async () => {
+test("active source includes Tavern while retaining every permanent identity", async () => {
   const data = await loadCatalogue({ readJson });
-  assert.equal(data.entries.length, 144); assert.equal(data.ledger.ids.length, 296);
-  assert.equal(data.index.deferredFiles.length, 19);
+  assert.equal(data.entries.length, 296); assert.equal(data.ledger.ids.length, 296);
+  assert.equal(data.index.deferredFiles.length, 0);
   assert.equal(validateCatalogue(data).valid, true);
-  assert.ok(!data.entries.some(({ item }) => item.id.startsWith("DT_ITEM_TAV_")));
+  assert.ok(data.entries.some(({ item }) => item.id.startsWith("DT_ITEM_TAV_")));
 });
 test("provider data builds once in the shared pack and hidden categories cannot be purchased", async () => {
   const item = { ...structuredClone(fixture), id: "DT_ITEM_TEST_PROVIDER_THREAD", name: "Provider Thread", category: "visible", shops: [catalogue.id] };
@@ -55,8 +55,8 @@ test("provider data builds once in the shared pack and hidden categories cannot 
   const { adapter, state } = fakeAdapter({ hasPack: false });
   const build = createBuilder({ load: () => data, adapter });
   await build({ dryRun: false, shopId: catalogue.id }); assert.equal(state.docs.length, 1);
-  await build({ dryRun: false }); assert.equal(state.docs.length, 145);
-  assert.equal((await build({ dryRun: false })).unchanged, 145);
+  await build({ dryRun: false }); assert.equal(state.docs.length, 297);
+  assert.equal((await build({ dryRun: false })).unchanged, 297);
   activateCatalogues(data);
   const merchant = { type: "npc", getFlag: (_scope, key) => key === "merchant" ? { enabled: true, catalogueId: catalogue.id, settings: {} } : null,
     items: categories.filter(c => c.id !== "empty").map(c => ({ id: c.id, name: c.name, img: icon, type: "loot",
