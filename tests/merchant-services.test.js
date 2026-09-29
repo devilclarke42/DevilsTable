@@ -87,7 +87,7 @@ test("optional integrations execute once per paid line and capture private resul
   "RollTable.x":{documentName:"RollTable",draw:async options=>{assert.equal(options.displayChat,false);calls.push(["table"]);return {results:[{description:"Private result"}]};}},
   "Actor.x.ActiveEffect.x":{documentName:"ActiveEffect",toObject:()=>({_id:"original",name:"Benefit",changes:[]})}
  }[uuid]);
- pc.createEmbeddedDocuments=async(type,rows)=>{assert.equal(type,"ActiveEffect");assert.equal(rows[0]._id,undefined);calls.push(["effect"]);};
+ pc.createEmbeddedDocuments=async(type,rows)=>{assert.equal(type,"ActiveEffect");assert.equal(rows[0]._id,undefined);calls.push(["effect"]);return [{uuid:"Actor.pc.ActiveEffect.new"}];};
  const req=request();const record=await executeTrade({merchant:m,character:pc,request:req,quote:quoteTrade(m,pc,req),receiptAdapter:ledger()});
  assert.deepEqual(calls,[["macro",2],["journal"],["table"],["effect"]]);assert.ok(record.serviceExecution.every(j=>j.status==="completed"));assert.equal(record.serviceExecution.find(j=>j.kind==="rollTable").result,"Private result");
 });

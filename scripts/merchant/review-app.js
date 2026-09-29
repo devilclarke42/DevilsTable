@@ -54,7 +54,7 @@ export class MerchantReviewApplication extends HandlebarsApplicationMixin(Applic
       originalLabel: `${(this.#data.proposal.originalTotal ?? this.#data.proposal.total) < 0 ? "Character receives " : "Character pays "}${formatCopper(Math.abs(this.#data.proposal.originalTotal ?? this.#data.proposal.total))}`,
       discountLabel: formatCopper(this.#data.proposal.discount ?? 0),
       adjustmentLabel: `${this.#data.proposal.adjustment < 0 ? "−" : "+"}${formatCopper(Math.abs(this.#data.proposal.adjustment ?? 0))}`,
-      basket: this.#data.proposal.basket.map(row => ({ ...row, kindLabel:row.kind === "service" ? "Service" : "Product", executionLabel:row.kind === "service" ? Object.keys(row.execution??{}).join(", ") || "Record only" : "Transfer inventory", priceLabel: formatCopper(row.copper), originalLabel: formatCopper(row.originalCopper ?? row.copper) })),
+      basket: this.#data.proposal.basket.map(row => ({ ...row, kindLabel:row.kind === "service" ? "Service" : "Product", executionLabel:row.kind === "service" ? [...Object.keys(row.execution??{}),...(row.actions??[]).map(action=>action.kind==="integration"?`${action.integration}: ${action.action}`:action.kind)].join(", ") || "Record only" : "Transfer inventory", priceLabel: formatCopper(row.copper), originalLabel: formatCopper(row.originalCopper ?? row.copper) })),
       totalLabel: `${this.#data.proposal.total < 0 ? "Character receives " : "Character pays "}${formatCopper(Math.abs(this.#data.proposal.total))}`,
       paymentRows: ["pp", "gp", "ep", "sp", "cp"].map(coin => ({ coin,
         pcBefore: this.#data.character.system.currency[coin] ?? 0,

@@ -1,5 +1,10 @@
 # Roadmap
 
+## Sprint 10C — Optional integration candidate
+
+Implemented in `0.3.0-alpha.10`: optional manager, ordered fulfilment, Lock & Key room access, Calendaria accommodation notes, booking checkout/recovery and integration settings. Live Foundry/Forge acceptance remains pending. Room capacity, reservations, automated restocking, business hours and other module adapters remain future work.
+
+
 ## Sprint 11A — Merchant Identity candidate
 
 Implemented in `0.3.0-alpha.9`: native-derived identity/System Tags, separate business metadata/Merchant Tags, dedicated Identity and Services tabs, service filters/availability and data ownership documentation. Live Foundry/Forge review remains pending. Full business profiles, disguises, faction/reputation systems and settlement generation remain future work; this sprint adds no new gameplay.

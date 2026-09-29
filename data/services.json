@@ -79,7 +79,8 @@
         "lodging",
         "shared",
         "overnight"
-      ]
+      ],
+      "accommodation": true
     },
     {
       "id": "DT_SERVICE_TAV_PRIVATE_ROOM",
@@ -129,7 +130,8 @@
         "lodging",
         "private",
         "overnight"
-      ]
+      ],
+      "accommodation": true
     },
     {
       "id": "DT_SERVICE_TAV_LUXURY_ROOM",
@@ -180,7 +182,8 @@
         "lodging",
         "luxury",
         "private"
-      ]
+      ],
+      "accommodation": true
     },
     {
       "id": "DT_SERVICE_TAV_MEAL_DAY",
@@ -605,7 +608,8 @@
         "lodging",
         "weekly",
         "private"
-      ]
+      ],
+      "accommodation": true
     }
   ]
 }

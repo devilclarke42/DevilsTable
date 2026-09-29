@@ -38,3 +38,7 @@ Identity and Services drafts survive tab changes and ordinary panel renders. Swi
 Stock and cash previews remain separate from application. Identity/service saves invalidate old generation previews; generate again before applying. Reset removes merchant metadata, including new identity/service fields, but preserves native Actor biography, portrait, ownership, inventory and coins.
 
 For generation formulas, templates and cash behaviour, see the [Merchant Guide](MERCHANT_GUIDE.md). For service authoring, see [Merchant Services](MERCHANT_SERVICES.md).
+
+## Optional room integrations (alpha.10)
+
+Builder → Services → Service actions and accommodation now configures room names, Wall UUIDs, key names, expiry and duration. Enable Lock & Key keys and/or Calendaria bookings when available, then Save Service Offerings. Unavailable enhancements are skipped; payment and history remain normal. Settings → Manage Integrations / Room Bookings provides independent toggles and explicit checkout/key recovery. Calendar notes do not reserve room capacity. See [Integrations](INTEGRATIONS.md) for the complete workflow and live checks.

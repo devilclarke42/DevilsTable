@@ -1,12 +1,14 @@
 # Devil's Table: Trade & Merchants
 
-## Current candidate — Merchant Identity
+## Current candidate — Optional Integrations
 
-**0.3.0-alpha.9** adds a live, read-only Actor Identity panel, editable business metadata and private Merchant Tags. The Builder now has **Setup, Identity, Stock, Services, Cash and Manage** tabs. Services are administered directly in their own tab with search, category/status filters, prices, availability and usage statistics.
+**0.3.0-alpha.10** adds optional Lock & Key room keys and Calendaria accommodation bookings, a reusable Integration Manager, ordered service actions and integration settings. Neither module is required: ordinary services and payments work independently.
 
-Native Actor information, inventory and currency remain authoritative. No native identity is copied into merchant flags. Existing Tavern content is preserved: **296 Items, 12 services and 32 Stock RollTables**. No new gameplay systems are introduced.
+Configure accommodation from Merchant Builder → Services, then use **Manage Integrations / Room Bookings** in settings for module preferences and checkout/key recovery. See the [Integrations guide](docs/INTEGRATIONS.md) and [developer contract](docs/INTEGRATION_DEVELOPERS.md). Calendar notes record the stay; room capacity and reservation conflicts are not simulated.
 
-See the [Builder Guide](docs/BUILDER_GUIDE.md), [Identity and ownership review](docs/MERCHANT_IDENTITY.md), [Merchant Guide](docs/MERCHANT_GUIDE.md) and [Tavern Services](docs/TAVERN_SERVICES.md). Live Foundry/Forge acceptance remains pending; automated verification is recorded in [Project State](docs/PROJECT_STATE.md).
+The Shop catalogue icon now aligns with its label. The title bar reads **Token Name - Business Name**, falling back to the token name when no business name is configured.
+
+The six-tab Builder, native identity, private Merchant Tags and existing Tavern catalogue remain intact: **296 Items, 12 services and 32 Stock RollTables**. Live Foundry/Forge integration acceptance remains pending. See [Project State](docs/PROJECT_STATE.md) and the [Builder Guide](docs/BUILDER_GUIDE.md).
 
 
 ## Sprint 8A — Project consolidation

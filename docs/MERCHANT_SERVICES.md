@@ -141,3 +141,7 @@ Save, subject to normal catalogue/economy eligibility. Processed IDs live in
 ## Builder service administration (alpha.9)
 
 Services have their own top-level Builder tab, using the same guarded administration as the standalone compatibility window. Search/category/status filters preserve unsaved row edits. The optional offer field `available` defaults to true; false shows “Temporarily unavailable” and prevents purchase. It does not bypass existing catalogue, economic or character requirements. `enabled: false` instead hides an offering. Price overrides, usage and generation remain unchanged. See [Builder Guide](BUILDER_GUIDE.md).
+
+## Ordered actions and optional adapters (alpha.10)
+
+Definitions may add `actions`, a validated ordered array, and `accommodation: true` to expose room mappings in the Builder. Existing `execution` references remain supported and preflight before payment. New optional actions execute after settlement and record attempted/completed/skipped/needs-attention states; stop-on-failure blocks subsequent optional actions without undoing the trade. Currency and receipt stages cannot be duplicated through authored actions. See [Integrations](INTEGRATIONS.md) and [developer schema](INTEGRATION_DEVELOPERS.md).

@@ -1,3 +1,5 @@
+import { integrationManager } from "./integrations/manager.js";
+import { registerBuiltInIntegrations, registerBookingHooks } from "./integrations/lifecycle.js";
 import { registerServiceProvider, initialiseServices } from "./services/registry.js";
 import { registerInitialStockHooks } from "./merchant/initial-stock-hooks.js";
 import { applyCompendiumNames } from "./core/compendium-names.js";
@@ -19,12 +21,15 @@ import { enableMerchant, initialiseMerchantService, registerCheckoutProof } from
 import { openMerchantShop, registerMerchantTokenEntry } from "./merchant/token-entry.js";
 
 Hooks.once("init", () => {
+  registerBuiltInIntegrations();
   registerSettings();
   registerCheckoutProof();
   registerInitialStockHooks();
   game.modules.get(MODULE_ID).api = Object.freeze({
     registerCatalogueProvider,
     registerServiceProvider,
+    registerIntegration: adapter => integrationManager.register(adapter),
+    integrationStatus: () => integrationManager.list(),
     catalogues: () => catalogueRegistry.list(),
     loadCatalogue,
     validateCatalogue,
@@ -65,6 +70,7 @@ Hooks.once("ready", async () => {
   }
   applyCompendiumNames();
   Hooks.on("createCompendium", applyCompendiumNames);
+  registerBookingHooks();
   initialiseMerchantService();
   registerMerchantTokenEntry();
   if (game.user.isGM) logger.debug("GM builder API is ready.");

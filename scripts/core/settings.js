@@ -1,9 +1,12 @@
+import { IntegrationSettingsApplication } from "../integrations/settings-app.js";
 import { MODULE_ID } from "../constants.js";
 import { CompendiumBuilderApplication } from "../apps/compendium-builder-app.js";
 import { RollTableBuilderApplication } from "../apps/roll-table-builder-app.js";
 import { MerchantBuilderApplication } from "../merchant/builder/app.js";
 
 export function registerSettings() {
+  game.settings.register(MODULE_ID,"integrations",{name:"Integration preferences",scope:"world",config:false,type:Object,default:{}});
+  game.settings.registerMenu(MODULE_ID,"integrations",{name:"Integrations",label:"Manage Integrations / Room Bookings",hint:"Optional modules, availability and room key recovery.",icon:"fa-solid fa-plug",type:IntegrationSettingsApplication,restricted:true});
   game.settings.register(MODULE_ID,"serviceDefinitions",{name:"Service definitions",scope:"world",config:false,type:Object,default:{categories:[],services:[]}});
   game.settings.register(MODULE_ID, "merchantHistoryRetention", {
     name: "Merchant history retention", hint: "Keep private transaction receipts per merchant. Unresolved recovery entries are never trimmed.",

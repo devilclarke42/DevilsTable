@@ -142,3 +142,7 @@ verify each preset's services, generate food/drink stock, purchase a drink plus 
 reject a mixed basket, revise a service price with player consent, and confirm service purchases
 never create Items. Confirm product icons and descriptions on the target installation. Test simultaneous
 checkouts from separate player sessions. No live session was available during development.
+
+## Optional room integrations (alpha.10)
+
+Builder → Services → Service actions and accommodation now configures room names, Wall UUIDs, key names, expiry and duration. Enable Lock & Key keys and/or Calendaria bookings when available, then Save Service Offerings. Unavailable enhancements are skipped; payment and history remain normal. Settings → Manage Integrations / Room Bookings provides independent toggles and explicit checkout/key recovery. Calendar notes do not reserve room capacity. See [Integrations](INTEGRATIONS.md) for the complete workflow and live checks.

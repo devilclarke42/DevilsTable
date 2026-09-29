@@ -8,6 +8,28 @@ This is the official milestone/release changelog. The root [build changelog](../
 retains detailed alpha implementation history. A milestone entry does not assert that a public
 GitHub Release or installation manifest exists. No release dates are invented for unreleased work.
 
+## 0.3.0-alpha.10 — 2026-09-29 — Optional Integration Framework
+
+### Added
+
+- Optional Integration Manager with module/API detection, independent opt-outs, serialized dispatch and failure isolation.
+- Sequential service actions for native Item grants, macros, journals, RollTables, effects and registered integrations; configurable stop/continue and no automatic replay.
+- Lock & Key multi-door rental keys, scoped access revocation and persistent/checkout/manual policies.
+- Calendaria private check-in/check-out notes, configurable accommodation duration and recoverable private booking records.
+- Integration settings/status and GM booking checkout/recovery; room configuration in Builder Services.
+- Integration user/developer guides and fallback, expiry, partial-failure and shared-door concurrency tests.
+
+### Fixed
+
+- Catalogue icon and shop-type label align horizontally.
+- Shop title reflects the exact token name and optional business name, including live updates.
+
+### Compatibility
+
+- Neither integration is required. Missing modules skip optional actions without cancelling service payment.
+- Existing execution maps, service prices, catalogue IDs, identity data and native transaction settlement remain compatible.
+- Live Foundry/Forge integration acceptance is pending; calendar notes do not enforce room capacity.
+
 ## 0.3.0-alpha.9 — 2026-09-29 — Merchant Identity and Automatic Tagging
 
 ### Added

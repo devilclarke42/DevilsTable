@@ -224,3 +224,7 @@ no repository identity and are not committed or included in the runtime package.
 | `docs/MERCHANT_IDENTITY.md` | Data ownership audit, compatibility and live acceptance. |
 | `docs/BUILDER_GUIDE.md` | Six-tab Builder workflow and draft handling. |
 | `tests/merchant-identity.test.js` | Native derivation, privacy, guards and listener lifecycle tests. |
+
+## Sprint 10C optional integrations
+
+See [Integration developer source map](INTEGRATION_DEVELOPERS.md#source-map) for the new isolated manager/adapters, booking lifecycle, action validator and settings application. `templates/integrations.hbs` renders status and recovery; `tests/integrations.test.js` covers fallback, fulfilment, expiry and concurrency.

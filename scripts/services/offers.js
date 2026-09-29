@@ -1,3 +1,4 @@
+import { roomActions } from "../integrations/room.js";
 import { MODULE_ID } from "../constants.js";
 import { catalogueRegistry } from "../catalogues/registry.js";
 import { coinValue } from "../merchant/model.js";
@@ -32,6 +33,6 @@ export function serviceOffers(actor,character=null,{includeUnavailable=false}={}
       catalogues:row.catalogues,tags:row.tags,quantity:allowed?row.maxQuantity:0,unlimited:true,
       saleUnit:row.saleUnit??"service",duration:row.duration??"",copper,serviceModifier:row.modifier??0,
       availability:allowed?"Available":offer.available===false?"Temporarily unavailable":"Requirements not met",requirements:r.note??"",
-      execution:structuredClone(row.execution??{})}];
+      actions:[...structuredClone(row.actions??[]),...roomActions(offer.room)],execution:structuredClone(row.execution??{})}];
   });
 }

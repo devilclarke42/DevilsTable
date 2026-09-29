@@ -264,3 +264,11 @@ private in receipts. No service-specific merchant branches or Tavern content wer
 **Compatibility:** no shipped duplicate native identity fields were found, so a cleanup migration would add risk without benefit. Receipts and recovery snapshots intentionally preserve past state. Optional identity fields and service availability use backward-compatible defaults. See [field audit](MERCHANT_IDENTITY.md).
 
 **Services UI:** share one service form controller/template between the new Builder tab and the existing standalone entry point. This avoids two implementations of validation, filtering and editing. No new service gameplay or automatic tag effects are introduced.
+
+## Optional integrations and rental leases — Sprint 10C
+
+All external module calls go through an Integration Manager and isolated adapters. Native settlement occurs once before optional fulfilment, so a missing calendar cannot cancel a meal or charge it twice. Attempt markers and private partial-progress records favour manual inspection over unsafe automatic replay.
+
+Room keys use unique per-rental door grants. Removing that grant revokes copies without deleting unrelated keys. Private booking journals survive receipt retention because an active access lease must outlive its receipt. Calendaria notes present the paid stay and reminders; they are not capacity reservations. World time, not real time, drives checkout. These boundaries keep the standalone merchant usable and avoid creating a second calendar or inventory system.
+
+Lock & Key's reviewed convenience methods launch unawaited writes. Its adapter alone uses the reviewed access-code schema with awaited native writes/read-back; core service logic contains no foreign flags. New adapters register actions without merchant-specific branches. See [integration source review](INTEGRATIONS.md).

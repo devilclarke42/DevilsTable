@@ -54,6 +54,10 @@ export class MerchantShopApplication extends HandlebarsApplicationMixin(Applicat
       }
     });
   }
+  get title() {
+    const name=this.#token?.document?.name??this.#merchant;
+    return this.#business.businessName?`${name} - ${this.#business.businessName}`:name;
+  }
   async close(options) {
     const result = await super.close(options);
     this.#closed = true; this.#unsubscribe?.();
@@ -62,6 +66,7 @@ export class MerchantShopApplication extends HandlebarsApplicationMixin(Applicat
   }
   _onRender(context, options) {
     super._onRender?.(context, options);
+    const title=this.element.querySelector(".window-title");if(title)title.textContent=this.title;
     this.element.querySelector("[name=search]")?.addEventListener("input", event => {
       this.#query = event.target.value.slice(0, 100);
       // Update only visibility: preserve keyboard focus, caret and basket while typing.

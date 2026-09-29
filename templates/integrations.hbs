@@ -1,0 +1,19 @@
+<div class="dt-integrations">
+  <p>Optional modules enhance paid services. Missing or disabled integrations are skipped; payment and receipts continue normally.</p>
+  <fieldset {{#if busy}}disabled{{/if}}><legend>Installed / enabled integrations</legend>
+    {{#each integrations}}<section><h3>{{name}}</h3>
+      <p>Installed: {{installed}} · Module enabled: {{active}} · Ready: {{available}}</p>
+      {{#if reason}}<p>{{reason}}</p>{{/if}}
+      <label><input type="checkbox" data-integration="{{id}}" {{#if enabled}}checked{{/if}}>Enable within Devil's Table</label>
+    </section>{{/each}}
+    <button type="button" data-action="save">Save Integration Preferences</button>
+  </fieldset>
+  <h3>Active accommodation bookings</h3>
+  <p>Expire on Checkout revokes access when world time reaches the scheduled end, or when checked out here. Manual Recovery requires this action. Persistent keys remain valid. Calendar notes do not reserve room capacity.</p>
+  {{#each bookings}}<article><h4>{{room.name}}</h4><p>Status: {{state}} · Policy: {{room.expiry}} · Duration: {{room.days}} days · Quantity: {{quantity}}</p>
+    <p>Character: {{characterName}} · Merchant: {{merchantName}} · {{due}} · Key status: {{key.status}} · Calendar status: {{calendar.status}}</p>
+    <details><summary>Booking references</summary><p>Booking: {{uuid}} · Key: {{key.itemUuid}}</p><p>Receipt: {{receiptUuid}}</p>{{#each calendar.notes}}<p>{{this}}</p>{{/each}}</details>
+    {{#if error}}<p role="alert">{{error}}</p>{{/if}}
+    <button type="button" data-action="checkout" data-booking="{{uuid}}" {{#if ../busy}}disabled{{/if}}>Check Out / Recover Key…</button>
+  </article>{{else}}<p>No active bookings.</p>{{/each}}
+</div>

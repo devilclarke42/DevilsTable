@@ -40,9 +40,12 @@ test("player header uses the exact token name, updates live, and detaches when c
   receivePresentation({ actorId: "merchant", presentation: { portrait: "portraits/nan.webp", availability: "busy" } });
   assert.equal((await shop._prepareContext({})).portrait, "portraits/nan.webp");
   assert.equal((await shop._prepareContext({})).availability, "Busy");
+  receivePresentation({actorId:"merchant",presentation:{portrait:"portraits/nan.webp",availability:"busy",business:{businessName:"Copper Kettle"}}});
+  assert.equal(shop.title,"Old Nan <the Cook> - Copper Kettle");
   token.document.name = "Merrick Thorne";
   for (const hook of hooks.values()) hook.fn(token.document);
   assert.equal((await shop._prepareContext({})).merchant, "Merrick Thorne");
+  assert.equal(shop.title,"Merrick Thorne - Copper Kettle");
   const before = renders; await shop.close(); assert.equal(hooks.size, 0);
   receivePresentation({ actorId: "merchant", presentation: { portrait: "after-close.webp", availability: "open" } });
   assert.equal(renders, before);

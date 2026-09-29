@@ -1,5 +1,13 @@
 # Architecture and API
 
+## Optional Integration Framework (Sprint 10C)
+
+`integrations/manager.js` is the sole external-module gateway. Adapters encapsulate feature detection and foreign APIs; no manifest hard dependencies are introduced. The active GM serializes external operations across merchants. Services compile data-defined actions; mandatory native settlement/receipt stages remain separate and execute once. Optional jobs record attempts before effects and never replay automatically.
+
+Private booking JournalEntries retain rental access leases and partial key/calendar references independently of receipt retention. Unique door grants allow expiry without removing pre-existing keys; native world time drives expiry and Calendaria supplies optional calendar presentation. Booking records are not inventory, currency or room-capacity stores. Room capability is data-defined, and non-Tavern providers use the same UI.
+
+See [integration configuration and constraints](INTEGRATIONS.md) and [developer contract](INTEGRATION_DEVELOPERS.md) for schemas, registration, source review and recovery.
+
 ## Native identity and business metadata (Sprint 11A)
 
 If Foundry or D&D5e already stores a value, reference it rather than duplicating it. `merchant/identity.js` is the native identity adapter and merchant-only payload validator. System Tags are transient read-only descriptors; Merchant Tags are private editable business metadata. Native document hooks repaint read-only Builder fields without replacing draft inputs. Public socket presentation explicitly projects only approved business text, portrait and availability. Historical receipts and recovery snapshots remain immutable evidence of past state.

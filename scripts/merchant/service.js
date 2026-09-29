@@ -108,7 +108,7 @@ async function receive(msg) {
     const shopper = customer?.testUserPermission(game.users.get(msg.userId), "OWNER") ? customer : null;
     const offers = purchaseOffers(actor, shopper);
     const view = catalogueRegistry.project(actor, offers.filter(row=>row.kind!=="service"));
-    const services=offers.filter(row=>row.kind==="service").map(({execution,...row})=>row);
+    const services=offers.filter(row=>row.kind==="service").map(({execution,actions,...row})=>row);
     const pricing = pricingTerms(actor, shopper);
     return notify(msg.userId, { id: msg.id, type: "stock", catalogue: view.catalogue, categories: view.categories,
       pricing: { merchant: pricing.merchant, character: pricing.character, negotiation: pricing.negotiation, stacking: pricing.stacking }, merchant: token.name ?? actor.name, presentation: merchantPresentation(actor), characterId: shopper?.id ?? null,
@@ -204,7 +204,7 @@ async function finish(actor, character, request, proposal, decision, edits, acce
       if (!character.testUserPermission(game.users.get(request.userId), "OWNER")) throw Error("Character ownership changed.");
       if ((merchantConfig(actor)?.availability ?? "closed") !== "open") throw Error("Merchant is no longer open.");
       const quote = quoteTrade(actor, character, request, edits);
-      const actions = value => value.basket.filter(row=>row.kind==="service").map(row=>({id:row.id,execution:row.execution}));
+      const actions = value => value.basket.filter(row=>row.kind==="service").map(row=>({id:row.id,execution:row.execution,actions:row.actions}));
       if (stable(actions(quote)) !== stable(actions(proposal))) throw Error("Service execution changed. Recalculate and review the service actions before approval.");
       if (stable(offerTerms(quote)) !== stable(accepted)) throw Error("The player must accept these revised terms. Recalculate the offer first.");
       // A changed quote must be resubmitted, unless the GM explicitly supplied line edits.

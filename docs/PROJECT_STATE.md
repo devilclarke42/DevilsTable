@@ -1,8 +1,14 @@
 # Project state
 
-Updated 2026-09-29 for `0.3.0-alpha.9`.
+Updated 2026-09-29 for `0.3.0-alpha.10`.
 
-## Current candidate — alpha.9 / Sprint 11A
+## Current candidate — alpha.10 / Sprint 10C
+
+Optional integration framework and accommodation adapters are implemented. Services remain usable without either module. Lock & Key grants unique rental access across configured doors; Calendaria creates private check-in/out notes. Bookings survive receipt retention and allow timed/manual key revocation. Native payments still occur once. The Shop icon aligns with its catalogue label and the title uses token/business names.
+
+All 363 automated tests pass, including regression trading, missing modules, partial fulfilment, private projection and concurrent shared-door grants. Validation still covers 296 Items, 12 services and 32 Stock RollTables. The alpha.10 ZIP is a test candidate; no live Foundry/Forge integration certification was performed. See [acceptance checklist](INTEGRATIONS.md#validation-and-live-acceptance).
+
+## Previous candidate — alpha.9 / Sprint 11A
 
 Native identity is derived live and read-only; business metadata and private Merchant Tags are isolated in module flags. Builder Identity and Services tabs are implemented. Services include search, grouping, status filters, prices, temporary availability and usage. Native data, receipts and source content remain intact; no destructive migration is required.
 
