@@ -18,6 +18,7 @@ export class MerchantShopApplication extends HandlebarsApplicationMixin(Applicat
   #administrationOpen = false;
   #adminBusy = false;
   #portrait = DEFAULT_MERCHANT_PORTRAIT;
+  #business = {};
   #unsubscribe;
   #tokenHook;
   #closed = false;
@@ -43,6 +44,7 @@ export class MerchantShopApplication extends HandlebarsApplicationMixin(Applicat
     this.#unsubscribe = subscribePresentation(token.document.actorId, data => {
       this.#portrait = data.portrait || DEFAULT_MERCHANT_PORTRAIT;
       this.#availability = data.availability;
+      this.#business = data.business ?? {};
       if (this.rendered) void this.render();
     });
     this.#tokenHook = globalThis.Hooks?.on("updateToken", doc => {
@@ -110,7 +112,7 @@ export class MerchantShopApplication extends HandlebarsApplicationMixin(Applicat
       administration, adminError, adminBusy: this.#adminBusy, sales, sellItems: offers.map(i => ({ ...i, priceLabel: formatCopper(i.copper) })),
       characterName: pc?.actor.name ?? "Select your character token", fundsLabel: formatCopper(funds),
       fundsError: this.#stockCharacterId !== pc?.actor.id ? "Refresh stock for the selected character’s prices." : total > funds ? "Not enough money for this basket." : "",
-      merchant: this.#token.document.name ?? this.#merchant, portrait: this.#portrait,
+      merchant: this.#token.document.name ?? this.#merchant, portrait: this.#portrait, business: this.#business,
       availability: this.#availability.charAt(0).toUpperCase() + this.#availability.slice(1),
       items: filtered.map(item => ({ ...item, hidden: !this.#matches(item), priceLabel: formatCopper(item.copper) })), basket, message: this.#message, query: this.#query,
       categories: (this.#view === "services" ? [...new Map(this.#items.filter(r=>r.isService).map(r=>[r.category,{id:r.category,name:r.categoryName,icon:r.img}])).values()] : this.#categories).map(row => ({ ...row, selected: row.id === this.#category })),
@@ -168,6 +170,7 @@ export class MerchantShopApplication extends HandlebarsApplicationMixin(Applicat
       else {
         this.#merchant = msg.merchant;
         this.#portrait = msg.presentation?.portrait || DEFAULT_MERCHANT_PORTRAIT;
+        this.#business = msg.presentation?.business ?? {};
         this.#stockCharacterId = msg.characterId === undefined ? globalThis.canvas?.tokens?.controlled?.find(t => t.actor?.isOwner && t.actor.type === "character")?.actor.id : msg.characterId;
         this.#items = msg.items;
         this.#categories = msg.categories ?? [];

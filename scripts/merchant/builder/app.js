@@ -1,3 +1,5 @@
+import { actorIdentity, readMerchantIdentity, identitySnapshot, saveMerchantIdentity, subscribeActorIdentity } from "../identity.js";
+import { ServicePanel } from "../../services/panel.js";
 import { resetMerchant } from "../reset-merchant.js";
 import { walletValue } from "../settlement.js";
 import { MODULE_ID } from "../../constants.js";
@@ -14,18 +16,20 @@ import { builtInTemplates, customTemplates, validateTemplate, saveTemplate } fro
 import { estimateGeneration, generateNotes } from "./generation.js";
 import { saveConfiguration, planBuilderStock, applyBuilderStock, editFloat, applyBuilderFloat, editStockQuantities } from "./service.js";
 const { ApplicationV2, HandlebarsApplicationMixin } = foundry.applications.api;
+const BUILDER_TABS=["setup","identity","stock","services","cash","manage"];
 const choices = (rows, selected) => rows.map(r => ({ ...r, selected: r.id === selected }));
 
 /** Single editable panel. Drafts/previews are local; only explicit actions write native documents. */
 export class MerchantBuilderApplication extends HandlebarsApplicationMixin(ApplicationV2) {
   #tab="setup";
+  #identity; #identitySaved; #identityExpected; #identitySubscription; #servicesPanel;
   #actorId; #context; #draft; #saved; #snapshot; #templates=[]; #templateId="";
   #stockPending=false; #stock=null; #float=null; #floatPending=false; #busy=false; #closed=false; #message="Select an NPC, adjust settings, then Save / Convert.";
   constructor({actorId="",...options}={}) { super(options); this.#actorId=actorId; }
   static DEFAULT_OPTIONS = {
     id:"devils-table-merchant-builder",classes:["devils-table"],tag:"section",position:{width:850,height:730},
     window:{title:"Devil's Table: Trade & Merchants — Merchant Builder",icon:"fa-solid fa-store",resizable:true},
-    actions:{services:MerchantBuilderApplication.#services,editStock:MerchantBuilderApplication.#editStock,selectTab:MerchantBuilderApplication.#selectTab,stepTab:MerchantBuilderApplication.#stepTab,resetMerchant:MerchantBuilderApplication.#resetMerchant,save:MerchantBuilderApplication.#save,generateStock:MerchantBuilderApplication.#generateStock,
+    actions:{saveIdentity:MerchantBuilderApplication.#saveIdentity,saveServices:MerchantBuilderApplication.#saveServices,generateServices:MerchantBuilderApplication.#generateServices,saveServiceDefinitions:MerchantBuilderApplication.#saveServiceDefinitions,editStock:MerchantBuilderApplication.#editStock,selectTab:MerchantBuilderApplication.#selectTab,stepTab:MerchantBuilderApplication.#stepTab,resetMerchant:MerchantBuilderApplication.#resetMerchant,save:MerchantBuilderApplication.#save,generateStock:MerchantBuilderApplication.#generateStock,
       generateFloat:MerchantBuilderApplication.#generateFloat,generateNotes:MerchantBuilderApplication.#generateNotes,
       applyStock:MerchantBuilderApplication.#applyStock,applyFloat:MerchantBuilderApplication.#applyFloat,
       editFloat:MerchantBuilderApplication.#editFloat,empty:MerchantBuilderApplication.#empty,
@@ -35,6 +39,7 @@ export class MerchantBuilderApplication extends HandlebarsApplicationMixin(Appli
   static PARTS={body:{template:"modules/devils-table/templates/merchant-builder.hbs"}};
   async close(options = {}) {
     this.#closed = true;
+    this.#identitySubscription?.();this.#identitySubscription=null;
     return super.close(options);
   }
   get actor() { return game.actors.get(this.#actorId); }
@@ -42,7 +47,10 @@ export class MerchantBuilderApplication extends HandlebarsApplicationMixin(Appli
   #loadActor() {
     this.#draft=readConfiguration(this.actor,this.#context);this.#saved=structuredClone(this.#draft);
     this.#snapshot=configurationSnapshot(this.actor);this.#stock=null;this.#float=null;
+    this.#identity=readMerchantIdentity(this.actor);this.#identitySaved=stable(this.#identity);this.#identityExpected=identitySnapshot(this.actor);
+    this.#servicesPanel=this.actor?new ServicePanel(this.actor):null;
   }
+  #otherDirty() {return stable(this.#identity)!==this.#identitySaved||this.#servicesPanel?.dirty;}
   #dirty() {return stable(this.#draft)!==stable(this.#saved);}
   #requireSaved() {
     if(!merchantConfig(this.actor) || this.#dirty()) throw Error("Save / Convert this NPC before generating or applying stock and cash.");
@@ -71,7 +79,9 @@ export class MerchantBuilderApplication extends HandlebarsApplicationMixin(Appli
     ].map(([key,label,rows])=>({key,label,choices:choices(rows,d[key])}));
     return {...await super._prepareContext(options),actorName:this.actor?.name??"Choose an NPC",draft:d,selects:selects.filter(row=>["catalogueId","settlement","prosperity","availability"].includes(row.key)),
       advancedSelects:selects.filter(row=>!["catalogueId","settlement","prosperity","availability"].includes(row.key)), cashLabel:formatCopper(walletValue(this.actor?.system.currency)),
-      tabs:Object.fromEntries(["setup","stock","cash","manage"].map(id=>[id,id===this.#tab])),
+      identity:this.#identity,merchantTags:this.#identity.merchantTags.join(", "),nativeIdentity:actorIdentity(this.actor),hasActor:Boolean(this.actor),
+      servicesHTML:this.#servicesPanel?await foundry.applications.handlebars.renderTemplate("modules/devils-table/templates/merchant-services.hbs",this.#servicesPanel.context(this.#busy)):"",
+      tabs:Object.fromEntries(BUILDER_TABS.map(id=>[id,id===this.#tab])),
       npcs:game.actors.filter(a=>a.type==="npc").map(a=>({id:a.id,name:a.name,selected:a.id===this.#actorId})),
       templates:this.#templates.map(r=>({...r,selected:r.key===this.#templateId})),summary,summaryError,
       busy:this.#busy,message:this.#message,stock:this.#stock?{...this.#stock,items:this.#stock.items.map(i=>({...i,priceLabel:formatCopper(i.price.value*({cp:1,sp:10,ep:50,gp:100,pp:1000}[i.price.denomination]))})),
@@ -85,7 +95,7 @@ export class MerchantBuilderApplication extends HandlebarsApplicationMixin(Appli
     super._onRender?.(context,options);
     this.element.querySelector("[name=builderNpc]")?.addEventListener("change",async event=>{
       const id=event.target.value;
-      if((this.#dirty()||this.#stock||this.#float)&&!await this.#confirm("Switch NPC?","Discard this panel's unsaved settings and previews?")){event.target.value=this.#actorId;return;}
+      if((this.#dirty()||this.#otherDirty()||this.#stock||this.#float)&&!await this.#confirm("Switch NPC?","Discard this panel's unsaved settings and previews?")){event.target.value=this.#actorId;return;}
       this.#actorId=id;this.#templateId="";this.#loadActor();await this.render();
     });
     for(const input of this.element.querySelectorAll("[data-config]")) input.addEventListener("input",event=>{
@@ -105,8 +115,23 @@ export class MerchantBuilderApplication extends HandlebarsApplicationMixin(Appli
       this.#floatPending=true;
       for (const action of ["applyStock", "applyFloat"]) {const button=this.element.querySelector(`[data-action=${action}]`);if(button)button.disabled=true;}
     });
-    this.#showTab();
+    for(const input of this.element.querySelectorAll("[data-merchant-identity]"))input.addEventListener("input",event=>{
+      const key=event.target.dataset.merchantIdentity;
+      this.#identity[key]=key==="merchantTags"?event.target.value.split(",").map(t=>t.trim()).filter(Boolean):event.target.value;
+    });
+    this.#servicesPanel?.bind(this.element.querySelector(".dt-services-manager"));
+    this.#identitySubscription??=subscribeActorIdentity(()=>this.#actorId,()=>this.#paintIdentity());
+    this.#paintIdentity();this.#showTab();
     this.#paintEstimate();
+  }
+  #paintIdentity() {
+    if(this.#closed||!this.element)return;
+    const native=actorIdentity(this.actor);
+    for(const node of this.element.querySelectorAll("[data-identity-read]")) {
+      const key=node.dataset.identityRead;
+      node.textContent=key==="systemTags"?native.systemTags.map(t=>t.label).join(" · ")||"None available":native[key]||"Not specified";
+    }
+    for(const image of this.element.querySelectorAll("[data-identity-portrait]"))image.src=native.portrait;
   }
   #paintEstimate() {
     const set=(key,value)=>{const node=this.element.querySelector(`[data-estimate="${key}"]`);if(node)node.textContent=value;};
@@ -133,8 +158,21 @@ export class MerchantBuilderApplication extends HandlebarsApplicationMixin(Appli
     try{await operation();}catch(error){this.#message=error.message;ui.notifications.error(error.message);}
     finally{this.#busy=false;if(!this.#closed)await this.render();}
   }
-  static async #services(){await this.#run(async()=>{this.#requireSaved();const {MerchantServicesApplication}=await import("../../services/manager-app.js");await new MerchantServicesApplication(this.actor).render({force:true});});}
-  static async #save(){await this.#run(async()=>{const preserve=Object.keys(this.#draft).every(key=>key==="notes"||this.#draft[key]===this.#saved[key]);this.#snapshot=await saveConfiguration(this.actor,this.#draft,this.#context,this.#snapshot);this.#saved=structuredClone(this.#draft);if(preserve){if(this.#stock)this.#stock.builderSnapshot=this.#snapshot;}else{this.#stock=null;this.#float=null;}this.#message="Merchant configured; eligible default services added. Existing NPC data, inventory and cash preserved.";});}
+  static async #saveIdentity(){await this.#run(async()=>{
+    this.#requireSaved();
+    this.#identity=await saveMerchantIdentity(this.actor,this.#identity,this.#identityExpected);
+    this.#identityExpected=identitySnapshot(this.actor);this.#identitySaved=stable(this.#identity);
+    this.#snapshot=configurationSnapshot(this.actor);this.#stock=null;this.#float=null;
+    this.#message="Merchant identity saved. Native Actor information remains unchanged.";
+  });}
+  async #serviceAction(action){await this.#run(async()=>{
+    this.#requireSaved();await this.#servicesPanel[action]();this.#snapshot=configurationSnapshot(this.actor);
+    this.#stock=null;this.#float=null;this.#message="Service action completed. Refresh the Shop to load current offerings.";
+  });}
+  static async #saveServices(){await this.#serviceAction("save");}
+  static async #generateServices(){await this.#serviceAction("generate");}
+  static async #saveServiceDefinitions(){await this.#serviceAction("saveDefinitions");}
+  static async #save(){await this.#run(async()=>{const preserve=Object.keys(this.#draft).every(key=>key==="notes"||this.#draft[key]===this.#saved[key]);this.#snapshot=await saveConfiguration(this.actor,this.#draft,this.#context,this.#snapshot);this.#saved=structuredClone(this.#draft);if(!this.#servicesPanel?.dirty)this.#servicesPanel?.reset();if(preserve){if(this.#stock)this.#stock.builderSnapshot=this.#snapshot;}else{this.#stock=null;this.#float=null;}this.#message="Merchant configured; eligible default services added. Existing NPC data, inventory and cash preserved.";});}
   static async #generateStock(){await this.#run(async()=>{this.#requireSaved();this.#stock=await planBuilderStock(this.actor,this.#draft,this.#context,{float:this.#float});this.#float=this.#stock.float;this.#message="Review the assortment and cash below. Nothing has been applied.";});}
   static async #generateFloat(){await this.#run(async()=>{
     this.#requireSaved();
@@ -162,17 +200,17 @@ export class MerchantBuilderApplication extends HandlebarsApplicationMixin(Appli
     if(this.#dirty()&&!await this.#confirm("Apply template?","Replace unsaved configuration with this template? Actor data is not changed until Save."))return;
     this.#draft=validateConfiguration(row.settings,this.#context);this.#templateId=key;this.#stock=null;this.#float=null;this.#message="Template applied to draft. Every setting remains editable.";});}
   static async #saveTemplate(){const name=this.element.querySelector("[name=templateName]")?.value;await this.#run(async()=>{const row=await saveTemplate(name,this.#draft,this.#context);this.#templateId=`world:${row.id}`;this.#message="Custom template saved for this world. Inventory, wallets and relationships were excluded.";});}
-  static async #reload(){await this.#run(async()=>{if((this.#dirty()||this.#stock||this.#float)&&!await this.#confirm("Reload NPC?","Discard unsaved settings and generation previews?"))return;this.#loadActor();this.#message="Current merchant data loaded.";});}
+  static async #reload(){await this.#run(async()=>{if((this.#dirty()||this.#otherDirty()||this.#stock||this.#float)&&!await this.#confirm("Reload NPC?","Discard unsaved settings and generation previews?"))return;this.#loadActor();this.#message="Current merchant data loaded.";});}
   #showTab() {
     for (const panel of this.element.querySelectorAll("[data-builder-panel]")) panel.hidden=panel.dataset.builderPanel!==this.#tab;
     for (const button of this.element.querySelectorAll("[data-builder-tab]")) button.setAttribute("aria-selected",String(button.dataset.builderTab===this.#tab));
   }
   static #selectTab(_event,target) {
-    if (!["setup","stock","cash","manage"].includes(target.dataset.builderTab)) return;
+    if (!BUILDER_TABS.includes(target.dataset.builderTab)) return;
     this.#tab=target.dataset.builderTab;this.#showTab();
   }
   static #stepTab(_event,target) {
-    const tabs=["setup","stock","cash","manage"],index=tabs.indexOf(this.#tab);
+    const tabs=BUILDER_TABS,index=tabs.indexOf(this.#tab);
     this.#tab=tabs[Math.max(0,Math.min(tabs.length-1,index+Number(target.dataset.step)))];this.#showTab();
   }
   static async #resetMerchant() {await this.#run(async()=>{

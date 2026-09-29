@@ -91,3 +91,39 @@ test("optional integrations execute once per paid line and capture private resul
  const req=request();const record=await executeTrade({merchant:m,character:pc,request:req,quote:quoteTrade(m,pc,req),receiptAdapter:ledger()});
  assert.deepEqual(calls,[["macro",2],["journal"],["table"],["effect"]]);assert.ok(record.serviceExecution.every(j=>j.status==="completed"));assert.equal(record.serviceExecution.find(j=>j.kind==="rollTable").result,"Private result");
 });
+
+test("manual service availability is authoritative, visible without purchase access and preserves native inventory",async()=>{
+ const {m,pc}=await world();
+ await saveServiceOffers(m,[{id:service.id,enabled:true,available:false}]);
+ const visible=serviceOffers(m,pc,{includeUnavailable:true});
+ assert.equal(visible[0].quantity,0);assert.equal(visible[0].availability,"Temporarily unavailable");
+ assert.equal(serviceOffers(m,pc).length,0);assert.throws(()=>quoteTrade(m,pc,request()),/Stock/);
+ assert.equal(m.items.size,1);assert.equal(pc.system.currency.cp,100);
+ await saveServiceOffers(m,[{id:service.id,enabled:true,available:true}]);assert.equal(serviceOffers(m,pc).length,1);
+});
+test("service editor rejects stale saves and groups authored services without duplicating their definitions",async()=>{
+ const {m}=await world();const {ServicePanel}=await import('../scripts/services/panel.js');
+ const panel=new ServicePanel(m),context=panel.context();assert.equal(context.groups[0].name,"Expertise");
+ assert.equal(context.groups[0].services[0].purchased,0);
+ panel.draft.set(service.id,{offered:true,enabled:true,available:false,price:{value:"2",denomination:"sp"}});
+ assert.equal(panel.context().groups[0].services[0].price.value,"2");
+ await panel.save();assert.equal(m.getFlag("devils-table","merchant.services.DT_SERVICE_TEST.available"),false);
+ assert.equal(m.getFlag("devils-table","merchant.services.DT_SERVICE_TEST.price.value"),2);
+ assert.equal(panel.dirty,false);
+ await m.setFlag("devils-table","merchant.services.DT_SERVICE_TEST.price.value",3);
+ await assert.rejects(panel.save(),/changed/);
+ assert.equal(m.getFlag("devils-table","merchant.services.DT_SERVICE_TEST.price.value"),3);
+});
+test("service search/category filters hide rows without discarding edited prices",async()=>{
+ const {m}=await world();const {ServicePanel}=await import('../scripts/services/panel.js');const panel=new ServicePanel(m);
+ const controls={offered:{checked:true},enabled:{checked:true},available:{checked:true},price:{value:"7"},denomination:{value:"sp"}};
+ const row={dataset:{serviceRow:service.id,search:"consultation advice expertise",category:"expertise",eligible:"true"},hidden:false,
+   querySelector:selector=>controls[selector.match(/name=(\w+)/)[1]],addEventListener(event,fn){this[event]=fn;}};
+ const query={dataset:{serviceFilter:"query"},value:"",addEventListener(event,fn){this[event]=fn;}}, category={dataset:{serviceFilter:"category"},value:"",addEventListener(event,fn){this[event]=fn;}};
+ const group={querySelectorAll:()=>[row],hidden:false};
+ const root={querySelector:()=>null,querySelectorAll:selector=>selector==='[data-service-row]'?[row]:selector==='[data-service-group]'?[group]:selector==='[data-service-filter]'?[query,category]:[]};
+ panel.bind(root);row.input();query.value="no match";query.input();assert.equal(row.hidden,true);assert.equal(group.hidden,true);
+ assert.equal(panel.context().groups[0].services[0].price.value,"7");
+ query.value="advice";query.input();assert.equal(row.hidden,false);category.value="other";category.input();assert.equal(row.hidden,true);
+ await panel.save();assert.equal(m.getFlag("devils-table","merchant.services.DT_SERVICE_TEST.price.value"),7);
+});

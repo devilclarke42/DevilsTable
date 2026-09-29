@@ -2,9 +2,13 @@
   <header class="dt-merchant-header">
     <img class="dt-merchant-portrait" data-merchant-portrait src="{{portrait}}" alt="Portrait of {{merchant}}" width="72" height="72">
     <div class="dt-merchant-identity"><h2>{{merchant}}</h2>
+      {{#if business.businessName}}<p><strong>{{business.businessName}}</strong></p>{{/if}}
+      {{#if business.merchantTitle}}<p>{{business.merchantTitle}}</p>{{/if}}
       <div class="dt-merchant-context">{{#if catalogue}}<p><img class="dt-category-icon" src="{{catalogue.icon}}" alt=""> {{catalogue.name}}</p>{{/if}}<p>Status: <strong>{{availability}}</strong></p></div>
     </div>
   </header>
+  {{#if business.publicDescription}}<p class="dt-business-description">{{business.publicDescription}}</p>{{/if}}
+  {{#if business.shopDescription}}<details class="dt-business-description"><summary>About this shop</summary><p>{{business.shopDescription}}</p></details>{{/if}}
   {{#if canAdmin}}<nav class="dt-manager-tabs" aria-label="Merchant view">
     <button type="button" data-action="setupMerchant">Merchant Builder</button>
     <button type="button" data-action="toggleAdministration">{{#if administrationOpen}}Return to Inventory{{else}}Administration{{/if}}</button>

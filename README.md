@@ -1,12 +1,12 @@
 # Devil's Table: Trade & Merchants
 
-## Current release — Tavern Services
+## Current candidate — Merchant Identity
 
-Current candidate: **0.3.0-alpha.8** — Tavern Services. Twelve services join the existing food/drink catalogue. Choose a Tavern preset in Merchant Builder and Save to add eligible services, then generate stock and cash. [Tavern Services guide](docs/TAVERN_SERVICES.md).
-The editable tabbed builder converts NPCs without losing existing data, applies reusable presets, previews
-stock/cash, regenerates selected components and manages inventory. Custom templates are GM-only.
-See the [Merchant Guide](docs/MERCHANT_GUIDE.md) for the workflow, preservation rules and live checks.
-Restock scheduling and greetings remain future work. Tavern services are now bundled, and the existing Tavern food/drink data is active.
+**0.3.0-alpha.9** adds a live, read-only Actor Identity panel, editable business metadata and private Merchant Tags. The Builder now has **Setup, Identity, Stock, Services, Cash and Manage** tabs. Services are administered directly in their own tab with search, category/status filters, prices, availability and usage statistics.
+
+Native Actor information, inventory and currency remain authoritative. No native identity is copied into merchant flags. Existing Tavern content is preserved: **296 Items, 12 services and 32 Stock RollTables**. No new gameplay systems are introduced.
+
+See the [Builder Guide](docs/BUILDER_GUIDE.md), [Identity and ownership review](docs/MERCHANT_IDENTITY.md), [Merchant Guide](docs/MERCHANT_GUIDE.md) and [Tavern Services](docs/TAVERN_SERVICES.md). Live Foundry/Forge acceptance remains pending; automated verification is recorded in [Project State](docs/PROJECT_STATE.md).
 
 
 ## Sprint 8A — Project consolidation
@@ -25,7 +25,7 @@ A long-term Foundry VTT module for reusable goods, provisions and shop catalogue
 **This repository is the project's single source of truth.** Canonical JSON is authored here;
 Foundry compendiums are generated from it and must never be edited as source data.
 
-## Current status
+## Historical Sprint 8 status
 
 **Sprint 8 framework candidate (`0.3.0-alpha.2`):** data-defined catalogues, category tabs,
 Actor portrait, exact token name, immediate search and a persistent priced basket. One shared

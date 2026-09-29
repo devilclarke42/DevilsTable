@@ -9,33 +9,44 @@ test("single-panel configuration updates estimates locally, saves explicitly and
   const actor = new Actor("merchant",0);delete actor.flags["devils-table"].merchant;
   game.actors=[actor];game.actors.get=id=>game.actors.find(a=>a.id===id);game.scenes=[];game.packs=new Map();
   game.user.isGM=true;
+  game.settings.get=(_ns,key)=>key==="serviceDefinitions"?{categories:[],services:[]}:key==="debugLogging"?false:"unlimited";
   globalThis.fetch=async url=>({ok:true,json:()=>readJson(String(url).replace("modules/devils-table/",""))});
   globalThis.Roll=class {async evaluate(){return {total:1};}};
   const errors=[];globalThis.ui={notifications:{error:msg=>errors.push(msg)}};
   let renders=0,closed=0;
-  foundry.applications={api:{ApplicationV2:class {async _prepareContext(){return {};} async render(){renders++;return this;} async close(){closed++;return this;}},
+  const identityHooks=new Map();let hookId=0;globalThis.Hooks={on:(event,fn)=>{const id=++hookId;identityHooks.set(id,{event,fn});return id;},off:(_event,id)=>identityHooks.delete(id)};
+  foundry.applications={handlebars:{renderTemplate:async()=>"<div>Services</div>"},api:{ApplicationV2:class {async _prepareContext(){return {};} async render(){renders++;return this;} async close(){closed++;return this;}},
     HandlebarsApplicationMixin:Base=>Base,DialogV2:{confirm:async()=>true}}};
   catalogueRegistry.register({catalogues:await readJson("data/catalogues.json"),categories:await readJson("data/categories.json")});
   const {MerchantBuilderApplication:App}=await import("../scripts/merchant/builder/app.js");
   const app=new App({actorId:actor.id});let context=await app._prepareContext({});
   assert.equal(context.generationBlocked,true);assert.equal(context.actorName,"merchant");assert.ok(context.summary.rows.length>0);
-  const nodes=new Map(), fields=[];
+  const nodes=new Map(), fields=[],identityFields=[];
+  const nativeName={dataset:{identityRead:"name"},textContent:""};
   function node(name,value,type="select-one") {const n={name,value,type,checked:false,addEventListener(event,fn){this[event]=fn;}};nodes.set(`[name=${name}]`,n);return n;}
   node("builderNpc",actor.id);fields.push(node("settlement","village"));fields.push(node("prosperity","average"));
   const closeButton={disabled:false};
-  const panels=["setup","stock","cash","manage"].map(id=>({dataset:{builderPanel:id},hidden:false}));
+  const panels=["setup","identity","stock","services","cash","manage"].map(id=>({dataset:{builderPanel:id},hidden:false}));
   const tabs=panels.map(p=>({dataset:{builderTab:p.dataset.builderPanel},setAttribute(key,value){this[key]=value;}}));
-  app.element={querySelector(selector){if(!nodes.has(selector))nodes.set(selector,{});return nodes.get(selector);},querySelectorAll(selector){return selector==="[data-builder-panel]"?panels:selector==="[data-builder-tab]"?tabs:selector==="[data-config]"?fields:selector==="input, select, textarea, button"?[closeButton]:[];}};
+  app.element={querySelector(selector){if(!nodes.has(selector))nodes.set(selector,{});return nodes.get(selector);},querySelectorAll(selector){return selector==="[data-builder-panel]"?panels:selector==="[data-builder-tab]"?tabs:selector==="[data-identity-read]"?[nativeName]:selector==="[data-merchant-identity]"?identityFields:selector==="[data-config]"?fields:selector==="input, select, textarea, button"?[closeButton]:[];}};
   app._onRender({},{});fields[0].value="city";fields[0].input({target:fields[0]});
   assert.equal(nodes.get('[data-estimate="settlement"]').textContent,"city");assert.match(nodes.get('[data-estimate="dirty"]').textContent,/Unsaved/);
   App.DEFAULT_OPTIONS.actions.stepTab.call(app,null,{dataset:{step:"1"}});
-  assert.equal(panels.find(p=>p.dataset.builderPanel==="stock").hidden,false);
+  assert.equal(panels.find(p=>p.dataset.builderPanel==="identity").hidden,false);
   App.DEFAULT_OPTIONS.actions.selectTab.call(app,null,{dataset:{builderTab:"cash"}});
   assert.equal(panels.find(p=>p.dataset.builderPanel==="cash").hidden,false);
   assert.equal(fields[0].value,"city");
   assert.equal(actor.getFlag("devils-table","merchant"),undefined);assert.equal(actor.system.currency.cp,0);
   await App.DEFAULT_OPTIONS.actions.save.call(app);assert.equal(actor.getFlag("devils-table","merchant.economy").settlement,"city");assert.equal(actor.system.currency.cp,0);
   context=await app._prepareContext({});assert.equal(context.generationBlocked,false);
+  const business=node("businessName","Copper Kettle");business.dataset={merchantIdentity:"businessName"};identityFields.push(business);
+  app._onRender({},{});business.input({target:business});
+  actor.name="Old Nan";for(const hook of identityHooks.values())if(hook.event==="updateActor")hook.fn(actor);
+  assert.equal(nativeName.textContent,"Old Nan");assert.equal((await app._prepareContext({})).identity.businessName,"Copper Kettle");
+  App.DEFAULT_OPTIONS.actions.selectTab.call(app,null,{dataset:{builderTab:"services"}});
+  assert.equal(panels.find(p=>p.dataset.builderPanel==="services").hidden,false);
+  await App.DEFAULT_OPTIONS.actions.saveIdentity.call(app);assert.equal(actor.getFlag("devils-table","merchant.identity.businessName"),"Copper Kettle");assert.equal(actor.name,"Old Nan");
+
   nodes.get("[name=replaceCash]") ?? nodes.set("[name=replaceCash]",{checked:false});
   await App.DEFAULT_OPTIONS.actions.generateFloat.call(app);context=await app._prepareContext({});assert.equal(context.float.generated,true);assert.equal(context.float.label,"250 gp");assert.equal(actor.system.currency.cp,0);
   node("floatValue","12.34","number");node("floatDenomination","gp");
@@ -48,7 +59,7 @@ test("single-panel configuration updates estimates locally, saves explicitly and
   const pending=App.DEFAULT_OPTIONS.actions.generateFloat.call(app);
   await new Promise(resolve=>setImmediate(resolve));
   const beforeClose=renders;
-  await app.close();assert.equal(closed,1);assert.equal(closeButton.disabled,false);
+  await app.close();assert.equal(closed,1);assert.equal(identityHooks.size,0);assert.equal(closeButton.disabled,false);
   finishRoll({total:1});await pending;assert.equal(renders,beforeClose);
   assert.deepEqual(errors,[]);game.user.isGM=false;await assert.rejects(app._prepareContext({}),/GM-only/);
 });

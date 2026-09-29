@@ -20,7 +20,7 @@ Definitions are shared; merchant flags store only references and overrides. Exis
 ## GM workflow
 
 1. Open Merchant Builder, select the NPC, and save its catalogue, settlement, prosperity and economic profile.
-2. In **Manage**, open **Service Categories / Offerings**.
+2. Open the top-level **Services** tab.
 3. Expand **Shared world service definitions (JSON)** to author categories and services, or install a provider. Validate and Save checks the whole bundle before writing. Editing definitions affects all merchants and is blocked during checkout or recovery.
 4. Select categories and choose **Preview / Generate Offers**. Confirmation states the resulting offer count. Generation deterministically adds eligible definitions matching the catalogue and economic profile; it preserves existing enabled/disabled settings and price overrides.
 5. Use **Offer this service** to add or remove an offering. **Enabled** temporarily hides it without removing the saved offer. Edit unit price and denomination, then Save Service Offerings. Unchecking Offer removes the reference; it does not erase historical statistics.
@@ -137,3 +137,7 @@ overrides and modifiers may exceed the guidance. Older definitions can omit thes
 Catalogue `metadata.defaultServiceCategories` names service categories to seed on explicit Builder
 Save, subject to normal catalogue/economy eligibility. Processed IDs live in
 `merchant.builder.serviceDefaults.<catalogueId>` and prevent unwanted recreation of removed offers.
+
+## Builder service administration (alpha.9)
+
+Services have their own top-level Builder tab, using the same guarded administration as the standalone compatibility window. Search/category/status filters preserve unsaved row edits. The optional offer field `available` defaults to true; false shows “Temporarily unavailable” and prevents purchase. It does not bypass existing catalogue, economic or character requirements. `enabled: false` instead hides an offering. Price overrides, usage and generation remain unchanged. See [Builder Guide](BUILDER_GUIDE.md).

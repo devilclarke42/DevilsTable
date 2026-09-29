@@ -3,6 +3,22 @@
 This file retains detailed repository build history. The official milestone/release record is
 [docs/CHANGELOG.md](docs/CHANGELOG.md). Versions here do not imply a public GitHub Release exists.
 
+## 0.3.0-alpha.9 — 2026-09-29 — Merchant Identity and Automatic Tagging
+
+### Added
+
+- Builder Identity tab with live native name, portrait, race/species, creature type, class, size, alignment, biography summary and token information.
+- Derived read-only System Tags and separately validated, GM-only editable Merchant Tags.
+- Merchant-only business name, title and public/shop descriptions, with explicit player-safe presentation updates.
+- Builder guide, complete stored-field ownership audit and live acceptance checklist.
+
+### Changed
+
+- Services moved into a top-level Builder tab with shared form logic, immediate search, category/status filters, grouping and usage statistics.
+- Optional temporary service availability is checked at checkout; existing offers default to available.
+- Stale service edits are rejected; native identity updates preserve unsaved business drafts.
+- Native Actor data, source catalogue content, receipts and recovery evidence are preserved. No bulk migration or new gameplay systems.
+
 ## 0.3.0-alpha.8 — 2026-09-29 — Tavern Services
 
 ### Added

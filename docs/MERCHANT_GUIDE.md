@@ -1,6 +1,6 @@
 # Merchant Builder guide
 
-The Merchant Builder is a GM tabbed workflow: **Setup → Stock → Cash → Manage**.
+The Merchant Builder is a GM tabbed workflow: **Setup → Identity → Stock → Services → Cash → Manage**.
 Use Back/Next or jump directly to any tab. Tab switching preserves draft fields and performs no writes. Open it from **Merchant Builder** in
 module settings or the GM Shop UI. Advanced Trade Settings / Recovery opens the existing trade
 administration controls; no Actor sheet is needed for the normal builder workflow.
@@ -167,7 +167,7 @@ is still required.
 
 ## Merchant Services (alpha.7)
 
-Open Builder **Manage → Service Categories / Offerings** after saving the merchant configuration.
+Open Builder **Services** after saving the merchant configuration.
 Author shared definitions as JSON, select service categories to generate eligible offers, or choose
 individual offerings and prices. Players use the Services tab and the same basket/approval flow.
 Service usage appears in Merchant Summary and the service administration window. Empty Stock only
@@ -180,5 +180,9 @@ execution behaviour. No Tavern-specific services ship in this framework candidat
 Choose a Tavern preset, Save / Convert, then generate stock and cash. Save seeds eligible default
 services using catalogue metadata; GM removals, disabled offers and price overrides survive later
 saves. Rebuild Items and Stock RollTables after updating to activate the existing menu products.
-Use Manage → Service Categories / Offerings to review units, durations and suggested ranges.
+Use Services to review units, durations and suggested ranges.
 See [Tavern Services](TAVERN_SERVICES.md) for all twelve prices, four presets and fulfilment rules.
+
+## Identity and automatic tagging (alpha.9)
+
+Use the dedicated Identity tab to inspect native Actor fields and System Tags. Only business name, merchant title, Merchant Tags and public/shop descriptions are editable module metadata. Native biography and private tags never become public automatically. The Services tab now includes search, category grouping, status filters and a temporary availability override alongside pricing and usage. See the [Builder Guide](BUILDER_GUIDE.md) and [ownership review](MERCHANT_IDENTITY.md).

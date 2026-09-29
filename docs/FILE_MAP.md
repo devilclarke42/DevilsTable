@@ -214,3 +214,13 @@ no repository identity and are not committed or included in the runtime package.
   and listener cleanup. `tests/merchant-transport.test.js` also checks the GM/player boundary.
 - `tests/tavern.test.js`: category coverage, consumption, Item/table upgrades and stock filters.
 - `docs/TAVERN_REVIEW.md`: full 152-product review, decisions and live acceptance checklist.
+
+## Sprint 11A identity and shared service editor
+
+| File | Responsibility |
+| --- | --- |
+| `scripts/merchant/identity.js` | Native identity adapter, System Tags, merchant-only validation/save and live hooks. |
+| `scripts/services/panel.js` | Shared service form drafts, filters, groups and guarded save/generate actions. |
+| `docs/MERCHANT_IDENTITY.md` | Data ownership audit, compatibility and live acceptance. |
+| `docs/BUILDER_GUIDE.md` | Six-tab Builder workflow and draft handling. |
+| `tests/merchant-identity.test.js` | Native derivation, privacy, guards and listener lifecycle tests. |

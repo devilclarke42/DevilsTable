@@ -75,7 +75,7 @@ double charges while preserving the existing food/drink catalogue and its perman
    service availability rules. No inventory or currency is changed by this step.
 4. Generate and confirm Stock to add food/drinks, and generate/apply Cash as needed. Existing
    inventory and cash remain subject to the usual preview and confirmation workflow.
-5. In **Manage → Service Categories / Offerings**, inspect durations, units and recommended price
+5. In **Services**, inspect durations, units and recommended price
    ranges. Disable services the premises cannot provide, remove offers or set individual prices.
 6. Players refresh the Shop and combine Inventory and Services in one basket. The GM confirms
    capacity, timing and inclusions before approval.

@@ -254,3 +254,13 @@ Arbitrary macros cannot be rolled back safely, so integrations run after committ
 persist an attempt marker before execution. Failed/uncertain actions require GM inspection and
 are never automatically replayed. Native journals open privately for the GM; table draws remain
 private in receipts. No service-specific merchant branches or Tavern content were introduced.
+
+## Native identity ownership — Sprint 11A
+
+**Decision:** reference native Foundry/D&D5e identity directly; store only business-specific metadata under `merchant.identity`.
+
+**Reason:** synchronizing a second name, portrait, race or biography introduces stale data and migration work without improving play. The Identity tab therefore presents native data read-only, with transient System Tags. Private editable Merchant Tags describe the business and never overwrite the Actor. Explicit public business text is projected through the existing GM-authoritative channel; private biographies and tags remain private.
+
+**Compatibility:** no shipped duplicate native identity fields were found, so a cleanup migration would add risk without benefit. Receipts and recovery snapshots intentionally preserve past state. Optional identity fields and service availability use backward-compatible defaults. See [field audit](MERCHANT_IDENTITY.md).
+
+**Services UI:** share one service form controller/template between the new Builder tab and the existing standalone entry point. This avoids two implementations of validation, filtering and editing. No new service gameplay or automatic tag effects are introduced.

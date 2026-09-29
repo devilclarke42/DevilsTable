@@ -1,8 +1,14 @@
 # Project state
 
-Updated 2026-09-29 for `0.3.0-alpha.8`.
+Updated 2026-09-29 for `0.3.0-alpha.9`.
 
-## Current candidate — alpha.8 / Sprint 10B
+## Current candidate — alpha.9 / Sprint 11A
+
+Native identity is derived live and read-only; business metadata and private Merchant Tags are isolated in module flags. Builder Identity and Services tabs are implemented. Services include search, grouping, status filters, prices, temporary availability and usage. Native data, receipts and source content remain intact; no destructive migration is required.
+
+All 353 automated tests pass; validation covers 296 Items, 12 services and 32 Stock RollTables. The alpha.9 ZIP includes the runtime source, templates and documentation. Live Foundry/Forge acceptance remains pending; see [Identity checklist](MERCHANT_IDENTITY.md#acceptance-in-foundry). Broader Sprint 11 business-profile editing and world generation are not implemented by this refinement.
+
+## Previous candidate — alpha.8 / Sprint 10B
 
 Twelve record-only Tavern services are available, with units, durations and suggested pricing.
 Builder Save seeds eligible defaults once per identity and preserves manual removals/overrides.

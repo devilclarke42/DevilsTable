@@ -23,7 +23,7 @@ export function serviceOffers(actor,character=null,{includeUnavailable=false}={}
     const row=registry.get(id);
     if(!row||!eligibleService(row,actor)||offer.enabled===false)return [];
     const r=row.requirements??{};
-    const allowed=(!r.actorTypes?.length||r.actorTypes.includes(character?.type))&&(!(r.minLevel>0)||Number(character?.system?.details?.level)>=r.minLevel);
+    const allowed=offer.available!==false&&(!r.actorTypes?.length||r.actorTypes.includes(character?.type))&&(!(r.minLevel>0)||Number(character?.system?.details?.level)>=r.minLevel);
     if(!allowed&&!includeUnavailable)return [];
     const copper=offer.price===undefined?coinValue(row.price):coinValue(offer.price);
     if(copper===null)throw Error(`Invalid service price: ${row.name}.`);
@@ -31,7 +31,7 @@ export function serviceOffers(actor,character=null,{includeUnavailable=false}={}
       description:row.description,category:row.category,categoryName:registry.categories().find(c=>c.id===row.category)?.name,
       catalogues:row.catalogues,tags:row.tags,quantity:allowed?row.maxQuantity:0,unlimited:true,
       saleUnit:row.saleUnit??"service",duration:row.duration??"",copper,serviceModifier:row.modifier??0,
-      availability:allowed?"Available":"Requirements not met",requirements:r.note??"",
+      availability:allowed?"Available":offer.available===false?"Temporarily unavailable":"Requirements not met",requirements:r.note??"",
       execution:structuredClone(row.execution??{})}];
   });
 }

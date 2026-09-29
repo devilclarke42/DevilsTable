@@ -5,18 +5,20 @@ import { definitions, eligibleService } from "./offers.js";
 import { serviceRegistry, ServiceRegistry } from "./registry.js";
 import { coinValue } from "../merchant/model.js";
 /** All service offer writes share the existing checkout/administration guard. */
-export async function saveServiceOffers(actor,rows){
+export async function saveServiceOffers(actor,rows,{expected}={}){
   return withAdministration(actor,async()=>{
+    if(expected!==undefined&&stable(actor.getFlag(MODULE_ID,"merchant.services")??{})!==expected)throw Error("Service offerings changed. Reload before saving.");
     const registry=definitions(), next={};
     for(const row of rows){
       if(!registry.get(row.id)||Object.hasOwn(next,row.id)||typeof row.enabled!=="boolean"||
-        (row.price!==undefined&&coinValue(row.price)===null))throw Error("Invalid service offer settings.");
-      next[row.id]={enabled:row.enabled,...(row.price===undefined?{}:{price:row.price})};
+        (row.available!==undefined&&typeof row.available!=="boolean") || (row.price!==undefined&&coinValue(row.price)===null))throw Error("Invalid service offer settings.");
+      next[row.id]={enabled:row.enabled,...(row.available===undefined?{}:{available:row.available}),...(row.price===undefined?{}:{price:row.price})};
     }
     const old=actor.getFlag(MODULE_ID,"merchant.services")??{};
     const update={...structuredClone(next)};
     // Foundry merges flag objects: explicit deletion keys are needed to remove offers.
     for(const id of Object.keys(old))if(!Object.hasOwn(next,id))update[`-=${id}`]=null;
+    for(const id of Object.keys(next))if(old[id]?.available!==undefined&&next[id].available===undefined)update[id]["-=available"]=null;
     for(const id of Object.keys(next))if(old[id]?.price && !next[id].price)update[id]["-=price"]=null;
     await actor.setFlag(MODULE_ID,"merchant.services",update);
     const saved=actor.getFlag(MODULE_ID,"merchant.services");

@@ -2,9 +2,11 @@
   <header><h2>Merchant Builder — {{actorName}}</h2><p role="status">{{message}}</p></header>
   <nav class="dt-manager-tabs" role="tablist" aria-label="Merchant Builder steps">
     <button type="button" role="tab" data-action="selectTab" data-builder-tab="setup" aria-selected="{{tabs.setup}}">1. Setup</button>
-    <button type="button" role="tab" data-action="selectTab" data-builder-tab="stock" aria-selected="{{tabs.stock}}">2. Stock</button>
-    <button type="button" role="tab" data-action="selectTab" data-builder-tab="cash" aria-selected="{{tabs.cash}}">3. Cash</button>
-    <button type="button" role="tab" data-action="selectTab" data-builder-tab="manage" aria-selected="{{tabs.manage}}">4. Manage</button>
+    <button type="button" role="tab" data-action="selectTab" data-builder-tab="identity" aria-selected="{{tabs.identity}}">2. Identity</button>
+    <button type="button" role="tab" data-action="selectTab" data-builder-tab="stock" aria-selected="{{tabs.stock}}">3. Stock</button>
+    <button type="button" role="tab" data-action="selectTab" data-builder-tab="services" aria-selected="{{tabs.services}}">4. Services</button>
+    <button type="button" role="tab" data-action="selectTab" data-builder-tab="cash" aria-selected="{{tabs.cash}}">5. Cash</button>
+    <button type="button" role="tab" data-action="selectTab" data-builder-tab="manage" aria-selected="{{tabs.manage}}">6. Manage</button>
   </nav>
   <p>Jump to any tab or use Back / Next. Settings remain manually editable; navigating never applies changes.</p>
   <section role="tabpanel" data-builder-panel="setup" {{#unless tabs.setup}}hidden{{/unless}}>
@@ -33,12 +35,43 @@
       <label>Merchant notes (GM only)<textarea data-config name="notes" maxlength="10000" rows="5">{{draft.notes}}</textarea></label>
       </details>
       <p data-estimate="dirty"></p>
-      <p>Save also adds eligible catalogue-default services. Existing service overrides and removals are preserved. Manage services in the Manage tab.</p>
+      <p>Save also adds eligible catalogue-default services. Existing service overrides and removals are preserved. Manage services in the Services tab.</p>
       <button type="button" data-action="save">Save / Convert NPC</button>
       <button type="button" data-action="reload">Reload NPC</button>
     </fieldset>
 
     <button type="button" data-action="generateNotes" {{#if busy}}disabled{{/if}}>Regenerate Notes</button>
+  </section>
+  <section role="tabpanel" data-builder-panel="identity" {{#unless tabs.identity}}hidden{{/unless}}>
+    <h3>Actor information — read only</h3>
+    <p>These values come directly from Foundry and D&amp;D5e. Edit the Actor to change them; this panel updates automatically.</p>
+    <img data-identity-portrait class="dt-merchant-portrait" src="{{nativeIdentity.portrait}}" alt="Actor portrait" width="72" height="72">
+    <dl class="dt-identity-native">
+      <dt>Name</dt><dd data-identity-read="name">{{nativeIdentity.name}}</dd>
+      <dt>Species / Race</dt><dd data-identity-read="species">{{nativeIdentity.species}}</dd>
+      <dt>Creature type</dt><dd data-identity-read="creature">{{nativeIdentity.creature}}</dd>
+      <dt>Class</dt><dd data-identity-read="classes">{{nativeIdentity.classes}}</dd>
+      <dt>Size</dt><dd data-identity-read="size">{{nativeIdentity.size}}</dd>
+      <dt>Alignment</dt><dd data-identity-read="alignment">{{nativeIdentity.alignment}}</dd>
+      <dt>Prototype token</dt><dd data-identity-read="prototypeToken">{{nativeIdentity.prototypeToken}}</dd>
+      <dt>Token image</dt><dd data-identity-read="tokenImage">{{nativeIdentity.tokenImage}}</dd>
+      <dt>Scene tokens</dt><dd data-identity-read="tokens">{{nativeIdentity.tokens}}</dd>
+      <dt>Biography summary</dt><dd data-identity-read="biography">{{nativeIdentity.biography}}</dd>
+      <dt>System Tags</dt><dd data-identity-read="systemTags"></dd>
+    </dl>
+    <fieldset {{#if generationBlocked}}disabled{{/if}}><legend>Merchant information — editable</legend>
+      <p>Save / Convert in Setup first. These fields describe the business; they do not rename the NPC or its tokens.</p>
+      <label>Business name <input data-merchant-identity="businessName" maxlength="160" value="{{identity.businessName}}"></label>
+      <label>Merchant title <input data-merchant-identity="merchantTitle" maxlength="160" value="{{identity.merchantTitle}}"></label>
+      <label>Merchant Tags (comma separated, GM only) <input data-merchant-identity="merchantTags" value="{{merchantTags}}" placeholder="rural, honest, local-produce"></label>
+      <label>Public description <textarea data-merchant-identity="publicDescription" maxlength="2000" rows="3">{{identity.publicDescription}}</textarea></label>
+      <label>Shop description <textarea data-merchant-identity="shopDescription" maxlength="2000" rows="3">{{identity.shopDescription}}</textarea></label>
+      <p>Descriptions, business name and title are player-visible. Tags are private metadata and have no automatic gameplay effect.</p>
+      <button type="button" data-action="saveIdentity">Save Merchant Identity</button>
+    </fieldset>
+  </section>
+  <section role="tabpanel" data-builder-panel="services" {{#unless tabs.services}}hidden{{/unless}}>
+    {{#if hasActor}}<fieldset {{#if generationBlocked}}disabled{{/if}}><legend>Services</legend>{{{servicesHTML}}}</fieldset>{{else}}<p>Select an NPC in Setup first.</p>{{/if}}
   </section>
   <section role="tabpanel" data-builder-panel="stock" {{#unless tabs.stock}}hidden{{/unless}}>
       <h3>Expected generation</h3>
@@ -75,7 +108,6 @@
         {{#if summary}}<dl class="dt-summary-card">{{#each summary.rows}}<div><dt>{{label}}</dt><dd>{{value}}</dd></div>{{/each}}</dl>{{else}}<p>Save / Convert to display merchant statistics. Existing inventory and currency will be preserved.</p>{{/if}}
       </details>
 
-    <button type="button" data-action="services" {{#if generationBlocked}}disabled{{/if}}>Service Categories / Offerings</button>
     <button type="button" data-action="empty" {{#if busy}}disabled{{/if}}>Empty Stock…</button>
     <button type="button" data-action="advanced">Advanced Trade Settings / Recovery</button>
     <details><summary>Reset NPC to a normal NPC</summary>

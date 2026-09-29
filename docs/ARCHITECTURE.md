@@ -1,5 +1,13 @@
 # Architecture and API
 
+## Native identity and business metadata (Sprint 11A)
+
+If Foundry or D&D5e already stores a value, reference it rather than duplicating it. `merchant/identity.js` is the native identity adapter and merchant-only payload validator. System Tags are transient read-only descriptors; Merchant Tags are private editable business metadata. Native document hooks repaint read-only Builder fields without replacing draft inputs. Public socket presentation explicitly projects only approved business text, portrait and availability. Historical receipts and recovery snapshots remain immutable evidence of past state.
+
+`scripts/services/panel.js` shares form state, filtering and administration between the top-level Builder Services tab and the retained standalone compatibility window. Service offerings store references/overrides only. Optional availability defaults to true, and checkout revalidates it. UI drafts are local; stale-write checks and existing administration locks protect mutations.
+
+See [complete field ownership and migration review](MERCHANT_IDENTITY.md) and [Builder workflow](BUILDER_GUIDE.md). No destructive native-data migration is needed.
+
 ## Merchant Builder (Sprint 9)
 
 `scripts/merchant/builder/` separates the ApplicationV2 panel (`app.js`), portable configuration and

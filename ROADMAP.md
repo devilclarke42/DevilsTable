@@ -1,5 +1,10 @@
 # Roadmap
 
+## Sprint 11A — Merchant Identity candidate
+
+Implemented in `0.3.0-alpha.9`: native-derived identity/System Tags, separate business metadata/Merchant Tags, dedicated Identity and Services tabs, service filters/availability and data ownership documentation. Live Foundry/Forge review remains pending. Full business profiles, disguises, faction/reputation systems and settlement generation remain future work; this sprint adds no new gameplay.
+
+
 ## Sprint 10B — Tavern Services candidate
 
 Implemented in `0.3.0-alpha.8`: twelve services, editable Tavern presets and data-driven default selection. Existing food/drink sources are active. Await live Foundry review; reservations, capacity scheduling and service automation remain future work.
