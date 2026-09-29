@@ -102,3 +102,7 @@
 .devils-table .dt-integrations { padding: 1rem; overflow-y: auto; min-height: 0; }
 .devils-table .dt-integrations fieldset > section, .devils-table [data-service-group] { width: 100%; }
 .devils-table .dt-services-manager textarea[name=roomDoors] { min-height: 5rem; font-family: inherit; }
+
+/* Review disclosures keep common approval controls compact and expanded content reachable. */
+.devils-table .dt-review { overflow-y: auto; }
+.devils-table .dt-review-pricing > .dt-shop-controls { margin-top: .5rem; }

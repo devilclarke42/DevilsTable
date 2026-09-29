@@ -2,7 +2,7 @@
 
 ## Current candidate — Optional Integrations
 
-**0.3.0-alpha.10** adds optional Lock & Key room keys and Calendaria accommodation bookings, a reusable Integration Manager, ordered service actions and integration settings. Neither module is required: ordinary services and payments work independently.
+**0.3.0-alpha.11** keeps checkout compact with collapsed pricing controls and breakdowns. Alpha.10 added optional Lock & Key room keys and Calendaria accommodation bookings, a reusable Integration Manager, ordered service actions and integration settings. Neither module is required: ordinary services and payments work independently.
 
 Configure accommodation from Merchant Builder → Services, then use **Manage Integrations / Room Bookings** in settings for module preferences and checkout/key recovery. See the [Integrations guide](docs/INTEGRATIONS.md) and [developer contract](docs/INTEGRATION_DEVELOPERS.md). Calendar notes record the stay; room capacity and reservation conflicts are not simulated.
 

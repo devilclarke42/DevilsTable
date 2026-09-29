@@ -1,8 +1,12 @@
 # Project state
 
-Updated 2026-09-29 for `0.3.0-alpha.10`.
+Updated 2026-09-29 for `0.3.0-alpha.11`.
 
-## Current candidate — alpha.10 / Sprint 10C
+## Current candidate — alpha.11 / Checkout layout refinement
+
+Pricing modifiers and breakdowns are collapsed by default in GM checkout; line percentage controls have their own disclosure. Basket quantities, prices, final total and approval/rejection remain visible. No pricing or transaction logic changed. Existing integration acceptance remains pending. Automated regression checks are run during packaging.
+
+## Previous candidate — alpha.10 / Sprint 10C
 
 Optional integration framework and accommodation adapters are implemented. Services remain usable without either module. Lock & Key grants unique rental access across configured doors; Calendaria creates private check-in/out notes. Bookings survive receipt retention and allow timed/manual key revocation. Native payments still occur once. The Shop icon aligns with its catalogue label and the title uses token/business names.
 

@@ -8,6 +8,15 @@ This is the official milestone/release changelog. The root [build changelog](../
 retains detailed alpha implementation history. A milestone entry does not assert that a public
 GitHub Release or installation manifest exists. No release dates are invented for unreleased work.
 
+## 0.3.0-alpha.11 — 2026-09-29 — Compact checkout review
+
+### Changed
+
+- Collapsed shop, character, negotiation and checkout modifiers plus the pricing breakdown under “Pricing modifiers and breakdown”.
+- Per-line percentage controls now expand under “Adjust this line’s price”.
+- Basket quantities, quoted prices, final total, Recalculate and approval controls remain visible. Expanded review content scrolls normally.
+- Pricing calculations, revised-offer acceptance and transaction behaviour are unchanged.
+
 ## 0.3.0-alpha.10 — 2026-09-29 — Optional Integration Framework
 
 ### Added

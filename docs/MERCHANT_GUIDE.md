@@ -190,3 +190,7 @@ Use the dedicated Identity tab to inspect native Actor fields and System Tags. O
 ## Optional room integrations (alpha.10)
 
 Builder → Services → Service actions and accommodation now configures room names, Wall UUIDs, key names, expiry and duration. Enable Lock & Key keys and/or Calendaria bookings when available, then Save Service Offerings. Unavailable enhancements are skipped; payment and history remain normal. Settings → Manage Integrations / Room Bookings provides independent toggles and explicit checkout/key recovery. Calendar notes do not reserve room capacity. See [Integrations](INTEGRATIONS.md) for the complete workflow and live checks.
+
+## Compact GM checkout (alpha.11)
+
+The basket and final total remain visible. Expand **Pricing modifiers and breakdown** for shop-wide, character, negotiation, checkout and stacking controls, saved modifiers and detailed totals. Expand **Adjust this line’s price** for a line percentage. Quantity edits remain on the basket. Use **Recalculate offer** after changes; revised terms still require player acceptance. Collapsing a section preserves its values.

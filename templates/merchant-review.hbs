@@ -32,6 +32,15 @@
     <strong>Player:</strong> {{claimedUser}}</p>
   <p class="dt-warning">{{note}}</p>
   <p>Relationship: <strong>{{relationship}}</strong></p>
+  <h3>Basket</h3>
+  {{#each basket}}<div data-trade-line data-id="{{id}}" data-direction="{{direction}}">
+    <strong>{{direction}}: {{kindLabel}}: {{name}}</strong> (Original {{originalLabel}} → <span data-adjusted>{{priceLabel}}</span> each)
+    <p>On approval: {{executionLabel}}</p>{{#if saleUnit}}<p>Per {{saleUnit}} · {{duration}}</p>{{/if}}
+    <label>Quantity <input name="quantity" type="number" min="0" step="1" value="{{quantity}}"></label>
+    <details><summary>Adjust this line’s price</summary><label>Line modifier % <input name="percent" type="number" min="-100" max="500" step="0.01" value="{{percent}}"></label></details>
+  </div>{{/each}}
+  <button type="button" data-action="recalculate">Recalculate offer</button>
+  <details class="dt-review-pricing"><summary>Pricing modifiers and breakdown</summary>
   <div class="dt-shop-controls">
     <label>Shop-wide % <input name="merchantModifier" type="number" min="-100" max="500" step="0.01" value="{{pricing.merchant}}"></label>
     <label>Character % <input name="characterModifier" type="number" min="-100" max="500" step="0.01" value="{{pricing.character}}"></label>
@@ -42,17 +51,10 @@
   <p>Negative values discount; positive values add markup. Shop, character and negotiation modifiers apply to purchases; checkout and line modifiers also affect sale offers.</p>
   <button type="button" data-action="saveModifiers">Save shop and character modifiers</button>
   <p>Saving affects future quotes. Negotiation and checkout overrides here apply to this checkout only.</p>
-  <h3>Basket</h3>
-  {{#each basket}}<div data-trade-line data-id="{{id}}" data-direction="{{direction}}">
-    <strong>{{direction}}: {{kindLabel}}: {{name}}</strong> (Original {{originalLabel}} → <span data-adjusted>{{priceLabel}}</span> each)
-    <p>On approval: {{executionLabel}}</p>{{#if saleUnit}}<p>Per {{saleUnit}} · {{duration}}</p>{{/if}}
-    <label>Quantity <input name="quantity" type="number" min="0" step="1" value="{{quantity}}"></label>
-    <label>Line modifier % <input name="percent" type="number" min="-100" max="500" step="0.01" value="{{percent}}"></label>
-  </div>{{/each}}
-  <button type="button" data-action="recalculate">Recalculate offer</button>
   <p>Final purchase modifier: <strong data-preview="modifier">{{finalModifier}}</strong></p>
   <p>Original net subtotal: <span data-preview="original">{{originalLabel}}</span> · Discount / markup: <span data-preview="adjustment">{{adjustmentLabel}}</span></p>
   <p>Purchase savings: <span data-preview="discount">{{discountLabel}}</span></p>
+  </details>
   <details><summary>Private merchant memory</summary><p>Lifetime spend: {{memory.spendLabel}} · Lifetime purchase savings: {{memory.discountLabel}}</p>
     <p>Negotiations: {{memory.successfulNegotiations}} successful / {{memory.failedNegotiations}} failed. Hidden successful thefts: {{memory.successfulThefts}} · Caught stealing: {{memory.caughtStealing}}</p></details>
   <p><strong data-preview="total">{{totalLabel}}</strong></p>
