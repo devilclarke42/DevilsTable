@@ -15,6 +15,7 @@ export class MerchantReviewApplication extends HandlebarsApplicationMixin(Applic
   constructor(data, options = {}) {
     super(options); this.#data = data;
     this.#edits = data.proposal ? { pricing: { ...data.proposal.pricing },
+      ...(data.proposal.basket.some(r=>r.accommodation)?{checkoutTime:data.proposal.basket.find(r=>r.accommodation).checkoutTime}:{}),
       lines: data.proposal.basket.map(({ id, direction, quantity }) => ({ id, direction, quantity, percent: 0 })) } : null;
   }
 
@@ -49,6 +50,7 @@ export class MerchantReviewApplication extends HandlebarsApplicationMixin(Applic
     return { ...await super._prepareContext(options), merchant: this.#data.actor.name,
       character: this.#data.character.name, claimedUser: this.#data.user.name,
       relationship: memory.state ?? "Unknown", memory,
+      accommodation: this.#data.proposal.basket.find(r=>r.accommodation),
       pricing: this.#data.proposal.pricing, compound: this.#data.proposal.pricing?.stacking === "compound",
       finalModifier: percentLabel(this.#data.proposal.finalModifier ?? 0),
       originalLabel: `${(this.#data.proposal.originalTotal ?? this.#data.proposal.total) < 0 ? "Character receives " : "Character pays "}${formatCopper(Math.abs(this.#data.proposal.originalTotal ?? this.#data.proposal.total))}`,
@@ -96,7 +98,8 @@ export class MerchantReviewApplication extends HandlebarsApplicationMixin(Applic
       pricing[key] = percent(number(this.element.querySelector(`[name=${key}Modifier]`), `${key} modifier`));
     }
     pricing.stacking = this.element.querySelector("[name=stacking]").value;
-    return { lines, pricing };
+    const roomTime = this.element.querySelector("[name=checkoutTime]");
+    return { lines, pricing, ...(this.#data.proposal.basket.some(r=>r.accommodation)?{checkoutTime:roomTime?.value??""}:{}) };
   }
   _onRender(context, options) {
     super._onRender?.(context, options);
@@ -163,9 +166,10 @@ export class MerchantReviewApplication extends HandlebarsApplicationMixin(Applic
     try {
       const edits = this.#readEdits();
       const proposal = quoteTrade(this.#data.actor, this.#data.character, this.#data.request, edits);
+      if (!proposal.basket.some(r=>r.accommodation)) delete edits.checkoutTime;
       this.#edits = edits;
       this.#data.proposal = proposal;
-      this.#offerMessage = "Waiting for the player to confirm any changed prices or quantities…";
+      this.#offerMessage = "Waiting for the player to confirm any changed checkout terms…";
       await this.render();
       if (!await this.#data.onRecalculate(proposal)) {
         declined = true;

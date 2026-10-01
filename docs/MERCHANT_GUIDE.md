@@ -194,3 +194,11 @@ Builder → Services → Service actions and accommodation now configures room n
 ## Compact GM checkout (alpha.11)
 
 The basket and final total remain visible. Expand **Pricing modifiers and breakdown** for shop-wide, character, negotiation, checkout and stacking controls, saved modifiers and detailed totals. Expand **Adjust this line’s price** for a line percentage. Quantity edits remain on the basket. Use **Recalculate offer** after changes; revised terms still require player acceptance. Collapsing a section preserves its values.
+
+## Accommodation checkout time
+
+In **Merchant Builder → Setup**, set **Accommodation checkout time** using HH:mm (default **10:00**, or 10 am), then save configuration. This is specific to the merchant and is included in saved templates. Older templates and merchants default to 10:00.
+
+For a rental purchase, GM Review shows the booked nights and an editable checkout time. An override applies to every accommodation line in that purchase, without changing the merchant default. Recalculate asks the player to accept changed terms before approval. One night ends on the next calendar date at that time; weekly lodging covers seven nights. Existing bookings are not rescheduled.
+
+With configured integrations, the same endpoint drives calendar notes and Expire on Checkout keys. An active GM processes expiry when world time advances; no player morning-checkout button is required. Persistent and Manual Recovery key policies remain unchanged. Without integrations, the room terms are still displayed and recorded, with no automated room or key management.

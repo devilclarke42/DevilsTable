@@ -1,10 +1,12 @@
 # Project state
 
-Updated 2026-09-29 for `0.3.0-alpha.11`.
+Updated 2026-10-01 for `0.3.0-alpha.12`.
 
-## Current candidate — alpha.11 / Checkout layout refinement
+## Current candidate — alpha.12 / Accommodation checkout times
 
-Pricing modifiers and breakdowns are collapsed by default in GM checkout; line percentage controls have their own disclosure. Basket quantities, prices, final total and approval/rejection remain visible. No pricing or transaction logic changed. Existing integration acceptance remains pending. Automated regression checks are run during packaging.
+Room checkout defaults to 10:00; Builder Setup stores a merchant default and GM Review permits a purchase-only override with player reconfirmation. New booking endpoints use calendar nights and native clock components; previous bookings are preserved. Weekly lodging has seven-night metadata.
+
+Pricing modifiers and breakdowns are collapsed by default in GM checkout; line percentage controls have their own disclosure. Basket quantities, prices, final total and approval/rejection remain visible. The payment and transfer engine is unchanged. Existing integration acceptance remains pending. Automated regression checks are run during packaging.
 
 ## Previous candidate — alpha.10 / Sprint 10C
 

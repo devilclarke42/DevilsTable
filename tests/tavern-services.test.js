@@ -57,3 +57,11 @@ test("service catalogue stays out of Item builds; active Tavern food and drink p
  assert.equal(context.catalogue.entries.length,296);assert.equal(context.catalogue.entries.filter(e=>e.item.id.startsWith("DT_ITEM_TAV_")).length,152);
  assert.equal(context.catalogue.entries.some(e=>e.item.id.startsWith("DT_SERVICE_")),false);
 });
+
+test("accommodation definitions distinguish nightly and weekly terms without integrations",async()=>{
+ const {m,pc}=world();await configure(m,"town-inn");
+ const rooms=serviceOffers(m,pc).filter(row=>row.accommodation);
+ assert.ok(rooms.length>0);
+ for(const row of rooms){assert.equal(row.checkoutTime,"10:00");assert.equal(row.nights,row.serviceId==="DT_SERVICE_TAV_WEEKLY_LODGING"?7:1);}
+ const copy=structuredClone(data);copy.services[0].nights=0;assert.throws(()=>new ServiceRegistry().register(copy),/nights/);
+});

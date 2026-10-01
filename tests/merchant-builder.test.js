@@ -23,7 +23,7 @@ const draft=()=>structuredClone(builtins[0].settings);
 const nativeSnapshot=a=>structuredClone({system:a.system,img:a.img,ownership:a.ownership,prototypeToken:a.prototypeToken,items:[...a.items].map(i=>i.toObject())});
 
 test("all built-in presets validate and contain only portable editable configuration",()=>{
- assert.equal(builtins.length,8);for(const r of builtins)assert.deepEqual(validateTemplate(r,context).settings,r.settings);
+ assert.equal(builtins.length,8);for(const r of builtins)assert.deepEqual(validateTemplate(r,context).settings,{...r.settings,checkoutTime:"10:00"});
  assert.throws(()=>validateTemplate({...builtins[0],settings:{...draft(),inventory:[]}},context),/Unknown/);
  assert.throws(()=>validateTemplate({...builtins[0],actorId:"secret"},context),/Invalid/);
 });
@@ -96,4 +96,14 @@ test("custom templates use a private pack, round-trip editable settings and excl
  game.packs.set(pack.collection,pack);CONFIG.JournalEntry={documentClass:{createDocuments:async rows=>{docs.push(...structuredClone(rows));return rows.map(r=>({getFlag:()=>r.flags["devils-table"].merchantTemplate}));}}};
  const saved=await saveTemplate("My trader",draft(),context);const loaded=await customTemplates();assert.deepEqual(loaded,[saved]);loaded[0].settings.notes="edited";assert.notEqual(saved.settings.notes,"edited");
  await assert.rejects(saveTemplate("My trader",draft(),context),/already/);pack.testUserPermission=()=>true;await assert.rejects(customTemplates(),/GM-only/);game.user.isGM=false;await assert.rejects(saveTemplate("No",draft(),context),/active GM/);
+});
+
+test("merchant checkout defaults remain compatible with old templates and save independently",async()=>{
+ const a=world();
+ assert.equal(readConfiguration(a,context).checkoutTime,"10:00");
+ assert.equal(validateConfiguration(draft(),context).checkoutTime,"10:00");
+ await saveConfiguration(a,{...draft(),checkoutTime:"11:30"},context,configurationSnapshot(a));
+ assert.equal(readConfiguration(a,context).checkoutTime,"11:30");
+ assert.equal(validateTemplate({...builtins[0],settings:{...draft(),checkoutTime:"12:00"}},context).settings.checkoutTime,"12:00");
+ assert.throws(()=>validateConfiguration({...draft(),checkoutTime:"24:00"},context),/outside/);
 });

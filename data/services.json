@@ -80,7 +80,8 @@
         "shared",
         "overnight"
       ],
-      "accommodation": true
+      "accommodation": true,
+      "nights": 1
     },
     {
       "id": "DT_SERVICE_TAV_PRIVATE_ROOM",
@@ -131,7 +132,8 @@
         "private",
         "overnight"
       ],
-      "accommodation": true
+      "accommodation": true,
+      "nights": 1
     },
     {
       "id": "DT_SERVICE_TAV_LUXURY_ROOM",
@@ -183,7 +185,8 @@
         "luxury",
         "private"
       ],
-      "accommodation": true
+      "accommodation": true,
+      "nights": 1
     },
     {
       "id": "DT_SERVICE_TAV_MEAL_DAY",
@@ -609,7 +612,8 @@
         "weekly",
         "private"
       ],
-      "accommodation": true
+      "accommodation": true,
+      "nights": 7
     }
   ]
 }

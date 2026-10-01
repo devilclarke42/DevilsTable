@@ -6,7 +6,7 @@ const types={macro:"Macro",journal:"JournalEntry",rollTable:"RollTable",activeEf
 export async function prepareServiceExecution(quote){
   const jobs=[];
   for(const row of quote.basket.filter(r=>r.kind==="service")) {
-    const base={serviceId:row.serviceId,name:row.name,quantity:row.quantity};
+    const base={serviceId:row.serviceId,name:row.name,quantity:row.quantity,...(row.accommodation?{checkoutTime:row.checkoutTime}: {})};
     for(const [kind,uuid] of Object.entries(row.execution??{})){
       const doc=await fromUuid(uuid);
       if(!doc||doc.documentName!==types[kind])throw Error(`${row.name}: missing or incorrect ${kind} document.`);

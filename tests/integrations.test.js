@@ -3,7 +3,7 @@ import assert from "node:assert/strict";
 import { setup,Actor,Item,ledger } from "./support/trade-world.js";
 import { IntegrationManager,integrationManager } from "../scripts/integrations/manager.js";
 import { registerBuiltInIntegrations,checkoutBooking,expireBookings } from "../scripts/integrations/lifecycle.js";
-import { bookingData,bookings } from "../scripts/integrations/bookings.js";
+import { bookingData,bookings,ensureBooking } from "../scripts/integrations/bookings.js";
 import { validateRoom } from "../scripts/integrations/room.js";
 import { validateActions } from "../scripts/services/actions.js";
 import { prepareServiceExecution,executeServiceJobs } from "../scripts/services/execution.js";
@@ -17,7 +17,7 @@ const room=()=>({name:"Willow Room",keyName:"",doors:["Scene.inn.Wall.first","Sc
 async function world({enabled=true}={}) {
  setup();let sequence=0;const documents=new Map(),warnings=[],notes=[];
  globalThis.ui={notifications:{warn:msg=>warnings.push(msg),error:msg=>warnings.push(msg)}};
- game.modules=new Map();game.journal=[];game.time={worldTime:100,calendar:{days:{hoursPerDay:10,minutesPerHour:2,secondsPerMinute:30}}};
+ game.modules=new Map();game.journal=[];game.time={worldTime:100,components:{hour:1,minute:1,second:10},calendar:{days:{hoursPerDay:10,minutesPerHour:2,secondsPerMinute:30}}};
  const settings={integrations:{},serviceDefinitions:{categories:[{id:"room",name:"Rooms",catalogues:["integration-test"]}],services:[{id:"DT_SERVICE_TEST_ROOM",name:"Room rental",description:"Three nights.",icon,category:"room",catalogues:["integration-test"],price:{value:2,denomination:"sp"},tags:["room"],maxQuantity:3,accommodation:true}]}};
  game.settings.get=(_ns,key)=>settings[key]??(key==="debugLogging"?false:"unlimited");game.settings.set=async(_ns,key,value)=>settings[key]=value;
  const doc=(uuid,extra={})=>({uuid,...extra,flags:extra.flags??{},getFlag(n,k){return this.flags[n]?.[k];},async setFlag(n,k,v){(this.flags[n]??={})[k]=structuredClone(v);return this;},async delete(){documents.delete(uuid);}});
@@ -28,6 +28,7 @@ async function world({enabled=true}={}) {
  globalThis.JournalEntry={create:async data=>{assert.equal(data.ownership.default,0);const journal=doc(`JournalEntry.booking${++sequence}`,data);game.journal.push(journal);documents.set(journal.uuid,journal);return journal;}};
  globalThis.fromUuid=async uuid=>documents.get(uuid);
  const merchant=new Actor("merchant"),character=new Actor("pc",100);merchant.uuid="Actor.merchant";character.uuid="Actor.pc";game.actors=[merchant,character];
+ await merchant.setFlag(ns,"merchant.settings.checkoutTime","09:00");
  await merchant.setFlag(ns,"merchant.catalogueId","integration-test");await merchant.setFlag(ns,"merchant.services",{DT_SERVICE_TEST_ROOM:{enabled:true,room:room()}});
  character.createEmbeddedDocuments=async(type,rows)=>rows.map(data=>{const id=`item${++sequence}`,item=doc(`Actor.pc.Item.${id}`,{...data,id,documentName:type});item.delete=async()=>{documents.delete(item.uuid);character.items.delete(id);};documents.set(item.uuid,item);character.items.set(id,item);return item;});
  const request={id:"room-request",userId:"player",lines:[{id:"service:DT_SERVICE_TEST_ROOM",quantity:1}],sales:[]};
@@ -52,12 +53,12 @@ test("paid rental grants one multi-door key and two private calendar notes exact
  const w=await world(),log=ledger();
  const record=await executeTrade({...w,quote:quoteTrade(w.merchant,w.character,w.request),receiptAdapter:log});
  assert.ok(record.serviceExecution.every(j=>j.status==="completed"));assert.equal(w.character.items.size,1);assert.equal(w.notes.length,2);
- const journal=bookings()[0],data=bookingData(journal);assert.equal(data.end,1900);assert.equal(data.start,100);
+ const journal=bookings()[0],data=bookingData(journal);assert.equal(data.end,2340);assert.equal(data.start,100);
  const key=await fromUuid(data.key.itemUuid);assert.equal(key.name,"Willow Room Key");
  for(const uuid of room().doors){const ids=w.documents.get(uuid).getFlag("LocknKey","IDKeysFlag");assert.ok(ids.includes("existing-access"));assert.ok(ids.includes(data.key.code));}
- assert.ok(w.notes.every(n=>n.visibility==="secret"&&n.openSheet===false));assert.equal(w.notes[1].startDate.hour,31);
+ assert.ok(w.notes.every(n=>n.visibility==="secret"&&n.openSheet===false));assert.equal(w.notes[1].startDate.hour,39);
  await executeServiceJobs(record,{uuid:"Receipt.1"},w.character,w.merchant,log.save.bind(log));assert.equal(w.notes.length,2);assert.equal(w.character.items.size,1);assert.equal(w.character.system.currency.cp,80);
- game.time.worldTime=1900;await expireBookings();assert.equal(bookingData(journal).state,"closed");assert.equal(w.character.items.size,0);
+ game.time.worldTime=2340;await expireBookings();assert.equal(bookingData(journal).state,"closed");assert.equal(w.character.items.size,0);
  for(const uuid of room().doors)assert.equal(w.documents.get(uuid).getFlag("LocknKey","IDKeysFlag"),"existing-access");
 });
 test("persistent keys survive checkout; manual recovery waits for explicit GM action",async()=>{
@@ -108,4 +109,23 @@ test("native grant action preserves Item data, grants the purchased quantity and
  const jobs=await prepareServiceExecution({basket:[{kind:"service",serviceId:"test",name:"Entry",quantity:2,actions:[{kind:"grantItem",uuid:"Item.token"}]}]});
  const record={serviceExecution:jobs.map(j=>({...j,status:"pending"}))};await executeServiceJobs(record,{},w.character,w.merchant,async()=>{});
  const [item]=[...w.character.items];assert.equal(item.system.quantity,2);assert.equal(item.system.container,null);assert.equal(item.flags.custom.purpose,"entry");assert.equal(record.serviceExecution[0].status,"completed");
+});
+
+test("GM checkout override is confirmed in public terms, used by both adapters and frozen for existing bookings",async()=>{
+ const w=await world();
+ const {offerTerms}=await import("../scripts/merchant/revised-offer.js");
+ const original=quoteTrade(w.merchant,w.character,w.request);
+ const revised=quoteTrade(w.merchant,w.character,w.request,{checkoutTime:"08:01"});
+ assert.notDeepEqual(offerTerms(original),offerTerms(revised));
+ assert.equal(offerTerms(revised).basket[0].checkoutTime,"08:01");
+ assert.equal(JSON.stringify(offerTerms(revised)).includes("Scene.inn"),false);
+ const record=await executeTrade({...w,quote:revised,receiptAdapter:ledger()});
+ const journal=bookings()[0],before=bookingData(journal);
+ assert.equal(before.end,2310);assert.equal(before.checkoutTime,"08:01");
+ assert.equal(w.merchant.getFlag(ns,"merchant.settings.checkoutTime"),"09:00");
+ await w.merchant.setFlag(ns,"merchant.settings.checkoutTime","07:00");
+ game.time.worldTime=200;
+ assert.equal(await ensureBooking({record,receipt:{uuid:"Receipt.1"},job:record.serviceExecution[0],...w}),journal);
+ assert.deepEqual(bookingData(journal),before);
+ assert.throws(()=>quoteTrade(w.merchant,w.character,w.request,{checkoutTime:"10:00"}),/outside/);
 });

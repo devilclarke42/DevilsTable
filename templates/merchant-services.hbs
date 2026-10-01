@@ -29,10 +29,10 @@
         <label>Key name override <input name="keyName" maxlength="160" value="{{room.keyName}}"></label>
         <label>Expiry behaviour <select name="roomExpiry">{{#each expiryChoices}}<option value="{{id}}" {{#if selected}}selected{{/if}}>{{name}}</option>{{/each}}</select></label>
         <label>Duration preset <select name="roomDuration"><option value="">Custom / current</option><option value="1">One night</option><option value="3">Three nights</option><option value="7">One week (7 days)</option></select></label>
-        <label>Duration in calendar days <input name="roomDays" type="number" min="1" max="365" step="1" value="{{room.days}}"></label>
+        <label>Number of nights <input name="roomDays" type="number" min="1" max="365" step="1" value="{{room.days}}"></label>
         <label><input type="checkbox" name="roomKey" {{#if room.key}}checked{{/if}} {{#unless keyIntegration.available}}disabled{{/unless}}>Generate Lock &amp; Key key</label><p>{{keyIntegration.reason}}</p>
         <label><input type="checkbox" name="roomCalendar" {{#if room.calendar}}checked{{/if}} {{#unless calendarIntegration.available}}disabled{{/unless}}>Create Calendaria booking</label><p>{{calendarIntegration.reason}}</p>
-        <p>One key/booking per purchased service line. Quantity does not multiply the duration or reserve extra rooms. Set the service's base price for the configured duration. Times begin at approval. No automatic capacity management.</p>
+        <p>One key/booking per purchased service line. Quantity does not multiply the duration or reserve extra rooms. Set the service's base price for the configured duration. Arrival is at approval; checkout uses the merchant’s clock time (default 10:00), with a GM override during checkout. No automatic capacity management.</p>
         {{/if}}
       </details>
       <p>Purchased: {{purchased}} · Revenue: {{revenue}} · Last purchase: {{last}} · Popularity: {{popularity}}</p>

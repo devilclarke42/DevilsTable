@@ -1,3 +1,4 @@
+import { validateCheckoutTime } from "../services/checkout-time.js";
 import { serviceOffers } from "../services/offers.js";
 import { MODULE_ID } from "../constants.js";
 import { coinValue, publicOffers, sanitizeBasket } from "./model.js";
@@ -27,7 +28,7 @@ export function quoteTrade(merchant, character, request, edits = null, { settlem
   const offers = [...publicOffers(merchant), ...serviceOffers(merchant, character)];
   const purchases = request.lines?.length ? sanitizeBasket(request.lines, offers).basket.map(row => {
     const offer=offers.find(o=>o.id===row.id);
-    return offer.kind === "service" ? {...row, kind:"service", serviceId:offer.serviceId, serviceModifier:offer.serviceModifier, execution:offer.execution, actions:offer.actions, saleUnit:offer.saleUnit, duration:offer.duration} : row;
+    return offer.kind === "service" ? {...row, kind:"service", serviceId:offer.serviceId, serviceModifier:offer.serviceModifier, execution:offer.execution, actions:offer.actions, saleUnit:offer.saleUnit, duration:offer.duration, ...(offer.accommodation ? {accommodation:true,nights:offer.nights,checkoutTime:validateCheckoutTime(edits?.checkoutTime??offer.checkoutTime)} : {})} : row;
   }) : [];
   const sales = request.sales?.length ? sanitizeBasket(request.sales, saleOffers(character, 1)).basket : [];
   if (!purchases.length && !sales.length) throw Error("The basket is empty.");

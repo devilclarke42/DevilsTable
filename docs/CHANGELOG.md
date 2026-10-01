@@ -8,6 +8,20 @@ This is the official milestone/release changelog. The root [build changelog](../
 retains detailed alpha implementation history. A milestone entry does not assert that a public
 GitHub Release or installation manifest exists. No release dates are invented for unreleased work.
 
+## 0.3.0-alpha.12 — 2026-10-01 — Accommodation checkout times
+
+### Added
+
+- Per-merchant accommodation checkout time in Builder Setup, defaulting to 10:00, including portable custom templates.
+- GM purchase-only checkout-time override, with player reconfirmation when rental terms change.
+- Public room checkout terms and retained receipt details; explicit one-night and seven-night service metadata.
+
+### Changed
+
+- New room bookings end at the configured clock time after the booked number of nights, rather than a full-day interval from approval. Both key expiry and Calendaria use that endpoint.
+- Existing booking endpoints remain unchanged. Custom calendars use native clock components and validate clock bounds.
+- Room booking administration calculates remaining days using the calendar day length.
+
 ## 0.3.0-alpha.11 — 2026-09-29 — Compact checkout review
 
 ### Changed

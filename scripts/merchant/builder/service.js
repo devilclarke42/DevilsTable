@@ -20,7 +20,7 @@ export async function saveConfiguration(actor, draft, context, expected) {
     await actor.update({
       [`flags.${MODULE_ID}.merchant.catalogueId`]:config.catalogueId,
       [`flags.${MODULE_ID}.merchant.economy`]:{settlement:config.settlement,prosperity:config.prosperity,profile:config.profile},
-      [`flags.${MODULE_ID}.merchant.settings`]:{...old.settings,walletMode:config.infiniteFunds?"infinite":"finite",infiniteStock:config.infiniteStock,merchantModifier:config.pricingModifier},
+      [`flags.${MODULE_ID}.merchant.settings`]:{...old.settings,walletMode:config.infiniteFunds?"infinite":"finite",infiniteStock:config.infiniteStock,merchantModifier:config.pricingModifier,checkoutTime:config.checkoutTime},
       [`flags.${MODULE_ID}.merchant.relationshipDefaults`]:{...old.relationshipDefaults,state:config.relationshipState,pricingModifier:config.relationshipModifier},
       [`flags.${MODULE_ID}.merchant.restock`]:{...old.restock,profileId:config.restockProfile},
       [`flags.${MODULE_ID}.merchant.builder`]:{...old.builder,schemaVersion:1,stockProfileId:config.stockProfileId},

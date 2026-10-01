@@ -72,7 +72,7 @@ Set `accommodation: true` on a service definition to expose room configuration. 
 }
 ```
 
-The merchant offer stores this as `room`; definitions remain reusable. `expiry` is `persistent`, `checkout` or `manual`. Door UUIDs are unique and bounded to 30. The schema accepts 1–365 integral days. The service price covers that configured duration; there is no implicit multiplier. Capability and mappings are data, not a Tavern-specific code branch.
+The merchant offer stores this as `room`; definitions remain reusable. `expiry` is `persistent`, `checkout` or `manual`. Door UUIDs are unique and bounded to 30. The schema accepts 1–365 integral nights (the compatibility field remains `days`). The service price covers that configured duration; there is no implicit multiplier. Capability and mappings are data, not a Tavern-specific code branch.
 
 Enabled room choices compile into ordered `locknkey/room-key` and `calendaria/room-booking` actions after authored actions. All integrations still dispatch through the manager. Other providers may define different actions without changing Merchant Services.
 
@@ -101,3 +101,11 @@ The manager serializes adapter handlers across merchants on the active GM to avo
 | `services/execution.js` | Native fulfilment and manager dispatch with durable attempt markers |
 
 See [Integrations](INTEGRATIONS.md) for configuration, expiry semantics and the live compatibility checklist.
+
+## Accommodation clock contract
+
+`merchant.settings.checkoutTime` holds a merchant-owned HH:mm default; absence means `10:00`. Service definitions may declare `nights` (integer 1–365, only with `accommodation: true`), defaulting to one. A configured room's `days` takes precedence. This is term metadata, not inventory or a calendar copy.
+
+Only trusted GM review edits can override `checkoutTime`. Public quote terms include nights and checkout time so revised-offer consent detects changes; private doors/actions remain excluded. Optional execution jobs carry the agreed time to `ensureBooking`. Existing bookings are returned untouched. New booking journals retain the agreed clock time and absolute endpoint for auditing and expiry.
+
+The helper uses native [GameTime components](https://foundryvtt.com/api/v14/classes/foundry.helpers.GameTime.html) and [CalendarData.timeToComponents](https://foundryvtt.com/api/v14/classes/foundry.data.CalendarData.html). One night means the next calendar date, not a 24-hour interval. Calendar notes and rental access share one persisted endpoint. Day, month and year boundaries are handled through the native timestamp and calendar day length; real-world timezones are not involved.

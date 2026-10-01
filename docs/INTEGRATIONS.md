@@ -66,7 +66,11 @@ Lock & Key's convenience creator and `linkKeyLock` do not return an awaitable re
 
 Revocation removes only the booking's unique door code, invalidating transferred or copied keys as well. It deletes the original key only when its rental marker still points to this booking. It never deletes unrelated Items or all keys matching a name. A missing original key does not prevent revoking the doors. Deleted doors are skipped because their access no longer exists.
 
-Expiry uses Foundry world time, not wall-clock time. The end is approval time plus configured days using the active native calendar's day length; without calendar day metadata, a day is 24 hours. Calendaria is not required for this native key expiry. Moving time backward never reopens a closed lease. An active GM processes overdue rentals on ready and world-time changes.
+Expiry uses Foundry world time, not wall-clock time. For new bookings, checkout defaults to **10:00**. Set each merchant's default in **Merchant Builder → Setup → Accommodation checkout time**, then save configuration. The GM Review window can override the time for that purchase only; Recalculate sends changed terms to the player for confirmation.
+
+A one-night arrival at 20:00 checks out on the following calendar date at 10:00. Three nights end three dates after arrival at the selected clock time. Even an arrival before 10:00 counts its first night on the arrival date. Quantity does not multiply nights. Weekly lodging defaults to seven nights; an explicit room configuration overrides that duration.
+
+The endpoint uses Foundry's native calendar clock components and day length. Enter HH:mm in the world's clock, not your real-world timezone. Nonstandard calendars require a time within their hour/minute bounds. Existing bookings keep their recorded endpoints when defaults change or the module upgrades. Calendaria is not required for this native key expiry. Moving time backward never reopens a closed lease. An active GM processes overdue rentals on ready and world-time changes.
 
 If Lock & Key is disabled when expiry occurs, the booking is marked `needs-attention`; access cannot safely be changed until the integration is available. Re-enable it and use **Check Out / Recover Key**. Manual retry of revocation is idempotent; grants, macros and note creation are not automatically retried.
 
