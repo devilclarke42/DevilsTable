@@ -59,7 +59,8 @@
       "travel"
     ],
     "shops": [
-      "general-store"
+      "general-store",
+      "tavern"
     ],
     "availability": "core",
     "source": {
@@ -168,7 +169,8 @@
       "bundle"
     ],
     "shops": [
-      "general-store"
+      "general-store",
+      "tavern"
     ],
     "availability": "core",
     "source": {
@@ -754,7 +756,8 @@
       "preserved"
     ],
     "shops": [
-      "general-store"
+      "general-store",
+      "tavern"
     ],
     "availability": "core",
     "source": {

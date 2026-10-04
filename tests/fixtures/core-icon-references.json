@@ -277,6 +277,14 @@
     {
       "icon": "icons/consumables/food/cheese-wedge-swiss-yellow.webp",
       "source": "https://github.com/foundryvtt/dnd5e/blob/ed87b71c1f6ab8b0aa6351cb6a3f7ba017aa0cb2/packs/_source/spells/6th-level/heroes-feast.yml"
+    },
+    {
+      "icon": "icons/sundries/gaming/playing-cards.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/tool/playing-cards-set.yml"
+    },
+    {
+      "icon": "icons/sundries/gaming/dice-runed-brown.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/json/icon-migration.json"
     }
   ]
 }

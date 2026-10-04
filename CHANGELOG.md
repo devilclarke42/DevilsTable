@@ -3,6 +3,28 @@
 This file retains detailed repository build history. The official milestone/release record is
 [docs/CHANGELOG.md](docs/CHANGELOG.md). Versions here do not imply a public GitHub Release exists.
 
+## 0.3.0-alpha.13 — 2026-10-04 — Tavern Completion
+
+### Added
+
+- Sixteen products: four soups, four fish servings, four imported drinks and four taproom supplies, all with reserved IDs, reviewed prices, purchase units and adjusted weights.
+- Tavern membership for six existing supplies: Travel Rations, Waterskin, Firewood, Bedroll, Mess Kit and Flint & Steel. No duplicated Items or changes to their mechanics, prices or weights.
+- Meeting Room Hire, Secure Storage, Courier Message and Package Holding, bringing services to sixteen.
+- Five additional stock variants and five additional Tavern presets, with distinct menus, prices, private optional stories, suggested greetings and trading notes.
+- Tavern Guide, complete service reference and alpha.12 upgrade regression coverage.
+- One original 256×256 WebP smoking-pipe icon using the existing module vector style; all other icons reused.
+
+### Changed
+
+- The Tavern has 205 products (168 Tavern-authored, 37 shared), nine presets and six stock profiles. Module totals: 312 Items, 16 services, 52 Stock tables; older identities remain reserved.
+- Shop descriptions expand on demand, category controls use a compact scrolling row, narrow windows retain inventory and basket panes, and Add controls have descriptive accessible labels.
+- New room configuration preselects available supported integrations while retaining existing opt-outs. Actual room names/doors still require GM configuration.
+- Specialist service eligibility omits default horse stabling and weekly lodging; profile changes remain editable in Builder.
+
+### Validation
+
+- All 376 automated tests pass, covering canonical data, upgrade/rebuild convergence, mixed trades, preset selection, integration absence and rental lifecycle. Live Foundry V14 / D&D5e 5.3.3 / Forge acceptance remains pending.
+
 ## 0.3.0-alpha.12 — 2026-10-01 — Accommodation checkout times
 
 ### Added

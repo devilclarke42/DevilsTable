@@ -26,7 +26,7 @@
   {
     "id": "tavern",
     "name": "Tavern",
-    "icon": "icons/svg/item-bag.svg",
+    "icon": "icons/consumables/drinks/alcohol-beer-stein-wooden-brown.webp",
     "sort": 10,
     "categories": [
       "ale",
@@ -54,7 +54,11 @@
       "fire-lighting",
       "household",
       "rope-climbing",
-      "travel"
+      "travel",
+      "imported-drinks",
+      "soups",
+      "fish",
+      "tavern-supplies"
     ],
     "fallbackCategory": {
       "id": "other",
@@ -67,7 +71,8 @@
         "tavern-food-service",
         "tavern-stable",
         "tavern-facilities",
-        "tavern-hospitality"
+        "tavern-hospitality",
+        "tavern-premium"
       ]
     }
   },

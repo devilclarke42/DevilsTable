@@ -1,33 +1,20 @@
 # Tavern Services
 
-Sprint 10B · `0.3.0-alpha.8` · 29 September 2026
+Sprint 11 — Tavern Completion · 0.3.0-alpha.13 · 3 October 2026
 
-## Philosophy
+## Service philosophy
 
-An inn sells hospitality as well as objects. Services pay for an agreed action or use of space;
-products represent servings or provisions that transfer into a character's inventory.
-Both use one basket, the same native currency settlement and the same GM approval window.
-There are no fake service Items and no additional compendium.
+The sixteen Tavern services sell hospitality, staff time and agreed use of space. They are data definitions, not Items. Products and services use one basket, one GM review and one native currency settlement. GM approval records payment, merchant memory, private history and service usage. The GM confirms capacity and narrates fulfilment except where an optional configured action supplies part of it.
 
-All twelve production services are record-only. Approval deducts payment, credits the merchant,
-updates character memory and service statistics, and saves a private receipt. The GM narrates
-fulfilment. No rest, healing, condition removal, calendar booking, room reservation, staff schedule,
-feed consumption or wardrobe transfer occurs automatically. Optional execution hooks remain available
-through the Services framework; none are attached to these definitions.
+Copper supports simple meals and short-term parcel holding; silver supports ordinary facilities and lodging; gold supports private hospitality and luxury accommodation. Recommended ranges are editorial guidance, not limits on GM pricing. All services use the existing shop, character, negotiation and review modifiers.
 
-## Catalogue and pricing
+## Complete catalogue
 
-Base prices favour copper for simple meals and feeding, silver for ordinary lodging and facilities,
-and gold for private hospitality or premium accommodation. These are original project prices, not
-mandatory 2014 lifestyle charges. Suggested ranges help the GM price local quality and scarcity;
-they are advisory, not random rolls or caps. Merchant, character, negotiation and review modifiers
-still apply, and may move a final price outside the recommended range.
-
-| Service | Base price | Recommended range | Purchase unit | Suggested duration |
+| Service | Base price | Recommended range | Sale unit | Duration |
 | --- | --- | --- | --- | --- |
-| Rent Common Room | 2 sp | 1 sp–4 sp | one person for one night | One night; departure after breakfast |
-| Rent Private Room | 6 sp | 4 sp–1 gp 5 sp | one room for up to two guests for one night | One night; departure after breakfast |
-| Rent Luxury Room | 3 gp | 2 gp–8 gp | one room for up to two guests for one night | One night; departure after breakfast |
+| Rent Common Room | 2 sp | 1 sp–4 sp | one person for one night | 1 night(s); checkout at merchant time (default 10:00), GM may override |
+| Rent Private Room | 6 sp | 4 sp–15 sp | one room for up to two guests for one night | 1 night(s); checkout at merchant time (default 10:00), GM may override |
+| Rent Luxury Room | 3 gp | 2 gp–8 gp | one room for up to two guests for one night | 1 night(s); checkout at merchant time (default 10:00), GM may override |
 | Meal of the Day | 8 cp | 5 cp–2 sp | one served meal for one diner | About 30 minutes during kitchen hours |
 | Breakfast | 5 cp | 3 cp–1 sp | one served breakfast for one diner | About 20 minutes in the morning |
 | Dinner Package | 3 sp | 2 sp–6 sp | one two-course dinner for one diner | About one hour during evening kitchen hours |
@@ -36,113 +23,40 @@ still apply, and may move a final price outside the recommended range.
 | Bath | 2 sp | 1 sp–5 sp | one bath for one person | About 30 minutes by arrangement |
 | Laundry | 1 sp | 5 cp–3 sp | one ordinary outfit washed and dried | Usually next day; weather may delay drying |
 | Private Dining Room | 2 gp | 1 gp–5 gp | one room for up to eight guests for one sitting | Up to three hours at an agreed time |
-| Long-Term Lodging | 3 gp 5 sp | 2 gp 5 sp–7 gp | one private room for up to two guests for seven nights | Seven consecutive nights; dates agreed with the GM |
+| Long-Term Lodging | 35 sp | 25 sp–7 gp | one private room for up to two guests for seven nights | 7 night(s); checkout at merchant time (default 10:00), GM may override |
+| Meeting Room Hire | 8 sp | 5 sp–2 gp | one room for up to eight people for two hours | Two hours at an agreed time |
+| Secure Storage | 3 sp | 1 sp–1 gp | one parcel up to 20 lb in the inn’s locked store for one day | Up to 24 hours; collection arranged with the keeper |
+| Courier Message | 2 sp | 1 sp–8 sp | one written message to one address within the settlement | One local delivery attempt during working hours |
+| Package Holding | 5 cp | 2 cp–2 sp | one labelled parcel up to 10 lb held behind the counter for one day | Until collection within 24 hours |
 
-Service quantity multiplies the stated purchase unit. Two Private Room units mean two room-nights,
-not two guests in a single room. Agree dates and occupants before approval. `maxQuantity` limits
-one checkout; it does not track beds, stalls or available bookings. The GM confirms actual capacity.
-Durations are descriptive and do not advance world time.
+## Inclusions and exclusions
 
-## Categories and inclusions
+Accommodation includes the stated sleeping space and bedding, not food or animal care. A weekly booking replaces seven nightly charges for the same room and dates. Common Room covers one guest; private and luxury rooms cover up to two guests unless the GM changes the agreement. Checkout defaults to 10:00 and remains configurable per merchant and per purchase.
 
-- **Accommodation:** shared sleeping space, private rooms, luxury rooms and seven-night lodging.
-  Room prices exclude meals and animal care. Weekly lodging must not also incur nightly room fees
-  for the same dates. Bedding belongs to the inn.
-- **Food Services:** Meal of the Day, Breakfast and Dinner Package are dine-in meals. They create
-  no inventory food and include only the food/water specified in their descriptions. Do not also
-  charge for the same included portions as products. Drinks beyond included water are separate.
-- **Stable:** Stable Horse includes shelter, bedding, water and ordinary care but **not feed**.
-  Feed Horse supplies one day's ordinary feeding on site; it is distinct from packaged Horse Feed
-  purchased as a carried Item. Staff does not insure animals or provide veterinary treatment.
-- **Facilities:** Bath provides one filling and temporary use of washing materials. Laundry covers
-  one ordinary outfit with next-day collection guidance, not armour, leather or repairs.
-- **Hospitality:** Private Dining Room hires a room and routine table service for up to eight guests
-  for one sitting. Food, drink and lodging remain separate.
+Meal of the Day, Breakfast and Dinner Package are flexible dine-in service options. Their descriptions state included portions. They create no food Items and must not be charged alongside the same included menu portions. Dinner Package is the evening meal package; no duplicate Evening Meal definition is needed.
 
-Descriptions explicitly identify inclusions and exclusions. These distinctions prevent accidental
-double charges while preserving the existing food/drink catalogue and its permanent IDs.
+Stable Horse includes shelter, bedding, water and ordinary care, but not feed. Feed Horse covers ordinary feeding on site, unlike carried Horse Feed. Baths provide temporary use of washing materials; laundry covers an ordinary outfit, not armour, leatherwork or repairs. Private Dining Room and Meeting Room Hire do not include an unlisted banquet.
 
-## Builder workflow
+Secure Storage covers one parcel up to 20 lb in a locked store for a day. Package Holding covers one parcel up to 10 lb behind the counter for a day without a locked-store promise. Neither provides insurance or automatic inventory transfer. Courier Message covers one local written message and one delivery attempt; dangerous routes, replies and travel outside the settlement require a separate agreement. No real message is sent by purchasing it.
 
-1. Update the module and restart Foundry. Rebuild the **Master Item Catalogue**, then rebuild Stock
-   RollTables. Existing Tavern source data is now active: 296 unique total Items, including the
-   unchanged 144 General Store records. The Tavern uses 152 authored menu Items plus 31 shared goods.
-   There are still 32 stock tables; services are not RollTable stock.
-2. Open Merchant Builder. Apply Roadside Tavern, Poor Hamlet Tavern, Town Inn or Luxury City Inn.
-   Templates remain editable; catalogue logic is not hard-coded in the UI.
-3. Review settlement, prosperity and economic profile, then **Save / Convert NPC**. Saving adds
-   eligible defaults from the catalogue's `metadata.defaultServiceCategories` using the existing
-   service availability rules. No inventory or currency is changed by this step.
-4. Generate and confirm Stock to add food/drinks, and generate/apply Cash as needed. Existing
-   inventory and cash remain subject to the usual preview and confirmation workflow.
-5. In **Services**, inspect durations, units and recommended price
-   ranges. Disable services the premises cannot provide, remove offers or set individual prices.
-6. Players refresh the Shop and combine Inventory and Services in one basket. The GM confirms
-   capacity, timing and inclusions before approval.
+## Builder and availability
 
-### Preset defaults
+Saving a Tavern configuration seeds eligible services once per service identity. It preserves explicit removals, disabled offers and price overrides. Newly eligible definitions can be added after a merchant upgrade. Services can be searched, grouped, enabled, disabled, repriced and marked temporarily unavailable in the top-level Services tab.
 
-| Preset | Settlement / prosperity / profile | Initially available services |
-| --- | --- | --- |
-| Poor Hamlet Tavern | Hamlet / Poor / Modest | 4: common sleeping space, Meal of the Day, Breakfast, Feed Horse |
-| Roadside Tavern | Village / Average / Standard | 9: common and private rooms, all three meals, both stable services, Bath and Laundry |
-| Town Inn | Town / Prosperous / Standard | 11: Roadside services plus weekly lodging and Private Dining Room |
-| Luxury City Inn | City / Luxury / Luxury | 11: private/luxury rooms, weekly lodging, all meals, stable services, facilities and private dining; no common sleeping room |
+Settlement, prosperity and business profile determine eligibility. Poor hamlets offer basic hospitality; prosperous settlements can offer private dining and secure storage; wealthy luxury profiles can offer luxury rooms. Specialist profiles do not include Stable Horse or Long-Term Lodging by default. Use a standard/luxury business profile for a specialist inn that also needs those offerings. Inspect Services after changing profiles; existing saved offers are preserved but ineligible services are not sold.
 
-These are data-based defaults, not a universal claim that every inn has these facilities. All three
-inputs matter: a wealthy modest tavern does not automatically become a luxury hotel. Urban luxury
-rooms require Town/City/Large City, Wealthy/Luxury prosperity and a Luxury profile. Private dining
-requires an urban settlement and Prosperous or better circumstances. See source availability arrays
-for the complete policy.
+The six curated Tavern stock profiles shape product generation independently of service definitions. The [Tavern Guide](TAVERN_GUIDE.md) lists preset service counts and explains each business style. Presets include private editable stories and suggested greetings, without campaign events or relationship changes.
 
-Existing taverns receive defaults on their next explicit Builder Save, not silently at world load.
-A per-catalogue record remembers which default identities have been considered. Repeated saves do
-not restore services the GM removed, re-enable disabled offers or overwrite price overrides.
-Upgrading settlement/prosperity/profile can add newly eligible defaults. Downgrading hides ineligible
-offers but preserves their configuration; changing back can make them visible again. To deliberately
-restore a removed default, offer it in Service Administration or regenerate its category.
+## Optional integrations
 
-Default seeding runs under the existing administration lock and is blocked by checkout/recovery.
-Offers are saved before the processed-ID marker so a failed marker write can be retried without
-duplicates. A partial failure is reported; reload the NPC before retrying. No existing history is reset.
+Room definitions declare accommodation and a suggested number of nights. Configured merchant-local rooms supply names, door references, duration and expiry policy. New room forms preselect compatible enabled Lock & Key and Calendaria integrations; the GM must supply actual room mappings and save. Existing explicit opt-outs remain respected.
 
-## Content and compatibility
+Approval creates the named key on the purchasing character when configured Lock & Key is available, and private check-in/checkout notes when configured Calendaria is available. Both use the same persisted booking endpoint. Missing, disabled or incompatible modules skip optional actions while the service purchase completes. Non-room services remain record-only unless the GM authors optional actions through the framework.
 
-`data/services.json` contains five categories and twelve permanent `DT_SERVICE_TAV_*` identities.
-Each includes a base price, `recommendedRange`, explicit `saleUnit`, descriptive `duration`, icon,
-requirements note, tags, catalogue assignment and availability. New metadata is optional for older
-third-party service definitions. Base prices must lie within their declared recommended ranges;
-manual merchant overrides are not constrained to those ranges.
+One configured room booking/key is created per purchased service line. Quantity does not reserve more rooms or multiply the duration. The GM confirms real capacity. Expire on Checkout uses native world time and an active GM; Persistent and Manual Recovery policies remain separate. Old bookings retain their endpoints. See [Integrations](INTEGRATIONS.md) for setup and recovery.
 
-The existing 19 Tavern product files were moved from the deferred source list to the active source
-list without changing their contents. The already-authored `DT_TABLE_TAV` profile now supplies its
-food/drink assortment. Product names, source IDs and generated document IDs remain stable. Repeated
-builds converge without duplicates. There is one shared Item compendium and no service compendium.
-All artwork is reused from existing reviewed core references; no new art assets were created.
+## Future expansion and validation
 
-## Future expansion
+Future room capacity, reservation conflict handling, automatic kitchen stock consumption, courier routes and insured custody require separately reviewed work. This catalogue makes no promise that those systems exist.
 
-Reservations, room capacity, date selection, stable occupants, special diets, laundry collection,
-long-stay agreements and service-specific fulfilment could be added as explicit modules later.
-Avoid hiding those systems in pricing descriptions or automatically consuming inventory now.
-The current optional Macro, JournalEntry, RollTable and ActiveEffect hooks remain available for
-campaign-specific behaviour under GM control. Their post-payment failure/non-replay rules remain
-those in [Merchant Services](MERCHANT_SERVICES.md).
-
-## Validation and live review
-
-Automated tests cover production field completeness, known icon references, price ranges, four
-preset selections, preserved manual edits/removals, prosperity upgrades and a mixed bread/ale/room
-transaction. Existing tests cover transaction rollback, service failure handling and multiplayer
-contention. The restored Item and RollTable builders are checked for identity preservation and
-repeat-build convergence.
-
-Live Foundry/Forge review is still required. Test an updated existing Tavern and a fresh NPC:
-verify each preset's services, generate food/drink stock, purchase a drink plus a room and a bath,
-reject a mixed basket, revise a service price with player consent, and confirm service purchases
-never create Items. Confirm product icons and descriptions on the target installation. Test simultaneous
-checkouts from separate player sessions. No live session was available during development.
-
-## Optional room integrations (alpha.10)
-
-Builder → Services → Service actions and accommodation now configures room names, Wall UUIDs, key names, expiry and duration. Enable Lock & Key keys and/or Calendaria bookings when available, then Save Service Offerings. Unavailable enhancements are skipped; payment and history remain normal. Settings → Manage Integrations / Room Bookings provides independent toggles and explicit checkout/key recovery. Calendar notes do not reserve room capacity. See [Integrations](INTEGRATIONS.md) for the complete workflow and live checks.
+Automated checks cover all service fields, ranges, icon references, eligibility, preservation of manual offers, statistics, mixed baskets and optional integration behaviour. Live Foundry and Forge acceptance remains necessary. No automated test is presented as a live screenshot or a substitute for checking installed external modules.

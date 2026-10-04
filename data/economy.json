@@ -132,6 +132,26 @@
     "DT_TABLE_GS_WAGON": {
       "settlement": "village",
       "profile": "modest"
+    },
+    "DT_TABLE_TAV_ROADSIDE": {
+      "settlement": "village",
+      "profile": "standard"
+    },
+    "DT_TABLE_TAV_DOCKSIDE": {
+      "settlement": "town",
+      "profile": "specialist"
+    },
+    "DT_TABLE_TAV_LUXURY": {
+      "settlement": "city",
+      "profile": "luxury"
+    },
+    "DT_TABLE_TAV_COACHING": {
+      "settlement": "town",
+      "profile": "standard"
+    },
+    "DT_TABLE_TAV_ROADHOUSE": {
+      "settlement": "hamlet",
+      "profile": "modest"
     }
   },
   "coinShares": {

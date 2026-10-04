@@ -20,15 +20,15 @@ catalogueRegistry.register({catalogues:context.catalogue.catalogueDefinitions,ca
 function world(){setup();game.settings.get=(_ns,key)=>key==="serviceDefinitions"?{categories:[],services:[]}:key==="debugLogging"?false:"unlimited";const m=new Actor("merchant"),pc=new Actor("pc",1000);game.actors=[m,pc];game.scenes=[];return {m,pc};}
 async function configure(m,id){await saveConfiguration(m,structuredClone(templates.find(r=>r.id===id).settings),context,configurationSnapshot(m));}
 const suffixes=(m,pc)=>serviceOffers(m,pc).map(r=>r.serviceId.replace("DT_SERVICE_TAV_","")).sort();
-test("twelve production services use known icons, complete ranges, durations and stable distinct IDs",async()=>{
- assert.equal(data.services.length,12);assert.equal(data.categories.length,5);
+test("sixteen production services use known icons, complete ranges, durations and stable distinct IDs",async()=>{
+ assert.equal(data.services.length,16);assert.equal(data.categories.length,6);
  const icons=new Set((await readJson("tests/fixtures/core-icon-references.json")).icons.map(r=>r.icon));
  for(const row of data.services){assert.match(row.id,/^DT_SERVICE_TAV_/);assert.ok(icons.has(row.icon));assert.ok(row.saleUnit&&row.duration);assert.ok(coinValue(row.recommendedRange.min)<=coinValue(row.price));assert.ok(coinValue(row.price)<=coinValue(row.recommendedRange.max));assert.deepEqual(row.execution,{});}
- assert.equal(new Set(data.services.map(r=>r.name)).size,12);
+ assert.equal(new Set(data.services.map(r=>r.name)).size,16);
  for(const bad of [{duration:""},{saleUnit:""},{recommendedRange:{min:{value:99,denomination:"gp"},max:{value:1,denomination:"cp"}}}]){const copy=structuredClone(data);Object.assign(copy.services[0],bad);assert.throws(()=>new ServiceRegistry().register(copy));}
 });
 test("Builder saves seed data-driven poor, roadside, town and luxury selections",async()=>{
- for(const [id,count] of [["poor-hamlet-tavern",4],["roadside-tavern",9],["town-inn",11],["luxury-city-inn",11]]){
+ for(const [id,count] of [["poor-hamlet-tavern",5],["roadside-tavern",12],["town-inn",15],["luxury-city-inn",15]]){
   const {m,pc}=world();await configure(m,id);const offers=suffixes(m,pc);assert.equal(offers.length,count,id);assert.ok(offers.includes("BREAKFAST")&&offers.includes("FEED_HORSE"));
   assert.equal(offers.includes("LUXURY_ROOM"),id==="luxury-city-inn");assert.equal(m.items.size,0);assert.equal(m.system.currency.cp,0);
  }
@@ -54,7 +54,7 @@ test("real Tavern bread, ale and lodging settle in one checkout without creating
  assert.equal(m.getFlag("devils-table","merchant.serviceStats.DT_SERVICE_TAV_PRIVATE_ROOM").purchased,1);
 });
 test("service catalogue stays out of Item builds; active Tavern food and drink preserve their identities",()=>{
- assert.equal(context.catalogue.entries.length,296);assert.equal(context.catalogue.entries.filter(e=>e.item.id.startsWith("DT_ITEM_TAV_")).length,152);
+ assert.equal(context.catalogue.entries.length,312);assert.equal(context.catalogue.entries.filter(e=>e.item.id.startsWith("DT_ITEM_TAV_")).length,168);
  assert.equal(context.catalogue.entries.some(e=>e.item.id.startsWith("DT_SERVICE_")),false);
 });
 

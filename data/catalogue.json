@@ -31,7 +31,11 @@
     "data/items/tavern/snacks.json",
     "data/items/tavern/travel-meals.json",
     "data/items/tavern/luxury-meals.json",
-    "data/items/tavern/animal-feed.json"
+    "data/items/tavern/animal-feed.json",
+    "data/items/tavern/imported-drinks.json",
+    "data/items/tavern/soups.json",
+    "data/items/tavern/fish.json",
+    "data/items/tavern/tavern-supplies.json"
   ],
   "shops": [
     "tavern",
@@ -76,7 +80,11 @@
     "snacks",
     "travel-meals",
     "luxury-meals",
-    "animal-feed"
+    "animal-feed",
+    "imported-drinks",
+    "soups",
+    "fish",
+    "tavern-supplies"
   ],
   "deferredFiles": []
 }

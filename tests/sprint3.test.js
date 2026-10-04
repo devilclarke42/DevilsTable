@@ -16,16 +16,17 @@ import { rollStockList } from "../scripts/stock/stock-roller.js";
 const production = () => loadStockCatalogue({ readJson });
 const general = data => data.stock.profiles.find(profile => profile.shop === "general-store");
 
-test("all 69 accepted source records survive unchanged except explicit Container sale units", async () => {
+test("all 69 accepted source records survive unchanged except explicit Container sale units and six Tavern memberships", async () => {
   const data = await production();
   const baseline = await readJson("tests/fixtures/general-store-alpha6-hashes.json");
   assert.equal(baseline.items.length, 69);
   for (const { id, sha256 } of baseline.items) {
     const item = structuredClone(data.entries.find(entry => entry.item.id === id).item);
     if (item.category === "containers") delete item.saleUnit;
+    if (["DT_ITEM_GS_WATERSKIN","DT_ITEM_GS_RATIONS_TRAVEL","DT_ITEM_GS_FIREWOOD","DT_ITEM_GS_BEDROLL","DT_ITEM_GS_MESS_KIT","DT_ITEM_GS_FLINT_STEEL"].includes(id)) item.shops = item.shops.filter(shop => shop !== "tavern");
     assert.equal(createHash("sha256").update(JSON.stringify(item)).digest("hex"), sha256, id);
   }
-  for (const [shop, count] of [["tavern", 31], ["alchemist", 6], ["blacksmith", 7], ["black-market", 4]]) {
+  for (const [shop, count] of [["tavern", 37], ["alchemist", 6], ["blacksmith", 7], ["black-market", 4]]) {
     assert.equal(data.entries.filter(({ item }) => item.id.startsWith("DT_ITEM_GS_") && item.shops.includes(shop)).length, count);
   }
 });
@@ -137,8 +138,8 @@ test("profile builds preserve existing sets and invalid profile scopes fail befo
   assert.deepEqual(state.writes, []);
   assert.equal((await build({ dryRun: false, shopId: "general-store", profileId: "DT_TABLE_GS_CITY" })).create, 4);
   assert.equal((await build({ dryRun: false, shopId: "general-store" })).create, 12);
-  assert.equal((await build({ dryRun: false })).create, 16);
-  assert.equal((await build({ dryRun: false })).unchanged, 32);
+  assert.equal((await build({ dryRun: false })).create, 36);
+  assert.equal((await build({ dryRun: false })).unchanged, 52);
 });
 
 test("variant category rolls use effective tiers for quantities without writing inventory", async () => {
@@ -179,7 +180,7 @@ async function alpha6Catalogue() {
   const data = await production();
   const ids = new Set((await readJson("tests/fixtures/general-store-alpha6-hashes.json")).items.map(item => item.id));
   data.entries = data.entries.filter(({ item }) => ids.has(item.id));
-  delete general(data).variants;
+  for (const profile of data.stock.profiles) delete profile.variants;
   general(data).categories = general(data).categories.filter(id => !["tools", "trade-goods"].includes(id));
   for (const definition of data.categoryDefinitions) {
     if (definition.id === "fire-lighting") definition.name = "Fire & Lighting";
@@ -188,18 +189,18 @@ async function alpha6Catalogue() {
   return data;
 }
 
-test("alpha.6 table upgrade retains all 20 identities and converges to 32 active tables", async () => {
+test("alpha.6 table upgrade retains all 20 identities and converges to 52 active tables", async () => {
   const data = await production();
   const existing = stockTableDocuments(await alpha6Catalogue());
   assert.equal(existing.length, 20);
   const { adapter, state } = fakeAdapter({ existing });
   const build = createStockTableBuilder({ load: () => data, adapter });
   const preview = await build();
-  assert.deepEqual([preview.create, preview.update, preview.unchanged], [12, 7, 13]);
+  assert.deepEqual([preview.create, preview.update, preview.unchanged], [32, 7, 13]);
   assert.deepEqual(state.writes, []);
   await build({ dryRun: false });
   assert.ok(existing.every(old => state.docs.some(doc => doc._id === old._id)));
-  assert.equal((await build({ dryRun: false })).unchanged, 32);
+  assert.equal((await build({ dryRun: false })).unchanged, 52);
 });
 
 test("historical category tables with older membership are protected during cleanup", async () => {

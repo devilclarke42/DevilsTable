@@ -106,3 +106,21 @@
 /* Review disclosures keep common approval controls compact and expanded content reachable. */
 .devils-table .dt-review { overflow-y: auto; }
 .devils-table .dt-review-pricing > .dt-shop-controls { margin-top: .5rem; }
+
+/* Menu polish: long prose is disclosed, category navigation cannot consume the stock pane. */
+.application.devils-table { max-width: calc(100vw - 1rem); }
+.devils-table .dt-shop { container-type: inline-size; }
+.devils-table .dt-shop-categories { flex-wrap: nowrap; overflow-x: auto; flex: 0 0 auto; padding: .3rem; }
+.devils-table .dt-shop-categories button { flex: 0 0 auto; width: auto; white-space: nowrap; }
+.devils-table .dt-offer-description p { white-space: pre-wrap; }
+.devils-table summary:focus-visible, .devils-table input:focus-visible, .devils-table select:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; }
+.devils-table .dt-shop-controls { flex: 0 0 auto; }
+.devils-table .dt-shop-controls > label { flex: 1; min-width: 8rem; }
+.devils-table .dt-shop-controls input { min-width: 0; width: 100%; }
+@container (max-width: 560px) {
+  .devils-table .dt-shop-grid { grid-template-columns: minmax(0, 1fr); grid-template-rows: minmax(8rem, 1fr) minmax(8rem, .8fr); gap: .5rem; }
+  .devils-table .dt-shop-basket { border-inline-start: 0; border-top: 1px solid var(--color-border-light-primary, #888); padding: .5rem 0 0; }
+  .devils-table .dt-shop-item { grid-template-columns: 2rem minmax(0, 1fr); }
+  .devils-table .dt-item-actions { grid-column: 2; display: flex; flex-wrap: wrap; }
+  .devils-table .dt-merchant-portrait { width: 48px; height: 48px; flex-basis: 48px; }
+}

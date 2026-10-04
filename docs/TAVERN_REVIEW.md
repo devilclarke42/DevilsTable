@@ -1,3 +1,5 @@
+> Current completion: see [Tavern Guide](TAVERN_GUIDE.md) for alpha.13 counts, presets and acceptance. The detailed alpha.1 inventory review below is retained as historical provenance.
+
 > Current status (alpha.8): the source catalogue described below is now active. No Item records
 > were rewritten during activation. See [Tavern Services](TAVERN_SERVICES.md) for current setup.
 

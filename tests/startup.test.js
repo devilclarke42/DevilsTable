@@ -91,7 +91,7 @@ test("startup registers a restricted V2 menu and a read-only-default API without
   assert.equal((await stockApp._prepareContext({})).tableCount, 16);
   assert.equal((await stockApp._prepareContext({})).rollBlocked, true);
   await StockApp.DEFAULT_OPTIONS.actions.selectShop.call(stockApp, null, { dataset: { shop: "" } });
-  assert.equal((await stockApp._prepareContext({})).tableCount, 32);
+  assert.equal((await stockApp._prepareContext({})).tableCount, 52);
   assert.equal((await stockApp._prepareContext({})).rollBlocked, true);
   await StockApp.DEFAULT_OPTIONS.actions.selectShop.call(stockApp, null, { dataset: { shop: "general-store" } });
   await StockApp.DEFAULT_OPTIONS.actions.selectCategory.call(stockApp, null, { dataset: { category: "travel" } });

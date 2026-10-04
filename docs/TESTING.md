@@ -183,3 +183,7 @@ The former Tavern upgrade tests explicitly load deferred sources to guard their 
 and data integrity. They do not add those Items to current builds. Native transaction, rollback and
 two/three/five-client simulations remain unchanged. No live Foundry or visual-layout success is
 claimed; follow [Project State](PROJECT_STATE.md) for owner review.
+
+## Tavern Completion acceptance
+
+Run `npm run package` for canonical data validation, JavaScript/import checks, tests and runtime ZIP verification. New regression coverage checks alpha.12 → alpha.13 creates/updates, repeated-build convergence, six distinct menu profiles, stories and search metadata. In live Foundry, build Items/tables, generate each preset, purchase a mixed product/service basket, check keyboard and narrow-window layout, then test configured room key/calendar expiry with the modules enabled and disabled. Capture screenshots from that live installation only; mocks are not live integration evidence.

@@ -272,3 +272,7 @@ All external module calls go through an Integration Manager and isolated adapter
 Room keys use unique per-rental door grants. Removing that grant revokes copies without deleting unrelated keys. Private booking journals survive receipt retention because an active access lease must outlive its receipt. Calendaria notes present the paid stay and reminders; they are not capacity reservations. World time, not real time, drives checkout. These boundaries keep the standalone merchant usable and avoid creating a second calendar or inventory system.
 
 Lock & Key's reviewed convenience methods launch unawaited writes. Its adapter alone uses the reviewed access-code schema with awaited native writes/read-back; core service logic contains no foreign flags. New adapters register actions without merchant-specific branches. See [integration source review](INTEGRATIONS.md).
+
+## Tavern showcase without new mechanics
+
+Reuse the shared Item catalogue and the four-table-per-stock-profile model. Six Tavern profiles use 24 tables rather than multiplying tables by category. Merchant stories reuse editable GM notes; no quest or rumour engine is introduced. A meal package is a service, while a specific carried serving is a product, preventing duplicate charges and inventory. Room mappings must be explicit even when integration modules are detected.

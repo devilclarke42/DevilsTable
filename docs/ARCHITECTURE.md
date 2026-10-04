@@ -294,3 +294,7 @@ Optional `saleUnit`, `duration` and `recommendedRange` fields extend definitions
 existing providers. Units/durations are included in service quote snapshots; suggested ranges are
 GM guidance, not price limits. Tavern products are activated through the existing JSON source index,
 with no separate Item storage or Tavern-specific UI branches.
+
+## Tavern Completion content layer
+
+Tavern completion adds canonical product JSON, existing stock-profile variants, service definitions and editable presets. Merchant stories are private notes, not a new document type. Optional room integrations still pass through the Integration Manager. The only runtime changes are presentation polish and available-integration defaults for newly configured rooms; payment and transfer mechanics are unchanged.

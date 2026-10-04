@@ -103,3 +103,7 @@ Before production use, test a backed-up Foundry V14 / D&D5e 5.3.3 world:
 5. Enable Calendaria with an active calendar. Verify check-in/out dates, GM-only notes, reminders and a custom-duration rental. Repeat with a nonstandard day length.
 6. Disable each integration independently. Confirm the other action still works. Simulate an invalid door and verify calendar action continuation and a private failure receipt.
 7. Refresh/reconnect GM and player clients. Confirm ordinary mixed product/service trading, the inline catalogue icon and `Token Name - Business Name` window title.
+
+## Tavern Completion defaults
+
+New room configuration forms preselect supported integrations that are installed, active, enabled in Devil’s Table and API-compatible. This is a draft convenience, not an automatic world mutation. The GM enters room names and door references, reviews the actions and saves. Existing room choices, including opt-outs, remain unchanged. All optional actions still run through the Integration Manager after approved payment. Secure Storage and Package Holding do not issue room keys or move Items; Courier Message does not send messages.

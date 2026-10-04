@@ -129,3 +129,18 @@ test("GM checkout override is confirmed in public terms, used by both adapters a
  assert.deepEqual(bookingData(journal),before);
  assert.throws(()=>quoteTrade(w.merchant,w.character,w.request,{checkoutTime:"10:00"}),/outside/);
 });
+
+test("new room configuration offers available integrations automatically and preserves explicit opt-outs",async()=>{
+ const w=await world();
+ const {ServicePanel}=await import('../scripts/services/panel.js');
+ w.merchant.flags[ns].merchant.services.DT_SERVICE_TEST_ROOM={enabled:true};
+ let row=new ServicePanel(w.merchant).context().groups.flatMap(g=>g.services)[0];
+ assert.equal(row.roomConfigured,false);assert.equal(row.room.key,true);assert.equal(row.room.calendar,true);
+ assert.equal(w.merchant.flags[ns].merchant.services.DT_SERVICE_TEST_ROOM.room,undefined);
+ w.merchant.flags[ns].merchant.services.DT_SERVICE_TEST_ROOM.room={...room(),key:false,calendar:false};
+ row=new ServicePanel(w.merchant).context().groups.flatMap(g=>g.services)[0];
+ assert.equal(row.room.key,false);assert.equal(row.room.calendar,false);
+ await world({enabled:false});w.merchant.flags[ns].merchant.services.DT_SERVICE_TEST_ROOM={enabled:true};
+ row=new ServicePanel(w.merchant).context().groups.flatMap(g=>g.services)[0];
+ assert.equal(row.room.key,false);assert.equal(row.room.calendar,false);
+});

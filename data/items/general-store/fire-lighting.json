@@ -515,7 +515,8 @@
     ],
     "shops": [
       "general-store",
-      "blacksmith"
+      "blacksmith",
+      "tavern"
     ],
     "availability": "core",
     "source": {
@@ -748,7 +749,8 @@
       "bulky"
     ],
     "shops": [
-      "general-store"
+      "general-store",
+      "tavern"
     ],
     "availability": "core",
     "source": {

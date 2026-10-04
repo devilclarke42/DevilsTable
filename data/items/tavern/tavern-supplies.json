@@ -1,0 +1,146 @@
+[
+  {
+    "id": "DT_ITEM_TAV_PIPE_TOBACCO",
+    "name": "Pipe Tobacco",
+    "description": "A small paper packet of dried, cut tobacco with a plain earthy scent. One purchase contains one ounce of tobacco; pipe and lighting materials are separate.",
+    "saleUnit": "One ounce of tobacco in paper",
+    "price": {
+      "value": 4,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 0.07,
+      "units": "lb",
+      "notes": "Adjusted complete sale-unit weight, including the wrapping or pouch where described; no contents beyond those explicitly listed."
+    },
+    "icon": "icons/containers/bags/pouch-rounded-leather-gold-tan.webp",
+    "category": "tavern-supplies",
+    "tags": [
+      "mundane",
+      "tobacco",
+      "smoking",
+      "packet"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "Original Tavern supply description, sale unit, project price and adjusted weight; 2014 mechanics baseline. See docs/TAVERN_GUIDE.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_CLAY_SMOKING_PIPE",
+    "name": "Clay Smoking Pipe",
+    "description": "An unglazed clay bowl and curved stem make a simple reusable smoking pipe. Sold empty; tobacco and a light are separate. The thin stem breaks easily under careless packing.",
+    "saleUnit": "One empty clay smoking pipe",
+    "price": {
+      "value": 8,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 0.15,
+      "units": "lb",
+      "notes": "Adjusted complete sale-unit weight, including the wrapping or pouch where described; no contents beyond those explicitly listed."
+    },
+    "icon": "modules/devils-table/assets/icons/smoking-pipe.webp",
+    "category": "tavern-supplies",
+    "tags": [
+      "mundane",
+      "clay",
+      "smoking",
+      "reusable"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "Original Tavern supply description, sale unit, project price and adjusted weight; 2014 mechanics baseline. See docs/TAVERN_GUIDE.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_PLAYING_CARDS",
+    "name": "Playing Cards",
+    "description": "A complete deck of stiff, painted cards, wrapped in a strip of cloth. Familiar suits make it suitable for several local games. The GM chooses the game and adjudicates any gaming-set proficiency; this mundane listing adds no automated checks.",
+    "saleUnit": "One complete deck in a cloth wrap",
+    "price": {
+      "value": 3,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 0.1,
+      "units": "lb",
+      "notes": "Adjusted complete sale-unit weight, including the wrapping or pouch where described; no contents beyond those explicitly listed."
+    },
+    "icon": "icons/sundries/gaming/playing-cards.webp",
+    "category": "tavern-supplies",
+    "tags": [
+      "mundane",
+      "gaming",
+      "cards",
+      "reusable"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "Original Tavern supply description, sale unit, project price and adjusted weight; 2014 mechanics baseline. See docs/TAVERN_GUIDE.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_BONE_DICE",
+    "name": "Bone Dice",
+    "description": "Five small six-sided bone dice are kept in a linen pouch. Their carved pips are darkened with soot; the set is ordinary and unweighted. The GM resolves gambling stakes and gaming-set proficiency separately.",
+    "saleUnit": "One set of five dice with a linen pouch",
+    "price": {
+      "value": 2,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 0.1,
+      "units": "lb",
+      "notes": "Adjusted complete sale-unit weight, including the wrapping or pouch where described; no contents beyond those explicitly listed."
+    },
+    "icon": "icons/sundries/gaming/dice-runed-brown.webp",
+    "category": "tavern-supplies",
+    "tags": [
+      "mundane",
+      "gaming",
+      "bone",
+      "reusable"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "Original Tavern supply description, sale unit, project price and adjusted weight; 2014 mechanics baseline. See docs/TAVERN_GUIDE.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  }
+]

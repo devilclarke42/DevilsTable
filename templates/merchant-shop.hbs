@@ -39,7 +39,7 @@
     <button type="button" data-action="refresh">Refresh stock</button>
   </div>
   <div class="dt-shop-categories" aria-label="Stock filters">
-    <button type="button" data-action="category" data-category="">All</button>
+    <button type="button" data-action="category" data-category="" aria-pressed="{{allCategories}}">All</button>
     {{#each categories}}<button type="button" data-action="category" data-category="{{id}}" aria-pressed="{{selected}}"><img class="dt-category-icon" src="{{icon}}" alt=""> {{name}}</button>{{/each}}
   </div>
   <nav class="dt-manager-tabs" aria-label="Shop offerings"><button type="button" data-action="view" data-view="inventory" aria-pressed="{{inventoryView}}">Inventory</button><button type="button" data-action="view" data-view="services" aria-pressed="{{servicesView}}">Services</button></nav>
@@ -48,14 +48,14 @@
     <section class="dt-shop-stock" aria-label="Available stock">
       {{#each items}}
         <article class="dt-shop-item" data-offer-id="{{id}}" {{#if hidden}}hidden{{/if}}>
-          <img src="{{img}}" alt="" loading="lazy"><div><h3>{{name}}</h3><p>{{description}}</p>
+          <img src="{{img}}" alt="" loading="lazy"><div><h3>{{name}}</h3><p>{{descriptionPreview}}</p>{{#if longDescription}}<details class="dt-offer-description"><summary>Full description of {{name}}</summary><p>{{description}}</p></details>{{/if}}
             {{#if accommodation}}<p>{{nights}} night(s) · Checkout {{checkoutTime}}</p>{{/if}}
             {{#if isService}}<p>Service · {{availability}} · {{duration}} · {{requirements}}</p>{{/if}}
             <p>{{priceLabel}} per {{saleUnit}} · {{#if isService}}{{quantity}} maximum per checkout; GM confirms capacity{{else}}{{#if unlimited}}Unlimited ({{quantity}} per checkout){{else}}{{quantity}} available{{/if}}{{/if}}</p></div>
-          <div class="dt-item-actions"><button type="button" data-action="add" data-id="{{id}}" {{#unless quantity}}disabled{{/unless}}>Add</button>
+          <div class="dt-item-actions"><button type="button" data-action="add" data-id="{{id}}" aria-label="Add one {{name}} to basket" {{#unless quantity}}disabled{{/unless}}>Add</button>
           {{#unless isService}}<button type="button" data-action="steal" data-id="{{id}}" {{#unless @root.canInteract}}disabled{{/unless}}>Attempt theft</button>{{/unless}}</div>
         </article>
-      {{/each}}<p data-no-matches {{#unless noMatches}}hidden{{/unless}}>No matching public offers.</p>
+      {{/each}}<p data-no-matches role="status" aria-live="polite" {{#unless noMatches}}hidden{{/unless}}>No matching public offers.</p>
     </section>
     <aside class="dt-shop-basket" aria-label="Your basket"><h3>Basket</h3>
       {{#each basket}}<p>{{#if isService}}Service: {{/if}}{{count}} × {{name}} — {{subtotalLabel}}

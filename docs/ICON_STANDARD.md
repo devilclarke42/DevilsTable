@@ -110,3 +110,7 @@ See [SPRINT_3_REVIEW.md](SPRINT_3_REVIEW.md) for subjects, reuse and provenance.
 
 Update the affected content review, [file inventory](FILE_MAP.md) and changelog when artwork changes.
 Shared icon replacement is a user-visible catalogue change even when no permanent Item ID changes.
+
+## Tavern Completion artwork
+
+The completion adds one original 256×256 WebP smoking-pipe icon, authored as a vector drawing in the existing muted module style. Its reproducible master and Inkscape/Pillow export are in `tools/render-tavern-icons.py`; only the WebP ships at runtime. This avoids depicting a smoking pipe as a musical flute. Cards and dice reference verified D&D5e 5.3.3 core paths; all food, drink and service icons reuse reviewed assets. The module now includes 13 authored WebP icons plus its legacy SVGs. Distribution licensing remains the existing release gate.

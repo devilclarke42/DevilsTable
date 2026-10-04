@@ -36,7 +36,7 @@ test("compact builds preserve old category tables until explicit cleanup; whole-
   const { catalogue, state, adapter, active } = await environment();
   const original = structuredClone(state.docs);
   const result = await createStockTableBuilder({ load: () => catalogue, adapter })({ dryRun: false });
-  assert.equal(result.unchanged, 32);
+  assert.equal(result.unchanged, 52);
   assert.equal(result.preserved, 100);
   assert.deepEqual(state.docs, original);
   assert.ok(active.every(table => table.flags["devils-table"].category === "all"));
@@ -62,7 +62,7 @@ test("shop/category cleanup affects only the reviewed four legacy tables", async
   const { execute, state } = await environment();
   const result = await execute({ shopId: "general-store", categoryId: "travel" });
   assert.equal(result.deleted, 4);
-  assert.equal(state.docs.length, 128);
+  assert.equal(state.docs.length, 148);
 });
 
 test("edited results, folders and foreign flags protect tables and their linked category sets", async () => {
@@ -121,13 +121,13 @@ test("partial deletion relocks and requires a new preview to converge", async ()
   const { state, execute, preview } = await environment();
   state.deleteLimit = 40;
   await assert.rejects(execute(), /partial/);
-  assert.equal(state.docs.length, 92);
+  assert.equal(state.docs.length, 112);
   assert.equal(state.pack.locked, true);
   assert.equal(state.cleanup[0].deleted, 40);
   assert.equal((await preview()).removable.length, 60);
   delete state.deleteLimit;
   assert.equal((await execute()).deleted, 60);
-  assert.equal(state.docs.length, 32);
+  assert.equal(state.docs.length, 52);
 });
 
 test("originally unlocked packs stay unlocked and no-op cleanup performs no deletes", async () => {
@@ -144,7 +144,7 @@ test("read-back catches a hook reporting deletions without actually deleting", a
   const { adapter, state, execute } = await environment();
   adapter.deleteLegacy = async (_pack, ids) => ids.map(_id => ({ _id }));
   await assert.rejects(execute(), /read-back verification/);
-  assert.equal(state.docs.length, 132);
+  assert.equal(state.docs.length, 152);
   assert.equal(state.pack.locked, true);
 });
 

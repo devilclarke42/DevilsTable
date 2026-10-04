@@ -1,0 +1,178 @@
+[
+  {
+    "id": "DT_ITEM_TAV_GRILLED_SARDINES",
+    "name": "Grilled Sardines",
+    "description": "Three small sardines arrive blistered from the grill with salt and a wedge of sour fruit. Heads and bones are included in the serving; the flesh lifts away in narrow strips.\n\nSold as one plate of three small sardines. Price and weight cover the food only; serving ware stays with the inn. Unlisted sides and drinks are separate.",
+    "saleUnit": "One plate of three small sardines",
+    "price": {
+      "value": 8,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 0.5,
+      "units": "lb",
+      "notes": "Ready-to-eat portion, including bones or shells where stated for one complete sale unit; adjusted for Variant Encumbrance. The inn's serving vessel and cutlery are excluded."
+    },
+    "icon": "icons/consumables/food/dried-meat-jerky-fish-red.webp",
+    "category": "fish",
+    "tags": [
+      "mundane",
+      "consumable",
+      "food",
+      "fish",
+      "coastal",
+      "grilled"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "Original Tavern recipe, sale unit, project price and adjusted weight; 2014 mechanics baseline. See docs/TAVERN_GUIDE.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record serving consumed",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use after the whole sale unit is consumed; track partial use manually. No healing or status effects."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_MUSSELS_IN_CIDER",
+    "name": "Mussels in Cider",
+    "description": "Mussels are steamed in dry cider with chopped onion until the shells open. The cooking liquor stays in the serving bowl; bread for dipping is a separate order.\n\nSold as one 1 lb bowl of mussels with shells and broth. Price and weight cover the food only; serving ware stays with the inn. Unlisted sides and drinks are separate.",
+    "saleUnit": "One 1 lb bowl of mussels with shells and broth",
+    "price": {
+      "value": 2,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 1,
+      "units": "lb",
+      "notes": "Ready-to-eat portion, including bones or shells where stated for one complete sale unit; adjusted for Variant Encumbrance. The inn's serving vessel and cutlery are excluded."
+    },
+    "icon": "icons/consumables/food/bowl-stew-brown.webp",
+    "category": "fish",
+    "tags": [
+      "mundane",
+      "consumable",
+      "food",
+      "shellfish",
+      "coastal",
+      "cider"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "Original Tavern recipe, sale unit, project price and adjusted weight; 2014 mechanics baseline. See docs/TAVERN_GUIDE.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record serving consumed",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use after the whole sale unit is consumed; track partial use manually. No healing or status effects."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_BAKED_HADDOCK",
+    "name": "Baked Haddock",
+    "description": "A haddock fillet is baked beneath a thin crust of oats and mustard. The crust keeps the flesh moist without turning the serving into a full supper plate.\n\nSold as one 0.5 lb fish portion. Price and weight cover the food only; serving ware stays with the inn. Unlisted sides and drinks are separate.",
+    "saleUnit": "One 0.5 lb fish portion",
+    "price": {
+      "value": 2,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 0.5,
+      "units": "lb",
+      "notes": "Ready-to-eat portion, including bones or shells where stated for one complete sale unit; adjusted for Variant Encumbrance. The inn's serving vessel and cutlery are excluded."
+    },
+    "icon": "icons/consumables/food/dried-meat-jerky-fish-red.webp",
+    "category": "fish",
+    "tags": [
+      "mundane",
+      "consumable",
+      "food",
+      "fish",
+      "coastal",
+      "grain"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "Original Tavern recipe, sale unit, project price and adjusted weight; 2014 mechanics baseline. See docs/TAVERN_GUIDE.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record serving consumed",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use after the whole sale unit is consumed; track partial use manually. No healing or status effects."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_PICKLED_HERRING",
+    "name": "Pickled Herring",
+    "description": "A small dish of herring pieces comes with the onions from its vinegar jar. The sharp dressing suits a slice of dark bread, which is sold separately.\n\nSold as one quarter-pound portion of pickled fish. Price and weight cover the food only; serving ware stays with the inn. Unlisted sides and drinks are separate.",
+    "saleUnit": "One quarter-pound portion of pickled fish",
+    "price": {
+      "value": 7,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 0.25,
+      "units": "lb",
+      "notes": "Ready-to-eat portion, including bones or shells where stated for one complete sale unit; adjusted for Variant Encumbrance. The inn's serving vessel and cutlery are excluded."
+    },
+    "icon": "icons/consumables/food/dried-meat-jerky-fish-red.webp",
+    "category": "fish",
+    "tags": [
+      "mundane",
+      "consumable",
+      "food",
+      "fish",
+      "pickled",
+      "coastal"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "Original Tavern recipe, sale unit, project price and adjusted weight; 2014 mechanics baseline. See docs/TAVERN_GUIDE.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record serving consumed",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use after the whole sale unit is consumed; track partial use manually. No healing or status effects."
+      }
+    }
+  }
+]

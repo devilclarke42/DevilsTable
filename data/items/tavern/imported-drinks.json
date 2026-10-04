@@ -1,0 +1,178 @@
+[
+  {
+    "id": "DT_ITEM_TAV_SOUTHERN_DATE_WINE",
+    "name": "Southern Date Wine",
+    "description": "This deep brown wine carries the sweetness of dried dates and a dry finish. The inn buys it in sealed jars from warmer country and pours it in small measures.\n\nSold as one quarter-pint of date wine. Price and weight cover the drink only; the inn keeps its glass. Bring a suitable container for takeaway.",
+    "saleUnit": "One quarter-pint of date wine",
+    "price": {
+      "value": 4,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 0.25,
+      "units": "lb",
+      "notes": "Prepared drink contents for one complete sale unit; adjusted for Variant Encumbrance. The inn's serving vessel and cutlery are excluded."
+    },
+    "icon": "icons/consumables/drinks/wine-amphora-clay-red.webp",
+    "category": "imported-drinks",
+    "tags": [
+      "mundane",
+      "consumable",
+      "drink",
+      "wine",
+      "imported",
+      "fruit"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "special-order",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "Original Tavern recipe, sale unit, project price and adjusted weight; 2014 mechanics baseline. See docs/TAVERN_GUIDE.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record serving consumed",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use after the whole sale unit is consumed; track partial use manually. No healing or status effects."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_ISLAND_PALM_SPIRIT",
+    "name": "Island Palm Spirit",
+    "description": "A clear spirit distilled from fermented palm sap, with a grassy aroma and a sharp finish. A ship-borne cask makes it an occasional dockside offering.\n\nSold as one 1 fl oz measure of palm spirit. Price and weight cover the drink only; the inn keeps its glass. Bring a suitable container for takeaway.",
+    "saleUnit": "One 1 fl oz measure of palm spirit",
+    "price": {
+      "value": 5,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 0.06,
+      "units": "lb",
+      "notes": "Prepared drink contents for one complete sale unit; adjusted for Variant Encumbrance. The inn's serving vessel and cutlery are excluded."
+    },
+    "icon": "icons/consumables/drinks/wine-amphora-clay-red.webp",
+    "category": "imported-drinks",
+    "tags": [
+      "mundane",
+      "consumable",
+      "drink",
+      "spirit",
+      "imported",
+      "coastal"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "special-order",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "Original Tavern recipe, sale unit, project price and adjusted weight; 2014 mechanics baseline. See docs/TAVERN_GUIDE.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record serving consumed",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use after the whole sale unit is consumed; track partial use manually. No healing or status effects."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_RESINED_WHITE_WINE",
+    "name": "Resined White Wine",
+    "description": "A pale wine with a pine-like scent from its traditional resin treatment. The innkeeper warns first-time drinkers about the unusual taste before filling the measure.\n\nSold as one quarter-pint of resined wine. Price and weight cover the drink only; the inn keeps its glass. Bring a suitable container for takeaway.",
+    "saleUnit": "One quarter-pint of resined wine",
+    "price": {
+      "value": 2,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 0.25,
+      "units": "lb",
+      "notes": "Prepared drink contents for one complete sale unit; adjusted for Variant Encumbrance. The inn's serving vessel and cutlery are excluded."
+    },
+    "icon": "icons/consumables/drinks/wine-amphora-clay-red.webp",
+    "category": "imported-drinks",
+    "tags": [
+      "mundane",
+      "consumable",
+      "drink",
+      "wine",
+      "imported",
+      "resin"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "Original Tavern recipe, sale unit, project price and adjusted weight; 2014 mechanics baseline. See docs/TAVERN_GUIDE.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record serving consumed",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use after the whole sale unit is consumed; track partial use manually. No healing or status effects."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_SPICED_POMEGRANATE_DRINK",
+    "name": "Spiced Pomegranate Drink",
+    "description": "Imported pomegranate syrup is stirred into cool water with a trace of cinnamon. The result is tart and ruby-red, without alcohol.\n\nSold as one pint of prepared fruit drink. Price and weight cover the drink only; the inn keeps its glass. Bring a suitable container for takeaway.",
+    "saleUnit": "One pint of prepared fruit drink",
+    "price": {
+      "value": 2,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 1,
+      "units": "lb",
+      "notes": "Prepared drink contents for one complete sale unit; adjusted for Variant Encumbrance. The inn's serving vessel and cutlery are excluded."
+    },
+    "icon": "icons/consumables/drinks/wine-amphora-clay-red.webp",
+    "category": "imported-drinks",
+    "tags": [
+      "mundane",
+      "consumable",
+      "drink",
+      "non-alcoholic",
+      "imported",
+      "fruit"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "Original Tavern recipe, sale unit, project price and adjusted weight; 2014 mechanics baseline. See docs/TAVERN_GUIDE.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record serving consumed",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use after the whole sale unit is consumed; track partial use manually. No healing or status effects."
+      }
+    }
+  }
+]

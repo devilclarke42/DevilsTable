@@ -34,6 +34,13 @@
       "catalogues": [
         "tavern"
       ]
+    },
+    {
+      "id": "tavern-premium",
+      "name": "Premium Services",
+      "catalogues": [
+        "tavern"
+      ]
     }
   ],
   "services": [
@@ -61,7 +68,7 @@
         }
       },
       "saleUnit": "one person for one night",
-      "duration": "One night; departure after breakfast",
+      "duration": "1 night(s); checkout at merchant time (default 10:00), GM may override",
       "modifier": 0,
       "maxQuantity": 12,
       "availability": {
@@ -107,7 +114,7 @@
         }
       },
       "saleUnit": "one room for up to two guests for one night",
-      "duration": "One night; departure after breakfast",
+      "duration": "1 night(s); checkout at merchant time (default 10:00), GM may override",
       "modifier": 0,
       "maxQuantity": 6,
       "availability": {
@@ -159,7 +166,7 @@
         }
       },
       "saleUnit": "one room for up to two guests for one night",
-      "duration": "One night; departure after breakfast",
+      "duration": "1 night(s); checkout at merchant time (default 10:00), GM may override",
       "modifier": 0,
       "maxQuantity": 4,
       "availability": {
@@ -347,6 +354,11 @@
           "town",
           "city",
           "large-city"
+        ],
+        "profiles": [
+          "modest",
+          "standard",
+          "luxury"
         ]
       },
       "requirements": {
@@ -561,7 +573,7 @@
     {
       "id": "DT_SERVICE_TAV_WEEKLY_LODGING",
       "name": "Long-Term Lodging",
-      "description": "A seven-night booking of an ordinary private room for up to two guests, with fresh bedding once during the stay. Meals, baths, laundry and stable care remain separate. The GM confirms dates and room availability before approval. Do not also charge nightly private-room rental for the same nights. No calendar booking, tenancy rights or rest automation is created.",
+      "description": "A seven-night booking of an ordinary private room for up to two guests, with fresh bedding once during the stay. Meals, baths, laundry and stable care remain separate. The GM confirms dates and room availability before approval. Do not also charge nightly private-room rental for the same nights. Configured optional integrations can record the booking and issue a room key. No tenancy rights or rest automation is created.",
       "icon": "icons/sundries/survival/bedroll-grey.webp",
       "category": "tavern-accommodation",
       "catalogues": [
@@ -582,7 +594,7 @@
         }
       },
       "saleUnit": "one private room for up to two guests for seven nights",
-      "duration": "Seven consecutive nights; dates agreed with the GM",
+      "duration": "7 night(s); checkout at merchant time (default 10:00), GM may override",
       "modifier": 0,
       "maxQuantity": 1,
       "availability": {
@@ -599,7 +611,6 @@
         ],
         "profiles": [
           "standard",
-          "specialist",
           "luxury"
         ]
       },
@@ -614,6 +625,195 @@
       ],
       "accommodation": true,
       "nights": 7
+    },
+    {
+      "id": "DT_SERVICE_TAV_MEETING_ROOM",
+      "name": "Meeting Room Hire",
+      "description": "A quiet room with a table, chairs, ordinary lighting and a jug of drinking water for up to eight people. The innkeeper keeps routine interruptions away, but does not promise secrecy or soundproofing. Food, alcohol, guards and writing supplies are separate. The GM confirms the room and start time; no calendar reservation is created automatically.",
+      "icon": "icons/sundries/survival/bedroll-grey.webp",
+      "category": "tavern-hospitality",
+      "catalogues": [
+        "tavern"
+      ],
+      "price": {
+        "value": 8,
+        "denomination": "sp"
+      },
+      "recommendedRange": {
+        "min": {
+          "value": 5,
+          "denomination": "sp"
+        },
+        "max": {
+          "value": 2,
+          "denomination": "gp"
+        }
+      },
+      "saleUnit": "one room for up to eight people for two hours",
+      "duration": "Two hours at an agreed time",
+      "modifier": 0,
+      "maxQuantity": 1,
+      "availability": {
+        "settlements": [
+          "village",
+          "town",
+          "city",
+          "large-city"
+        ],
+        "prosperities": [
+          "average",
+          "prosperous",
+          "wealthy",
+          "luxury"
+        ]
+      },
+      "requirements": {
+        "note": "The GM confirms capacity, contents and timing before approving."
+      },
+      "execution": {},
+      "tags": [
+        "hospitality",
+        "meeting",
+        "room"
+      ]
+    },
+    {
+      "id": "DT_SERVICE_TAV_SECURE_STORAGE",
+      "name": "Secure Storage",
+      "description": "The keeper records one parcel up to 20 lb and places it in the inn’s locked store for a day. Contents and identifying marks are agreed before payment. This is ordinary custody, not magical protection or insurance. Character Items are not moved or removed automatically; the GM records the handover and return. No Lock & Key key is issued for this service.",
+      "icon": "icons/sundries/misc/lock-bronze-reinforced.webp",
+      "category": "tavern-premium",
+      "catalogues": [
+        "tavern"
+      ],
+      "price": {
+        "value": 3,
+        "denomination": "sp"
+      },
+      "recommendedRange": {
+        "min": {
+          "value": 1,
+          "denomination": "sp"
+        },
+        "max": {
+          "value": 1,
+          "denomination": "gp"
+        }
+      },
+      "saleUnit": "one parcel up to 20 lb in the inn’s locked store for one day",
+      "duration": "Up to 24 hours; collection arranged with the keeper",
+      "modifier": 0,
+      "maxQuantity": 10,
+      "availability": {
+        "settlements": [
+          "town",
+          "city",
+          "large-city"
+        ],
+        "prosperities": [
+          "prosperous",
+          "wealthy",
+          "luxury"
+        ]
+      },
+      "requirements": {
+        "note": "The GM confirms capacity, contents and timing before approving."
+      },
+      "execution": {},
+      "tags": [
+        "storage",
+        "custody",
+        "premium"
+      ]
+    },
+    {
+      "id": "DT_SERVICE_TAV_COURIER_MESSAGE",
+      "name": "Courier Message",
+      "description": "A runner takes one folded message to a named address within the current settlement and reports whether it was delivered. Paper and sealing wax for that message are included. The GM agrees the recipient and likely delivery time; dangerous routes, replies and travel outside the settlement cost extra only by agreement. No chat message, Journal or external message is sent automatically.",
+      "icon": "icons/sundries/scrolls/scroll-plain-tan.webp",
+      "category": "tavern-premium",
+      "catalogues": [
+        "tavern"
+      ],
+      "price": {
+        "value": 2,
+        "denomination": "sp"
+      },
+      "recommendedRange": {
+        "min": {
+          "value": 1,
+          "denomination": "sp"
+        },
+        "max": {
+          "value": 8,
+          "denomination": "sp"
+        }
+      },
+      "saleUnit": "one written message to one address within the settlement",
+      "duration": "One local delivery attempt during working hours",
+      "modifier": 0,
+      "maxQuantity": 10,
+      "availability": {
+        "settlements": [
+          "village",
+          "town",
+          "city",
+          "large-city"
+        ],
+        "prosperities": [
+          "average",
+          "prosperous",
+          "wealthy",
+          "luxury"
+        ]
+      },
+      "requirements": {
+        "note": "The GM confirms capacity, contents and timing before approving."
+      },
+      "execution": {},
+      "tags": [
+        "courier",
+        "message",
+        "local"
+      ]
+    },
+    {
+      "id": "DT_SERVICE_TAV_PACKAGE_HOLDING",
+      "name": "Package Holding",
+      "description": "One labelled parcel up to 10 lb is held behind the counter until its named recipient calls. This pays for ordinary short-term holding, not a locked store, delivery or insurance. The GM records who may collect it and handles any physical Item handover. Unclaimed parcels and extra days are settled by agreement, without automatic fees.",
+      "icon": "icons/containers/bags/pouch-rounded-leather-gold-tan.webp",
+      "category": "tavern-premium",
+      "catalogues": [
+        "tavern"
+      ],
+      "price": {
+        "value": 5,
+        "denomination": "cp"
+      },
+      "recommendedRange": {
+        "min": {
+          "value": 2,
+          "denomination": "cp"
+        },
+        "max": {
+          "value": 2,
+          "denomination": "sp"
+        }
+      },
+      "saleUnit": "one labelled parcel up to 10 lb held behind the counter for one day",
+      "duration": "Until collection within 24 hours",
+      "modifier": 0,
+      "maxQuantity": 10,
+      "availability": {},
+      "requirements": {
+        "note": "The GM confirms capacity, contents and timing before approving."
+      },
+      "execution": {},
+      "tags": [
+        "storage",
+        "parcel",
+        "local"
+      ]
     }
   ]
 }

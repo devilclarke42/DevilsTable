@@ -2,7 +2,7 @@
 
 ## Catalogue membership (Sprint 8)
 
-New merchant types must be defined in `data/catalogues.json`; category display metadata belongs in `data/categories.json`. Every category has `catalogue`, matching legacy `shop`, `id`, `name`, `icon`, `sort`, `visible`, `description` and `plannedItems`. Item `shops` tags are catalogue memberships, not separate copies of a product. Retain this compatibility field and all permanent IDs. Never duplicate an Item to place it in another catalogue. See the [complete definition and provider contract](CATALOGUE_FRAMEWORK.md). The earlier Tavern source below is deferred review material, not active Sprint 8 content.
+New merchant types must be defined in `data/catalogues.json`; category display metadata belongs in `data/categories.json`. Every category has `catalogue`, matching legacy `shop`, `id`, `name`, `icon`, `sort`, `visible`, `description` and `plannedItems`. Item `shops` tags are catalogue memberships, not separate copies of a product. Retain this compatibility field and all permanent IDs. Never duplicate an Item to place it in another catalogue. See the [complete definition and provider contract](CATALOGUE_FRAMEWORK.md). The Tavern is active; see [Tavern Guide](TAVERN_GUIDE.md) for current content and portions.
 
 **Status:** official standard for all future Devil's Table content.  
 **Target:** Foundry VTT V14, D&D5e 5.3.3, 2014 mechanics, adjusted pounds for Variant Encumbrance.
@@ -91,7 +91,7 @@ descriptions must be nonblank and at most 20,000 characters, though normal entri
 | `source` | Nonblank `title`, `reference` and `license` describing provenance honestly. |
 | `mechanics` | An explicitly supported D&D5e mapping, even for ordinary nonmagical goods. |
 
-Sprint 3 adds explicit `saleUnit` values to the original thirteen Containers. Those 144 records and the 152 Tavern additions
+Sprint 3 adds explicit `saleUnit` values to the original thirteen Containers. Those 144 records and the 168 Tavern-authored additions
 meet the same required-field schema; there is no legacy sale-unit exception.
 
 Price examples: `{ "value": 7, "denomination": "sp" }`. Weight examples:
@@ -123,7 +123,8 @@ Tavern adds Ale (`ale`), Beer (`beer`), Mead (`mead`), Wine (`wine`), Spirits (`
 Non-alcoholic Drinks (`non-alcoholic-drinks`), Hot Drinks (`hot-drinks`), Breakfast (`breakfast`),
 Lunch (`lunch`), Dinner (`dinner`), Stews (`stews`), Roasts (`roasts`), Bread (`bread`), Cheese
 (`cheese`), Desserts (`desserts`), Snacks (`snacks`), Travel Meals (`travel-meals`), Luxury Meals
-(`luxury-meals`) and Animal Feed (`animal-feed`). Its files live under `data/items/tavern/`.
+(`luxury-meals`), Animal Feed (`animal-feed`), Soups (`soups`), Fish (`fish`),
+Imported Drinks (`imported-drinks`) and Tavern Supplies (`tavern-supplies`). Its files live under `data/items/tavern/`.
 Shared General Store goods keep their original categories. Existing Horse Feed stays in Animal
 Supplies; the new Animal Feed category contains distinct supplemental products. See
 [Tavern portions and review](TAVERN_REVIEW.md) before authoring new food or drink.
@@ -193,3 +194,7 @@ never patch a generated compendium to make the validation report look clean.
 This document governs Items. Merchant services use `DT_SERVICE_` identities and the separate
 [Merchant Services contract](MERCHANT_SERVICES.md). Never create zero-weight or fake Items for
 services. Shared catalogue assignments do not place services in the Master Item Catalogue.
+
+## Tavern Completion categories
+
+Soups (`soups`), Fish (`fish`), Imported Drinks (`imported-drinks`) and Tavern Supplies (`tavern-supplies`) extend Tavern navigation through data definitions. Each Item still has one canonical category. Existing supper plates and Fish Chowder keep their identities and primary categories; shared rations and equipment retain their original IDs, price, weight and mechanics. New smoking/gaming supplies use the supported mundane loot mapping with manual use, not invented proficiency or intoxication automation.

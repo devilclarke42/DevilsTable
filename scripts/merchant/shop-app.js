@@ -119,7 +119,7 @@ export class MerchantShopApplication extends HandlebarsApplicationMixin(Applicat
       fundsError: this.#stockCharacterId !== pc?.actor.id ? "Refresh stock for the selected character’s prices." : total > funds ? "Not enough money for this basket." : "",
       merchant: this.#token.document.name ?? this.#merchant, portrait: this.#portrait, business: this.#business,
       availability: this.#availability.charAt(0).toUpperCase() + this.#availability.slice(1),
-      items: filtered.map(item => ({ ...item, hidden: !this.#matches(item), priceLabel: formatCopper(item.copper) })), basket, message: this.#message, query: this.#query,
+      items: filtered.map(item => ({ ...item, descriptionPreview: (item.description ?? "").length > 180 ? `${item.description.slice(0, 177).trimEnd()}…` : item.description, longDescription: (item.description ?? "").length > 180, hidden: !this.#matches(item), priceLabel: formatCopper(item.copper) })), basket, message: this.#message, query: this.#query, allCategories: !this.#category,
       categories: (this.#view === "services" ? [...new Map(this.#items.filter(r=>r.isService).map(r=>[r.category,{id:r.category,name:r.categoryName,icon:r.img}])).values()] : this.#categories).map(row => ({ ...row, selected: row.id === this.#category })),
       noMatches: !this.#items.some(item => this.#matches(item)),
       catalogue: this.#catalogue,
@@ -181,7 +181,7 @@ export class MerchantShopApplication extends HandlebarsApplicationMixin(Applicat
         this.#categories = msg.categories ?? [];
         this.#catalogue = msg.catalogue;
         this.#pricing = msg.pricing ?? {};
-        if (!this.#categories.some(row => row.id === this.#category)) this.#category = "";
+        if (!this.#items.some(row => row.category === this.#category)) this.#category = "";
         this.#buyModifier = msg.buyModifier ?? 1;
         this.#availability = msg.availability;
         for (const [id, quantity] of this.#basket) {

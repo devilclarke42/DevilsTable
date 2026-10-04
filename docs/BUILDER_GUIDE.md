@@ -50,3 +50,7 @@ In **Merchant Builder → Setup**, set **Accommodation checkout time** using HH:
 For a rental purchase, GM Review shows the booked nights and an editable checkout time. An override applies to every accommodation line in that purchase, without changing the merchant default. Recalculate asks the player to accept changed terms before approval. One night ends on the next calendar date at that time; weekly lodging covers seven nights. Existing bookings are not rescheduled.
 
 With configured integrations, the same endpoint drives calendar notes and Expire on Checkout keys. An active GM processes expiry when world time advances; no player morning-checkout button is required. Persistent and Manual Recovery key policies remain unchanged. Without integrations, the room terms are still displayed and recorded, with no automated room or key management.
+
+## Tavern presets and stories
+
+Apply a Tavern preset in Setup and save, then review Stock, Services and Cash. Nine Tavern presets cover Village Inn, Roadside Tavern, Dockside Tavern, Luxury Inn, Coaching Inn, Roadhouse, Noble Inn, Poor Hamlet Tavern and Town Inn. Optional stories, greetings and specialities are editable GM notes; they do not create campaign facts. Preset changes preserve existing inventory and manual service offers. See [Tavern Guide](TAVERN_GUIDE.md) for stock/service differences and room setup.

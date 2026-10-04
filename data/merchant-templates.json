@@ -28,15 +28,16 @@
       "settlement": "village",
       "prosperity": "average",
       "profile": "standard",
-      "stockProfileId": "",
+      "stockProfileId": "DT_TABLE_TAV_ROADSIDE",
       "availability": "open",
       "infiniteFunds": false,
       "infiniteStock": false,
-      "restockProfile": "manual",
+      "restockProfile": "daily",
       "pricingModifier": 0,
       "relationshipState": "Unknown",
       "relationshipModifier": 0,
-      "notes": "Offer food and drinks from the current menu. Confirm room and stall capacity, kitchen hours and laundry collection before approval. Stable Horse excludes feed. Meal services are served on site; do not charge again for included menu portions."
+      "notes": "Personality: Practical roadside innkeeper; checks boots and road conditions before asking for news.\nSuggested greeting: Food first, then tell me how the road is.\n\nSpecialities:\n- Pork Hand Pie\n- Bread and Cheese Bundle\n\nKnown For:\n- Fast hot meals\n- Packed lunches prepared early\n\nOptional Stories — edit or remove before play; these are suggestions, not established campaign facts:\n- A wagoner has asked to be woken before dawn.\n- A milestone was found in the ditch nearby.\n\nTrading notes:\n- Confirm rooms, stalls, kitchen hours and delivery arrangements before approval.\n- Stable Horse excludes feed. Meal services do not create additional food Items.\n- Do not charge for the same included food twice.\n- Daily restock is a preference, not an automated schedule.\n- Configure actual room names and doors before enabling optional room integrations.",
+      "checkoutTime": "10:00"
     }
   },
   {
@@ -108,15 +109,16 @@
       "settlement": "hamlet",
       "prosperity": "poor",
       "profile": "modest",
-      "stockProfileId": "",
+      "stockProfileId": "DT_TABLE_TAV_ROADHOUSE",
       "availability": "open",
       "infiniteFunds": false,
       "infiniteStock": false,
-      "restockProfile": "manual",
-      "pricingModifier": 0,
+      "restockProfile": "daily",
+      "pricingModifier": -5,
       "relationshipState": "Unknown",
       "relationshipModifier": 0,
-      "notes": "Offer food and drinks from the current menu. Confirm room and stall capacity, kitchen hours and laundry collection before approval. Stable Horse excludes feed. Meal services are served on site; do not charge again for included menu portions."
+      "notes": "Personality: Tired but welcoming keeper who works the kitchen alone.\nSuggested greeting: There is bread enough. Mind the loose stool.\n\nSpecialities:\n- Oat Porridge\n- Rye Bread\n\nKnown For:\n- No wasted food\n- Neighbours help with repairs\n\nOptional Stories — edit or remove before play; these are suggestions, not established campaign facts:\n- The roof repair fund is one silver short.\n- A regular’s dog refuses to leave the porch.\n\nTrading notes:\n- Confirm rooms, stalls, kitchen hours and delivery arrangements before approval.\n- Stable Horse excludes feed. Meal services do not create additional food Items.\n- Do not charge for the same included food twice.\n- Daily restock is a preference, not an automated schedule.\n- Configure actual room names and doors before enabling optional room integrations.",
+      "checkoutTime": "10:00"
     }
   },
   {
@@ -128,35 +130,142 @@
       "settlement": "town",
       "prosperity": "prosperous",
       "profile": "standard",
-      "stockProfileId": "",
+      "stockProfileId": "DT_TABLE_TAV",
       "availability": "open",
       "infiniteFunds": false,
       "infiniteStock": false,
-      "restockProfile": "manual",
-      "pricingModifier": 0,
+      "restockProfile": "daily",
+      "pricingModifier": 5,
       "relationshipState": "Unknown",
       "relationshipModifier": 0,
-      "notes": "Offer food and drinks from the current menu. Confirm room and stall capacity, kitchen hours and laundry collection before approval. Stable Horse excludes feed. Meal services are served on site; do not charge again for included menu portions."
+      "notes": "Personality: Sociable keeper who knows the market’s ordinary business.\nSuggested greeting: Staying the night, or just escaping the market noise?\n\nSpecialities:\n- Beef and Barley Stew\n- Apple Pie Slice\n\nKnown For:\n- A varied daily menu\n- Fair treatment of unfamiliar guests\n\nOptional Stories — edit or remove before play; these are suggestions, not established campaign facts:\n- The market bell rang at the wrong hour.\n- A trader left a list of unusual dinner requests.\n\nTrading notes:\n- Confirm rooms, stalls, kitchen hours and delivery arrangements before approval.\n- Stable Horse excludes feed. Meal services do not create additional food Items.\n- Do not charge for the same included food twice.\n- Daily restock is a preference, not an automated schedule.\n- Configure actual room names and doors before enabling optional room integrations.",
+      "checkoutTime": "10:00"
     }
   },
   {
     "schemaVersion": 1,
     "id": "luxury-city-inn",
-    "name": "Luxury City Inn",
+    "name": "Luxury Inn",
     "settings": {
       "catalogueId": "tavern",
       "settlement": "city",
       "prosperity": "luxury",
       "profile": "luxury",
-      "stockProfileId": "",
+      "stockProfileId": "DT_TABLE_TAV_LUXURY",
       "availability": "open",
       "infiniteFunds": false,
       "infiniteStock": false,
-      "restockProfile": "manual",
-      "pricingModifier": 0,
+      "restockProfile": "daily",
+      "pricingModifier": 25,
       "relationshipState": "Unknown",
       "relationshipModifier": 0,
-      "notes": "Offer food and drinks from the current menu. Confirm room and stall capacity, kitchen hours and laundry collection before approval. Stable Horse excludes feed. Meal services are served on site; do not charge again for included menu portions."
+      "notes": "Personality: Luxury hotel keeper; quietly attentive and careful about guest privacy.\nSuggested greeting: Welcome. Shall we prepare a table or show you a room?\n\nSpecialities:\n- Celebration Supper\n- Southern Date Wine\n\nKnown For:\n- Clean linen and quiet service\n- Carefully described courses\n\nOptional Stories — edit or remove before play; these are suggestions, not established campaign facts:\n- A guest keeps ordering dinner for an empty chair.\n- A musician has requested a room away from the stairs.\n\nTrading notes:\n- Confirm rooms, stalls, kitchen hours and delivery arrangements before approval.\n- Stable Horse excludes feed. Meal services do not create additional food Items.\n- Do not charge for the same included food twice.\n- Daily restock is a preference, not an automated schedule.\n- Configure actual room names and doors before enabling optional room integrations.",
+      "checkoutTime": "10:00"
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "id": "village-inn",
+    "name": "Village Inn",
+    "settings": {
+      "catalogueId": "tavern",
+      "settlement": "village",
+      "prosperity": "average",
+      "profile": "modest",
+      "stockProfileId": "DT_TABLE_TAV",
+      "availability": "open",
+      "infiniteFunds": false,
+      "infiniteStock": false,
+      "restockProfile": "daily",
+      "pricingModifier": -5,
+      "relationshipState": "Unknown",
+      "relationshipModifier": 0,
+      "notes": "Personality: Friendly innkeeper; remembers the last meal a guest enjoyed.\nSuggested greeting: Come in. There is room near the hearth.\n\nSpecialities:\n- Vegetable Pottage\n- Rye Bread\n\nKnown For:\n- Fair measures\n- A warm common room\n\nOptional Stories — edit or remove before play; these are suggestions, not established campaign facts:\n- A regular has left a mended coat behind.\n- The next flour delivery is late.\n\nTrading notes:\n- Confirm rooms, stalls, kitchen hours and delivery arrangements before approval.\n- Stable Horse excludes feed. Meal services do not create additional food Items.\n- Do not charge for the same included food twice.\n- Daily restock is a preference, not an automated schedule.\n- Configure actual room names and doors before enabling optional room integrations.",
+      "checkoutTime": "10:00"
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "id": "dockside-tavern",
+    "name": "Dockside Tavern",
+    "settings": {
+      "catalogueId": "tavern",
+      "settlement": "town",
+      "prosperity": "prosperous",
+      "profile": "specialist",
+      "stockProfileId": "DT_TABLE_TAV_DOCKSIDE",
+      "availability": "open",
+      "infiniteFunds": false,
+      "infiniteStock": false,
+      "restockProfile": "daily",
+      "pricingModifier": 10,
+      "relationshipState": "Unknown",
+      "relationshipModifier": 0,
+      "notes": "Personality: Brisk host who times meals around unloading crews.\nSuggested greeting: Sit down. The fish is fresh and the mugs are clean.\n\nSpecialities:\n- Grilled Sardines\n- Pickled Herring\n- Dark Rye Beer\n\nKnown For:\n- Clear prices for sailors\n- Occasional imported cellar stock\n\nOptional Stories — edit or remove before play; these are suggestions, not established campaign facts:\n- A returning crew disputes whose round it is.\n- A sealed parcel waits for a ship that has not berthed.\n\nTrading notes:\n- Confirm rooms, stalls, kitchen hours and delivery arrangements before approval.\n- Stable Horse excludes feed. Meal services do not create additional food Items.\n- Do not charge for the same included food twice.\n- Daily restock is a preference, not an automated schedule.\n- Configure actual room names and doors before enabling optional room integrations.",
+      "checkoutTime": "10:00"
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "id": "coaching-inn",
+    "name": "Coaching Inn",
+    "settings": {
+      "catalogueId": "tavern",
+      "settlement": "town",
+      "prosperity": "average",
+      "profile": "standard",
+      "stockProfileId": "DT_TABLE_TAV_COACHING",
+      "availability": "open",
+      "infiniteFunds": false,
+      "infiniteStock": false,
+      "restockProfile": "daily",
+      "pricingModifier": 5,
+      "relationshipState": "Unknown",
+      "relationshipModifier": 0,
+      "notes": "Personality: Organised host who keeps the yard and kitchen moving together.\nSuggested greeting: The next coach is not due yet. You have time to eat.\n\nSpecialities:\n- Breakfast Sausage Plate\n- Loose Oats\n\nKnown For:\n- Early breakfasts\n- Reliable parcel collection\n\nOptional Stories — edit or remove before play; these are suggestions, not established campaign facts:\n- Two travellers carry tickets for the same seat.\n- A spare wheel has arrived with no owner’s mark.\n\nTrading notes:\n- Confirm rooms, stalls, kitchen hours and delivery arrangements before approval.\n- Stable Horse excludes feed. Meal services do not create additional food Items.\n- Do not charge for the same included food twice.\n- Daily restock is a preference, not an automated schedule.\n- Configure actual room names and doors before enabling optional room integrations.",
+      "checkoutTime": "10:00"
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "id": "roadhouse",
+    "name": "Roadhouse",
+    "settings": {
+      "catalogueId": "tavern",
+      "settlement": "hamlet",
+      "prosperity": "poor",
+      "profile": "modest",
+      "stockProfileId": "DT_TABLE_TAV_ROADHOUSE",
+      "availability": "open",
+      "infiniteFunds": false,
+      "infiniteStock": false,
+      "restockProfile": "daily",
+      "pricingModifier": -10,
+      "relationshipState": "Unknown",
+      "relationshipModifier": 0,
+      "notes": "Personality: Gruff innkeeper; short answers, honest portions and no patience for broken furniture.\nSuggested greeting: Boots by the door. Stew is on.\n\nSpecialities:\n- Brown Hearth Ale\n- Pork Cracklings\n\nKnown For:\n- Plain food at plain prices\n- Never waters the ale\n\nOptional Stories — edit or remove before play; these are suggestions, not established campaign facts:\n- Someone keeps repairing the fence overnight.\n- A hunter’s usual seat has been empty for several evenings.\n\nTrading notes:\n- Confirm rooms, stalls, kitchen hours and delivery arrangements before approval.\n- Stable Horse excludes feed. Meal services do not create additional food Items.\n- Do not charge for the same included food twice.\n- Daily restock is a preference, not an automated schedule.\n- Configure actual room names and doors before enabling optional room integrations.",
+      "checkoutTime": "10:00"
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "id": "noble-inn",
+    "name": "Noble Inn",
+    "settings": {
+      "catalogueId": "tavern",
+      "settlement": "large-city",
+      "prosperity": "wealthy",
+      "profile": "specialist",
+      "stockProfileId": "DT_TABLE_TAV_LUXURY",
+      "availability": "open",
+      "infiniteFunds": false,
+      "infiniteStock": false,
+      "restockProfile": "daily",
+      "pricingModifier": 20,
+      "relationshipState": "Unknown",
+      "relationshipModifier": 0,
+      "notes": "Personality: Formal innkeeper; courteous to titles but insists every guest pays their bill.\nSuggested greeting: Your table is ready when you are.\n\nSpecialities:\n- House White Wine\n- Fresh Goat Cheese\n\nKnown For:\n- Private meetings\n- Discreet staff\n\nOptional Stories — edit or remove before play; these are suggestions, not established campaign facts:\n- Two dinner parties have asked never to meet in the hall.\n- A crest has been removed from a travelling chest.\n\nTrading notes:\n- Confirm rooms, stalls, kitchen hours and delivery arrangements before approval.\n- Stable Horse excludes feed. Meal services do not create additional food Items.\n- Do not charge for the same included food twice.\n- Daily restock is a preference, not an automated schedule.\n- Configure actual room names and doors before enabling optional room integrations.",
+      "checkoutTime": "10:00"
     }
   }
 ]

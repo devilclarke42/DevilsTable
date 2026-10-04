@@ -228,3 +228,7 @@ no repository identity and are not committed or included in the runtime package.
 ## Sprint 10C optional integrations
 
 See [Integration developer source map](INTEGRATION_DEVELOPERS.md#source-map) for the new isolated manager/adapters, booking lifecycle, action validator and settings application. `templates/integrations.hbs` renders status and recovery; `tests/integrations.test.js` covers fallback, fulfilment, expiry and concurrency.
+
+## Tavern Completion additions
+
+`data/items/tavern/{soups,fish,imported-drinks,tavern-supplies}.json` adds sixteen canonical products. Existing `data/stock.json`, `data/merchant-templates.json` and `data/services.json` hold business menus, private editable stories and service definitions. `docs/TAVERN_GUIDE.md` documents the complete workflow. `tools/render-tavern-icons.py` is the original vector master/exporter for `assets/icons/smoking-pipe.webp`. `tests/tavern-completion.test.js` verifies source and table upgrades, curated menus, search and presets.

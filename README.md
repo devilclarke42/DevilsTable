@@ -1,15 +1,14 @@
 # Devil's Table: Trade & Merchants
 
-## Current candidate — Optional Integrations
+## Current candidate — Tavern Completion
 
-**0.3.0-alpha.12** adds accommodation checkout at 10:00 by default. Change it per merchant in **Builder → Setup → Accommodation checkout time**, or override it for one purchase in GM Review. Changed rental terms require player reconfirmation. Existing bookings retain their endpoints. Pricing controls remain collapsed. Alpha.10 added optional Lock & Key room keys and Calendaria accommodation bookings, a reusable Integration Manager, ordered service actions and integration settings. Neither module is required: ordinary services and payments work independently.
+**0.3.0-alpha.13** completes the Tavern with **205 products, 16 services and nine editable presets**. Village, roadside, dockside, coaching, luxury and roadhouse stock profiles create distinct menus using the shared Item catalogue. Private optional stories, greetings and speciality notes give the GM a starting personality.
 
-Configure accommodation from Merchant Builder → Services, then use **Manage Integrations / Room Bookings** in settings for module preferences and checkout/key recovery. See the [Integrations guide](docs/INTEGRATIONS.md) and [developer contract](docs/INTEGRATION_DEVELOPERS.md). Calendar notes record the stay; room capacity and reservation conflicts are not simulated.
+Use **Merchant Builder → Setup → Template**, save configuration, then review **Stock**, **Services** and **Cash**. Room checkout defaults to 10:00 and may be overridden during GM review. Configured Lock & Key and Calendaria actions run when compatible modules are available; ordinary purchases work without them.
 
-The Shop catalogue icon now aligns with its label. The title bar reads **Token Name - Business Name**, falling back to the token name when no business name is configured.
+The compact Shop UI includes expandable descriptions, live search, category filters, a persistent basket and a responsive narrow-window layout. See the [Tavern Guide](docs/TAVERN_GUIDE.md), [service reference](docs/TAVERN_SERVICES.md), [Builder Guide](docs/BUILDER_GUIDE.md) and [Integrations](docs/INTEGRATIONS.md).
 
-The six-tab Builder, native identity, private Merchant Tags and existing Tavern catalogue remain intact: **296 Items, 12 services and 32 Stock RollTables**. Live Foundry/Forge integration acceptance remains pending. See [Project State](docs/PROJECT_STATE.md) and the [Builder Guide](docs/BUILDER_GUIDE.md).
-
+Module totals: **312 canonical Items, 16 services and 52 Stock RollTables**. All permanent identities and one shared Item compendium are retained. Existing merchant inventories are not replaced. Live Foundry/Forge acceptance remains pending; see [Project State](docs/PROJECT_STATE.md).
 
 ## Sprint 8A — Project consolidation
 

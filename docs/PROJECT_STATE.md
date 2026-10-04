@@ -1,8 +1,15 @@
 # Project state
 
-Updated 2026-10-01 for `0.3.0-alpha.12`.
+Updated 2026-10-04 for `0.3.0-alpha.13`.
 
-## Current candidate — alpha.12 / Accommodation checkout times
+## Current candidate — alpha.13 / Tavern Completion
+
+The source implementation includes 205 Tavern products, 16 services, nine Tavern presets and six stock profiles. Project totals are 312 Items and 52 Stock tables. Six existing supplies gain Tavern membership only; sixteen products and four services fill the remaining gaps. Private stories use editable notes. Room mapping remains GM-configured; new room forms preselect supported available integrations without overriding existing choices.
+
+Shop description disclosure, compact category navigation, narrow-window layout and accessible labels are implemented. All 376 automated tests pass. Coverage includes alpha.12 upgrade and repeated-build convergence, mixed purchases, service eligibility and optional integration lifecycle. Live Foundry/Forge, visual/mobile and external-module acceptance remains pending. The complete workflow is in [Tavern Guide](TAVERN_GUIDE.md).
+
+## Previous candidate — alpha.12 / Accommodation checkout times
+
 
 Room checkout defaults to 10:00; Builder Setup stores a merchant default and GM Review permits a purchase-only override with player reconfirmation. New booking endpoints use calendar nights and native clock components; previous bookings are preserved. Weekly lodging has seven-night metadata.
 

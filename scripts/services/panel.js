@@ -18,7 +18,7 @@ export class ServicePanel {
     const services=registry.list().filter(r=>r.catalogues.includes(cat)||offers[r.id]).map(r=>{
       const form=this.draft.get(r.id)??{offered:Boolean(offers[r.id]),enabled:offers[r.id]?.enabled!==false,available:offers[r.id]?.available!==false,price:offers[r.id]?.price??r.price,room:offers[r.id]?.room};
       const category=registry.categories().find(c=>c.id===r.category);
-      const room=form.room??{name:"",keyName:"",doors:[],days:r.nights??1,expiry:"checkout",key:false,calendar:false};
+      const room=form.room??{name:"",keyName:"",doors:[],days:r.nights??1,expiry:"checkout",key:integrationManager.status("locknkey").available,calendar:integrationManager.status("calendaria").available};
       return {...r,...form,room,roomConfigured:Boolean(form.room),doorText:room.doors.join("\n"),
         expiryChoices:[{id:"persistent",name:"Persistent Key"},{id:"checkout",name:"Expire on Checkout"},{id:"manual",name:"Manual Recovery"}].map(c=>({...c,selected:c.id===room.expiry})),
         keyIntegration:integrationManager.status("locknkey"),calendarIntegration:integrationManager.status("calendaria"),

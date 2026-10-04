@@ -1,5 +1,10 @@
 # Roadmap
 
+## Tavern Completion candidate — 0.3.0-alpha.13
+
+Tavern content and presets are implemented: 205 products, 16 services, nine presets and six curated stock profiles. The shared catalogue, Builder, transactions and optional integrations are reused. Live V14 / D&D5e 5.3.3 / Forge acceptance is the remaining gate before calling the Tavern milestone stable. No new merchant gameplay or other merchant catalogue was started. See [Tavern Guide](TAVERN_GUIDE.md).
+
+
 ## Sprint 10C — Optional integration candidate
 
 Implemented in `0.3.0-alpha.10`: optional manager, ordered fulfilment, Lock & Key room access, Calendaria accommodation notes, booking checkout/recovery and integration settings. Live Foundry/Forge acceptance remains pending. Room capacity, reservations, automated restocking, business hours and other module adapters remain future work.

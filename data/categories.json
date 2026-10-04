@@ -281,7 +281,7 @@
     "catalogue": "tavern",
     "sort": 100,
     "visible": true,
-    "icon": "icons/svg/item-bag.svg"
+    "icon": "icons/consumables/drinks/alcohol-beer-stein-wooden-brown.webp"
   },
   {
     "id": "beer",
@@ -301,7 +301,7 @@
     "catalogue": "tavern",
     "sort": 110,
     "visible": true,
-    "icon": "icons/svg/item-bag.svg"
+    "icon": "icons/consumables/drinks/alcohol-beer-stein-wooden-brown.webp"
   },
   {
     "id": "mead",
@@ -321,7 +321,7 @@
     "catalogue": "tavern",
     "sort": 120,
     "visible": true,
-    "icon": "icons/svg/item-bag.svg"
+    "icon": "icons/consumables/drinks/alcohol-beer-stein-wooden-brown.webp"
   },
   {
     "id": "wine",
@@ -341,7 +341,7 @@
     "catalogue": "tavern",
     "sort": 130,
     "visible": true,
-    "icon": "icons/svg/item-bag.svg"
+    "icon": "icons/consumables/drinks/wine-amphora-clay-red.webp"
   },
   {
     "id": "spirits",
@@ -361,7 +361,7 @@
     "catalogue": "tavern",
     "sort": 140,
     "visible": true,
-    "icon": "icons/svg/item-bag.svg"
+    "icon": "icons/consumables/drinks/alcohol-jar-spirits-gray.webp"
   },
   {
     "id": "non-alcoholic-drinks",
@@ -381,7 +381,7 @@
     "catalogue": "tavern",
     "sort": 150,
     "visible": true,
-    "icon": "icons/svg/item-bag.svg"
+    "icon": "icons/consumables/drinks/tea-jug-gourd-brown.webp"
   },
   {
     "id": "hot-drinks",
@@ -401,7 +401,7 @@
     "catalogue": "tavern",
     "sort": 160,
     "visible": true,
-    "icon": "icons/svg/item-bag.svg"
+    "icon": "icons/consumables/drinks/tea-jug-gourd-brown.webp"
   },
   {
     "id": "breakfast",
@@ -421,7 +421,7 @@
     "catalogue": "tavern",
     "sort": 170,
     "visible": true,
-    "icon": "icons/svg/item-bag.svg"
+    "icon": "icons/consumables/food/bowl-stew-brown.webp"
   },
   {
     "id": "lunch",
@@ -441,7 +441,7 @@
     "catalogue": "tavern",
     "sort": 180,
     "visible": true,
-    "icon": "icons/svg/item-bag.svg"
+    "icon": "icons/consumables/food/bowl-stew-brown.webp"
   },
   {
     "id": "dinner",
@@ -461,7 +461,7 @@
     "catalogue": "tavern",
     "sort": 190,
     "visible": true,
-    "icon": "icons/svg/item-bag.svg"
+    "icon": "icons/consumables/food/bowl-stew-brown.webp"
   },
   {
     "id": "stews",
@@ -481,7 +481,7 @@
     "catalogue": "tavern",
     "sort": 200,
     "visible": true,
-    "icon": "icons/svg/item-bag.svg"
+    "icon": "icons/consumables/food/bowl-stew-brown.webp"
   },
   {
     "id": "roasts",
@@ -501,7 +501,7 @@
     "catalogue": "tavern",
     "sort": 210,
     "visible": true,
-    "icon": "icons/svg/item-bag.svg"
+    "icon": "icons/consumables/food/short-ribs-cooked-meat-brown.webp"
   },
   {
     "id": "bread",
@@ -521,7 +521,7 @@
     "catalogue": "tavern",
     "sort": 220,
     "visible": true,
-    "icon": "icons/svg/item-bag.svg"
+    "icon": "icons/consumables/grains/bread-loaf-boule-rustic-brown.webp"
   },
   {
     "id": "cheese",
@@ -541,7 +541,7 @@
     "catalogue": "tavern",
     "sort": 230,
     "visible": true,
-    "icon": "icons/svg/item-bag.svg"
+    "icon": "icons/consumables/food/cheese-wedge-swiss-yellow.webp"
   },
   {
     "id": "desserts",
@@ -561,7 +561,7 @@
     "catalogue": "tavern",
     "sort": 240,
     "visible": true,
-    "icon": "icons/svg/item-bag.svg"
+    "icon": "icons/consumables/fruit/apple-red-tree-green.webp"
   },
   {
     "id": "snacks",
@@ -581,7 +581,7 @@
     "catalogue": "tavern",
     "sort": 250,
     "visible": true,
-    "icon": "icons/svg/item-bag.svg"
+    "icon": "icons/consumables/food/bowl-stew-brown.webp"
   },
   {
     "id": "travel-meals",
@@ -601,7 +601,7 @@
     "catalogue": "tavern",
     "sort": 260,
     "visible": true,
-    "icon": "icons/svg/item-bag.svg"
+    "icon": "icons/consumables/grains/bread-loaf-boule-rustic-brown.webp"
   },
   {
     "id": "luxury-meals",
@@ -621,7 +621,7 @@
     "catalogue": "tavern",
     "sort": 270,
     "visible": true,
-    "icon": "icons/svg/item-bag.svg"
+    "icon": "icons/consumables/food/bowl-stew-brown.webp"
   },
   {
     "id": "animal-feed",
@@ -641,7 +641,7 @@
     "catalogue": "tavern",
     "sort": 280,
     "visible": true,
-    "icon": "icons/svg/item-bag.svg"
+    "icon": "icons/consumables/grains/sack-rice-flour-brown.webp"
   },
   {
     "id": "animal",
@@ -691,7 +691,7 @@
     "catalogue": "tavern",
     "sort": 310,
     "visible": true,
-    "icon": "icons/containers/bags/pack-leather-white-tan.webp"
+    "icon": "icons/containers/barrels/barrel-oak-banded-tan.webp"
   },
   {
     "id": "fire-lighting",
@@ -756,7 +756,7 @@
     "catalogue": "tavern",
     "sort": 350,
     "visible": true,
-    "icon": "icons/commodities/wood/wood-pole.webp"
+    "icon": "icons/tools/instruments/bell-brass-brown.webp"
   },
   {
     "id": "containers",
@@ -1008,5 +1008,69 @@
     "sort": 450,
     "visible": true,
     "icon": "icons/commodities/wood/wood-pole.webp"
+  },
+  {
+    "id": "imported-drinks",
+    "shop": "tavern",
+    "catalogue": "tavern",
+    "name": "Imported Drinks",
+    "description": "Distinct imported pours, including an alcohol-free fruit drink.",
+    "plannedItems": [
+      "Southern Date Wine",
+      "Island Palm Spirit",
+      "Resined White Wine",
+      "Spiced Pomegranate Drink"
+    ],
+    "sort": 155,
+    "visible": true,
+    "icon": "icons/consumables/drinks/wine-amphora-clay-red.webp"
+  },
+  {
+    "id": "soups",
+    "shop": "tavern",
+    "catalogue": "tavern",
+    "name": "Soups",
+    "description": "Lighter broth and soup portions, separate from hearty stews.",
+    "plannedItems": [
+      "Onion Broth",
+      "Creamed Mushroom Soup",
+      "Chicken Noodle Broth",
+      "Sorrel Spring Soup"
+    ],
+    "sort": 205,
+    "visible": true,
+    "icon": "icons/consumables/food/bowl-stew-brown.webp"
+  },
+  {
+    "id": "fish",
+    "shop": "tavern",
+    "catalogue": "tavern",
+    "name": "Fish",
+    "description": "Individual fish and shellfish servings; full supper plates remain in Dinner.",
+    "plannedItems": [
+      "Grilled Sardines",
+      "Mussels in Cider",
+      "Baked Haddock",
+      "Pickled Herring"
+    ],
+    "sort": 225,
+    "visible": true,
+    "icon": "icons/consumables/food/dried-meat-jerky-fish-red.webp"
+  },
+  {
+    "id": "tavern-supplies",
+    "shop": "tavern",
+    "catalogue": "tavern",
+    "name": "Tavern Supplies",
+    "description": "Smoking and gaming supplies for the taproom.",
+    "plannedItems": [
+      "Pipe Tobacco",
+      "Clay Smoking Pipe",
+      "Playing Cards",
+      "Bone Dice"
+    ],
+    "sort": 395,
+    "visible": true,
+    "icon": "icons/containers/bags/pouch-rounded-leather-gold-tan.webp"
   }
 ]

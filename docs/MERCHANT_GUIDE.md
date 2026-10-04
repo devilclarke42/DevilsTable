@@ -202,3 +202,7 @@ In **Merchant Builder → Setup**, set **Accommodation checkout time** using HH:
 For a rental purchase, GM Review shows the booked nights and an editable checkout time. An override applies to every accommodation line in that purchase, without changing the merchant default. Recalculate asks the player to accept changed terms before approval. One night ends on the next calendar date at that time; weekly lodging covers seven nights. Existing bookings are not rescheduled.
 
 With configured integrations, the same endpoint drives calendar notes and Expire on Checkout keys. An active GM processes expiry when world time advances; no player morning-checkout button is required. Persistent and Manual Recovery key policies remain unchanged. Without integrations, the room terms are still displayed and recorded, with no automated room or key management.
+
+## Completed Tavern
+
+The Tavern supplies 205 products and sixteen services through one basket. Expand long descriptions to inspect inclusions, especially meals, storage and rooms. Products become Items; services record fulfilment and optional configured actions. See [Tavern Guide](TAVERN_GUIDE.md) for presets, stories, best practices and the live acceptance workflow.

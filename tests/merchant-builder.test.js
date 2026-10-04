@@ -23,7 +23,7 @@ const draft=()=>structuredClone(builtins[0].settings);
 const nativeSnapshot=a=>structuredClone({system:a.system,img:a.img,ownership:a.ownership,prototypeToken:a.prototypeToken,items:[...a.items].map(i=>i.toObject())});
 
 test("all built-in presets validate and contain only portable editable configuration",()=>{
- assert.equal(builtins.length,8);for(const r of builtins)assert.deepEqual(validateTemplate(r,context).settings,{...r.settings,checkoutTime:"10:00"});
+ assert.equal(builtins.length,13);for(const r of builtins)assert.deepEqual(validateTemplate(r,context).settings,{...r.settings,checkoutTime:"10:00"});
  assert.throws(()=>validateTemplate({...builtins[0],settings:{...draft(),inventory:[]}},context),/Unknown/);
  assert.throws(()=>validateTemplate({...builtins[0],actorId:"secret"},context),/Invalid/);
 });

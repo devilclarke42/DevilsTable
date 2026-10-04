@@ -1,0 +1,178 @@
+[
+  {
+    "id": "DT_ITEM_TAV_ONION_BROTH",
+    "name": "Onion Broth",
+    "description": "Slow-browned onions give this clear broth a deep amber colour. A little thyme rises with the steam; bread is ordered separately.\n\nSold as one 1 lb bowl of soup. Price and weight cover the food only; serving ware stays with the inn. Unlisted sides and drinks are separate.",
+    "saleUnit": "One 1 lb bowl of soup",
+    "price": {
+      "value": 5,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 1,
+      "units": "lb",
+      "notes": "Ready-to-eat portion, including bones or shells where stated for one complete sale unit; adjusted for Variant Encumbrance. The inn's serving vessel and cutlery are excluded."
+    },
+    "icon": "icons/consumables/food/bowl-stew-brown.webp",
+    "category": "soups",
+    "tags": [
+      "mundane",
+      "consumable",
+      "food",
+      "onion",
+      "vegetable",
+      "hot"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "Original Tavern recipe, sale unit, project price and adjusted weight; 2014 mechanics baseline. See docs/TAVERN_GUIDE.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record serving consumed",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use after the whole sale unit is consumed; track partial use manually. No healing or status effects."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_CREAMED_MUSHROOM_SOUP",
+    "name": "Creamed Mushroom Soup",
+    "description": "Chopped field mushrooms are cooked in milk and stock, then finished with cracked pepper. A few browned mushroom slices sit on top rather than disappearing into the pot.\n\nSold as one 1 lb bowl of soup. Price and weight cover the food only; serving ware stays with the inn. Unlisted sides and drinks are separate.",
+    "saleUnit": "One 1 lb bowl of soup",
+    "price": {
+      "value": 1,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 1,
+      "units": "lb",
+      "notes": "Ready-to-eat portion, including bones or shells where stated for one complete sale unit; adjusted for Variant Encumbrance. The inn's serving vessel and cutlery are excluded."
+    },
+    "icon": "icons/consumables/food/bowl-stew-brown.webp",
+    "category": "soups",
+    "tags": [
+      "mundane",
+      "consumable",
+      "food",
+      "mushroom",
+      "dairy",
+      "hot"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "Original Tavern recipe, sale unit, project price and adjusted weight; 2014 mechanics baseline. See docs/TAVERN_GUIDE.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record serving consumed",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use after the whole sale unit is consumed; track partial use manually. No healing or status effects."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_CHICKEN_NOODLE_BROTH",
+    "name": "Chicken Noodle Broth",
+    "description": "Thin hand-cut noodles and shreds of chicken fill a clear broth scented with parsley. It is a light meal for travellers who want something warm before taking to the road.\n\nSold as one 1 lb bowl of soup. Price and weight cover the food only; serving ware stays with the inn. Unlisted sides and drinks are separate.",
+    "saleUnit": "One 1 lb bowl of soup",
+    "price": {
+      "value": 1,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 1,
+      "units": "lb",
+      "notes": "Ready-to-eat portion, including bones or shells where stated for one complete sale unit; adjusted for Variant Encumbrance. The inn's serving vessel and cutlery are excluded."
+    },
+    "icon": "icons/consumables/food/bowl-stew-brown.webp",
+    "category": "soups",
+    "tags": [
+      "mundane",
+      "consumable",
+      "food",
+      "poultry",
+      "grain",
+      "hot"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "Original Tavern recipe, sale unit, project price and adjusted weight; 2014 mechanics baseline. See docs/TAVERN_GUIDE.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record serving consumed",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use after the whole sale unit is consumed; track partial use manually. No healing or status effects."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_TAV_SORREL_SPRING_SOUP",
+    "name": "Sorrel Spring Soup",
+    "description": "Young sorrel and leeks make a sharp green soup, softened with a spoonful of cream. The kitchen offers it when fresh leaves arrive; availability remains the GM’s decision.\n\nSold as one 1 lb bowl of soup. Price and weight cover the food only; serving ware stays with the inn. Unlisted sides and drinks are separate.",
+    "saleUnit": "One 1 lb bowl of soup",
+    "price": {
+      "value": 8,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 1,
+      "units": "lb",
+      "notes": "Ready-to-eat portion, including bones or shells where stated for one complete sale unit; adjusted for Variant Encumbrance. The inn's serving vessel and cutlery are excluded."
+    },
+    "icon": "icons/consumables/food/bowl-stew-brown.webp",
+    "category": "soups",
+    "tags": [
+      "mundane",
+      "consumable",
+      "food",
+      "vegetable",
+      "dairy",
+      "seasonal"
+    ],
+    "shops": [
+      "tavern"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "Original Tavern recipe, sale unit, project price and adjusted weight; 2014 mechanics baseline. See docs/TAVERN_GUIDE.md.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "food",
+      "use": {
+        "name": "Record serving consumed",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use after the whole sale unit is consumed; track partial use manually. No healing or status effects."
+      }
+    }
+  }
+]
