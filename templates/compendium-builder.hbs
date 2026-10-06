@@ -2,19 +2,17 @@
   <h2>Build/Rebuild Compendiums</h2>
   <p>Foundry V14 · D&D5e 5.3.3 · 2014 rules · adjusted weights in pounds.</p>
   <p>The source catalogue defines every generated item. Multiple shop tags do not create duplicate items.</p>
-  <p>All eight General Store categories contain authored stock. Stock RollTables have a separate Build/Rebuild Stock RollTables button in module settings.</p>
+  <p>Choose one catalogue or all catalogues. Preview validates source data and reports creates, updates and preserved entries. Services are shown for reference; use the Stock RollTable Builder for tables.</p>
   {{#if catalogueError}}
     <pre class="dt-warning" role="alert">{{catalogueError}}</pre>
   {{else}}
-    <fieldset class="dt-filters" {{#if busy}}disabled{{/if}}>
-      <legend>Shop</legend>
-      <button type="button" data-action="selectShop" data-shop="" aria-pressed="{{#if allShops}}true{{else}}false{{/if}}">All shops</button>
-      {{#each shops}}
-        <button type="button" data-action="selectShop" data-shop="{{id}}" aria-pressed="{{#if selected}}true{{else}}false{{/if}}">{{name}}</button>
-      {{/each}}
+    <fieldset class="dt-builder-selection" {{#if busy}}disabled{{/if}}><legend>Build scope</legend>
+      <label>Catalogue<select data-builder-select="shop"><option value="" {{#if allShops}}selected{{/if}}>All catalogues</option>{{#each shops}}<option value="{{id}}" {{#if selected}}selected{{/if}}>{{name}}</option>{{/each}}</select></label>
+      <label>Category<select data-builder-select="category"><option value="" {{#if allCategories}}selected{{/if}}>All categories</option>{{#each categories}}<option value="{{id}}" {{#if selected}}selected{{/if}}>{{name}} · {{count}} products</option>{{/each}}</select></label>
     </fieldset>
+    {{> "modules/devils-table/templates/generation-summary.hbs"}}
     {{#if shop}}
-      <details class="dt-merchant-notes" open>
+      <details class="dt-merchant-notes">
         <summary>Merchant Notes — {{shop.name}}</summary>
         <p>{{shop.description}}</p>
         <p>Stock guidance for the builder. Notes can name future goods; they do not create items or go into the compendium.</p>
@@ -27,18 +25,6 @@
     {{else}}
       <p>Select a shop to see its Merchant Notes.</p>
     {{/if}}
-    <fieldset class="dt-categories" {{#if busy}}disabled{{/if}}>
-      <legend>Category</legend>
-      <button type="button" data-action="selectCategory" data-category="" aria-pressed="{{#if allCategories}}true{{else}}false{{/if}}">All categories</button>
-      <div class="dt-category-list">
-        {{#each categories}}
-          <div class="dt-category">
-            <button type="button" data-action="selectCategory" data-category="{{id}}" aria-pressed="{{#if selected}}true{{else}}false{{/if}}">{{name}} · {{count}} items</button>
-            <details><summary>Category plan</summary><p>{{description}}</p><p>{{planned}}</p></details>
-          </div>
-        {{/each}}
-      </div>
-    </fieldset>
     <p><strong>{{scopeLabel}}</strong> — {{count}} authored items selected.</p>
     <p>Pricing: 1–9 cp everyday; 1–9 sp common; 1–24 gp equipment; 25+ gp specialist.</p>
     <p>{{#each priceBands}}{{name}}: {{count}}{{#unless @last}} · {{/unless}}{{/each}}</p>

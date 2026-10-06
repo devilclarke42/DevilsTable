@@ -1,3 +1,4 @@
+import { integrationManager } from "../integrations/manager.js";
 import { markOfferGroups } from "./offer-groups.js";
 import { merchantSlots as locks, administrationBusy } from "./operation-guard.js";
 import { catalogueRegistry } from "../catalogues/registry.js";
@@ -28,6 +29,9 @@ export function registerCheckoutProof() {
     if (!interactionRolls.has(payload.id)) interactionRolls.set(payload.id, (async () => {
       const rolls = await actor.rollSkill({ skill: payload.skill }, { configure: true }, { create: false });
       if (!proofs.has(payload.id) || !rolls?.length || !Number.isFinite(rolls[0].total)) return null;
+      // create:false prevents automatic chat/DSN duplication. Presentation never delays the GM response.
+      void integrationManager.present("dice-so-nice", "roll", { roll: rolls[0] });
+      globalThis.ui?.notifications?.info?.(`Merchant interaction roll: ${rolls[0].total}`);
       return { total: rolls[0].total };
     })());
     return interactionRolls.get(payload.id);

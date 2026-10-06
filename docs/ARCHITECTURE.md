@@ -298,3 +298,13 @@ with no separate Item storage or Tavern-specific UI branches.
 ## Tavern Completion content layer
 
 Tavern completion adds canonical product JSON, existing stock-profile variants, service definitions and editable presets. Merchant stories are private notes, not a new document type. Optional room integrations still pass through the Integration Manager. The only runtime changes are presentation polish and available-integration defaults for newly configured rooms; payment and transfer mechanics are unchanged.
+
+## Sprint 12A: Foundry interface extensions
+
+`ux/actor-entry.js` uses ActorSheetV2 render and Actor Directory context/render hooks. It adds a module-owned panel to compatible primary-tab layouts, without replacing sheet classes. Header/Directory Builder access is the alternate-sheet fallback. `ux/npc-configuration.js` reads module flags and delegates to existing Builder validation, save and administration guards. Read-only source definitions are cached across sheet renders. Draft controls have no Actor-form names and stop change propagation so native autosave cannot store them accidentally.
+
+`ux/builder-summary.js` provides unique source counts and shared selector bindings. Native single/all scope semantics and the established builders are retained; no new bulk generation engine is introduced. The service count is explicitly informational. No speculative build-time estimate is persisted.
+
+Integration Manager `present` dispatches only explicitly registered `clientActions`; it cannot reach `actions`, which retain active-GM authorization. Dice So Nice receives an already evaluated Roll only. Client-local animation is best-effort and not awaited by the request response. Hidden DC/outcome data never reaches this adapter. Existing proof and duplicate-query caching remains authoritative.
+
+See [UX Workflows](UX_WORKFLOWS.md) for supported layouts, deliberate sidebar omission and live acceptance limits.

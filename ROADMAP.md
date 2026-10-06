@@ -191,3 +191,7 @@ Market remain partial catalogues. Table generation does not create missing shop-
 
 No previous catalogue, provisional release asset or untested compatibility claim is inferred
 from work outside this repository.
+
+## Sprint 12A — UX & Workflow Polish
+
+Implemented in alpha.14: NPC configuration tab, Actor-based entry points, merchant badges, optional Dice So Nice presentation and compact content builders. Live Foundry/Forge sheet, keyboard, narrow-window and multiplayer animation acceptance remains the next release gate. No new gameplay milestone or catalogue was introduced.

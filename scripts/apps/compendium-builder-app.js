@@ -1,3 +1,5 @@
+import { generationSummary, bindBuilderSelectors } from "../ux/builder-summary.js";
+import { definitions } from "../services/offers.js";
 import { MODULE_ID } from "../constants.js";
 import { rebuildCompendiums } from "../builders/compendium-builder.js";
 import { logger } from "../core/logger.js";
@@ -19,7 +21,7 @@ export class CompendiumBuilderApplication extends HandlebarsApplicationMixin(App
     id: "devils-table-builder",
     classes: ["devils-table"],
     tag: "section",
-    position: { width: 760, height: "auto" },
+    position: { width: 760, height: 690 },
     window: { title: "Devil's Table: Trade & Merchants — Compendium Builder", icon: "fa-solid fa-hammer", resizable: true },
     actions: {
       preview: CompendiumBuilderApplication.#onPreview,
@@ -29,7 +31,15 @@ export class CompendiumBuilderApplication extends HandlebarsApplicationMixin(App
     }
   };
 
-  static PARTS = { body: { template: "modules/devils-table/templates/compendium-builder.hbs", scrollable: [".dt-report"] } };
+  static PARTS = { body: { template: "modules/devils-table/templates/compendium-builder.hbs", templates: ["modules/devils-table/templates/generation-summary.hbs"], scrollable: [".dt-builder", ".dt-report"] } };
+
+  _onRender(context, options) {
+    super._onRender?.(context, options);
+    bindBuilderSelectors(this, {
+      shop: value => CompendiumBuilderApplication.#onSelectShop.call(this, null, {dataset: {shop:value}}),
+      category: value => CompendiumBuilderApplication.#onSelectCategory.call(this, null, {dataset: {category:value}})
+    });
+  }
 
   async _prepareContext(options) {
     let view = {};
@@ -42,6 +52,7 @@ export class CompendiumBuilderApplication extends HandlebarsApplicationMixin(App
         this.#catalogue = data;
       }
       view = shopView(this.#catalogue, this.#scope);
+      view.summary = generationSummary(this.#catalogue, this.#scope, definitions().list());
     } catch (error) { catalogueError = error.message; }
     return {
       ...await super._prepareContext(options),

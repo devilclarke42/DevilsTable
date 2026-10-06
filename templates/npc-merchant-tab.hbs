@@ -1,0 +1,21 @@
+<h2><i class="fa-solid fa-store" aria-hidden="true"></i> Devil's Table</h2>
+<p>{{#if enabled}}Merchant enabled{{else}}This NPC is not currently a merchant{{/if}}</p>
+<label><input type="checkbox" data-dt-enabled {{#if enabled}}checked{{/if}}> Merchant enabled</label>
+<div class="dt-merchant-builder-fields">
+  {{#each choices}}<label>{{label}}<select data-dt-field="{{key}}">{{#each choices}}<option value="{{id}}" {{#if selected}}selected{{/if}}>{{name}}</option>{{/each}}</select></label>{{/each}}
+  <label>Shop pricing modifier (%)<input data-dt-field="pricingModifier" type="number" min="-100" max="500" step="0.01" value="{{draft.pricingModifier}}"></label>
+  <label>Room checkout (HH:mm)<input data-dt-field="checkoutTime" value="{{draft.checkoutTime}}" maxlength="7"></label>
+  <label><input data-dt-field="infiniteFunds" type="checkbox" {{#if draft.infiniteFunds}}checked{{/if}}> Infinite funds</label>
+  <label><input data-dt-field="infiniteStock" type="checkbox" {{#if draft.infiniteStock}}checked{{/if}}> Infinite stock</label>
+</div>
+<p>Save explicitly. Disabling preserves inventory, funds, notes and history. Restock profiles record preferences; they do not schedule restocking.</p>
+<button type="button" data-dt-command="save">Save Merchant Settings</button>
+<div class="dt-shop-controls">
+  <button type="button" data-dt-command="builder">Merchant Builder / Presets</button>
+  <button type="button" data-dt-command="services">Services &amp; Room Integrations</button>
+</div>
+<details><summary>World tools and integrations</summary><div class="dt-shop-controls">
+  <button type="button" data-dt-command="integrations">Integration Settings / Bookings</button>
+  <button type="button" data-dt-command="items">Item Compendium Builder</button>
+  <button type="button" data-dt-command="tables">Stock RollTable Builder</button>
+</div></details>

@@ -1,9 +1,10 @@
+import { diceSoNiceAdapter } from "./dice-so-nice.js";
 import { integrationManager } from "./manager.js";
 import { bookings,bookingData,saveBooking } from "./bookings.js";
 import { locknkeyAdapter } from "./locknkey.js";
 import { calendariaAdapter } from "./calendaria.js";
 let busy=false;
-export function registerBuiltInIntegrations(){integrationManager.register(locknkeyAdapter);integrationManager.register(calendariaAdapter);}
+export function registerBuiltInIntegrations(){integrationManager.register(diceSoNiceAdapter);integrationManager.register(locknkeyAdapter);integrationManager.register(calendariaAdapter);}
 export async function checkoutBooking(doc,{manual=false}={}) {
   if(!game.user?.isGM||game.users?.activeGM?.id!==game.user.id)throw Error("Only the active GM may check out a room.");
   let data=bookingData(doc);if(data.state==="closed")return;

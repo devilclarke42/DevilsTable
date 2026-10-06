@@ -198,3 +198,7 @@ checklist. This document controls milestone numbering and intended release outco
 Buy/sell settlement, native wallets, private receipts and recovery are implemented in alpha.14.
 Automated two-, three- and five-client races pass. Live Foundry transfer/recovery acceptance is
 still required before declaring the merchant milestone stable. The earlier Tavern candidate is deferred; see [Project State](PROJECT_STATE.md).
+
+## Sprint 12A — UX & Workflow Polish
+
+Implemented in alpha.14: NPC configuration tab, Actor-based entry points, merchant badges, optional Dice So Nice presentation and compact content builders. Live Foundry/Forge sheet, keyboard, narrow-window and multiplayer animation acceptance remains the next release gate. No new gameplay milestone or catalogue was introduced.

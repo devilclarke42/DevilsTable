@@ -6,7 +6,7 @@ export class IntegrationManager {
   #tail=Promise.resolve();
   register(adapter) {
     if(!adapter||!/^[-a-z0-9]+$/.test(adapter.id)||this.#adapters.has(adapter.id)||!adapter.moduleId||!adapter.name||typeof adapter.available!=="function"||!adapter.actions)throw Error("Invalid or duplicate integration adapter.");
-    for(const action of Object.values(adapter.actions))if(typeof action!=="function")throw Error("Integration actions must be functions.");
+    for(const action of [...Object.values(adapter.actions),...Object.values(adapter.clientActions??{})])if(typeof action!=="function")throw Error("Integration actions must be functions.");
     this.#adapters.set(adapter.id,adapter);
   }
   status(id) {
@@ -17,6 +17,15 @@ export class IntegrationManager {
     return {id,name:adapter?.name??id,moduleId:adapter?.moduleId,installed:Boolean(module),active:Boolean(module?.active),enabled,available:!reason,reason,actions:Object.keys(adapter?.actions??{})};
   }
   list(){return [...this.#adapters.keys()].map(id=>this.status(id));}
+  /** Explicit presentation allowlist; player clients cannot dispatch GM service actions. */
+  async present(id, action, context) {
+    const status = this.status(id);
+    if (!status.available) return false;
+    const actions = this.#adapters.get(id)?.clientActions;
+    if (!actions || !Object.hasOwn(actions, action)) return false;
+    try { await actions[action](context); return true; }
+    catch { return false; } // Optional visuals must never interrupt native roll results.
+  }
   async execute(id,action,context) {
     if(!game.user?.isGM||(game.users?.activeGM&&game.users.activeGM.id!==game.user.id))throw Error("Only the active GM may execute integration actions.");
     // Serialize external writes across merchants, including shared doors and scheduled checkout.

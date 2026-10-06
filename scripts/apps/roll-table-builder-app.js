@@ -1,3 +1,5 @@
+import { generationSummary, bindBuilderSelectors } from "../ux/builder-summary.js";
+import { definitions } from "../services/offers.js";
 import { MODULE_ID, TABLE_PACK_COLLECTION } from "../constants.js";
 import { loadStockCatalogue } from "../data/stock-loader.js";
 import { shopView } from "../data/shop-catalogue.js";
@@ -19,14 +21,23 @@ export class RollTableBuilderApplication extends HandlebarsApplicationMixin(Appl
 
   static DEFAULT_OPTIONS = {
     id: "devils-table-stock-builder", classes: ["devils-table"], tag: "section",
-    position: { width: 760, height: "auto" },
+    position: { width: 760, height: 690 },
     window: { title: "Devil's Table: Trade & Merchants — Stock RollTable Builder", icon: "fa-solid fa-dice", resizable: true },
     actions: { selectShop: RollTableBuilderApplication.#selectShop, selectCategory: RollTableBuilderApplication.#selectCategory,
       selectProfile: RollTableBuilderApplication.#selectProfile,
       preview: RollTableBuilderApplication.#preview, build: RollTableBuilderApplication.#build, rollStock: RollTableBuilderApplication.#rollStock,
       cleanup: RollTableBuilderApplication.#cleanup }
   };
-  static PARTS = { body: { template: "modules/devils-table/templates/roll-table-builder.hbs", scrollable: [".dt-report"] } };
+  static PARTS = { body: { template: "modules/devils-table/templates/roll-table-builder.hbs", templates: ["modules/devils-table/templates/generation-summary.hbs"], scrollable: [".dt-builder", ".dt-report"] } };
+
+  _onRender(context, options) {
+    super._onRender?.(context, options);
+    bindBuilderSelectors(this, {
+      shop: value => RollTableBuilderApplication.#selectShop.call(this, null, {dataset: {shop:value}}),
+      category: value => RollTableBuilderApplication.#selectCategory.call(this, null, {dataset: {category:value}}),
+      profile: value => RollTableBuilderApplication.#selectProfile.call(this, null, {dataset: {profile:value}})
+    });
+  }
 
   async _prepareContext(options) {
     let view = {};
@@ -36,6 +47,7 @@ export class RollTableBuilderApplication extends HandlebarsApplicationMixin(Appl
       view = shopView(this.#data, this.#scope);
       const scopes = stockScopes(this.#data, this.#scope);
       view.tableCount = scopes.length * 4;
+      view.summary = generationSummary(this.#data, {...this.#scope,categoryId:null}, definitions().list(), view.tableCount);
       view.setCount = scopes.length;
       if (scopes.length === 1) {
         const { profile, groups } = scopes[0];

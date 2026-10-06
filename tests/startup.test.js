@@ -32,7 +32,7 @@ test("startup registers a restricted V2 menu and a read-only-default API without
     settings: {
       register: (namespace, key, config) => settings.push({ namespace, key, config }),
       registerMenu: (namespace, key, config) => menus.push({ namespace, key, config }),
-      get: () => false
+      get: (_namespace, key) => key === "serviceDefinitions" ? {categories:[],services:[]} : false
     }
   };
   await import("../scripts/main.js");

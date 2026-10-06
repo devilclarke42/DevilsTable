@@ -54,3 +54,13 @@ With configured integrations, the same endpoint drives calendar notes and Expire
 ## Tavern presets and stories
 
 Apply a Tavern preset in Setup and save, then review Stock, Services and Cash. Nine Tavern presets cover Village Inn, Roadside Tavern, Dockside Tavern, Luxury Inn, Coaching Inn, Roadhouse, Noble Inn, Poor Hamlet Tavern and Town Inn. Optional stories, greetings and specialities are editable GM notes; they do not create campaign facts. Preset changes preserve existing inventory and manual service offers. See [Tavern Guide](TAVERN_GUIDE.md) for stock/service differences and room setup.
+
+## NPC-first workflow (alpha.14)
+
+Start from a world NPC sheet's **Devil's Table** tab. Enable the merchant, edit catalogue, economic profile, settlement, prosperity, availability, pricing and restock preference, then **Save Merchant Settings**. Native Actor information stays on the Actor sheet. Disabling the merchant preserves stock, wallet and private history.
+
+The sheet header and Actor Directory context menu open the Merchant Builder with that NPC selected. The tab's **Services & Room Integrations** button opens Services directly. Enabled merchants have a small GM-only Directory badge. These controls require a world NPC; unlinked synthetic token Actors and compendium Actors must first be represented by a world NPC and linked token.
+
+For content builds, choose a scope in the compact selectors, read Generation Summary, Preview, then confirm Build. Merchant/profile guidance and maintenance stay collapsed until needed. Services in a summary are catalogue references, never Item-compendium entries. RollTable category selection filters sample rolls/cleanup; builds still generate four tables per selected profile.
+
+Dice So Nice is optional and automatically presents native player negotiation/theft rolls locally. Players receive the numeric result without the hidden DC. Failures in dice presentation never stop the transaction workflow. See [UX workflows](UX_WORKFLOWS.md) for complete usage and the live acceptance checklist.

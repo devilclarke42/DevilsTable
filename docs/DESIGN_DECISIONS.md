@@ -276,3 +276,9 @@ Lock & Key's reviewed convenience methods launch unawaited writes. Its adapter a
 ## Tavern showcase without new mechanics
 
 Reuse the shared Item catalogue and the four-table-per-stock-profile model. Six Tavern profiles use 24 tables rather than multiplying tables by category. Merchant stories reuse editable GM notes; no quest or rumour engine is introduced. A meal package is a service, while a specific carried serving is a product, preventing duplicate charges and inventory. Room mappings must be explicit even when integration modules are detected.
+
+## NPC-first administration and optional dice presentation
+
+Routine configuration belongs on the NPC sheet, backed by existing module flags and Builder services. The Actor Directory provides discovery and a compact badge. A separate sidebar would duplicate the Actor list and is therefore omitted. Content builders use bounded selectors, collapsed reference material and informational counts; they retain established generation semantics.
+
+Player dice animations are presentation only. They use a separate client-action allowlist within the Integration Manager, leaving GM-authorized world writes isolated. Missing optional visuals cannot block native rolls or reveal private adjudication.

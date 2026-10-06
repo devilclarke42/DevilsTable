@@ -71,7 +71,15 @@ test("native player roll requires an outstanding interaction and caches duplicat
   assert.equal(await handler({ id: "unsolicited", characterId: "pc", skill: "per", kind: "negotiation" }), null);
   const id = service.merchantRequest("interaction", { characterId: "pc", kind: "negotiation" }, () => {});
   const payload = { id, characterId: "pc", skill: "per", kind: "negotiation" };
-  const results = await Promise.all([handler(payload), handler(payload)]);
+  const { integrationManager } = await import("../scripts/integrations/manager.js");
+  const presentations=[];const originalPresentation=integrationManager.present;
+  integrationManager.present=async(...args)=>presentations.push(args);
+  let results;
+  try { results = await Promise.all([handler(payload), handler(payload)]); }
+  finally { integrationManager.present=originalPresentation; }
+  assert.equal(presentations.length,1);
+  assert.equal(presentations[0][0],"dice-so-nice");
+  assert.deepEqual(Object.keys(presentations[0][2]),["roll"]);
   assert.deepEqual(results, [{ total: 17 }, { total: 17 }]); assert.equal(rolls, 1);
   assert.equal(await handler({ ...payload, characterId: "other" }), null);
   assert.equal(packets[0].dc, undefined);

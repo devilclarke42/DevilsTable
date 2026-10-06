@@ -107,3 +107,9 @@ Before production use, test a backed-up Foundry V14 / D&D5e 5.3.3 world:
 ## Tavern Completion defaults
 
 New room configuration forms preselect supported integrations that are installed, active, enabled in Devil’s Table and API-compatible. This is a draft convenience, not an automatic world mutation. The GM enters room names and door references, reviews the actions and saves. Existing room choices, including opt-outs, remain unchanged. All optional actions still run through the Integration Manager after approved payment. Secure Storage and Package Holding do not issue room keys or move Items; Courier Message does not send messages.
+
+## Dice So Nice
+
+Module ID: `dice-so-nice`. When active and exposing `game.dice3d.showForRoll`, it presents native merchant negotiation/theft rolls on the rolling player's client. Devil's Table does not create a public chat roll or broadcast animation. Players see their total, while hidden DCs and decisions remain in GM review. No reroll or extra gameplay result is created.
+
+Presentation defaults on and can be disabled in Devil's Table's Integration Settings. Missing APIs, disabled modules and animation failures fall back silently to the standard native result. Service integrations still require the active GM; player presentation is isolated in the Integration Manager's `clientActions` allowlist. Live animation testing remains part of [UX acceptance](UX_WORKFLOWS.md#live-acceptance).

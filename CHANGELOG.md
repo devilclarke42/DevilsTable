@@ -3,6 +3,26 @@
 This file retains detailed repository build history. The official milestone/release record is
 [docs/CHANGELOG.md](docs/CHANGELOG.md). Versions here do not imply a public GitHub Release exists.
 
+## 0.3.0-alpha.14 — 2026-10-06 — UX & Workflow Polish
+
+### Added
+
+- GM-only Devil's Table tab on supported NPC sheets, with explicit settings Save using the existing Builder validation and administration locks.
+- Direct NPC header and Actor Directory Builder entry, direct Services entry, and a compact Directory merchant badge.
+- Optional Dice So Nice local presentation of native merchant interaction rolls through a separate Integration Manager presentation allowlist.
+- Shared source generation summaries and a documented interface review and live acceptance checklist.
+
+### Changed
+
+- Compact native catalogue, category and profile selectors replace large content-builder button grids.
+- Merchant/profile guidance and legacy maintenance are collapsed; progress reports and resizable windows remain bounded.
+- Disabling a merchant preserves inventory, money, relationships and history while disabling existing linked-token entry.
+- No catalogue, Item identity, trading mechanics or compendium layout changes. No dedicated sidebar added.
+
+### Validation
+
+- Automated regression checks accompany packaging. Live Foundry/Forge sheet rendering, visual accessibility and Dice So Nice acceptance remain pending.
+
 ## 0.3.0-alpha.13 — 2026-10-04 — Tavern Completion
 
 ### Added

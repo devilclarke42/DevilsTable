@@ -25,7 +25,7 @@ export class MerchantBuilderApplication extends HandlebarsApplicationMixin(Appli
   #identity; #identitySaved; #identityExpected; #identitySubscription; #servicesPanel;
   #actorId; #context; #draft; #saved; #snapshot; #templates=[]; #templateId="";
   #stockPending=false; #stock=null; #float=null; #floatPending=false; #busy=false; #closed=false; #message="Select an NPC, adjust settings, then Save / Convert.";
-  constructor({actorId="",...options}={}) { super(options); this.#actorId=actorId; }
+  constructor({actorId="",tab="setup",...options}={}) { super(options); this.#actorId=actorId; this.#tab=BUILDER_TABS.includes(tab)?tab:"setup"; }
   static DEFAULT_OPTIONS = {
     id:"devils-table-merchant-builder",classes:["devils-table"],tag:"section",position:{width:850,height:730},
     window:{title:"Devil's Table: Trade & Merchants — Merchant Builder",icon:"fa-solid fa-store",resizable:true},

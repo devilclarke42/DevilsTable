@@ -1,8 +1,14 @@
 # Project state
 
-Updated 2026-10-04 for `0.3.0-alpha.13`.
+Updated 2026-10-06 for `0.3.0-alpha.14`.
 
-## Current candidate — alpha.13 / Tavern Completion
+## Current candidate — alpha.14 / UX & Workflow Polish
+
+Implemented NPC sheet configuration, header/Directory Builder entry, merchant badges, optional local Dice So Nice presentation and compact content builders with source summaries. Existing transaction authority, source IDs, inventory and catalogue data are retained. Merchant disabling preserves business history. No dedicated sidebar was added because existing Actor entry points cover this workflow.
+
+See [UX Workflows](UX_WORKFLOWS.md) for the review and live acceptance checklist. Automated tests run at packaging; live Foundry V14 / D&D5e 5.3.3 sheet rendering and Dice So Nice visual/multiplayer acceptance remain pending. No live compatibility certification is claimed.
+
+## Previous candidate — alpha.13 / Tavern Completion
 
 The source implementation includes 205 Tavern products, 16 services, nine Tavern presets and six stock profiles. Project totals are 312 Items and 52 Stock tables. Six existing supplies gain Tavern membership only; sixteen products and four services fill the remaining gaps. Private stories use editable notes. Room mapping remains GM-configured; new room forms preselect supported available integrations without overriding existing choices.
 
