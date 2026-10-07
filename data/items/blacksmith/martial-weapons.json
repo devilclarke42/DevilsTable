@@ -33,10 +33,7 @@
       "type": "weapon",
       "native": {
         "range": {
-          "value": null,
-          "long": null,
-          "units": "ft",
-          "reach": null
+          "units": "ft"
         },
         "damage": {
           "versatile": {
@@ -52,7 +49,6 @@
             },
             "scaling": {
               "mode": "",
-              "number": null,
               "formula": ""
             }
           },
@@ -69,7 +65,6 @@
             },
             "scaling": {
               "mode": "",
-              "number": null,
               "formula": ""
             }
           }
@@ -141,9 +136,7 @@
             "attack": {
               "ability": "",
               "bonus": "",
-              "critical": {
-                "threshold": null
-              },
+              "critical": {},
               "flat": false,
               "type": {
                 "value": "melee",
@@ -202,15 +195,10 @@
       "type": "weapon",
       "native": {
         "range": {
-          "value": null,
-          "long": null,
-          "units": "ft",
-          "reach": null
+          "units": "ft"
         },
         "damage": {
           "versatile": {
-            "number": null,
-            "denomination": null,
             "bonus": "",
             "types": [],
             "custom": {
@@ -219,7 +207,6 @@
             },
             "scaling": {
               "mode": "",
-              "number": null,
               "formula": ""
             }
           },
@@ -236,7 +223,6 @@
             },
             "scaling": {
               "mode": "",
-              "number": null,
               "formula": ""
             }
           }
@@ -306,9 +292,7 @@
             "attack": {
               "ability": "",
               "bonus": "",
-              "critical": {
-                "threshold": null
-              },
+              "critical": {},
               "flat": false,
               "type": {
                 "value": "melee",
@@ -367,15 +351,10 @@
       "type": "weapon",
       "native": {
         "range": {
-          "value": null,
-          "long": null,
-          "units": "ft",
-          "reach": null
+          "units": "ft"
         },
         "damage": {
           "versatile": {
-            "number": null,
-            "denomination": null,
             "bonus": "",
             "types": [],
             "custom": {
@@ -384,7 +363,6 @@
             },
             "scaling": {
               "mode": "",
-              "number": null,
               "formula": ""
             }
           },
@@ -401,7 +379,6 @@
             },
             "scaling": {
               "mode": "",
-              "number": null,
               "formula": ""
             }
           }
@@ -475,9 +452,7 @@
             "attack": {
               "ability": "",
               "bonus": "",
-              "critical": {
-                "threshold": null
-              },
+              "critical": {},
               "flat": false,
               "type": {
                 "value": "melee",
@@ -536,15 +511,10 @@
       "type": "weapon",
       "native": {
         "range": {
-          "value": null,
-          "long": null,
-          "units": "ft",
-          "reach": null
+          "units": "ft"
         },
         "damage": {
           "versatile": {
-            "number": null,
-            "denomination": null,
             "bonus": "",
             "types": [],
             "custom": {
@@ -553,7 +523,6 @@
             },
             "scaling": {
               "mode": "",
-              "number": null,
               "formula": ""
             }
           },
@@ -570,7 +539,6 @@
             },
             "scaling": {
               "mode": "",
-              "number": null,
               "formula": ""
             }
           }
@@ -643,9 +611,7 @@
             "attack": {
               "ability": "",
               "bonus": "",
-              "critical": {
-                "threshold": null
-              },
+              "critical": {},
               "flat": false,
               "type": {
                 "value": "melee",
@@ -704,15 +670,10 @@
       "type": "weapon",
       "native": {
         "range": {
-          "value": null,
-          "long": null,
-          "units": "ft",
-          "reach": null
+          "units": "ft"
         },
         "damage": {
           "versatile": {
-            "number": null,
-            "denomination": null,
             "bonus": "",
             "types": [],
             "custom": {
@@ -721,7 +682,6 @@
             },
             "scaling": {
               "mode": "",
-              "number": null,
               "formula": ""
             }
           },
@@ -738,7 +698,6 @@
             },
             "scaling": {
               "mode": "",
-              "number": null,
               "formula": ""
             }
           }
@@ -811,9 +770,7 @@
             "attack": {
               "ability": "",
               "bonus": "",
-              "critical": {
-                "threshold": null
-              },
+              "critical": {},
               "flat": false,
               "type": {
                 "value": "melee",
@@ -872,15 +829,10 @@
       "type": "weapon",
       "native": {
         "range": {
-          "value": null,
-          "long": null,
-          "units": "ft",
-          "reach": null
+          "units": "ft"
         },
         "damage": {
           "versatile": {
-            "number": null,
-            "denomination": null,
             "bonus": "",
             "types": [],
             "custom": {
@@ -889,7 +841,6 @@
             },
             "scaling": {
               "mode": "",
-              "number": null,
               "formula": ""
             }
           },
@@ -906,7 +857,6 @@
             },
             "scaling": {
               "mode": "",
-              "number": null,
               "formula": ""
             }
           }
@@ -980,9 +930,7 @@
             "attack": {
               "ability": "",
               "bonus": "",
-              "critical": {
-                "threshold": null
-              },
+              "critical": {},
               "flat": false,
               "type": {
                 "value": "melee",
@@ -1041,15 +989,10 @@
       "type": "weapon",
       "native": {
         "range": {
-          "value": null,
-          "long": null,
-          "units": "ft",
-          "reach": null
+          "units": "ft"
         },
         "damage": {
           "versatile": {
-            "number": null,
-            "denomination": null,
             "bonus": "",
             "types": [],
             "custom": {
@@ -1058,7 +1001,6 @@
             },
             "scaling": {
               "mode": "",
-              "number": null,
               "formula": ""
             }
           },
@@ -1075,7 +1017,6 @@
             },
             "scaling": {
               "mode": "",
-              "number": null,
               "formula": ""
             }
           }
@@ -1148,9 +1089,7 @@
             "attack": {
               "ability": "",
               "bonus": "",
-              "critical": {
-                "threshold": null
-              },
+              "critical": {},
               "flat": false,
               "type": {
                 "value": "melee",
@@ -1209,10 +1148,7 @@
       "type": "weapon",
       "native": {
         "range": {
-          "value": null,
-          "long": null,
-          "units": "ft",
-          "reach": null
+          "units": "ft"
         },
         "damage": {
           "versatile": {
@@ -1228,7 +1164,6 @@
             },
             "scaling": {
               "mode": "",
-              "number": null,
               "formula": ""
             }
           },
@@ -1245,7 +1180,6 @@
             },
             "scaling": {
               "mode": "",
-              "number": null,
               "formula": ""
             }
           }
@@ -1317,9 +1251,7 @@
             "attack": {
               "ability": "",
               "bonus": "",
-              "critical": {
-                "threshold": null
-              },
+              "critical": {},
               "flat": false,
               "type": {
                 "value": "melee",
@@ -1378,15 +1310,10 @@
       "type": "weapon",
       "native": {
         "range": {
-          "value": null,
-          "long": null,
-          "units": "ft",
-          "reach": null
+          "units": "ft"
         },
         "damage": {
           "versatile": {
-            "number": null,
-            "denomination": null,
             "bonus": "",
             "types": [],
             "custom": {
@@ -1395,7 +1322,6 @@
             },
             "scaling": {
               "mode": "",
-              "number": null,
               "formula": ""
             }
           },
@@ -1412,7 +1338,6 @@
             },
             "scaling": {
               "mode": "",
-              "number": null,
               "formula": ""
             }
           }
@@ -1485,9 +1410,7 @@
             "attack": {
               "ability": "",
               "bonus": "",
-              "critical": {
-                "threshold": null
-              },
+              "critical": {},
               "flat": false,
               "type": {
                 "value": "melee",
@@ -1546,15 +1469,10 @@
       "type": "weapon",
       "native": {
         "range": {
-          "value": null,
-          "long": null,
-          "units": "ft",
-          "reach": null
+          "units": "ft"
         },
         "damage": {
           "versatile": {
-            "number": null,
-            "denomination": null,
             "bonus": "",
             "types": [],
             "custom": {
@@ -1563,7 +1481,6 @@
             },
             "scaling": {
               "mode": "",
-              "number": null,
               "formula": ""
             }
           },
@@ -1580,7 +1497,6 @@
             },
             "scaling": {
               "mode": "",
-              "number": null,
               "formula": ""
             }
           }
@@ -1650,9 +1566,7 @@
             "attack": {
               "ability": "",
               "bonus": "",
-              "critical": {
-                "threshold": null
-              },
+              "critical": {},
               "flat": false,
               "type": {
                 "value": "melee",
@@ -1711,15 +1625,10 @@
       "type": "weapon",
       "native": {
         "range": {
-          "value": null,
-          "long": null,
-          "units": "ft",
-          "reach": null
+          "units": "ft"
         },
         "damage": {
           "versatile": {
-            "number": null,
-            "denomination": null,
             "bonus": "",
             "types": [],
             "custom": {
@@ -1728,7 +1637,6 @@
             },
             "scaling": {
               "mode": "",
-              "number": null,
               "formula": ""
             }
           },
@@ -1745,7 +1653,6 @@
             },
             "scaling": {
               "mode": "",
-              "number": null,
               "formula": ""
             }
           }
@@ -1819,9 +1726,7 @@
             "attack": {
               "ability": "",
               "bonus": "",
-              "critical": {
-                "threshold": null
-              },
+              "critical": {},
               "flat": false,
               "type": {
                 "value": "melee",
@@ -1880,15 +1785,10 @@
       "type": "weapon",
       "native": {
         "range": {
-          "value": null,
-          "long": null,
-          "units": "ft",
-          "reach": null
+          "units": "ft"
         },
         "damage": {
           "versatile": {
-            "number": null,
-            "denomination": null,
             "bonus": "",
             "types": [],
             "custom": {
@@ -1897,7 +1797,6 @@
             },
             "scaling": {
               "mode": "",
-              "number": null,
               "formula": ""
             }
           },
@@ -1914,7 +1813,6 @@
             },
             "scaling": {
               "mode": "",
-              "number": null,
               "formula": ""
             }
           }
@@ -1986,9 +1884,7 @@
             "attack": {
               "ability": "",
               "bonus": "",
-              "critical": {
-                "threshold": null
-              },
+              "critical": {},
               "flat": false,
               "type": {
                 "value": "melee",
@@ -2047,15 +1943,10 @@
       "type": "weapon",
       "native": {
         "range": {
-          "value": null,
-          "long": null,
-          "units": "ft",
-          "reach": null
+          "units": "ft"
         },
         "damage": {
           "versatile": {
-            "number": null,
-            "denomination": null,
             "bonus": "",
             "types": [],
             "custom": {
@@ -2064,7 +1955,6 @@
             },
             "scaling": {
               "mode": "",
-              "number": null,
               "formula": ""
             }
           },
@@ -2081,7 +1971,6 @@
             },
             "scaling": {
               "mode": "",
-              "number": null,
               "formula": ""
             }
           }
@@ -2154,9 +2043,7 @@
             "attack": {
               "ability": "",
               "bonus": "",
-              "critical": {
-                "threshold": null
-              },
+              "critical": {},
               "flat": false,
               "type": {
                 "value": "melee",
@@ -2215,15 +2102,10 @@
       "type": "weapon",
       "native": {
         "range": {
-          "value": null,
-          "long": null,
-          "units": "ft",
-          "reach": null
+          "units": "ft"
         },
         "damage": {
           "versatile": {
-            "number": null,
-            "denomination": null,
             "bonus": "",
             "types": [],
             "custom": {
@@ -2232,7 +2114,6 @@
             },
             "scaling": {
               "mode": "",
-              "number": null,
               "formula": ""
             }
           },
@@ -2249,7 +2130,6 @@
             },
             "scaling": {
               "mode": "",
-              "number": null,
               "formula": ""
             }
           }
@@ -2322,9 +2202,7 @@
             "attack": {
               "ability": "",
               "bonus": "",
-              "critical": {
-                "threshold": null
-              },
+              "critical": {},
               "flat": false,
               "type": {
                 "value": "melee",
@@ -2385,8 +2263,7 @@
         "range": {
           "value": 20,
           "long": 60,
-          "units": "ft",
-          "reach": null
+          "units": "ft"
         },
         "damage": {
           "versatile": {
@@ -2402,7 +2279,6 @@
             },
             "scaling": {
               "mode": "",
-              "number": null,
               "formula": ""
             }
           },
@@ -2419,7 +2295,6 @@
             },
             "scaling": {
               "mode": "",
-              "number": null,
               "formula": ""
             }
           }
@@ -2492,9 +2367,7 @@
             "attack": {
               "ability": "",
               "bonus": "",
-              "critical": {
-                "threshold": null
-              },
+              "critical": {},
               "flat": false,
               "type": {
                 "value": "melee",
@@ -2553,15 +2426,10 @@
       "type": "weapon",
       "native": {
         "range": {
-          "value": null,
-          "long": null,
-          "units": "ft",
-          "reach": null
+          "units": "ft"
         },
         "damage": {
           "versatile": {
-            "number": null,
-            "denomination": null,
             "bonus": "",
             "types": [],
             "custom": {
@@ -2570,7 +2438,6 @@
             },
             "scaling": {
               "mode": "",
-              "number": null,
               "formula": ""
             }
           },
@@ -2587,7 +2454,6 @@
             },
             "scaling": {
               "mode": "",
-              "number": null,
               "formula": ""
             }
           }
@@ -2657,9 +2523,7 @@
             "attack": {
               "ability": "",
               "bonus": "",
-              "critical": {
-                "threshold": null
-              },
+              "critical": {},
               "flat": false,
               "type": {
                 "value": "melee",
@@ -2718,10 +2582,7 @@
       "type": "weapon",
       "native": {
         "range": {
-          "value": null,
-          "long": null,
-          "units": "ft",
-          "reach": null
+          "units": "ft"
         },
         "damage": {
           "versatile": {
@@ -2737,7 +2598,6 @@
             },
             "scaling": {
               "mode": "",
-              "number": null,
               "formula": ""
             }
           },
@@ -2754,7 +2614,6 @@
             },
             "scaling": {
               "mode": "",
-              "number": null,
               "formula": ""
             }
           }
@@ -2826,9 +2685,7 @@
             "attack": {
               "ability": "",
               "bonus": "",
-              "critical": {
-                "threshold": null
-              },
+              "critical": {},
               "flat": false,
               "type": {
                 "value": "melee",
@@ -2887,15 +2744,10 @@
       "type": "weapon",
       "native": {
         "range": {
-          "value": null,
-          "long": null,
-          "units": "ft",
-          "reach": null
+          "units": "ft"
         },
         "damage": {
           "versatile": {
-            "number": null,
-            "denomination": null,
             "bonus": "",
             "types": [],
             "custom": {
@@ -2904,7 +2756,6 @@
             },
             "scaling": {
               "mode": "",
-              "number": null,
               "formula": ""
             }
           },
@@ -2921,7 +2772,6 @@
             },
             "scaling": {
               "mode": "",
-              "number": null,
               "formula": ""
             }
           }
@@ -2994,9 +2844,7 @@
             "attack": {
               "ability": "",
               "bonus": "",
-              "critical": {
-                "threshold": null
-              },
+              "critical": {},
               "flat": false,
               "type": {
                 "value": "melee",
@@ -3057,13 +2905,10 @@
         "range": {
           "value": 25,
           "long": 100,
-          "units": "ft",
-          "reach": null
+          "units": "ft"
         },
         "damage": {
           "versatile": {
-            "number": null,
-            "denomination": null,
             "bonus": "",
             "types": [],
             "custom": {
@@ -3072,12 +2917,10 @@
             },
             "scaling": {
               "mode": "",
-              "number": null,
               "formula": ""
             }
           },
           "base": {
-            "number": null,
             "denomination": 0,
             "bonus": "1",
             "types": [
@@ -3089,7 +2932,6 @@
             },
             "scaling": {
               "mode": "",
-              "number": null,
               "formula": ""
             }
           }
@@ -3162,9 +3004,7 @@
             "attack": {
               "ability": "",
               "bonus": "",
-              "critical": {
-                "threshold": null
-              },
+              "critical": {},
               "flat": false,
               "type": {
                 "value": "ranged",
@@ -3227,13 +3067,10 @@
         "range": {
           "value": 30,
           "long": 120,
-          "units": "ft",
-          "reach": null
+          "units": "ft"
         },
         "damage": {
           "versatile": {
-            "number": null,
-            "denomination": null,
             "bonus": "",
             "types": [],
             "custom": {
@@ -3242,7 +3079,6 @@
             },
             "scaling": {
               "mode": "",
-              "number": null,
               "formula": ""
             }
           },
@@ -3259,7 +3095,6 @@
             },
             "scaling": {
               "mode": "",
-              "number": null,
               "formula": ""
             }
           }
@@ -3333,9 +3168,7 @@
             "attack": {
               "ability": "",
               "bonus": "",
-              "critical": {
-                "threshold": null
-              },
+              "critical": {},
               "flat": false,
               "type": {
                 "value": "ranged",
@@ -3398,13 +3231,10 @@
         "range": {
           "value": 100,
           "long": 400,
-          "units": "ft",
-          "reach": null
+          "units": "ft"
         },
         "damage": {
           "versatile": {
-            "number": null,
-            "denomination": null,
             "bonus": "",
             "types": [],
             "custom": {
@@ -3413,7 +3243,6 @@
             },
             "scaling": {
               "mode": "",
-              "number": null,
               "formula": ""
             }
           },
@@ -3430,7 +3259,6 @@
             },
             "scaling": {
               "mode": "",
-              "number": null,
               "formula": ""
             }
           }
@@ -3505,9 +3333,7 @@
             "attack": {
               "ability": "",
               "bonus": "",
-              "critical": {
-                "threshold": null
-              },
+              "critical": {},
               "flat": false,
               "type": {
                 "value": "ranged",
@@ -3570,13 +3396,10 @@
         "range": {
           "value": 150,
           "long": 600,
-          "units": "ft",
-          "reach": null
+          "units": "ft"
         },
         "damage": {
           "versatile": {
-            "number": null,
-            "denomination": null,
             "bonus": "",
             "types": [],
             "custom": {
@@ -3585,7 +3408,6 @@
             },
             "scaling": {
               "mode": "",
-              "number": null,
               "formula": ""
             }
           },
@@ -3602,7 +3424,6 @@
             },
             "scaling": {
               "mode": "",
-              "number": null,
               "formula": ""
             }
           }
@@ -3676,9 +3497,7 @@
             "attack": {
               "ability": "",
               "bonus": "",
-              "critical": {
-                "threshold": null
-              },
+              "critical": {},
               "flat": false,
               "type": {
                 "value": "ranged",
@@ -3741,13 +3560,10 @@
         "range": {
           "value": 5,
           "long": 15,
-          "units": "ft",
-          "reach": null
+          "units": "ft"
         },
         "damage": {
           "versatile": {
-            "number": null,
-            "denomination": null,
             "bonus": "",
             "types": [],
             "custom": {
@@ -3756,13 +3572,10 @@
             },
             "scaling": {
               "mode": "",
-              "number": null,
               "formula": ""
             }
           },
           "base": {
-            "number": null,
-            "denomination": null,
             "types": [],
             "custom": {
               "enabled": false
@@ -3840,9 +3653,7 @@
             "attack": {
               "ability": "",
               "bonus": "",
-              "critical": {
-                "threshold": null
-              },
+              "critical": {},
               "flat": false,
               "type": {
                 "value": "ranged",

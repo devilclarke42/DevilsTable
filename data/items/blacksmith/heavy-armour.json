@@ -34,8 +34,7 @@
       "native": {
         "armor": {
           "value": 14,
-          "dex": 0,
-          "magicalBonus": null
+          "dex": 0
         },
         "type": {
           "value": "heavy",
@@ -83,8 +82,7 @@
       "native": {
         "armor": {
           "value": 16,
-          "dex": 0,
-          "magicalBonus": null
+          "dex": 0
         },
         "strength": 13,
         "type": {
@@ -133,8 +131,7 @@
       "native": {
         "armor": {
           "value": 17,
-          "dex": 0,
-          "magicalBonus": null
+          "dex": 0
         },
         "strength": 15,
         "type": {
@@ -183,8 +180,7 @@
       "native": {
         "armor": {
           "value": 18,
-          "dex": 0,
-          "magicalBonus": null
+          "dex": 0
         },
         "strength": 15,
         "type": {

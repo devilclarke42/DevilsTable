@@ -34,8 +34,7 @@
       "native": {
         "armor": {
           "value": 12,
-          "dex": 2,
-          "magicalBonus": null
+          "dex": 2
         },
         "type": {
           "value": "medium",
@@ -81,8 +80,7 @@
       "native": {
         "armor": {
           "value": 13,
-          "dex": 2,
-          "magicalBonus": null
+          "dex": 2
         },
         "type": {
           "value": "medium",
@@ -128,8 +126,7 @@
       "native": {
         "armor": {
           "value": 14,
-          "dex": 2,
-          "magicalBonus": null
+          "dex": 2
         },
         "type": {
           "value": "medium",
@@ -177,8 +174,7 @@
       "native": {
         "armor": {
           "value": 14,
-          "dex": 2,
-          "magicalBonus": null
+          "dex": 2
         },
         "type": {
           "value": "medium",
@@ -224,8 +220,7 @@
       "native": {
         "armor": {
           "value": 15,
-          "dex": 2,
-          "magicalBonus": null
+          "dex": 2
         },
         "type": {
           "value": "medium",

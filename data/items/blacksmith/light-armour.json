@@ -33,9 +33,7 @@
       "type": "equipment",
       "native": {
         "armor": {
-          "value": 11,
-          "dex": null,
-          "magicalBonus": null
+          "value": 11
         },
         "type": {
           "value": "light",
@@ -82,9 +80,7 @@
       "type": "equipment",
       "native": {
         "armor": {
-          "value": 11,
-          "dex": null,
-          "magicalBonus": null
+          "value": 11
         },
         "type": {
           "value": "light",
@@ -129,9 +125,7 @@
       "type": "equipment",
       "native": {
         "armor": {
-          "value": 12,
-          "dex": null,
-          "magicalBonus": null
+          "value": 12
         },
         "type": {
           "value": "light",

@@ -68,3 +68,21 @@ test("requirements are data-driven and fail closed for unsupported predicates or
  assert.throws(()=>new ServiceRegistry().register(b),/requirement/);
  delete row.requirements.item.script;row.maxQuantity=2;assert.throws(()=>new ServiceRegistry().register(b),/one target/);
 });
+
+test("native read-back tolerates omitted unset source fields without weakening populated mechanics",async()=>{
+ const {matchesGenerated,generatedDifferences}=await import("../scripts/builders/generated-fields.js");
+ const {planBuild}=await import("../scripts/builders/build-plan.js");
+ const docs=catalogue.entries.filter(({item})=>item.mechanics.native).map(({item})=>catalogueEntryToItem(item));
+ const stripNulls=value=>Array.isArray(value)?value.map(stripNulls):value&&typeof value==="object"?Object.fromEntries(Object.entries(value).filter(([,v])=>v!==null).map(([k,v])=>[k,stripNulls(v)])):value;
+ const saved=docs.map(stripNulls);
+ assert.equal(planBuild(docs,saved).unchanged,docs.length);
+ const plate=docs.find(d=>d.name==="Plate Armour");
+ assert.equal(Object.hasOwn(plate.system.armor,"magicalBonus"),false);
+ const legacy=structuredClone(plate);legacy.system.armor.magicalBonus=null;
+ assert.equal(matchesGenerated(plate,legacy),false);
+ assert.equal(generatedDifferences(plate,legacy)[0].path,"system.armor.magicalBonus");
+ const bad=structuredClone(plate);bad.system.armor.value=17;assert.equal(matchesGenerated(bad,plate),false);
+ const sword=docs.find(d=>d.name==="Longsword"),damaged=structuredClone(sword);
+ damaged.system.damage.base.denomination=6;assert.equal(matchesGenerated(damaged,sword),false);
+ const smith=docs.find(d=>d.name==="Smith's Tools");assert.equal(Object.values(smith.system.activities)[0].range.units,"self");
+});

@@ -3,6 +3,16 @@
 This file retains detailed repository build history. The official milestone/release record is
 [docs/CHANGELOG.md](docs/CHANGELOG.md). Versions here do not imply a public GitHub Release exists.
 
+## 0.3.0-alpha.18 — 2026-10-07 — Native equipment read-back
+
+### Fixed
+
+- Omit unset optional native equipment fields rather than requiring explicit null values that Foundry may omit during serialization.
+- Correct Smith's Tools activity range units to the native self value.
+- Keep generated-field verification strict; populated AC, damage, prices, weights and identity checks are unchanged.
+- Regression checks reproduce omitted-field mismatches and verify existing generated equipment converges without duplicate creation.
+- Live rebuild confirmation remains pending.
+
 ## 0.3.0-alpha.17 — 2026-10-07 — Blacksmith Catalogue & Services
 
 ### Added

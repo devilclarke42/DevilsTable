@@ -35,7 +35,6 @@
       "native": {
         "damage": {
           "base": {
-            "number": null,
             "denomination": 0,
             "bonus": "",
             "types": [],
@@ -45,7 +44,6 @@
             },
             "scaling": {
               "mode": "",
-              "number": null,
               "formula": ""
             }
           },
@@ -96,7 +94,6 @@
       "native": {
         "damage": {
           "base": {
-            "number": null,
             "denomination": 0,
             "bonus": "",
             "types": [],
@@ -106,7 +103,6 @@
             },
             "scaling": {
               "mode": "",
-              "number": null,
               "formula": ""
             }
           },
@@ -157,7 +153,6 @@
       "native": {
         "damage": {
           "base": {
-            "number": null,
             "denomination": 0,
             "types": [],
             "custom": {
@@ -215,7 +210,6 @@
       "native": {
         "damage": {
           "base": {
-            "number": null,
             "denomination": 0,
             "bonus": "",
             "types": [],
@@ -225,7 +219,6 @@
             },
             "scaling": {
               "mode": "",
-              "number": null,
               "formula": ""
             }
           },

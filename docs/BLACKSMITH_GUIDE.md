@@ -1,6 +1,6 @@
 # Blacksmith Guide
 
-Sprint 13 ships in 0.3.0-alpha.17. It uses the existing shared Item compendium, merchant stock tables, Builder, native Actor currency and GM approval pipeline. Live Foundry V14 / D&D5e 5.3.3 / Forge acceptance remains required.
+Sprint 13 ships in 0.3.0-alpha.17, with native field serialization corrected in alpha.18. It uses the existing shared Item compendium, merchant stock tables, Builder, native Actor currency and GM approval pipeline. Live Foundry V14 / D&D5e 5.3.3 / Forge acceptance remains required.
 
 ## Products and mechanics
 

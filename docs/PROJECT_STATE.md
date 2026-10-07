@@ -1,4 +1,9 @@
 # Project state
+## Current fix — 0.3.0-alpha.18
+
+Blacksmith native data now omits unset optional fields, including armour magicalBonus. Explicit null values could be absent in Foundry read-back, triggering repeated updates. Smith's Tools uses self range units. No global null/missing equivalence was added. Rebuild existing compendiums in place; live confirmation remains pending.
+
+
 
 ## Sprint 13 candidate — 0.3.0-alpha.17
 

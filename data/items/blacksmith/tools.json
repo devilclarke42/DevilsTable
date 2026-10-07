@@ -45,7 +45,6 @@
             "type": "check",
             "activation": {
               "type": "",
-              "value": null,
               "condition": "",
               "override": false
             },
@@ -69,7 +68,7 @@
             },
             "effects": [],
             "range": {
-              "units": "",
+              "units": "self",
               "special": "",
               "override": false
             },

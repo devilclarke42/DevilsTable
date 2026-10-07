@@ -33,9 +33,7 @@
       "type": "equipment",
       "native": {
         "armor": {
-          "value": 2,
-          "dex": null,
-          "magicalBonus": null
+          "value": 2
         },
         "type": {
           "value": "shield",
