@@ -86,3 +86,28 @@ test("native read-back tolerates omitted unset source fields without weakening p
  damaged.system.damage.base.denomination=6;assert.equal(matchesGenerated(damaged,sword),false);
  const smith=docs.find(d=>d.name==="Smith's Tools");assert.equal(Object.values(smith.system.activities)[0].range.units,"self");
 });
+
+test("weapon and tool activity unit defaults converge after Foundry normalization",async()=>{
+ const {planBuild}=await import("../scripts/builders/build-plan.js");
+ const {matchesGenerated}=await import("../scripts/builders/generated-fields.js");
+ const expected=catalogue.entries.filter(({item})=>["weapon","tool"].includes(item.mechanics.type)).map(({item})=>catalogueEntryToItem(item));
+ assert.equal(expected.length,38);
+ const saved=structuredClone(expected);
+ for(const doc of saved)for(const activity of Object.values(doc.system.activities)){
+   activity.duration.units ||= "inst";
+   activity.target.template.units ||= "ft";
+ }
+ assert.equal(planBuild(expected,saved).unchanged,38);
+ const {adapter,state}=fakeAdapter({existing:saved});
+ const build=createBuilder({load:()=>catalogue,adapter});
+ const result=await build({dryRun:false,shopId:"blacksmith"});
+ assert.equal(result.update,0);assert.equal(result.unchanged,38);
+ assert.equal((await build({dryRun:false,shopId:"blacksmith"})).unchanged,73);
+ assert.equal(new Set(state.docs.map(d=>d._id)).size,73);
+ const changed=structuredClone(expected[0]);
+ Object.values(changed.system.activities)[0].duration.units="hour";
+ assert.equal(matchesGenerated(changed,expected[0]),false);
+ const legacy=structuredClone(expected[0]);
+ Object.values(legacy.system.activities)[0].duration.units="";
+ assert.equal(matchesGenerated(expected[0],legacy),false);
+});

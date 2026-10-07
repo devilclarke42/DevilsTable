@@ -3,6 +3,15 @@
 This file retains detailed repository build history. The official milestone/release record is
 [docs/CHANGELOG.md](docs/CHANGELOG.md). Versions here do not imply a public GitHub Release exists.
 
+## 0.3.0-alpha.19 — 2026-10-08 — Activity unit defaults
+
+### Fixed
+
+- Explicit instantaneous duration (inst) and feet template units (ft) for Blacksmith weapon/tool activities, matching the reported Foundry save normalization.
+- Preserve alpha.18 optional-field fixes and all permanent identities.
+- Regression coverage verifies normalized saves converge and real unit changes remain mismatches. Read-back comparisons remain strict.
+- Live rebuild confirmation remains pending.
+
 ## 0.3.0-alpha.18 — 2026-10-07 — Native equipment read-back
 
 ### Fixed
