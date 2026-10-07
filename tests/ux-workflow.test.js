@@ -74,6 +74,9 @@ test("native sheet menu exposes one Make Merchant action for the correct Actor",
  const controls=[];addMerchantHeaderControl({document:actor},controls);addMerchantHeaderControl({document:actor},controls);
  assert.equal(controls.length,1);assert.equal(controls[0].name,"Make Merchant - DT");
  assert.equal(controls[0].callback().actor,actor);
+ assert.equal(controls[0].label,"Make Merchant - DT");
+ const legacy=[{label:"Existing",action:"existing"}];addMerchantHeaderControl({document:actor},legacy);
+ assert.equal(legacy[1].icon,"fa-solid fa-store");assert.equal(legacy[1].onClick().actor,actor);
  for(const key of ["entryId","documentId","actorId"]) assert.equal(entryActor({dataset:{[key]:actor.id}}),actor);
  globalThis.canvas={scene:{tokens:new Map([["linked",{actor}]])}};
  assert.equal(entryActor({dataset:{tokenId:"linked"}}),actor);

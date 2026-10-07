@@ -8,6 +8,14 @@ This is the official milestone/release changelog. The root [build changelog](../
 retains detailed alpha implementation history. A milestone entry does not assert that a public
 GitHub Release or installation manifest exists. No release dates are invented for unreleased work.
 
+## 0.3.0-alpha.16 — 2026-10-07 — Sheet menu compatibility
+
+### Fixed
+
+- Provide both native header-control label/click fields and newer context-menu name/callback fields.
+- Select icon classes for earlier sheet menus, preventing the undefined Make Merchant entry.
+- Regression coverage checks both menu shapes and their target NPC. Live visual confirmation remains pending.
+
 ## 0.3.0-alpha.15 — 2026-10-07 — Merchant entry and indicators
 
 ### Fixed

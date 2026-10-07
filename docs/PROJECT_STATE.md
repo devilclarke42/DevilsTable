@@ -1,8 +1,8 @@
 # Project state
 
-Updated 2026-10-07 for `0.3.0-alpha.15`.
+Updated 2026-10-07 for `0.3.0-alpha.16`.
 
-## Current candidate — alpha.15 / UX & Workflow Polish
+## Current candidate — alpha.16 / UX & Workflow Polish
 
 Implemented NPC sheet configuration, three-dot/Directory Builder entry, merchant badges, optional local Dice So Nice presentation and compact content builders with source summaries. Existing transaction authority, source IDs, inventory and catalogue data are retained. Merchant disabling preserves business history. No dedicated sidebar was added because existing Actor entry points cover this workflow.
 

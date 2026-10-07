@@ -73,8 +73,16 @@ export function addMerchantHeaderControl(app, controls) {
   if (!["Actor", "Token"].includes(doc?.documentName)) return;
   const actor = doc.documentName === "Token" ? doc.actor : doc;
   if (!supportedNpc(actor) || controls.some(c => c.action === "dtMakeMerchant")) return;
-  controls.push({ name: "Make Merchant - DT", action: "dtMakeMerchant", icon: '<i class="fa-solid fa-store"></i>',
-    condition: () => supportedNpc(actor), callback: () => openNpcBuilder(actor) });
+  const open = () => openNpcBuilder(actor);
+  const visible = () => supportedNpc(actor);
+  // Earlier V2 sheets consume label/onClick and icon classes; newer menus use ContextMenuEntry.
+  const legacy = Number(game.release?.generation ?? 14) < 14
+    || controls.some(control => "label" in control && !("name" in control));
+  controls.push({
+    action: "dtMakeMerchant", name: "Make Merchant - DT", label: "Make Merchant - DT",
+    icon: legacy ? "fa-solid fa-store" : '<i class="fa-solid fa-store"></i>',
+    visible, condition: visible, onClick: open, callback: open
+  });
 }
 export function addActorContext(_application, menu) {
   if (!game.user?.isGM) return;
