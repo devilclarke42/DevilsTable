@@ -290,7 +290,8 @@
       "lifting"
     ],
     "shops": [
-      "general-store"
+      "general-store",
+      "blacksmith"
     ],
     "availability": "variable",
     "source": {

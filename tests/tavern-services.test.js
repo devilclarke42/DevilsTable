@@ -14,6 +14,7 @@ import {quoteTrade} from "../scripts/merchant/trade-model.js";
 import {executeTrade} from "../scripts/merchant/transaction.js";
 import {coinValue} from "../scripts/merchant/model.js";
 const data=await readJson("data/services.json"),templates=await readJson("data/merchant-templates.json");
+data.services=data.services.filter(r=>r.catalogues.includes("tavern"));data.categories=data.categories.filter(r=>r.catalogues.includes("tavern"));
 serviceRegistry.register(data);
 const context={economy:await loadEconomy({readJson}),policy:await loadBuilderPolicy({readJson}),catalogue:await loadStockCatalogue({readJson}),registry:catalogueRegistry};
 catalogueRegistry.register({catalogues:context.catalogue.catalogueDefinitions,categories:context.catalogue.categoryDefinitions});
@@ -54,7 +55,7 @@ test("real Tavern bread, ale and lodging settle in one checkout without creating
  assert.equal(m.getFlag("devils-table","merchant.serviceStats.DT_SERVICE_TAV_PRIVATE_ROOM").purchased,1);
 });
 test("service catalogue stays out of Item builds; active Tavern food and drink preserve their identities",()=>{
- assert.equal(context.catalogue.entries.length,312);assert.equal(context.catalogue.entries.filter(e=>e.item.id.startsWith("DT_ITEM_TAV_")).length,168);
+ assert.equal(context.catalogue.entries.length,370);assert.equal(context.catalogue.entries.filter(e=>e.item.id.startsWith("DT_ITEM_TAV_")).length,168);
  assert.equal(context.catalogue.entries.some(e=>e.item.id.startsWith("DT_SERVICE_")),false);
 });
 

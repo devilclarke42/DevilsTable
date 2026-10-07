@@ -3,6 +3,27 @@
 This file retains detailed repository build history. The official milestone/release record is
 [docs/CHANGELOG.md](docs/CHANGELOG.md). Versions here do not imply a public GitHub Release exists.
 
+## 0.3.0-alpha.17 — 2026-10-07 — Blacksmith Catalogue & Services
+
+### Added
+
+- 58 new Blacksmith products, 15 shared General Store products, nine services and five editable smith presets.
+- Native 2014 weapon, armour, ammunition and tool conversion; no fake equipment or 2024 mastery.
+- Generic character-inventory service target selection, authoritative eligibility checks, GM review and private receipt targets.
+- Four additional stock variants using sixteen tables; all existing permanent table identities remain reserved.
+- Blacksmith Guide, source notices and live acceptance checklist.
+
+### Changed
+
+- Project totals: 370 Items, 25 services, 68 stock tables. One shared Item compendium remains canonical for generated products.
+- Optional execution context includes the selected Item reference. Routine smith services charge and log only; item changes remain GM-adjudicated.
+- Existing menu and merchant marker fixes are retained. No new durability or combat bonus system.
+
+### Validation
+
+- Source validation, builder convergence and automated transaction/requirement regressions accompany packaging.
+- Live Foundry/Forge equipment mechanics, player selection UI and multiplayer acceptance remain pending.
+
 ## 0.3.0-alpha.16 — 2026-10-07 — Sheet menu compatibility
 
 ### Fixed

@@ -34,7 +34,7 @@
   <p>Relationship: <strong>{{relationship}}</strong></p>
   <h3>Basket</h3>
   {{#each basket}}<div data-trade-line data-id="{{id}}" data-direction="{{direction}}">
-    <strong>{{direction}}: {{kindLabel}}: {{name}}</strong> (Original {{originalLabel}} → <span data-adjusted>{{priceLabel}}</span> each)
+    <strong>{{direction}}: {{kindLabel}}: {{name}}{{#if targetItemName}} — Item: {{targetItemName}}{{/if}}</strong> (Original {{originalLabel}} → <span data-adjusted>{{priceLabel}}</span> each)
     <p>On approval: {{executionLabel}}</p>{{#if saleUnit}}<p>Per {{saleUnit}} · {{duration}}</p>{{/if}}
     {{#if accommodation}}<p>{{nights}} night(s) · Checkout {{checkoutTime}}</p>{{/if}}
     <label>Quantity <input name="quantity" type="number" min="0" step="1" value="{{quantity}}"></label>

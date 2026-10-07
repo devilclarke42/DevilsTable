@@ -96,9 +96,18 @@
   {
     "id": "blacksmith",
     "name": "Blacksmith",
-    "icon": "icons/svg/item-bag.svg",
+    "icon": "icons/skills/trades/smithing-tongs-metal-red.webp",
     "sort": 30,
     "categories": [
+      "simple-weapons",
+      "martial-weapons",
+      "light-armour",
+      "medium-armour",
+      "heavy-armour",
+      "shields",
+      "tools",
+      "ammunition",
+      "trade-goods",
       "containers",
       "fire-lighting",
       "rope-climbing",
@@ -109,7 +118,13 @@
       "name": "Other goods",
       "icon": "icons/svg/item-bag.svg"
     },
-    "metadata": {}
+    "metadata": {
+      "defaultServiceCategories": [
+        "smith-repairs",
+        "smith-fitting",
+        "smith-specialist"
+      ]
+    }
   },
   {
     "id": "black-market",

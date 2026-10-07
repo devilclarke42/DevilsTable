@@ -25,9 +25,21 @@ export function validateItemRules(item, location) {
     }
     if (item.weight.value <= 0) add("weight.value", "A mundane container must have a positive empty weight.");
   } else if (mechanics.type === "consumable") {
-    if (!["food", "trinket"].includes(mechanics.subtype)) add("mechanics.subtype", "Supported mundane consumables use food or trinket.");
-    if (!mechanics.use) add("mechanics.use", "Consumables require an explicit use action and consumption mode.");
+    if (!["food", "trinket", "ammo"].includes(mechanics.subtype)) add("mechanics.subtype", "Supported mundane consumables use food or trinket.");
+    if (mechanics.subtype !== "ammo" && !mechanics.use) add("mechanics.use", "Consumables require an explicit use action and consumption mode.");
     if (mechanics.subtype === "food" && mechanics.use?.mode !== "consume") add("mechanics.use.mode", "Food must consume one sale unit.");
+  }
+  const nativeType = ["weapon", "equipment", "tool"].includes(mechanics.type) || mechanics.subtype === "ammo";
+  if (nativeType && !mechanics.native) add("mechanics.native", "Native equipment requires explicit system fields.");
+  if (!nativeType && mechanics.native) add("mechanics.native", "Native fields are reserved for equipment, tools, weapons and ammunition.");
+  if (mechanics.native) {
+    const n = mechanics.native, t = n.type?.value;
+    const values = {weapon:["simpleM","simpleR","martialM","martialR"],equipment:["light","medium","heavy","shield"],tool:["art"],consumable:["ammo"]};
+    if (!values[mechanics.type]?.includes(t)) add("mechanics.native.type", "Unsupported native equipment type.");
+    if (mechanics.type === "weapon" && (!n.damage?.base || !Object.values(n.activities ?? {}).some(a=>a.type==="attack"))) add("mechanics.native", "Weapons require damage and a native attack activity.");
+    if (mechanics.type === "equipment" && !Number.isInteger(n.armor?.value)) add("mechanics.native.armor", "Armour requires a native AC value.");
+    if (mechanics.type === "consumable" && !["arrow","crossbowBolt","slingBullet","blowgunNeedle"].includes(n.type?.subtype)) add("mechanics.native.type", "Unknown ammunition subtype.");
+    if (Object.values(n.activities??{}).some(a=>!["attack","check","save"].includes(a.type))) add("mechanics.native.activities", "Only native attack/check/save activities are supported.");
   }
   if (mechanics.type !== "container" && mechanics.capacity) add("mechanics.capacity", "Only containers may define capacity.");
   if (mechanics.type !== "consumable" && mechanics.use) add("mechanics.use", "Use activities require a supported consumable mapping.");

@@ -1104,19 +1104,1217 @@
     {
       "id": "DT_TABLE_BSM",
       "shop": "blacksmith",
-      "coverage": "partial",
-      "draws": 3,
+      "coverage": "complete",
+      "draws": 8,
       "categoryDraws": 2,
       "categories": [
         "containers",
         "fire-lighting",
         "rope-climbing",
-        "animal"
+        "animal",
+        "tools",
+        "ammunition",
+        "heavy-armour",
+        "light-armour",
+        "martial-weapons",
+        "medium-armour",
+        "shields",
+        "simple-weapons",
+        "trade-goods"
       ],
       "overrides": [
         {
           "itemId": "DT_ITEM_GS_LOCKBOX",
+          "tier": "rarely"
+        },
+        {
+          "itemId": "DT_ITEM_GS_FLINT_STEEL",
           "tier": "often"
+        },
+        {
+          "itemId": "DT_ITEM_GS_CHARCOAL",
+          "tier": "often"
+        },
+        {
+          "itemId": "DT_ITEM_GS_GRAPPLING_HOOK",
+          "tier": "often"
+        },
+        {
+          "itemId": "DT_ITEM_GS_PITONS",
+          "tier": "often"
+        },
+        {
+          "itemId": "DT_ITEM_GS_CHAIN",
+          "tier": "often"
+        },
+        {
+          "itemId": "DT_ITEM_GS_HORSESHOES",
+          "tier": "always"
+        },
+        {
+          "itemId": "DT_ITEM_GS_TACK_REPAIR_KIT",
+          "tier": "often"
+        },
+        {
+          "itemId": "DT_ITEM_GS_HAMMER",
+          "tier": "always"
+        },
+        {
+          "itemId": "DT_ITEM_GS_CROWBAR",
+          "tier": "often"
+        },
+        {
+          "itemId": "DT_ITEM_GS_SHOVEL",
+          "tier": "often"
+        },
+        {
+          "itemId": "DT_ITEM_GS_SPIKES_IRON",
+          "tier": "often"
+        },
+        {
+          "itemId": "DT_ITEM_BSM_ARROW",
+          "tier": "rarely"
+        },
+        {
+          "itemId": "DT_ITEM_BSM_CROSSBOW_BOLT",
+          "tier": "rarely"
+        },
+        {
+          "itemId": "DT_ITEM_BSM_SLING_BULLET",
+          "tier": "rarely"
+        },
+        {
+          "itemId": "DT_ITEM_BSM_BLOWGUN_NEEDLE",
+          "tier": "rarely"
+        },
+        {
+          "itemId": "DT_ITEM_BSM_RING_MAIL",
+          "tier": "rarely"
+        },
+        {
+          "itemId": "DT_ITEM_BSM_CHAIN_MAIL",
+          "tier": "rarely"
+        },
+        {
+          "itemId": "DT_ITEM_BSM_SPLINT_ARMOR",
+          "tier": "rarely"
+        },
+        {
+          "itemId": "DT_ITEM_BSM_PLATE_ARMOR",
+          "tier": "rarely"
+        },
+        {
+          "itemId": "DT_ITEM_BSM_PADDED_ARMOR",
+          "tier": "rarely"
+        },
+        {
+          "itemId": "DT_ITEM_BSM_LEATHER_ARMOR",
+          "tier": "rarely"
+        },
+        {
+          "itemId": "DT_ITEM_BSM_STUDDED_LEATHER_ARMOR",
+          "tier": "rarely"
+        },
+        {
+          "itemId": "DT_ITEM_BSM_BATTLEAXE",
+          "tier": "rarely"
+        },
+        {
+          "itemId": "DT_ITEM_BSM_FLAIL",
+          "tier": "rarely"
+        },
+        {
+          "itemId": "DT_ITEM_BSM_GLAIVE",
+          "tier": "rarely"
+        },
+        {
+          "itemId": "DT_ITEM_BSM_GREATAXE",
+          "tier": "rarely"
+        },
+        {
+          "itemId": "DT_ITEM_BSM_GREATSWORD",
+          "tier": "rarely"
+        },
+        {
+          "itemId": "DT_ITEM_BSM_HALBERD",
+          "tier": "rarely"
+        },
+        {
+          "itemId": "DT_ITEM_BSM_LANCE",
+          "tier": "rarely"
+        },
+        {
+          "itemId": "DT_ITEM_BSM_LONGSWORD",
+          "tier": "rarely"
+        },
+        {
+          "itemId": "DT_ITEM_BSM_MAUL",
+          "tier": "rarely"
+        },
+        {
+          "itemId": "DT_ITEM_BSM_MORNINGSTAR",
+          "tier": "rarely"
+        },
+        {
+          "itemId": "DT_ITEM_BSM_PIKE",
+          "tier": "rarely"
+        },
+        {
+          "itemId": "DT_ITEM_BSM_RAPIER",
+          "tier": "rarely"
+        },
+        {
+          "itemId": "DT_ITEM_BSM_SCIMITAR",
+          "tier": "rarely"
+        },
+        {
+          "itemId": "DT_ITEM_BSM_SHORTSWORD",
+          "tier": "rarely"
+        },
+        {
+          "itemId": "DT_ITEM_BSM_TRIDENT",
+          "tier": "rarely"
+        },
+        {
+          "itemId": "DT_ITEM_BSM_WAR_PICK",
+          "tier": "rarely"
+        },
+        {
+          "itemId": "DT_ITEM_BSM_WARHAMMER",
+          "tier": "rarely"
+        },
+        {
+          "itemId": "DT_ITEM_BSM_WHIP",
+          "tier": "rarely"
+        },
+        {
+          "itemId": "DT_ITEM_BSM_BLOWGUN",
+          "tier": "rarely"
+        },
+        {
+          "itemId": "DT_ITEM_BSM_HAND_CROSSBOW",
+          "tier": "rarely"
+        },
+        {
+          "itemId": "DT_ITEM_BSM_HEAVY_CROSSBOW",
+          "tier": "rarely"
+        },
+        {
+          "itemId": "DT_ITEM_BSM_LONGBOW",
+          "tier": "rarely"
+        },
+        {
+          "itemId": "DT_ITEM_BSM_NET",
+          "tier": "rarely"
+        },
+        {
+          "itemId": "DT_ITEM_BSM_HIDE_ARMOR",
+          "tier": "rarely"
+        },
+        {
+          "itemId": "DT_ITEM_BSM_CHAIN_SHIRT",
+          "tier": "rarely"
+        },
+        {
+          "itemId": "DT_ITEM_BSM_SCALE_MAIL",
+          "tier": "rarely"
+        },
+        {
+          "itemId": "DT_ITEM_BSM_BREASTPLATE",
+          "tier": "rarely"
+        },
+        {
+          "itemId": "DT_ITEM_BSM_HALF_PLATE_ARMOR",
+          "tier": "rarely"
+        },
+        {
+          "itemId": "DT_ITEM_BSM_SHIELD",
+          "tier": "rarely"
+        },
+        {
+          "itemId": "DT_ITEM_BSM_CLUB",
+          "tier": "often"
+        },
+        {
+          "itemId": "DT_ITEM_BSM_DAGGER",
+          "tier": "always"
+        },
+        {
+          "itemId": "DT_ITEM_BSM_GREATCLUB",
+          "tier": "often"
+        },
+        {
+          "itemId": "DT_ITEM_BSM_HANDAXE",
+          "tier": "often"
+        },
+        {
+          "itemId": "DT_ITEM_BSM_JAVELIN",
+          "tier": "often"
+        },
+        {
+          "itemId": "DT_ITEM_BSM_LIGHT_HAMMER",
+          "tier": "often"
+        },
+        {
+          "itemId": "DT_ITEM_BSM_MACE",
+          "tier": "often"
+        },
+        {
+          "itemId": "DT_ITEM_BSM_QUARTERSTAFF",
+          "tier": "often"
+        },
+        {
+          "itemId": "DT_ITEM_BSM_SICKLE",
+          "tier": "often"
+        },
+        {
+          "itemId": "DT_ITEM_BSM_SPEAR",
+          "tier": "often"
+        },
+        {
+          "itemId": "DT_ITEM_BSM_LIGHT_CROSSBOW",
+          "tier": "often"
+        },
+        {
+          "itemId": "DT_ITEM_BSM_DART",
+          "tier": "often"
+        },
+        {
+          "itemId": "DT_ITEM_BSM_SHORTBOW",
+          "tier": "often"
+        },
+        {
+          "itemId": "DT_ITEM_BSM_SLING",
+          "tier": "often"
+        },
+        {
+          "itemId": "DT_ITEM_BSM_SMITHS_TOOLS",
+          "tier": "often"
+        },
+        {
+          "itemId": "DT_ITEM_GS_BAR_IRON",
+          "tier": "often"
+        },
+        {
+          "itemId": "DT_ITEM_GS_BAR_COPPER",
+          "tier": "often"
+        },
+        {
+          "itemId": "DT_ITEM_BSM_STEEL_BILLET",
+          "tier": "often"
+        },
+        {
+          "itemId": "DT_ITEM_BSM_LOCK",
+          "tier": "often"
+        },
+        {
+          "itemId": "DT_ITEM_BSM_MANACLES",
+          "tier": "often"
+        },
+        {
+          "itemId": "DT_ITEM_GS_NAILS_IRON",
+          "tier": "often"
+        }
+      ],
+      "variants": [
+        {
+          "id": "DT_TABLE_BSM_TOWN",
+          "name": "Town Blacksmith",
+          "description": "Maintains a varied rack of weapons and armour. New fittings and special orders need workshop time.",
+          "draws": 16,
+          "categoryDraws": 2,
+          "excludedItems": [],
+          "overrides": [
+            {
+              "itemId": "DT_ITEM_GS_LOCKBOX",
+              "tier": "rarely"
+            },
+            {
+              "itemId": "DT_ITEM_GS_FLINT_STEEL",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_CHARCOAL",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_GRAPPLING_HOOK",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_PITONS",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_CHAIN",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_HORSESHOES",
+              "tier": "always"
+            },
+            {
+              "itemId": "DT_ITEM_GS_TACK_REPAIR_KIT",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_HAMMER",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_CROWBAR",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_SHOVEL",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_SPIKES_IRON",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_ARROW",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_CROSSBOW_BOLT",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_SLING_BULLET",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_BLOWGUN_NEEDLE",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_RING_MAIL",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_CHAIN_MAIL",
+              "tier": "rarely"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_SPLINT_ARMOR",
+              "tier": "rarely"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_PLATE_ARMOR",
+              "tier": "rarely"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_PADDED_ARMOR",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_LEATHER_ARMOR",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_STUDDED_LEATHER_ARMOR",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_BATTLEAXE",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_FLAIL",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_GLAIVE",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_GREATAXE",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_GREATSWORD",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_HALBERD",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_LANCE",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_LONGSWORD",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_MAUL",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_MORNINGSTAR",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_PIKE",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_RAPIER",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_SCIMITAR",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_SHORTSWORD",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_TRIDENT",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_WAR_PICK",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_WARHAMMER",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_WHIP",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_BLOWGUN",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_HAND_CROSSBOW",
+              "tier": "rarely"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_HEAVY_CROSSBOW",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_LONGBOW",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_NET",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_HIDE_ARMOR",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_CHAIN_SHIRT",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_SCALE_MAIL",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_BREASTPLATE",
+              "tier": "rarely"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_HALF_PLATE_ARMOR",
+              "tier": "rarely"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_SHIELD",
+              "tier": "always"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_CLUB",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_DAGGER",
+              "tier": "always"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_GREATCLUB",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_HANDAXE",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_JAVELIN",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_LIGHT_HAMMER",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_MACE",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_QUARTERSTAFF",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_SICKLE",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_SPEAR",
+              "tier": "always"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_LIGHT_CROSSBOW",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_DART",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_SHORTBOW",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_SLING",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_SMITHS_TOOLS",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_BAR_IRON",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_BAR_COPPER",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_STEEL_BILLET",
+              "tier": "often"
+            }
+          ],
+          "merchantNotes": {
+            "alwaysStocks": [
+              "Dagger",
+              "Shield",
+              "Spear",
+              "Horseshoes"
+            ],
+            "oftenStocks": [
+              "Practical replacements suited to this business"
+            ],
+            "rarelyStocks": [
+              "Special orders; the GM confirms lead time"
+            ]
+          }
+        },
+        {
+          "id": "DT_TABLE_BSM_MASTER",
+          "name": "Master Armorer",
+          "description": "Appointments and careful fitting take precedence over quick sales. Premium armour is never promised without a fitting.",
+          "draws": 14,
+          "categoryDraws": 2,
+          "excludedItems": [
+            "DT_ITEM_GS_LOCKBOX",
+            "DT_ITEM_GS_FLINT_STEEL",
+            "DT_ITEM_GS_CHARCOAL",
+            "DT_ITEM_GS_GRAPPLING_HOOK",
+            "DT_ITEM_GS_PITONS",
+            "DT_ITEM_GS_CHAIN",
+            "DT_ITEM_GS_HORSESHOES",
+            "DT_ITEM_GS_TACK_REPAIR_KIT",
+            "DT_ITEM_BSM_ARROW",
+            "DT_ITEM_BSM_CROSSBOW_BOLT",
+            "DT_ITEM_BSM_SLING_BULLET",
+            "DT_ITEM_BSM_BLOWGUN_NEEDLE",
+            "DT_ITEM_BSM_BATTLEAXE",
+            "DT_ITEM_BSM_FLAIL",
+            "DT_ITEM_BSM_GLAIVE",
+            "DT_ITEM_BSM_GREATAXE",
+            "DT_ITEM_BSM_GREATSWORD",
+            "DT_ITEM_BSM_HALBERD",
+            "DT_ITEM_BSM_LANCE",
+            "DT_ITEM_BSM_LONGSWORD",
+            "DT_ITEM_BSM_MAUL",
+            "DT_ITEM_BSM_MORNINGSTAR",
+            "DT_ITEM_BSM_PIKE",
+            "DT_ITEM_BSM_RAPIER",
+            "DT_ITEM_BSM_SCIMITAR",
+            "DT_ITEM_BSM_SHORTSWORD",
+            "DT_ITEM_BSM_TRIDENT",
+            "DT_ITEM_BSM_WAR_PICK",
+            "DT_ITEM_BSM_WARHAMMER",
+            "DT_ITEM_BSM_WHIP",
+            "DT_ITEM_BSM_BLOWGUN",
+            "DT_ITEM_BSM_HAND_CROSSBOW",
+            "DT_ITEM_BSM_HEAVY_CROSSBOW",
+            "DT_ITEM_BSM_LONGBOW",
+            "DT_ITEM_BSM_NET",
+            "DT_ITEM_BSM_CLUB",
+            "DT_ITEM_BSM_DAGGER",
+            "DT_ITEM_BSM_GREATCLUB",
+            "DT_ITEM_BSM_HANDAXE",
+            "DT_ITEM_BSM_JAVELIN",
+            "DT_ITEM_BSM_LIGHT_HAMMER",
+            "DT_ITEM_BSM_MACE",
+            "DT_ITEM_BSM_QUARTERSTAFF",
+            "DT_ITEM_BSM_SICKLE",
+            "DT_ITEM_BSM_SPEAR",
+            "DT_ITEM_BSM_LIGHT_CROSSBOW",
+            "DT_ITEM_BSM_DART",
+            "DT_ITEM_BSM_SHORTBOW",
+            "DT_ITEM_BSM_SLING"
+          ],
+          "overrides": [
+            {
+              "itemId": "DT_ITEM_GS_HAMMER",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_CROWBAR",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_SHOVEL",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_SPIKES_IRON",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_RING_MAIL",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_CHAIN_MAIL",
+              "tier": "rarely"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_SPLINT_ARMOR",
+              "tier": "rarely"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_PLATE_ARMOR",
+              "tier": "rarely"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_PADDED_ARMOR",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_LEATHER_ARMOR",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_STUDDED_LEATHER_ARMOR",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_HIDE_ARMOR",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_CHAIN_SHIRT",
+              "tier": "always"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_SCALE_MAIL",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_BREASTPLATE",
+              "tier": "rarely"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_HALF_PLATE_ARMOR",
+              "tier": "rarely"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_SHIELD",
+              "tier": "always"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_SMITHS_TOOLS",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_BAR_IRON",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_BAR_COPPER",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_STEEL_BILLET",
+              "tier": "often"
+            }
+          ],
+          "merchantNotes": {
+            "alwaysStocks": [
+              "Shield",
+              "Chain Shirt"
+            ],
+            "oftenStocks": [
+              "Practical replacements suited to this business"
+            ],
+            "rarelyStocks": [
+              "Special orders; the GM confirms lead time"
+            ]
+          }
+        },
+        {
+          "id": "DT_TABLE_BSM_MILITARY",
+          "name": "Military Quartermaster",
+          "description": "Keeps practical replacement equipment in standard patterns. The GM decides who is permitted to buy; the preset does not enforce rank or affiliation.",
+          "draws": 20,
+          "categoryDraws": 2,
+          "excludedItems": [
+            "DT_ITEM_GS_LOCKBOX",
+            "DT_ITEM_GS_FLINT_STEEL",
+            "DT_ITEM_GS_CHARCOAL",
+            "DT_ITEM_GS_GRAPPLING_HOOK",
+            "DT_ITEM_GS_PITONS",
+            "DT_ITEM_GS_CHAIN",
+            "DT_ITEM_GS_HORSESHOES",
+            "DT_ITEM_GS_TACK_REPAIR_KIT",
+            "DT_ITEM_BSM_PADDED_ARMOR",
+            "DT_ITEM_BSM_LEATHER_ARMOR",
+            "DT_ITEM_BSM_STUDDED_LEATHER_ARMOR",
+            "DT_ITEM_GS_BAR_IRON",
+            "DT_ITEM_GS_BAR_COPPER",
+            "DT_ITEM_BSM_STEEL_BILLET"
+          ],
+          "overrides": [
+            {
+              "itemId": "DT_ITEM_GS_HAMMER",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_CROWBAR",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_SHOVEL",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_SPIKES_IRON",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_ARROW",
+              "tier": "always"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_CROSSBOW_BOLT",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_SLING_BULLET",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_BLOWGUN_NEEDLE",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_RING_MAIL",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_CHAIN_MAIL",
+              "tier": "rarely"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_SPLINT_ARMOR",
+              "tier": "rarely"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_PLATE_ARMOR",
+              "tier": "rarely"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_BATTLEAXE",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_FLAIL",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_GLAIVE",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_GREATAXE",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_GREATSWORD",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_HALBERD",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_LANCE",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_LONGSWORD",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_MAUL",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_MORNINGSTAR",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_PIKE",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_RAPIER",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_SCIMITAR",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_SHORTSWORD",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_TRIDENT",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_WAR_PICK",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_WARHAMMER",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_WHIP",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_BLOWGUN",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_HAND_CROSSBOW",
+              "tier": "rarely"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_HEAVY_CROSSBOW",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_LONGBOW",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_NET",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_HIDE_ARMOR",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_CHAIN_SHIRT",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_SCALE_MAIL",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_BREASTPLATE",
+              "tier": "rarely"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_HALF_PLATE_ARMOR",
+              "tier": "rarely"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_SHIELD",
+              "tier": "always"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_CLUB",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_DAGGER",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_GREATCLUB",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_HANDAXE",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_JAVELIN",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_LIGHT_HAMMER",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_MACE",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_QUARTERSTAFF",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_SICKLE",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_SPEAR",
+              "tier": "always"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_LIGHT_CROSSBOW",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_DART",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_SHORTBOW",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_SLING",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_SMITHS_TOOLS",
+              "tier": "often"
+            }
+          ],
+          "merchantNotes": {
+            "alwaysStocks": [
+              "Spear",
+              "Shield",
+              "Arrow"
+            ],
+            "oftenStocks": [
+              "Practical replacements suited to this business"
+            ],
+            "rarelyStocks": [
+              "Special orders; the GM confirms lead time"
+            ]
+          }
+        },
+        {
+          "id": "DT_TABLE_BSM_TRAVELLING",
+          "name": "Travelling Smith",
+          "description": "Carries portable tools and repair materials. Heavy suits and large weapons are ordered rather than carried.",
+          "draws": 5,
+          "categoryDraws": 2,
+          "excludedItems": [
+            "DT_ITEM_GS_LOCKBOX",
+            "DT_ITEM_GS_FLINT_STEEL",
+            "DT_ITEM_GS_CHARCOAL",
+            "DT_ITEM_GS_GRAPPLING_HOOK",
+            "DT_ITEM_GS_PITONS",
+            "DT_ITEM_GS_CHAIN",
+            "DT_ITEM_BSM_RING_MAIL",
+            "DT_ITEM_BSM_CHAIN_MAIL",
+            "DT_ITEM_BSM_SPLINT_ARMOR",
+            "DT_ITEM_BSM_PLATE_ARMOR",
+            "DT_ITEM_BSM_PADDED_ARMOR",
+            "DT_ITEM_BSM_LEATHER_ARMOR",
+            "DT_ITEM_BSM_STUDDED_LEATHER_ARMOR",
+            "DT_ITEM_BSM_BATTLEAXE",
+            "DT_ITEM_BSM_FLAIL",
+            "DT_ITEM_BSM_GLAIVE",
+            "DT_ITEM_BSM_GREATAXE",
+            "DT_ITEM_BSM_GREATSWORD",
+            "DT_ITEM_BSM_HALBERD",
+            "DT_ITEM_BSM_LANCE",
+            "DT_ITEM_BSM_LONGSWORD",
+            "DT_ITEM_BSM_MAUL",
+            "DT_ITEM_BSM_MORNINGSTAR",
+            "DT_ITEM_BSM_PIKE",
+            "DT_ITEM_BSM_RAPIER",
+            "DT_ITEM_BSM_SCIMITAR",
+            "DT_ITEM_BSM_SHORTSWORD",
+            "DT_ITEM_BSM_TRIDENT",
+            "DT_ITEM_BSM_WAR_PICK",
+            "DT_ITEM_BSM_WARHAMMER",
+            "DT_ITEM_BSM_WHIP",
+            "DT_ITEM_BSM_BLOWGUN",
+            "DT_ITEM_BSM_HAND_CROSSBOW",
+            "DT_ITEM_BSM_HEAVY_CROSSBOW",
+            "DT_ITEM_BSM_LONGBOW",
+            "DT_ITEM_BSM_NET",
+            "DT_ITEM_BSM_HIDE_ARMOR",
+            "DT_ITEM_BSM_CHAIN_SHIRT",
+            "DT_ITEM_BSM_SCALE_MAIL",
+            "DT_ITEM_BSM_BREASTPLATE",
+            "DT_ITEM_BSM_HALF_PLATE_ARMOR",
+            "DT_ITEM_BSM_SHIELD"
+          ],
+          "overrides": [
+            {
+              "itemId": "DT_ITEM_GS_HORSESHOES",
+              "tier": "always"
+            },
+            {
+              "itemId": "DT_ITEM_GS_TACK_REPAIR_KIT",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_HAMMER",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_CROWBAR",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_SHOVEL",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_SPIKES_IRON",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_ARROW",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_CROSSBOW_BOLT",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_SLING_BULLET",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_BLOWGUN_NEEDLE",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_CLUB",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_DAGGER",
+              "tier": "always"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_GREATCLUB",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_HANDAXE",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_JAVELIN",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_LIGHT_HAMMER",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_MACE",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_QUARTERSTAFF",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_SICKLE",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_SPEAR",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_LIGHT_CROSSBOW",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_DART",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_SHORTBOW",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_SLING",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_SMITHS_TOOLS",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_BAR_IRON",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_BAR_COPPER",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_STEEL_BILLET",
+              "tier": "often"
+            }
+          ],
+          "merchantNotes": {
+            "alwaysStocks": [
+              "Horseshoes",
+              "Dagger"
+            ],
+            "oftenStocks": [
+              "Practical replacements suited to this business"
+            ],
+            "rarelyStocks": [
+              "Special orders; the GM confirms lead time"
+            ]
+          }
         }
       ]
     },

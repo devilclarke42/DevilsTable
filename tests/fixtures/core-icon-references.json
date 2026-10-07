@@ -285,6 +285,230 @@
     {
       "icon": "icons/sundries/gaming/dice-runed-brown.webp",
       "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/json/icon-migration.json"
+    },
+    {
+      "icon": "icons/equipment/chest/breastplate-quilted-brown.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/armor/padded-armor.yml"
+    },
+    {
+      "icon": "icons/equipment/chest/breastplate-scale-grey.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/armor/chain-shirt-1.yml"
+    },
+    {
+      "icon": "icons/equipment/chest/breastplate-layered-steel.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/armor/mithral-splint-armor.yml"
+    },
+    {
+      "icon": "icons/equipment/chest/breastplate-cuirass-steel-grey.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/armor/half-plate-armor-1.yml"
+    },
+    {
+      "icon": "icons/equipment/chest/breastplate-banded-steel.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/armor/scale-mail-1.yml"
+    },
+    {
+      "icon": "icons/equipment/chest/vest-cloth-tattered-tan.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/armor/hide-armor.yml"
+    },
+    {
+      "icon": "icons/equipment/chest/breastplate-collared-steel-grey.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/armor/breastplate-armor-of-resistance.yml"
+    },
+    {
+      "icon": "icons/equipment/chest/breastplate-metal-scaled-grey.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/armor/chain-mail-3.yml"
+    },
+    {
+      "icon": "icons/equipment/chest/breastplate-rivited-red.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/armor/studded-leather-armor-3.yml"
+    },
+    {
+      "icon": "icons/equipment/chest/breastplate-collared-steel.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/armor/mithral-plate-armor.yml"
+    },
+    {
+      "icon": "icons/equipment/chest/breastplate-scale-leather.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/armor/leather-armor-of-resistance.yml"
+    },
+    {
+      "icon": "icons/equipment/chest/breastplate-banded-simple-leather-brown.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/armor/adamantine-ring-mail.yml"
+    },
+    {
+      "icon": "icons/equipment/shield/round-wooden-boss-steel-brown.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/armor/shield.yml"
+    },
+    {
+      "icon": "icons/skills/trades/smithing-tongs-metal-red.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/tool/smiths-tools.yml"
+    },
+    {
+      "icon": "icons/commodities/wood/log-rough-hickory-brown.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/weapon/blowgun-3.yml"
+    },
+    {
+      "icon": "icons/weapons/maces/flail-ball-grey.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/weapon/flail.yml"
+    },
+    {
+      "icon": "icons/weapons/polearms/spear-flared-green.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/weapon/spear.yml"
+    },
+    {
+      "icon": "icons/weapons/maces/mace-cube-spiked-steel.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/weapon/morningstar.yml"
+    },
+    {
+      "icon": "icons/weapons/axes/axe-double-black.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/weapon/greataxe.yml"
+    },
+    {
+      "icon": "icons/weapons/bows/longbow-recurve-leather-brown.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/weapon/longbow.yml"
+    },
+    {
+      "icon": "icons/weapons/polearms/javelin-flared.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/weapon/javelin.yml"
+    },
+    {
+      "icon": "icons/weapons/swords/greatsword-crossguard-steel.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/weapon/greatsword.yml"
+    },
+    {
+      "icon": "icons/skills/ranged/dart-thrown-poison-green.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/weapon/vicious-dart.yml"
+    },
+    {
+      "icon": "icons/weapons/maces/mace-flanged-steel.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/weapon/mace.yml"
+    },
+    {
+      "icon": "icons/weapons/swords/greatsword-guard.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/weapon/longsword.yml"
+    },
+    {
+      "icon": "icons/sundries/survival/leather-strap-brown.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/weapon/whip-2.yml"
+    },
+    {
+      "icon": "icons/weapons/polearms/spear-hooked-spike.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/weapon/pike.yml"
+    },
+    {
+      "icon": "icons/weapons/polearms/halberd-engraved-black.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/weapon/halberd.yml"
+    },
+    {
+      "icon": "icons/weapons/swords/sword-guard-bronze.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/weapon/rapier.yml"
+    },
+    {
+      "icon": "icons/weapons/axes/axe-broad-black.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/weapon/handaxe.yml"
+    },
+    {
+      "icon": "icons/weapons/swords/sword-guard-worn-purple.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/weapon/shortsword.yml"
+    },
+    {
+      "icon": "icons/tools/fishing/net-simple-brown.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/weapon/net.yml"
+    },
+    {
+      "icon": "icons/weapons/crossbows/crossbow-loaded-black.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/weapon/heavy-crossbow.yml"
+    },
+    {
+      "icon": "icons/weapons/daggers/dagger-straight-blue.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/weapon/dagger.yml"
+    },
+    {
+      "icon": "icons/weapons/polearms/glaive-simple.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/weapon/glaive.yml"
+    },
+    {
+      "icon": "icons/weapons/polearms/trident-silver-blue.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/weapon/trident.yml"
+    },
+    {
+      "icon": "icons/weapons/thrown/dart-feathered.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/weapon/dart.yml"
+    },
+    {
+      "icon": "icons/weapons/polearms/spear-simple-engraved.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/weapon/lance.yml"
+    },
+    {
+      "icon": "icons/weapons/clubs/club-banded-brown.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/weapon/club.yml"
+    },
+    {
+      "icon": "icons/weapons/hammers/shorthammer-double-stone-engraved.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/weapon/light-hammer.yml"
+    },
+    {
+      "icon": "icons/weapons/sickles/sickle-curved.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/weapon/sickle.yml"
+    },
+    {
+      "icon": "icons/weapons/clubs/club-heavy-barbed-grey.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/weapon/greatclub.yml"
+    },
+    {
+      "icon": "icons/weapons/slings/slingshot-wood.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/weapon/sling.yml"
+    },
+    {
+      "icon": "icons/weapons/staves/staff-simple.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/weapon/quarterstaff.yml"
+    },
+    {
+      "icon": "icons/weapons/swords/scimitar-worn-blue.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/weapon/scimitar.yml"
+    },
+    {
+      "icon": "icons/weapons/bows/shortbow-leather.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/weapon/shortbow.yml"
+    },
+    {
+      "icon": "icons/weapons/hammers/hammer-double-stone-worn.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/weapon/maul.yml"
+    },
+    {
+      "icon": "icons/weapons/crossbows/crossbow-simple-brown.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/weapon/light-crossbow.yml"
+    },
+    {
+      "icon": "icons/weapons/crossbows/crossbow-slotted.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/weapon/hand-crossbow.yml"
+    },
+    {
+      "icon": "icons/weapons/hammers/hammer-drilling-spiked.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/weapon/warhammer.yml"
+    },
+    {
+      "icon": "icons/weapons/axes/pickaxe-iron-green.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/weapon/war-pick.yml"
+    },
+    {
+      "icon": "icons/weapons/axes/axe-battle-black.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/weapon/battleaxe.yml"
+    },
+    {
+      "icon": "icons/weapons/ammunition/arrows-broadhead-white.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/ammunition/arrow.yml"
+    },
+    {
+      "icon": "icons/commodities/stone/paver-cobbles-blue.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/ammunition/sling-bullet.yml"
+    },
+    {
+      "icon": "icons/weapons/ammunition/arrow-broadhead-white.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/ammunition/crossbow-bolt.yml"
+    },
+    {
+      "icon": "icons/sundries/survival/cuffs-shackles-steel.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/trinket/manacles.yml"
     }
   ]
 }

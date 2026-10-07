@@ -1,5 +1,10 @@
 # Merchant Builder guide
 
+## Blacksmith presets
+
+Apply Village Smith, Town Blacksmith, Master Armorer, Military Quartermaster or Travelling Smith. Save the configuration to seed eligible services, then preview and apply stock and float. Services retain existing overrides. These presets reuse catalogue, stock and economy data; no smith-specific Builder controls are required. See [Blacksmith Guide](BLACKSMITH_GUIDE.md).
+
+
 Open **Merchant Builder** from module settings or the GM Shop UI. Select a standard NPC in Setup. Only the active GM may apply administration changes. The panel uses six direct-access tabs; Back/Next is optional and navigation never commits edits.
 
 | Tab | Use |

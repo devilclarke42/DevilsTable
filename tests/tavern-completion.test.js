@@ -15,21 +15,21 @@ test("alpha.12 upgrades add only sixteen Items and six memberships; repeated bui
  const old=data.entries.filter(e=>!additions.has(e.item.category)).map(({item})=>{
   const r=structuredClone(item);if(shared.has(r.id))r.shops=r.shops.filter(s=>s!=="tavern");return catalogueEntryToItem(r);
  });
- assert.equal(old.length,296);
+ assert.equal(old.length,354);
  const {adapter,state}=fakeAdapter({existing:old}),build=createBuilder({load:()=>data,adapter});
- const p=await build();assert.deepEqual([p.create,p.update,p.unchanged],[16,6,290]);assert.equal(state.writes.length,0);
- await build({dryRun:false});assert.equal(state.docs.length,312);assert.equal((await build()).unchanged,312);
+ const p=await build();assert.deepEqual([p.create,p.update,p.unchanged],[16,6,348]);assert.equal(state.writes.length,0);
+ await build({dryRun:false});assert.equal(state.docs.length,370);assert.equal((await build()).unchanged,370);
 });
 test("new stock profiles add twenty tables while preserving every pre-existing identity",async()=>{
  const data=await loadStockCatalogue({readJson}),previous=structuredClone(data);
  previous.entries=previous.entries.filter(e=>!additions.has(e.item.category));
  for(const {item} of previous.entries)if(shared.has(item.id))item.shops=item.shops.filter(s=>s!=="tavern");
  const p=previous.stock.profiles.find(p=>p.shop==="tavern");delete p.variants;p.overrides=p.overrides.filter(r=>!shared.has(r.itemId));
- const old=stockTableDocuments(previous);assert.equal(old.length,32);
+ const old=stockTableDocuments(previous);assert.equal(old.length,48);
  const {adapter,state}=fakeAdapter({existing:old}),build=createStockTableBuilder({load:()=>data,adapter});
- const plan=await build();assert.deepEqual([plan.create,plan.update,plan.unchanged],[20,2,30]);
- await build({dryRun:false});assert.equal(state.docs.length,52);assert.ok(old.every(r=>state.docs.some(n=>n._id===r._id)));
- assert.equal((await build()).unchanged,52);
+ const plan=await build();assert.deepEqual([plan.create,plan.update,plan.unchanged],[20,2,46]);
+ await build({dryRun:false});assert.equal(state.docs.length,68);assert.ok(old.every(r=>state.docs.some(n=>n._id===r._id)));
+ assert.equal((await build()).unchanged,68);
 });
 test("six Tavern profiles curate distinct menus and never copy a canonical item",async()=>{
  const data=await loadStockCatalogue({readJson}),profiles=stockProfiles(data).filter(p=>p.shop==="tavern"),signatures=[];

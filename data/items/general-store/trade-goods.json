@@ -166,7 +166,8 @@
       "trade"
     ],
     "shops": [
-      "general-store"
+      "general-store",
+      "blacksmith"
     ],
     "availability": "variable",
     "source": {
@@ -202,7 +203,8 @@
       "trade"
     ],
     "shops": [
-      "general-store"
+      "general-store",
+      "blacksmith"
     ],
     "availability": "variable",
     "source": {

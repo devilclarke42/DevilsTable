@@ -22,7 +22,8 @@
       "hand-tool"
     ],
     "shops": [
-      "general-store"
+      "general-store",
+      "blacksmith"
     ],
     "availability": "core",
     "source": {
@@ -58,7 +59,8 @@
       "hand-tool"
     ],
     "shops": [
-      "general-store"
+      "general-store",
+      "blacksmith"
     ],
     "availability": "variable",
     "source": {
@@ -202,7 +204,8 @@
       "digging"
     ],
     "shops": [
-      "general-store"
+      "general-store",
+      "blacksmith"
     ],
     "availability": "core",
     "source": {
@@ -347,7 +350,8 @@
       "bundle"
     ],
     "shops": [
-      "general-store"
+      "general-store",
+      "blacksmith"
     ],
     "availability": "core",
     "source": {
@@ -383,7 +387,8 @@
       "bundle"
     ],
     "shops": [
-      "general-store"
+      "general-store",
+      "blacksmith"
     ],
     "availability": "variable",
     "source": {

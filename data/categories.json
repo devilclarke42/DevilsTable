@@ -843,19 +843,7 @@
     "name": "Containers",
     "description": "Bags, boxes and vessels sold empty, with explicit carrying capacities.",
     "plannedItems": [
-      "Backpack",
-      "Pouch",
-      "Sack",
-      "Chest",
-      "Lockbox",
-      "Barrel",
-      "Crate",
-      "Basket",
-      "Bottle",
-      "Flask",
-      "Waterskin",
-      "Clay Jug",
-      "Ceramic Jar"
+      "Lockbox"
     ],
     "catalogue": "blacksmith",
     "sort": 390,
@@ -868,23 +856,8 @@
     "name": "Lighting & Fire",
     "description": "Portable lights, fuel and everyday fire-making supplies.",
     "plannedItems": [
-      "Torch",
-      "Candle",
-      "Beeswax Candle",
-      "Tallow Candle",
-      "Lantern",
-      "Hooded Lantern",
-      "Bullseye Lantern",
-      "Lamp",
-      "Lamp Oil",
-      "Tinderbox",
       "Flint & Steel",
-      "Charcoal",
-      "Kindling",
-      "Lamp Wick",
-      "Candle Holder",
-      "Candle Snuffer",
-      "Firewood"
+      "Charcoal"
     ],
     "catalogue": "blacksmith",
     "sort": 400,
@@ -897,16 +870,9 @@
     "name": "Rope & Climbing",
     "description": "Cordage, anchors and equipment for secured climbing.",
     "plannedItems": [
-      "Hempen Rope",
-      "Silk Rope",
-      "Twine",
       "Grappling Hook",
       "Pitons",
-      "Climber's Kit",
-      "Block and Tackle",
-      "Chain",
-      "Rope Ladder",
-      "Belaying Pin"
+      "Chain"
     ],
     "catalogue": "blacksmith",
     "sort": 410,
@@ -919,18 +885,8 @@
     "name": "Animal Supplies",
     "description": "Feed, grooming supplies and routine tack maintenance.",
     "plannedItems": [
-      "Horse Feed",
-      "Feed Bag",
-      "Brush",
-      "Curry Comb",
       "Horseshoes",
-      "Tack Repair Kit",
-      "Halter",
-      "Lead Rope",
-      "Saddle Blanket",
-      "Horse Hobbles",
-      "Picket Line",
-      "Saddlebags"
+      "Tack Repair Kit"
     ],
     "catalogue": "blacksmith",
     "sort": 420,
@@ -1072,5 +1028,178 @@
     "sort": 395,
     "visible": true,
     "icon": "icons/containers/bags/pouch-rounded-leather-gold-tan.webp"
+  },
+  {
+    "id": "simple-weapons",
+    "shop": "blacksmith",
+    "catalogue": "blacksmith",
+    "name": "Simple Weapons",
+    "description": "Forge stock: simple weapons.",
+    "plannedItems": [
+      "Club",
+      "Dagger",
+      "Greatclub",
+      "Handaxe",
+      "Javelin",
+      "Light Hammer",
+      "Mace",
+      "Quarterstaff",
+      "Sickle",
+      "Spear",
+      "Light Crossbow",
+      "Dart",
+      "Shortbow",
+      "Sling"
+    ],
+    "sort": 0,
+    "visible": true,
+    "icon": "icons/weapons/clubs/club-banded-brown.webp"
+  },
+  {
+    "id": "martial-weapons",
+    "shop": "blacksmith",
+    "catalogue": "blacksmith",
+    "name": "Martial Weapons",
+    "description": "Forge stock: martial weapons.",
+    "plannedItems": [
+      "Battleaxe",
+      "Flail",
+      "Glaive",
+      "Greataxe",
+      "Greatsword",
+      "Halberd",
+      "Lance",
+      "Longsword",
+      "Maul",
+      "Morningstar",
+      "Pike",
+      "Rapier",
+      "Scimitar",
+      "Shortsword",
+      "Trident",
+      "War Pick",
+      "Warhammer",
+      "Whip",
+      "Blowgun",
+      "Hand Crossbow",
+      "Heavy Crossbow",
+      "Longbow",
+      "Net"
+    ],
+    "sort": 10,
+    "visible": true,
+    "icon": "icons/weapons/axes/axe-battle-black.webp"
+  },
+  {
+    "id": "light-armour",
+    "shop": "blacksmith",
+    "catalogue": "blacksmith",
+    "name": "Light Armour",
+    "description": "Forge stock: light armour.",
+    "plannedItems": [
+      "Padded Armour",
+      "Leather Armour",
+      "Studded Leather Armour"
+    ],
+    "sort": 20,
+    "visible": true,
+    "icon": "icons/equipment/chest/breastplate-quilted-brown.webp"
+  },
+  {
+    "id": "medium-armour",
+    "shop": "blacksmith",
+    "catalogue": "blacksmith",
+    "name": "Medium Armour",
+    "description": "Forge stock: medium armour.",
+    "plannedItems": [
+      "Hide Armour",
+      "Chain Shirt",
+      "Scale Mail",
+      "Breastplate",
+      "Half Plate Armour"
+    ],
+    "sort": 30,
+    "visible": true,
+    "icon": "icons/equipment/chest/vest-cloth-tattered-tan.webp"
+  },
+  {
+    "id": "heavy-armour",
+    "shop": "blacksmith",
+    "catalogue": "blacksmith",
+    "name": "Heavy Armour",
+    "description": "Forge stock: heavy armour.",
+    "plannedItems": [
+      "Ring Mail",
+      "Chain Mail",
+      "Splint Armour",
+      "Plate Armour"
+    ],
+    "sort": 40,
+    "visible": true,
+    "icon": "icons/equipment/chest/breastplate-banded-simple-leather-brown.webp"
+  },
+  {
+    "id": "shields",
+    "shop": "blacksmith",
+    "catalogue": "blacksmith",
+    "name": "Shields",
+    "description": "Forge stock: shields.",
+    "plannedItems": [
+      "Shield"
+    ],
+    "sort": 50,
+    "visible": true,
+    "icon": "icons/equipment/shield/round-wooden-boss-steel-brown.webp"
+  },
+  {
+    "id": "tools",
+    "shop": "blacksmith",
+    "catalogue": "blacksmith",
+    "name": "Tools",
+    "description": "Forge stock: tools.",
+    "plannedItems": [
+      "Smith's Tools",
+      "Hammer",
+      "Crowbar",
+      "Shovel",
+      "Iron Spikes",
+      "Lock",
+      "Manacles",
+      "Iron Nails"
+    ],
+    "sort": 60,
+    "visible": true,
+    "icon": "icons/skills/trades/smithing-tongs-metal-red.webp"
+  },
+  {
+    "id": "ammunition",
+    "shop": "blacksmith",
+    "catalogue": "blacksmith",
+    "name": "Ammunition",
+    "description": "Forge stock: ammunition.",
+    "plannedItems": [
+      "Arrow",
+      "Crossbow Bolt",
+      "Sling Bullet",
+      "Blowgun Needle"
+    ],
+    "sort": 70,
+    "visible": true,
+    "icon": "icons/weapons/ammunition/arrows-broadhead-white.webp"
+  },
+  {
+    "id": "trade-goods",
+    "shop": "blacksmith",
+    "catalogue": "blacksmith",
+    "name": "Trade Goods",
+    "description": "Forge stock: trade goods.",
+    "plannedItems": [
+      "Iron Bar",
+      "Copper Bar",
+      "Steel Billet"
+    ],
+    "sort": 80,
+    "visible": true,
+    "icon": "icons/commodities/metal/ingot-iron.webp"
   }
 ]

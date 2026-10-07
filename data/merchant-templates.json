@@ -36,7 +36,7 @@
       "pricingModifier": 0,
       "relationshipState": "Unknown",
       "relationshipModifier": 0,
-      "notes": "Personality: Practical roadside innkeeper; checks boots and road conditions before asking for news.\nSuggested greeting: Food first, then tell me how the road is.\n\nSpecialities:\n- Pork Hand Pie\n- Bread and Cheese Bundle\n\nKnown For:\n- Fast hot meals\n- Packed lunches prepared early\n\nOptional Stories — edit or remove before play; these are suggestions, not established campaign facts:\n- A wagoner has asked to be woken before dawn.\n- A milestone was found in the ditch nearby.\n\nTrading notes:\n- Confirm rooms, stalls, kitchen hours and delivery arrangements before approval.\n- Stable Horse excludes feed. Meal services do not create additional food Items.\n- Do not charge for the same included food twice.\n- Daily restock is a preference, not an automated schedule.\n- Configure actual room names and doors before enabling optional room integrations.",
+      "notes": "Personality: Practical roadside innkeeper; checks boots and road conditions before asking for news.\nSuggested greeting: Food first, then tell me how the road is.\n\nSpecialities:\n- Pork Hand Pie\n- Bread and Cheese Bundle\n\nKnown For:\n- Fast hot meals\n- Packed lunches prepared early\n\nOptional Stories \u2014 edit or remove before play; these are suggestions, not established campaign facts:\n- A wagoner has asked to be woken before dawn.\n- A milestone was found in the ditch nearby.\n\nTrading notes:\n- Confirm rooms, stalls, kitchen hours and delivery arrangements before approval.\n- Stable Horse excludes feed. Meal services do not create additional food Items.\n- Do not charge for the same included food twice.\n- Daily restock is a preference, not an automated schedule.\n- Configure actual room names and doors before enabling optional room integrations.",
       "checkoutTime": "10:00"
     }
   },
@@ -58,26 +58,6 @@
       "relationshipState": "Unknown",
       "relationshipModifier": 0,
       "notes": "Carry portable goods. Confirm bulky purchases and special orders before agreeing to delivery."
-    }
-  },
-  {
-    "schemaVersion": 1,
-    "id": "town-blacksmith",
-    "name": "Town Blacksmith",
-    "settings": {
-      "catalogueId": "blacksmith",
-      "settlement": "town",
-      "prosperity": "average",
-      "profile": "specialist",
-      "stockProfileId": "",
-      "availability": "open",
-      "infiniteFunds": false,
-      "infiniteStock": false,
-      "restockProfile": "manual",
-      "pricingModifier": 0,
-      "relationshipState": "Unknown",
-      "relationshipModifier": 0,
-      "notes": "Keep practical metal goods on hand. Discuss repairs and commissions with the GM before promising completion."
     }
   },
   {
@@ -117,7 +97,7 @@
       "pricingModifier": -5,
       "relationshipState": "Unknown",
       "relationshipModifier": 0,
-      "notes": "Personality: Tired but welcoming keeper who works the kitchen alone.\nSuggested greeting: There is bread enough. Mind the loose stool.\n\nSpecialities:\n- Oat Porridge\n- Rye Bread\n\nKnown For:\n- No wasted food\n- Neighbours help with repairs\n\nOptional Stories — edit or remove before play; these are suggestions, not established campaign facts:\n- The roof repair fund is one silver short.\n- A regular’s dog refuses to leave the porch.\n\nTrading notes:\n- Confirm rooms, stalls, kitchen hours and delivery arrangements before approval.\n- Stable Horse excludes feed. Meal services do not create additional food Items.\n- Do not charge for the same included food twice.\n- Daily restock is a preference, not an automated schedule.\n- Configure actual room names and doors before enabling optional room integrations.",
+      "notes": "Personality: Tired but welcoming keeper who works the kitchen alone.\nSuggested greeting: There is bread enough. Mind the loose stool.\n\nSpecialities:\n- Oat Porridge\n- Rye Bread\n\nKnown For:\n- No wasted food\n- Neighbours help with repairs\n\nOptional Stories \u2014 edit or remove before play; these are suggestions, not established campaign facts:\n- The roof repair fund is one silver short.\n- A regular\u2019s dog refuses to leave the porch.\n\nTrading notes:\n- Confirm rooms, stalls, kitchen hours and delivery arrangements before approval.\n- Stable Horse excludes feed. Meal services do not create additional food Items.\n- Do not charge for the same included food twice.\n- Daily restock is a preference, not an automated schedule.\n- Configure actual room names and doors before enabling optional room integrations.",
       "checkoutTime": "10:00"
     }
   },
@@ -138,7 +118,7 @@
       "pricingModifier": 5,
       "relationshipState": "Unknown",
       "relationshipModifier": 0,
-      "notes": "Personality: Sociable keeper who knows the market’s ordinary business.\nSuggested greeting: Staying the night, or just escaping the market noise?\n\nSpecialities:\n- Beef and Barley Stew\n- Apple Pie Slice\n\nKnown For:\n- A varied daily menu\n- Fair treatment of unfamiliar guests\n\nOptional Stories — edit or remove before play; these are suggestions, not established campaign facts:\n- The market bell rang at the wrong hour.\n- A trader left a list of unusual dinner requests.\n\nTrading notes:\n- Confirm rooms, stalls, kitchen hours and delivery arrangements before approval.\n- Stable Horse excludes feed. Meal services do not create additional food Items.\n- Do not charge for the same included food twice.\n- Daily restock is a preference, not an automated schedule.\n- Configure actual room names and doors before enabling optional room integrations.",
+      "notes": "Personality: Sociable keeper who knows the market\u2019s ordinary business.\nSuggested greeting: Staying the night, or just escaping the market noise?\n\nSpecialities:\n- Beef and Barley Stew\n- Apple Pie Slice\n\nKnown For:\n- A varied daily menu\n- Fair treatment of unfamiliar guests\n\nOptional Stories \u2014 edit or remove before play; these are suggestions, not established campaign facts:\n- The market bell rang at the wrong hour.\n- A trader left a list of unusual dinner requests.\n\nTrading notes:\n- Confirm rooms, stalls, kitchen hours and delivery arrangements before approval.\n- Stable Horse excludes feed. Meal services do not create additional food Items.\n- Do not charge for the same included food twice.\n- Daily restock is a preference, not an automated schedule.\n- Configure actual room names and doors before enabling optional room integrations.",
       "checkoutTime": "10:00"
     }
   },
@@ -159,7 +139,7 @@
       "pricingModifier": 25,
       "relationshipState": "Unknown",
       "relationshipModifier": 0,
-      "notes": "Personality: Luxury hotel keeper; quietly attentive and careful about guest privacy.\nSuggested greeting: Welcome. Shall we prepare a table or show you a room?\n\nSpecialities:\n- Celebration Supper\n- Southern Date Wine\n\nKnown For:\n- Clean linen and quiet service\n- Carefully described courses\n\nOptional Stories — edit or remove before play; these are suggestions, not established campaign facts:\n- A guest keeps ordering dinner for an empty chair.\n- A musician has requested a room away from the stairs.\n\nTrading notes:\n- Confirm rooms, stalls, kitchen hours and delivery arrangements before approval.\n- Stable Horse excludes feed. Meal services do not create additional food Items.\n- Do not charge for the same included food twice.\n- Daily restock is a preference, not an automated schedule.\n- Configure actual room names and doors before enabling optional room integrations.",
+      "notes": "Personality: Luxury hotel keeper; quietly attentive and careful about guest privacy.\nSuggested greeting: Welcome. Shall we prepare a table or show you a room?\n\nSpecialities:\n- Celebration Supper\n- Southern Date Wine\n\nKnown For:\n- Clean linen and quiet service\n- Carefully described courses\n\nOptional Stories \u2014 edit or remove before play; these are suggestions, not established campaign facts:\n- A guest keeps ordering dinner for an empty chair.\n- A musician has requested a room away from the stairs.\n\nTrading notes:\n- Confirm rooms, stalls, kitchen hours and delivery arrangements before approval.\n- Stable Horse excludes feed. Meal services do not create additional food Items.\n- Do not charge for the same included food twice.\n- Daily restock is a preference, not an automated schedule.\n- Configure actual room names and doors before enabling optional room integrations.",
       "checkoutTime": "10:00"
     }
   },
@@ -180,7 +160,7 @@
       "pricingModifier": -5,
       "relationshipState": "Unknown",
       "relationshipModifier": 0,
-      "notes": "Personality: Friendly innkeeper; remembers the last meal a guest enjoyed.\nSuggested greeting: Come in. There is room near the hearth.\n\nSpecialities:\n- Vegetable Pottage\n- Rye Bread\n\nKnown For:\n- Fair measures\n- A warm common room\n\nOptional Stories — edit or remove before play; these are suggestions, not established campaign facts:\n- A regular has left a mended coat behind.\n- The next flour delivery is late.\n\nTrading notes:\n- Confirm rooms, stalls, kitchen hours and delivery arrangements before approval.\n- Stable Horse excludes feed. Meal services do not create additional food Items.\n- Do not charge for the same included food twice.\n- Daily restock is a preference, not an automated schedule.\n- Configure actual room names and doors before enabling optional room integrations.",
+      "notes": "Personality: Friendly innkeeper; remembers the last meal a guest enjoyed.\nSuggested greeting: Come in. There is room near the hearth.\n\nSpecialities:\n- Vegetable Pottage\n- Rye Bread\n\nKnown For:\n- Fair measures\n- A warm common room\n\nOptional Stories \u2014 edit or remove before play; these are suggestions, not established campaign facts:\n- A regular has left a mended coat behind.\n- The next flour delivery is late.\n\nTrading notes:\n- Confirm rooms, stalls, kitchen hours and delivery arrangements before approval.\n- Stable Horse excludes feed. Meal services do not create additional food Items.\n- Do not charge for the same included food twice.\n- Daily restock is a preference, not an automated schedule.\n- Configure actual room names and doors before enabling optional room integrations.",
       "checkoutTime": "10:00"
     }
   },
@@ -201,7 +181,7 @@
       "pricingModifier": 10,
       "relationshipState": "Unknown",
       "relationshipModifier": 0,
-      "notes": "Personality: Brisk host who times meals around unloading crews.\nSuggested greeting: Sit down. The fish is fresh and the mugs are clean.\n\nSpecialities:\n- Grilled Sardines\n- Pickled Herring\n- Dark Rye Beer\n\nKnown For:\n- Clear prices for sailors\n- Occasional imported cellar stock\n\nOptional Stories — edit or remove before play; these are suggestions, not established campaign facts:\n- A returning crew disputes whose round it is.\n- A sealed parcel waits for a ship that has not berthed.\n\nTrading notes:\n- Confirm rooms, stalls, kitchen hours and delivery arrangements before approval.\n- Stable Horse excludes feed. Meal services do not create additional food Items.\n- Do not charge for the same included food twice.\n- Daily restock is a preference, not an automated schedule.\n- Configure actual room names and doors before enabling optional room integrations.",
+      "notes": "Personality: Brisk host who times meals around unloading crews.\nSuggested greeting: Sit down. The fish is fresh and the mugs are clean.\n\nSpecialities:\n- Grilled Sardines\n- Pickled Herring\n- Dark Rye Beer\n\nKnown For:\n- Clear prices for sailors\n- Occasional imported cellar stock\n\nOptional Stories \u2014 edit or remove before play; these are suggestions, not established campaign facts:\n- A returning crew disputes whose round it is.\n- A sealed parcel waits for a ship that has not berthed.\n\nTrading notes:\n- Confirm rooms, stalls, kitchen hours and delivery arrangements before approval.\n- Stable Horse excludes feed. Meal services do not create additional food Items.\n- Do not charge for the same included food twice.\n- Daily restock is a preference, not an automated schedule.\n- Configure actual room names and doors before enabling optional room integrations.",
       "checkoutTime": "10:00"
     }
   },
@@ -222,7 +202,7 @@
       "pricingModifier": 5,
       "relationshipState": "Unknown",
       "relationshipModifier": 0,
-      "notes": "Personality: Organised host who keeps the yard and kitchen moving together.\nSuggested greeting: The next coach is not due yet. You have time to eat.\n\nSpecialities:\n- Breakfast Sausage Plate\n- Loose Oats\n\nKnown For:\n- Early breakfasts\n- Reliable parcel collection\n\nOptional Stories — edit or remove before play; these are suggestions, not established campaign facts:\n- Two travellers carry tickets for the same seat.\n- A spare wheel has arrived with no owner’s mark.\n\nTrading notes:\n- Confirm rooms, stalls, kitchen hours and delivery arrangements before approval.\n- Stable Horse excludes feed. Meal services do not create additional food Items.\n- Do not charge for the same included food twice.\n- Daily restock is a preference, not an automated schedule.\n- Configure actual room names and doors before enabling optional room integrations.",
+      "notes": "Personality: Organised host who keeps the yard and kitchen moving together.\nSuggested greeting: The next coach is not due yet. You have time to eat.\n\nSpecialities:\n- Breakfast Sausage Plate\n- Loose Oats\n\nKnown For:\n- Early breakfasts\n- Reliable parcel collection\n\nOptional Stories \u2014 edit or remove before play; these are suggestions, not established campaign facts:\n- Two travellers carry tickets for the same seat.\n- A spare wheel has arrived with no owner\u2019s mark.\n\nTrading notes:\n- Confirm rooms, stalls, kitchen hours and delivery arrangements before approval.\n- Stable Horse excludes feed. Meal services do not create additional food Items.\n- Do not charge for the same included food twice.\n- Daily restock is a preference, not an automated schedule.\n- Configure actual room names and doors before enabling optional room integrations.",
       "checkoutTime": "10:00"
     }
   },
@@ -243,7 +223,7 @@
       "pricingModifier": -10,
       "relationshipState": "Unknown",
       "relationshipModifier": 0,
-      "notes": "Personality: Gruff innkeeper; short answers, honest portions and no patience for broken furniture.\nSuggested greeting: Boots by the door. Stew is on.\n\nSpecialities:\n- Brown Hearth Ale\n- Pork Cracklings\n\nKnown For:\n- Plain food at plain prices\n- Never waters the ale\n\nOptional Stories — edit or remove before play; these are suggestions, not established campaign facts:\n- Someone keeps repairing the fence overnight.\n- A hunter’s usual seat has been empty for several evenings.\n\nTrading notes:\n- Confirm rooms, stalls, kitchen hours and delivery arrangements before approval.\n- Stable Horse excludes feed. Meal services do not create additional food Items.\n- Do not charge for the same included food twice.\n- Daily restock is a preference, not an automated schedule.\n- Configure actual room names and doors before enabling optional room integrations.",
+      "notes": "Personality: Gruff innkeeper; short answers, honest portions and no patience for broken furniture.\nSuggested greeting: Boots by the door. Stew is on.\n\nSpecialities:\n- Brown Hearth Ale\n- Pork Cracklings\n\nKnown For:\n- Plain food at plain prices\n- Never waters the ale\n\nOptional Stories \u2014 edit or remove before play; these are suggestions, not established campaign facts:\n- Someone keeps repairing the fence overnight.\n- A hunter\u2019s usual seat has been empty for several evenings.\n\nTrading notes:\n- Confirm rooms, stalls, kitchen hours and delivery arrangements before approval.\n- Stable Horse excludes feed. Meal services do not create additional food Items.\n- Do not charge for the same included food twice.\n- Daily restock is a preference, not an automated schedule.\n- Configure actual room names and doors before enabling optional room integrations.",
       "checkoutTime": "10:00"
     }
   },
@@ -264,8 +244,108 @@
       "pricingModifier": 20,
       "relationshipState": "Unknown",
       "relationshipModifier": 0,
-      "notes": "Personality: Formal innkeeper; courteous to titles but insists every guest pays their bill.\nSuggested greeting: Your table is ready when you are.\n\nSpecialities:\n- House White Wine\n- Fresh Goat Cheese\n\nKnown For:\n- Private meetings\n- Discreet staff\n\nOptional Stories — edit or remove before play; these are suggestions, not established campaign facts:\n- Two dinner parties have asked never to meet in the hall.\n- A crest has been removed from a travelling chest.\n\nTrading notes:\n- Confirm rooms, stalls, kitchen hours and delivery arrangements before approval.\n- Stable Horse excludes feed. Meal services do not create additional food Items.\n- Do not charge for the same included food twice.\n- Daily restock is a preference, not an automated schedule.\n- Configure actual room names and doors before enabling optional room integrations.",
+      "notes": "Personality: Formal innkeeper; courteous to titles but insists every guest pays their bill.\nSuggested greeting: Your table is ready when you are.\n\nSpecialities:\n- House White Wine\n- Fresh Goat Cheese\n\nKnown For:\n- Private meetings\n- Discreet staff\n\nOptional Stories \u2014 edit or remove before play; these are suggestions, not established campaign facts:\n- Two dinner parties have asked never to meet in the hall.\n- A crest has been removed from a travelling chest.\n\nTrading notes:\n- Confirm rooms, stalls, kitchen hours and delivery arrangements before approval.\n- Stable Horse excludes feed. Meal services do not create additional food Items.\n- Do not charge for the same included food twice.\n- Daily restock is a preference, not an automated schedule.\n- Configure actual room names and doors before enabling optional room integrations.",
       "checkoutTime": "10:00"
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "id": "village-smith",
+    "name": "Village Smith",
+    "settings": {
+      "catalogueId": "blacksmith",
+      "settlement": "village",
+      "prosperity": "average",
+      "profile": "smith-village",
+      "stockProfileId": "DT_TABLE_BSM",
+      "availability": "open",
+      "infiniteFunds": false,
+      "infiniteStock": false,
+      "restockProfile": "weekly",
+      "pricingModifier": 0,
+      "relationshipState": "Unknown",
+      "relationshipModifier": 0,
+      "notes": "Repairs farm tools and fittings first. Fine arms and fitted armour are ordered from a larger forge.\nSuggested greeting: Welcome. Show me the worn part before we talk replacements.\nServices commission work; completion and mechanical changes require GM adjudication."
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "id": "master-smith",
+    "name": "Master Armorer",
+    "settings": {
+      "catalogueId": "blacksmith",
+      "settlement": "city",
+      "prosperity": "wealthy",
+      "profile": "smith-master",
+      "stockProfileId": "DT_TABLE_BSM_MASTER",
+      "availability": "open",
+      "infiniteFunds": false,
+      "infiniteStock": false,
+      "restockProfile": "weekly",
+      "pricingModifier": 20,
+      "relationshipState": "Unknown",
+      "relationshipModifier": 0,
+      "notes": "Appointments and careful fitting take precedence over quick sales. Premium armour is never promised without a fitting.\nSuggested greeting: Let us start with how it fits across your shoulders.\nServices commission work; completion and mechanical changes require GM adjudication."
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "id": "military-smith",
+    "name": "Military Quartermaster",
+    "settings": {
+      "catalogueId": "blacksmith",
+      "settlement": "town",
+      "prosperity": "prosperous",
+      "profile": "smith-military",
+      "stockProfileId": "DT_TABLE_BSM_MILITARY",
+      "availability": "open",
+      "infiniteFunds": false,
+      "infiniteStock": false,
+      "restockProfile": "weekly",
+      "pricingModifier": 0,
+      "relationshipState": "Unknown",
+      "relationshipModifier": 0,
+      "notes": "Keeps practical replacement equipment in standard patterns. The GM decides who is permitted to buy; the preset does not enforce rank or affiliation.\nSuggested greeting: Name your requirement. I will check the rack.\nServices commission work; completion and mechanical changes require GM adjudication."
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "id": "travelling-smith",
+    "name": "Travelling Smith",
+    "settings": {
+      "catalogueId": "blacksmith",
+      "settlement": "hamlet",
+      "prosperity": "poor",
+      "profile": "smith-travelling",
+      "stockProfileId": "DT_TABLE_BSM_TRAVELLING",
+      "availability": "open",
+      "infiniteFunds": false,
+      "infiniteStock": false,
+      "restockProfile": "manual",
+      "pricingModifier": 10,
+      "relationshipState": "Unknown",
+      "relationshipModifier": 0,
+      "notes": "Carries portable tools and repair materials. Heavy suits and large weapons are ordered rather than carried.\nSuggested greeting: Small repairs today; larger work when I reach a proper forge.\nServices commission work; completion and mechanical changes require GM adjudication."
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "id": "town-blacksmith",
+    "name": "Town Blacksmith",
+    "settings": {
+      "catalogueId": "blacksmith",
+      "settlement": "town",
+      "prosperity": "prosperous",
+      "profile": "smith-town",
+      "stockProfileId": "DT_TABLE_BSM_TOWN",
+      "availability": "open",
+      "infiniteFunds": false,
+      "infiniteStock": false,
+      "restockProfile": "weekly",
+      "pricingModifier": 5,
+      "relationshipState": "Unknown",
+      "relationshipModifier": 0,
+      "notes": "Maintains a varied rack of weapons and armour. Special orders require workshop time.\nSuggested greeting: Something off the rack, or work on what you have?\nRepairs and fitting require GM adjudication."
     }
   }
 ]

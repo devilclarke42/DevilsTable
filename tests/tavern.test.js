@@ -30,8 +30,8 @@ test("Production Tavern has 168 Tavern products across 23 categories and shares 
       assert.ok(item.tags.length >= 4); assert.equal(item.shops.join(), "tavern");
     }
   }
-  assert.equal(new Set(data.entries.map(({ item }) => item.id)).size, 312);
-  assert.equal(new Set(data.entries.map(({ item }) => item.name.normalize("NFKC").toLowerCase())).size, 312);
+  assert.equal(new Set(data.entries.map(({ item }) => item.id)).size, 370);
+  assert.equal(new Set(data.entries.map(({ item }) => item.name.normalize("NFKC").toLowerCase())).size, 370);
 });
 test("Production Tavern consumables consume one sale unit without healing, effects or stale item references", async () => {
   const data = await load();
@@ -51,10 +51,10 @@ test("Deferred alpha.25 catalogue upgrade creates only the 168 Tavern records an
   const data = await load();
   const old = data.entries.filter(({ item }) => item.id.startsWith("DT_ITEM_GS_")).map(({ item }) => catalogueEntryToItem(item));
   const { adapter, state } = fakeAdapter({ existing: old }); const build = createBuilder({ load: () => data, adapter });
-  const preview = await build(); assert.deepEqual([preview.create, preview.update, preview.unchanged], [168, 0, 144]);
+  const preview = await build(); assert.deepEqual([preview.create, preview.update, preview.unchanged], [226, 0, 144]);
   assert.deepEqual(state.writes, []);
-  await build({ dryRun: false }); assert.equal(state.docs.length, 312); assert.deepEqual(state.docs.slice(0, 144), old);
-  assert.equal((await build({ dryRun: false })).unchanged, 312);
+  await build({ dryRun: false }); assert.equal(state.docs.length, 370); assert.deepEqual(state.docs.slice(0, 144), old);
+  assert.equal((await build({ dryRun: false })).unchanged, 370);
   assert.equal((await build({ dryRun: false, shopId: "tavern" })).unchanged, 205);
 });
 test("Production Tavern keeps four existing table identities; only its rows change and rebuild converges", async () => {
@@ -65,11 +65,11 @@ test("Production Tavern keeps four existing table identities; only its rows chan
     categories: ["containers", "fire-lighting", "rope-climbing", "camping", "household", "animal", "travel"], overrides: [], variants: []
   });
   const old = stockTableDocuments(previous), expected = stockTableDocuments(data);
-  assert.equal(expected.length, 52); assert.ok(old.every(t => expected.some(row => row._id === t._id)));
+  assert.equal(expected.length, 68); assert.ok(old.every(t => expected.some(row => row._id === t._id)));
   const { adapter, state } = fakeAdapter({ existing: old }); const build = createStockTableBuilder({ load: () => data, adapter });
-  const preview = await build(); assert.deepEqual([preview.create, preview.update, preview.unchanged], [20, 4, 28]);
+  const preview = await build(); assert.deepEqual([preview.create, preview.update, preview.unchanged], [20, 20, 28]);
   assert.deepEqual(state.writes, []); await build({ dryRun: false });
-  assert.equal((await build({ dryRun: false })).unchanged, 52);
+  assert.equal((await build({ dryRun: false })).unchanged, 68);
   const profile = stockProfiles(data).find(p => p.shop === "tavern"); assert.equal(profile.coverage, "complete");
   const groups = stockGroups(data, profile), ids = Object.values(groups).flat().map(i => i.id);
   assert.equal(ids.length, 205); assert.equal(new Set(ids).size, 205);

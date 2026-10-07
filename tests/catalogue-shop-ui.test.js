@@ -41,7 +41,7 @@ test("live search preserves focus and basket while matching tags and category la
   await MerchantShopApplication.DEFAULT_OPTIONS.actions.view.call(app,null,{dataset:{view:"inventory"}});
   const input = { addEventListener(_name, fn) { this.input = fn; } }, row = { dataset: { offerId: "a" } }, empty = {};
   app.element = { querySelector: selector => selector === "[name=search]" ? input : selector === "[data-no-matches]" ? empty : null,
-    querySelectorAll: () => [row] };
+    querySelectorAll: selector => selector === "[data-service-target]" ? [] : [row] };
   app._onRender({}, {}); const before = renders;
   for (const value of ["sewing", "handicrafts", "fine point", "needle"]) { input.input({ target: { value } }); assert.equal(row.hidden, false); }
   input.input({ target: { value: "no match" } }); assert.equal(row.hidden, true); assert.equal(empty.hidden, false);

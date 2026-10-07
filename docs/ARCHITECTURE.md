@@ -1,5 +1,12 @@
 # Architecture and API
 
+## Generic service targets and native equipment
+
+Item-required services define validated selectors in requirements.item. The Shop keeps temporary target IDs locally; the active GM resolves them against the purchasing Actor at quotation/approval and settlement. No target inventory is copied or consumed. Receipts retain historical target names and IDs; optional execution jobs receive those references. Item-required services are limited to one target per service per checkout.
+
+Canonical equipment JSON uses mechanics.native for a constrained set of D&D5e equipment fields. Conversion clones these fields into native weapon, equipment, tool or ammunition Items. Source price, weight, identity and descriptions remain explicitly owned by canonical fields. Strict system document validation precedes live compendium writes. See [Blacksmith Guide](BLACKSMITH_GUIDE.md).
+
+
 ## Optional Integration Framework (Sprint 10C)
 
 `integrations/manager.js` is the sole external-module gateway. Adapters encapsulate feature detection and foreign APIs; no manifest hard dependencies are introduced. The active GM serializes external operations across merchants. Services compile data-defined actions; mandatory native settlement/receipt stages remain separate and execute once. Optional jobs record attempts before effects and never replay automatically.

@@ -8,8 +8,9 @@ export function escapeHtml(text) { return text.replace(/[&<>"']/g, char => ESCAP
 
 /** Pure, deterministic converter. Never reads world settings or mutates source JSON. */
 export function catalogueEntryToItem(entry) {
-  if (!["loot", "container", "consumable"].includes(entry.mechanics.type)) throw new Error(`No converter for ${entry.mechanics.type}.`);
-  const typeFields = entry.mechanics.type === "container"
+  if (!["loot", "container", "consumable", "weapon", "equipment", "tool"].includes(entry.mechanics.type)) throw new Error(`No converter for ${entry.mechanics.type}.`);
+  if (["weapon","equipment","tool"].includes(entry.mechanics.type) && !entry.mechanics.native) throw new Error("No converter data for native equipment.");
+  const typeFields = entry.mechanics.native ? structuredClone(entry.mechanics.native) : entry.mechanics.type === "container"
     ? containerSystemFields(entry.mechanics.capacity)
     : entry.mechanics.type === "consumable" ? consumableSystemFields(entry)
       : { type: { value: entry.mechanics.subtype, subtype: "" } };

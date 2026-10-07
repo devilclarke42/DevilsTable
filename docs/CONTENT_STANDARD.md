@@ -1,5 +1,10 @@
 # Content Standard
 
+## Blacksmith equipment and services
+
+Blacksmith adds Simple Weapons, Martial Weapons, Ammunition, Shields, Light Armour, Medium Armour and Heavy Armour. Existing tools, metals and fittings retain their canonical categories and IDs. Native equipment fields are authored in mechanics.native; arbitrary top-level system overrides are prohibited. Ammunition sale units are individual projectiles. Service definitions remain separate from product files; item requirements use native type/subtype/base-item selectors and maxQuantity 1. See [Blacksmith Guide](BLACKSMITH_GUIDE.md) and [source notices](BLACKSMITH_SOURCE_NOTICES.md).
+
+
 ## Catalogue membership (Sprint 8)
 
 New merchant types must be defined in `data/catalogues.json`; category display metadata belongs in `data/categories.json`. Every category has `catalogue`, matching legacy `shop`, `id`, `name`, `icon`, `sort`, `visible`, `description` and `plannedItems`. Item `shops` tags are catalogue memberships, not separate copies of a product. Retain this compatibility field and all permanent IDs. Never duplicate an Item to place it in another catalogue. See the [complete definition and provider contract](CATALOGUE_FRAMEWORK.md). The Tavern is active; see [Tavern Guide](TAVERN_GUIDE.md) for current content and portions.

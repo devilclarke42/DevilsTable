@@ -1,3 +1,4 @@
+import { resolveServiceItem } from "../services/requirements.js";
 import { prepareServiceExecution, executeServiceJobs } from "../services/execution.js";
 import { activeActorWrites as active, administrationBusy } from "./operation-guard.js";
 import { nextMemory, confidence } from "./interactions.js";
@@ -149,7 +150,11 @@ export async function executeTrade({ merchant, character, quote, request, receip
   actors.forEach(a => active.add(a.id));
   let doc, record;
   try {
+    const checkTargets = () => { for(const row of quote.basket.filter(r=>r.kind==="service"))
+      resolveServiceItem(character,row.itemRequirement,row.targetItemId,quote.basket.filter(r=>r.direction==="sell")); };
+    checkTargets();
     const jobs=await prepareServiceExecution(quote);
+    checkTargets();
     record = { serviceExecution:jobs.map(job=>({...job,status:"pending"})), schemaVersion: 1, id: request.id, date: new Date().toISOString(), merchantId: merchant.id,
       characterId: character.id, merchantName: merchant.name, characterName: character.name, userId: request.userId,
       gmId: game.user.id, status: "committing", request: clone(request), quote: clone(quote), steps: makeSteps(merchant, character, quote), attempted: -1 };

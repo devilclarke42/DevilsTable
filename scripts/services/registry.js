@@ -22,9 +22,17 @@ export function validateService(row, categories) {
   const a=row.availability??{};
   if (Object.keys(a).some(k=>!["settlements","prosperities","profiles"].includes(k)) || Object.values(a).some(v=>!list(v))) throw Error(`Invalid availability: ${row.id}.`);
   const r=row.requirements??{};
-  if(Object.keys(r).some(k=>!["minLevel","actorTypes","note"].includes(k)) ||
+  if(Object.keys(r).some(k=>!["minLevel","actorTypes","note","item"].includes(k)) ||
     (r.minLevel!==undefined&&(!Number.isSafeInteger(r.minLevel)||r.minLevel<0||r.minLevel>20)) ||
     (r.actorTypes!==undefined&&!list(r.actorTypes)) || (r.note!==undefined&&!text(r.note))) throw Error(`Invalid requirements: ${row.id}.`);
+  if(r.item!==undefined) {
+    const i=r.item;
+    if(!i||Object.keys(i).some(k=>!["types","subtypes","baseItems"].includes(k))||
+      !Array.isArray(i.types)||!i.types.length||new Set(i.types).size!==i.types.length||
+      i.types.some(t=>!["weapon","equipment","tool","consumable","loot","container"].includes(t))||
+      ["subtypes","baseItems"].some(k=>i[k]!==undefined&&(!Array.isArray(i[k])||!i[k].length||i[k].some(v=>typeof v!=="string"||!/^[a-zA-Z0-9-]+$/.test(v))))||
+      row.maxQuantity!==1) throw Error(`Invalid item requirement: ${row.id}. Item-required services allow one target per checkout.`);
+  }
   const e=row.execution??{};
   if(Object.keys(e).some(k=>!["macro","journal","rollTable","activeEffect"].includes(k)) ||
     Object.values(e).some(v=>!text(v,300)||!/^\w[\w.-]+$/.test(v))) throw Error(`Execution references must be document UUIDs: ${row.id}.`);

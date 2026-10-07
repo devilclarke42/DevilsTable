@@ -16,7 +16,7 @@ test("all ten curated General Store categories contain exactly their approved it
     "Containers", "Lighting & Fire", "Rope & Climbing", "Camping", "Writing", "Household", "Animal Supplies", "Travel", "Tools", "Trade Goods"
   ]);
   for (const category of data.categoryDefinitions.filter(category => category.shop === "general-store")) {
-    assert.deepEqual(data.entries.filter(({ item }) => item.category === category.id).map(({ item }) => item.name), category.plannedItems);
+    assert.deepEqual(data.entries.filter(({ item }) => item.category === category.id && item.shops.includes("general-store")).map(({ item }) => item.name), category.plannedItems);
   }
   assert.equal(selectEntries(data, { shopId: "general-store" }).length, 144);
   assert.ok(selectEntries(data, { shopId: "general-store" }).every(({ item }) => item.id.startsWith("DT_ITEM_GS_")));

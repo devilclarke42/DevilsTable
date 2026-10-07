@@ -1,3 +1,4 @@
+import { serviceItemChoices, resolveServiceItem } from "../services/requirements.js";
 import { groupedOffers, groupedBasket, basketMember } from "./offer-groups.js";
 import { merchantSummary, emptyMerchantStock, saveMerchantEconomy } from "./administration.js";
 import { economyPolicy, resolveEconomy } from "./economy.js";
@@ -27,6 +28,7 @@ export class MerchantShopApplication extends HandlebarsApplicationMixin(Applicat
   #catalogue = null;
   #pricing = {};
   #basket = new Map();
+  #serviceTargets = new Map();
   #sales = new Map();
   #buyModifier = 1;
   #sellerId = null;
@@ -72,6 +74,10 @@ export class MerchantShopApplication extends HandlebarsApplicationMixin(Applicat
       // Update only visibility: preserve keyboard focus, caret and basket while typing.
       this.#filterElements();
     });
+    this.element.querySelectorAll("[data-service-target]").forEach(select => select.addEventListener("change", async event => {
+      this.#serviceTargets.set(event.target.dataset.serviceTarget, event.target.value);
+      await this.render();
+    }));
     const image = this.element.querySelector("[data-merchant-portrait]");
     image?.addEventListener("error", () => { image.src = DEFAULT_MERCHANT_PORTRAIT; }, { once: true });
   }
@@ -100,23 +106,28 @@ export class MerchantShopApplication extends HandlebarsApplicationMixin(Applicat
       } catch (error) { adminError = error.message; }
     }
     const filtered = groupedOffers(this.#items);
-    const basket = groupedBasket(this.#items, this.#basket).map(row => ({
-      ...row, subtotalLabel: formatCopper(row.subtotal)
-    }));
     const pc = globalThis.canvas?.tokens?.controlled?.find(token => token.actor?.isOwner && token.actor.type === "character");
-    if (this.#sellerId !== pc?.actor.id) { this.#sales.clear(); this.#sellerId = pc?.actor.id; }
+    if (this.#sellerId !== pc?.actor.id) { this.#sales.clear(); this.#serviceTargets.clear(); this.#sellerId = pc?.actor.id; }
+    const basket = groupedBasket(this.#items, this.#basket).map(row => ({
+      ...row, targetChoices: row.itemRequirement ? serviceItemChoices(pc?.actor,row.itemRequirement).map(item=>({...item,selected:this.#serviceTargets.get(row.id)===item.id})) : [], subtotalLabel: formatCopper(row.subtotal)
+    }));
+
+
     const offers = saleOffers(pc?.actor, this.#buyModifier);
     const sales = [...this.#sales].map(([id, count]) => {
       const item = offers.find(i => i.id === id);
       return item ? { ...item, count, subtotalLabel: formatCopper(count * item.copper) } : null;
     }).filter(Boolean);
+    let serviceError = "";
+    for (const row of basket) try { resolveServiceItem(pc?.actor, row.itemRequirement, this.#serviceTargets.get(row.id), sales); }
+      catch(error) { serviceError = error.message; break; }
     const total = basket.reduce((n, row) => n + row.subtotal, 0) - sales.reduce((n, row) => n + row.count * row.copper, 0);
     let funds = 0;
     try { funds = walletValue(pc?.actor.system.currency); } catch (_) { /* Disable checkout below. */ }
     return { ...await super._prepareContext(options), canAdmin, inventoryView:this.#view==="inventory",servicesView:this.#view==="services", administrationOpen: canAdmin && this.#administrationOpen,
       administration, adminError, adminBusy: this.#adminBusy, sales, sellItems: offers.map(i => ({ ...i, priceLabel: formatCopper(i.copper) })),
       characterName: pc?.actor.name ?? "Select your character token", fundsLabel: formatCopper(funds),
-      fundsError: this.#stockCharacterId !== pc?.actor.id ? "Refresh stock for the selected character’s prices." : total > funds ? "Not enough money for this basket." : "",
+      fundsError: serviceError || (this.#stockCharacterId !== pc?.actor.id ? "Refresh stock for the selected character’s prices." : total > funds ? "Not enough money for this basket." : ""),
       merchant: this.#token.document.name ?? this.#merchant, portrait: this.#portrait, business: this.#business,
       availability: this.#availability.charAt(0).toUpperCase() + this.#availability.slice(1),
       items: filtered.map(item => ({ ...item, descriptionPreview: (item.description ?? "").length > 180 ? `${item.description.slice(0, 177).trimEnd()}…` : item.description, longDescription: (item.description ?? "").length > 180, hidden: !this.#matches(item), priceLabel: formatCopper(item.copper) })), basket, message: this.#message, query: this.#query, allCategories: !this.#category,
@@ -130,7 +141,7 @@ export class MerchantShopApplication extends HandlebarsApplicationMixin(Applicat
       total,
       totalLabel: `${total < 0 ? "You receive " : "You pay "}${formatCopper(Math.abs(total))}`,
       canInteract: Boolean(pc) && !this.#pending && this.#availability === "open",
-      canCheckout: Boolean(pc) && this.#stockCharacterId === pc.actor.id && total <= funds && !this.#pending && this.#availability === "open" && (basket.length + sales.length > 0) };
+      canCheckout: !serviceError && Boolean(pc) && this.#stockCharacterId === pc.actor.id && total <= funds && !this.#pending && this.#availability === "open" && (basket.length + sales.length > 0) };
   }
 
   static async #toggleAdministration() {
@@ -275,13 +286,13 @@ export class MerchantShopApplication extends HandlebarsApplicationMixin(Applicat
     merchantRequest("checkout", { sceneId: this.#token.document.parent.id, tokenId: this.#token.document.id,
       characterId: pc.actor.id, characterTokenId: pc.document.id,
       sales: [...this.#sales].map(([id, quantity]) => ({ id, quantity })),
-      lines: [...this.#basket].map(([id, quantity]) => ({ id, quantity })) }, async result => {
+      lines: [...this.#basket].map(([id, quantity]) => ({ id, quantity, ...(this.#serviceTargets.has(id)?{targetItemId:this.#serviceTargets.get(id)}:{}) })) }, async result => {
       this.#pending = result.status === "pending";
       this.#message = result.error || ({ pending: "GM is reviewing the request; no stock is reserved.",
         approved: "Trade completed. Purchases and payment recorded; the GM resolves any service action requiring attention.",
         rejected: "Checkout was rejected or the revised offer was declined. Your basket remains available.",
         close: "GM closed the request. Your basket remains available." }[result.status] ?? "Request complete.");
-      if (result.status === "approved") { this.#basket.clear(); this.#sales.clear(); await this.refreshStock(); }
+      if (result.status === "approved") { this.#basket.clear(); this.#serviceTargets.clear(); this.#sales.clear(); await this.refreshStock(); }
       await this.render();
     });
   }

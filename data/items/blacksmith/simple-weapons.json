@@ -1,0 +1,2357 @@
+[
+  {
+    "id": "DT_ITEM_BSM_CLUB",
+    "name": "Club",
+    "description": "A short hardwood cudgel with a wrapped grip, kept alongside the forge’s handles and hafts.\n\nUses the 2014 weapon damage, proficiency and properties; no 2024 mastery is granted.",
+    "saleUnit": "One club",
+    "price": {
+      "value": 1,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 1.6,
+      "units": "lb",
+      "notes": "Adjusted carried weight for one complete item; 80% of the 2014 baseline."
+    },
+    "icon": "icons/weapons/clubs/club-banded-brown.webp",
+    "category": "simple-weapons",
+    "tags": [
+      "mundane",
+      "smith-made",
+      "simple-weapons"
+    ],
+    "shops": [
+      "blacksmith"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 (2014), Equipment; native field mapping checked against D&D5e release-5.3.3. Original description and adjusted weight. See docs/BLACKSMITH_GUIDE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0. Original project descriptions: distribution license pending."
+    },
+    "mechanics": {
+      "type": "weapon",
+      "native": {
+        "range": {
+          "value": null,
+          "long": null,
+          "units": "ft",
+          "reach": null
+        },
+        "damage": {
+          "versatile": {
+            "number": null,
+            "denomination": null,
+            "bonus": "",
+            "types": [],
+            "custom": {
+              "enabled": false,
+              "formula": ""
+            },
+            "scaling": {
+              "mode": "",
+              "number": null,
+              "formula": ""
+            }
+          },
+          "base": {
+            "number": 1,
+            "denomination": 4,
+            "bonus": "",
+            "types": [
+              "bludgeoning"
+            ],
+            "custom": {
+              "enabled": false,
+              "formula": ""
+            },
+            "scaling": {
+              "mode": "",
+              "number": null,
+              "formula": ""
+            }
+          }
+        },
+        "armor": {
+          "value": 10
+        },
+        "properties": [
+          "lgt"
+        ],
+        "type": {
+          "value": "simpleM",
+          "baseItem": "club"
+        },
+        "activities": {
+          "dnd5eactivity000": {
+            "_id": "dnd5eactivity000",
+            "type": "attack",
+            "activation": {
+              "type": "action",
+              "value": 1,
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "concentration": false,
+              "value": "",
+              "units": "",
+              "special": "",
+              "override": false
+            },
+            "effects": [],
+            "range": {
+              "value": "5",
+              "units": "ft",
+              "special": "",
+              "override": false
+            },
+            "target": {
+              "template": {
+                "count": "",
+                "contiguous": false,
+                "type": "",
+                "size": "",
+                "width": "",
+                "height": "",
+                "units": ""
+              },
+              "affects": {
+                "count": "",
+                "type": "",
+                "choice": false,
+                "special": ""
+              },
+              "prompt": true,
+              "override": false
+            },
+            "attack": {
+              "ability": "",
+              "bonus": "",
+              "critical": {
+                "threshold": null
+              },
+              "flat": false,
+              "type": {
+                "value": "melee",
+                "classification": "weapon"
+              }
+            },
+            "damage": {
+              "critical": {
+                "bonus": ""
+              },
+              "includeBase": true,
+              "parts": []
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": []
+            },
+            "sort": 0
+          }
+        },
+        "ammunition": {}
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_BSM_DAGGER",
+    "name": "Dagger",
+    "description": "A compact steel blade with a crossguard and a plain fitted sheath, useful as a sidearm or working knife.\n\nUses the 2014 weapon damage, proficiency and properties; no 2024 mastery is granted.",
+    "saleUnit": "One dagger",
+    "price": {
+      "value": 2,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 0.8,
+      "units": "lb",
+      "notes": "Adjusted carried weight for one complete item; 80% of the 2014 baseline."
+    },
+    "icon": "icons/weapons/daggers/dagger-straight-blue.webp",
+    "category": "simple-weapons",
+    "tags": [
+      "mundane",
+      "smith-made",
+      "simple-weapons"
+    ],
+    "shops": [
+      "blacksmith"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 (2014), Equipment; native field mapping checked against D&D5e release-5.3.3. Original description and adjusted weight. See docs/BLACKSMITH_GUIDE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0. Original project descriptions: distribution license pending."
+    },
+    "mechanics": {
+      "type": "weapon",
+      "native": {
+        "range": {
+          "value": 20,
+          "long": 60,
+          "units": "ft",
+          "reach": null
+        },
+        "damage": {
+          "versatile": {
+            "number": null,
+            "denomination": null,
+            "bonus": "",
+            "types": [],
+            "custom": {
+              "enabled": false,
+              "formula": ""
+            },
+            "scaling": {
+              "mode": "",
+              "number": null,
+              "formula": ""
+            }
+          },
+          "base": {
+            "number": 1,
+            "denomination": 4,
+            "bonus": "",
+            "types": [
+              "piercing"
+            ],
+            "custom": {
+              "enabled": false,
+              "formula": ""
+            },
+            "scaling": {
+              "mode": "",
+              "number": null,
+              "formula": ""
+            }
+          }
+        },
+        "armor": {
+          "value": 10
+        },
+        "properties": [
+          "fin",
+          "lgt",
+          "thr"
+        ],
+        "type": {
+          "value": "simpleM",
+          "baseItem": "dagger"
+        },
+        "activities": {
+          "dnd5eactivity000": {
+            "_id": "dnd5eactivity000",
+            "type": "attack",
+            "activation": {
+              "type": "action",
+              "value": 1,
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "concentration": false,
+              "value": "",
+              "units": "",
+              "special": "",
+              "override": false
+            },
+            "effects": [],
+            "range": {
+              "value": "20",
+              "units": "ft",
+              "special": "",
+              "override": false
+            },
+            "target": {
+              "template": {
+                "count": "",
+                "contiguous": false,
+                "type": "",
+                "size": "",
+                "width": "",
+                "height": "",
+                "units": ""
+              },
+              "affects": {
+                "count": "",
+                "type": "",
+                "choice": false,
+                "special": ""
+              },
+              "prompt": true,
+              "override": false
+            },
+            "attack": {
+              "ability": "",
+              "bonus": "",
+              "critical": {
+                "threshold": null
+              },
+              "flat": false,
+              "type": {
+                "value": "melee",
+                "classification": "weapon"
+              }
+            },
+            "damage": {
+              "critical": {
+                "bonus": ""
+              },
+              "includeBase": true,
+              "parts": []
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": []
+            },
+            "sort": 0
+          }
+        },
+        "ammunition": {}
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_BSM_GREATCLUB",
+    "name": "Greatclub",
+    "description": "A long, heavy hardwood club with a thick striking end and room for both hands.\n\nUses the 2014 weapon damage, proficiency and properties; no 2024 mastery is granted.",
+    "saleUnit": "One greatclub",
+    "price": {
+      "value": 2,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 8.0,
+      "units": "lb",
+      "notes": "Adjusted carried weight for one complete item; 80% of the 2014 baseline."
+    },
+    "icon": "icons/weapons/clubs/club-heavy-barbed-grey.webp",
+    "category": "simple-weapons",
+    "tags": [
+      "mundane",
+      "smith-made",
+      "simple-weapons"
+    ],
+    "shops": [
+      "blacksmith"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 (2014), Equipment; native field mapping checked against D&D5e release-5.3.3. Original description and adjusted weight. See docs/BLACKSMITH_GUIDE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0. Original project descriptions: distribution license pending."
+    },
+    "mechanics": {
+      "type": "weapon",
+      "native": {
+        "range": {
+          "value": null,
+          "long": null,
+          "units": "ft",
+          "reach": null
+        },
+        "damage": {
+          "versatile": {
+            "number": null,
+            "denomination": null,
+            "bonus": "",
+            "types": [],
+            "custom": {
+              "enabled": false,
+              "formula": ""
+            },
+            "scaling": {
+              "mode": "",
+              "number": null,
+              "formula": ""
+            }
+          },
+          "base": {
+            "number": 1,
+            "denomination": 8,
+            "bonus": "",
+            "types": [
+              "bludgeoning"
+            ],
+            "custom": {
+              "enabled": false,
+              "formula": ""
+            },
+            "scaling": {
+              "mode": "",
+              "number": null,
+              "formula": ""
+            }
+          }
+        },
+        "armor": {
+          "value": 10
+        },
+        "properties": [
+          "two"
+        ],
+        "type": {
+          "value": "simpleM",
+          "baseItem": "greatclub"
+        },
+        "activities": {
+          "dnd5eactivity000": {
+            "_id": "dnd5eactivity000",
+            "type": "attack",
+            "activation": {
+              "type": "action",
+              "value": 1,
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "concentration": false,
+              "value": "",
+              "units": "",
+              "special": "",
+              "override": false
+            },
+            "effects": [],
+            "range": {
+              "value": "5",
+              "units": "ft",
+              "special": "",
+              "override": false
+            },
+            "target": {
+              "template": {
+                "count": "",
+                "contiguous": false,
+                "type": "",
+                "size": "",
+                "width": "",
+                "height": "",
+                "units": ""
+              },
+              "affects": {
+                "count": "",
+                "type": "",
+                "choice": false,
+                "special": ""
+              },
+              "prompt": true,
+              "override": false
+            },
+            "attack": {
+              "ability": "",
+              "bonus": "",
+              "critical": {
+                "threshold": null
+              },
+              "flat": false,
+              "type": {
+                "value": "melee",
+                "classification": "weapon"
+              }
+            },
+            "damage": {
+              "critical": {
+                "bonus": ""
+              },
+              "includeBase": true,
+              "parts": []
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": []
+            },
+            "sort": 0
+          }
+        },
+        "ammunition": {}
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_BSM_HANDAXE",
+    "name": "Handaxe",
+    "description": "A short-handled axe with a wedged steel head, balanced for close fighting or a throw.\n\nUses the 2014 weapon damage, proficiency and properties; no 2024 mastery is granted.",
+    "saleUnit": "One handaxe",
+    "price": {
+      "value": 5,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 1.6,
+      "units": "lb",
+      "notes": "Adjusted carried weight for one complete item; 80% of the 2014 baseline."
+    },
+    "icon": "icons/weapons/axes/axe-broad-black.webp",
+    "category": "simple-weapons",
+    "tags": [
+      "mundane",
+      "smith-made",
+      "simple-weapons"
+    ],
+    "shops": [
+      "blacksmith"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 (2014), Equipment; native field mapping checked against D&D5e release-5.3.3. Original description and adjusted weight. See docs/BLACKSMITH_GUIDE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0. Original project descriptions: distribution license pending."
+    },
+    "mechanics": {
+      "type": "weapon",
+      "native": {
+        "range": {
+          "value": 20,
+          "long": 60,
+          "units": "ft",
+          "reach": null
+        },
+        "damage": {
+          "versatile": {
+            "number": null,
+            "denomination": null,
+            "bonus": "",
+            "types": [],
+            "custom": {
+              "enabled": false,
+              "formula": ""
+            },
+            "scaling": {
+              "mode": "",
+              "number": null,
+              "formula": ""
+            }
+          },
+          "base": {
+            "number": 1,
+            "denomination": 6,
+            "bonus": "",
+            "types": [
+              "slashing"
+            ],
+            "custom": {
+              "enabled": false,
+              "formula": ""
+            },
+            "scaling": {
+              "mode": "",
+              "number": null,
+              "formula": ""
+            }
+          }
+        },
+        "armor": {
+          "value": 10
+        },
+        "properties": [
+          "lgt",
+          "thr"
+        ],
+        "type": {
+          "value": "simpleM",
+          "baseItem": "handaxe"
+        },
+        "activities": {
+          "dnd5eactivity000": {
+            "_id": "dnd5eactivity000",
+            "type": "attack",
+            "activation": {
+              "type": "action",
+              "value": 1,
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "concentration": false,
+              "value": "",
+              "units": "",
+              "special": "",
+              "override": false
+            },
+            "effects": [],
+            "range": {
+              "value": "20",
+              "units": "ft",
+              "special": "",
+              "override": false
+            },
+            "target": {
+              "template": {
+                "count": "",
+                "contiguous": false,
+                "type": "",
+                "size": "",
+                "width": "",
+                "height": "",
+                "units": ""
+              },
+              "affects": {
+                "count": "",
+                "type": "",
+                "choice": false,
+                "special": ""
+              },
+              "prompt": true,
+              "override": false
+            },
+            "attack": {
+              "ability": "",
+              "bonus": "",
+              "critical": {
+                "threshold": null
+              },
+              "flat": false,
+              "type": {
+                "value": "melee",
+                "classification": "weapon"
+              }
+            },
+            "damage": {
+              "critical": {
+                "bonus": ""
+              },
+              "includeBase": true,
+              "parts": []
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": []
+            },
+            "sort": 0
+          }
+        },
+        "ammunition": {}
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_BSM_JAVELIN",
+    "name": "Javelin",
+    "description": "A light wooden shaft tipped with a narrow iron point, balanced for throwing.\n\nUses the 2014 weapon damage, proficiency and properties; no 2024 mastery is granted.",
+    "saleUnit": "One javelin",
+    "price": {
+      "value": 5,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 1.6,
+      "units": "lb",
+      "notes": "Adjusted carried weight for one complete item; 80% of the 2014 baseline."
+    },
+    "icon": "icons/weapons/polearms/javelin-flared.webp",
+    "category": "simple-weapons",
+    "tags": [
+      "mundane",
+      "smith-made",
+      "simple-weapons"
+    ],
+    "shops": [
+      "blacksmith"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 (2014), Equipment; native field mapping checked against D&D5e release-5.3.3. Original description and adjusted weight. See docs/BLACKSMITH_GUIDE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0. Original project descriptions: distribution license pending."
+    },
+    "mechanics": {
+      "type": "weapon",
+      "native": {
+        "range": {
+          "value": 30,
+          "long": 120,
+          "units": "ft",
+          "reach": null
+        },
+        "damage": {
+          "versatile": {
+            "number": null,
+            "denomination": null,
+            "bonus": "",
+            "types": [],
+            "custom": {
+              "enabled": false,
+              "formula": ""
+            },
+            "scaling": {
+              "mode": "",
+              "number": null,
+              "formula": ""
+            }
+          },
+          "base": {
+            "number": 1,
+            "denomination": 6,
+            "bonus": "",
+            "types": [
+              "piercing"
+            ],
+            "custom": {
+              "enabled": false,
+              "formula": ""
+            },
+            "scaling": {
+              "mode": "",
+              "number": null,
+              "formula": ""
+            }
+          }
+        },
+        "armor": {
+          "value": 10
+        },
+        "properties": [
+          "thr"
+        ],
+        "type": {
+          "value": "simpleM",
+          "baseItem": "javelin"
+        },
+        "activities": {
+          "dnd5eactivity000": {
+            "_id": "dnd5eactivity000",
+            "type": "attack",
+            "activation": {
+              "type": "action",
+              "value": 1,
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "concentration": false,
+              "value": "",
+              "units": "",
+              "special": "",
+              "override": false
+            },
+            "effects": [],
+            "range": {
+              "value": "30",
+              "units": "ft",
+              "special": "",
+              "override": false
+            },
+            "target": {
+              "template": {
+                "count": "",
+                "contiguous": false,
+                "type": "",
+                "size": "",
+                "width": "",
+                "height": "",
+                "units": ""
+              },
+              "affects": {
+                "count": "",
+                "type": "",
+                "choice": false,
+                "special": ""
+              },
+              "prompt": true,
+              "override": false
+            },
+            "attack": {
+              "ability": "",
+              "bonus": "",
+              "critical": {
+                "threshold": null
+              },
+              "flat": false,
+              "type": {
+                "value": "melee",
+                "classification": "weapon"
+              }
+            },
+            "damage": {
+              "critical": {
+                "bonus": ""
+              },
+              "includeBase": true,
+              "parts": []
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": []
+            },
+            "sort": 0
+          }
+        },
+        "ammunition": {}
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_BSM_LIGHT_HAMMER",
+    "name": "Light Hammer",
+    "description": "A compact iron striking head on a short haft, balanced as a weapon rather than a carpenter’s claw hammer.\n\nUses the 2014 weapon damage, proficiency and properties; no 2024 mastery is granted.",
+    "saleUnit": "One light hammer",
+    "price": {
+      "value": 2,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 1.6,
+      "units": "lb",
+      "notes": "Adjusted carried weight for one complete item; 80% of the 2014 baseline."
+    },
+    "icon": "icons/weapons/hammers/shorthammer-double-stone-engraved.webp",
+    "category": "simple-weapons",
+    "tags": [
+      "mundane",
+      "smith-made",
+      "simple-weapons"
+    ],
+    "shops": [
+      "blacksmith"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 (2014), Equipment; native field mapping checked against D&D5e release-5.3.3. Original description and adjusted weight. See docs/BLACKSMITH_GUIDE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0. Original project descriptions: distribution license pending."
+    },
+    "mechanics": {
+      "type": "weapon",
+      "native": {
+        "range": {
+          "value": 20,
+          "long": 60,
+          "units": "ft",
+          "reach": null
+        },
+        "damage": {
+          "versatile": {
+            "number": null,
+            "denomination": null,
+            "bonus": "",
+            "types": [],
+            "custom": {
+              "enabled": false,
+              "formula": ""
+            },
+            "scaling": {
+              "mode": "",
+              "number": null,
+              "formula": ""
+            }
+          },
+          "base": {
+            "number": 1,
+            "denomination": 4,
+            "bonus": "",
+            "types": [
+              "bludgeoning"
+            ],
+            "custom": {
+              "enabled": false,
+              "formula": ""
+            },
+            "scaling": {
+              "mode": "",
+              "number": null,
+              "formula": ""
+            }
+          }
+        },
+        "armor": {
+          "value": 10
+        },
+        "properties": [
+          "lgt",
+          "thr"
+        ],
+        "type": {
+          "value": "simpleM",
+          "baseItem": "lighthammer"
+        },
+        "activities": {
+          "dnd5eactivity000": {
+            "_id": "dnd5eactivity000",
+            "type": "attack",
+            "activation": {
+              "type": "action",
+              "value": 1,
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "concentration": false,
+              "value": "",
+              "units": "",
+              "special": "",
+              "override": false
+            },
+            "effects": [],
+            "range": {
+              "value": "20",
+              "units": "ft",
+              "special": "",
+              "override": false
+            },
+            "target": {
+              "template": {
+                "count": "",
+                "contiguous": false,
+                "type": "",
+                "size": "",
+                "width": "",
+                "height": "",
+                "units": ""
+              },
+              "affects": {
+                "count": "",
+                "type": "",
+                "choice": false,
+                "special": ""
+              },
+              "prompt": true,
+              "override": false
+            },
+            "attack": {
+              "ability": "",
+              "bonus": "",
+              "critical": {
+                "threshold": null
+              },
+              "flat": false,
+              "type": {
+                "value": "melee",
+                "classification": "weapon"
+              }
+            },
+            "damage": {
+              "critical": {
+                "bonus": ""
+              },
+              "includeBase": true,
+              "parts": []
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": []
+            },
+            "sort": 0
+          }
+        },
+        "ammunition": {}
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_BSM_MACE",
+    "name": "Mace",
+    "description": "A flanged iron head fixed to a sturdy haft, with a leather grip below the striking surface.\n\nUses the 2014 weapon damage, proficiency and properties; no 2024 mastery is granted.",
+    "saleUnit": "One mace",
+    "price": {
+      "value": 5,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 3.2,
+      "units": "lb",
+      "notes": "Adjusted carried weight for one complete item; 80% of the 2014 baseline."
+    },
+    "icon": "icons/weapons/maces/mace-flanged-steel.webp",
+    "category": "simple-weapons",
+    "tags": [
+      "mundane",
+      "smith-made",
+      "simple-weapons"
+    ],
+    "shops": [
+      "blacksmith"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 (2014), Equipment; native field mapping checked against D&D5e release-5.3.3. Original description and adjusted weight. See docs/BLACKSMITH_GUIDE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0. Original project descriptions: distribution license pending."
+    },
+    "mechanics": {
+      "type": "weapon",
+      "native": {
+        "range": {
+          "value": null,
+          "long": null,
+          "units": "ft",
+          "reach": null
+        },
+        "damage": {
+          "versatile": {
+            "number": null,
+            "denomination": null,
+            "bonus": "",
+            "types": [],
+            "custom": {
+              "enabled": false,
+              "formula": ""
+            },
+            "scaling": {
+              "mode": "",
+              "number": null,
+              "formula": ""
+            }
+          },
+          "base": {
+            "number": 1,
+            "denomination": 6,
+            "bonus": "",
+            "types": [
+              "bludgeoning"
+            ],
+            "custom": {
+              "enabled": false,
+              "formula": ""
+            },
+            "scaling": {
+              "mode": "",
+              "number": null,
+              "formula": ""
+            }
+          }
+        },
+        "armor": {
+          "value": 10
+        },
+        "properties": [],
+        "type": {
+          "value": "simpleM",
+          "baseItem": "mace"
+        },
+        "activities": {
+          "dnd5eactivity000": {
+            "_id": "dnd5eactivity000",
+            "type": "attack",
+            "activation": {
+              "type": "action",
+              "value": 1,
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "concentration": false,
+              "value": "",
+              "units": "",
+              "special": "",
+              "override": false
+            },
+            "effects": [],
+            "range": {
+              "value": "5",
+              "units": "ft",
+              "special": "",
+              "override": false
+            },
+            "target": {
+              "template": {
+                "count": "",
+                "contiguous": false,
+                "type": "",
+                "size": "",
+                "width": "",
+                "height": "",
+                "units": ""
+              },
+              "affects": {
+                "count": "",
+                "type": "",
+                "choice": false,
+                "special": ""
+              },
+              "prompt": true,
+              "override": false
+            },
+            "attack": {
+              "ability": "",
+              "bonus": "",
+              "critical": {
+                "threshold": null
+              },
+              "flat": false,
+              "type": {
+                "value": "melee",
+                "classification": "weapon"
+              }
+            },
+            "damage": {
+              "critical": {
+                "bonus": ""
+              },
+              "includeBase": true,
+              "parts": []
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": []
+            },
+            "sort": 0
+          }
+        },
+        "ammunition": {}
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_BSM_QUARTERSTAFF",
+    "name": "Quarterstaff",
+    "description": "A straight hardwood staff with a smooth grip and lightly reinforced ends.\n\nUses the 2014 weapon damage, proficiency and properties; no 2024 mastery is granted.",
+    "saleUnit": "One quarterstaff",
+    "price": {
+      "value": 2,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 3.2,
+      "units": "lb",
+      "notes": "Adjusted carried weight for one complete item; 80% of the 2014 baseline."
+    },
+    "icon": "icons/weapons/staves/staff-simple.webp",
+    "category": "simple-weapons",
+    "tags": [
+      "mundane",
+      "smith-made",
+      "simple-weapons"
+    ],
+    "shops": [
+      "blacksmith"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 (2014), Equipment; native field mapping checked against D&D5e release-5.3.3. Original description and adjusted weight. See docs/BLACKSMITH_GUIDE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0. Original project descriptions: distribution license pending."
+    },
+    "mechanics": {
+      "type": "weapon",
+      "native": {
+        "range": {
+          "value": null,
+          "long": null,
+          "units": "ft",
+          "reach": null
+        },
+        "damage": {
+          "versatile": {
+            "number": 1,
+            "denomination": 8,
+            "bonus": "",
+            "types": [
+              "bludgeoning"
+            ],
+            "custom": {
+              "enabled": false,
+              "formula": ""
+            },
+            "scaling": {
+              "mode": "",
+              "number": null,
+              "formula": ""
+            }
+          },
+          "base": {
+            "number": 1,
+            "denomination": 6,
+            "bonus": "",
+            "types": [
+              "bludgeoning"
+            ],
+            "custom": {
+              "enabled": false,
+              "formula": ""
+            },
+            "scaling": {
+              "mode": "",
+              "number": null,
+              "formula": ""
+            }
+          }
+        },
+        "armor": {
+          "value": 10
+        },
+        "properties": [
+          "ver"
+        ],
+        "type": {
+          "value": "simpleM",
+          "baseItem": "quarterstaff"
+        },
+        "activities": {
+          "dnd5eactivity000": {
+            "_id": "dnd5eactivity000",
+            "type": "attack",
+            "activation": {
+              "type": "action",
+              "value": 1,
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "concentration": false,
+              "value": "",
+              "units": "",
+              "special": "",
+              "override": false
+            },
+            "effects": [],
+            "range": {
+              "value": "5",
+              "units": "ft",
+              "special": "",
+              "override": false
+            },
+            "target": {
+              "template": {
+                "count": "",
+                "contiguous": false,
+                "type": "",
+                "size": "",
+                "width": "",
+                "height": "",
+                "units": ""
+              },
+              "affects": {
+                "count": "",
+                "type": "",
+                "choice": false,
+                "special": ""
+              },
+              "prompt": true,
+              "override": false
+            },
+            "attack": {
+              "ability": "",
+              "bonus": "",
+              "critical": {
+                "threshold": null
+              },
+              "flat": false,
+              "type": {
+                "value": "melee",
+                "classification": "weapon"
+              }
+            },
+            "damage": {
+              "critical": {
+                "bonus": ""
+              },
+              "includeBase": true,
+              "parts": []
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": []
+            },
+            "sort": 0
+          }
+        },
+        "ammunition": {}
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_BSM_SICKLE",
+    "name": "Sickle",
+    "description": "A hooked steel blade on a short wooden handle, with its cutting edge along the inner curve.\n\nUses the 2014 weapon damage, proficiency and properties; no 2024 mastery is granted.",
+    "saleUnit": "One sickle",
+    "price": {
+      "value": 1,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 1.6,
+      "units": "lb",
+      "notes": "Adjusted carried weight for one complete item; 80% of the 2014 baseline."
+    },
+    "icon": "icons/weapons/sickles/sickle-curved.webp",
+    "category": "simple-weapons",
+    "tags": [
+      "mundane",
+      "smith-made",
+      "simple-weapons"
+    ],
+    "shops": [
+      "blacksmith"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 (2014), Equipment; native field mapping checked against D&D5e release-5.3.3. Original description and adjusted weight. See docs/BLACKSMITH_GUIDE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0. Original project descriptions: distribution license pending."
+    },
+    "mechanics": {
+      "type": "weapon",
+      "native": {
+        "range": {
+          "value": null,
+          "long": null,
+          "units": "ft",
+          "reach": null
+        },
+        "damage": {
+          "versatile": {
+            "number": null,
+            "denomination": null,
+            "bonus": "",
+            "types": [],
+            "custom": {
+              "enabled": false,
+              "formula": ""
+            },
+            "scaling": {
+              "mode": "",
+              "number": null,
+              "formula": ""
+            }
+          },
+          "base": {
+            "number": 1,
+            "denomination": 4,
+            "bonus": "",
+            "types": [
+              "slashing"
+            ],
+            "custom": {
+              "enabled": false,
+              "formula": ""
+            },
+            "scaling": {
+              "mode": "",
+              "number": null,
+              "formula": ""
+            }
+          }
+        },
+        "armor": {
+          "value": 10
+        },
+        "properties": [
+          "lgt"
+        ],
+        "type": {
+          "value": "simpleM",
+          "baseItem": "sickle"
+        },
+        "activities": {
+          "dnd5eactivity000": {
+            "_id": "dnd5eactivity000",
+            "type": "attack",
+            "activation": {
+              "type": "action",
+              "value": 1,
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "concentration": false,
+              "value": "",
+              "units": "",
+              "special": "",
+              "override": false
+            },
+            "effects": [],
+            "range": {
+              "value": "5",
+              "units": "ft",
+              "special": "",
+              "override": false
+            },
+            "target": {
+              "template": {
+                "count": "",
+                "contiguous": false,
+                "type": "",
+                "size": "",
+                "width": "",
+                "height": "",
+                "units": ""
+              },
+              "affects": {
+                "count": "",
+                "type": "",
+                "choice": false,
+                "special": ""
+              },
+              "prompt": true,
+              "override": false
+            },
+            "attack": {
+              "ability": "",
+              "bonus": "",
+              "critical": {
+                "threshold": null
+              },
+              "flat": false,
+              "type": {
+                "value": "melee",
+                "classification": "weapon"
+              }
+            },
+            "damage": {
+              "critical": {
+                "bonus": ""
+              },
+              "includeBase": true,
+              "parts": []
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": []
+            },
+            "sort": 0
+          }
+        },
+        "ammunition": {}
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_BSM_SPEAR",
+    "name": "Spear",
+    "description": "A leaf-shaped steel point secured to a long wooden shaft, usable in one hand or two.\n\nUses the 2014 weapon damage, proficiency and properties; no 2024 mastery is granted.",
+    "saleUnit": "One spear",
+    "price": {
+      "value": 1,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 2.4,
+      "units": "lb",
+      "notes": "Adjusted carried weight for one complete item; 80% of the 2014 baseline."
+    },
+    "icon": "icons/weapons/polearms/spear-flared-green.webp",
+    "category": "simple-weapons",
+    "tags": [
+      "mundane",
+      "smith-made",
+      "simple-weapons"
+    ],
+    "shops": [
+      "blacksmith"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 (2014), Equipment; native field mapping checked against D&D5e release-5.3.3. Original description and adjusted weight. See docs/BLACKSMITH_GUIDE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0. Original project descriptions: distribution license pending."
+    },
+    "mechanics": {
+      "type": "weapon",
+      "native": {
+        "range": {
+          "value": 20,
+          "long": 60,
+          "units": "ft",
+          "reach": null
+        },
+        "damage": {
+          "versatile": {
+            "number": 1,
+            "denomination": 8,
+            "bonus": "",
+            "types": [
+              "piercing"
+            ],
+            "custom": {
+              "enabled": false,
+              "formula": ""
+            },
+            "scaling": {
+              "mode": "",
+              "number": null,
+              "formula": ""
+            }
+          },
+          "base": {
+            "number": 1,
+            "denomination": 6,
+            "bonus": "",
+            "types": [
+              "piercing"
+            ],
+            "custom": {
+              "enabled": false,
+              "formula": ""
+            },
+            "scaling": {
+              "mode": "",
+              "number": null,
+              "formula": ""
+            }
+          }
+        },
+        "armor": {
+          "value": 10
+        },
+        "properties": [
+          "thr",
+          "ver"
+        ],
+        "type": {
+          "value": "simpleM",
+          "baseItem": "spear"
+        },
+        "activities": {
+          "dnd5eactivity000": {
+            "_id": "dnd5eactivity000",
+            "type": "attack",
+            "activation": {
+              "type": "action",
+              "value": 1,
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "concentration": false,
+              "value": "",
+              "units": "",
+              "special": "",
+              "override": false
+            },
+            "effects": [],
+            "range": {
+              "value": "20",
+              "units": "ft",
+              "special": "",
+              "override": false
+            },
+            "target": {
+              "template": {
+                "count": "",
+                "contiguous": false,
+                "type": "",
+                "size": "",
+                "width": "",
+                "height": "",
+                "units": ""
+              },
+              "affects": {
+                "count": "",
+                "type": "",
+                "choice": false,
+                "special": ""
+              },
+              "prompt": true,
+              "override": false
+            },
+            "attack": {
+              "ability": "",
+              "bonus": "",
+              "critical": {
+                "threshold": null
+              },
+              "flat": false,
+              "type": {
+                "value": "melee",
+                "classification": "weapon"
+              }
+            },
+            "damage": {
+              "critical": {
+                "bonus": ""
+              },
+              "includeBase": true,
+              "parts": []
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": []
+            },
+            "sort": 0
+          }
+        },
+        "ammunition": {}
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_BSM_LIGHT_CROSSBOW",
+    "name": "Light Crossbow",
+    "description": "A wooden stock carries a compact bow and a simple trigger catch. The stirrup helps brace it for loading.\n\nUses the 2014 weapon damage, proficiency and properties; no 2024 mastery is granted. Ammunition is sold separately.",
+    "saleUnit": "One light crossbow",
+    "price": {
+      "value": 25,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 4.0,
+      "units": "lb",
+      "notes": "Adjusted carried weight for one complete item; 80% of the 2014 baseline."
+    },
+    "icon": "icons/weapons/crossbows/crossbow-simple-brown.webp",
+    "category": "simple-weapons",
+    "tags": [
+      "mundane",
+      "smith-made",
+      "simple-weapons"
+    ],
+    "shops": [
+      "blacksmith"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 (2014), Equipment; native field mapping checked against D&D5e release-5.3.3. Original description and adjusted weight. See docs/BLACKSMITH_GUIDE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0. Original project descriptions: distribution license pending."
+    },
+    "mechanics": {
+      "type": "weapon",
+      "native": {
+        "range": {
+          "value": 80,
+          "long": 320,
+          "units": "ft",
+          "reach": null
+        },
+        "damage": {
+          "versatile": {
+            "number": null,
+            "denomination": null,
+            "bonus": "",
+            "types": [],
+            "custom": {
+              "enabled": false,
+              "formula": ""
+            },
+            "scaling": {
+              "mode": "",
+              "number": null,
+              "formula": ""
+            }
+          },
+          "base": {
+            "number": 1,
+            "denomination": 8,
+            "bonus": "",
+            "types": [
+              "piercing"
+            ],
+            "custom": {
+              "enabled": false,
+              "formula": ""
+            },
+            "scaling": {
+              "mode": "",
+              "number": null,
+              "formula": ""
+            }
+          }
+        },
+        "armor": {
+          "value": 10
+        },
+        "properties": [
+          "amm",
+          "lod",
+          "two"
+        ],
+        "type": {
+          "value": "simpleR",
+          "baseItem": "lightcrossbow"
+        },
+        "activities": {
+          "dnd5eactivity000": {
+            "_id": "dnd5eactivity000",
+            "type": "attack",
+            "activation": {
+              "type": "action",
+              "value": 1,
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "concentration": false,
+              "value": "",
+              "units": "",
+              "special": "",
+              "override": false
+            },
+            "effects": [],
+            "range": {
+              "value": "80",
+              "units": "ft",
+              "special": "",
+              "override": false
+            },
+            "target": {
+              "template": {
+                "count": "",
+                "contiguous": false,
+                "type": "",
+                "size": "",
+                "width": "",
+                "height": "",
+                "units": ""
+              },
+              "affects": {
+                "count": "",
+                "type": "",
+                "choice": false,
+                "special": ""
+              },
+              "prompt": true,
+              "override": false
+            },
+            "attack": {
+              "ability": "",
+              "bonus": "",
+              "critical": {
+                "threshold": null
+              },
+              "flat": false,
+              "type": {
+                "value": "ranged",
+                "classification": "weapon"
+              }
+            },
+            "damage": {
+              "critical": {
+                "bonus": ""
+              },
+              "includeBase": true,
+              "parts": []
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": []
+            },
+            "sort": 0
+          }
+        },
+        "ammunition": {
+          "type": "crossbowBolt"
+        }
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_BSM_DART",
+    "name": "Dart",
+    "description": "A small throwing spike with a weighted body and a narrow steel point.\n\nUses the 2014 weapon damage, proficiency and properties; no 2024 mastery is granted.",
+    "saleUnit": "One dart",
+    "price": {
+      "value": 5,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 0.2,
+      "units": "lb",
+      "notes": "Adjusted carried weight for one complete item; 80% of the 2014 baseline."
+    },
+    "icon": "icons/weapons/thrown/dart-feathered.webp",
+    "category": "simple-weapons",
+    "tags": [
+      "mundane",
+      "smith-made",
+      "simple-weapons"
+    ],
+    "shops": [
+      "blacksmith"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 (2014), Equipment; native field mapping checked against D&D5e release-5.3.3. Original description and adjusted weight. See docs/BLACKSMITH_GUIDE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0. Original project descriptions: distribution license pending."
+    },
+    "mechanics": {
+      "type": "weapon",
+      "native": {
+        "range": {
+          "value": 20,
+          "long": 60,
+          "units": "ft",
+          "reach": null
+        },
+        "damage": {
+          "versatile": {
+            "number": null,
+            "denomination": null,
+            "bonus": "",
+            "types": [],
+            "custom": {
+              "enabled": false,
+              "formula": ""
+            },
+            "scaling": {
+              "mode": "",
+              "number": null,
+              "formula": ""
+            }
+          },
+          "base": {
+            "number": 1,
+            "denomination": 4,
+            "bonus": "",
+            "types": [
+              "piercing"
+            ],
+            "custom": {
+              "enabled": false,
+              "formula": ""
+            },
+            "scaling": {
+              "mode": "",
+              "number": null,
+              "formula": ""
+            }
+          }
+        },
+        "armor": {
+          "value": 10
+        },
+        "properties": [
+          "fin",
+          "thr"
+        ],
+        "type": {
+          "value": "simpleR",
+          "baseItem": "dart"
+        },
+        "activities": {
+          "dnd5eactivity000": {
+            "_id": "dnd5eactivity000",
+            "type": "attack",
+            "activation": {
+              "type": "action",
+              "value": 1,
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "concentration": false,
+              "value": "",
+              "units": "",
+              "special": "",
+              "override": false
+            },
+            "effects": [],
+            "range": {
+              "value": "20",
+              "units": "ft",
+              "special": "",
+              "override": false
+            },
+            "target": {
+              "template": {
+                "count": "",
+                "contiguous": false,
+                "type": "",
+                "size": "",
+                "width": "",
+                "height": "",
+                "units": ""
+              },
+              "affects": {
+                "count": "",
+                "type": "",
+                "choice": false,
+                "special": ""
+              },
+              "prompt": true,
+              "override": false
+            },
+            "attack": {
+              "ability": "",
+              "bonus": "",
+              "critical": {
+                "threshold": null
+              },
+              "flat": false,
+              "type": {
+                "value": "ranged",
+                "classification": "weapon"
+              }
+            },
+            "damage": {
+              "critical": {
+                "bonus": ""
+              },
+              "includeBase": true,
+              "parts": []
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": []
+            },
+            "sort": 0
+          }
+        },
+        "ammunition": {}
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_BSM_SHORTBOW",
+    "name": "Shortbow",
+    "description": "A compact wooden bow with a fitted string, suited to hunting and close woodland fighting.\n\nUses the 2014 weapon damage, proficiency and properties; no 2024 mastery is granted. Ammunition is sold separately.",
+    "saleUnit": "One shortbow",
+    "price": {
+      "value": 25,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 1.6,
+      "units": "lb",
+      "notes": "Adjusted carried weight for one complete item; 80% of the 2014 baseline."
+    },
+    "icon": "icons/weapons/bows/shortbow-leather.webp",
+    "category": "simple-weapons",
+    "tags": [
+      "mundane",
+      "smith-made",
+      "simple-weapons"
+    ],
+    "shops": [
+      "blacksmith"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 (2014), Equipment; native field mapping checked against D&D5e release-5.3.3. Original description and adjusted weight. See docs/BLACKSMITH_GUIDE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0. Original project descriptions: distribution license pending."
+    },
+    "mechanics": {
+      "type": "weapon",
+      "native": {
+        "range": {
+          "value": 80,
+          "long": 320,
+          "units": "ft",
+          "reach": null
+        },
+        "damage": {
+          "versatile": {
+            "number": null,
+            "denomination": null,
+            "bonus": "",
+            "types": [],
+            "custom": {
+              "enabled": false,
+              "formula": ""
+            },
+            "scaling": {
+              "mode": "",
+              "number": null,
+              "formula": ""
+            }
+          },
+          "base": {
+            "number": 1,
+            "denomination": 6,
+            "bonus": "",
+            "types": [
+              "piercing"
+            ],
+            "custom": {
+              "enabled": false,
+              "formula": ""
+            },
+            "scaling": {
+              "mode": "",
+              "number": null,
+              "formula": ""
+            }
+          }
+        },
+        "armor": {
+          "value": 10
+        },
+        "properties": [
+          "amm",
+          "two"
+        ],
+        "type": {
+          "value": "simpleR",
+          "baseItem": "shortbow"
+        },
+        "activities": {
+          "dnd5eactivity000": {
+            "_id": "dnd5eactivity000",
+            "type": "attack",
+            "activation": {
+              "type": "action",
+              "value": 1,
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "concentration": false,
+              "value": "",
+              "units": "",
+              "special": "",
+              "override": false
+            },
+            "effects": [],
+            "range": {
+              "value": "80",
+              "units": "ft",
+              "special": "",
+              "override": false
+            },
+            "target": {
+              "template": {
+                "count": "",
+                "contiguous": false,
+                "type": "",
+                "size": "",
+                "width": "",
+                "height": "",
+                "units": ""
+              },
+              "affects": {
+                "count": "",
+                "type": "",
+                "choice": false,
+                "special": ""
+              },
+              "prompt": true,
+              "override": false
+            },
+            "attack": {
+              "ability": "",
+              "bonus": "",
+              "critical": {
+                "threshold": null
+              },
+              "flat": false,
+              "type": {
+                "value": "ranged",
+                "classification": "weapon"
+              }
+            },
+            "damage": {
+              "critical": {
+                "bonus": ""
+              },
+              "includeBase": true,
+              "parts": []
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": []
+            },
+            "sort": 0
+          }
+        },
+        "ammunition": {
+          "type": "arrow"
+        }
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_BSM_SLING",
+    "name": "Sling",
+    "description": "A leather pouch hangs between two braided cords, with one loop to anchor it to the hand.\n\nUses the 2014 weapon damage, proficiency and properties; no 2024 mastery is granted. Ammunition is sold separately.",
+    "saleUnit": "One sling",
+    "price": {
+      "value": 1,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 0.1,
+      "units": "lb",
+      "notes": "A light leather sling still has a measurable carried weight; one tenth of a pound replaces the baseline dash."
+    },
+    "icon": "icons/weapons/slings/slingshot-wood.webp",
+    "category": "simple-weapons",
+    "tags": [
+      "mundane",
+      "smith-made",
+      "simple-weapons"
+    ],
+    "shops": [
+      "blacksmith"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 (2014), Equipment; native field mapping checked against D&D5e release-5.3.3. Original description and adjusted weight. See docs/BLACKSMITH_GUIDE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0. Original project descriptions: distribution license pending."
+    },
+    "mechanics": {
+      "type": "weapon",
+      "native": {
+        "range": {
+          "value": 30,
+          "long": 120,
+          "units": "ft",
+          "reach": null
+        },
+        "damage": {
+          "versatile": {
+            "number": null,
+            "denomination": null,
+            "bonus": "",
+            "types": [],
+            "custom": {
+              "enabled": false,
+              "formula": ""
+            },
+            "scaling": {
+              "mode": "",
+              "number": null,
+              "formula": ""
+            }
+          },
+          "base": {
+            "number": 1,
+            "denomination": 4,
+            "bonus": "",
+            "types": [
+              "bludgeoning"
+            ],
+            "custom": {
+              "enabled": false,
+              "formula": ""
+            },
+            "scaling": {
+              "mode": "",
+              "number": null,
+              "formula": ""
+            }
+          }
+        },
+        "armor": {
+          "value": 10
+        },
+        "properties": [
+          "amm"
+        ],
+        "type": {
+          "value": "simpleR",
+          "baseItem": "sling"
+        },
+        "activities": {
+          "dnd5eactivity000": {
+            "_id": "dnd5eactivity000",
+            "type": "attack",
+            "activation": {
+              "type": "action",
+              "value": 1,
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "concentration": false,
+              "value": "",
+              "units": "",
+              "special": "",
+              "override": false
+            },
+            "effects": [],
+            "range": {
+              "value": "30",
+              "units": "ft",
+              "special": "",
+              "override": false
+            },
+            "target": {
+              "template": {
+                "count": "",
+                "contiguous": false,
+                "type": "",
+                "size": "",
+                "width": "",
+                "height": "",
+                "units": ""
+              },
+              "affects": {
+                "count": "",
+                "type": "",
+                "choice": false,
+                "special": ""
+              },
+              "prompt": true,
+              "override": false
+            },
+            "attack": {
+              "ability": "",
+              "bonus": "",
+              "critical": {
+                "threshold": null
+              },
+              "flat": false,
+              "type": {
+                "value": "ranged",
+                "classification": "weapon"
+              }
+            },
+            "damage": {
+              "critical": {
+                "bonus": ""
+              },
+              "includeBase": true,
+              "parts": []
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": []
+            },
+            "sort": 0
+          }
+        },
+        "ammunition": {
+          "type": "slingBullet"
+        }
+      }
+    }
+  }
+]

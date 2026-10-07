@@ -41,6 +41,27 @@
       "catalogues": [
         "tavern"
       ]
+    },
+    {
+      "id": "smith-repairs",
+      "name": "Repairs & Maintenance",
+      "catalogues": [
+        "blacksmith"
+      ]
+    },
+    {
+      "id": "smith-fitting",
+      "name": "Fitting & Alteration",
+      "catalogues": [
+        "blacksmith"
+      ]
+    },
+    {
+      "id": "smith-specialist",
+      "name": "Specialist Work",
+      "catalogues": [
+        "blacksmith"
+      ]
     }
   ],
   "services": [
@@ -814,6 +835,543 @@
         "parcel",
         "local"
       ]
+    },
+    {
+      "id": "DT_SERVICE_BSM_REPAIR_WEAPON",
+      "name": "Repair Weapon",
+      "description": "Straighten a minor bend, secure a loose head or replace a damaged grip. Major reconstruction and magical repairs require a separate agreement. Payment records the commissioned work; the GM decides completion and applies any item changes manually.",
+      "icon": "icons/skills/trades/smithing-tongs-metal-red.webp",
+      "category": "smith-repairs",
+      "catalogues": [
+        "blacksmith"
+      ],
+      "price": {
+        "value": 5,
+        "denomination": "sp"
+      },
+      "modifier": 0,
+      "availability": {
+        "profiles": [
+          "smith-village",
+          "smith-town",
+          "smith-master",
+          "smith-military",
+          "smith-travelling",
+          "standard",
+          "modest",
+          "specialist",
+          "luxury"
+        ]
+      },
+      "requirements": {
+        "item": {
+          "types": [
+            "weapon"
+          ]
+        },
+        "note": "Select one eligible item from your character’s inventory. It stays with the character."
+      },
+      "execution": {},
+      "tags": [
+        "blacksmith",
+        "labour",
+        "item-required"
+      ],
+      "maxQuantity": 1,
+      "recommendedRange": {
+        "min": {
+          "value": 2,
+          "denomination": "sp"
+        },
+        "max": {
+          "value": 10,
+          "denomination": "sp"
+        }
+      },
+      "saleUnit": "One weapon; minor repairs",
+      "duration": "One to four hours",
+      "actions": []
+    },
+    {
+      "id": "DT_SERVICE_BSM_REPAIR_ARMOUR",
+      "name": "Repair Armour",
+      "description": "Replace a few damaged links, rivets or buckles and reshape minor dents. Missing sections, destroyed armour and magical repairs are excluded. Payment records the commissioned work; the GM decides completion and applies any item changes manually.",
+      "icon": "icons/skills/trades/smithing-tongs-metal-red.webp",
+      "category": "smith-repairs",
+      "catalogues": [
+        "blacksmith"
+      ],
+      "price": {
+        "value": 2,
+        "denomination": "gp"
+      },
+      "modifier": 0,
+      "availability": {
+        "profiles": [
+          "smith-village",
+          "smith-town",
+          "smith-master",
+          "smith-military",
+          "smith-travelling",
+          "standard",
+          "modest",
+          "specialist",
+          "luxury"
+        ]
+      },
+      "requirements": {
+        "item": {
+          "types": [
+            "equipment"
+          ],
+          "subtypes": [
+            "light",
+            "medium",
+            "heavy"
+          ]
+        },
+        "note": "Select one eligible item from your character’s inventory. It stays with the character."
+      },
+      "execution": {},
+      "tags": [
+        "blacksmith",
+        "labour",
+        "item-required"
+      ],
+      "maxQuantity": 1,
+      "recommendedRange": {
+        "min": {
+          "value": 1,
+          "denomination": "gp"
+        },
+        "max": {
+          "value": 4,
+          "denomination": "gp"
+        }
+      },
+      "saleUnit": "One suit; minor repairs",
+      "duration": "Half a working day",
+      "actions": []
+    },
+    {
+      "id": "DT_SERVICE_BSM_SHARPEN_BLADE",
+      "name": "Sharpen Blade",
+      "description": "Dress small nicks and restore an ordinary working edge. The service grants no attack or damage bonus. Payment records the commissioned work; the GM decides completion and applies any item changes manually.",
+      "icon": "icons/skills/trades/smithing-tongs-metal-red.webp",
+      "category": "smith-repairs",
+      "catalogues": [
+        "blacksmith"
+      ],
+      "price": {
+        "value": 2,
+        "denomination": "sp"
+      },
+      "modifier": 0,
+      "availability": {
+        "profiles": [
+          "smith-village",
+          "smith-town",
+          "smith-master",
+          "smith-military",
+          "smith-travelling",
+          "standard",
+          "modest",
+          "specialist",
+          "luxury"
+        ]
+      },
+      "requirements": {
+        "item": {
+          "types": [
+            "weapon"
+          ],
+          "baseItems": [
+            "dagger",
+            "handaxe",
+            "sickle",
+            "battleaxe",
+            "glaive",
+            "greataxe",
+            "greatsword",
+            "halberd",
+            "longsword",
+            "rapier",
+            "scimitar",
+            "shortsword"
+          ]
+        },
+        "note": "Select one eligible item from your character’s inventory. It stays with the character."
+      },
+      "execution": {},
+      "tags": [
+        "blacksmith",
+        "labour",
+        "item-required"
+      ],
+      "maxQuantity": 1,
+      "recommendedRange": {
+        "min": {
+          "value": 1,
+          "denomination": "sp"
+        },
+        "max": {
+          "value": 4,
+          "denomination": "sp"
+        }
+      },
+      "saleUnit": "One edged weapon",
+      "duration": "Thirty minutes",
+      "actions": []
+    },
+    {
+      "id": "DT_SERVICE_BSM_SILVER_WEAPON",
+      "name": "Silver a Weapon",
+      "description": "Apply a durable silver finish to one suitable weapon using the 2014 silvering service price. The GM confirms suitability and manually marks the weapon as silvered after completion; no magical bonus is granted. Ammunition batches are not included. Payment records the commissioned work; the GM decides completion and applies any item changes manually.",
+      "icon": "icons/skills/trades/smithing-tongs-metal-red.webp",
+      "category": "smith-specialist",
+      "catalogues": [
+        "blacksmith"
+      ],
+      "price": {
+        "value": 100,
+        "denomination": "gp"
+      },
+      "modifier": 0,
+      "availability": {
+        "profiles": [
+          "smith-town",
+          "smith-master",
+          "smith-military",
+          "specialist",
+          "luxury"
+        ]
+      },
+      "requirements": {
+        "item": {
+          "types": [
+            "weapon"
+          ]
+        },
+        "note": "Select one eligible item from your character’s inventory. It stays with the character."
+      },
+      "execution": {},
+      "tags": [
+        "blacksmith",
+        "labour",
+        "item-required"
+      ],
+      "maxQuantity": 1,
+      "recommendedRange": {
+        "min": {
+          "value": 50,
+          "denomination": "gp"
+        },
+        "max": {
+          "value": 200,
+          "denomination": "gp"
+        }
+      },
+      "saleUnit": "One suitable weapon",
+      "duration": "Two working days",
+      "actions": []
+    },
+    {
+      "id": "DT_SERVICE_BSM_RESIZE_ARMOUR",
+      "name": "Resize Armour",
+      "description": "Adjust straps, padding and modest plate overlap to fit another wearer of a similar build. A change of creature size or complete reconstruction is not included. Payment records the commissioned work; the GM decides completion and applies any item changes manually.",
+      "icon": "icons/skills/trades/smithing-tongs-metal-red.webp",
+      "category": "smith-fitting",
+      "catalogues": [
+        "blacksmith"
+      ],
+      "price": {
+        "value": 8,
+        "denomination": "gp"
+      },
+      "modifier": 0,
+      "availability": {
+        "profiles": [
+          "smith-village",
+          "smith-town",
+          "smith-master",
+          "smith-military",
+          "smith-travelling",
+          "standard",
+          "modest",
+          "specialist",
+          "luxury"
+        ]
+      },
+      "requirements": {
+        "item": {
+          "types": [
+            "equipment"
+          ],
+          "subtypes": [
+            "light",
+            "medium",
+            "heavy"
+          ]
+        },
+        "note": "Select one eligible item from your character’s inventory. It stays with the character."
+      },
+      "execution": {},
+      "tags": [
+        "blacksmith",
+        "labour",
+        "item-required"
+      ],
+      "maxQuantity": 1,
+      "recommendedRange": {
+        "min": {
+          "value": 4,
+          "denomination": "gp"
+        },
+        "max": {
+          "value": 16,
+          "denomination": "gp"
+        }
+      },
+      "saleUnit": "One suit; same size class",
+      "duration": "One working day",
+      "actions": []
+    },
+    {
+      "id": "DT_SERVICE_BSM_REPLACE_BOWSTRING",
+      "name": "Replace Bowstring",
+      "description": "Fit and tension a replacement string for an ordinary bow or crossbow. Broken limbs and damaged trigger assemblies need separate repair. Payment records the commissioned work; the GM decides completion and applies any item changes manually.",
+      "icon": "icons/skills/trades/smithing-tongs-metal-red.webp",
+      "category": "smith-repairs",
+      "catalogues": [
+        "blacksmith"
+      ],
+      "price": {
+        "value": 4,
+        "denomination": "sp"
+      },
+      "modifier": 0,
+      "availability": {
+        "profiles": [
+          "smith-village",
+          "smith-town",
+          "smith-master",
+          "smith-military",
+          "smith-travelling",
+          "standard",
+          "modest",
+          "specialist",
+          "luxury"
+        ]
+      },
+      "requirements": {
+        "item": {
+          "types": [
+            "weapon"
+          ],
+          "baseItems": [
+            "shortbow",
+            "longbow",
+            "lightcrossbow",
+            "heavycrossbow",
+            "handcrossbow"
+          ]
+        },
+        "note": "Select one eligible item from your character’s inventory. It stays with the character."
+      },
+      "execution": {},
+      "tags": [
+        "blacksmith",
+        "labour",
+        "item-required"
+      ],
+      "maxQuantity": 1,
+      "recommendedRange": {
+        "min": {
+          "value": 2,
+          "denomination": "sp"
+        },
+        "max": {
+          "value": 8,
+          "denomination": "sp"
+        }
+      },
+      "saleUnit": "One bow or crossbow",
+      "duration": "One hour",
+      "actions": []
+    },
+    {
+      "id": "DT_SERVICE_BSM_REPLACE_SHIELD_STRAPS",
+      "name": "Replace Shield Straps",
+      "description": "Replace worn leather straps and fastenings, then check the grip. The shield body is not replaced. Payment records the commissioned work; the GM decides completion and applies any item changes manually.",
+      "icon": "icons/skills/trades/smithing-tongs-metal-red.webp",
+      "category": "smith-repairs",
+      "catalogues": [
+        "blacksmith"
+      ],
+      "price": {
+        "value": 3,
+        "denomination": "sp"
+      },
+      "modifier": 0,
+      "availability": {
+        "profiles": [
+          "smith-village",
+          "smith-town",
+          "smith-master",
+          "smith-military",
+          "smith-travelling",
+          "standard",
+          "modest",
+          "specialist",
+          "luxury"
+        ]
+      },
+      "requirements": {
+        "item": {
+          "types": [
+            "equipment"
+          ],
+          "subtypes": [
+            "shield"
+          ]
+        },
+        "note": "Select one eligible item from your character’s inventory. It stays with the character."
+      },
+      "execution": {},
+      "tags": [
+        "blacksmith",
+        "labour",
+        "item-required"
+      ],
+      "maxQuantity": 1,
+      "recommendedRange": {
+        "min": {
+          "value": 1,
+          "denomination": "sp"
+        },
+        "max": {
+          "value": 6,
+          "denomination": "sp"
+        }
+      },
+      "saleUnit": "One shield",
+      "duration": "One hour",
+      "actions": []
+    },
+    {
+      "id": "DT_SERVICE_BSM_CUSTOM_FITTING",
+      "name": "Custom Fitting",
+      "description": "Refine an intact suit’s padding, straps and articulation for its wearer. The wearer must attend; this does not remove proficiency requirements, Strength requirements or Stealth disadvantage. Payment records the commissioned work; the GM decides completion and applies any item changes manually.",
+      "icon": "icons/skills/trades/smithing-tongs-metal-red.webp",
+      "category": "smith-fitting",
+      "catalogues": [
+        "blacksmith"
+      ],
+      "price": {
+        "value": 15,
+        "denomination": "gp"
+      },
+      "modifier": 0,
+      "availability": {
+        "profiles": [
+          "smith-town",
+          "smith-master",
+          "smith-military",
+          "specialist",
+          "luxury"
+        ]
+      },
+      "requirements": {
+        "item": {
+          "types": [
+            "equipment"
+          ],
+          "subtypes": [
+            "light",
+            "medium",
+            "heavy"
+          ]
+        },
+        "note": "Select one eligible item from your character’s inventory. It stays with the character."
+      },
+      "execution": {},
+      "tags": [
+        "blacksmith",
+        "labour",
+        "item-required"
+      ],
+      "maxQuantity": 1,
+      "recommendedRange": {
+        "min": {
+          "value": 7,
+          "denomination": "gp"
+        },
+        "max": {
+          "value": 30,
+          "denomination": "gp"
+        }
+      },
+      "saleUnit": "One suit and one fitting appointment",
+      "duration": "One working day",
+      "actions": []
+    },
+    {
+      "id": "DT_SERVICE_BSM_BASIC_APPRAISAL",
+      "name": "Basic Appraisal",
+      "description": "Inspect visible workmanship, condition and materials and offer a practical resale estimate. This is not magical identification and does not reveal curses or hidden enchantments. Payment records the commissioned work; the GM decides completion and applies any item changes manually.",
+      "icon": "icons/skills/trades/smithing-tongs-metal-red.webp",
+      "category": "smith-specialist",
+      "catalogues": [
+        "blacksmith"
+      ],
+      "price": {
+        "value": 5,
+        "denomination": "sp"
+      },
+      "modifier": 0,
+      "availability": {
+        "profiles": [
+          "smith-village",
+          "smith-town",
+          "smith-master",
+          "smith-military",
+          "smith-travelling",
+          "standard",
+          "modest",
+          "specialist",
+          "luxury"
+        ]
+      },
+      "requirements": {
+        "item": {
+          "types": [
+            "weapon",
+            "equipment",
+            "tool"
+          ]
+        },
+        "note": "Select one eligible item from your character’s inventory. It stays with the character."
+      },
+      "execution": {},
+      "tags": [
+        "blacksmith",
+        "labour",
+        "item-required"
+      ],
+      "maxQuantity": 1,
+      "recommendedRange": {
+        "min": {
+          "value": 2,
+          "denomination": "sp"
+        },
+        "max": {
+          "value": 10,
+          "denomination": "sp"
+        }
+      },
+      "saleUnit": "One item",
+      "duration": "Fifteen minutes",
+      "actions": []
     }
   ]
 }

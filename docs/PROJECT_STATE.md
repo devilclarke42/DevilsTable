@@ -1,8 +1,13 @@
 # Project state
 
-Updated 2026-10-07 for `0.3.0-alpha.16`.
+## Sprint 13 candidate — 0.3.0-alpha.17
 
-## Current candidate — alpha.16 / UX & Workflow Polish
+Blacksmith implementation adds 58 products and shares 15 existing goods, giving 73 smith products. Nine smith services and five presets reuse the existing pipeline. Project totals are 370 Items, 25 services and 68 tables. Required-item selection is generic and non-consuming. Native equipment conversion is implemented; live Foundry V14/D&D5e 5.3.3/Forge acceptance remains pending. See [Blacksmith Guide](BLACKSMITH_GUIDE.md).
+
+
+Updated 2026-10-07 for `0.3.0-alpha.17`.
+
+## Previous candidate — alpha.16 / UX & Workflow Polish
 
 Implemented NPC sheet configuration, three-dot/Directory Builder entry, merchant badges, optional local Dice So Nice presentation and compact content builders with source summaries. Existing transaction authority, source IDs, inventory and catalogue data are retained. Merchant disabling preserves business history. No dedicated sidebar was added because existing Actor entry points cover this workflow.
 

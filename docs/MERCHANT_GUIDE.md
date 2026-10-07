@@ -1,5 +1,10 @@
 # Merchant Builder guide
 
+## Blacksmith services
+
+Add a smith service to the basket and select an eligible owned Item there before checkout. The GM sees the target alongside the service; payment and history use normal approval. Equipment is not removed, repaired or modified automatically. Never sell the service target in the same checkout. See [Blacksmith Guide](BLACKSMITH_GUIDE.md).
+
+
 The Merchant Builder is a GM tabbed workflow: **Setup → Identity → Stock → Services → Cash → Manage**.
 Use Back/Next or jump directly to any tab. Tab switching preserves draft fields and performs no writes. Open it from **Merchant Builder** in
 module settings or the GM Shop UI. Advanced Trade Settings / Recovery opens the existing trade

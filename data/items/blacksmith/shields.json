@@ -1,0 +1,49 @@
+[
+  {
+    "id": "DT_ITEM_BSM_SHIELD",
+    "name": "Shield",
+    "description": "A wood-and-metal shield has a central grip and replaceable leather straps.\n\nProvides the 2014 shield bonus of +2 AC when equipped as permitted by the system. Sold with its grip and straps.",
+    "saleUnit": "One shield",
+    "price": {
+      "value": 10,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 4.8,
+      "units": "lb",
+      "notes": "Adjusted carried weight for one complete item; 80% of the 2014 baseline."
+    },
+    "icon": "icons/equipment/shield/round-wooden-boss-steel-brown.webp",
+    "category": "shields",
+    "tags": [
+      "mundane",
+      "smith-made",
+      "shields"
+    ],
+    "shops": [
+      "blacksmith"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 (2014), Equipment; native field mapping checked against D&D5e release-5.3.3. Original description and adjusted weight. See docs/BLACKSMITH_GUIDE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0. Original project descriptions: distribution license pending."
+    },
+    "mechanics": {
+      "type": "equipment",
+      "native": {
+        "armor": {
+          "value": 2,
+          "dex": null,
+          "magicalBonus": null
+        },
+        "type": {
+          "value": "shield",
+          "baseItem": "shield"
+        },
+        "properties": [],
+        "activities": {}
+      }
+    }
+  }
+]

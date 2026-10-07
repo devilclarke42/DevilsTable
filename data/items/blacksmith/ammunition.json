@@ -1,0 +1,243 @@
+[
+  {
+    "id": "DT_ITEM_BSM_ARROW",
+    "name": "Arrow",
+    "description": "A straight wooden shaft is fitted with feather flights and a forged metal point.\n\nSold individually so native ammunition consumption removes one projectile per shot. A quiver or case is not included.",
+    "saleUnit": "One arrow",
+    "price": {
+      "value": 5,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 0.05,
+      "units": "lb",
+      "notes": "Weight of one projectile, not a bundle; the 2014 per-projectile weight is retained."
+    },
+    "icon": "icons/weapons/ammunition/arrows-broadhead-white.webp",
+    "category": "ammunition",
+    "tags": [
+      "mundane",
+      "smith-made",
+      "ammunition"
+    ],
+    "shops": [
+      "blacksmith"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 (2014), Equipment; native field mapping checked against D&D5e release-5.3.3. Original description and adjusted weight. See docs/BLACKSMITH_GUIDE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0. Original project descriptions: distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "ammo",
+      "native": {
+        "damage": {
+          "base": {
+            "number": null,
+            "denomination": 0,
+            "bonus": "",
+            "types": [],
+            "custom": {
+              "enabled": false,
+              "formula": ""
+            },
+            "scaling": {
+              "mode": "",
+              "number": null,
+              "formula": ""
+            }
+          },
+          "replace": false
+        },
+        "type": {
+          "value": "ammo",
+          "subtype": "arrow"
+        },
+        "properties": [],
+        "activities": {}
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_BSM_CROSSBOW_BOLT",
+    "name": "Crossbow Bolt",
+    "description": "A short, stiff shaft carries a fitted metal point and small flights.\n\nSold individually so native ammunition consumption removes one projectile per shot. A quiver or case is not included.",
+    "saleUnit": "One crossbow bolt",
+    "price": {
+      "value": 2,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 0.07,
+      "units": "lb",
+      "notes": "Weight of one projectile, not a bundle; the 2014 per-projectile weight is retained."
+    },
+    "icon": "icons/weapons/ammunition/arrow-broadhead-white.webp",
+    "category": "ammunition",
+    "tags": [
+      "mundane",
+      "smith-made",
+      "ammunition"
+    ],
+    "shops": [
+      "blacksmith"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 (2014), Equipment; native field mapping checked against D&D5e release-5.3.3. Original description and adjusted weight. See docs/BLACKSMITH_GUIDE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0. Original project descriptions: distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "ammo",
+      "native": {
+        "damage": {
+          "base": {
+            "number": null,
+            "denomination": 0,
+            "bonus": "",
+            "types": [],
+            "custom": {
+              "enabled": false,
+              "formula": ""
+            },
+            "scaling": {
+              "mode": "",
+              "number": null,
+              "formula": ""
+            }
+          },
+          "replace": false
+        },
+        "type": {
+          "value": "ammo",
+          "subtype": "crossbowBolt"
+        },
+        "properties": [],
+        "activities": {}
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_BSM_SLING_BULLET",
+    "name": "Sling Bullet",
+    "description": "A smooth cast metal pellet is sized for an ordinary sling pouch.\n\nSold individually so native ammunition consumption removes one projectile per shot. A quiver or case is not included.",
+    "saleUnit": "One sling bullet",
+    "price": {
+      "value": 2,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 0.07,
+      "units": "lb",
+      "notes": "Weight of one projectile, not a bundle; the 2014 per-projectile weight is retained."
+    },
+    "icon": "icons/commodities/stone/paver-cobbles-blue.webp",
+    "category": "ammunition",
+    "tags": [
+      "mundane",
+      "smith-made",
+      "ammunition"
+    ],
+    "shops": [
+      "blacksmith"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 (2014), Equipment; native field mapping checked against D&D5e release-5.3.3. Original description and adjusted weight. See docs/BLACKSMITH_GUIDE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0. Original project descriptions: distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "ammo",
+      "native": {
+        "damage": {
+          "base": {
+            "number": null,
+            "denomination": 0,
+            "types": [],
+            "custom": {
+              "enabled": false
+            },
+            "scaling": {
+              "number": 1
+            },
+            "bonus": ""
+          },
+          "replace": false
+        },
+        "type": {
+          "value": "ammo",
+          "subtype": "slingBullet"
+        },
+        "properties": [],
+        "activities": {}
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_BSM_BLOWGUN_NEEDLE",
+    "name": "Blowgun Needle",
+    "description": "A fine metal needle has a light stabilising tail for use in a blowgun.\n\nSold individually so native ammunition consumption removes one projectile per shot. A quiver or case is not included.",
+    "saleUnit": "One blowgun needle",
+    "price": {
+      "value": 2,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 0.02,
+      "units": "lb",
+      "notes": "Weight of one projectile, not a bundle; the 2014 per-projectile weight is retained."
+    },
+    "icon": "icons/skills/ranged/dart-thrown-poison-green.webp",
+    "category": "ammunition",
+    "tags": [
+      "mundane",
+      "smith-made",
+      "ammunition"
+    ],
+    "shops": [
+      "blacksmith"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 (2014), Equipment; native field mapping checked against D&D5e release-5.3.3. Original description and adjusted weight. See docs/BLACKSMITH_GUIDE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0. Original project descriptions: distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "ammo",
+      "native": {
+        "damage": {
+          "base": {
+            "number": null,
+            "denomination": 0,
+            "bonus": "",
+            "types": [],
+            "custom": {
+              "enabled": false,
+              "formula": ""
+            },
+            "scaling": {
+              "mode": "",
+              "number": null,
+              "formula": ""
+            }
+          },
+          "replace": false
+        },
+        "type": {
+          "value": "ammo",
+          "subtype": "blowgunNeedle"
+        },
+        "properties": [],
+        "activities": {}
+      }
+    }
+  }
+]

@@ -1,5 +1,10 @@
 # Roadmap
 
+## Sprint 13 — Blacksmith candidate
+
+Catalogue, services, five presets and generic required-item selection are implemented in alpha.17. Remaining gate: live native equipment, UI and multiplayer review. Durability automation, enchanting and bulk/multiple service targets are future work. Existing numbered release milestones remain planning labels, not a claim of stable release.
+
+
 ## Tavern Completion candidate — 0.3.0-alpha.13
 
 Tavern content and presets are implemented: 205 products, 16 services, nine presets and six curated stock profiles. The shared catalogue, Builder, transactions and optional integrations are reused. Live V14 / D&D5e 5.3.3 / Forge acceptance is the remaining gate before calling the Tavern milestone stable. No new merchant gameplay or other merchant catalogue was started. See [Tavern Guide](TAVERN_GUIDE.md).

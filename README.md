@@ -1,6 +1,11 @@
 # Devil's Table: Trade & Merchants
 
-## Current workflow — alpha.16
+## Blacksmith — alpha.17
+
+Blacksmith stock, nine services and five presets are available. Open **Make Merchant - DT**, select a smith preset, then preview stock and funds. Item-required services use a character inventory selector in the basket. See [Blacksmith Guide](docs/BLACKSMITH_GUIDE.md) for scope, pricing, manual completion and live checks.
+
+
+## Current workflow — alpha.17
 
 Open a world NPC sheet → **Devil's Table** (store icon) to configure or enable its merchant settings. Use **Make Merchant - DT** in the sheet’s three-dot menu or the Actor Directory context menu for generation and presets. Enabled merchants have a small GM-only Directory badge.
 

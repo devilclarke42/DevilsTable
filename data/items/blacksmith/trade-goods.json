@@ -1,0 +1,37 @@
+[
+  {
+    "id": "DT_ITEM_BSM_STEEL_BILLET",
+    "name": "Steel Billet",
+    "description": "A small billet of plain carbon steel intended for tool edges and replacement fittings.\n\nSold by the pound. The listed price covers raw material only; shaping, fuel and labour are separate.",
+    "saleUnit": "One pound of steel billet",
+    "price": {
+      "value": 2,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 1,
+      "units": "lb",
+      "notes": "A measured one-pound sale unit; raw material mass is not discounted."
+    },
+    "icon": "icons/commodities/metal/ingot-stamped-silver.webp",
+    "category": "trade-goods",
+    "tags": [
+      "mundane",
+      "metal",
+      "raw-material"
+    ],
+    "shops": [
+      "blacksmith"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "Original project trade-metal price and description; measured weight.",
+      "license": "Original project content; distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "material"
+    }
+  }
+]

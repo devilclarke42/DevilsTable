@@ -1,0 +1,201 @@
+[
+  {
+    "id": "DT_ITEM_BSM_RING_MAIL",
+    "name": "Ring Mail",
+    "description": "Heavy metal rings are sewn onto a reinforced garment, spreading its weight across the shoulders.\n\nUses the 2014 AC, Dexterity limit, Strength requirement and Stealth disadvantage where applicable. Sold as one complete, nonmagical suit; fitting is a separate service.",
+    "saleUnit": "One ring mail",
+    "price": {
+      "value": 30,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 32.0,
+      "units": "lb",
+      "notes": "Adjusted carried weight for one complete item; 80% of the 2014 baseline."
+    },
+    "icon": "icons/equipment/chest/breastplate-banded-simple-leather-brown.webp",
+    "category": "heavy-armour",
+    "tags": [
+      "mundane",
+      "smith-made",
+      "heavy-armour"
+    ],
+    "shops": [
+      "blacksmith"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 (2014), Equipment; native field mapping checked against D&D5e release-5.3.3. Original description and adjusted weight. See docs/BLACKSMITH_GUIDE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0. Original project descriptions: distribution license pending."
+    },
+    "mechanics": {
+      "type": "equipment",
+      "native": {
+        "armor": {
+          "value": 14,
+          "dex": 0,
+          "magicalBonus": null
+        },
+        "type": {
+          "value": "heavy",
+          "baseItem": "ringmail"
+        },
+        "properties": [
+          "stealthDisadvantage"
+        ],
+        "activities": {}
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_BSM_CHAIN_MAIL",
+    "name": "Chain Mail",
+    "description": "A full covering of interlocking rings is supplied with padding and protective gauntlets.\n\nUses the 2014 AC, Dexterity limit, Strength requirement and Stealth disadvantage where applicable. Sold as one complete, nonmagical suit; fitting is a separate service.",
+    "saleUnit": "One chain mail",
+    "price": {
+      "value": 75,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 44.0,
+      "units": "lb",
+      "notes": "Adjusted carried weight for one complete item; 80% of the 2014 baseline."
+    },
+    "icon": "icons/equipment/chest/breastplate-metal-scaled-grey.webp",
+    "category": "heavy-armour",
+    "tags": [
+      "mundane",
+      "smith-made",
+      "heavy-armour"
+    ],
+    "shops": [
+      "blacksmith"
+    ],
+    "availability": "special-order",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 (2014), Equipment; native field mapping checked against D&D5e release-5.3.3. Original description and adjusted weight. See docs/BLACKSMITH_GUIDE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0. Original project descriptions: distribution license pending."
+    },
+    "mechanics": {
+      "type": "equipment",
+      "native": {
+        "armor": {
+          "value": 16,
+          "dex": 0,
+          "magicalBonus": null
+        },
+        "strength": 13,
+        "type": {
+          "value": "heavy",
+          "baseItem": "chainmail"
+        },
+        "properties": [
+          "stealthDisadvantage"
+        ],
+        "activities": {}
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_BSM_SPLINT_ARMOR",
+    "name": "Splint Armour",
+    "description": "Long metal strips are fastened to a backing garment, with flexible protection at the joints.\n\nUses the 2014 AC, Dexterity limit, Strength requirement and Stealth disadvantage where applicable. Sold as one complete, nonmagical suit; fitting is a separate service.",
+    "saleUnit": "One splint armour",
+    "price": {
+      "value": 200,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 48.0,
+      "units": "lb",
+      "notes": "Adjusted carried weight for one complete item; 80% of the 2014 baseline."
+    },
+    "icon": "icons/equipment/chest/breastplate-layered-steel.webp",
+    "category": "heavy-armour",
+    "tags": [
+      "mundane",
+      "smith-made",
+      "heavy-armour"
+    ],
+    "shops": [
+      "blacksmith"
+    ],
+    "availability": "special-order",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 (2014), Equipment; native field mapping checked against D&D5e release-5.3.3. Original description and adjusted weight. See docs/BLACKSMITH_GUIDE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0. Original project descriptions: distribution license pending."
+    },
+    "mechanics": {
+      "type": "equipment",
+      "native": {
+        "armor": {
+          "value": 17,
+          "dex": 0,
+          "magicalBonus": null
+        },
+        "strength": 15,
+        "type": {
+          "value": "heavy",
+          "baseItem": "splint"
+        },
+        "properties": [
+          "stealthDisadvantage"
+        ],
+        "activities": {}
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_BSM_PLATE_ARMOR",
+    "name": "Plate Armour",
+    "description": "Shaped steel plates cover the body and articulate at the joints over fitted padding.\n\nUses the 2014 AC, Dexterity limit, Strength requirement and Stealth disadvantage where applicable. Sold as one complete, nonmagical suit; fitting is a separate service.",
+    "saleUnit": "One plate armour",
+    "price": {
+      "value": 1500,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 52.0,
+      "units": "lb",
+      "notes": "Adjusted carried weight for one complete item; 80% of the 2014 baseline."
+    },
+    "icon": "icons/equipment/chest/breastplate-collared-steel.webp",
+    "category": "heavy-armour",
+    "tags": [
+      "mundane",
+      "smith-made",
+      "heavy-armour"
+    ],
+    "shops": [
+      "blacksmith"
+    ],
+    "availability": "special-order",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 (2014), Equipment; native field mapping checked against D&D5e release-5.3.3. Original description and adjusted weight. See docs/BLACKSMITH_GUIDE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0. Original project descriptions: distribution license pending."
+    },
+    "mechanics": {
+      "type": "equipment",
+      "native": {
+        "armor": {
+          "value": 18,
+          "dex": 0,
+          "magicalBonus": null
+        },
+        "strength": 15,
+        "type": {
+          "value": "heavy",
+          "baseItem": "plate"
+        },
+        "properties": [
+          "stealthDisadvantage"
+        ],
+        "activities": {}
+      }
+    }
+  }
+]

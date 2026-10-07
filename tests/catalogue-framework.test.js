@@ -40,7 +40,7 @@ test("bad or colliding registry bundles fail atomically", () => {
 });
 test("active source includes Tavern while retaining every permanent identity", async () => {
   const data = await loadCatalogue({ readJson });
-  assert.equal(data.entries.length, 312); assert.equal(data.ledger.ids.length, 312);
+  assert.equal(data.entries.length, 370); assert.equal(data.ledger.ids.length, 372);
   assert.equal(data.index.deferredFiles.length, 0);
   assert.equal(validateCatalogue(data).valid, true);
   assert.ok(data.entries.some(({ item }) => item.id.startsWith("DT_ITEM_TAV_")));
@@ -55,8 +55,8 @@ test("provider data builds once in the shared pack and hidden categories cannot 
   const { adapter, state } = fakeAdapter({ hasPack: false });
   const build = createBuilder({ load: () => data, adapter });
   await build({ dryRun: false, shopId: catalogue.id }); assert.equal(state.docs.length, 1);
-  await build({ dryRun: false }); assert.equal(state.docs.length, 313);
-  assert.equal((await build({ dryRun: false })).unchanged, 313);
+  await build({ dryRun: false }); assert.equal(state.docs.length, 371);
+  assert.equal((await build({ dryRun: false })).unchanged, 371);
   activateCatalogues(data);
   const merchant = { type: "npc", getFlag: (_scope, key) => key === "merchant" ? { enabled: true, catalogueId: catalogue.id, settings: {} } : null,
     items: categories.filter(c => c.id !== "empty").map(c => ({ id: c.id, name: c.name, img: icon, type: "loot",

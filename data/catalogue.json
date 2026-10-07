@@ -35,7 +35,16 @@
     "data/items/tavern/imported-drinks.json",
     "data/items/tavern/soups.json",
     "data/items/tavern/fish.json",
-    "data/items/tavern/tavern-supplies.json"
+    "data/items/tavern/tavern-supplies.json",
+    "data/items/blacksmith/ammunition.json",
+    "data/items/blacksmith/heavy-armour.json",
+    "data/items/blacksmith/light-armour.json",
+    "data/items/blacksmith/martial-weapons.json",
+    "data/items/blacksmith/medium-armour.json",
+    "data/items/blacksmith/shields.json",
+    "data/items/blacksmith/simple-weapons.json",
+    "data/items/blacksmith/tools.json",
+    "data/items/blacksmith/trade-goods.json"
   ],
   "shops": [
     "tavern",
@@ -84,7 +93,14 @@
     "imported-drinks",
     "soups",
     "fish",
-    "tavern-supplies"
+    "tavern-supplies",
+    "simple-weapons",
+    "martial-weapons",
+    "light-armour",
+    "medium-armour",
+    "heavy-armour",
+    "shields",
+    "ammunition"
   ],
   "deferredFiles": []
 }

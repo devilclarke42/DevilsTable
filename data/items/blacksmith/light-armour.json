@@ -1,0 +1,145 @@
+[
+  {
+    "id": "DT_ITEM_BSM_PADDED_ARMOR",
+    "name": "Padded Armour",
+    "description": "Layers of stitched cloth and batting form a close-fitting padded coat with matching protection.\n\nUses the 2014 AC, Dexterity limit, Strength requirement and Stealth disadvantage where applicable. Sold as one complete, nonmagical suit; fitting is a separate service.",
+    "saleUnit": "One padded armour",
+    "price": {
+      "value": 5,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 6.4,
+      "units": "lb",
+      "notes": "Adjusted carried weight for one complete item; 80% of the 2014 baseline."
+    },
+    "icon": "icons/equipment/chest/breastplate-quilted-brown.webp",
+    "category": "light-armour",
+    "tags": [
+      "mundane",
+      "smith-made",
+      "light-armour"
+    ],
+    "shops": [
+      "blacksmith"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 (2014), Equipment; native field mapping checked against D&D5e release-5.3.3. Original description and adjusted weight. See docs/BLACKSMITH_GUIDE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0. Original project descriptions: distribution license pending."
+    },
+    "mechanics": {
+      "type": "equipment",
+      "native": {
+        "armor": {
+          "value": 11,
+          "dex": null,
+          "magicalBonus": null
+        },
+        "type": {
+          "value": "light",
+          "baseItem": "padded"
+        },
+        "properties": [
+          "stealthDisadvantage"
+        ],
+        "activities": {}
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_BSM_LEATHER_ARMOR",
+    "name": "Leather Armour",
+    "description": "A shaped leather torso is paired with flexible leather pieces that protect the limbs.\n\nUses the 2014 AC, Dexterity limit, Strength requirement and Stealth disadvantage where applicable. Sold as one complete, nonmagical suit; fitting is a separate service.",
+    "saleUnit": "One leather armour",
+    "price": {
+      "value": 10,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 8.0,
+      "units": "lb",
+      "notes": "Adjusted carried weight for one complete item; 80% of the 2014 baseline."
+    },
+    "icon": "icons/equipment/chest/breastplate-scale-leather.webp",
+    "category": "light-armour",
+    "tags": [
+      "mundane",
+      "smith-made",
+      "light-armour"
+    ],
+    "shops": [
+      "blacksmith"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 (2014), Equipment; native field mapping checked against D&D5e release-5.3.3. Original description and adjusted weight. See docs/BLACKSMITH_GUIDE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0. Original project descriptions: distribution license pending."
+    },
+    "mechanics": {
+      "type": "equipment",
+      "native": {
+        "armor": {
+          "value": 11,
+          "dex": null,
+          "magicalBonus": null
+        },
+        "type": {
+          "value": "light",
+          "baseItem": "leather"
+        },
+        "properties": [],
+        "activities": {}
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_BSM_STUDDED_LEATHER_ARMOR",
+    "name": "Studded Leather Armour",
+    "description": "Reinforced leather panels and closely spaced metal fittings make a flexible suit of armour.\n\nUses the 2014 AC, Dexterity limit, Strength requirement and Stealth disadvantage where applicable. Sold as one complete, nonmagical suit; fitting is a separate service.",
+    "saleUnit": "One studded leather armour",
+    "price": {
+      "value": 45,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 10.4,
+      "units": "lb",
+      "notes": "Adjusted carried weight for one complete item; 80% of the 2014 baseline."
+    },
+    "icon": "icons/equipment/chest/breastplate-rivited-red.webp",
+    "category": "light-armour",
+    "tags": [
+      "mundane",
+      "smith-made",
+      "light-armour"
+    ],
+    "shops": [
+      "blacksmith"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 (2014), Equipment; native field mapping checked against D&D5e release-5.3.3. Original description and adjusted weight. See docs/BLACKSMITH_GUIDE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0. Original project descriptions: distribution license pending."
+    },
+    "mechanics": {
+      "type": "equipment",
+      "native": {
+        "armor": {
+          "value": 12,
+          "dex": null,
+          "magicalBonus": null
+        },
+        "type": {
+          "value": "light",
+          "baseItem": "studded"
+        },
+        "properties": [],
+        "activities": {}
+      }
+    }
+  }
+]

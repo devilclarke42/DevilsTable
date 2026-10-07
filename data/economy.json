@@ -114,6 +114,31 @@
       "id": "luxury",
       "name": "Luxury merchant",
       "percent": 300
+    },
+    {
+      "id": "smith-village",
+      "name": "Village Smith",
+      "percent": 70
+    },
+    {
+      "id": "smith-town",
+      "name": "Town Blacksmith",
+      "percent": 130
+    },
+    {
+      "id": "smith-master",
+      "name": "Master Armorer",
+      "percent": 220
+    },
+    {
+      "id": "smith-military",
+      "name": "Military Quartermaster",
+      "percent": 180
+    },
+    {
+      "id": "smith-travelling",
+      "name": "Travelling Smith",
+      "percent": 40
     }
   ],
   "stockProfiles": {
@@ -152,6 +177,26 @@
     "DT_TABLE_TAV_ROADHOUSE": {
       "settlement": "hamlet",
       "profile": "modest"
+    },
+    "DT_TABLE_BSM": {
+      "settlement": "village",
+      "profile": "smith-village"
+    },
+    "DT_TABLE_BSM_TOWN": {
+      "settlement": "town",
+      "profile": "smith-town"
+    },
+    "DT_TABLE_BSM_MASTER": {
+      "settlement": "city",
+      "profile": "smith-master"
+    },
+    "DT_TABLE_BSM_MILITARY": {
+      "settlement": "town",
+      "profile": "smith-military"
+    },
+    "DT_TABLE_BSM_TRAVELLING": {
+      "settlement": "hamlet",
+      "profile": "smith-travelling"
     }
   },
   "coinShares": {

@@ -59,6 +59,10 @@
     </section>
     <aside class="dt-shop-basket" aria-label="Your basket"><h3>Basket</h3>
       {{#each basket}}<p>{{#if isService}}Service: {{/if}}{{count}} × {{name}} — {{subtotalLabel}}
+        {{#if itemRequirement}}<label>Item to service
+          <select data-service-target="{{id}}" aria-label="Item for {{name}}"><option value="">Select an item…</option>
+            {{#each targetChoices}}<option value="{{id}}" {{#if selected}}selected{{/if}}>{{name}}</option>{{/each}}
+          </select></label>{{/if}}
         <button type="button" data-action="remove" data-id="{{id}}" aria-label="Remove one {{name}}">Remove one</button></p>
       {{else}}<p>Empty. Items are not reserved.</p>{{/each}}
       <h4>Items you are selling</h4>

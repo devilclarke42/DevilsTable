@@ -208,7 +208,7 @@ async function finish(actor, character, request, proposal, decision, edits, acce
       if (!character.testUserPermission(game.users.get(request.userId), "OWNER")) throw Error("Character ownership changed.");
       if ((merchantConfig(actor)?.availability ?? "closed") !== "open") throw Error("Merchant is no longer open.");
       const quote = quoteTrade(actor, character, request, edits);
-      const actions = value => value.basket.filter(row=>row.kind==="service").map(row=>({id:row.id,execution:row.execution,actions:row.actions}));
+      const actions = value => value.basket.filter(row=>row.kind==="service").map(row=>({id:row.id,execution:row.execution,actions:row.actions,itemRequirement:row.itemRequirement,targetItemId:row.targetItemId}));
       if (stable(actions(quote)) !== stable(actions(proposal))) throw Error("Service execution changed. Recalculate and review the service actions before approval.");
       if (stable(offerTerms(quote)) !== stable(accepted)) throw Error("The player must accept these revised terms. Recalculate the offer first.");
       // A changed quote must be resubmitted, unless the GM explicitly supplied line edits.

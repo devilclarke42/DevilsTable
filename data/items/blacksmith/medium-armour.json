@@ -1,0 +1,241 @@
+[
+  {
+    "id": "DT_ITEM_BSM_HIDE_ARMOR",
+    "name": "Hide Armour",
+    "description": "Thick, overlapping hides are stitched into a sturdy suit with simple leather fastenings.\n\nUses the 2014 AC, Dexterity limit, Strength requirement and Stealth disadvantage where applicable. Sold as one complete, nonmagical suit; fitting is a separate service.",
+    "saleUnit": "One hide armour",
+    "price": {
+      "value": 10,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 9.6,
+      "units": "lb",
+      "notes": "Adjusted carried weight for one complete item; 80% of the 2014 baseline."
+    },
+    "icon": "icons/equipment/chest/vest-cloth-tattered-tan.webp",
+    "category": "medium-armour",
+    "tags": [
+      "mundane",
+      "smith-made",
+      "medium-armour"
+    ],
+    "shops": [
+      "blacksmith"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 (2014), Equipment; native field mapping checked against D&D5e release-5.3.3. Original description and adjusted weight. See docs/BLACKSMITH_GUIDE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0. Original project descriptions: distribution license pending."
+    },
+    "mechanics": {
+      "type": "equipment",
+      "native": {
+        "armor": {
+          "value": 12,
+          "dex": 2,
+          "magicalBonus": null
+        },
+        "type": {
+          "value": "medium",
+          "baseItem": "hide"
+        },
+        "properties": [],
+        "activities": {}
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_BSM_CHAIN_SHIRT",
+    "name": "Chain Shirt",
+    "description": "Interlocking metal rings form a short shirt worn over a padded lining.\n\nUses the 2014 AC, Dexterity limit, Strength requirement and Stealth disadvantage where applicable. Sold as one complete, nonmagical suit; fitting is a separate service.",
+    "saleUnit": "One chain shirt",
+    "price": {
+      "value": 50,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 16.0,
+      "units": "lb",
+      "notes": "Adjusted carried weight for one complete item; 80% of the 2014 baseline."
+    },
+    "icon": "icons/equipment/chest/breastplate-scale-grey.webp",
+    "category": "medium-armour",
+    "tags": [
+      "mundane",
+      "smith-made",
+      "medium-armour"
+    ],
+    "shops": [
+      "blacksmith"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 (2014), Equipment; native field mapping checked against D&D5e release-5.3.3. Original description and adjusted weight. See docs/BLACKSMITH_GUIDE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0. Original project descriptions: distribution license pending."
+    },
+    "mechanics": {
+      "type": "equipment",
+      "native": {
+        "armor": {
+          "value": 13,
+          "dex": 2,
+          "magicalBonus": null
+        },
+        "type": {
+          "value": "medium",
+          "baseItem": "chainshirt"
+        },
+        "properties": [],
+        "activities": {}
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_BSM_SCALE_MAIL",
+    "name": "Scale Mail",
+    "description": "Small overlapping metal scales are fastened to a backing garment with fitted straps.\n\nUses the 2014 AC, Dexterity limit, Strength requirement and Stealth disadvantage where applicable. Sold as one complete, nonmagical suit; fitting is a separate service.",
+    "saleUnit": "One scale mail",
+    "price": {
+      "value": 50,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 36.0,
+      "units": "lb",
+      "notes": "Adjusted carried weight for one complete item; 80% of the 2014 baseline."
+    },
+    "icon": "icons/equipment/chest/breastplate-banded-steel.webp",
+    "category": "medium-armour",
+    "tags": [
+      "mundane",
+      "smith-made",
+      "medium-armour"
+    ],
+    "shops": [
+      "blacksmith"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 (2014), Equipment; native field mapping checked against D&D5e release-5.3.3. Original description and adjusted weight. See docs/BLACKSMITH_GUIDE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0. Original project descriptions: distribution license pending."
+    },
+    "mechanics": {
+      "type": "equipment",
+      "native": {
+        "armor": {
+          "value": 14,
+          "dex": 2,
+          "magicalBonus": null
+        },
+        "type": {
+          "value": "medium",
+          "baseItem": "scalemail"
+        },
+        "properties": [
+          "stealthDisadvantage"
+        ],
+        "activities": {}
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_BSM_BREASTPLATE",
+    "name": "Breastplate",
+    "description": "A shaped metal breastplate protects the torso while leaving the arms and legs relatively free.\n\nUses the 2014 AC, Dexterity limit, Strength requirement and Stealth disadvantage where applicable. Sold as one complete, nonmagical suit; fitting is a separate service.",
+    "saleUnit": "One breastplate",
+    "price": {
+      "value": 400,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 16.0,
+      "units": "lb",
+      "notes": "Adjusted carried weight for one complete item; 80% of the 2014 baseline."
+    },
+    "icon": "icons/equipment/chest/breastplate-collared-steel-grey.webp",
+    "category": "medium-armour",
+    "tags": [
+      "mundane",
+      "smith-made",
+      "medium-armour"
+    ],
+    "shops": [
+      "blacksmith"
+    ],
+    "availability": "special-order",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 (2014), Equipment; native field mapping checked against D&D5e release-5.3.3. Original description and adjusted weight. See docs/BLACKSMITH_GUIDE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0. Original project descriptions: distribution license pending."
+    },
+    "mechanics": {
+      "type": "equipment",
+      "native": {
+        "armor": {
+          "value": 14,
+          "dex": 2,
+          "magicalBonus": null
+        },
+        "type": {
+          "value": "medium",
+          "baseItem": "breastplate"
+        },
+        "properties": [],
+        "activities": {}
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_BSM_HALF_PLATE_ARMOR",
+    "name": "Half Plate Armour",
+    "description": "Fitted metal plates protect the torso and major joints over a padded underlayer.\n\nUses the 2014 AC, Dexterity limit, Strength requirement and Stealth disadvantage where applicable. Sold as one complete, nonmagical suit; fitting is a separate service.",
+    "saleUnit": "One half plate armour",
+    "price": {
+      "value": 750,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 32.0,
+      "units": "lb",
+      "notes": "Adjusted carried weight for one complete item; 80% of the 2014 baseline."
+    },
+    "icon": "icons/equipment/chest/breastplate-cuirass-steel-grey.webp",
+    "category": "medium-armour",
+    "tags": [
+      "mundane",
+      "smith-made",
+      "medium-armour"
+    ],
+    "shops": [
+      "blacksmith"
+    ],
+    "availability": "special-order",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 (2014), Equipment; native field mapping checked against D&D5e release-5.3.3. Original description and adjusted weight. See docs/BLACKSMITH_GUIDE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0. Original project descriptions: distribution license pending."
+    },
+    "mechanics": {
+      "type": "equipment",
+      "native": {
+        "armor": {
+          "value": 15,
+          "dex": 2,
+          "magicalBonus": null
+        },
+        "type": {
+          "value": "medium",
+          "baseItem": "halfplate"
+        },
+        "properties": [
+          "stealthDisadvantage"
+        ],
+        "activities": {}
+      }
+    }
+  }
+]
