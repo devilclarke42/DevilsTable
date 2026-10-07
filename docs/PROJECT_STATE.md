@@ -1,4 +1,9 @@
 # Project state
+## Current fix — 0.3.0-alpha.20
+
+The final reported Net mismatch was save.ability stored as a scalar string instead of the native array. Source now uses ["str"]; other authored native save activities were checked. Existing compendiums can be rebuilt in place. Live confirmation remains pending.
+
+
 ## Current fix — 0.3.0-alpha.19
 
 The remaining weapon/tool activity mismatches were blank duration and template units saved as inst and ft. Canonical JSON now explicitly matches these native defaults. Strict read-back verification remains unchanged; rebuild the existing compendium in place. Live confirmation remains pending.

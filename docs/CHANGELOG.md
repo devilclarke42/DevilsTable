@@ -8,6 +8,15 @@ This is the official milestone/release changelog. The root [build changelog](../
 retains detailed alpha implementation history. A milestone entry does not assert that a public
 GitHub Release or installation manifest exists. No release dates are invented for unreleased work.
 
+## 0.3.0-alpha.20 — 2026-10-08 — Net save ability
+
+### Fixed
+
+- Store the Net save activity ability as the native array of abilities rather than a scalar string.
+- Check every authored native save activity; Net is the only affected record.
+- Add regression coverage for native save ability serialization while preserving strict verification.
+- Live rebuild confirmation remains pending.
+
 ## 0.3.0-alpha.19 — 2026-10-08 — Activity unit defaults
 
 ### Fixed

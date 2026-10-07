@@ -111,3 +111,19 @@ test("weapon and tool activity unit defaults converge after Foundry normalizatio
  Object.values(legacy.system.activities)[0].duration.units="";
  assert.equal(matchesGenerated(expected[0],legacy),false);
 });
+
+test("native save abilities use arrays and preserve the Net Strength save",async()=>{
+ const {matchesGenerated}=await import("../scripts/builders/generated-fields.js");
+ const {planBuild}=await import("../scripts/builders/build-plan.js");
+ const net=catalogueEntryToItem(source("Net"));
+ const save=Object.values(net.system.activities).find(a=>a.type==="save");
+ assert.deepEqual(save.save.ability,["str"]);
+ for(const {item} of catalogue.entries)
+  for(const activity of Object.values(item.mechanics.native?.activities??{}))
+   if(activity.type==="save")assert.ok(Array.isArray(activity.save.ability),item.name);
+ const saved=structuredClone(net);
+ for(const a of Object.values(saved.system.activities))if(a.type==="save")a.save.ability=[...new Set(a.save.ability)];
+ assert.equal(planBuild([net],[saved]).unchanged,1);
+ const wrong=structuredClone(net);Object.values(wrong.system.activities).find(a=>a.type==="save").save.ability=["dex"];
+ assert.equal(matchesGenerated(wrong,net),false);
+});

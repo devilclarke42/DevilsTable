@@ -3731,7 +3731,9 @@
               "parts": []
             },
             "save": {
-              "ability": "str",
+              "ability": [
+                "str"
+              ],
               "dc": {
                 "calculation": "",
                 "formula": ""

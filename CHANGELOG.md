@@ -3,6 +3,15 @@
 This file retains detailed repository build history. The official milestone/release record is
 [docs/CHANGELOG.md](docs/CHANGELOG.md). Versions here do not imply a public GitHub Release exists.
 
+## 0.3.0-alpha.20 — 2026-10-08 — Net save ability
+
+### Fixed
+
+- Store the Net save activity ability as the native array of abilities rather than a scalar string.
+- Check every authored native save activity; Net is the only affected record.
+- Add regression coverage for native save ability serialization while preserving strict verification.
+- Live rebuild confirmation remains pending.
+
 ## 0.3.0-alpha.19 — 2026-10-08 — Activity unit defaults
 
 ### Fixed
