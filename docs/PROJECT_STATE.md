@@ -1,10 +1,10 @@
 # Project state
 
-Updated 2026-10-06 for `0.3.0-alpha.14`.
+Updated 2026-10-07 for `0.3.0-alpha.15`.
 
-## Current candidate — alpha.14 / UX & Workflow Polish
+## Current candidate — alpha.15 / UX & Workflow Polish
 
-Implemented NPC sheet configuration, header/Directory Builder entry, merchant badges, optional local Dice So Nice presentation and compact content builders with source summaries. Existing transaction authority, source IDs, inventory and catalogue data are retained. Merchant disabling preserves business history. No dedicated sidebar was added because existing Actor entry points cover this workflow.
+Implemented NPC sheet configuration, three-dot/Directory Builder entry, merchant badges, optional local Dice So Nice presentation and compact content builders with source summaries. Existing transaction authority, source IDs, inventory and catalogue data are retained. Merchant disabling preserves business history. No dedicated sidebar was added because existing Actor entry points cover this workflow.
 
 See [UX Workflows](UX_WORKFLOWS.md) for the review and live acceptance checklist. Automated tests run at packaging; live Foundry V14 / D&D5e 5.3.3 sheet rendering and Dice So Nice visual/multiplayer acceptance remain pending. No live compatibility certification is claimed.
 
@@ -121,3 +121,5 @@ and the previously documented distance-enforcement limitation.
 5. Repeat a purchase/rejection with multiple browsing players and record any native Foundry error.
 6. Review the framework before resuming Tavern authoring. Services, a full Merchant Builder and
    restocking need separately approved scopes.
+
+Enabled merchants display a GM-only **Merchant** Directory badge and a small **SHOP** marker on linked canvas tokens. Disabling the merchant removes these indicators. No token image or status effect is changed. The native sheet three-dot menu replaces the exposed header button. Live Foundry rendering remains to be confirmed.

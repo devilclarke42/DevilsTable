@@ -1,12 +1,12 @@
 # GM workflows and interface review
 
-Sprint 12A, candidate `0.3.0-alpha.14`. Target: Foundry V14 and D&D5e 5.3.3.
+Sprint 12A, candidate `0.3.0-alpha.15`. Target: Foundry V14 and D&D5e 5.3.3.
 
 ## NPC-first management
 
 Open a world NPC's standard D&D5e sheet and select the store icon labelled **Devil's Table**. Set **Merchant enabled**, catalogue, economic profile, settlement, prosperity, availability, pricing, room checkout time and restock preference. Click **Save Merchant Settings**. Changes stay local until saved. Disabling keeps native inventory, currency, relationships, notes and history and removes access from existing linked tokens.
 
-The sheet's **Create Merchant / Merchant Builder** button opens the existing Builder for that Actor. The Actor Directory context menu provides **Devil's Table — Create / Manage Merchant**. Enabled merchants have a small store badge in the GM's Actor Directory. Conversion remains subject to active-GM authority and transaction locks.
+The sheet’s three-dot menu and Actor Directory context menu offer **Make Merchant - DT**, opening the existing Builder for that Actor. Enabled merchants have a small store badge in the GM's Actor Directory. Conversion remains subject to active-GM authority and transaction locks.
 
 The tab links directly to the Builder's Services tab for offerings, room mappings and optional integrations. World tools are collapsed under **World tools and integrations**. Use the Builder for reusable presets, generation previews, stock, cash, identity, notes, advanced trading and recovery. Actor biography, portrait, ownership, items and wallet remain native.
 
@@ -48,7 +48,7 @@ A permanent Devil's Table sidebar would duplicate the Actor Directory and the Bu
 Automated tests cover authority, preservation, stale settings, merchant locks, counts, optional presentation failures and duplicate roll queries. They do not replace a live Foundry session. Check the following on The Forge with the target system:
 
 1. Open an NPC, use the Devil's Table tab, save, switch native tabs and rerender the sheet. Check no duplicate buttons/panels appear and that native edits still work.
-2. Convert from the header and Directory menu. Check the store badge appears; disable, re-enable and verify linked-token browsing follows it.
+2. Convert from the three-dot menu and Directory menu. Check the store badge appears; disable, re-enable and verify linked-token browsing follows it.
 3. As a player, verify the administration tab/menu is absent. Browse the same merchant normally.
 4. Negotiate and attempt theft with Dice So Nice active, inactive and locally hidden. Check one native roll and at most one local animation; no DC or merchant outcome is published.
 5. Preview all catalogues and all stock profiles. Check the summary, collapsible guidance, progress, keyboard navigation and narrow-window scrolling.
@@ -60,3 +60,5 @@ Automated tests cover authority, preservation, stale settings, merchant locks, c
 - [Foundry V14 document context hook](https://foundryvtt.com/api/v14/functions/hookEvents.getDocumentContextOptions.html): `getActorContextOptions`.
 - [ApplicationV2 tab navigation](https://foundryvtt.com/api/v14/classes/foundry.applications.api.ApplicationV2.html): native `data-action="tab"` and `changeTab` contract.
 - [Dice So Nice roll API](https://gitlab.com/riccisi/foundryvtt-dice-so-nice/-/wikis/API/Roll): `showForRoll`. Runtime availability is capability-checked; no untested version guarantee is made.
+
+Enabled merchants display a GM-only **Merchant** Directory badge and a small **SHOP** marker on linked canvas tokens. Disabling the merchant removes these indicators. No token image or status effect is changed. The native sheet three-dot menu replaces the exposed header button. Live Foundry rendering remains to be confirmed.

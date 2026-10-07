@@ -66,3 +66,39 @@ test("Actor entry is GM-only, excludes compendiums/unlinked tokens and uses the 
  assert.equal(menu[0].condition({dataset:{entryId:"missing"}}),false);assert.ok(openNpcBuilder(actor));
  game.user.isGM=false;assert.equal(openNpcBuilder(actor),undefined);const playerMenu=[];addActorContext(null,playerMenu);assert.deepEqual(playerMenu,[]);
 });
+
+test("native sheet menu exposes one Make Merchant action for the correct Actor",async()=>{
+ world();
+ const {addMerchantHeaderControl,entryActor}=await import("../scripts/ux/actor-entry.js");
+ const actor=new Actor("merchant");actor.documentName="Actor";game.actors=new Map([[actor.id,actor]]);
+ const controls=[];addMerchantHeaderControl({document:actor},controls);addMerchantHeaderControl({document:actor},controls);
+ assert.equal(controls.length,1);assert.equal(controls[0].name,"Make Merchant - DT");
+ assert.equal(controls[0].callback().actor,actor);
+ for(const key of ["entryId","documentId","actorId"]) assert.equal(entryActor({dataset:{[key]:actor.id}}),actor);
+ globalThis.canvas={scene:{tokens:new Map([["linked",{actor}]])}};
+ assert.equal(entryActor({dataset:{tokenId:"linked"}}),actor);
+ const tokenControls=[];addMerchantHeaderControl({document:{documentName:"Token",actor}},tokenControls);
+ assert.equal(tokenControls[0].callback().actor,actor);
+ game.user.isGM=false;assert.equal(controls[0].condition(),false);
+ const denied=[];addMerchantHeaderControl({document:actor},denied);assert.deepEqual(denied,[]);
+});
+
+test("canvas merchant marker is GM-local, idempotent and removed when disabled",async()=>{
+ const actor=world();await actor.setFlag(ns,"merchant.enabled",true);
+ const {updateMerchantTokenMarker}=await import("../scripts/ux/token-marker.js");
+ globalThis.PIXI={Text:class{
+  constructor(text){this.text=text;this.anchor={set(){}};this.position={set(){}};this.scale={set(){}};}
+  destroy(){this.destroyed=true;}
+ }};
+ const token={actor,document:{actorLink:true},w:100,children:[],
+  addChild(child){child.parent=this;this.children.push(child);},
+  removeChild(child){this.children=this.children.filter(c=>c!==child);child.parent=null;}};
+ updateMerchantTokenMarker(token);updateMerchantTokenMarker(token);
+ assert.equal(token.children.length,1);assert.equal(token.children[0].text,"SHOP");
+ const marker=token.children[0];game.user.isGM=false;updateMerchantTokenMarker(token);
+ assert.equal(token.children.length,0);assert.equal(marker.destroyed,true);
+ game.user.isGM=true;updateMerchantTokenMarker(token);
+ await actor.setFlag(ns,"merchant.enabled",false);updateMerchantTokenMarker(token);assert.equal(token.children.length,0);
+ token.document.actorLink=false;await actor.setFlag(ns,"merchant.enabled",true);updateMerchantTokenMarker(token);
+ assert.equal(token.children.length,0);
+});

@@ -19,12 +19,6 @@ export async function renderNpcMerchantTab(app, html) {
   if (!supportedNpc(actor) || !root) return;
   const generation = (generations.get(app) ?? 0) + 1; generations.set(app, generation);
   root.querySelectorAll("[data-dt-entry]").forEach(el => el.remove());
-  const header = root.querySelector(".window-header");
-  if (header) {
-    const button = document.createElement("button"); button.type = "button"; button.dataset.dtEntry = "header";
-    button.className = "dt-actor-entry"; button.textContent = enabled(actor) ? "Merchant Builder" : "Create Merchant";
-    button.title = "Devil's Table"; button.addEventListener("click", () => openNpcBuilder(actor)); header.append(button);
-  }
   const nav = root.querySelector('nav.tabs[data-group="primary"]'), body = root.querySelector(".tab-body");
   if (!nav || !body) return; // Alternate sheets retain the header/Directory entry, without layout assumptions.
   const link = document.createElement("a"); link.className = "item control"; link.dataset.dtEntry = "tab";
@@ -66,24 +60,53 @@ export async function renderNpcMerchantTab(app, html) {
     });
   } catch (error) { panel.textContent = `Merchant settings unavailable: ${error.message}. Open Merchant Builder from the header or Actor Directory.`; }
 }
+/** Resolve supported directory layouts without changing the document being configured. */
+export function entryActor(element) {
+  const node = rootElement(element) ?? element;
+  const row = node?.closest?.("[data-entry-id], [data-document-id], [data-actor-id], [data-token-id]") ?? node;
+  const data = row?.dataset ?? {};
+  const token = data.tokenId && globalThis.canvas?.scene?.tokens?.get(data.tokenId);
+  return token?.actor ?? game.actors.get(data.entryId ?? data.documentId ?? data.actorId);
+}
+export function addMerchantHeaderControl(app, controls) {
+  const doc = app.document;
+  if (!["Actor", "Token"].includes(doc?.documentName)) return;
+  const actor = doc.documentName === "Token" ? doc.actor : doc;
+  if (!supportedNpc(actor) || controls.some(c => c.action === "dtMakeMerchant")) return;
+  controls.push({ name: "Make Merchant - DT", action: "dtMakeMerchant", icon: '<i class="fa-solid fa-store"></i>',
+    condition: () => supportedNpc(actor), callback: () => openNpcBuilder(actor) });
+}
 export function addActorContext(_application, menu) {
   if (!game.user?.isGM) return;
-  const actor = element => game.actors.get((element?.dataset ?? element?.[0]?.dataset)?.entryId);
-  menu.push({ name: "Devil's Table — Create / Manage Merchant", icon: '<i class="fa-solid fa-store"></i>',
-    condition: element => supportedNpc(actor(element)), callback: element => openNpcBuilder(actor(element)) });
+  menu.push({ name: "Make Merchant - DT", icon: '<i class="fa-solid fa-store"></i>',
+    condition: element => supportedNpc(entryActor(element)), callback: element => openNpcBuilder(entryActor(element)) });
 }
 export function renderMerchantBadges(_app, html) {
-  const root = rootElement(html); if (!root || !game.user?.isGM) return;
+  const root = rootElement(html); if (!root) return;
   root.querySelectorAll(".dt-merchant-badge").forEach(el => el.remove());
-  for (const row of root.querySelectorAll("[data-entry-id]")) {
-    const actor = game.actors.get(row.dataset.entryId); if (!supportedNpc(actor) || !enabled(actor)) continue;
-    const name = row.querySelector(".entry-name, .document-name"); if (!name) continue;
-    const badge = document.createElement("i"); badge.className = "fa-solid fa-store dt-merchant-badge";
-    badge.title = "Merchant"; badge.setAttribute("aria-label", "Merchant"); name.append(badge);
+  if (!game.user?.isGM) return;
+  for (const row of root.querySelectorAll("[data-entry-id], [data-document-id], [data-actor-id], [data-token-id]")) {
+    const actor = entryActor(row); if (!supportedNpc(actor) || !enabled(actor)) continue;
+    if (row.querySelector(".dt-merchant-badge")) continue;
+    const name = row.querySelector(".entry-name, .document-name, .name") ?? row;
+    const badge = document.createElement("span"); badge.className = "dt-merchant-badge";
+    badge.title = "Devil's Table merchant"; badge.setAttribute("aria-label", "Merchant");
+    badge.innerHTML = '<i class="fa-solid fa-store" aria-hidden="true"></i> Merchant'; name.append(badge);
   }
+}
+export function refreshMerchantIndicators() {
+  const actors = globalThis.ui?.actors;
+  if (actors?.element) renderMerchantBadges(actors, actors.element);
+  if (actors?.popout?.element) renderMerchantBadges(actors.popout, actors.popout.element);
+  const tokens = globalThis.ui?.tokens;
+  if (tokens?.element) renderMerchantBadges(tokens, tokens.element);
 }
 export function registerActorEntry() {
   Hooks.on("renderActorSheetV2", (app, html) => { void renderNpcMerchantTab(app, html).catch(error => console.error("Devil's Table NPC tab", error)); });
+  Hooks.on("getHeaderControlsApplicationV2", addMerchantHeaderControl);
   Hooks.on("getActorContextOptions", addActorContext);
   Hooks.on("renderActorDirectory", renderMerchantBadges);
+  Hooks.on("renderTokenTab", renderMerchantBadges);
+  Hooks.on("updateActor", refreshMerchantIndicators);
+  refreshMerchantIndicators();
 }

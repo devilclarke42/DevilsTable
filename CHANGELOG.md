@@ -3,6 +3,19 @@
 This file retains detailed repository build history. The official milestone/release record is
 [docs/CHANGELOG.md](docs/CHANGELOG.md). Versions here do not imply a public GitHub Release exists.
 
+## 0.3.0-alpha.15 — 2026-10-07 — Merchant entry and indicators
+
+### Fixed
+
+- Move the exposed Actor header button into the native three-dot menu as **Make Merchant - DT**, opening the Builder for the relevant supported NPC.
+- Resolve Actor Directory entries across Actor, document and entry ID layouts; display an explicit GM-only Merchant badge.
+- Add a GM-only SHOP marker on linked merchant tokens, refreshed on Actor/token changes and removed when disabled.
+- Preserve Actor ownership, token images, inventory and all merchant state.
+
+### Validation
+
+- Automated menu targeting and token marker lifecycle regression checks pass. Live Foundry visual confirmation remains pending.
+
 ## 0.3.0-alpha.14 — 2026-10-06 — UX & Workflow Polish
 
 ### Added

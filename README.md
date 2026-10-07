@@ -1,8 +1,8 @@
 # Devil's Table: Trade & Merchants
 
-## Current workflow — alpha.14
+## Current workflow — alpha.15
 
-Open a world NPC sheet → **Devil's Table** (store icon) to configure or enable its merchant settings. Use **Create Merchant / Merchant Builder** in the sheet header or **Devil's Table — Create / Manage Merchant** in the Actor Directory context menu for generation and presets. Enabled merchants have a small GM-only Directory badge.
+Open a world NPC sheet → **Devil's Table** (store icon) to configure or enable its merchant settings. Use **Make Merchant - DT** in the sheet’s three-dot menu or the Actor Directory context menu for generation and presets. Enabled merchants have a small GM-only Directory badge.
 
 Content builders now use compact selectors, generation summaries and collapsed guidance. Native player interaction rolls use optional Dice So Nice presentation automatically when available. See [GM workflows and acceptance](docs/UX_WORKFLOWS.md). Live Foundry/Forge acceptance remains pending.
 
@@ -304,3 +304,5 @@ recalculation. Acceptance returns the offer for GM approval; declining cancels c
 Character currency and settlement details start collapsed in the GM review. Remote confirmation
 times out after 60 seconds; the GM can recalculate to retry or close the review. Purchases,
 rejections and recovery were confirmed by the owner in alpha.23.
+
+Enabled merchants display a GM-only **Merchant** Directory badge and a small **SHOP** marker on linked canvas tokens. Disabling the merchant removes these indicators. No token image or status effect is changed. The native sheet three-dot menu replaces the exposed header button. Live Foundry rendering remains to be confirmed.

@@ -1,3 +1,4 @@
+import { registerMerchantTokenMarkers } from "./ux/token-marker.js";
 import { registerActorEntry } from "./ux/actor-entry.js";
 import { integrationManager } from "./integrations/manager.js";
 import { registerBuiltInIntegrations, registerBookingHooks } from "./integrations/lifecycle.js";
@@ -75,5 +76,6 @@ Hooks.once("ready", async () => {
   initialiseMerchantService();
   registerMerchantTokenEntry();
   registerActorEntry();
+  registerMerchantTokenMarkers();
   if (game.user.isGM) logger.debug("GM builder API is ready.");
 });
