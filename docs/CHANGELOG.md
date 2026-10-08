@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.3.0-alpha.25 — Sidebar startup ordering
+
+- Register Actor menu hooks at init, before the sidebar constructs its menus, instead of after asynchronous ready-time catalogue loading.
+- Keep indicator refresh at ready. Added a startup regression that constructs the Actor menu before ready and verifies the conversion action.
+- Requires a full browser reload after installation; live Forge confirmation remains pending.
+
 ## 0.3.0-alpha.24 — Actors sidebar entry
 
 - Connected the context-aware merchant actions to the Actor Directory's application-specific right-click hook as well as the document hook.

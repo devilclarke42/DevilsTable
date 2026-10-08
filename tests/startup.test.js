@@ -12,6 +12,7 @@ test("startup registers a restricted V2 menu and a read-only-default API without
     }
   });
   const hooks = new Map();
+  const listeners = new Map();
   const settings = [];
   globalThis.CONFIG = { queries: {} };
   const menus = [];
@@ -24,7 +25,7 @@ test("startup registers a restricted V2 menu and a read-only-default API without
     data: { fields: { BooleanField: class {}, StringField: class {} } },
     applications: { api: { ApplicationV2, HandlebarsApplicationMixin: Base => class extends Base {} } }
   };
-  globalThis.Hooks = { once: (event, handler) => hooks.set(event, handler), on: () => {} };
+  globalThis.Hooks = { once: (event, handler) => hooks.set(event, handler), on: (event, handler) => listeners.set(event, handler) };
   globalThis.canvas = { ready: false };
   globalThis.game = {
     modules: new Map([["devils-table", module]]), user: { isGM: true },
@@ -38,6 +39,14 @@ test("startup registers a restricted V2 menu and a read-only-default API without
   await import("../scripts/main.js");
   assert.deepEqual([...hooks.keys()], ["init", "ready"]);
   hooks.get("init")();
+  // Reproduce the sidebar's menu construction before ready or catalogue loading.
+  const actor={id:"npc",type:"npc",getFlag:()=>({enabled:false})};
+  game.actors=new Map([[actor.id,actor]]);
+  const entries=[];
+  assert.equal(typeof listeners.get("getActorContextOptions"),"function");
+  listeners.get("getActorContextOptions")({},entries);
+  assert.deepEqual(entries.filter(entry=>entry.visible({dataset:{entryId:actor.id}})).map(entry=>entry.label),["Convert to Merchant"]);
+
   t.mock.method(globalThis, "fetch", async url => ({ ok: true, json: () => readJson(String(url).replace("modules/devils-table/", "")) }));
   await hooks.get("ready")();
   assert.equal(settings.length, 7);

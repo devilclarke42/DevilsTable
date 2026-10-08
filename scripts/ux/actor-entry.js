@@ -146,5 +146,4 @@ export function registerActorEntry() {
   Hooks.on("renderActorDirectory", renderMerchantBadges);
   Hooks.on("renderTokenTab", renderMerchantBadges);
   Hooks.on("updateActor", refreshMerchantIndicators);
-  refreshMerchantIndicators();
 }

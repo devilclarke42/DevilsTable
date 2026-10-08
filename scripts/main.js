@@ -1,5 +1,5 @@
 import { registerMerchantTokenMarkers } from "./ux/token-marker.js";
-import { registerActorEntry } from "./ux/actor-entry.js";
+import { registerActorEntry, refreshMerchantIndicators } from "./ux/actor-entry.js";
 import { integrationManager } from "./integrations/manager.js";
 import { registerBuiltInIntegrations, registerBookingHooks } from "./integrations/lifecycle.js";
 import { registerServiceProvider, initialiseServices } from "./services/registry.js";
@@ -23,6 +23,8 @@ import { enableMerchant, initialiseMerchantService, registerCheckoutProof } from
 import { openMerchantShop, registerMerchantTokenEntry } from "./merchant/token-entry.js";
 
 Hooks.once("init", () => {
+  // Sidebar context menus are constructed before ready; register before their first render.
+  registerActorEntry();
   registerBuiltInIntegrations();
   registerSettings();
   registerCheckoutProof();
@@ -75,7 +77,7 @@ Hooks.once("ready", async () => {
   registerBookingHooks();
   initialiseMerchantService();
   registerMerchantTokenEntry();
-  registerActorEntry();
+  refreshMerchantIndicators();
   registerMerchantTokenMarkers();
   if (game.user.isGM) logger.debug("GM builder API is ready.");
 });
