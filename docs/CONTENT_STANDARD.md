@@ -1,5 +1,10 @@
 # Content Standard
 
+## Potions
+
+Use `mechanics.type: "consumable"`, subtype `potion` and an explicit consume/action use for the 2014 baseline. Optional `healing` supplies positive dice count, supported denomination and nonnegative integer bonus; supported limits are 20 dice and +100. The builder emits native healing and marks potions magical. Do not describe automatic effects that the generated activity does not implement. See [Alchemist Guide](ALCHEMIST_GUIDE.md).
+
+
 ## Blacksmith equipment and services
 
 Blacksmith adds Simple Weapons, Martial Weapons, Ammunition, Shields, Light Armour, Medium Armour and Heavy Armour. Existing tools, metals and fittings retain their canonical categories and IDs. Native equipment fields are authored in mechanics.native; arbitrary top-level system overrides are prohibited. Ammunition sale units are individual projectiles. Service definitions remain separate from product files; item requirements use native type/subtype/base-item selectors and maxQuantity 1. See [Blacksmith Guide](BLACKSMITH_GUIDE.md) and [source notices](BLACKSMITH_SOURCE_NOTICES.md).

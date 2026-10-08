@@ -1,5 +1,10 @@
 # Merchant Builder guide
 
+## Alchemist presets
+
+Select Village Herbalist, Town Alchemist, Master Alchemist or Travelling Apothecary. Preview stock and float before applying; use Services to review the available work. Distillation requires the town or master profile. Required Items remain in the character inventory until the GM completes commissioned work. See [Alchemist Guide](ALCHEMIST_GUIDE.md).
+
+
 ## Sprint 14 — Daily merchant workflow (alpha.23)
 
 Right-click a world NPC in the Actors sidebar. **Convert to Merchant** enables merchant flags and opens Setup; **Open Merchant Builder** appears for enabled merchants and opens their existing configuration. The sheet header menu and Devil's Table tab use the same terminology. Player characters, compendium entries, unlinked synthetic Actors and player users are excluded.

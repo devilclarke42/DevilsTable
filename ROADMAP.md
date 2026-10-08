@@ -200,3 +200,7 @@ from work outside this repository.
 ## Sprint 12A — UX & Workflow Polish
 
 Implemented in alpha.14: NPC configuration tab, Actor-based entry points, merchant badges, optional Dice So Nice presentation and compact content builders. Live Foundry/Forge sheet, keyboard, narrow-window and multiplayer animation acceptance remains the next release gate. No new gameplay milestone or catalogue was introduced.
+
+## Sprint 15 — Alchemist candidate
+
+Alpha.26 adds 35 products, five services and four presets through the existing framework. Native potion activities and mixed checkout have automated coverage; live Foundry acceptance remains required. Brewing remains future work. Sprint 16 Fence catalogue and hidden-stock, stolen-property, risk and reputation workflows have not been implemented.

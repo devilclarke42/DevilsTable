@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.3.0-alpha.26 — Sprint 15: Alchemist
+
+### Added
+- 35 Alchemist products across six new categories; six existing shared goods retain their identities.
+- Five item-required services and four editable presets with stock, float, pricing and notes.
+- Native 2014-action healing potion activities and strict single-dose potion validation.
+- Alchemist Guide and regression coverage for builds, eligibility and mixed checkout.
+
+### Validation
+- Live Foundry/Forge acceptance remains required. Brewing and Sprint 16 Fence mechanics are deferred.
+
+
 ## 0.3.0-alpha.25 — Sidebar startup ordering
 
 - Register Actor menu hooks at init, before the sidebar constructs its menus, instead of after asynchronous ready-time catalogue loading.

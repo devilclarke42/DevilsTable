@@ -139,6 +139,26 @@
       "id": "smith-travelling",
       "name": "Travelling Smith",
       "percent": 40
+    },
+    {
+      "id": "herbalist",
+      "name": "Village Herbalist",
+      "percent": 75
+    },
+    {
+      "id": "alchemist-town",
+      "name": "Town Alchemist",
+      "percent": 130
+    },
+    {
+      "id": "alchemist-master",
+      "name": "Master Alchemist",
+      "percent": 220
+    },
+    {
+      "id": "apothecary-travelling",
+      "name": "Travelling Apothecary",
+      "percent": 50
     }
   ],
   "stockProfiles": {
@@ -197,6 +217,22 @@
     "DT_TABLE_BSM_TRAVELLING": {
       "settlement": "hamlet",
       "profile": "smith-travelling"
+    },
+    "DT_TABLE_ALC": {
+      "settlement": "village",
+      "profile": "herbalist"
+    },
+    "DT_TABLE_ALC_TOWN": {
+      "settlement": "town",
+      "profile": "alchemist-town"
+    },
+    "DT_TABLE_ALC_MASTER": {
+      "settlement": "city",
+      "profile": "alchemist-master"
+    },
+    "DT_TABLE_ALC_TRAVELLING": {
+      "settlement": "hamlet",
+      "profile": "apothecary-travelling"
     }
   },
   "coinShares": {

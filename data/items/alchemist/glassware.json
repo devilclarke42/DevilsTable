@@ -1,0 +1,213 @@
+[
+  {
+    "id": "DT_ITEM_ALC_VIAL",
+    "name": "Glass Vial",
+    "description": "A narrow glass vessel has a fitted cork and room for a small dose. Sold empty; liquids add their own weight.\n\nSold as one empty one-ounce vial with stopper.",
+    "saleUnit": "One empty one-ounce vial with stopper",
+    "price": {
+      "value": 6,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 0.05,
+      "units": "lb",
+      "notes": "Adjusted carried weight for the complete stated sale unit, including its disposable wrapping or supplied vessel; reusable workshop apparatus is excluded unless named in the sale unit."
+    },
+    "icon": "icons/consumables/potions/bottle-bulb-empty-glass.webp",
+    "category": "glassware",
+    "tags": [
+      "mundane",
+      "glass",
+      "sold-empty"
+    ],
+    "shops": [
+      "alchemist"
+    ],
+    "availability": "core",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "Original mundane trade good; no additional game benefits. See docs/ALCHEMIST_GUIDE.md.",
+      "license": "Original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "material"
+    }
+  },
+  {
+    "id": "DT_ITEM_ALC_DROPPER",
+    "name": "Glass Dropper",
+    "description": "A slender glass tube helps transfer small drops between vessels. It is fragile workshop apparatus and includes no liquid.\n\nSold as one glass dropping tube.",
+    "saleUnit": "One glass dropping tube",
+    "price": {
+      "value": 2,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 0.03,
+      "units": "lb",
+      "notes": "Adjusted carried weight for the complete stated sale unit, including its disposable wrapping or supplied vessel; reusable workshop apparatus is excluded unless named in the sale unit."
+    },
+    "icon": "icons/consumables/potions/bottle-bulb-empty-glass.webp",
+    "category": "glassware",
+    "tags": [
+      "mundane",
+      "glass",
+      "measuring"
+    ],
+    "shops": [
+      "alchemist"
+    ],
+    "availability": "core",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "Original mundane trade good; no additional game benefits. See docs/ALCHEMIST_GUIDE.md.",
+      "license": "Original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "material"
+    }
+  },
+  {
+    "id": "DT_ITEM_ALC_FUNNEL",
+    "name": "Glass Funnel",
+    "description": "A shallow glass cone guides liquids into narrow-necked bottles. Sold clean and empty; it does not filter or purify the contents.\n\nSold as one small glass funnel.",
+    "saleUnit": "One small glass funnel",
+    "price": {
+      "value": 3,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 0.1,
+      "units": "lb",
+      "notes": "Adjusted carried weight for the complete stated sale unit, including its disposable wrapping or supplied vessel; reusable workshop apparatus is excluded unless named in the sale unit."
+    },
+    "icon": "icons/consumables/potions/bottle-bulb-empty-glass.webp",
+    "category": "glassware",
+    "tags": [
+      "mundane",
+      "glass",
+      "apparatus"
+    ],
+    "shops": [
+      "alchemist"
+    ],
+    "availability": "core",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "Original mundane trade good; no additional game benefits. See docs/ALCHEMIST_GUIDE.md.",
+      "license": "Original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "material"
+    }
+  },
+  {
+    "id": "DT_ITEM_ALC_BEAKER",
+    "name": "Glass Beaker",
+    "description": "A wide-mouthed vessel with a pouring lip is useful for mixing and decanting. It has no lid and is unsuitable for carrying loose in a pack while filled.\n\nSold as one empty half-pint glass beaker.",
+    "saleUnit": "One empty half-pint glass beaker",
+    "price": {
+      "value": 4,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 0.2,
+      "units": "lb",
+      "notes": "Adjusted carried weight for the complete stated sale unit, including its disposable wrapping or supplied vessel; reusable workshop apparatus is excluded unless named in the sale unit."
+    },
+    "icon": "icons/consumables/potions/bottle-bulb-empty-glass.webp",
+    "category": "glassware",
+    "tags": [
+      "mundane",
+      "glass",
+      "apparatus"
+    ],
+    "shops": [
+      "alchemist"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "Original mundane trade good; no additional game benefits. See docs/ALCHEMIST_GUIDE.md.",
+      "license": "Original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "material"
+    }
+  },
+  {
+    "id": "DT_ITEM_ALC_RETORT",
+    "name": "Glass Retort",
+    "description": "A curved-neck vessel guides vapour toward a collecting container. A complete working setup also needs suitable supports, heat and receiving vessels.\n\nSold as one empty glass retort.",
+    "saleUnit": "One empty glass retort",
+    "price": {
+      "value": 3,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 0.5,
+      "units": "lb",
+      "notes": "Adjusted carried weight for the complete stated sale unit, including its disposable wrapping or supplied vessel; reusable workshop apparatus is excluded unless named in the sale unit."
+    },
+    "icon": "icons/consumables/potions/bottle-bulb-empty-glass.webp",
+    "category": "glassware",
+    "tags": [
+      "mundane",
+      "glass",
+      "apparatus",
+      "specialist"
+    ],
+    "shops": [
+      "alchemist"
+    ],
+    "availability": "special-order",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "Original mundane trade good; no additional game benefits. See docs/ALCHEMIST_GUIDE.md.",
+      "license": "Original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "material"
+    }
+  },
+  {
+    "id": "DT_ITEM_ALC_STIRRING_ROD",
+    "name": "Glass Stirring Rod",
+    "description": "A smooth glass rod stirs mixtures without soaking up the liquid. It is a simple implement, not a wand or spellcasting focus.\n\nSold as one glass stirring rod.",
+    "saleUnit": "One glass stirring rod",
+    "price": {
+      "value": 4,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 0.03,
+      "units": "lb",
+      "notes": "Adjusted carried weight for the complete stated sale unit, including its disposable wrapping or supplied vessel; reusable workshop apparatus is excluded unless named in the sale unit."
+    },
+    "icon": "icons/consumables/potions/bottle-bulb-empty-glass.webp",
+    "category": "glassware",
+    "tags": [
+      "mundane",
+      "glass",
+      "apparatus"
+    ],
+    "shops": [
+      "alchemist"
+    ],
+    "availability": "core",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "Original mundane trade good; no additional game benefits. See docs/ALCHEMIST_GUIDE.md.",
+      "license": "Original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "material"
+    }
+  }
+]

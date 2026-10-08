@@ -25,10 +25,13 @@ export function validateItemRules(item, location) {
     }
     if (item.weight.value <= 0) add("weight.value", "A mundane container must have a positive empty weight.");
   } else if (mechanics.type === "consumable") {
-    if (!["food", "trinket", "ammo"].includes(mechanics.subtype)) add("mechanics.subtype", "Supported mundane consumables use food or trinket.");
+    if (!["food", "trinket", "ammo", "potion"].includes(mechanics.subtype)) add("mechanics.subtype", "Unsupported consumable subtype.");
     if (mechanics.subtype !== "ammo" && !mechanics.use) add("mechanics.use", "Consumables require an explicit use action and consumption mode.");
     if (mechanics.subtype === "food" && mechanics.use?.mode !== "consume") add("mechanics.use.mode", "Food must consume one sale unit.");
   }
+  if (mechanics.subtype === "potion" && (mechanics.use?.mode !== "consume" || mechanics.use?.activation !== "action")) add("mechanics.use", "Potions consume one dose using a 2014 action.");
+  if (mechanics.healing && (mechanics.type !== "consumable" || mechanics.subtype !== "potion" || mechanics.use?.mode !== "consume" || mechanics.use?.activation !== "action")) add("mechanics.healing", "Healing requires a single-dose potion used as a 2014 action.");
+  if (mechanics.healing && (mechanics.healing.number > 20 || mechanics.healing.bonus > 100)) add("mechanics.healing", "Healing exceeds supported dice or bonus limits.");
   const nativeType = ["weapon", "equipment", "tool"].includes(mechanics.type) || mechanics.subtype === "ammo";
   if (nativeType && !mechanics.native) add("mechanics.native", "Native equipment requires explicit system fields.");
   if (!nativeType && mechanics.native) add("mechanics.native", "Native fields are reserved for equipment, tools, weapons and ammunition.");

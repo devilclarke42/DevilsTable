@@ -15,7 +15,7 @@ test("business and settlement filters intersect without changing catalogue Items
  assert.equal(generationSummary(data,scope).products,generationSummary(data,{shopId:"blacksmith"}).products);
  assert.equal(filters.settlements.length,6);
  assert.equal(filters.shops.find(row=>row.id==="blacksmith").name,"Blacksmith");
- assert.equal(builderFilters(data,economy,{settlement:null}).profileIds.length,17);
+ assert.equal(builderFilters(data,economy,{settlement:null}).profileIds.length,20);
  assert.equal(builderFilters(data,economy,{settlement:"large-city"}).profileIds.length,0);
  assert.equal(stockScopes(data,{profileIds:[]}).length,0);
  assert.throws(()=>builderFilters(data,economy,{settlement:"bad"}),/Unknown settlement/);

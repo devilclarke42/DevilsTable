@@ -1,0 +1,177 @@
+[
+  {
+    "id": "DT_ITEM_ALC_GUM_ARABIC",
+    "name": "Gum Arabic",
+    "description": "Pale hardened sap is sold as a binder for inks, pigments and workshop mixtures. It is an ingredient rather than a finished adhesive.\n\nSold as one wrapped portion of gum arabic.",
+    "saleUnit": "One wrapped portion of gum arabic",
+    "price": {
+      "value": 2,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 0.1,
+      "units": "lb",
+      "notes": "Adjusted carried weight for the complete stated sale unit, including its disposable wrapping or supplied vessel; reusable workshop apparatus is excluded unless named in the sale unit."
+    },
+    "icon": "icons/commodities/materials/bowl-liquid-white.webp",
+    "category": "ingredients",
+    "tags": [
+      "mundane",
+      "binder",
+      "sap"
+    ],
+    "shops": [
+      "alchemist"
+    ],
+    "availability": "core",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "Original mundane trade good; no additional game benefits. See docs/ALCHEMIST_GUIDE.md.",
+      "license": "Original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "material"
+    }
+  },
+  {
+    "id": "DT_ITEM_ALC_ROSE_WATER",
+    "name": "Rose Water",
+    "description": "Clear scented water carries a light floral fragrance. Used in cosmetics and household preparations; the price includes its small bottle.\n\nSold as one sealed four-ounce bottle of rose water.",
+    "saleUnit": "One sealed four-ounce bottle of rose water",
+    "price": {
+      "value": 3,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 0.3,
+      "units": "lb",
+      "notes": "Adjusted carried weight for the complete stated sale unit, including its disposable wrapping or supplied vessel; reusable workshop apparatus is excluded unless named in the sale unit."
+    },
+    "icon": "icons/commodities/materials/bowl-liquid-white.webp",
+    "category": "ingredients",
+    "tags": [
+      "mundane",
+      "liquid",
+      "fragrant"
+    ],
+    "shops": [
+      "alchemist"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "Original mundane trade good; no additional game benefits. See docs/ALCHEMIST_GUIDE.md.",
+      "license": "Original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "material"
+    }
+  },
+  {
+    "id": "DT_ITEM_ALC_LANOLIN",
+    "name": "Lanolin",
+    "description": "A soft waxy grease forms a base for mundane salves and leather preparations. It grants no healing or protection bonus.\n\nSold as one small tin of lanolin.",
+    "saleUnit": "One small tin of lanolin",
+    "price": {
+      "value": 2,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 0.15,
+      "units": "lb",
+      "notes": "Adjusted carried weight for the complete stated sale unit, including its disposable wrapping or supplied vessel; reusable workshop apparatus is excluded unless named in the sale unit."
+    },
+    "icon": "icons/commodities/materials/bowl-liquid-white.webp",
+    "category": "ingredients",
+    "tags": [
+      "mundane",
+      "grease",
+      "base"
+    ],
+    "shops": [
+      "alchemist"
+    ],
+    "availability": "core",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "Original mundane trade good; no additional game benefits. See docs/ALCHEMIST_GUIDE.md.",
+      "license": "Original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "material"
+    }
+  },
+  {
+    "id": "DT_ITEM_ALC_PIGMENT_OCHRE",
+    "name": "Ochre Pigment",
+    "description": "Fine yellow-brown earth colours inks and workshop coatings. It must be mixed with a suitable binder before application.\n\nSold as one paper packet of ochre pigment.",
+    "saleUnit": "One paper packet of ochre pigment",
+    "price": {
+      "value": 5,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 0.1,
+      "units": "lb",
+      "notes": "Adjusted carried weight for the complete stated sale unit, including its disposable wrapping or supplied vessel; reusable workshop apparatus is excluded unless named in the sale unit."
+    },
+    "icon": "icons/commodities/materials/bowl-liquid-white.webp",
+    "category": "ingredients",
+    "tags": [
+      "mundane",
+      "pigment",
+      "mineral"
+    ],
+    "shops": [
+      "alchemist"
+    ],
+    "availability": "core",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "Original mundane trade good; no additional game benefits. See docs/ALCHEMIST_GUIDE.md.",
+      "license": "Original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "material"
+    }
+  },
+  {
+    "id": "DT_ITEM_ALC_RESIN",
+    "name": "Pine Resin",
+    "description": "Amber fragments soften under workshop heat and serve as a binder or coating ingredient. No finished glue or fuel charge is included.\n\nSold as one wrapped lump of pine resin.",
+    "saleUnit": "One wrapped lump of pine resin",
+    "price": {
+      "value": 8,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 0.15,
+      "units": "lb",
+      "notes": "Adjusted carried weight for the complete stated sale unit, including its disposable wrapping or supplied vessel; reusable workshop apparatus is excluded unless named in the sale unit."
+    },
+    "icon": "icons/commodities/materials/bowl-liquid-white.webp",
+    "category": "ingredients",
+    "tags": [
+      "mundane",
+      "resin",
+      "binder"
+    ],
+    "shops": [
+      "alchemist"
+    ],
+    "availability": "core",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "Original mundane trade good; no additional game benefits. See docs/ALCHEMIST_GUIDE.md.",
+      "license": "Original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "material"
+    }
+  }
+]

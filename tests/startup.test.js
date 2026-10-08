@@ -77,9 +77,9 @@ test("startup registers a restricted V2 menu and a read-only-default API without
   assert.equal((await app._prepareContext({})).count, 17);
   await App.DEFAULT_OPTIONS.actions.selectShop.call(app, null, { dataset: { shop: "alchemist" } });
   const alchemist = await app._prepareContext({});
-  assert.equal(alchemist.count, 6);
+  assert.equal(alchemist.count, 41);
   assert.equal(alchemist.allCategories, true);
-  assert.equal(alchemist.shop.name, "Village Alchemist");
+  assert.equal(alchemist.shop.name, "Village Herbalist");
   const StockApp = menus.find(menu => menu.key === "stockTableBuilder").config.type;
   const stockApp = new StockApp();
   const stockContext = await stockApp._prepareContext({});
@@ -100,7 +100,7 @@ test("startup registers a restricted V2 menu and a read-only-default API without
   assert.equal((await stockApp._prepareContext({})).tableCount, 16);
   assert.equal((await stockApp._prepareContext({})).rollBlocked, true);
   await StockApp.DEFAULT_OPTIONS.actions.selectShop.call(stockApp, null, { dataset: { shop: "" } });
-  assert.equal((await stockApp._prepareContext({})).tableCount, 68);
+  assert.equal((await stockApp._prepareContext({})).tableCount, 80);
   assert.equal((await stockApp._prepareContext({})).rollBlocked, true);
   await StockApp.DEFAULT_OPTIONS.actions.selectShop.call(stockApp, null, { dataset: { shop: "general-store" } });
   await StockApp.DEFAULT_OPTIONS.actions.selectCategory.call(stockApp, null, { dataset: { category: "travel" } });

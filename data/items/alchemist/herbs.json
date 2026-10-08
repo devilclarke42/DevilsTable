@@ -1,0 +1,282 @@
+[
+  {
+    "id": "DT_ITEM_ALC_MINT",
+    "name": "Dried Mint",
+    "description": "Crisp green leaves release a cool scent when crushed. Suitable for infusions, scenting preparations and masking unpleasant flavours; it grants no healing or condition removal.\n\nSold as one paper packet of dried mint.",
+    "saleUnit": "One paper packet of dried mint",
+    "price": {
+      "value": 3,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 0.05,
+      "units": "lb",
+      "notes": "Adjusted carried weight for the complete stated sale unit, including its disposable wrapping or supplied vessel; reusable workshop apparatus is excluded unless named in the sale unit."
+    },
+    "icon": "icons/containers/bags/pouch-leather-green.webp",
+    "category": "herbs",
+    "tags": [
+      "mundane",
+      "herb",
+      "aromatic"
+    ],
+    "shops": [
+      "alchemist"
+    ],
+    "availability": "core",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "Original mundane trade good; no additional game benefits. See docs/ALCHEMIST_GUIDE.md.",
+      "license": "Original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "material"
+    }
+  },
+  {
+    "id": "DT_ITEM_ALC_SAGE",
+    "name": "Dried Sage",
+    "description": "Grey-green leaves have a strong savoury scent. Used in workshop fumigations and household preparations; burning it does not repel creatures or remove curses.\n\nSold as one paper packet of dried sage.",
+    "saleUnit": "One paper packet of dried sage",
+    "price": {
+      "value": 4,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 0.05,
+      "units": "lb",
+      "notes": "Adjusted carried weight for the complete stated sale unit, including its disposable wrapping or supplied vessel; reusable workshop apparatus is excluded unless named in the sale unit."
+    },
+    "icon": "icons/containers/bags/pouch-leather-green.webp",
+    "category": "herbs",
+    "tags": [
+      "mundane",
+      "herb",
+      "aromatic"
+    ],
+    "shops": [
+      "alchemist"
+    ],
+    "availability": "core",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "Original mundane trade good; no additional game benefits. See docs/ALCHEMIST_GUIDE.md.",
+      "license": "Original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "material"
+    }
+  },
+  {
+    "id": "DT_ITEM_ALC_LAVENDER",
+    "name": "Dried Lavender",
+    "description": "Purple flower heads are wrapped to keep their fragrance. Used for sachets, baths and scented preparations; sleep and other conditions are unaffected.\n\nSold as one tied packet of dried lavender.",
+    "saleUnit": "One tied packet of dried lavender",
+    "price": {
+      "value": 5,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 0.05,
+      "units": "lb",
+      "notes": "Adjusted carried weight for the complete stated sale unit, including its disposable wrapping or supplied vessel; reusable workshop apparatus is excluded unless named in the sale unit."
+    },
+    "icon": "icons/containers/bags/pouch-leather-green.webp",
+    "category": "herbs",
+    "tags": [
+      "mundane",
+      "herb",
+      "fragrant"
+    ],
+    "shops": [
+      "alchemist"
+    ],
+    "availability": "core",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "Original mundane trade good; no additional game benefits. See docs/ALCHEMIST_GUIDE.md.",
+      "license": "Original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "material"
+    }
+  },
+  {
+    "id": "DT_ITEM_ALC_ROSEMARY",
+    "name": "Dried Rosemary",
+    "description": "Woody sprigs retain their resinous scent after drying. A common ingredient in aromatic mixtures; no mechanical medicinal benefit is implied.\n\nSold as one tied bundle of dried rosemary.",
+    "saleUnit": "One tied bundle of dried rosemary",
+    "price": {
+      "value": 3,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 0.05,
+      "units": "lb",
+      "notes": "Adjusted carried weight for the complete stated sale unit, including its disposable wrapping or supplied vessel; reusable workshop apparatus is excluded unless named in the sale unit."
+    },
+    "icon": "icons/containers/bags/pouch-leather-green.webp",
+    "category": "herbs",
+    "tags": [
+      "mundane",
+      "herb",
+      "aromatic"
+    ],
+    "shops": [
+      "alchemist"
+    ],
+    "availability": "core",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "Original mundane trade good; no additional game benefits. See docs/ALCHEMIST_GUIDE.md.",
+      "license": "Original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "material"
+    }
+  },
+  {
+    "id": "DT_ITEM_ALC_CHAMOMILE",
+    "name": "Dried Chamomile",
+    "description": "Small dried flower heads make a mild fragrant infusion. The purchase is a preparation ingredient, not a potion or a substitute for a rest.\n\nSold as one packet of dried chamomile flowers.",
+    "saleUnit": "One packet of dried chamomile flowers",
+    "price": {
+      "value": 6,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 0.05,
+      "units": "lb",
+      "notes": "Adjusted carried weight for the complete stated sale unit, including its disposable wrapping or supplied vessel; reusable workshop apparatus is excluded unless named in the sale unit."
+    },
+    "icon": "icons/containers/bags/pouch-leather-green.webp",
+    "category": "herbs",
+    "tags": [
+      "mundane",
+      "herb",
+      "flower"
+    ],
+    "shops": [
+      "alchemist"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "Original mundane trade good; no additional game benefits. See docs/ALCHEMIST_GUIDE.md.",
+      "license": "Original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "material"
+    }
+  },
+  {
+    "id": "DT_ITEM_ALC_JUNIPER",
+    "name": "Juniper Berries",
+    "description": "Dark berries lend a pine-like scent to spirits and aromatic mixtures. The packet provides flavouring material rather than an antidote.\n\nSold as one packet of dried juniper berries.",
+    "saleUnit": "One packet of dried juniper berries",
+    "price": {
+      "value": 8,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 0.1,
+      "units": "lb",
+      "notes": "Adjusted carried weight for the complete stated sale unit, including its disposable wrapping or supplied vessel; reusable workshop apparatus is excluded unless named in the sale unit."
+    },
+    "icon": "icons/containers/bags/pouch-leather-green.webp",
+    "category": "herbs",
+    "tags": [
+      "mundane",
+      "herb",
+      "berry"
+    ],
+    "shops": [
+      "alchemist"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "Original mundane trade good; no additional game benefits. See docs/ALCHEMIST_GUIDE.md.",
+      "license": "Original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "material"
+    }
+  },
+  {
+    "id": "DT_ITEM_ALC_ROSE_PETALS",
+    "name": "Dried Rose Petals",
+    "description": "Carefully dried petals colour and scent cosmetics, baths and perfumed water. They carry no charm effect.\n\nSold as one packet of dried rose petals.",
+    "saleUnit": "One packet of dried rose petals",
+    "price": {
+      "value": 1,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 0.05,
+      "units": "lb",
+      "notes": "Adjusted carried weight for the complete stated sale unit, including its disposable wrapping or supplied vessel; reusable workshop apparatus is excluded unless named in the sale unit."
+    },
+    "icon": "icons/containers/bags/pouch-leather-green.webp",
+    "category": "herbs",
+    "tags": [
+      "mundane",
+      "herb",
+      "flower"
+    ],
+    "shops": [
+      "alchemist"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "Original mundane trade good; no additional game benefits. See docs/ALCHEMIST_GUIDE.md.",
+      "license": "Original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "material"
+    }
+  },
+  {
+    "id": "DT_ITEM_ALC_LICORICE",
+    "name": "Liquorice Root",
+    "description": "Short woody pieces are bundled for flavouring infusions and preparations. This is ordinary plant material with no automatic medicinal effect.\n\nSold as one packet of cut liquorice root.",
+    "saleUnit": "One packet of cut liquorice root",
+    "price": {
+      "value": 2,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 0.1,
+      "units": "lb",
+      "notes": "Adjusted carried weight for the complete stated sale unit, including its disposable wrapping or supplied vessel; reusable workshop apparatus is excluded unless named in the sale unit."
+    },
+    "icon": "icons/containers/bags/pouch-leather-green.webp",
+    "category": "herbs",
+    "tags": [
+      "mundane",
+      "herb",
+      "root"
+    ],
+    "shops": [
+      "alchemist"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "Original mundane trade good; no additional game benefits. See docs/ALCHEMIST_GUIDE.md.",
+      "license": "Original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "material"
+    }
+  }
+]

@@ -62,6 +62,20 @@
       "catalogues": [
         "blacksmith"
       ]
+    },
+    {
+      "id": "alchemist-analysis",
+      "name": "Analysis & Appraisal",
+      "catalogues": [
+        "alchemist"
+      ]
+    },
+    {
+      "id": "alchemist-preparation",
+      "name": "Preparation",
+      "catalogues": [
+        "alchemist"
+      ]
     }
   ],
   "services": [
@@ -701,7 +715,7 @@
     {
       "id": "DT_SERVICE_TAV_SECURE_STORAGE",
       "name": "Secure Storage",
-      "description": "The keeper records one parcel up to 20 lb and places it in the inn’s locked store for a day. Contents and identifying marks are agreed before payment. This is ordinary custody, not magical protection or insurance. Character Items are not moved or removed automatically; the GM records the handover and return. No Lock & Key key is issued for this service.",
+      "description": "The keeper records one parcel up to 20 lb and places it in the inn\u2019s locked store for a day. Contents and identifying marks are agreed before payment. This is ordinary custody, not magical protection or insurance. Character Items are not moved or removed automatically; the GM records the handover and return. No Lock & Key key is issued for this service.",
       "icon": "icons/sundries/misc/lock-bronze-reinforced.webp",
       "category": "tavern-premium",
       "catalogues": [
@@ -721,7 +735,7 @@
           "denomination": "gp"
         }
       },
-      "saleUnit": "one parcel up to 20 lb in the inn’s locked store for one day",
+      "saleUnit": "one parcel up to 20 lb in the inn\u2019s locked store for one day",
       "duration": "Up to 24 hours; collection arranged with the keeper",
       "modifier": 0,
       "maxQuantity": 10,
@@ -869,7 +883,7 @@
             "weapon"
           ]
         },
-        "note": "Select one eligible item from your character’s inventory. It stays with the character."
+        "note": "Select one eligible item from your character\u2019s inventory. It stays with the character."
       },
       "execution": {},
       "tags": [
@@ -930,7 +944,7 @@
             "heavy"
           ]
         },
-        "note": "Select one eligible item from your character’s inventory. It stays with the character."
+        "note": "Select one eligible item from your character\u2019s inventory. It stays with the character."
       },
       "execution": {},
       "tags": [
@@ -1000,7 +1014,7 @@
             "shortsword"
           ]
         },
-        "note": "Select one eligible item from your character’s inventory. It stays with the character."
+        "note": "Select one eligible item from your character\u2019s inventory. It stays with the character."
       },
       "execution": {},
       "tags": [
@@ -1052,7 +1066,7 @@
             "weapon"
           ]
         },
-        "note": "Select one eligible item from your character’s inventory. It stays with the character."
+        "note": "Select one eligible item from your character\u2019s inventory. It stays with the character."
       },
       "execution": {},
       "tags": [
@@ -1113,7 +1127,7 @@
             "heavy"
           ]
         },
-        "note": "Select one eligible item from your character’s inventory. It stays with the character."
+        "note": "Select one eligible item from your character\u2019s inventory. It stays with the character."
       },
       "execution": {},
       "tags": [
@@ -1176,7 +1190,7 @@
             "handcrossbow"
           ]
         },
-        "note": "Select one eligible item from your character’s inventory. It stays with the character."
+        "note": "Select one eligible item from your character\u2019s inventory. It stays with the character."
       },
       "execution": {},
       "tags": [
@@ -1235,7 +1249,7 @@
             "shield"
           ]
         },
-        "note": "Select one eligible item from your character’s inventory. It stays with the character."
+        "note": "Select one eligible item from your character\u2019s inventory. It stays with the character."
       },
       "execution": {},
       "tags": [
@@ -1261,7 +1275,7 @@
     {
       "id": "DT_SERVICE_BSM_CUSTOM_FITTING",
       "name": "Custom Fitting",
-      "description": "Refine an intact suit’s padding, straps and articulation for its wearer. The wearer must attend; this does not remove proficiency requirements, Strength requirements or Stealth disadvantage. Payment records the commissioned work; the GM decides completion and applies any item changes manually.",
+      "description": "Refine an intact suit\u2019s padding, straps and articulation for its wearer. The wearer must attend; this does not remove proficiency requirements, Strength requirements or Stealth disadvantage. Payment records the commissioned work; the GM decides completion and applies any item changes manually.",
       "icon": "icons/skills/trades/smithing-tongs-metal-red.webp",
       "category": "smith-fitting",
       "catalogues": [
@@ -1292,7 +1306,7 @@
             "heavy"
           ]
         },
-        "note": "Select one eligible item from your character’s inventory. It stays with the character."
+        "note": "Select one eligible item from your character\u2019s inventory. It stays with the character."
       },
       "execution": {},
       "tags": [
@@ -1350,7 +1364,7 @@
             "tool"
           ]
         },
-        "note": "Select one eligible item from your character’s inventory. It stays with the character."
+        "note": "Select one eligible item from your character\u2019s inventory. It stays with the character."
       },
       "execution": {},
       "tags": [
@@ -1372,6 +1386,264 @@
       "saleUnit": "One item",
       "duration": "Fifteen minutes",
       "actions": []
+    },
+    {
+      "id": "DT_SERVICE_ALC_IDENTIFY_POTION",
+      "name": "Identify Potion",
+      "description": "Examine one potion and report its properties as determined by the GM. This is an appraisal service, not an automatic Identify spell, and does not automatically reveal curses or toggle the Item identified field. Approval records payment for commissioned work; the GM confirms completion.",
+      "icon": "icons/tools/cooking/mortar-herbs-yellow.webp",
+      "category": "alchemist-analysis",
+      "catalogues": [
+        "alchemist"
+      ],
+      "price": {
+        "value": 2,
+        "denomination": "gp"
+      },
+      "modifier": 0,
+      "availability": {
+        "profiles": [
+          "herbalist",
+          "alchemist-town",
+          "alchemist-master",
+          "apothecary-travelling"
+        ]
+      },
+      "requirements": {
+        "item": {
+          "types": [
+            "consumable"
+          ],
+          "subtypes": [
+            "potion"
+          ]
+        },
+        "note": "Select the supplied item. It remains in your inventory; the GM checks suitability and completes the work."
+      },
+      "execution": {},
+      "actions": [],
+      "tags": [
+        "alchemist",
+        "labour",
+        "item-required"
+      ],
+      "maxQuantity": 1,
+      "saleUnit": "One potion",
+      "duration": "Ten minutes",
+      "recommendedRange": {
+        "min": {
+          "value": 2,
+          "denomination": "gp"
+        },
+        "max": {
+          "value": 4,
+          "denomination": "gp"
+        }
+      }
+    },
+    {
+      "id": "DT_SERVICE_ALC_APPRAISE_INGREDIENTS",
+      "name": "Appraise Ingredients",
+      "description": "Inspect a sample for visible quality, useful quantity and likely value. The GM determines conclusions; the service does not guarantee safety or reveal magical properties. Approval records payment for commissioned work; the GM confirms completion.",
+      "icon": "icons/tools/cooking/mortar-herbs-yellow.webp",
+      "category": "alchemist-analysis",
+      "catalogues": [
+        "alchemist"
+      ],
+      "price": {
+        "value": 3,
+        "denomination": "sp"
+      },
+      "modifier": 0,
+      "availability": {
+        "profiles": [
+          "herbalist",
+          "alchemist-town",
+          "alchemist-master",
+          "apothecary-travelling"
+        ]
+      },
+      "requirements": {
+        "item": {
+          "types": [
+            "loot"
+          ]
+        },
+        "note": "Select the supplied item. It remains in your inventory; the GM checks suitability and completes the work."
+      },
+      "execution": {},
+      "actions": [],
+      "tags": [
+        "alchemist",
+        "labour",
+        "item-required"
+      ],
+      "maxQuantity": 1,
+      "saleUnit": "One sample",
+      "duration": "Fifteen minutes",
+      "recommendedRange": {
+        "min": {
+          "value": 3,
+          "denomination": "sp"
+        },
+        "max": {
+          "value": 6,
+          "denomination": "sp"
+        }
+      }
+    },
+    {
+      "id": "DT_SERVICE_ALC_REFILL_VIAL",
+      "name": "Refill Vial",
+      "description": "Decant a supplied mundane liquid into a supplied clean vial. Liquid and vessel are not included; this does not replenish a consumed potion. The GM checks container suitability and records the transfer manually. Approval records payment for commissioned work; the GM confirms completion.",
+      "icon": "icons/tools/cooking/mortar-herbs-yellow.webp",
+      "category": "alchemist-preparation",
+      "catalogues": [
+        "alchemist"
+      ],
+      "price": {
+        "value": 2,
+        "denomination": "cp"
+      },
+      "modifier": 0,
+      "availability": {
+        "profiles": [
+          "herbalist",
+          "alchemist-town",
+          "alchemist-master",
+          "apothecary-travelling"
+        ]
+      },
+      "requirements": {
+        "item": {
+          "types": [
+            "loot",
+            "container"
+          ]
+        },
+        "note": "Select the supplied item. It remains in your inventory; the GM checks suitability and completes the work."
+      },
+      "execution": {},
+      "actions": [],
+      "tags": [
+        "alchemist",
+        "labour",
+        "item-required"
+      ],
+      "maxQuantity": 1,
+      "saleUnit": "One small vessel",
+      "duration": "Five minutes",
+      "recommendedRange": {
+        "min": {
+          "value": 2,
+          "denomination": "cp"
+        },
+        "max": {
+          "value": 4,
+          "denomination": "cp"
+        }
+      }
+    },
+    {
+      "id": "DT_SERVICE_ALC_DISTILL_ALCOHOL",
+      "name": "Distill Alcohol",
+      "description": "Commission workshop distillation of suitable supplied material. Agree the output and completion time with the GM before approval. Inputs are not automatically consumed and no saleable spirit Item is generated. Approval records payment for commissioned work; the GM confirms completion.",
+      "icon": "icons/tools/cooking/mortar-herbs-yellow.webp",
+      "category": "alchemist-preparation",
+      "catalogues": [
+        "alchemist"
+      ],
+      "price": {
+        "value": 8,
+        "denomination": "sp"
+      },
+      "modifier": 0,
+      "availability": {
+        "profiles": [
+          "alchemist-town",
+          "alchemist-master"
+        ]
+      },
+      "requirements": {
+        "item": {
+          "types": [
+            "consumable",
+            "loot"
+          ]
+        },
+        "note": "Select the supplied item. It remains in your inventory; the GM checks suitability and completes the work."
+      },
+      "execution": {},
+      "actions": [],
+      "tags": [
+        "alchemist",
+        "labour",
+        "item-required"
+      ],
+      "maxQuantity": 1,
+      "saleUnit": "One small batch, up to one pint of supplied liquid",
+      "duration": "Half a day",
+      "recommendedRange": {
+        "min": {
+          "value": 8,
+          "denomination": "sp"
+        },
+        "max": {
+          "value": 16,
+          "denomination": "sp"
+        }
+      }
+    },
+    {
+      "id": "DT_SERVICE_ALC_GRIND_HERBS",
+      "name": "Grind Herbs",
+      "description": "Grind a supplied dried herb packet to an agreed texture and return it wrapped. This does not brew a potion or increase the ingredients value automatically. The GM records the finished preparation. Approval records payment for commissioned work; the GM confirms completion.",
+      "icon": "icons/tools/cooking/mortar-herbs-yellow.webp",
+      "category": "alchemist-preparation",
+      "catalogues": [
+        "alchemist"
+      ],
+      "price": {
+        "value": 3,
+        "denomination": "cp"
+      },
+      "modifier": 0,
+      "availability": {
+        "profiles": [
+          "herbalist",
+          "alchemist-town",
+          "alchemist-master",
+          "apothecary-travelling"
+        ]
+      },
+      "requirements": {
+        "item": {
+          "types": [
+            "loot"
+          ]
+        },
+        "note": "Select the supplied item. It remains in your inventory; the GM checks suitability and completes the work."
+      },
+      "execution": {},
+      "actions": [],
+      "tags": [
+        "alchemist",
+        "labour",
+        "item-required"
+      ],
+      "maxQuantity": 1,
+      "saleUnit": "One herb packet",
+      "duration": "Ten minutes",
+      "recommendedRange": {
+        "min": {
+          "value": 3,
+          "denomination": "cp"
+        },
+        "max": {
+          "value": 6,
+          "denomination": "cp"
+        }
+      }
     }
   ]
 }

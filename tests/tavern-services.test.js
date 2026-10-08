@@ -55,7 +55,7 @@ test("real Tavern bread, ale and lodging settle in one checkout without creating
  assert.equal(m.getFlag("devils-table","merchant.serviceStats.DT_SERVICE_TAV_PRIVATE_ROOM").purchased,1);
 });
 test("service catalogue stays out of Item builds; active Tavern food and drink preserve their identities",()=>{
- assert.equal(context.catalogue.entries.length,370);assert.equal(context.catalogue.entries.filter(e=>e.item.id.startsWith("DT_ITEM_TAV_")).length,168);
+ assert.equal(context.catalogue.entries.length,405);assert.equal(context.catalogue.entries.filter(e=>e.item.id.startsWith("DT_ITEM_TAV_")).length,168);
  assert.equal(context.catalogue.entries.some(e=>e.item.id.startsWith("DT_SERVICE_")),false);
 });
 

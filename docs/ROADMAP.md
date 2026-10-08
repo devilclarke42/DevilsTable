@@ -1,5 +1,10 @@
 # Roadmap
 
+## Sprint 15 — Alchemist candidate
+
+Alpha.26 adds 35 products, five services and four presets through the existing framework. Native potion activities and mixed checkout have automated coverage; live Foundry acceptance remains required. Brewing remains future work. Sprint 16 Fence catalogue and hidden-stock, stolen-property, risk and reputation workflows have not been implemented.
+
+
 ## Sprint 13 — Blacksmith candidate
 
 Catalogue, services, five presets and generic required-item selection are implemented in alpha.17. Remaining gate: live native equipment, UI and multiplayer review. Durability automation, enchanting and bulk/multiple service targets are future work. Existing numbered release milestones remain planning labels, not a claim of stable release.

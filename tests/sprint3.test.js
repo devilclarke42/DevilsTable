@@ -138,8 +138,8 @@ test("profile builds preserve existing sets and invalid profile scopes fail befo
   assert.deepEqual(state.writes, []);
   assert.equal((await build({ dryRun: false, shopId: "general-store", profileId: "DT_TABLE_GS_CITY" })).create, 4);
   assert.equal((await build({ dryRun: false, shopId: "general-store" })).create, 12);
-  assert.equal((await build({ dryRun: false })).create, 52);
-  assert.equal((await build({ dryRun: false })).unchanged, 68);
+  assert.equal((await build({ dryRun: false })).create, 64);
+  assert.equal((await build({ dryRun: false })).unchanged, 80);
 });
 
 test("variant category rolls use effective tiers for quantities without writing inventory", async () => {
@@ -196,11 +196,11 @@ test("alpha.6 table upgrade retains all 20 identities and converges to 52 active
   const { adapter, state } = fakeAdapter({ existing });
   const build = createStockTableBuilder({ load: () => data, adapter });
   const preview = await build();
-  assert.deepEqual([preview.create, preview.update, preview.unchanged], [48, 10, 10]);
+  assert.deepEqual([preview.create, preview.update, preview.unchanged], [60, 14, 6]);
   assert.deepEqual(state.writes, []);
   await build({ dryRun: false });
   assert.ok(existing.every(old => state.docs.some(doc => doc._id === old._id)));
-  assert.equal((await build({ dryRun: false })).unchanged, 68);
+  assert.equal((await build({ dryRun: false })).unchanged, 80);
 });
 
 test("historical category tables with older membership are protected during cleanup", async () => {

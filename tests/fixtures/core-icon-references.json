@@ -509,6 +509,18 @@
     {
       "icon": "icons/sundries/survival/cuffs-shackles-steel.webp",
       "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/trinket/manacles.yml"
+    },
+    {
+      "icon": "icons/consumables/potions/potion-tube-corked-red.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/potion/potion-of-healing.yml"
+    },
+    {
+      "icon": "icons/containers/bags/pouch-leather-green.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/tool/herbalism-kit.yml"
+    },
+    {
+      "icon": "icons/tools/cooking/mortar-herbs-yellow.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/tool/alchemists-supplies.yml"
     }
   ]
 }

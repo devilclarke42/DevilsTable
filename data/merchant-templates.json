@@ -347,5 +347,85 @@
       "relationshipModifier": 0,
       "notes": "Maintains a varied rack of weapons and armour. Special orders require workshop time.\nSuggested greeting: Something off the rack, or work on what you have?\nRepairs and fitting require GM adjudication."
     }
+  },
+  {
+    "schemaVersion": 1,
+    "id": "herbalist",
+    "name": "Village Herbalist",
+    "settings": {
+      "catalogueId": "alchemist",
+      "settlement": "village",
+      "prosperity": "average",
+      "profile": "herbalist",
+      "stockProfileId": "DT_TABLE_ALC",
+      "availability": "open",
+      "infiniteFunds": false,
+      "infiniteStock": false,
+      "restockProfile": "weekly",
+      "pricingModifier": 0,
+      "relationshipState": "Unknown",
+      "relationshipModifier": 0,
+      "notes": "Small packets and familiar preparations occupy the counter; scarce potions arrive through special orders. Ask customers how they intend to use unfamiliar reagents.\nSuggested greeting: A packet for the kitchen, or something for the road?\nPreparation services require GM completion; no automatic potion brewing. Restock settings are preferences, not schedules."
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "id": "alchemist-town",
+    "name": "Town Alchemist",
+    "settings": {
+      "catalogueId": "alchemist",
+      "settlement": "town",
+      "prosperity": "prosperous",
+      "profile": "alchemist-town",
+      "stockProfileId": "DT_TABLE_ALC_TOWN",
+      "availability": "open",
+      "infiniteFunds": false,
+      "infiniteStock": false,
+      "restockProfile": "weekly",
+      "pricingModifier": 5,
+      "relationshipState": "Unknown",
+      "relationshipModifier": 0,
+      "notes": "Keeps labelled reagents and replacement glassware for local workshops. Distillation is booked around existing batches; do not promise immediate completion.\nSuggested greeting: Have you brought a sample, or shall we start with the shelves?\nPreparation services require GM completion; no automatic potion brewing. Restock settings are preferences, not schedules."
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "id": "alchemist-master",
+    "name": "Master Alchemist",
+    "settings": {
+      "catalogueId": "alchemist",
+      "settlement": "city",
+      "prosperity": "wealthy",
+      "profile": "alchemist-master",
+      "stockProfileId": "DT_TABLE_ALC_MASTER",
+      "availability": "open",
+      "infiniteFunds": false,
+      "infiniteStock": false,
+      "restockProfile": "weekly",
+      "pricingModifier": 20,
+      "relationshipState": "Unknown",
+      "relationshipModifier": 0,
+      "notes": "Handles costly preparations by appointment and keeps premium doses separately. Quote the full price before opening sealed stock.\nSuggested greeting: Describe the result you require. Precision saves us both trouble.\nPreparation services require GM completion; no automatic potion brewing. Restock settings are preferences, not schedules."
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "id": "apothecary-travelling",
+    "name": "Travelling Apothecary",
+    "settings": {
+      "catalogueId": "alchemist",
+      "settlement": "hamlet",
+      "prosperity": "poor",
+      "profile": "apothecary-travelling",
+      "stockProfileId": "DT_TABLE_ALC_TRAVELLING",
+      "availability": "open",
+      "infiniteFunds": false,
+      "infiniteStock": false,
+      "restockProfile": "manual",
+      "pricingModifier": 10,
+      "relationshipState": "Unknown",
+      "relationshipModifier": 0,
+      "notes": "Carries compact packets, small vessels and prepared doses. Large apparatus and specialist potions must be ordered elsewhere; no distillation is offered on the road.\nSuggested greeting: Small bottles, light packets, and nothing that leaks in your pack.\nPreparation services require GM completion; no automatic potion brewing. Restock settings are preferences, not schedules."
+    }
   }
 ]

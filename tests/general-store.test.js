@@ -143,7 +143,7 @@ test("sequential category builds preserve earlier categories and shared-shop ide
     assert.equal(state.docs.length, count);
   }
   assert.equal((await build({ dryRun: false, shopId: "alchemist" })).unchanged, 6);
-  assert.equal(state.docs.length, 144);
+  assert.equal(state.docs.length, 179);
 });
 
 test("native activity consumption and light metadata remain strict at read-back", async () => {

@@ -51,23 +51,23 @@
   },
   {
     "id": "alchemist",
-    "name": "Village Alchemist",
-    "description": "A modest workshop supplying common reagents and prepared remedies.",
+    "name": "Village Herbalist",
+    "description": "A modest herb shop with everyday preparation materials and a small locked potion cabinet.",
     "merchantNotes": {
       "alwaysStocks": [
-        "Empty bottles",
-        "Common herbs",
-        "Basic reagents"
+        "Dried Mint",
+        "Refined Salt",
+        "Glass Vial"
       ],
       "oftenStocks": [
-        "Prepared remedies",
-        "Antitoxin",
-        "Lamp oil"
+        "Dried Chamomile",
+        "Rose Water",
+        "Potion of Healing"
       ],
       "rarelyStocks": [
-        "Healing potions",
-        "Rare reagents",
-        "Specialist alchemical preparations"
+        "Glass Retort",
+        "Potion of Climbing",
+        "Advanced healing potions by special order"
       ]
     }
   },

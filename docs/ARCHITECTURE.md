@@ -1,5 +1,10 @@
 # Architecture and API
 
+## Alchemist mapping
+
+Alchemist JSON extends the existing shared catalogue, services, stock variants, economy profiles and merchant templates. Consumable factory mapping supports single-dose potions; optional validated healing dice generate a native heal activity with a creature target. No ingredient inventory or service Item copies are introduced. See [Alchemist Guide](ALCHEMIST_GUIDE.md).
+
+
 ## Sprint 14 — Daily merchant workflow (alpha.23)
 
 Right-click a world NPC in the Actors sidebar. **Convert to Merchant** enables merchant flags and opens Setup; **Open Merchant Builder** appears for enabled merchants and opens their existing configuration. The sheet header menu and Devil's Table tab use the same terminology. Player characters, compendium entries, unlinked synthetic Actors and player users are excluded.

@@ -84,7 +84,13 @@
     "categories": [
       "containers",
       "fire-lighting",
-      "writing"
+      "writing",
+      "potions",
+      "herbs",
+      "ingredients",
+      "reagents",
+      "glassware",
+      "alchemical-tools"
     ],
     "fallbackCategory": {
       "id": "other",

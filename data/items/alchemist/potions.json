@@ -1,0 +1,231 @@
+[
+  {
+    "id": "DT_ITEM_ALC_HEALING_POTION",
+    "name": "Potion of Healing",
+    "description": "A wax-sealed vial holds red liquid that brightens when stirred. Drinking it restores 2d4 + 2 hit points. Drinking or administering it takes one action under the 2014 rules. The native healing activity rolls the healing; apply it to the intended recipient through the system.\n\nSold as one sealed single-dose potion.",
+    "saleUnit": "One sealed single-dose potion",
+    "price": {
+      "value": 40,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 0.3,
+      "units": "lb",
+      "notes": "Adjusted carried weight for the complete stated sale unit, including its disposable wrapping or supplied vessel; reusable workshop apparatus is excluded unless named in the sale unit."
+    },
+    "icon": "icons/consumables/potions/potion-tube-corked-red.webp",
+    "category": "potions",
+    "tags": [
+      "magical",
+      "potion",
+      "healing",
+      "single-dose"
+    ],
+    "shops": [
+      "alchemist"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 (2014), magic items and adventuring gear; original wording and project pricing. See docs/ALCHEMIST_GUIDE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0; Original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "potion",
+      "use": {
+        "name": "Drink or administer potion",
+        "mode": "consume",
+        "activation": "action",
+        "condition": "One action under the 2014 rules. Apply healing to the intended recipient."
+      },
+      "healing": {
+        "number": 2,
+        "denomination": 4,
+        "bonus": 2
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_ALC_HEALING_GREATER",
+    "name": "Potion of Greater Healing",
+    "description": "A wax-sealed vial holds red liquid that brightens when stirred. Drinking it restores 4d4 + 4 hit points. Drinking or administering it takes one action under the 2014 rules. The native healing activity rolls the healing; apply it to the intended recipient through the system.\n\nSold as one sealed single-dose potion.",
+    "saleUnit": "One sealed single-dose potion",
+    "price": {
+      "value": 120,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 0.3,
+      "units": "lb",
+      "notes": "Adjusted carried weight for the complete stated sale unit, including its disposable wrapping or supplied vessel; reusable workshop apparatus is excluded unless named in the sale unit."
+    },
+    "icon": "icons/consumables/potions/potion-tube-corked-red.webp",
+    "category": "potions",
+    "tags": [
+      "magical",
+      "potion",
+      "healing",
+      "single-dose"
+    ],
+    "shops": [
+      "alchemist"
+    ],
+    "availability": "special-order",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 (2014), magic items and adventuring gear; original wording and project pricing. See docs/ALCHEMIST_GUIDE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0; Original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "potion",
+      "use": {
+        "name": "Drink or administer potion",
+        "mode": "consume",
+        "activation": "action",
+        "condition": "One action under the 2014 rules. Apply healing to the intended recipient."
+      },
+      "healing": {
+        "number": 4,
+        "denomination": 4,
+        "bonus": 4
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_ALC_HEALING_SUPERIOR",
+    "name": "Potion of Superior Healing",
+    "description": "A wax-sealed vial holds red liquid that brightens when stirred. Drinking it restores 8d4 + 8 hit points. Drinking or administering it takes one action under the 2014 rules. The native healing activity rolls the healing; apply it to the intended recipient through the system.\n\nSold as one sealed single-dose potion.",
+    "saleUnit": "One sealed single-dose potion",
+    "price": {
+      "value": 450,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 0.3,
+      "units": "lb",
+      "notes": "Adjusted carried weight for the complete stated sale unit, including its disposable wrapping or supplied vessel; reusable workshop apparatus is excluded unless named in the sale unit."
+    },
+    "icon": "icons/consumables/potions/potion-tube-corked-red.webp",
+    "category": "potions",
+    "tags": [
+      "magical",
+      "potion",
+      "healing",
+      "single-dose"
+    ],
+    "shops": [
+      "alchemist"
+    ],
+    "availability": "special-order",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 (2014), magic items and adventuring gear; original wording and project pricing. See docs/ALCHEMIST_GUIDE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0; Original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "potion",
+      "use": {
+        "name": "Drink or administer potion",
+        "mode": "consume",
+        "activation": "action",
+        "condition": "One action under the 2014 rules. Apply healing to the intended recipient."
+      },
+      "healing": {
+        "number": 8,
+        "denomination": 4,
+        "bonus": 8
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_ALC_HEALING_SUPREME",
+    "name": "Potion of Supreme Healing",
+    "description": "A wax-sealed vial holds red liquid that brightens when stirred. Drinking it restores 10d4 + 20 hit points. Drinking or administering it takes one action under the 2014 rules. The native healing activity rolls the healing; apply it to the intended recipient through the system.\n\nSold as one sealed single-dose potion.",
+    "saleUnit": "One sealed single-dose potion",
+    "price": {
+      "value": 1200,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 0.3,
+      "units": "lb",
+      "notes": "Adjusted carried weight for the complete stated sale unit, including its disposable wrapping or supplied vessel; reusable workshop apparatus is excluded unless named in the sale unit."
+    },
+    "icon": "icons/consumables/potions/potion-tube-corked-red.webp",
+    "category": "potions",
+    "tags": [
+      "magical",
+      "potion",
+      "healing",
+      "single-dose"
+    ],
+    "shops": [
+      "alchemist"
+    ],
+    "availability": "special-order",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 (2014), magic items and adventuring gear; original wording and project pricing. See docs/ALCHEMIST_GUIDE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0; Original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "potion",
+      "use": {
+        "name": "Drink or administer potion",
+        "mode": "consume",
+        "activation": "action",
+        "condition": "One action under the 2014 rules. Apply healing to the intended recipient."
+      },
+      "healing": {
+        "number": 10,
+        "denomination": 4,
+        "bonus": 20
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_ALC_CLIMBING_POTION",
+    "name": "Potion of Climbing",
+    "description": "Bands of coloured liquid remain separate even when the vial is shaken. For one hour after drinking, climbing speed equals walking speed and Strength (Athletics) checks to climb have advantage. The GM applies and ends these benefits manually; the use action only records consumption.\n\nSold as one sealed single-dose potion.",
+    "saleUnit": "One sealed single-dose potion",
+    "price": {
+      "value": 45,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 0.3,
+      "units": "lb",
+      "notes": "Adjusted carried weight for the complete stated sale unit, including its disposable wrapping or supplied vessel; reusable workshop apparatus is excluded unless named in the sale unit."
+    },
+    "icon": "icons/consumables/potions/potion-tube-corked-red.webp",
+    "category": "potions",
+    "tags": [
+      "magical",
+      "potion",
+      "climbing"
+    ],
+    "shops": [
+      "alchemist"
+    ],
+    "availability": "special-order",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 (2014), magic items and adventuring gear; original wording and project pricing. See docs/ALCHEMIST_GUIDE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0; Original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "potion",
+      "use": {
+        "name": "Drink climbing potion",
+        "mode": "consume",
+        "activation": "action",
+        "condition": "GM applies climbing speed and advantage for one hour; no effect is applied automatically."
+      }
+    }
+  }
+]

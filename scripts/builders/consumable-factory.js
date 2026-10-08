@@ -9,9 +9,9 @@ export function consumableSystemFields(entry) {
   const { subtype, use, light } = entry.mechanics;
   const consumes = use.mode === "consume";
   const activityId = documentIdFor(`${entry.id}_USE`);
-  return {
+  const system = {
     type: { value: subtype, subtype: "" },
-    properties: [],
+    properties: subtype === "potion" ? ["mgc"] : [],
     uses: { spent: 0, max: consumes ? "1" : "", recovery: [], autoDestroy: consumes },
     activities: {
       [activityId]: {
@@ -31,4 +31,16 @@ export function consumableSystemFields(entry) {
       }
     }
   };
+  if (entry.mechanics.healing) {
+    const activity = system.activities[activityId];
+    activity.type = "heal";
+    activity.range = { units: "touch", special: "", override: false };
+    activity.target = { affects: { count: "1", type: "creature", choice: false, special: "" },
+      template: { units: "ft" }, prompt: true, override: false };
+    delete activity.roll;
+    activity.healing = { ...entry.mechanics.healing, bonus: String(entry.mechanics.healing.bonus),
+      types: ["healing"], custom: { enabled: false, formula: "" },
+      scaling: { mode: "", number: 1, formula: "" } };
+  }
+  return system;
 }

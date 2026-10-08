@@ -1201,5 +1201,71 @@
     "sort": 80,
     "visible": true,
     "icon": "icons/commodities/metal/ingot-iron.webp"
+  },
+  {
+    "id": "potions",
+    "shop": "alchemist",
+    "catalogue": "alchemist",
+    "name": "Potions",
+    "description": "Prepared magical doses with explicit 2014 use rules.",
+    "plannedItems": [],
+    "icon": "icons/svg/potion.svg",
+    "sort": 0,
+    "visible": true
+  },
+  {
+    "id": "herbs",
+    "shop": "alchemist",
+    "catalogue": "alchemist",
+    "name": "Herbs",
+    "description": "Dried plant materials sold without invented medicinal bonuses.",
+    "plannedItems": [],
+    "icon": "icons/svg/item-bag.svg",
+    "sort": 10,
+    "visible": true
+  },
+  {
+    "id": "ingredients",
+    "shop": "alchemist",
+    "catalogue": "alchemist",
+    "name": "Ingredients",
+    "description": "Mundane bases, binders and pigments.",
+    "plannedItems": [],
+    "icon": "icons/svg/item-bag.svg",
+    "sort": 20,
+    "visible": true
+  },
+  {
+    "id": "reagents",
+    "shop": "alchemist",
+    "catalogue": "alchemist",
+    "name": "Reagents",
+    "description": "Labelled workshop materials.",
+    "plannedItems": [],
+    "icon": "icons/svg/acid.svg",
+    "sort": 30,
+    "visible": true
+  },
+  {
+    "id": "glassware",
+    "shop": "alchemist",
+    "catalogue": "alchemist",
+    "name": "Glassware",
+    "description": "Empty vessels and glass apparatus.",
+    "plannedItems": [],
+    "icon": "icons/svg/potion.svg",
+    "sort": 40,
+    "visible": true
+  },
+  {
+    "id": "alchemical-tools",
+    "shop": "alchemist",
+    "catalogue": "alchemist",
+    "name": "Alchemical Tools",
+    "description": "Individual workshop implements; no automatic proficiency.",
+    "plannedItems": [],
+    "icon": "icons/svg/alchemy.svg",
+    "sort": 50,
+    "visible": true
   }
 ]

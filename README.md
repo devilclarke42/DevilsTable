@@ -1,5 +1,10 @@
 # Devil's Table: Trade & Merchants
 
+## Alchemist — alpha.26
+
+The Alchemist adds 35 products, five services and four presets. Healing potions use native 2014-action activities. Preparation services require GM completion; brewing is deferred. See the [Alchemist Guide](docs/ALCHEMIST_GUIDE.md) for pricing, presets and live checks.
+
+
 ## Sprint 14 — Daily merchant workflow (alpha.23)
 
 Right-click a world NPC in the Actors sidebar. **Convert to Merchant** enables merchant flags and opens Setup; **Open Merchant Builder** appears for enabled merchants and opens their existing configuration. The sheet header menu and Devil's Table tab use the same terminology. Player characters, compendium entries, unlinked synthetic Actors and player users are excluded.

@@ -1,0 +1,248 @@
+[
+  {
+    "id": "DT_ITEM_ALC_MORTAR",
+    "name": "Apothecary Mortar and Pestle",
+    "description": "A rough inner bowl and rounded pestle grind dried materials into a consistent powder. They grant no proficiency and do not replace a complete tool kit.\n\nSold as one small ceramic mortar and pestle.",
+    "saleUnit": "One small ceramic mortar and pestle",
+    "price": {
+      "value": 6,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 0.8,
+      "units": "lb",
+      "notes": "Adjusted carried weight for the complete stated sale unit, including its disposable wrapping or supplied vessel; reusable workshop apparatus is excluded unless named in the sale unit."
+    },
+    "icon": "icons/tools/cooking/mortar-herbs-yellow.webp",
+    "category": "alchemical-tools",
+    "tags": [
+      "mundane",
+      "ceramic",
+      "grinding"
+    ],
+    "shops": [
+      "alchemist"
+    ],
+    "availability": "core",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "Original mundane trade good; no additional game benefits. See docs/ALCHEMIST_GUIDE.md.",
+      "license": "Original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "material"
+    }
+  },
+  {
+    "id": "DT_ITEM_ALC_FILTER_PAPERS",
+    "name": "Filter Papers",
+    "description": "Folded porous papers separate coarse sediment from a mixture when used with a funnel. They do not automatically remove poison or magical contamination.\n\nSold as one packet of ten filter papers.",
+    "saleUnit": "One packet of ten filter papers",
+    "price": {
+      "value": 4,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 0.02,
+      "units": "lb",
+      "notes": "Adjusted carried weight for the complete stated sale unit, including its disposable wrapping or supplied vessel; reusable workshop apparatus is excluded unless named in the sale unit."
+    },
+    "icon": "icons/tools/cooking/mortar-herbs-yellow.webp",
+    "category": "alchemical-tools",
+    "tags": [
+      "mundane",
+      "paper",
+      "filter"
+    ],
+    "shops": [
+      "alchemist"
+    ],
+    "availability": "core",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "Original mundane trade good; no additional game benefits. See docs/ALCHEMIST_GUIDE.md.",
+      "license": "Original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "material"
+    }
+  },
+  {
+    "id": "DT_ITEM_ALC_VIAL_RACK",
+    "name": "Vial Rack",
+    "description": "Six bored openings keep small vessels upright on a workbench. Vials and their contents are not included.\n\nSold as one wooden rack for six small vials.",
+    "saleUnit": "One wooden rack for six small vials",
+    "price": {
+      "value": 4,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 0.4,
+      "units": "lb",
+      "notes": "Adjusted carried weight for the complete stated sale unit, including its disposable wrapping or supplied vessel; reusable workshop apparatus is excluded unless named in the sale unit."
+    },
+    "icon": "icons/tools/cooking/mortar-herbs-yellow.webp",
+    "category": "alchemical-tools",
+    "tags": [
+      "mundane",
+      "wood",
+      "storage"
+    ],
+    "shops": [
+      "alchemist"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "Original mundane trade good; no additional game benefits. See docs/ALCHEMIST_GUIDE.md.",
+      "license": "Original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "material"
+    }
+  },
+  {
+    "id": "DT_ITEM_ALC_CRUCIBLE",
+    "name": "Small Crucible",
+    "description": "A thick-walled cup holds a small sample during furnace work. It requires suitable heat and handling tools; it does not provide them.\n\nSold as one small ceramic crucible and lid.",
+    "saleUnit": "One small ceramic crucible and lid",
+    "price": {
+      "value": 8,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 0.4,
+      "units": "lb",
+      "notes": "Adjusted carried weight for the complete stated sale unit, including its disposable wrapping or supplied vessel; reusable workshop apparatus is excluded unless named in the sale unit."
+    },
+    "icon": "icons/tools/cooking/mortar-herbs-yellow.webp",
+    "category": "alchemical-tools",
+    "tags": [
+      "mundane",
+      "ceramic",
+      "apparatus"
+    ],
+    "shops": [
+      "alchemist"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "Original mundane trade good; no additional game benefits. See docs/ALCHEMIST_GUIDE.md.",
+      "license": "Original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "material"
+    }
+  },
+  {
+    "id": "DT_ITEM_ALC_ALCHEMISTS_SUPPLIES",
+    "name": "Alchemist's Supplies",
+    "description": "A travelling case holds small mixing vessels, a mortar and pestle, stirring implements and handling tools. The fitted case keeps the fragile pieces separate.\n\nThe native tool check supports alchemical work when the GM calls for it. Proficiency, recipes, ingredients, fuel and a suitable workspace are separate; owning the kit does not permit automatic potion crafting.",
+    "saleUnit": "One portable alchemist tool kit and fitted case",
+    "price": {
+      "value": 35,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 6.4,
+      "units": "lb",
+      "notes": "80% of the 2014 eight-pound tool-kit baseline; includes its carrying case."
+    },
+    "icon": "icons/tools/cooking/mortar-herbs-yellow.webp",
+    "category": "alchemical-tools",
+    "tags": [
+      "mundane",
+      "alchemical",
+      "tools"
+    ],
+    "shops": [
+      "alchemist"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 (2014), tools; original description, project price and adjusted weight. Native tool mapping follows D&D5e 5.3.3.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0. Original project descriptions: distribution license pending."
+    },
+    "mechanics": {
+      "type": "tool",
+      "native": {
+        "ability": "int",
+        "bonus": "",
+        "type": {
+          "value": "art",
+          "baseItem": "alchemist"
+        },
+        "properties": [],
+        "activities": {
+          "dnd5eactivity000": {
+            "_id": "dnd5eactivity000",
+            "type": "check",
+            "activation": {
+              "type": "",
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "concentration": false,
+              "value": "",
+              "units": "inst",
+              "special": "",
+              "override": false
+            },
+            "effects": [],
+            "range": {
+              "units": "self",
+              "special": "",
+              "override": false
+            },
+            "target": {
+              "template": {
+                "count": "",
+                "contiguous": false,
+                "type": "",
+                "size": "",
+                "width": "",
+                "height": "",
+                "units": "ft"
+              },
+              "affects": {
+                "count": "",
+                "type": "",
+                "choice": false,
+                "special": ""
+              },
+              "prompt": true,
+              "override": false
+            },
+            "check": {
+              "ability": "int",
+              "dc": {}
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": []
+            },
+            "sort": 0
+          }
+        }
+      }
+    }
+  }
+]

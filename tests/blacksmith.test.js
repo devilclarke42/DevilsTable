@@ -90,7 +90,7 @@ test("native read-back tolerates omitted unset source fields without weakening p
 test("weapon and tool activity unit defaults converge after Foundry normalization",async()=>{
  const {planBuild}=await import("../scripts/builders/build-plan.js");
  const {matchesGenerated}=await import("../scripts/builders/generated-fields.js");
- const expected=catalogue.entries.filter(({item})=>["weapon","tool"].includes(item.mechanics.type)).map(({item})=>catalogueEntryToItem(item));
+ const expected=catalogue.entries.filter(({item})=>item.shops.includes("blacksmith") && ["weapon","tool"].includes(item.mechanics.type)).map(({item})=>catalogueEntryToItem(item));
  assert.equal(expected.length,38);
  const saved=structuredClone(expected);
  for(const doc of saved)for(const activity of Object.values(doc.system.activities)){

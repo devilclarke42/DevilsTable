@@ -184,7 +184,8 @@
             "treasure",
             "food",
             "trinket",
-            "ammo"
+            "ammo",
+            "potion"
           ]
         },
         "use": {
@@ -359,6 +360,35 @@
             },
             "bonus": {
               "type": "string"
+            }
+          }
+        },
+        "healing": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "number",
+            "denomination",
+            "bonus"
+          ],
+          "properties": {
+            "number": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "denomination": {
+              "type": "integer",
+              "enum": [
+                4,
+                6,
+                8,
+                10,
+                12
+              ]
+            },
+            "bonus": {
+              "type": "integer",
+              "minimum": 0
             }
           }
         }

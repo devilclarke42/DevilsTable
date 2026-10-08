@@ -1,0 +1,213 @@
+[
+  {
+    "id": "DT_ITEM_ALC_ALUM",
+    "name": "Alum Crystals",
+    "description": "Pale crystals are kept dry for dyeing, tanning and workshop preparation. This stock entry supplies material only; the GM determines appropriate recipes and quantities.\n\nSold as one labelled packet of alum crystals.",
+    "saleUnit": "One labelled packet of alum crystals",
+    "price": {
+      "value": 1,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 0.15,
+      "units": "lb",
+      "notes": "Adjusted carried weight for the complete stated sale unit, including its disposable wrapping or supplied vessel; reusable workshop apparatus is excluded unless named in the sale unit."
+    },
+    "icon": "icons/commodities/materials/bowl-liquid-white.webp",
+    "category": "reagents",
+    "tags": [
+      "mundane",
+      "mineral",
+      "reagent"
+    ],
+    "shops": [
+      "alchemist"
+    ],
+    "availability": "core",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "Original mundane trade good; no additional game benefits. See docs/ALCHEMIST_GUIDE.md.",
+      "license": "Original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "material"
+    }
+  },
+  {
+    "id": "DT_ITEM_ALC_SULFUR",
+    "name": "Sulfur",
+    "description": "Yellow mineral powder is supplied in a folded packet. It is a raw workshop reagent, not a prepared weapon or a priced spell component unless the GM confirms the requirement.\n\nSold as one labelled packet of sulfur.",
+    "saleUnit": "One labelled packet of sulfur",
+    "price": {
+      "value": 2,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 0.1,
+      "units": "lb",
+      "notes": "Adjusted carried weight for the complete stated sale unit, including its disposable wrapping or supplied vessel; reusable workshop apparatus is excluded unless named in the sale unit."
+    },
+    "icon": "icons/commodities/materials/bowl-liquid-white.webp",
+    "category": "reagents",
+    "tags": [
+      "mundane",
+      "mineral",
+      "reagent"
+    ],
+    "shops": [
+      "alchemist"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "Original mundane trade good; no additional game benefits. See docs/ALCHEMIST_GUIDE.md.",
+      "license": "Original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "material"
+    }
+  },
+  {
+    "id": "DT_ITEM_ALC_SALT_REFINED",
+    "name": "Refined Salt",
+    "description": "Clean white grains are sold for preservation and workshop use. This is ordinary salt with no automatic protection against supernatural creatures.\n\nSold as one quarter-pound packet of refined salt.",
+    "saleUnit": "One quarter-pound packet of refined salt",
+    "price": {
+      "value": 3,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 0.25,
+      "units": "lb",
+      "notes": "Adjusted carried weight for the complete stated sale unit, including its disposable wrapping or supplied vessel; reusable workshop apparatus is excluded unless named in the sale unit."
+    },
+    "icon": "icons/commodities/materials/bowl-liquid-white.webp",
+    "category": "reagents",
+    "tags": [
+      "mundane",
+      "mineral",
+      "reagent"
+    ],
+    "shops": [
+      "alchemist"
+    ],
+    "availability": "core",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "Original mundane trade good; no additional game benefits. See docs/ALCHEMIST_GUIDE.md.",
+      "license": "Original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "material"
+    }
+  },
+  {
+    "id": "DT_ITEM_ALC_IRON_FILINGS",
+    "name": "Iron Filings",
+    "description": "Fine iron shavings are screened to remove coarse splinters. They supply a modest quantity of mundane metal for workshop mixtures.\n\nSold as one paper packet of iron filings.",
+    "saleUnit": "One paper packet of iron filings",
+    "price": {
+      "value": 5,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 0.1,
+      "units": "lb",
+      "notes": "Adjusted carried weight for the complete stated sale unit, including its disposable wrapping or supplied vessel; reusable workshop apparatus is excluded unless named in the sale unit."
+    },
+    "icon": "icons/commodities/materials/bowl-liquid-white.webp",
+    "category": "reagents",
+    "tags": [
+      "mundane",
+      "iron",
+      "reagent"
+    ],
+    "shops": [
+      "alchemist"
+    ],
+    "availability": "core",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "Original mundane trade good; no additional game benefits. See docs/ALCHEMIST_GUIDE.md.",
+      "license": "Original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "material"
+    }
+  },
+  {
+    "id": "DT_ITEM_ALC_COPPER_SULFATE",
+    "name": "Blue Vitriol",
+    "description": "Bright blue crystals are sold for specialist workshop work. Not food or medicine; the GM adjudicates handling and any improvised use.\n\nSold as one sealed labelled packet of blue vitriol.",
+    "saleUnit": "One sealed labelled packet of blue vitriol",
+    "price": {
+      "value": 4,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 0.1,
+      "units": "lb",
+      "notes": "Adjusted carried weight for the complete stated sale unit, including its disposable wrapping or supplied vessel; reusable workshop apparatus is excluded unless named in the sale unit."
+    },
+    "icon": "icons/commodities/materials/bowl-liquid-white.webp",
+    "category": "reagents",
+    "tags": [
+      "mundane",
+      "mineral",
+      "reagent",
+      "specialist"
+    ],
+    "shops": [
+      "alchemist"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "Original mundane trade good; no additional game benefits. See docs/ALCHEMIST_GUIDE.md.",
+      "license": "Original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "material"
+    }
+  },
+  {
+    "id": "DT_ITEM_ALC_DISTILLED_WATER",
+    "name": "Distilled Water",
+    "description": "Clear water is supplied for mixing preparations where sediment would spoil the work. The price and weight include the glass bottle.\n\nSold as one stoppered pint bottle of distilled water.",
+    "saleUnit": "One stoppered pint bottle of distilled water",
+    "price": {
+      "value": 2,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 1.2,
+      "units": "lb",
+      "notes": "Adjusted carried weight for the complete stated sale unit, including its disposable wrapping or supplied vessel; reusable workshop apparatus is excluded unless named in the sale unit."
+    },
+    "icon": "icons/commodities/materials/bowl-liquid-white.webp",
+    "category": "reagents",
+    "tags": [
+      "mundane",
+      "liquid",
+      "reagent"
+    ],
+    "shops": [
+      "alchemist"
+    ],
+    "availability": "core",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "Original mundane trade good; no additional game benefits. See docs/ALCHEMIST_GUIDE.md.",
+      "license": "Original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "material"
+    }
+  }
+]

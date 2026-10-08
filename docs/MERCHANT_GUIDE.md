@@ -1,5 +1,10 @@
 # Merchant Builder guide
 
+## Alchemist transactions
+
+Potions and preparation services share one basket. Select a suitable owned Item for each service and review its sale unit. Approval charges for the commission; the GM completes identification, refilling, distillation and grinding manually. No brewing or ingredient consumption occurs automatically. See [Alchemist Guide](ALCHEMIST_GUIDE.md).
+
+
 ## Sprint 14 — Daily merchant workflow (alpha.23)
 
 Right-click a world NPC in the Actors sidebar. **Convert to Merchant** enables merchant flags and opens Setup; **Open Merchant Builder** appears for enabled merchants and opens their existing configuration. The sheet header menu and Devil's Table tab use the same terminology. Player characters, compendium entries, unlinked synthetic Actors and player users are excluded.

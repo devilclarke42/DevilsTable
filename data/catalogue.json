@@ -44,7 +44,13 @@
     "data/items/blacksmith/shields.json",
     "data/items/blacksmith/simple-weapons.json",
     "data/items/blacksmith/tools.json",
-    "data/items/blacksmith/trade-goods.json"
+    "data/items/blacksmith/trade-goods.json",
+    "data/items/alchemist/potions.json",
+    "data/items/alchemist/herbs.json",
+    "data/items/alchemist/ingredients.json",
+    "data/items/alchemist/reagents.json",
+    "data/items/alchemist/glassware.json",
+    "data/items/alchemist/alchemical-tools.json"
   ],
   "shops": [
     "tavern",
@@ -100,7 +106,13 @@
     "medium-armour",
     "heavy-armour",
     "shields",
-    "ammunition"
+    "ammunition",
+    "potions",
+    "herbs",
+    "ingredients",
+    "reagents",
+    "glassware",
+    "alchemical-tools"
   ],
   "deferredFiles": []
 }

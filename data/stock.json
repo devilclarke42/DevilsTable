@@ -1086,18 +1086,140 @@
     {
       "id": "DT_TABLE_ALC",
       "shop": "alchemist",
-      "coverage": "partial",
-      "draws": 4,
+      "coverage": "complete",
+      "draws": 5,
       "categoryDraws": 2,
       "categories": [
         "containers",
         "fire-lighting",
-        "writing"
+        "writing",
+        "potions",
+        "herbs",
+        "ingredients",
+        "reagents",
+        "glassware",
+        "alchemical-tools"
       ],
       "overrides": [
         {
           "itemId": "DT_ITEM_GS_OIL_LAMP",
           "tier": "often"
+        }
+      ],
+      "variants": [
+        {
+          "id": "DT_TABLE_ALC_TOWN",
+          "name": "Town Alchemist",
+          "description": "A specialist workshop with broader prepared stock and equipment.",
+          "draws": 9,
+          "categoryDraws": 3,
+          "excludedItems": [
+            "DT_ITEM_ALC_HEALING_SUPERIOR",
+            "DT_ITEM_ALC_HEALING_SUPREME"
+          ],
+          "overrides": [],
+          "merchantNotes": {
+            "alwaysStocks": [
+              "Dried Mint",
+              "Refined Salt",
+              "Glass Vial"
+            ],
+            "oftenStocks": [
+              "Dried Chamomile",
+              "Rose Water",
+              "Potion of Healing"
+            ],
+            "rarelyStocks": [
+              "Glass Retort",
+              "Potion of Climbing",
+              "Advanced healing potions by special order"
+            ]
+          }
+        },
+        {
+          "id": "DT_TABLE_ALC_MASTER",
+          "name": "Master Alchemist",
+          "description": "A specialist workshop with broader prepared stock and equipment.",
+          "draws": 14,
+          "categoryDraws": 3,
+          "excludedItems": [],
+          "overrides": [],
+          "merchantNotes": {
+            "alwaysStocks": [
+              "Dried Mint",
+              "Refined Salt",
+              "Glass Vial"
+            ],
+            "oftenStocks": [
+              "Dried Chamomile",
+              "Rose Water",
+              "Potion of Healing"
+            ],
+            "rarelyStocks": [
+              "Glass Retort",
+              "Potion of Climbing",
+              "Advanced healing potions by special order"
+            ]
+          }
+        },
+        {
+          "id": "DT_TABLE_ALC_TRAVELLING",
+          "name": "Travelling Apothecary",
+          "description": "Portable herb packets and small doses; bulky apparatus and premium potions are not carried.",
+          "draws": 3,
+          "categoryDraws": 3,
+          "excludedItems": [
+            "DT_ITEM_GS_BOTTLE",
+            "DT_ITEM_GS_OIL_LAMP",
+            "DT_ITEM_GS_CHARCOAL",
+            "DT_ITEM_ALC_HEALING_GREATER",
+            "DT_ITEM_ALC_HEALING_SUPERIOR",
+            "DT_ITEM_ALC_HEALING_SUPREME",
+            "DT_ITEM_ALC_CLIMBING_POTION",
+            "DT_ITEM_ALC_DISTILLED_WATER",
+            "DT_ITEM_ALC_RETORT",
+            "DT_ITEM_ALC_MORTAR",
+            "DT_ITEM_ALC_ALCHEMISTS_SUPPLIES"
+          ],
+          "overrides": [
+            {
+              "itemId": "DT_ITEM_ALC_ALUM",
+              "tier": "rarely"
+            },
+            {
+              "itemId": "DT_ITEM_ALC_SULFUR",
+              "tier": "rarely"
+            },
+            {
+              "itemId": "DT_ITEM_ALC_SALT_REFINED",
+              "tier": "rarely"
+            },
+            {
+              "itemId": "DT_ITEM_ALC_IRON_FILINGS",
+              "tier": "rarely"
+            },
+            {
+              "itemId": "DT_ITEM_ALC_COPPER_SULFATE",
+              "tier": "rarely"
+            }
+          ],
+          "merchantNotes": {
+            "alwaysStocks": [
+              "Dried Mint",
+              "Refined Salt",
+              "Glass Vial"
+            ],
+            "oftenStocks": [
+              "Dried Chamomile",
+              "Rose Water",
+              "Potion of Healing"
+            ],
+            "rarelyStocks": [
+              "Glass Retort",
+              "Potion of Climbing",
+              "Advanced healing potions by special order"
+            ]
+          }
         }
       ]
     },
