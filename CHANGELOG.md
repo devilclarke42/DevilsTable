@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.3.0-alpha.23 — Sprint 14
+
+### Changed
+- Context-aware Convert to Merchant / Open Merchant Builder actions in Actor Directory, NPC sheet menu and NPC merchant tab.
+- Shared Builder launcher across GM entry points; direct View Statistics shortcut.
+- Safe flag-only conversion preserves native Actor data and existing merchant history, with administration guards.
+- Updated workflow documentation and regression coverage.
+
 ## 0.3.0-alpha.22 — Merchant menu access
 
 - Renamed the sheet menu action to **Devils Table: Make merchant**.

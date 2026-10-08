@@ -11,7 +11,8 @@
 <p>Save explicitly. Disabling preserves inventory, funds, notes and history. Restock profiles record preferences; they do not schedule restocking.</p>
 <button type="button" data-dt-command="save">Save Merchant Settings</button>
 <div class="dt-shop-controls">
-  <button type="button" data-dt-command="builder">Merchant Builder / Presets</button>
+  <button type="button" data-dt-command="builder">{{#if enabled}}Open Merchant Builder{{else}}Convert to Merchant{{/if}}</button>
+  {{#if enabled}}<button type="button" data-dt-command="statistics">View Statistics</button>{{/if}}
   <button type="button" data-dt-command="services">Services &amp; Room Integrations</button>
 </div>
 <details><summary>World tools and integrations</summary><div class="dt-shop-controls">

@@ -1,18 +1,33 @@
 import { MODULE_ID } from "../constants.js";
-import { MerchantBuilderApplication } from "../merchant/builder/app.js";
+import { launchMerchantBuilder } from "../merchant/builder/launch.js";
+import { withAdministration } from "../merchant/operation-guard.js";
 import { IntegrationSettingsApplication } from "../integrations/settings-app.js";
 import { CompendiumBuilderApplication } from "../apps/compendium-builder-app.js";
 import { RollTableBuilderApplication } from "../apps/roll-table-builder-app.js";
 import { npcConfiguration, configurationChoices, saveNpcConfiguration } from "./npc-configuration.js";
 
 export const supportedNpc = actor => Boolean(game.user?.isGM && actor?.type === "npc" && !actor.pack && !actor.isToken);
-const MAKE_MERCHANT_LABEL = "Devils Table: Make merchant";
+const merchantActionLabel = actor => enabled(actor) ? "Open Merchant Builder" : "Convert to Merchant";
 const enabled = actor => actor.getFlag(MODULE_ID, "merchant")?.enabled === true;
 const rootElement = html => html?.querySelector ? html : html?.[0];
 const generations = new WeakMap();
 export function openNpcBuilder(actor, tab = "setup") {
   if (!supportedNpc(actor)) return;
-  return new MerchantBuilderApplication({ actorId: actor.id, tab }).render({ force: true });
+  return launchMerchantBuilder({ actorId: actor.id, tab });
+}
+/** Conversion only enables isolated merchant state; stock and native cash remain untouched. */
+export async function activateMerchant(actor) {
+  if (!supportedNpc(actor)) return;
+  try {
+    if (!enabled(actor)) await withAdministration(actor, async () => {
+      if (enabled(actor)) return;
+      const { enableMerchant } = await import("../merchant/service.js");
+      await enableMerchant(actor, actor.getFlag(MODULE_ID, "merchant")?.availability ?? "closed");
+    }, { allowUnconverted: true });
+    return openNpcBuilder(actor);
+  } catch (error) {
+    ui.notifications.error(`Devil's Table: ${error.message}`);
+  }
 }
 /** Render-only extension of the standard 5e NPC sheet. No sheet replacement or prototype patch. */
 export async function renderNpcMerchantTab(app, html) {
@@ -46,7 +61,8 @@ export async function renderNpcMerchantTab(app, html) {
       event.preventDefault(); event.stopPropagation();
       if (!supportedNpc(actor) || saving) return;
       const command = target.dataset.dtCommand;
-      if (command === "builder" || command === "services") return openNpcBuilder(actor, command === "services" ? "services" : "setup");
+      if (command === "builder") return activateMerchant(actor);
+      if (command === "services" || command === "statistics") return openNpcBuilder(actor, command === "services" ? "services" : "manage");
       if (command === "integrations") return new IntegrationSettingsApplication().render({ force: true });
       if (command === "items") return new CompendiumBuilderApplication().render({ force: true });
       if (command === "tables") return new RollTableBuilderApplication().render({ force: true });
@@ -74,28 +90,31 @@ export function addMerchantHeaderControl(app, controls) {
   if (!["Actor", "Token"].includes(doc?.documentName)) return;
   const actor = doc.documentName === "Token" ? doc.actor : doc;
   if (!supportedNpc(actor) || controls.some(c => c.action === "dtMakeMerchant")) return;
-  const open = () => openNpcBuilder(actor);
+  const open = () => activateMerchant(actor);
   const visible = () => supportedNpc(actor);
   // Earlier V2 sheets consume label/onClick and icon classes; newer menus use ContextMenuEntry.
   const legacy = Number(game.release?.generation ?? 14) < 14
     || controls.some(control => "label" in control && !("name" in control));
   controls.push({
-    action: "dtMakeMerchant", name: MAKE_MERCHANT_LABEL, label: MAKE_MERCHANT_LABEL,
+    action: "dtMakeMerchant", name: merchantActionLabel(actor), label: merchantActionLabel(actor),
     icon: legacy ? "fa-solid fa-store" : '<i class="fa-solid fa-store"></i>',
     visible, condition: visible, onClick: open, callback: open
   });
 }
 export function addActorContext(_application, menu) {
   if (!game.user?.isGM || menu.some(entry => entry.action === "dtMakeMerchant")) return;
-  const visible = element => supportedNpc(entryActor(element));
-  const open = element => openNpcBuilder(entryActor(element));
-  menu.push({
-    action: "dtMakeMerchant", label: MAKE_MERCHANT_LABEL, name: MAKE_MERCHANT_LABEL,
-    icon: '<i class="fa-solid fa-store"></i>',
-    // V14 passes the context target as the second onClick argument.
-    visible, onClick: (_event, target) => open(target),
-    condition: visible, callback: open
-  });
+  // Mutually exclusive conditions are evaluated against the right-clicked Actor at menu open.
+  for (const isMerchant of [false, true]) {
+    const label = isMerchant ? "Open Merchant Builder" : "Convert to Merchant";
+    const visible = element => {
+      const actor = entryActor(element);
+      return supportedNpc(actor) && enabled(actor) === isMerchant;
+    };
+    const open = element => activateMerchant(entryActor(element));
+    menu.push({ action: "dtMakeMerchant", label, name: label,
+      icon: '<i class="fa-solid fa-store"></i>', visible,
+      onClick: (_event, target) => open(target), condition: visible, callback: open });
+  }
 }
 export function renderMerchantBadges(_app, html) {
   const root = rootElement(html); if (!root) return;

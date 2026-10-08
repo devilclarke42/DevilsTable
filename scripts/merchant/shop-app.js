@@ -171,8 +171,8 @@ export class MerchantShopApplication extends HandlebarsApplicationMixin(Applicat
   }
   static async #setupMerchant() {
     if (!game.user.isGM) return;
-    const { MerchantBuilderApplication } = await import("./builder/app.js");
-    await new MerchantBuilderApplication({ actorId: this.#token.document.actorId }).render({ force: true });
+    const { launchMerchantBuilder } = await import("./builder/launch.js");
+    await launchMerchantBuilder({ actorId: this.#token.document.actorId });
   }
 
   async refreshStock() {

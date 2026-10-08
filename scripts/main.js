@@ -18,7 +18,7 @@ import { RollTableBuilderApplication } from "./apps/roll-table-builder-app.js";
 import { rebuildStockTables } from "./builders/roll-table-builder.js";
 import { rollStockList } from "./stock/stock-roller.js";
 import { cleanupLegacyStockTables } from "./builders/legacy-table-cleanup.js";
-import { MerchantBuilderApplication } from "./merchant/builder/app.js";
+import { launchMerchantBuilder } from "./merchant/builder/launch.js";
 import { enableMerchant, initialiseMerchantService, registerCheckoutProof } from "./merchant/service.js";
 import { openMerchantShop, registerMerchantTokenEntry } from "./merchant/token-entry.js";
 
@@ -42,11 +42,11 @@ Hooks.once("init", () => {
     openMerchantShop,
     openMerchantManager: () => {
       if (!game.user.isGM) throw new Error("Only a GM can set up merchants.");
-      return new MerchantBuilderApplication().render({ force: true });
+      return launchMerchantBuilder();
     },
     openMerchantBuilder: (options = {}) => {
       if (!game.user.isGM) throw new Error("Only a GM can open the Merchant Builder.");
-      return new MerchantBuilderApplication(options).render({ force: true });
+      return launchMerchantBuilder(options);
     },
     rollStock: rollStockList,
     openStockBuilder: () => {
