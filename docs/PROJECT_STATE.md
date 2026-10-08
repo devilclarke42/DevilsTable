@@ -1,5 +1,11 @@
 # Project state
 
+## 0.3.0-alpha.22 — Merchant menu access
+
+- Renamed the sheet menu action to **Devils Table: Make merchant**.
+- Updated the Actors sidebar context entry to the Foundry V14 menu API, opening the Merchant Builder for the right-clicked NPC. GM-only access and existing NPC eligibility are preserved; repeated registration cannot duplicate the entry.
+- Automated menu checks cover the V14 callback target and label. Live sidebar rendering remains a Foundry smoke check.
+
 ## Sprint 13A — Builder workflow (alpha.21)
 
 Choose **Merchant Type** for the business catalogue and **Settlement** independently. Native dropdowns keep the forms compact as new merchant types are registered. **All Merchant Types** and **All Settlements** select all available definitions without a scrolling list of checkboxes.

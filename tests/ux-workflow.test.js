@@ -63,6 +63,11 @@ test("Actor entry is GM-only, excludes compendiums/unlinked tokens and uses the 
  const actor=new Actor("merchant"),actors=new Map([[actor.id,actor]]);game.actors=actors;
  assert.equal(supportedNpc(actor),true);assert.equal(supportedNpc({...actor,isToken:true}),false);assert.equal(supportedNpc({...actor,pack:"world.test"}),false);
  const menu=[];addActorContext(null,menu);assert.equal(menu.length,1);assert.equal(menu[0].condition({dataset:{entryId:actor.id}}),true);
+ assert.equal(menu[0].label,"Devils Table: Make merchant");
+ assert.equal(menu[0].visible({dataset:{entryId:actor.id}}),true);
+ assert.equal(menu[0].onClick({}, {dataset:{entryId:actor.id}}).actor,actor);
+ addActorContext(null,menu);assert.equal(menu.length,1);
+ assert.equal(menu[0].visible({dataset:{entryId:"missing"}}),false);
  assert.equal(menu[0].condition({dataset:{entryId:"missing"}}),false);assert.ok(openNpcBuilder(actor));
  game.user.isGM=false;assert.equal(openNpcBuilder(actor),undefined);const playerMenu=[];addActorContext(null,playerMenu);assert.deepEqual(playerMenu,[]);
 });
@@ -72,9 +77,9 @@ test("native sheet menu exposes one Make Merchant action for the correct Actor",
  const {addMerchantHeaderControl,entryActor}=await import("../scripts/ux/actor-entry.js");
  const actor=new Actor("merchant");actor.documentName="Actor";game.actors=new Map([[actor.id,actor]]);
  const controls=[];addMerchantHeaderControl({document:actor},controls);addMerchantHeaderControl({document:actor},controls);
- assert.equal(controls.length,1);assert.equal(controls[0].name,"Make Merchant - DT");
+ assert.equal(controls.length,1);assert.equal(controls[0].name,"Devils Table: Make merchant");
  assert.equal(controls[0].callback().actor,actor);
- assert.equal(controls[0].label,"Make Merchant - DT");
+ assert.equal(controls[0].label,"Devils Table: Make merchant");
  const legacy=[{label:"Existing",action:"existing"}];addMerchantHeaderControl({document:actor},legacy);
  assert.equal(legacy[1].icon,"fa-solid fa-store");assert.equal(legacy[1].onClick().actor,actor);
  for(const key of ["entryId","documentId","actorId"]) assert.equal(entryActor({dataset:{[key]:actor.id}}),actor);

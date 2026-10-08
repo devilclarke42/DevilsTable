@@ -6,12 +6,12 @@ Merchant Type and Settlement now have separate controls. Both content builders s
 
 ## Blacksmith — alpha.17
 
-Blacksmith stock, nine services and five presets are available. Open **Make Merchant - DT**, select a smith preset, then preview stock and funds. Item-required services use a character inventory selector in the basket. See [Blacksmith Guide](docs/BLACKSMITH_GUIDE.md) for scope, pricing, manual completion and live checks.
+Blacksmith stock, nine services and five presets are available. Open **Devils Table: Make merchant**, select a smith preset, then preview stock and funds. Item-required services use a character inventory selector in the basket. See [Blacksmith Guide](docs/BLACKSMITH_GUIDE.md) for scope, pricing, manual completion and live checks.
 
 
 ## Current workflow — alpha.17
 
-Open a world NPC sheet → **Devil's Table** (store icon) to configure or enable its merchant settings. Use **Make Merchant - DT** in the sheet’s three-dot menu or the Actor Directory context menu for generation and presets. Enabled merchants have a small GM-only Directory badge.
+Open a world NPC sheet → **Devil's Table** (store icon) to configure or enable its merchant settings. Use **Devils Table: Make merchant** in the sheet’s three-dot menu or the Actor Directory context menu for generation and presets. Enabled merchants have a small GM-only Directory badge.
 
 Content builders now use compact selectors, generation summaries and collapsed guidance. Native player interaction rolls use optional Dice So Nice presentation automatically when available. See [GM workflows and acceptance](docs/UX_WORKFLOWS.md). Live Foundry/Forge acceptance remains pending.
 

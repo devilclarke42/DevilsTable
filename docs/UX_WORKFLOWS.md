@@ -6,7 +6,7 @@ Sprint 12A, candidate `0.3.0-alpha.15`. Target: Foundry V14 and D&D5e 5.3.3.
 
 Open a world NPC's standard D&D5e sheet and select the store icon labelled **Devil's Table**. Set **Merchant enabled**, catalogue, economic profile, settlement, prosperity, availability, pricing, room checkout time and restock preference. Click **Save Merchant Settings**. Changes stay local until saved. Disabling keeps native inventory, currency, relationships, notes and history and removes access from existing linked tokens.
 
-The sheet’s three-dot menu and Actor Directory context menu offer **Make Merchant - DT**, opening the existing Builder for that Actor. Enabled merchants have a small store badge in the GM's Actor Directory. Conversion remains subject to active-GM authority and transaction locks.
+The sheet’s three-dot menu and Actor Directory context menu offer **Devils Table: Make merchant**, opening the existing Builder for that Actor. Enabled merchants have a small store badge in the GM's Actor Directory. Conversion remains subject to active-GM authority and transaction locks.
 
 The tab links directly to the Builder's Services tab for offerings, room mappings and optional integrations. World tools are collapsed under **World tools and integrations**. Use the Builder for reusable presets, generation previews, stock, cash, identity, notes, advanced trading and recovery. Actor biography, portrait, ownership, items and wallet remain native.
 

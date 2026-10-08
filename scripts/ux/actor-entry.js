@@ -6,6 +6,7 @@ import { RollTableBuilderApplication } from "../apps/roll-table-builder-app.js";
 import { npcConfiguration, configurationChoices, saveNpcConfiguration } from "./npc-configuration.js";
 
 export const supportedNpc = actor => Boolean(game.user?.isGM && actor?.type === "npc" && !actor.pack && !actor.isToken);
+const MAKE_MERCHANT_LABEL = "Devils Table: Make merchant";
 const enabled = actor => actor.getFlag(MODULE_ID, "merchant")?.enabled === true;
 const rootElement = html => html?.querySelector ? html : html?.[0];
 const generations = new WeakMap();
@@ -79,15 +80,22 @@ export function addMerchantHeaderControl(app, controls) {
   const legacy = Number(game.release?.generation ?? 14) < 14
     || controls.some(control => "label" in control && !("name" in control));
   controls.push({
-    action: "dtMakeMerchant", name: "Make Merchant - DT", label: "Make Merchant - DT",
+    action: "dtMakeMerchant", name: MAKE_MERCHANT_LABEL, label: MAKE_MERCHANT_LABEL,
     icon: legacy ? "fa-solid fa-store" : '<i class="fa-solid fa-store"></i>',
     visible, condition: visible, onClick: open, callback: open
   });
 }
 export function addActorContext(_application, menu) {
-  if (!game.user?.isGM) return;
-  menu.push({ name: "Make Merchant - DT", icon: '<i class="fa-solid fa-store"></i>',
-    condition: element => supportedNpc(entryActor(element)), callback: element => openNpcBuilder(entryActor(element)) });
+  if (!game.user?.isGM || menu.some(entry => entry.action === "dtMakeMerchant")) return;
+  const visible = element => supportedNpc(entryActor(element));
+  const open = element => openNpcBuilder(entryActor(element));
+  menu.push({
+    action: "dtMakeMerchant", label: MAKE_MERCHANT_LABEL, name: MAKE_MERCHANT_LABEL,
+    icon: '<i class="fa-solid fa-store"></i>',
+    // V14 passes the context target as the second onClick argument.
+    visible, onClick: (_event, target) => open(target),
+    condition: visible, callback: open
+  });
 }
 export function renderMerchantBadges(_app, html) {
   const root = rootElement(html); if (!root) return;
