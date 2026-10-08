@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.3.0-alpha.24 — Actors sidebar entry
+
+- Connected the context-aware merchant actions to the Actor Directory's application-specific right-click hook as well as the document hook.
+- Both paths share the same handler and suppress duplicate entries. Added a sidebar hook regression check; live Foundry verification remains required.
+
 ## 0.3.0-alpha.23 — Sprint 14
 
 ### Changed

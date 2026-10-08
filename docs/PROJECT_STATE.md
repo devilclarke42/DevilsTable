@@ -1,5 +1,10 @@
 # Project state
 
+## 0.3.0-alpha.24 — Actors sidebar entry
+
+- Connected the context-aware merchant actions to the Actor Directory's application-specific right-click hook as well as the document hook.
+- Both paths share the same handler and suppress duplicate entries. Added a sidebar hook regression check; live Foundry verification remains required.
+
 ## Sprint 14 — Daily merchant workflow (alpha.23)
 
 Right-click a world NPC in the Actors sidebar. **Convert to Merchant** enables merchant flags and opens Setup; **Open Merchant Builder** appears for enabled merchants and opens their existing configuration. The sheet header menu and Devil's Table tab use the same terminology. Player characters, compendium entries, unlinked synthetic Actors and player users are excluded.

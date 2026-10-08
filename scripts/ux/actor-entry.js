@@ -140,6 +140,9 @@ export function registerActorEntry() {
   Hooks.on("renderActorSheetV2", (app, html) => { void renderNpcMerchantTab(app, html).catch(error => console.error("Devil's Table NPC tab", error)); });
   Hooks.on("getHeaderControlsApplicationV2", addMerchantHeaderControl);
   Hooks.on("getActorContextOptions", addActorContext);
+  // Actor Directory entry menus also use the application-specific sidebar hook.
+  // The shared handler deduplicates entries when both hooks fire.
+  Hooks.on("getActorDirectoryEntryContext", addActorContext);
   Hooks.on("renderActorDirectory", renderMerchantBadges);
   Hooks.on("renderTokenTab", renderMerchantBadges);
   Hooks.on("updateActor", refreshMerchantIndicators);

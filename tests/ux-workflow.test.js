@@ -135,3 +135,18 @@ test("directory conversion preserves native data and private history, then switc
  game.user.isGM=false;assert.equal(menu.some(row=>row.visible(target)),false);
  await menu[0].onClick({},target);assert.deepEqual(actor.flags,flags);
 });
+
+
+test("Actors sidebar hook supplies context-aware actions without duplicating document-hook entries", async()=>{
+ const actor=world();game.actors.get=id=>game.actors.find(row=>row.id===id);
+ const handlers=new Map();globalThis.Hooks={on:(name,handler)=>handlers.set(name,handler)};
+ const {registerActorEntry}=await import("../scripts/ux/actor-entry.js");registerActorEntry();
+ const menu=[];handlers.get("getActorDirectoryEntryContext")({},menu);
+ handlers.get("getActorContextOptions")({},menu);
+ assert.equal(menu.length,2);
+ const row={dataset:{documentId:actor.id}};
+ assert.deepEqual(menu.filter(entry=>entry.condition(row)).map(entry=>entry.name),["Open Merchant Builder"]);
+ await actor.setFlag(ns,"merchant.enabled",false);
+ assert.deepEqual(menu.filter(entry=>entry.condition(row)).map(entry=>entry.name),["Convert to Merchant"]);
+ game.user.isGM=false;const denied=[];handlers.get("getActorDirectoryEntryContext")({},denied);assert.deepEqual(denied,[]);
+});
