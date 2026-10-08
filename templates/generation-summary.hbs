@@ -1,7 +1,12 @@
-<section class="dt-generation-summary" aria-label="Generation summary">
-  <h3>Generation Summary</h3>
-  <dl><div><dt>Catalogues</dt><dd>{{summary.catalogues}}</dd></div><div><dt>Categories with products</dt><dd>{{summary.categories}}</dd></div>
-    <div><dt>Unique products</dt><dd>{{summary.products}}</dd></div><div><dt>Catalogue services (reference)</dt><dd>{{summary.services}}</dd></div>
-    <div><dt>RollTables to inspect</dt><dd>{{#if summary.tables}}{{summary.tables}}{{else}}Not built here{{/if}}</dd></div></dl>
-  <p>{{summary.duration}}</p>
+<section class="dt-generation-summary" aria-label="Build preview">
+  <h3>Build Preview</h3>
+  <dl>
+    <div><dt>Merchant Type</dt><dd>{{summary.merchantType}}</dd></div>
+    <div><dt>Settlement</dt><dd>{{summary.settlement}}</dd></div>
+    <div><dt>Categories</dt><dd>{{summary.categories}}</dd></div>
+    <div><dt>Products</dt><dd>{{summary.products}}</dd></div>
+    <div><dt>Services (reference)</dt><dd>{{summary.services}}</dd></div>
+    <div><dt>Roll Tables</dt><dd>{{summary.tables}}</dd></div>
+  </dl>
+  <p><strong>Estimated Build Time:</strong> {{summary.duration}}</p>
 </section>

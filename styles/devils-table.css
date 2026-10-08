@@ -141,3 +141,12 @@
 .dt-npc-tab label:has(input[type=checkbox]) { flex-direction:row; align-items:center; }
 
 .dt-merchant-badge { display:inline-flex; align-items:center; gap:0.25em; margin-inline-start:0.4rem; padding:0.1em 0.35em; border:1px solid currentColor; border-radius:3px; font-size:0.7rem; line-height:1.3; flex:0 0 auto; color:var(--color-text-primary); pointer-events:none; }
+
+/* Shared builder filter grid: native selects scale without a growing checkbox wall. */
+.devils-table .dt-builder-selection label { min-width:0; align-self:end; }
+.devils-table .dt-builder-selection select { text-overflow:ellipsis; }
+.devils-table .dt-builder-selection legend { font-weight:600; }
+.devils-table .dt-builder > details { margin-block:0.55rem; }
+.devils-table .dt-generation-summary dl { display:grid; grid-template-columns:repeat(auto-fit,minmax(145px,1fr)); }
+.devils-table .dt-generation-summary dd { overflow-wrap:anywhere; }
+.devils-table .dt-merchant-builder-fields label { min-width:0; }

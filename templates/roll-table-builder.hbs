@@ -6,12 +6,18 @@
     <pre class="dt-warning" role="alert">{{catalogueError}}</pre>
   {{else}}
     <fieldset class="dt-builder-selection" {{#if busy}}disabled{{/if}}><legend>Build scope</legend>
-      <label>Catalogue<select data-builder-select="shop"><option value="" {{#if allShops}}selected{{/if}}>All catalogues</option>{{#each shops}}<option value="{{id}}" {{#if selected}}selected{{/if}}>{{name}}</option>{{/each}}</select></label>
-      {{#if hasVariants}}<label>Stock profile<select data-builder-select="profile"><option value="" {{#if allProfiles}}selected{{/if}}>All profiles</option>{{#each profileChoices}}<option value="{{id}}" {{#if selected}}selected{{/if}}>{{name}}</option>{{/each}}</select></label>{{/if}}
-      <label>Category (stock rolls / legacy cleanup only)<select data-builder-select="category"><option value="" {{#if allCategories}}selected{{/if}}>All categories</option>{{#each categories}}<option value="{{id}}" {{#if selected}}selected{{/if}}>{{name}} · {{count}} products</option>{{/each}}</select></label>
+      <label>Merchant Type<select data-builder-select="shop"><option value="" {{#if allShops}}selected{{/if}}>All Merchant Types</option>{{#each shops}}<option value="{{id}}" {{#if selected}}selected{{/if}}>{{name}}</option>{{/each}}</select></label>
+      <label>Settlement<select data-builder-select="settlement">{{#each settlements}}<option value="{{id}}" {{#if selected}}selected{{/if}}>{{name}}</option>{{/each}}</select></label>
     </fieldset>
+    <details><summary>Advanced filters</summary>
+    <fieldset class="dt-builder-selection" {{#if busy}}disabled{{/if}}><legend>Stock scope</legend>
+      {{#if hasVariants}}<label>Stock profile<select data-builder-select="profile"><option value="" {{#if allProfiles}}selected{{/if}}>All profiles</option>{{#each profileChoices}}<option value="{{id}}" {{#if selected}}selected{{/if}}>{{name}}</option>{{/each}}</select></label>{{/if}}
+      <label><span title="Filters stock suggestions and legacy category-table cleanup only. Modern table builds share category pools and do not need this field.">Legacy Category <i class="fa-solid fa-circle-info" aria-hidden="true"></i></span><select data-builder-select="category"><option value="" {{#if allCategories}}selected{{/if}}>All categories</option>{{#each categories}}<option value="{{id}}" {{#if selected}}selected{{/if}}>{{name}} · {{count}} products</option>{{/each}}</select></label>
+    </fieldset>
+    </details>
     {{> "modules/devils-table/templates/generation-summary.hbs"}}
     <p><strong>{{scopeLabel}}</strong> — {{tableCount}} tables in {{setCount}} sets.</p>
+    {{#unless setCount}}<p role="status">No stock profiles match this settlement. Select All Settlements or another settlement.</p>{{/unless}}
     <p>Each set: Always Stock, Often Stock, Rarely Stock and Rotating Stock.</p>
     <p>Builds create four tables per stock profile. Category rolls filter those shared tables; no category tables are needed. Select one profile to roll stock.</p>
     <p>Rotating draws: Often {{oftenChance}}% · Rarely {{rarelyChance}}% · No extra stock {{noneChance}}%. Empty or exhausted tiers add no item.</p>

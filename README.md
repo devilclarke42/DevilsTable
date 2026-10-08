@@ -1,5 +1,9 @@
 # Devil's Table: Trade & Merchants
 
+## Builder refinement — alpha.21
+
+Merchant Type and Settlement now have separate controls. Both content builders share a compact Build Preview; RollTable profile and legacy controls live under Advanced filters. Shared Item builds remain independent of settlement. See [Builder Guide](docs/BUILDER_GUIDE.md) for the workflow and scope rules.
+
 ## Blacksmith — alpha.17
 
 Blacksmith stock, nine services and five presets are available. Open **Make Merchant - DT**, select a smith preset, then preview stock and funds. Item-required services use a character inventory selector in the basket. See [Blacksmith Guide](docs/BLACKSMITH_GUIDE.md) for scope, pricing, manual completion and live checks.

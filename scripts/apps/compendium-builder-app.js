@@ -1,9 +1,10 @@
-import { generationSummary, bindBuilderSelectors } from "../ux/builder-summary.js";
+import { economyPolicy } from "../merchant/economy.js";
+import { generationSummary, bindBuilderSelectors, builderFilters } from "../ux/builder-summary.js";
 import { definitions } from "../services/offers.js";
 import { MODULE_ID } from "../constants.js";
 import { rebuildCompendiums } from "../builders/compendium-builder.js";
 import { logger } from "../core/logger.js";
-import { loadCatalogue } from "../data/catalogue-loader.js";
+import { loadStockCatalogue as loadCatalogue } from "../data/stock-loader.js";
 import { validateCatalogue } from "../validation/catalogue-validator.js";
 import { shopView } from "../data/shop-catalogue.js";
 import { escapeHtml } from "../builders/item-factory.js";
@@ -36,6 +37,7 @@ export class CompendiumBuilderApplication extends HandlebarsApplicationMixin(App
   _onRender(context, options) {
     super._onRender?.(context, options);
     bindBuilderSelectors(this, {
+      settlement: async value => { if (this.#busy) return; this.#scope.settlement = value || null; await this.render(); },
       shop: value => CompendiumBuilderApplication.#onSelectShop.call(this, null, {dataset: {shop:value}}),
       category: value => CompendiumBuilderApplication.#onSelectCategory.call(this, null, {dataset: {category:value}})
     });
@@ -52,7 +54,9 @@ export class CompendiumBuilderApplication extends HandlebarsApplicationMixin(App
         this.#catalogue = data;
       }
       view = shopView(this.#catalogue, this.#scope);
+      Object.assign(view, builderFilters(this.#catalogue, await economyPolicy(), this.#scope));
       view.summary = generationSummary(this.#catalogue, this.#scope, definitions().list());
+      view.summary.settlement = view.settlementLabel;
     } catch (error) { catalogueError = error.message; }
     return {
       ...await super._prepareContext(options),
@@ -69,7 +73,7 @@ export class CompendiumBuilderApplication extends HandlebarsApplicationMixin(App
 
   static async #onSelectShop(_event, target) {
     if (this.#busy) return;
-    this.#scope = { shopId: target.dataset.shop || null, categoryId: null };
+    this.#scope = { ...this.#scope, shopId: target.dataset.shop || null, categoryId: null };
     this.#report = "Selection changed. Preview to see the proposed changes for this selection.";
     await this.render();
   }

@@ -36,7 +36,7 @@ export async function saveNpcConfiguration(actor, state, values, enabled) {
 export function configurationChoices(state) {
   const { economy, policy } = state.context;
   return [
-    ["catalogueId", "Catalogue", catalogueRegistry.list()],
+    ["catalogueId", "Merchant Type", catalogueRegistry.list()],
     ["profile", "Economic profile", economy.profiles],
     ["settlement", "Settlement", economy.settlements],
     ["prosperity", "Prosperity", economy.prosperities],

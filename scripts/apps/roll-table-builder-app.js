@@ -1,4 +1,5 @@
-import { generationSummary, bindBuilderSelectors } from "../ux/builder-summary.js";
+import { economyPolicy } from "../merchant/economy.js";
+import { generationSummary, bindBuilderSelectors, builderFilters } from "../ux/builder-summary.js";
 import { definitions } from "../services/offers.js";
 import { MODULE_ID, TABLE_PACK_COLLECTION } from "../constants.js";
 import { loadStockCatalogue } from "../data/stock-loader.js";
@@ -15,7 +16,7 @@ const { ApplicationV2, HandlebarsApplicationMixin } = foundry.applications.api;
 /** Separate settings menu and window; the Item builder never implicitly writes RollTables. */
 export class RollTableBuilderApplication extends HandlebarsApplicationMixin(ApplicationV2) {
   #busy = false;
-  #scope = { shopId: "general-store", categoryId: null, profileId: "DT_TABLE_GS" };
+  #scope = { shopId: "general-store", categoryId: null, profileId: null, settlement: null };
   #report = "Build the Item compendium first. Preview the stock tables before building.";
   #data = null;
 
@@ -33,6 +34,7 @@ export class RollTableBuilderApplication extends HandlebarsApplicationMixin(Appl
   _onRender(context, options) {
     super._onRender?.(context, options);
     bindBuilderSelectors(this, {
+      settlement: async value => { if (this.#busy) return; this.#scope.settlement = value || null; this.#scope.profileId = null; await this.render(); },
       shop: value => RollTableBuilderApplication.#selectShop.call(this, null, {dataset: {shop:value}}),
       category: value => RollTableBuilderApplication.#selectCategory.call(this, null, {dataset: {category:value}}),
       profile: value => RollTableBuilderApplication.#selectProfile.call(this, null, {dataset: {profile:value}})
@@ -45,9 +47,12 @@ export class RollTableBuilderApplication extends HandlebarsApplicationMixin(Appl
     try {
       if (!this.#data) { this.#data = await loadStockCatalogue(); requireValidStock(this.#data); }
       view = shopView(this.#data, this.#scope);
-      const scopes = stockScopes(this.#data, this.#scope);
+      const filters = builderFilters(this.#data, await economyPolicy(), this.#scope);
+      Object.assign(view, filters);
+      const scopes = stockScopes(this.#data, {...this.#scope, profileIds: filters.profileIds});
       view.tableCount = scopes.length * 4;
       view.summary = generationSummary(this.#data, {...this.#scope,categoryId:null}, definitions().list(), view.tableCount);
+      view.summary.settlement = view.settlementLabel;
       view.setCount = scopes.length;
       if (scopes.length === 1) {
         const { profile, groups } = scopes[0];
@@ -59,8 +64,6 @@ export class RollTableBuilderApplication extends HandlebarsApplicationMixin(Appl
       view.oftenChance = this.#data.stock.oftenChance;
       view.rarelyChance = this.#data.stock.rarelyChance;
       view.noneChance = 100 - view.oftenChance - view.rarelyChance;
-      view.profileChoices = stockProfiles(this.#data).filter(profile => profile.shop === this.#scope.shopId)
-        .map(profile => ({ id: profile.id, name: profile.name, selected: profile.id === this.#scope.profileId }));
       view.hasVariants = view.profileChoices.length > 1;
       view.allProfiles = !this.#scope.profileId;
       view.profiles = scopes.map(({ profile }) => ({
@@ -69,7 +72,7 @@ export class RollTableBuilderApplication extends HandlebarsApplicationMixin(Appl
       }));
     } catch (error) { this.#data = null; catalogueError = error.message; }
     return { ...await super._prepareContext(options), ...view, catalogueError, busy: this.#busy,
-      blocked: this.#busy || Boolean(catalogueError), rollBlocked: this.#busy || Boolean(catalogueError) || !this.#scope.shopId || view.setCount !== 1,
+      blocked: this.#busy || Boolean(catalogueError) || !view.setCount, rollBlocked: this.#busy || Boolean(catalogueError) || !this.#scope.shopId || view.setCount !== 1,
       report: this.#report, lastBuild: game.settings.get(MODULE_ID, "lastTableBuildSummary") || "No table builds recorded.",
       lastCleanup: game.settings.get(MODULE_ID, "lastTableCleanupSummary") || "No legacy cleanup recorded." };
   }
@@ -77,8 +80,7 @@ export class RollTableBuilderApplication extends HandlebarsApplicationMixin(Appl
   static async #selectShop(_event, target) {
     if (this.#busy) return;
     const shopId = target.dataset.shop || null;
-    this.#scope = { shopId, categoryId: null,
-      profileId: this.#data?.stock.profiles.find(profile => profile.shop === shopId)?.id ?? null };
+    this.#scope = { ...this.#scope, shopId, categoryId: null, profileId: null };
     this.#report = "Selection changed. Preview the selected stock tables.";
     await this.render();
   }
@@ -105,6 +107,13 @@ export class RollTableBuilderApplication extends HandlebarsApplicationMixin(Appl
     const scope = { ...this.#scope };
     try {
       await this.render();
+      scope.profileIds = builderFilters(this.#data, await economyPolicy(), scope).profileIds;
+      const selected = stockScopes(this.#data, scope);
+      if (!selected.length) throw Error("No stock profiles match these filters. Choose another settlement or All Settlements.");
+      if (mode === "stock") {
+        if (selected.length !== 1) throw Error("Select one stock profile to roll stock.");
+        scope.profileId = selected[0].profile.id;
+      }
       if (mode === "build") {
         const confirmed = await foundry.applications.api.DialogV2.confirm({
           window: { title: "Build stock RollTables?" },

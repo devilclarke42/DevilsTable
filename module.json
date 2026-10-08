@@ -2,7 +2,7 @@
   "id": "devils-table",
   "title": "Devil's Table: Trade & Merchants",
   "description": "Persistent NPC merchants, shared item catalogues and GM-approved trading for D&D 5e.",
-  "version": "0.3.0-alpha.20",
+  "version": "0.3.0-alpha.21",
   "socket": true,
   "compatibility": { "minimum": "14", "maximum": "14" },
   "authors": [{ "name": "Devil Clarke" }],

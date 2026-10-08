@@ -36,16 +36,18 @@ export function stockGroups(catalogue, profile, categoryId = null) {
 }
 
 /** Four tables per profile. Categories filter shared pools; legacy scopes exist only for cleanup. */
-export function stockScopes(catalogue, { shopId = null, categoryId = null, profileId = null } = {}, { legacyCategories = false } = {}) {
+export function stockScopes(catalogue, { shopId = null, categoryId = null, profileId = null, profileIds = null } = {}, { legacyCategories = false } = {}) {
   selectEntries(catalogue, { shopId, categoryId }); // Reuse the public filter guards.
   const profiles = stockProfiles(catalogue);
   if (profileId && !profiles.some(profile => profile.id === profileId && (!shopId || profile.shop === shopId))) {
     throw new Error(`Unknown stock profile selection: ${profileId}.`);
   }
+  if (profileIds !== null && (!Array.isArray(profileIds) || profileIds.some(id => !profiles.some(row => row.id === id)))) throw Error("Unknown stock profile selection.");
   const scopes = [];
   for (const profile of profiles) {
     if (shopId && profile.shop !== shopId) continue;
     if (profileId && profile.id !== profileId) continue;
+    if (profileIds && !profileIds.includes(profile.id)) continue;
     if (legacyCategories && profile.isVariant) continue;
     const categories = legacyCategories
       ? profile.categories.filter(id => !categoryId || id === categoryId) : [null];

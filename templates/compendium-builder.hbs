@@ -2,14 +2,16 @@
   <h2>Build/Rebuild Compendiums</h2>
   <p>Foundry V14 · D&D5e 5.3.3 · 2014 rules · adjusted weights in pounds.</p>
   <p>The source catalogue defines every generated item. Multiple shop tags do not create duplicate items.</p>
-  <p>Choose one catalogue or all catalogues. Preview validates source data and reports creates, updates and preserved entries. Services are shown for reference; use the Stock RollTable Builder for tables.</p>
+  <p>Choose a Merchant Type or All Merchant Types. Preview validates source data and reports creates, updates and preserved entries. Services are shown for reference; use the Stock RollTable Builder for tables.</p>
   {{#if catalogueError}}
     <pre class="dt-warning" role="alert">{{catalogueError}}</pre>
   {{else}}
     <fieldset class="dt-builder-selection" {{#if busy}}disabled{{/if}}><legend>Build scope</legend>
-      <label>Catalogue<select data-builder-select="shop"><option value="" {{#if allShops}}selected{{/if}}>All catalogues</option>{{#each shops}}<option value="{{id}}" {{#if selected}}selected{{/if}}>{{name}}</option>{{/each}}</select></label>
+      <label>Merchant Type<select data-builder-select="shop"><option value="" {{#if allShops}}selected{{/if}}>All Merchant Types</option>{{#each shops}}<option value="{{id}}" {{#if selected}}selected{{/if}}>{{name}}</option>{{/each}}</select></label>
+      <label>Settlement<select data-builder-select="settlement">{{#each settlements}}<option value="{{id}}" {{#if selected}}selected{{/if}}>{{name}}</option>{{/each}}</select></label>
       <label>Category<select data-builder-select="category"><option value="" {{#if allCategories}}selected{{/if}}>All categories</option>{{#each categories}}<option value="{{id}}" {{#if selected}}selected{{/if}}>{{name}} · {{count}} products</option>{{/each}}</select></label>
     </fieldset>
+    <p>Settlement is preview context only: the shared Item catalogue is identical across settlements. Use the RollTable Builder to filter settlement stock profiles.</p>
     {{> "modules/devils-table/templates/generation-summary.hbs"}}
     {{#if shop}}
       <details class="dt-merchant-notes">

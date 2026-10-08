@@ -1,0 +1,36 @@
+import test from "node:test";
+import assert from "node:assert/strict";
+import { readJson, fakeAdapter } from "./helpers.js";
+import { loadStockCatalogue } from "../scripts/data/stock-loader.js";
+import { builderFilters, generationSummary } from "../scripts/ux/builder-summary.js";
+import { stockScopes } from "../scripts/data/stock-catalogue.js";
+import { createStockTableBuilder } from "../scripts/builders/roll-table-builder.js";
+const data = await loadStockCatalogue({readJson});
+const economy = await readJson("data/economy.json");
+test("business and settlement filters intersect without changing catalogue Items", () => {
+ const scope={shopId:"blacksmith",settlement:"town"};
+ const filters=builderFilters(data,economy,scope);
+ assert.deepEqual(filters.profileIds,["DT_TABLE_BSM_TOWN","DT_TABLE_BSM_MILITARY"]);
+ assert.equal(stockScopes(data,{...scope,profileIds:filters.profileIds}).length,2);
+ assert.equal(generationSummary(data,scope).products,generationSummary(data,{shopId:"blacksmith"}).products);
+ assert.equal(filters.settlements.length,6);
+ assert.equal(filters.shops.find(row=>row.id==="blacksmith").name,"Blacksmith");
+ assert.equal(builderFilters(data,economy,{settlement:null}).profileIds.length,17);
+ assert.equal(builderFilters(data,economy,{settlement:"large-city"}).profileIds.length,0);
+ assert.equal(stockScopes(data,{profileIds:[]}).length,0);
+ assert.throws(()=>builderFilters(data,economy,{settlement:"bad"}),/Unknown settlement/);
+ assert.throws(()=>stockScopes(data,{profileIds:["bad"]}),/Unknown stock profile/);
+});
+test("settlement-scoped table builds preserve other profiles and converge", async()=>{
+ const io=fakeAdapter();
+ const build=createStockTableBuilder({load:async()=>data,adapter:io.adapter});
+ const filters=builderFilters(data,economy,{shopId:"blacksmith",settlement:"town"});
+ const result=await build({dryRun:true,shopId:"blacksmith",profileIds:filters.profileIds});
+ assert.equal(result.count,8);
+ const written=await build({dryRun:false,shopId:"blacksmith",profileIds:filters.profileIds});
+ assert.equal(written.count,8);
+ const repeat=await build({dryRun:false,shopId:"blacksmith",profileIds:filters.profileIds});
+ assert.equal(repeat.unchanged,8);
+ const empty=await build({dryRun:true,profileIds:[]});
+ assert.equal(empty.count,0);
+});

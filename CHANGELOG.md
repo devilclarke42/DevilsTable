@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.3.0-alpha.21 — 2026-10-08
+
+### Changed
+- Separate Merchant Type and Settlement filters in content builders; consistent terminology in Merchant Builder and NPC configuration.
+- Compact shared Build Preview, advanced stock filters, concise Legacy Category tooltip and responsive alignment.
+- Settlement-scoped RollTable preview/build/cleanup preserve existing IDs; no new tables or gameplay systems.
+- Updated Builder Guide, architecture, README and project state. Live Foundry layout verification remains a GM check.
+
 This file retains detailed repository build history. The official milestone/release record is
 [docs/CHANGELOG.md](docs/CHANGELOG.md). Versions here do not imply a public GitHub Release exists.
 

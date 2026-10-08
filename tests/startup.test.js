@@ -74,8 +74,8 @@ test("startup registers a restricted V2 menu and a read-only-default API without
   const StockApp = menus.find(menu => menu.key === "stockTableBuilder").config.type;
   const stockApp = new StockApp();
   const stockContext = await stockApp._prepareContext({});
-  assert.equal(stockContext.tableCount, 4);
-  assert.equal(stockContext.setCount, 1);
+  assert.equal(stockContext.tableCount, 16);
+  assert.equal(stockContext.setCount, 4);
   assert.equal(stockContext.oftenChance, 80);
   assert.equal(stockContext.rarelyChance, 15);
   assert.ok(StockApp.DEFAULT_OPTIONS.actions.rollStock);
@@ -95,7 +95,7 @@ test("startup registers a restricted V2 menu and a read-only-default API without
   assert.equal((await stockApp._prepareContext({})).rollBlocked, true);
   await StockApp.DEFAULT_OPTIONS.actions.selectShop.call(stockApp, null, { dataset: { shop: "general-store" } });
   await StockApp.DEFAULT_OPTIONS.actions.selectCategory.call(stockApp, null, { dataset: { category: "travel" } });
-  assert.equal((await stockApp._prepareContext({})).tableCount, 4);
+  assert.equal((await stockApp._prepareContext({})).tableCount, 16);
   globalThis.fetch = async () => ({ ok: false, status: 404 });
   const failed = await new App()._prepareContext({});
   assert.equal(failed.blocked, true);

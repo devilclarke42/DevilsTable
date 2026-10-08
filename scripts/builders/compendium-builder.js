@@ -12,7 +12,7 @@ export function createBuilder({ load = loadCatalogue, adapter = null, now = () =
   prepare = null, collection = PACK_COLLECTION, planner = planBuild, verificationError = readBackError,
   adapterFactory = createFoundryAdapter } = {}) {
   let busy = false;
-  return async function rebuild({ dryRun = true, onProgress = () => {}, shopId = null, categoryId = null, profileId = null } = {}) {
+  return async function rebuild({ dryRun = true, onProgress = () => {}, shopId = null, categoryId = null, profileId = null, profileIds = null } = {}) {
     if (busy) throw new Error("A Devil's Table build is already running in this client.");
     busy = true;
     // Progress observers must not be able to interrupt persistence or lock restoration.
@@ -34,8 +34,8 @@ export function createBuilder({ load = loadCatalogue, adapter = null, now = () =
         error.details = validation.errors;
         throw error;
       }
-      if (profileId && !prepare) throw new Error("Stock profile selection applies only to the RollTable builder.");
-      const scope = { shopId, categoryId, ...(profileId ? { profileId } : {}) };
+      if ((profileId || profileIds !== null) && !prepare) throw new Error("Stock profile selection applies only to the RollTable builder.");
+      const scope = { shopId, categoryId, ...(profileId ? { profileId } : {}), ...(profileIds !== null ? { profileIds } : {}) };
       const prepared = prepare ? await prepare(catalogue, scope) : null;
       const documents = prepared?.documents ?? selectEntries(catalogue, { shopId, categoryId }).map(({ item }) => catalogueEntryToItem(item));
       progress(`Preflighting ${documents.length} documents…`);

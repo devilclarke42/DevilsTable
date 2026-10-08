@@ -22,8 +22,8 @@
 <fieldset {{#if busy}}disabled{{/if}}><legend>Merchant configuration</legend>
       <div class="dt-merchant-builder-fields">
         {{#each selects}}<label>{{label}} <select name="{{key}}" data-config>{{#each choices}}<option value="{{id}}" {{#if selected}}selected{{/if}}>{{name}}</option>{{/each}}</select></label>{{/each}}
-        <label>Shop pricing modifier (%) <input data-config name="pricingModifier" type="number" min="-100" max="500" step="0.01" value="{{draft.pricingModifier}}"></label>
-        <label>Accommodation checkout time (HH:mm) <input data-config name="checkoutTime" value="{{draft.checkoutTime}}" placeholder="10:00" maxlength="7"></label>
+        <label>Pricing modifier (%) <input data-config name="pricingModifier" type="number" min="-100" max="500" step="0.01" value="{{draft.pricingModifier}}"></label>
+        <label><span title="Default accommodation checkout time, using HH:mm. The GM may override it at checkout.">Checkout time</span> <input data-config name="checkoutTime" value="{{draft.checkoutTime}}" placeholder="10:00" maxlength="7"></label>
         <label><input data-config name="infiniteFunds" type="checkbox" {{#if draft.infiniteFunds}}checked{{/if}}> Infinite Funds</label>
         <label><input data-config name="infiniteStock" type="checkbox" {{#if draft.infiniteStock}}checked{{/if}}> Infinite Stock</label>
       </div>
@@ -76,7 +76,7 @@
   </section>
   <section role="tabpanel" data-builder-panel="stock" {{#unless tabs.stock}}hidden{{/unless}}>
       <h3>Expected generation</h3>
-      <dl><dt>Stock size</dt><dd data-estimate="size"></dd><dt>Stock value</dt><dd data-estimate="value"></dd><dt>Initial float range</dt><dd data-estimate="cash"></dd><dt>Rare item probability</dt><dd data-estimate="rare"></dd><dt>Category distribution (expected goods)</dt><dd data-estimate="distribution"></dd></dl>
+      <dl><dt>Stock size</dt><dd data-estimate="size"></dd><dt>Stock value</dt><dd data-estimate="value"></dd><dt>Initial float range</dt><dd data-estimate="cash"></dd><dt>Rare item probability</dt><dd data-estimate="rare"></dd><dt>Category estimate</dt><dd data-estimate="distribution"></dd></dl>
       <p data-estimate="coverage"></p>
 
     <button type="button" data-action="generateStock" {{#if generationBlocked}}disabled{{/if}}>Generate / Regenerate Stock</button>

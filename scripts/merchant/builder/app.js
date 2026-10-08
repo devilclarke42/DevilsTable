@@ -69,7 +69,7 @@ export class MerchantBuilderApplication extends HandlebarsApplicationMixin(Appli
     if(this.actor?.type==="npc") {try{summary=await merchantSummary(this.actor,{policy:this.#context.economy,allowUnconverted:true});}catch(error){summaryError=error.message;}}
     const {economy,policy,catalogue}=this.#context, d=this.#draft;
     const selects=[
-      ["catalogueId","Catalogue",catalogueRegistry.list()],
+      ["catalogueId","Merchant Type",catalogueRegistry.list()],
       ["settlement","Settlement",economy.settlements],["prosperity","Prosperity",economy.prosperities],
       ["profile","Economic profile",economy.profiles],
       ["stockProfileId","Stock profile",[{id:"",name:"Automatic for settlement"},...stockProfiles(catalogue).filter(r=>r.shop===d.catalogueId)]],
