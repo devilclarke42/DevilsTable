@@ -1,176 +1,49 @@
-# Stock RollTables
+# Stock Tables
 
-Stock tables are generated from canonical JSON through their own settings button:
-**Configure Settings → Devil's Table → Build/Rebuild Stock RollTables → Open RollTable Builder**.
-The Item builder and table builder run separately. Build Items first so table references resolve.
+**Audience:** GMs, content authors and developers. **Purpose:** explain assortment, quantities and rebuild/cleanup boundaries.
 
-## Coverage
+## Profiles and identities
 
-Each merchant profile has one four-table set, for **32 active tables** in `world.devils-table-stock-tables`.
-Category selection filters these shared tables when rolling stock. It does not generate another set.
+Stock profiles live in `data/stock.json`. Each catalogue has a base profile; variants inherit its catalogue/policy and can change exclusions, overrides, attempts, tier odds, quantity caps and visibility rules. Four tables per profile are generated: Always, Often, Rarely and Rotating. Current source has 25 profiles / 100 active tables.
 
-| Shop | Authored goods | Always / Often / Rarely | Active tables | Whole-shop / category draws |
-| --- | ---: | --- | ---: | --- |
-| Tavern (shared only) | 31 | 25 / 6 / 0 | 4 | 10 / 3 |
-| Village General Store | 144 | 82 / 54 / 8 | 4 | 8 / 3 |
-| Town General Store | 144 | 87 / 49 / 8 | 4 | 14 / 4 |
-| City General Store | 144 | 90 / 53 / 1 | 4 | 22 / 6 |
-| Merchant Wagon | 133 | 66 / 59 / 8 | 4 | 6 / 2 |
-| Alchemist | 6 | 4 / 2 / 0 | 4 | 4 / 2 |
-| Blacksmith | 7 | 3 / 4 / 0 | 4 | 3 / 2 |
-| Black Market | 4 | 0 / 2 / 2 | 4 | 6 / 2 |
+Table IDs and result IDs derive from permanent source identities. Categories filter shared pools; there are no new category/quantity table sets. Old reservations remain in `data/table-id-ledger.json` even after reviewed cleanup. Display names never redefine a table UUID.
 
-Goods are shared references, not copies; the same item can appear in several shops. General Store
-has complete authored coverage. Tavern, Alchemist, Blacksmith and Black Market remain
-explicitly **partial**, containing their shared goods only. No unimplemented potions or weapons
-are invented to fill tables.
+## Assortment selection
 
-| Shop | Categories |
-| --- | --- |
-| Tavern | Seven shared-supply categories; dedicated menu categories are deferred |
-| General Store | All ten categories, including Tools and Trade Goods |
-| Alchemist | Containers; Lighting & Fire; Writing |
-| Blacksmith | Containers; Lighting & Fire; Rope & Climbing; Animal Supplies |
-| Black Market | Containers; Rope & Climbing; Travel |
+Product availability maps core→Always, variable→Often and special-order→Rarely, overridden per profile. Always selects every eligible core good once. Each rotating d100 attempt selects Often, Rarely or no additional stock; successful tier selection uniformly chooses one remaining eligible product. Empty/exhausted tiers consume attempts without promotion. Builder sampling avoids duplicates.
 
-## How stock works
+Default odds are 80% Often / 15% Rarely / 5% no extra stock. Optional profile `tierChances` replaces those defaults and must total at most 100. `draws` is the whole-assortment attempt count; category-filtered rolls use `categoryDraws`. Ordered `offerRules` match the first applicable tag and assign generic visibility to newly generated embedded offers. `quantityLimit` caps copies after scaling.
 
-| Table | Behavior |
-| --- | --- |
-| Always Stock | One 1d1 draw returns all its item results through overlapping 1–1 ranges. An empty tier returns a clear text result. |
-| Often Stock | Equal chance per item within the Often pool; use Rotating Stock to apply availability. |
-| Rarely Stock | Equal chance per item within the Rarely pool; use Rotating Stock to apply availability. |
-| Rotating Stock | 1d100: 1–80 draws Often, 81–95 draws Rarely, 96–100 adds no stock. An empty tier adds no item. |
+Fence profiles deliberately guarantee four practical products before rotating stock. Merchant Builder's Cautious Village/Poor preset makes six scaled attempts at 50% Often / 15% Rarely / 35% none, averaging about eight products including its core range. A one/two-copy cap does not mean only one/two products.
 
-The 80/15/5 probabilities and draw counts are initial project defaults for review, editable in
-`data/stock.json`. They describe each rotating attempt, not the chance that an individual item
-will appear across the entire stock list. More attempts increase the chance of rare goods.
-Always goods are included independently of those rolls. Availability means a product can be
-bought. The builder suggests quantities separately; the GM controls actual inventory and restock timing.
+## Merchant Builder scaling
 
-Default tiers come from item availability: `core` → Always, `variable` → Often, `special-order` →
-Rarely. Explicit local overrides make Lamp Oil Often at the Alchemist, Lockbox Often at the
-Blacksmith, and Lockbox/Silk Rope Often at the Black Market. Village keeps all source availability assignments. Town, City and Wagon apply
-their explicit overrides/exclusions; quantity profiles use the resulting effective tier. Merchant Notes remain builder guidance and never become table content.
+Choose a saved stock profile or resolve one from catalogue/settlement/economic profile. Settlement and prosperity percentages multiply base attempts, quantity scale and rare chance, with validated limits. The economic business profile affects cash separately. The estimate and actual roll use the same options; existing Actor source identities are excluded from expected additions.
 
-## Build and roll
+Rebuild current tables before rolling. Generation previews are read-only; application preserves existing identities and does not refill zero-stock entries. This is not an automatic restock scheduler.
 
-1. Build/rebuild the 144 active Items. Against a complete alpha.25 pack, expect 144 unchanged.
-   Against alpha.1, the deferred Tavern Items are preserved, not deleted. Tavern selection currently
-   contains 31 shared goods with the same canonical IDs.
-2. Open the separate RollTable Builder. Select **All shops → All categories**.
-3. **Validate / Preview Tables** should show 32 creates on a new pack, with partial-catalogue
-   notices for the four unfinished shops. Against alpha.1, rebuilding returns the four Tavern
-   tables to the shared-only policy. Preview performs no writes; review the changes before building.
-4. **Build / Rebuild Tables** creates the separate Stock RollTables compendium. Repeating the
-   same build should show 32 unchanged. A missing referenced Item blocks preflight with its ID.
-5. Select one shop and merchant profile, and optionally one category, then click **Roll Stock & Quantities**. The report
-   lists Always goods and rotating choices with quantities, prices and purchase units. All-shops and All-profiles selections
-   disable this action because a stock list belongs to one merchant profile.
+## Quantities
 
-**Roll Stock** reads and checks the built tables, rolls Foundry dice, and samples without duplicates.
-Each successful tier roll chooses one remaining eligible item from that tier. An empty/exhausted
-tier consumes an attempt without promoting a rare item; attempts stop early if both pools are
-exhausted. The action makes no chat messages, saved stock record, inventory changes, or table
-drawn-state changes. It refuses missing or outdated tables until they are rebuilt.
+After selection, one weighted d100 quantity roll uses the effective tier and canonical price band. `data/stock-quantities.json` defines the exact outcomes. Typical rule families are:
 
-For example, Village includes its 82 Always goods with up to eight distinct extras. City includes
-90 Always goods with up to twenty-two extras; Spyglass is its only Rarely good. Village Compass
-is Rarely, but City Compass is Often. Wagon excludes eleven bulky products before sampling.
-Category selection filters these same pools and uses the selected profile's category attempt count.
-
-General Store offers **All profiles** for building sixteen tables at once, or one named profile
-for building four. A category filter changes stock selection, not which table set is generated.
-Merchant Notes shown for Village, Town, City and Wagon remain private builder guidance.
-
-The API preserves base-profile defaults for existing callers and adds explicit variant selection:
-
-```js
-const api = game.modules.get("devils-table").api;
-await api.rebuildStockTables({ shopId: "general-store", profileId: "DT_TABLE_GS_CITY" }); // preview
-await api.rollStock({ shopId: "general-store", profileId: "DT_TABLE_GS_CITY", categoryId: "travel" });
-```
-
-Omitting `profileId` from a table build includes all selected shop profiles; omitting it from a
-stock roll uses that shop's base profile. Invalid cross-shop profile selections fail before writes.
-
-## Weighted quantities
-
-After assortment selection, each distinct good receives one d100 quantity roll. The effective
-shop tier and canonical price band select a profile in `data/stock-quantities.json`.
-
-| Effective tier | 1–9 cp | 1–9 sp | 1–24 gp | 25+ gp |
+| Tier | Everyday cp | Common sp | Equipment 1–24 gp | Specialist 25+ gp |
 | --- | --- | --- | --- | --- |
 | Always | Abundant | Common | Limited | Scarce |
 | Often | Common | Limited | Scarce | Scarce |
 | Rarely | Rare | Rare | Rare | Rare |
 
-| Profile | Quantity: probability | Expected sale units |
-| --- | --- | ---: |
-| Abundant | 4: 10%; 6: 20%; 8: 25%; 12: 30%; 20: 15% | 10.2 |
-| Common | 2: 10%; 3: 15%; 4: 30%; 6: 30%; 8: 15% | 4.85 |
-| Limited | 1: 15%; 2: 40%; 3: 30%; 4: 15% | 2.45 |
-| Scarce | 1: 65%; 2: 30%; 3: 5% | 1.4 |
-| Rare | 1: 95%; 2: 5% | 1.05 |
+Rare stock defaults to one unit at 95% and two at 5%. Rules require unique positive integral outcomes and 100 total weight; all tier/price pairs must resolve. Rare profiles cannot exceed two. More expensive/scarcer bands must not increase expected quantity. Profile caps and settlement scaling apply afterward within supported limits.
 
-These are weighted outcomes, not a uniform roll across the minimum/maximum. Broad price bands
-give a tendency rather than guaranteeing every cheap good outnumbers every expensive good.
-For example, core Torches use Abundant, core Hempen Rope uses Common, and a General Store Spyglass
-uses Rare. Four Pitons units mean four ten-piton bundles: 40 pitons, 4 × 5 sp and 4 × 2 lb.
-Quantity does not create extra compendium Items, change canonical price/weight, or write inventory.
+Units are whole sale units: four Pitons bundles means forty pitons. Quantity does not change the canonical per-unit price/weight. Native containers remain individual embedded documents when stocked/traded.
 
-Profile weights must total 100, outcomes must be unique positive whole quantities no greater than
-100, and all 12 tier/price combinations must resolve. Expected stock cannot rise with price or
-scarcity. Rare profiles must give one at least 90% of the time and never more than two; current
-defaults are 95%/5%. No quantity RollTable documents are generated.
+## Native table draws
 
-## Native Foundry draws
+Native Always tables intentionally use overlapping 1–1 ranges; **do not Normalize** them. Native Rotating uses authored tier odds and nested Item/pool UUIDs. Native draws can repeat goods and do not apply Builder quantity/visibility policies. Use Roll Stock or Merchant Builder for duplicate-free, quantity-aware suggestions. Imported world-table copies do not update during a later compendium rebuild.
 
-For Foundry's normal table controls, import the relevant **Always Stock** and **Rotating Stock**
-tables into the world. Draw Always once, then draw Rotating up to the suggested count. Nested
-results reference the generated compendium pools and return real Item references. Keep the Item
-and stock compendiums in the world so these UUIDs continue to resolve.
+## Safe cleanup
 
-Do **not Normalize Always Stock**: the shared 1–1 ranges deliberately return every core item.
-Native draws use replacement and can repeat goods; ignore repeated availability results or use
-the builder's duplicate-free Roll Stock action. Native chat output and drawn-state behavior are
-Foundry controls, separate from the builder action. Imported world-table copies are independent
-and are not refreshed by a later compendium rebuild.
-Native draws provide availability only. Use the builder for category filtering and weighted quantities.
+Normal builds preserve unmanaged and inactive documents. Legacy category cleanup is a separate preview/confirmed exact-ID deletion. It requires current compact tables and protects edited results/names, assigned folders, foreign flags and known table dependencies. Journal, Macro and other-compendium links are not fully scanned; inspect them and back up before deletion. An interrupted cleanup requires a fresh preview and reports partial removal rather than blindly restoring/redeleting.
 
-## Upgrade from alpha.5 or alpha.6
+## Related documents
 
-Normal builds retain all twenty existing whole-shop identities, update the three Village item
-pools and create twelve variant tables: 12 creates, 3 updates and 17 unchanged. A repeat build
-reports 32 unchanged active tables. Any of the 100 old category tables remain preserved.
-
-For cleanup, select **All shops → All categories → Preview Legacy Cleanup**. The report lists
-each proposed removal and protected table; confirm only after review and a world backup. Legacy
-comparison uses current canonical source. Older category names or memberships that no longer match
-are protected even if nobody edited them. The expanded catalogue therefore does not promise
-removal of all 100 historical tables; never bypass the protection to force a target count.
-
-Cleanup requires current compact tables and removes only exact, reserved legacy category tables
-whose generated fields still match. Edited results/names, assigned folders and foreign flags are
-protected. References from retained tables in this stock pack or from world RollTables protect
-the target and its dependency chain. **Journal, macro and other-compendium links are not scanned**;
-review those before confirming. Repeated cleanup does nothing once eligible tables are gone.
-Interrupted cleanup requires a fresh preview; the original pack lock is restored and a separate
-cleanup record reports success/failure. Ordinary rebuilding does not recreate retired category tables.
-
-## Source and rebuild policy
-
-Edit `data/stock.json` and `data/stock-quantities.json`. New merchant profiles require table reservations in
-`data/table-id-ledger.json`; new category filters do not. Retired IDs remain reserved forever.
-The [source contract](SOURCE_DATA.md) documents every field and identity rule. Build Items before
-tables when item identity, membership or names change. Never hand-edit generated pack data as source.
-
-Rebuilds update owned fields and result rows, including removing obsolete generated rows. Items
-are never deleted. Whole-table deletion happens only through the separately confirmed legacy cleanup.
-Unrelated tables, folders and foreign flags remain intact.
-Custom result rows in a selected generated table block the build; keep custom tables separate.
-If a build is interrupted, correct the reported error and rerun to converge. The pack's original
-lock state is restored; a newly created pack ends locked. Use one active-GM browser tab.
-
-Automated tests cover the stock rules and persistence boundary. Follow the
-[live acceptance checklist](TESTING.md) in V14 / D&D5e 5.3.3 on The Forge before declaring compatibility.
+[Builder Guide](BUILDER_GUIDE.md), [Merchant Standard](MERCHANT_STANDARD.md), [Public API](API_REFERENCE.md), [Release Process](RELEASE_PROCESS.md).

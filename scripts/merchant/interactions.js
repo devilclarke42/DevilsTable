@@ -26,7 +26,7 @@ export function interactionQuote(merchant, character, request, result) {
   const interaction = { kind: request.kind, ...result, modifier: percent(result.modifier ?? 0) };
   const basket = [];
   if (request.kind === "theft" && result.outcome === "success") {
-    const item = publicOffers(merchant).find(i => i.id === request.itemId);
+    const item = publicOffers(merchant, character).find(i => i.id === request.itemId);
     if (!item || item.quantity < 1) throw Error("The selected item is no longer available.");
     basket.push({ id: item.id, name: item.name, quantity: 1, direction: "buy", copper: 0, originalCopper: item.copper });
   }

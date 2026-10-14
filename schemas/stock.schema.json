@@ -210,6 +210,140 @@
                       }
                     }
                   }
+                },
+                "quantityLimit": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 100
+                },
+                "tierChances": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "often",
+                    "rarely"
+                  ],
+                  "properties": {
+                    "often": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 100
+                    },
+                    "rarely": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 100
+                    }
+                  }
+                },
+                "offerRules": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "tag",
+                      "visibility"
+                    ],
+                    "properties": {
+                      "tag": {
+                        "type": "string",
+                        "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+                      },
+                      "visibility": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "required": [
+                          "mode"
+                        ],
+                        "properties": {
+                          "mode": {
+                            "type": "string",
+                            "enum": [
+                              "public",
+                              "hidden",
+                              "relationship"
+                            ]
+                          },
+                          "minPurchases": {
+                            "type": "integer",
+                            "minimum": 1,
+                            "maximum": 1000000
+                          },
+                          "revealed": {
+                            "type": "boolean"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "quantityLimit": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 100
+          },
+          "tierChances": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "often",
+              "rarely"
+            ],
+            "properties": {
+              "often": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 100
+              },
+              "rarely": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 100
+              }
+            }
+          },
+          "offerRules": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "tag",
+                "visibility"
+              ],
+              "properties": {
+                "tag": {
+                  "type": "string",
+                  "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+                },
+                "visibility": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "mode"
+                  ],
+                  "properties": {
+                    "mode": {
+                      "type": "string",
+                      "enum": [
+                        "public",
+                        "hidden",
+                        "relationship"
+                      ]
+                    },
+                    "minPurchases": {
+                      "type": "integer",
+                      "minimum": 1,
+                      "maximum": 1000000
+                    },
+                    "revealed": {
+                      "type": "boolean"
+                    }
+                  }
                 }
               }
             }

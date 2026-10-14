@@ -1,0 +1,150 @@
+[
+  {
+    "id": "DT_ITEM_BMK_POISONERS_KIT",
+    "name": "Poisoner’s Kit",
+    "description": "Vials and preparation implements support work with poisons. Appropriate proficiency applies to relevant preparation and handling checks.\n\nUses the 2014 rules; the GM resolves applicability. Legality depends on the campaign.",
+    "saleUnit": "One poisoner’s kit",
+    "price": {
+      "value": 50,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 1.6,
+      "units": "lb",
+      "notes": "Adjusted carried weight for the complete stated sale unit, including its wrapping or supplied vessel."
+    },
+    "icon": "icons/consumables/potions/potion-tube-corked-red.webp",
+    "category": "poisons",
+    "tags": [
+      "black-market",
+      "mundane",
+      "tools",
+      "restricted"
+    ],
+    "shops": [
+      "black-market"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 (2014), Equipment; original wording and adjusted weight. See docs/FENCE_GUIDE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0; Original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "tool",
+      "native": {
+        "ability": "int",
+        "bonus": "",
+        "type": {
+          "value": "",
+          "baseItem": "pois"
+        },
+        "properties": [],
+        "activities": {
+          "dnd5eactivity000": {
+            "_id": "dnd5eactivity000",
+            "type": "check",
+            "activation": {
+              "type": "",
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "concentration": false,
+              "value": "",
+              "units": "inst",
+              "special": "",
+              "override": false
+            },
+            "effects": [],
+            "range": {
+              "units": "self",
+              "special": "",
+              "override": false
+            },
+            "target": {
+              "template": {
+                "count": "",
+                "contiguous": false,
+                "type": "",
+                "size": "",
+                "width": "",
+                "height": "",
+                "units": "ft"
+              },
+              "affects": {
+                "count": "",
+                "type": "",
+                "choice": false,
+                "special": ""
+              },
+              "prompt": true,
+              "override": false
+            },
+            "check": {
+              "ability": "int",
+              "dc": {}
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": []
+            },
+            "sort": 0
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_BMK_BASIC_POISON",
+    "name": "Basic Poison",
+    "description": "One vial coats one slashing or piercing weapon, or up to three pieces of ammunition, using an action. A hit requires a DC 10 Constitution save; failure adds 1d4 poison damage. The coating loses potency after one minute. Coating, saves and damage are resolved manually; using this Item consumes the vial only.\n\nUses the 2014 rules; the GM resolves applicability. Legality depends on the campaign.",
+    "saleUnit": "One vial of basic poison",
+    "price": {
+      "value": 100,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 0.1,
+      "units": "lb",
+      "notes": "Adjusted carried weight for the complete stated sale unit, including its wrapping or supplied vessel."
+    },
+    "icon": "icons/consumables/potions/potion-tube-corked-red.webp",
+    "category": "poisons",
+    "tags": [
+      "black-market",
+      "restricted",
+      "poison"
+    ],
+    "shops": [
+      "black-market"
+    ],
+    "availability": "special-order",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 (2014), Equipment; original wording and adjusted weight. See docs/FENCE_GUIDE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0; Original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "trinket",
+      "use": {
+        "mode": "consume",
+        "activation": "action",
+        "name": "Apply Basic Poison",
+        "condition": "Resolve coating, DC 10 Constitution save and 1d4 poison damage manually."
+      }
+    }
+  }
+]

@@ -1,4 +1,6 @@
-# Sprint 3 — Complete General Store review
+# General Store expansion content audit
+
+**Audience:** maintainers investigating content/asset provenance. **Purpose:** historical evidence only. This archived snapshot is not current installation, compatibility or balance guidance. Current values come from canonical JSON; use the [documentation index](../../README.md) for current workflows.
 
 **Candidate:** 0.2.0-alpha.7 · **Date:** 2026-09-25 · **Scope:** General Store only.
 
@@ -123,7 +125,7 @@ Always products are guaranteed. Each chosen product receives one weighted quanti
 on effective merchant tier and canonical price band. Rarely goods receive one sale unit 95% of
 the time and two 5% of the time. Thus Compass uses Rare quantities in Village and Scarce quantities
 in City; its canonical Item and price are identical. Quantity means complete sale units, including
-bundles and pairs. See [STOCK_TABLES.md](STOCK_TABLES.md) for the full distributions.
+bundles and pairs. See [STOCK_TABLES.md](../STOCK_TABLES.md) for the full distributions.
 
 Four tables per profile give sixteen General Store tables and 32 active module tables. Category
 filters and quantity rolls reuse those tables. Repeated references across different merchant
@@ -189,7 +191,7 @@ Install the candidate, rebuild Items, then use the separate RollTable settings b
 all profiles. Legacy cleanup remains a separate reviewed action. Because current source membership
 and two category labels changed, even unedited alpha.5 category tables may no longer match and
 will be protected. Only delete the eligible IDs shown by the preview; do not force a count of 32.
-Follow [TESTING.md](TESTING.md) for the pending live checklist and [RELEASE_PROCESS.md](RELEASE_PROCESS.md)
+Follow [TESTING.md](../TESTING.md) for the pending live checklist and [RELEASE_PROCESS.md](../RELEASE_PROCESS.md)
 before public release. The sprint stops here, before Tavern.
 
 ## Complete catalogue review
@@ -201,7 +203,7 @@ tags, provenance and mechanical mappings remain in the linked JSON source files.
 
 ### Containers
 
-Source: [containers.json](../data/items/general-store/containers.json).
+Source: [containers.json](../../data/items/general-store/containers.json).
 
 | Permanent ID | Name | Sale unit | Price | lb | Availability | Batch |
 | --- | --- | --- | ---: | ---: | --- | --- |
@@ -221,7 +223,7 @@ Source: [containers.json](../data/items/general-store/containers.json).
 
 ### Lighting & Fire
 
-Source: [fire-lighting.json](../data/items/general-store/fire-lighting.json).
+Source: [fire-lighting.json](../../data/items/general-store/fire-lighting.json).
 
 | Permanent ID | Name | Sale unit | Price | lb | Availability | Batch |
 | --- | --- | --- | ---: | ---: | --- | --- |
@@ -245,7 +247,7 @@ Source: [fire-lighting.json](../data/items/general-store/fire-lighting.json).
 
 ### Rope & Climbing
 
-Source: [rope-climbing.json](../data/items/general-store/rope-climbing.json).
+Source: [rope-climbing.json](../../data/items/general-store/rope-climbing.json).
 
 | Permanent ID | Name | Sale unit | Price | lb | Availability | Batch |
 | --- | --- | --- | ---: | ---: | --- | --- |
@@ -262,7 +264,7 @@ Source: [rope-climbing.json](../data/items/general-store/rope-climbing.json).
 
 ### Camping
 
-Source: [camping.json](../data/items/general-store/camping.json).
+Source: [camping.json](../../data/items/general-store/camping.json).
 
 | Permanent ID | Name | Sale unit | Price | lb | Availability | Batch |
 | --- | --- | --- | ---: | ---: | --- | --- |
@@ -290,7 +292,7 @@ Source: [camping.json](../data/items/general-store/camping.json).
 
 ### Writing
 
-Source: [writing.json](../data/items/general-store/writing.json).
+Source: [writing.json](../../data/items/general-store/writing.json).
 
 | Permanent ID | Name | Sale unit | Price | lb | Availability | Batch |
 | --- | --- | --- | ---: | ---: | --- | --- |
@@ -310,7 +312,7 @@ Source: [writing.json](../data/items/general-store/writing.json).
 
 ### Household
 
-Source: [household.json](../data/items/general-store/household.json).
+Source: [household.json](../../data/items/general-store/household.json).
 
 | Permanent ID | Name | Sale unit | Price | lb | Availability | Batch |
 | --- | --- | --- | ---: | ---: | --- | --- |
@@ -335,7 +337,7 @@ Source: [household.json](../data/items/general-store/household.json).
 
 ### Animal Supplies
 
-Source: [animal.json](../data/items/general-store/animal.json).
+Source: [animal.json](../../data/items/general-store/animal.json).
 
 | Permanent ID | Name | Sale unit | Price | lb | Availability | Batch |
 | --- | --- | --- | ---: | ---: | --- | --- |
@@ -354,7 +356,7 @@ Source: [animal.json](../data/items/general-store/animal.json).
 
 ### Travel
 
-Source: [travel.json](../data/items/general-store/travel.json).
+Source: [travel.json](../../data/items/general-store/travel.json).
 
 | Permanent ID | Name | Sale unit | Price | lb | Availability | Batch |
 | --- | --- | --- | ---: | ---: | --- | --- |
@@ -374,7 +376,7 @@ Source: [travel.json](../data/items/general-store/travel.json).
 
 ### Tools
 
-Source: [tools.json](../data/items/general-store/tools.json).
+Source: [tools.json](../../data/items/general-store/tools.json).
 
 | Permanent ID | Name | Sale unit | Price | lb | Availability | Batch |
 | --- | --- | --- | ---: | ---: | --- | --- |
@@ -397,7 +399,7 @@ Source: [tools.json](../data/items/general-store/tools.json).
 
 ### Trade Goods
 
-Source: [trade-goods.json](../data/items/general-store/trade-goods.json).
+Source: [trade-goods.json](../../data/items/general-store/trade-goods.json).
 
 | Permanent ID | Name | Sale unit | Price | lb | Availability | Batch |
 | --- | --- | --- | ---: | ---: | --- | --- |
@@ -412,4 +414,3 @@ Source: [trade-goods.json](../data/items/general-store/trade-goods.json).
 | `DT_ITEM_GS_PITCH` | Pitch | One half-pound wrapped block of wood pitch | 8 cp | 0.5 | variable | New |
 | `DT_ITEM_GS_DYE_CLOTH` | Cloth Dye | One two-ounce packet of ordinary textile dye | 2 sp | 0.125 | variable | New |
 | `DT_ITEM_GS_CLOTH_SILK` | Silk Cloth | One square yard of plain woven silk | 8 gp | 0.15 | special-order | New |
-

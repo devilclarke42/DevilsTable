@@ -21,6 +21,7 @@ function row(tableId, key, name, range, { uuid = null, icon = TABLE_ICON, itemId
 export function stockTableDocuments(catalogue, selection = {}, options = {}) {
   return stockScopes(catalogue, selection, options).flatMap(scope => {
     const { profile, categoryId, label, groups } = scope;
+    const chances=profile.tierChances??{often:catalogue.stock.oftenChance,rarely:catalogue.stock.rarelyChance};
     const draws = categoryId ? profile.categoryDraws : profile.draws;
     const ids = Object.fromEntries(STOCK_KINDS.map(kind => [kind, stockTableId(profile, categoryId, kind)]));
     const partial = profile.coverage === "partial" ? " This shop currently contains only authored shared goods, not a complete catalogue." : "";
@@ -33,13 +34,14 @@ export function stockTableDocuments(catalogue, selection = {}, options = {}) {
         formula = "1d100";
         let next = 1;
         results = [];
-        for (const [tier, chance] of [["often", catalogue.stock.oftenChance], ["rarely", catalogue.stock.rarelyChance]]) {
+        for (const [tier, chance] of [["often", chances.often], ["rarely", chances.rarely]]) {
+          if(!chance)continue;
           results.push(row(id, tier.toUpperCase(), groups[tier].length ? STOCK_LABELS[tier] : `No extra stock: no authored ${tier} goods`,
             [next, next + chance - 1], groups[tier].length ? { uuid: tableUuid(ids[tier]) } : {}));
           next += chance;
         }
         if (next <= 100) results.push(row(id, "NONE", "No extra stock", [next, 100]));
-        instructions = `Draw the Always Stock table once, then make up to ${draws} rotating draws. Often ${catalogue.stock.oftenChance}%; Rarely ${catalogue.stock.rarelyChance}%; otherwise no extra stock. Empty tiers give no extra stock. Repeated items do not imply extra quantity; stop when the available choices are exhausted. For a duplicate-free list, use Roll Stock in the builder.`;
+        instructions = `Draw the Always Stock table once, then make up to ${draws} rotating draws. Often ${chances.often}%; Rarely ${chances.rarely}%; otherwise no extra stock. Empty tiers give no extra stock. Repeated items do not imply extra quantity; stop when the available choices are exhausted. For a duplicate-free list, use Roll Stock in the builder.`;
       } else {
         const items = groups[kind];
         formula = `1d${kind === "always" ? 1 : Math.max(1, items.length)}`;

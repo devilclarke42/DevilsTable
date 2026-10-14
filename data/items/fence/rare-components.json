@@ -1,0 +1,74 @@
+[
+  {
+    "id": "DT_ITEM_BMK_PEARL",
+    "name": "Pearl",
+    "description": "A lustrous pearl is offered for appraisal. The GM confirms whether its actual value satisfies a spell component requirement.\n\nLegality and provenance depend on the campaign. The GM confirms restrictions and any checks; this item grants no automatic access, immunity or bonus.",
+    "saleUnit": "One pearl",
+    "price": {
+      "value": 100,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 0.01,
+      "units": "lb",
+      "notes": "Adjusted carried weight for the complete stated sale unit, including its wrapping or supplied vessel."
+    },
+    "icon": "modules/devils-table/assets/icons/gem.svg",
+    "category": "rare-components",
+    "tags": [
+      "black-market",
+      "gem",
+      "valuable",
+      "component"
+    ],
+    "shops": [
+      "black-market"
+    ],
+    "availability": "special-order",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "Original mundane trade good with no additional game mechanics. See docs/FENCE_GUIDE.md.",
+      "license": "Original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  },
+  {
+    "id": "DT_ITEM_BMK_DIAMOND",
+    "name": "Diamond",
+    "description": "A small cut diamond comes without a jeweller’s certificate. The GM confirms quality and value before treating it as a priced component.\n\nLegality and provenance depend on the campaign. The GM confirms restrictions and any checks; this item grants no automatic access, immunity or bonus.",
+    "saleUnit": "One diamond",
+    "price": {
+      "value": 300,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 0.01,
+      "units": "lb",
+      "notes": "Adjusted carried weight for the complete stated sale unit, including its wrapping or supplied vessel."
+    },
+    "icon": "modules/devils-table/assets/icons/gem.svg",
+    "category": "rare-components",
+    "tags": [
+      "black-market",
+      "gem",
+      "valuable",
+      "component"
+    ],
+    "shops": [
+      "black-market"
+    ],
+    "availability": "special-order",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "Original mundane trade good with no additional game mechanics. See docs/FENCE_GUIDE.md.",
+      "license": "Original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  }
+]

@@ -37,7 +37,7 @@ export function validateItemRules(item, location) {
   if (!nativeType && mechanics.native) add("mechanics.native", "Native fields are reserved for equipment, tools, weapons and ammunition.");
   if (mechanics.native) {
     const n = mechanics.native, t = n.type?.value;
-    const values = {weapon:["simpleM","simpleR","martialM","martialR"],equipment:["light","medium","heavy","shield"],tool:["art"],consumable:["ammo"]};
+    const values = {weapon:["simpleM","simpleR","martialM","martialR"],equipment:["light","medium","heavy","shield"],tool:["art","game","music",""],consumable:["ammo"]};
     if (!values[mechanics.type]?.includes(t)) add("mechanics.native.type", "Unsupported native equipment type.");
     if (mechanics.type === "weapon" && (!n.damage?.base || !Object.values(n.activities ?? {}).some(a=>a.type==="attack"))) add("mechanics.native", "Weapons require damage and a native attack activity.");
     if (mechanics.type === "equipment" && !Number.isInteger(n.armor?.value)) add("mechanics.native.armor", "Armour requires a native AC value.");

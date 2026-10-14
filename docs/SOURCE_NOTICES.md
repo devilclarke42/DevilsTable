@@ -1,4 +1,6 @@
-# Blacksmith source notices
+# Source Notices
+
+**Audience:** maintainers, contributors and distributors. **Purpose:** preserve attribution and third-party terms; this does not select a license for original project material.
 
 This work includes material taken from the System Reference Document 5.1 (“SRD 5.1”) by Wizards of the Coast LLC and available at https://media.dndbeyond.com/compendium-images/srd/5.1/SRD_CC_v5.1.pdf. The SRD 5.1 is licensed under the Creative Commons Attribution 4.0 International License available at https://creativecommons.org/licenses/by/4.0/legalcode.
 
@@ -13,3 +15,8 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+
+## Original material and referenced assets
+
+Original project code, descriptions, economic policy and artwork have no selected distribution license yet. Core Foundry icon paths reference the installed library; they do not redistribute those images. Module-owned artwork provenance is retained in the [archive](archive/README.md) and reproducible tools. The original gem SVG is authored project geometry. Do not remove upstream notices or treat one third-party license as the license for unrelated original material.

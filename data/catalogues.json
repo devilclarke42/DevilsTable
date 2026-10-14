@@ -134,19 +134,44 @@
   },
   {
     "id": "black-market",
-    "name": "Black Market",
+    "name": "Fence",
     "icon": "icons/svg/item-bag.svg",
     "sort": 40,
     "categories": [
       "containers",
       "rope-climbing",
-      "travel"
+      "writing",
+      "travel",
+      "tools",
+      "martial-weapons",
+      "simple-weapons",
+      "reagents",
+      "disguises",
+      "forgery",
+      "burglary-tools",
+      "poisons",
+      "smuggling",
+      "contraband",
+      "stolen-goods",
+      "curiosities",
+      "rare-components"
     ],
     "fallbackCategory": {
       "id": "other",
       "name": "Other goods",
       "icon": "icons/svg/item-bag.svg"
     },
-    "metadata": {}
+    "metadata": {
+      "aliases": [
+        "Black Market Dealer",
+        "Smuggler",
+        "Underground Trader"
+      ],
+      "defaultServiceCategories": [
+        "fence-trade",
+        "fence-logistics",
+        "fence-specialist"
+      ]
+    }
   }
 ]

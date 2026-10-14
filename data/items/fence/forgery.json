@@ -1,0 +1,319 @@
+[
+  {
+    "id": "DT_ITEM_BMK_FORGERY_KIT",
+    "name": "Forgery Kit",
+    "description": "Papers, inks, pens and seals support imitating physical documents. Tool proficiency applies to appropriate forgery checks.\n\nUses the 2014 rules; the GM resolves applicability. Legality depends on the campaign.",
+    "saleUnit": "One forgery kit",
+    "price": {
+      "value": 15,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 4,
+      "units": "lb",
+      "notes": "Adjusted carried weight for the complete stated sale unit, including its wrapping or supplied vessel."
+    },
+    "icon": "modules/devils-table/assets/icons/sealing-stamp.svg",
+    "category": "forgery",
+    "tags": [
+      "black-market",
+      "mundane",
+      "tools"
+    ],
+    "shops": [
+      "black-market"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 (2014), Equipment; original wording and adjusted weight. See docs/FENCE_GUIDE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0; Original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "tool",
+      "native": {
+        "ability": "dex",
+        "bonus": "",
+        "type": {
+          "value": "",
+          "baseItem": "forg"
+        },
+        "properties": [],
+        "activities": {
+          "dnd5eactivity000": {
+            "_id": "dnd5eactivity000",
+            "type": "check",
+            "activation": {
+              "type": "",
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "concentration": false,
+              "value": "",
+              "units": "inst",
+              "special": "",
+              "override": false
+            },
+            "effects": [],
+            "range": {
+              "units": "self",
+              "special": "",
+              "override": false
+            },
+            "target": {
+              "template": {
+                "count": "",
+                "contiguous": false,
+                "type": "",
+                "size": "",
+                "width": "",
+                "height": "",
+                "units": "ft"
+              },
+              "affects": {
+                "count": "",
+                "type": "",
+                "choice": false,
+                "special": ""
+              },
+              "prompt": true,
+              "override": false
+            },
+            "check": {
+              "ability": "dex",
+              "dc": {}
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": []
+            },
+            "sort": 0
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_BMK_SEAL_BLANKS",
+    "name": "Seal Blanks",
+    "description": "Three unengraved brass seal faces are supplied for a skilled craftsperson to finish. No official mark is included.\n\nLegality and provenance depend on the campaign. The GM confirms restrictions and any checks; this item grants no automatic access, immunity or bonus.",
+    "saleUnit": "One seal blanks",
+    "price": {
+      "value": 4,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 0.15,
+      "units": "lb",
+      "notes": "Adjusted carried weight for the complete stated sale unit, including its wrapping or supplied vessel."
+    },
+    "icon": "icons/sundries/documents/paper-plain-white.webp",
+    "category": "forgery",
+    "tags": [
+      "black-market",
+      "mundane",
+      "forgery"
+    ],
+    "shops": [
+      "black-market"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "Original mundane trade good with no additional game mechanics. See docs/FENCE_GUIDE.md.",
+      "license": "Original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  },
+  {
+    "id": "DT_ITEM_BMK_WAX_ASSORTMENT",
+    "name": "Sealing Wax Assortment",
+    "description": "Six short sticks of coloured wax are wrapped with plain ribbon for document work.\n\nLegality and provenance depend on the campaign. The GM confirms restrictions and any checks; this item grants no automatic access, immunity or bonus.",
+    "saleUnit": "One sealing wax assortment",
+    "price": {
+      "value": 1,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 0.2,
+      "units": "lb",
+      "notes": "Adjusted carried weight for the complete stated sale unit, including its wrapping or supplied vessel."
+    },
+    "icon": "icons/sundries/documents/paper-plain-white.webp",
+    "category": "forgery",
+    "tags": [
+      "black-market",
+      "mundane",
+      "forgery"
+    ],
+    "shops": [
+      "black-market"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "Original mundane trade good with no additional game mechanics. See docs/FENCE_GUIDE.md.",
+      "license": "Original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  },
+  {
+    "id": "DT_ITEM_BMK_GOLD_LEAF",
+    "name": "Gold Leaf Packet",
+    "description": "Thin decorative gold leaf lies between protective tissue sheets. It is not a minted coin or a certified spell component.\n\nLegality and provenance depend on the campaign. The GM confirms restrictions and any checks; this item grants no automatic access, immunity or bonus.",
+    "saleUnit": "One gold leaf packet",
+    "price": {
+      "value": 5,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 0.02,
+      "units": "lb",
+      "notes": "Adjusted carried weight for the complete stated sale unit, including its wrapping or supplied vessel."
+    },
+    "icon": "icons/sundries/documents/paper-plain-white.webp",
+    "category": "forgery",
+    "tags": [
+      "black-market",
+      "mundane",
+      "forgery",
+      "material"
+    ],
+    "shops": [
+      "black-market"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "Original mundane trade good with no additional game mechanics. See docs/FENCE_GUIDE.md.",
+      "license": "Original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  },
+  {
+    "id": "DT_ITEM_BMK_DOCUMENT_BLANKS",
+    "name": "Document Blanks",
+    "description": "Ten clean sheets with ruling and margins imitate common administrative stationery. Their signatures and authorisations remain blank.\n\nLegality and provenance depend on the campaign. The GM confirms restrictions and any checks; this item grants no automatic access, immunity or bonus.",
+    "saleUnit": "One document blanks",
+    "price": {
+      "value": 2,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 0.1,
+      "units": "lb",
+      "notes": "Adjusted carried weight for the complete stated sale unit, including its wrapping or supplied vessel."
+    },
+    "icon": "icons/sundries/documents/paper-plain-white.webp",
+    "category": "forgery",
+    "tags": [
+      "black-market",
+      "mundane",
+      "forgery"
+    ],
+    "shops": [
+      "black-market"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "Original mundane trade good with no additional game mechanics. See docs/FENCE_GUIDE.md.",
+      "license": "Original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  },
+  {
+    "id": "DT_ITEM_BMK_FALSE_TRAVEL_PAPERS",
+    "name": "False Travel Papers",
+    "description": "A fictional travel permit carries invented names and an imitation seal. The GM supplies its jurisdiction and decides whether inspection exposes it.\n\nLegality and provenance depend on the campaign. The GM confirms restrictions and any checks; this item grants no automatic access, immunity or bonus.",
+    "saleUnit": "One false travel papers",
+    "price": {
+      "value": 25,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 0.05,
+      "units": "lb",
+      "notes": "Adjusted carried weight for the complete stated sale unit, including its wrapping or supplied vessel."
+    },
+    "icon": "icons/sundries/documents/paper-plain-white.webp",
+    "category": "forgery",
+    "tags": [
+      "black-market",
+      "counterfeit",
+      "restricted"
+    ],
+    "shops": [
+      "black-market"
+    ],
+    "availability": "special-order",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "Original mundane trade good with no additional game mechanics. See docs/FENCE_GUIDE.md.",
+      "license": "Original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  },
+  {
+    "id": "DT_ITEM_BMK_COUNTERFEIT_TOKEN",
+    "name": "Counterfeit Guild Token",
+    "description": "A base-metal token imitates a fictional guild badge. It grants no guild membership or right of entry.\n\nLegality and provenance depend on the campaign. The GM confirms restrictions and any checks; this item grants no automatic access, immunity or bonus.",
+    "saleUnit": "One counterfeit guild token",
+    "price": {
+      "value": 15,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 0.1,
+      "units": "lb",
+      "notes": "Adjusted carried weight for the complete stated sale unit, including its wrapping or supplied vessel."
+    },
+    "icon": "icons/sundries/documents/paper-plain-white.webp",
+    "category": "forgery",
+    "tags": [
+      "black-market",
+      "counterfeit",
+      "restricted"
+    ],
+    "shops": [
+      "black-market"
+    ],
+    "availability": "special-order",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "Original mundane trade good with no additional game mechanics. See docs/FENCE_GUIDE.md.",
+      "license": "Original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  }
+]

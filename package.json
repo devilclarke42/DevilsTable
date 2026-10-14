@@ -1,14 +1,17 @@
 {
   "name": "devils-table",
-  "version": "0.3.0-alpha.26",
+  "version": "0.3.0-alpha.29",
   "private": true,
   "type": "module",
   "description": "Development and validation tools for Devil's Table: Trade & Merchants.",
   "scripts": {
     "test": "node --test",
     "validate": "node tools/validate-data.mjs",
-    "check": "npm run validate && npm test",
-    "package": "npm run check && node tools/package.mjs"
+    "check": "npm run validate:docs && npm run validate && npm test",
+    "package": "npm run check && node tools/package.mjs",
+    "validate:docs": "node tools/check-docs.mjs"
   },
-  "engines": { "node": ">=20" }
+  "engines": {
+    "node": ">=20"
+  }
 }

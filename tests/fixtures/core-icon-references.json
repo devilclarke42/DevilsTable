@@ -4,7 +4,7 @@
   "icons": [
     {
       "icon": "icons/commodities/cloth/cloth-bolt-gold-orange.webp",
-      "source": "docs/GENERAL_STORE_REVIEW.md; docs/CONTAINERS_REVIEW.md"
+      "source": "docs/archive/GENERAL_STORE_INITIAL.md; docs/archive/CONTAINERS_INITIAL.md"
     },
     {
       "icon": "icons/commodities/leather/leather-buckle-steel-tan.webp",
@@ -12,7 +12,7 @@
     },
     {
       "icon": "icons/commodities/materials/bowl-liquid-white.webp",
-      "source": "docs/GENERAL_STORE_REVIEW.md; docs/CONTAINERS_REVIEW.md"
+      "source": "docs/archive/GENERAL_STORE_INITIAL.md; docs/archive/CONTAINERS_INITIAL.md"
     },
     {
       "icon": "icons/commodities/metal/ingot-stamped-bronze.webp",
@@ -24,11 +24,11 @@
     },
     {
       "icon": "icons/commodities/wood/wood-pole.webp",
-      "source": "docs/GENERAL_STORE_REVIEW.md; docs/CONTAINERS_REVIEW.md"
+      "source": "docs/archive/GENERAL_STORE_INITIAL.md; docs/archive/CONTAINERS_INITIAL.md"
     },
     {
       "icon": "icons/consumables/drinks/alcohol-jar-spirits-gray.webp",
-      "source": "docs/GENERAL_STORE_REVIEW.md; docs/CONTAINERS_REVIEW.md"
+      "source": "docs/archive/GENERAL_STORE_INITIAL.md; docs/archive/CONTAINERS_INITIAL.md"
     },
     {
       "icon": "icons/consumables/grains/bread-loaf-boule-rustic-brown.webp",
@@ -36,15 +36,15 @@
     },
     {
       "icon": "icons/consumables/grains/sack-rice-flour-brown.webp",
-      "source": "docs/GENERAL_STORE_REVIEW.md; docs/CONTAINERS_REVIEW.md"
+      "source": "docs/archive/GENERAL_STORE_INITIAL.md; docs/archive/CONTAINERS_INITIAL.md"
     },
     {
       "icon": "icons/consumables/potions/bottle-bulb-empty-glass.webp",
-      "source": "docs/GENERAL_STORE_REVIEW.md; docs/CONTAINERS_REVIEW.md"
+      "source": "docs/archive/GENERAL_STORE_INITIAL.md; docs/archive/CONTAINERS_INITIAL.md"
     },
     {
       "icon": "icons/consumables/potions/potion-bottle-labeled-medicine-capped-red-black.webp",
-      "source": "docs/GENERAL_STORE_REVIEW.md; docs/CONTAINERS_REVIEW.md"
+      "source": "docs/archive/GENERAL_STORE_INITIAL.md; docs/archive/CONTAINERS_INITIAL.md"
     },
     {
       "icon": "icons/containers/bags/pack-leather-black-brown.webp",
@@ -52,47 +52,47 @@
     },
     {
       "icon": "icons/containers/bags/pack-leather-white-tan.webp",
-      "source": "docs/GENERAL_STORE_REVIEW.md; docs/CONTAINERS_REVIEW.md"
+      "source": "docs/archive/GENERAL_STORE_INITIAL.md; docs/archive/CONTAINERS_INITIAL.md"
     },
     {
       "icon": "icons/containers/bags/pouch-rounded-leather-gold-tan.webp",
-      "source": "docs/GENERAL_STORE_REVIEW.md; docs/CONTAINERS_REVIEW.md"
+      "source": "docs/archive/GENERAL_STORE_INITIAL.md; docs/archive/CONTAINERS_INITIAL.md"
     },
     {
       "icon": "icons/containers/bags/sack-cloth-orange.webp",
-      "source": "docs/GENERAL_STORE_REVIEW.md; docs/CONTAINERS_REVIEW.md"
+      "source": "docs/archive/GENERAL_STORE_INITIAL.md; docs/archive/CONTAINERS_INITIAL.md"
     },
     {
       "icon": "icons/containers/barrels/barrel-oak-banded-tan.webp",
-      "source": "docs/GENERAL_STORE_REVIEW.md; docs/CONTAINERS_REVIEW.md"
+      "source": "docs/archive/GENERAL_STORE_INITIAL.md; docs/archive/CONTAINERS_INITIAL.md"
     },
     {
       "icon": "icons/containers/chest/chest-elm-steel-brown.webp",
-      "source": "docs/GENERAL_STORE_REVIEW.md; docs/CONTAINERS_REVIEW.md"
+      "source": "docs/archive/GENERAL_STORE_INITIAL.md; docs/archive/CONTAINERS_INITIAL.md"
     },
     {
       "icon": "icons/containers/chest/chest-simple-box-brown.webp",
-      "source": "docs/GENERAL_STORE_REVIEW.md; docs/CONTAINERS_REVIEW.md"
+      "source": "docs/archive/GENERAL_STORE_INITIAL.md; docs/archive/CONTAINERS_INITIAL.md"
     },
     {
       "icon": "icons/containers/kitchenware/stein-empty.webp",
-      "source": "docs/GENERAL_STORE_REVIEW.md; docs/CONTAINERS_REVIEW.md"
+      "source": "docs/archive/GENERAL_STORE_INITIAL.md; docs/archive/CONTAINERS_INITIAL.md"
     },
     {
       "icon": "icons/containers/kitchenware/vase-clay-cracked-white.webp",
-      "source": "docs/GENERAL_STORE_REVIEW.md; docs/CONTAINERS_REVIEW.md"
+      "source": "docs/archive/GENERAL_STORE_INITIAL.md; docs/archive/CONTAINERS_INITIAL.md"
     },
     {
       "icon": "icons/containers/misc/basket-handle-woven-yellow.webp",
-      "source": "docs/GENERAL_STORE_REVIEW.md; docs/CONTAINERS_REVIEW.md"
+      "source": "docs/archive/GENERAL_STORE_INITIAL.md; docs/archive/CONTAINERS_INITIAL.md"
     },
     {
       "icon": "icons/containers/misc/bucket-steel.webp",
-      "source": "docs/GENERAL_STORE_REVIEW.md; docs/CONTAINERS_REVIEW.md"
+      "source": "docs/archive/GENERAL_STORE_INITIAL.md; docs/archive/CONTAINERS_INITIAL.md"
     },
     {
       "icon": "icons/environment/wilderness/camp-improvised.webp",
-      "source": "docs/GENERAL_STORE_REVIEW.md; docs/CONTAINERS_REVIEW.md"
+      "source": "docs/archive/GENERAL_STORE_INITIAL.md; docs/archive/CONTAINERS_INITIAL.md"
     },
     {
       "icon": "icons/sundries/books/book-rounded-red.webp",
@@ -100,23 +100,23 @@
     },
     {
       "icon": "icons/sundries/documents/paper-plain-white.webp",
-      "source": "docs/GENERAL_STORE_REVIEW.md; docs/CONTAINERS_REVIEW.md"
+      "source": "docs/archive/GENERAL_STORE_INITIAL.md; docs/archive/CONTAINERS_INITIAL.md"
     },
     {
       "icon": "icons/sundries/lights/candle-unlit-red.webp",
-      "source": "docs/GENERAL_STORE_REVIEW.md; docs/CONTAINERS_REVIEW.md"
+      "source": "docs/archive/GENERAL_STORE_INITIAL.md; docs/archive/CONTAINERS_INITIAL.md"
     },
     {
       "icon": "icons/sundries/lights/candle-unlit-tan.webp",
-      "source": "docs/GENERAL_STORE_REVIEW.md; docs/CONTAINERS_REVIEW.md"
+      "source": "docs/archive/GENERAL_STORE_INITIAL.md; docs/archive/CONTAINERS_INITIAL.md"
     },
     {
       "icon": "icons/sundries/lights/lantern-iron-yellow.webp",
-      "source": "docs/GENERAL_STORE_REVIEW.md; docs/CONTAINERS_REVIEW.md"
+      "source": "docs/archive/GENERAL_STORE_INITIAL.md; docs/archive/CONTAINERS_INITIAL.md"
     },
     {
       "icon": "icons/sundries/lights/torch-black.webp",
-      "source": "docs/GENERAL_STORE_REVIEW.md; docs/CONTAINERS_REVIEW.md"
+      "source": "docs/archive/GENERAL_STORE_INITIAL.md; docs/archive/CONTAINERS_INITIAL.md"
     },
     {
       "icon": "icons/sundries/misc/ladder-improvised.webp",
@@ -128,11 +128,11 @@
     },
     {
       "icon": "icons/sundries/scrolls/scroll-plain-tan.webp",
-      "source": "docs/GENERAL_STORE_REVIEW.md; docs/CONTAINERS_REVIEW.md"
+      "source": "docs/archive/GENERAL_STORE_INITIAL.md; docs/archive/CONTAINERS_INITIAL.md"
     },
     {
       "icon": "icons/sundries/survival/bedroll-grey.webp",
-      "source": "docs/GENERAL_STORE_REVIEW.md; docs/CONTAINERS_REVIEW.md"
+      "source": "docs/archive/GENERAL_STORE_INITIAL.md; docs/archive/CONTAINERS_INITIAL.md"
     },
     {
       "icon": "icons/sundries/survival/climbing-anchor-steel-grey.webp",
@@ -144,19 +144,19 @@
     },
     {
       "icon": "icons/sundries/survival/rope-wrapped-brown.webp",
-      "source": "docs/GENERAL_STORE_REVIEW.md; docs/CONTAINERS_REVIEW.md"
+      "source": "docs/archive/GENERAL_STORE_INITIAL.md; docs/archive/CONTAINERS_INITIAL.md"
     },
     {
       "icon": "icons/sundries/survival/soap.webp",
-      "source": "docs/GENERAL_STORE_REVIEW.md; docs/CONTAINERS_REVIEW.md"
+      "source": "docs/archive/GENERAL_STORE_INITIAL.md; docs/archive/CONTAINERS_INITIAL.md"
     },
     {
       "icon": "icons/sundries/survival/wetskin-leather-purple.webp",
-      "source": "docs/GENERAL_STORE_REVIEW.md; docs/CONTAINERS_REVIEW.md"
+      "source": "docs/archive/GENERAL_STORE_INITIAL.md; docs/archive/CONTAINERS_INITIAL.md"
     },
     {
       "icon": "icons/tools/cooking/fork-steel-tan.webp",
-      "source": "docs/GENERAL_STORE_REVIEW.md; docs/CONTAINERS_REVIEW.md"
+      "source": "docs/archive/GENERAL_STORE_INITIAL.md; docs/archive/CONTAINERS_INITIAL.md"
     },
     {
       "icon": "icons/tools/fasteners/chain-steel-grey.webp",
@@ -164,7 +164,7 @@
     },
     {
       "icon": "icons/tools/fasteners/nail-steel.webp",
-      "source": "docs/GENERAL_STORE_REVIEW.md; docs/CONTAINERS_REVIEW.md"
+      "source": "docs/archive/GENERAL_STORE_INITIAL.md; docs/archive/CONTAINERS_INITIAL.md"
     },
     {
       "icon": "icons/tools/fasteners/nails-steel-brown.webp",
@@ -172,7 +172,7 @@
     },
     {
       "icon": "icons/tools/fishing/hook-multi-steel-brown.webp",
-      "source": "docs/GENERAL_STORE_REVIEW.md; docs/CONTAINERS_REVIEW.md"
+      "source": "docs/archive/GENERAL_STORE_INITIAL.md; docs/archive/CONTAINERS_INITIAL.md"
     },
     {
       "icon": "icons/tools/fishing/rod-brown-gold.webp",
@@ -180,7 +180,7 @@
     },
     {
       "icon": "icons/tools/hand/broom-straw-brown.webp",
-      "source": "docs/GENERAL_STORE_REVIEW.md; docs/CONTAINERS_REVIEW.md"
+      "source": "docs/archive/GENERAL_STORE_INITIAL.md; docs/archive/CONTAINERS_INITIAL.md"
     },
     {
       "icon": "icons/tools/hand/chisel-steel-brown.webp",
@@ -208,15 +208,15 @@
     },
     {
       "icon": "icons/tools/instruments/bell-brass-brown.webp",
-      "source": "docs/GENERAL_STORE_REVIEW.md; docs/CONTAINERS_REVIEW.md"
+      "source": "docs/archive/GENERAL_STORE_INITIAL.md; docs/archive/CONTAINERS_INITIAL.md"
     },
     {
       "icon": "icons/tools/instruments/pipe-flute-brown.webp",
-      "source": "docs/GENERAL_STORE_REVIEW.md; docs/CONTAINERS_REVIEW.md"
+      "source": "docs/archive/GENERAL_STORE_INITIAL.md; docs/archive/CONTAINERS_INITIAL.md"
     },
     {
       "icon": "icons/tools/laboratory/cauldron-filled-gold.webp",
-      "source": "docs/GENERAL_STORE_REVIEW.md; docs/CONTAINERS_REVIEW.md"
+      "source": "docs/archive/GENERAL_STORE_INITIAL.md; docs/archive/CONTAINERS_INITIAL.md"
     },
     {
       "icon": "icons/tools/navigation/hourglass-grey.webp",
@@ -224,11 +224,11 @@
     },
     {
       "icon": "icons/tools/navigation/spyglass-telescope-brass.webp",
-      "source": "docs/GENERAL_STORE_REVIEW.md; docs/CONTAINERS_REVIEW.md"
+      "source": "docs/archive/GENERAL_STORE_INITIAL.md; docs/archive/CONTAINERS_INITIAL.md"
     },
     {
       "icon": "icons/tools/scribal/pen-steel-grey-brown.webp",
-      "source": "docs/GENERAL_STORE_REVIEW.md; docs/CONTAINERS_REVIEW.md"
+      "source": "docs/archive/GENERAL_STORE_INITIAL.md; docs/archive/CONTAINERS_INITIAL.md"
     },
     {
       "icon": "icons/tools/smithing/hammer-sledge-steel-grey.webp",
@@ -236,11 +236,11 @@
     },
     {
       "icon": "icons/tools/smithing/horsehoe-worn-steel-grey.webp",
-      "source": "docs/GENERAL_STORE_REVIEW.md; docs/CONTAINERS_REVIEW.md"
+      "source": "docs/archive/GENERAL_STORE_INITIAL.md; docs/archive/CONTAINERS_INITIAL.md"
     },
     {
       "icon": "icons/weapons/sickles/sickle-hooked-wood.webp",
-      "source": "docs/GENERAL_STORE_REVIEW.md; docs/CONTAINERS_REVIEW.md"
+      "source": "docs/archive/GENERAL_STORE_INITIAL.md; docs/archive/CONTAINERS_INITIAL.md"
     },
     {
       "icon": "icons/consumables/drinks/tea-jug-gourd-brown.webp",

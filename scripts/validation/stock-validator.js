@@ -1,3 +1,4 @@
+import { validateVisibility } from "../merchant/visibility.js";
 import { compileSchema } from "./schema-validator.js";
 import { validateCatalogue } from "./catalogue-validator.js";
 import { documentIdFor } from "../builders/document-id.js";
@@ -25,6 +26,11 @@ export function validateStockCatalogue(catalogue) {
       || Object.keys(tableLedger).some(key => !["schemaVersion", "ids"].includes(key))) {
     add("data/table-id-ledger.json", "Expected schemaVersion 1 and unique permanent table IDs.");
     return result();
+  }
+  for(const profile of stock.profiles.flatMap(p=>[p,...(p.variants??[])])){
+    if(profile.tierChances && profile.tierChances.often+profile.tierChances.rarely>100)add("data/stock.json","Tier chances must total at most 100.");
+    for(const rule of profile.offerRules??[])try{validateVisibility(rule.visibility);}catch(error){add("data/stock.json",error.message);}
+    if(new Set((profile.offerRules??[]).map(r=>r.tag)).size!==(profile.offerRules??[]).length)add("data/stock.json","Duplicate visibility rule tag.");
   }
   const items = new Map(catalogue.entries.map(({ item }) => [item.id, item]));
   const shops = new Set();

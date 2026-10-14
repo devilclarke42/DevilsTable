@@ -17,7 +17,7 @@ export function saleOffers(character, modifier = 1) {
 }
 export function purchaseOffers(merchant, character = null) {
   const terms = pricingTerms(merchant, character);
-  return [...publicOffers(merchant), ...serviceOffers(merchant, character, { includeUnavailable: true })].map(item => {
+  return [...publicOffers(merchant, character), ...serviceOffers(merchant, character, { includeUnavailable: true })].map(item => {
     const combined = combinedPercent([terms.merchant, terms.character, terms.negotiation, item.serviceModifier ?? 0], terms.stacking);
     const copper = priced(item.copper, combined);
     return { ...item, originalCopper: item.copper, modifier: combined, copper, price: { value: copper, denomination: "cp" } };
@@ -26,7 +26,7 @@ export function purchaseOffers(merchant, character = null) {
 export function quoteTrade(merchant, character, request, edits = null, { settlement = true } = {}) {
   const settings = tradeSettings(merchant);
   const pricing = pricingTerms(merchant, character, edits?.pricing);
-  const offers = [...publicOffers(merchant), ...serviceOffers(merchant, character)];
+  const offers = [...publicOffers(merchant, character), ...serviceOffers(merchant, character)];
   const purchases = request.lines?.length ? sanitizeBasket(request.lines, offers).basket.map(row => {
     const offer=offers.find(o=>o.id===row.id);
     return offer.kind === "service" ? {...row, kind:"service", itemRequirement:offer.itemRequirement, ...resolveServiceItem(character, offer.itemRequirement, request.lines.find(line=>line.id===row.id)?.targetItemId, request.sales), serviceId:offer.serviceId, serviceModifier:offer.serviceModifier, execution:offer.execution, actions:offer.actions, saleUnit:offer.saleUnit, duration:offer.duration, ...(offer.accommodation ? {accommodation:true,nights:offer.nights,checkoutTime:validateCheckoutTime(edits?.checkoutTime??offer.checkoutTime)} : {})} : row;

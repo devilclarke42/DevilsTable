@@ -1,10 +1,12 @@
-# General Store review — complete approved categories
+# Initial General Store content audit
+
+**Audience:** maintainers investigating content/asset provenance. **Purpose:** historical evidence only. This archived snapshot is not current installation, compatibility or balance guidance. Current values come from canonical JSON; use the [documentation index](../../README.md) for current workflows.
 
 > Historical review of the accepted earlier batch. Current catalogue and upgrade details are in
-> [Sprint 3 Review](SPRINT_3_REVIEW.md). Sprint 3 adds explicit sale units to the original Containers.
+> [Sprint 3 Review](GENERAL_STORE_EXPANSION.md). Sprint 3 adds explicit sale units to the original Containers.
 
 Build: **0.2.0-alpha.4**. There are **69 authored General Store items**: the original
-[13 Containers](CONTAINERS_REVIEW.md), unchanged, and the 56 additions below.
+[13 Containers](CONTAINERS_INITIAL.md), unchanged, and the 56 additions below.
 Canonical JSON remains the source of truth; these tables are a review aid.
 
 Every item has a permanent ID, original description, price, adjusted weight with rationale,
@@ -15,14 +17,14 @@ also state the exact purchase unit. IDs must survive any later balance or wordin
 
 | Category | Authored items | Canonical source |
 | --- | ---: | --- |
-| Containers | 13 | [containers.json](../data/items/general-store/containers.json) |
-| Fire & Lighting | 12 | [fire-lighting.json](../data/items/general-store/fire-lighting.json) |
-| Rope & Climbing | 6 | [rope-climbing.json](../data/items/general-store/rope-climbing.json) |
-| Camping | 11 | [camping.json](../data/items/general-store/camping.json) |
-| Writing | 7 | [writing.json](../data/items/general-store/writing.json) |
-| Household | 9 | [household.json](../data/items/general-store/household.json) |
-| Animal | 6 | [animal.json](../data/items/general-store/animal.json) |
-| Travel | 5 | [travel.json](../data/items/general-store/travel.json) |
+| Containers | 13 | [containers.json](../../data/items/general-store/containers.json) |
+| Fire & Lighting | 12 | [fire-lighting.json](../../data/items/general-store/fire-lighting.json) |
+| Rope & Climbing | 6 | [rope-climbing.json](../../data/items/general-store/rope-climbing.json) |
+| Camping | 11 | [camping.json](../../data/items/general-store/camping.json) |
+| Writing | 7 | [writing.json](../../data/items/general-store/writing.json) |
+| Household | 9 | [household.json](../../data/items/general-store/household.json) |
+| Animal | 6 | [animal.json](../../data/items/general-store/animal.json) |
+| Travel | 5 | [travel.json](../../data/items/general-store/travel.json) |
 
 The complete price mix is **31 cp purchases, 27 sp purchases, 9 equipment purchases below
 25 gp and 2 specialist purchases at 25+ gp**. Prices use whole coins, with cp/sp values from
@@ -210,7 +212,7 @@ from project designs. Prices, adjusted weights, packaging and candle variants ar
 This does not choose a distribution license for original project text, code or artwork.
 
 The official D&D5e **release-5.3.3** sources were checked for native field shapes and core icon
-paths. See [architecture references](ARCHITECTURE.md#checked-primary-references) for model code.
+paths. See [architecture references](../SOURCE_NOTICES.md) for model code.
 The following table groups new items by the official source entry used to verify their icon.
 Artwork depicting a magic item is used only as a core-library picture; it supplies no mechanics.
 
@@ -250,7 +252,7 @@ Artwork depicting a magic item is used only as a core-library picture; it suppli
 
 Core artwork is referenced from the installed Foundry library, not copied into this repository.
 Fifteen new SVG icons in `assets/icons/` were authored for this project and rendered for visual
-inspection. Their subjects and individual files are listed in [the file map](FILE_MAP.md#original-module-artwork).
+inspection. Their subjects and individual files are listed in [the file map](../DEVELOPER_GUIDE.md).
 They have no external image, script or font dependencies. Actual in-world rendering is part of live acceptance.
 
 ## Upgrade and review result
@@ -262,6 +264,6 @@ test creates 56 additions, preserves those 13 and then reports all 69 unchanged 
 Install the alpha.4 ZIP and select **Village General Store → All categories**. Preview should
 show 56 creates and 13 unchanged if the original batch is already complete, or 69 creates in a
 fresh world. Keep the existing compendium. Review the new content and run the
-[live checklist](TESTING.md), especially actor-import consumption, reusable actions and icons.
+[live checklist](../TESTING.md), especially actor-import consumption, reusable actions and icons.
 The previous read-back fix was reported successful by the user; these new features are not yet
 claimed as live-tested. Further shop expansion waits for review.

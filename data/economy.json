@@ -159,6 +159,31 @@
       "id": "apothecary-travelling",
       "name": "Travelling Apothecary",
       "percent": 50
+    },
+    {
+      "id": "fence-cautious",
+      "name": "Cautious Fence",
+      "percent": 100
+    },
+    {
+      "id": "fence-greedy",
+      "name": "Greedy Fence",
+      "percent": 100
+    },
+    {
+      "id": "fence-guild",
+      "name": "Guild Fence",
+      "percent": 150
+    },
+    {
+      "id": "fence-travelling",
+      "name": "Travelling Fence",
+      "percent": 60
+    },
+    {
+      "id": "fence-boss",
+      "name": "Crime Boss",
+      "percent": 220
     }
   ],
   "stockProfiles": {
@@ -233,6 +258,36 @@
     "DT_TABLE_ALC_TRAVELLING": {
       "settlement": "hamlet",
       "profile": "apothecary-travelling"
+    },
+    "DT_TABLE_BMK": {
+      "settlement": "town",
+      "prosperity": "average",
+      "profile": "specialist"
+    },
+    "DT_TABLE_BMK_CAUTIOUS": {
+      "settlement": "village",
+      "prosperity": "poor",
+      "profile": "fence-cautious"
+    },
+    "DT_TABLE_BMK_GREEDY": {
+      "settlement": "town",
+      "prosperity": "average",
+      "profile": "fence-greedy"
+    },
+    "DT_TABLE_BMK_GUILD": {
+      "settlement": "city",
+      "prosperity": "prosperous",
+      "profile": "fence-guild"
+    },
+    "DT_TABLE_BMK_TRAVELLING": {
+      "settlement": "village",
+      "prosperity": "average",
+      "profile": "fence-travelling"
+    },
+    "DT_TABLE_BMK_BOSS": {
+      "settlement": "city",
+      "prosperity": "wealthy",
+      "profile": "fence-boss"
     }
   },
   "coinShares": {

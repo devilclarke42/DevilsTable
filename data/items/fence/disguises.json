@@ -1,0 +1,248 @@
+[
+  {
+    "id": "DT_ITEM_BMK_DISGUISE_KIT",
+    "name": "Disguise Kit",
+    "description": "Cosmetics, dyes and small costume props support changes to appearance. Tool proficiency applies to appropriate disguise checks.\n\nUses the 2014 rules; the GM resolves applicability. Legality depends on the campaign.",
+    "saleUnit": "One disguise kit",
+    "price": {
+      "value": 25,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 2.4,
+      "units": "lb",
+      "notes": "Adjusted carried weight for the complete stated sale unit, including its wrapping or supplied vessel."
+    },
+    "icon": "icons/equipment/chest/vest-cloth-tattered-tan.webp",
+    "category": "disguises",
+    "tags": [
+      "black-market",
+      "mundane",
+      "tools"
+    ],
+    "shops": [
+      "black-market"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 (2014), Equipment; original wording and adjusted weight. See docs/FENCE_GUIDE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0; Original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "tool",
+      "native": {
+        "ability": "cha",
+        "bonus": "",
+        "type": {
+          "value": "",
+          "baseItem": "disg"
+        },
+        "properties": [],
+        "activities": {
+          "dnd5eactivity000": {
+            "_id": "dnd5eactivity000",
+            "type": "check",
+            "activation": {
+              "type": "",
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "concentration": false,
+              "value": "",
+              "units": "inst",
+              "special": "",
+              "override": false
+            },
+            "effects": [],
+            "range": {
+              "units": "self",
+              "special": "",
+              "override": false
+            },
+            "target": {
+              "template": {
+                "count": "",
+                "contiguous": false,
+                "type": "",
+                "size": "",
+                "width": "",
+                "height": "",
+                "units": "ft"
+              },
+              "affects": {
+                "count": "",
+                "type": "",
+                "choice": false,
+                "special": ""
+              },
+              "prompt": true,
+              "override": false
+            },
+            "check": {
+              "ability": "cha",
+              "dc": {}
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": []
+            },
+            "sort": 0
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_BMK_HOODED_CLOAK",
+    "name": "Reversible Hooded Cloak",
+    "description": "A plain cloak reverses between two subdued colours and has a deep hood. It changes clothing appearance without concealing identity automatically.\n\nLegality and provenance depend on the campaign. The GM confirms restrictions and any checks; this item grants no automatic access, immunity or bonus.",
+    "saleUnit": "One reversible hooded cloak",
+    "price": {
+      "value": 3,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 1.2,
+      "units": "lb",
+      "notes": "Adjusted carried weight for the complete stated sale unit, including its wrapping or supplied vessel."
+    },
+    "icon": "icons/equipment/chest/vest-cloth-tattered-tan.webp",
+    "category": "disguises",
+    "tags": [
+      "black-market",
+      "mundane",
+      "clothing"
+    ],
+    "shops": [
+      "black-market"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "Original mundane trade good with no additional game mechanics. See docs/FENCE_GUIDE.md.",
+      "license": "Original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  },
+  {
+    "id": "DT_ITEM_BMK_STAGE_WIG",
+    "name": "Stage Wig",
+    "description": "A wrapped hairpiece with comb fasteners can be fitted and styled as part of a disguise.\n\nLegality and provenance depend on the campaign. The GM confirms restrictions and any checks; this item grants no automatic access, immunity or bonus.",
+    "saleUnit": "One stage wig",
+    "price": {
+      "value": 5,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 0.3,
+      "units": "lb",
+      "notes": "Adjusted carried weight for the complete stated sale unit, including its wrapping or supplied vessel."
+    },
+    "icon": "icons/equipment/chest/vest-cloth-tattered-tan.webp",
+    "category": "disguises",
+    "tags": [
+      "black-market",
+      "mundane",
+      "clothing"
+    ],
+    "shops": [
+      "black-market"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "Original mundane trade good with no additional game mechanics. See docs/FENCE_GUIDE.md.",
+      "license": "Original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  },
+  {
+    "id": "DT_ITEM_BMK_FALSE_BEARD",
+    "name": "False Beard",
+    "description": "A theatrical beard includes ties and a small pot of cosmetic adhesive.\n\nLegality and provenance depend on the campaign. The GM confirms restrictions and any checks; this item grants no automatic access, immunity or bonus.",
+    "saleUnit": "One false beard",
+    "price": {
+      "value": 2,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 0.1,
+      "units": "lb",
+      "notes": "Adjusted carried weight for the complete stated sale unit, including its wrapping or supplied vessel."
+    },
+    "icon": "icons/equipment/chest/vest-cloth-tattered-tan.webp",
+    "category": "disguises",
+    "tags": [
+      "black-market",
+      "mundane",
+      "clothing"
+    ],
+    "shops": [
+      "black-market"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "Original mundane trade good with no additional game mechanics. See docs/FENCE_GUIDE.md.",
+      "license": "Original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  },
+  {
+    "id": "DT_ITEM_BMK_DYE_PACK",
+    "name": "Costume Dye Pack",
+    "description": "Small packets of temporary costume dyes alter cloth colours; the GM determines suitable materials and time.\n\nLegality and provenance depend on the campaign. The GM confirms restrictions and any checks; this item grants no automatic access, immunity or bonus.",
+    "saleUnit": "One costume dye pack",
+    "price": {
+      "value": 1,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 0.2,
+      "units": "lb",
+      "notes": "Adjusted carried weight for the complete stated sale unit, including its wrapping or supplied vessel."
+    },
+    "icon": "icons/equipment/chest/vest-cloth-tattered-tan.webp",
+    "category": "disguises",
+    "tags": [
+      "black-market",
+      "mundane",
+      "dye"
+    ],
+    "shops": [
+      "black-market"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "Original mundane trade good with no additional game mechanics. See docs/FENCE_GUIDE.md.",
+      "license": "Original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  }
+]

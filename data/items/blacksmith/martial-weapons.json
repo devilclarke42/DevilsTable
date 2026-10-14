@@ -2090,7 +2090,8 @@
       "martial-weapons"
     ],
     "shops": [
-      "blacksmith"
+      "blacksmith",
+      "black-market"
     ],
     "availability": "variable",
     "source": {
@@ -3053,7 +3054,8 @@
       "martial-weapons"
     ],
     "shops": [
-      "blacksmith"
+      "blacksmith",
+      "black-market"
     ],
     "availability": "special-order",
     "source": {

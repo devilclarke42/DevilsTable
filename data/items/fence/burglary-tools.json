@@ -1,0 +1,213 @@
+[
+  {
+    "id": "DT_ITEM_BMK_THIEVES_TOOLS",
+    "name": "Thieves’ Tools",
+    "description": "Picks, a file, scissors, a mirror and pliers support lock and trap work. Appropriate proficiency applies to relevant checks.\n\nUses the 2014 rules; the GM resolves applicability. Legality depends on the campaign.",
+    "saleUnit": "One thieves’ tools",
+    "price": {
+      "value": 25,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 0.8,
+      "units": "lb",
+      "notes": "Adjusted carried weight for the complete stated sale unit, including its wrapping or supplied vessel."
+    },
+    "icon": "icons/tools/hand/chisel-steel-brown.webp",
+    "category": "burglary-tools",
+    "tags": [
+      "black-market",
+      "mundane",
+      "tools"
+    ],
+    "shops": [
+      "black-market"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 (2014), Equipment; original wording and adjusted weight. See docs/FENCE_GUIDE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0; Original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "tool",
+      "native": {
+        "ability": "dex",
+        "bonus": "",
+        "type": {
+          "value": "",
+          "baseItem": "thief"
+        },
+        "properties": [],
+        "activities": {
+          "dnd5eactivity000": {
+            "_id": "dnd5eactivity000",
+            "type": "check",
+            "activation": {
+              "type": "",
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "concentration": false,
+              "value": "",
+              "units": "inst",
+              "special": "",
+              "override": false
+            },
+            "effects": [],
+            "range": {
+              "units": "self",
+              "special": "",
+              "override": false
+            },
+            "target": {
+              "template": {
+                "count": "",
+                "contiguous": false,
+                "type": "",
+                "size": "",
+                "width": "",
+                "height": "",
+                "units": "ft"
+              },
+              "affects": {
+                "count": "",
+                "type": "",
+                "choice": false,
+                "special": ""
+              },
+              "prompt": true,
+              "override": false
+            },
+            "check": {
+              "ability": "dex",
+              "dc": {}
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": []
+            },
+            "sort": 0
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_BMK_PICK_REPLACEMENTS",
+    "name": "Replacement Lockpicks",
+    "description": "Three replacement picks repair the contents of a thieves’ tools set. This incomplete assortment is not a full tool kit.\n\nLegality and provenance depend on the campaign. The GM confirms restrictions and any checks; this item grants no automatic access, immunity or bonus.",
+    "saleUnit": "One replacement lockpicks",
+    "price": {
+      "value": 3,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 0.05,
+      "units": "lb",
+      "notes": "Adjusted carried weight for the complete stated sale unit, including its wrapping or supplied vessel."
+    },
+    "icon": "icons/tools/hand/chisel-steel-brown.webp",
+    "category": "burglary-tools",
+    "tags": [
+      "black-market",
+      "mundane",
+      "tools"
+    ],
+    "shops": [
+      "black-market"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "Original mundane trade good with no additional game mechanics. See docs/FENCE_GUIDE.md.",
+      "license": "Original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  },
+  {
+    "id": "DT_ITEM_BMK_FINE_FILE",
+    "name": "Fine Metal File",
+    "description": "A slim steel file has a fine cutting face and wrapped handle for small repair jobs.\n\nLegality and provenance depend on the campaign. The GM confirms restrictions and any checks; this item grants no automatic access, immunity or bonus.",
+    "saleUnit": "One fine metal file",
+    "price": {
+      "value": 2,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 0.15,
+      "units": "lb",
+      "notes": "Adjusted carried weight for the complete stated sale unit, including its wrapping or supplied vessel."
+    },
+    "icon": "icons/tools/hand/chisel-steel-brown.webp",
+    "category": "burglary-tools",
+    "tags": [
+      "black-market",
+      "mundane",
+      "tools"
+    ],
+    "shops": [
+      "black-market"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "Original mundane trade good with no additional game mechanics. See docs/FENCE_GUIDE.md.",
+      "license": "Original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  },
+  {
+    "id": "DT_ITEM_BMK_WIRE_BUNDLE",
+    "name": "Fine Wire Bundle",
+    "description": "A coil of fine brass wire supplies workshop material. It has no automatic trap-disabling function.\n\nLegality and provenance depend on the campaign. The GM confirms restrictions and any checks; this item grants no automatic access, immunity or bonus.",
+    "saleUnit": "One fine wire bundle",
+    "price": {
+      "value": 1,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 0.1,
+      "units": "lb",
+      "notes": "Adjusted carried weight for the complete stated sale unit, including its wrapping or supplied vessel."
+    },
+    "icon": "icons/tools/hand/chisel-steel-brown.webp",
+    "category": "burglary-tools",
+    "tags": [
+      "black-market",
+      "mundane",
+      "material"
+    ],
+    "shops": [
+      "black-market"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "Original mundane trade good with no additional game mechanics. See docs/FENCE_GUIDE.md.",
+      "license": "Original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  }
+]

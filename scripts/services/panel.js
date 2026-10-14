@@ -16,10 +16,10 @@ export class ServicePanel {
     const registry=definitions(), offers=this.actor.getFlag(MODULE_ID,"merchant.services")??{}, stats=this.actor.getFlag(MODULE_ID,"merchant.serviceStats")??{};
     const total=Object.values(stats).reduce((n,s)=>n+(s.purchased??0),0), cat=catalogueRegistry.resolve(this.actor)?.id;
     const services=registry.list().filter(r=>r.catalogues.includes(cat)||offers[r.id]).map(r=>{
-      const form=this.draft.get(r.id)??{offered:Boolean(offers[r.id]),enabled:offers[r.id]?.enabled!==false,available:offers[r.id]?.available!==false,price:offers[r.id]?.price??r.price,room:offers[r.id]?.room};
+      const form=this.draft.get(r.id)??{offered:Boolean(offers[r.id]),enabled:offers[r.id]?.enabled!==false,available:offers[r.id]?.available!==false,price:offers[r.id]?.price??r.price,room:offers[r.id]?.room,visibility:offers[r.id]?.visibility??r.visibility??{mode:"public"}};
       const category=registry.categories().find(c=>c.id===r.category);
       const room=form.room??{name:"",keyName:"",doors:[],days:r.nights??1,expiry:"checkout",key:integrationManager.status("locknkey").available,calendar:integrationManager.status("calendaria").available};
-      return {...r,...form,room,roomConfigured:Boolean(form.room),doorText:room.doors.join("\n"),
+      return {...r,...form,visibility:form.visibility??{mode:"public"},visibilityModes:["public","hidden","relationship"].map(id=>({id,selected:id===(form.visibility?.mode??"public")})),visibilityPurchases:form.visibility?.minPurchases??3,visibilityRevealed:form.visibility?.revealed===true,room,roomConfigured:Boolean(form.room),doorText:room.doors.join("\n"),
         expiryChoices:[{id:"persistent",name:"Persistent Key"},{id:"checkout",name:"Expire on Checkout"},{id:"manual",name:"Manual Recovery"}].map(c=>({...c,selected:c.id===room.expiry})),
         keyIntegration:integrationManager.status("locknkey"),calendarIntegration:integrationManager.status("calendaria"),
         actionLabels:[...Object.keys(r.execution??{}),...(r.actions??[]).map(a=>a.kind==="integration"?`${a.integration}: ${a.action} — ${integrationManager.status(a.integration).reason||"Available"}`:a.kind)],categoryName:category?.name??r.category,
@@ -36,7 +36,7 @@ export class ServicePanel {
   }
   bind(root) {
     if(!root?.querySelectorAll)return;
-    const read=el=>({room:el.querySelector("[name=roomConfigured]")?.checked?{name:el.querySelector("[name=roomName]").value,keyName:el.querySelector("[name=keyName]").value,doors:el.querySelector("[name=roomDoors]").value.split(/[\n,]/).map(v=>v.trim()).filter(Boolean),days:Number(el.querySelector("[name=roomDays]").value),expiry:el.querySelector("[name=roomExpiry]").value,key:el.querySelector("[name=roomKey]").checked,calendar:el.querySelector("[name=roomCalendar]").checked}:undefined,offered:el.querySelector('[name=offered]').checked,enabled:el.querySelector('[name=enabled]').checked,
+    const read=el=>({visibility:{mode:el.querySelector("[name=visibilityMode]")?.value??"public",minPurchases:Number(el.querySelector("[name=visibilityPurchases]")?.value??3),revealed:el.querySelector("[name=visibilityRevealed]")?.checked??false},room:el.querySelector("[name=roomConfigured]")?.checked?{name:el.querySelector("[name=roomName]").value,keyName:el.querySelector("[name=keyName]").value,doors:el.querySelector("[name=roomDoors]").value.split(/[\n,]/).map(v=>v.trim()).filter(Boolean),days:Number(el.querySelector("[name=roomDays]").value),expiry:el.querySelector("[name=roomExpiry]").value,key:el.querySelector("[name=roomKey]").checked,calendar:el.querySelector("[name=roomCalendar]").checked}:undefined,offered:el.querySelector('[name=offered]').checked,enabled:el.querySelector('[name=enabled]').checked,
       available:el.querySelector('[name=available]').checked,price:{value:el.querySelector('[name=price]').value,denomination:el.querySelector('[name=denomination]').value}});
     const filter=()=>{
       for(const row of root.querySelectorAll('[data-service-row]')) {
@@ -57,7 +57,7 @@ export class ServicePanel {
     filter();
   }
   async save() {
-    const rows=this.context().groups.flatMap(g=>g.services).filter(r=>r.offered).map(r=>({id:r.id,enabled:r.enabled,available:r.available,...(r.roomConfigured?{room:r.room}:{}),
+    const rows=this.context().groups.flatMap(g=>g.services).filter(r=>r.offered).map(r=>({id:r.id,enabled:r.enabled,available:r.available,visibility:r.visibility,...(r.roomConfigured?{room:r.room}:{}),
       price:{value:String(r.price.value).trim()?Number(r.price.value):NaN,denomination:r.price.denomination}}));
     await saveServiceOffers(this.actor,rows,{expected:this.expected});this.reset();
   }

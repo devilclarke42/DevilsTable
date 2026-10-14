@@ -1,0 +1,177 @@
+[
+  {
+    "id": "DT_ITEM_BMK_CUT_AGATE",
+    "name": "Cut Agate",
+    "description": "A polished banded stone is offered as a modest gem. Appraisal determines whether it satisfies any particular component requirement.\n\nLegality and provenance depend on the campaign. The GM confirms restrictions and any checks; this item grants no automatic access, immunity or bonus.",
+    "saleUnit": "One cut agate",
+    "price": {
+      "value": 10,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 0.01,
+      "units": "lb",
+      "notes": "Adjusted carried weight for the complete stated sale unit, including its wrapping or supplied vessel."
+    },
+    "icon": "modules/devils-table/assets/icons/gem.svg",
+    "category": "curiosities",
+    "tags": [
+      "black-market",
+      "gem",
+      "valuable"
+    ],
+    "shops": [
+      "black-market"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "Original mundane trade good with no additional game mechanics. See docs/FENCE_GUIDE.md.",
+      "license": "Original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  },
+  {
+    "id": "DT_ITEM_BMK_CUT_AMETHYST",
+    "name": "Cut Amethyst",
+    "description": "A clear violet gem is presented loose in protective cloth. Its catalogue price is a trade estimate, not automatic certification for spellcasting.\n\nLegality and provenance depend on the campaign. The GM confirms restrictions and any checks; this item grants no automatic access, immunity or bonus.",
+    "saleUnit": "One cut amethyst",
+    "price": {
+      "value": 100,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 0.01,
+      "units": "lb",
+      "notes": "Adjusted carried weight for the complete stated sale unit, including its wrapping or supplied vessel."
+    },
+    "icon": "modules/devils-table/assets/icons/gem.svg",
+    "category": "curiosities",
+    "tags": [
+      "black-market",
+      "gem",
+      "valuable"
+    ],
+    "shops": [
+      "black-market"
+    ],
+    "availability": "special-order",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "Original mundane trade good with no additional game mechanics. See docs/FENCE_GUIDE.md.",
+      "license": "Original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  },
+  {
+    "id": "DT_ITEM_BMK_OBSIDIAN_IDOL",
+    "name": "Obsidian Idol",
+    "description": "A carved black-glass figure depicts an unfamiliar creature. It is nonmagical and has no established supernatural history.\n\nLegality and provenance depend on the campaign. The GM confirms restrictions and any checks; this item grants no automatic access, immunity or bonus.",
+    "saleUnit": "One obsidian idol",
+    "price": {
+      "value": 75,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 0.4,
+      "units": "lb",
+      "notes": "Adjusted carried weight for the complete stated sale unit, including its wrapping or supplied vessel."
+    },
+    "icon": "icons/sundries/books/book-rounded-red.webp",
+    "category": "curiosities",
+    "tags": [
+      "black-market",
+      "curiosity",
+      "valuable"
+    ],
+    "shops": [
+      "black-market"
+    ],
+    "availability": "special-order",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "Original mundane trade good with no additional game mechanics. See docs/FENCE_GUIDE.md.",
+      "license": "Original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  },
+  {
+    "id": "DT_ITEM_BMK_BROKEN_SPELL_FOCUS",
+    "name": "Broken Spell Focus",
+    "description": "A cracked carved focus is sold as a collectible fragment. It cannot serve as a functioning spellcasting focus without GM-approved repair.\n\nLegality and provenance depend on the campaign. The GM confirms restrictions and any checks; this item grants no automatic access, immunity or bonus.",
+    "saleUnit": "One broken spell focus",
+    "price": {
+      "value": 40,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 0.2,
+      "units": "lb",
+      "notes": "Adjusted carried weight for the complete stated sale unit, including its wrapping or supplied vessel."
+    },
+    "icon": "icons/sundries/books/book-rounded-red.webp",
+    "category": "curiosities",
+    "tags": [
+      "black-market",
+      "curiosity",
+      "valuable"
+    ],
+    "shops": [
+      "black-market"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "Original mundane trade good with no additional game mechanics. See docs/FENCE_GUIDE.md.",
+      "license": "Original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  },
+  {
+    "id": "DT_ITEM_BMK_FOREIGN_MEDALLION",
+    "name": "Foreign Medallion",
+    "description": "An old silver medallion bears unfamiliar lettering. It is a nonmagical story prop whose origin the GM may develop.\n\nLegality and provenance depend on the campaign. The GM confirms restrictions and any checks; this item grants no automatic access, immunity or bonus.",
+    "saleUnit": "One foreign medallion",
+    "price": {
+      "value": 60,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 0.05,
+      "units": "lb",
+      "notes": "Adjusted carried weight for the complete stated sale unit, including its wrapping or supplied vessel."
+    },
+    "icon": "icons/sundries/books/book-rounded-red.webp",
+    "category": "curiosities",
+    "tags": [
+      "black-market",
+      "curiosity",
+      "valuable"
+    ],
+    "shops": [
+      "black-market"
+    ],
+    "availability": "special-order",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "Original mundane trade good with no additional game mechanics. See docs/FENCE_GUIDE.md.",
+      "license": "Original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  }
+]

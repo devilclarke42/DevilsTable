@@ -5,7 +5,7 @@
  */
 const KEYWORDS = new Set([
   "$schema", "title", "description", "type", "properties", "required", "additionalProperties",
-  "items", "uniqueItems", "minItems", "minLength", "maxLength", "pattern", "enum", "const", "minimum"
+  "items", "uniqueItems", "minItems", "minLength", "maxLength", "pattern", "enum", "const", "minimum", "maximum"
 ]);
 const TYPES = {
   object: value => value !== null && typeof value === "object" && !Array.isArray(value),
@@ -48,6 +48,7 @@ export function compileSchema(schema) {
       if (pattern && !pattern.test(value)) add("Does not match the required format.");
     }
     if (typeof value === "number" && value < (schema.minimum ?? -Infinity)) add(`Must be at least ${schema.minimum}.`);
+    if (typeof value === "number" && value > (schema.maximum ?? Infinity)) add(`Must be at most ${schema.maximum}.`);
     if (Array.isArray(value)) {
       if (value.length < (schema.minItems ?? 0)) add(`Requires at least ${schema.minItems} entries.`);
       if (schema.uniqueItems && value.some((entry, i) => value.slice(0, i).some(other => equal(entry, other)))) add("Duplicate array entries are not allowed.");

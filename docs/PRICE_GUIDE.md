@@ -1,5 +1,7 @@
 # Price Guide
 
+**Audience:** content authors and reviewers. **Purpose:** define base product pricing and economic bands.
+
 **Status:** official economy standard for authored catalogue prices.
 
 Devil's Table treats copper and silver as useful money. Ordinary shopping should involve buying
@@ -63,8 +65,7 @@ until a reviewed economy system supports explicit adjustments.
 | Compass, one pocket instrument | 25 gp | Specialist navigation equipment |
 | Spyglass, one collapsible instrument | 100 gp | Precision optics remain a significant purchase |
 
-These are the current canonical values, not new proposed prices or prices changed by this
-documentation sprint. Consult JSON when a later revision changes an example.
+These illustrate the canonical catalogue; consult source JSON when a later revision changes an example.
 
 ## Bundles, containers and consistency
 
@@ -78,8 +79,7 @@ second full Item or automatically refund packaging. Avoid accidental profit loop
 its components and its container; proposed component listings need an explicit comparison.
 
 The same canonical good has the same base price across shop assignments. Do not duplicate the
-Item just to make one merchant charge more. Merchant-specific quotes, discounts, sell-back rates
-and regional multipliers belong to a future merchant/economy layer, not a rewrite of the base Item.
+Item just to make one merchant charge more. Merchant quotes, customer discounts and buying multipliers use the existing runtime pricing layer without rewriting the base Item. Regional economy simulation remains future scope.
 
 ## Relationship to stock and mechanics
 
@@ -98,5 +98,4 @@ spyglass does not gain or lose magnification because its price changed.
 A price is ready when it is valid whole cp/sp/gp, tied to the correct sale unit, consistent with
 related goods, attributed as a project choice where appropriate, and reviewed for stock-band and
 bundle effects. Automated validation checks formats and boundaries; reviewers own economic judgement.
-The 0.9.0 economy milestone will evaluate wider campaign balance without silently discarding this
-established copper-and-silver philosophy.
+Wider balance review belongs to the milestone roadmap.

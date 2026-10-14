@@ -14,7 +14,7 @@ export function generationSettings(draft, context) {
   const product = key => (settlement[key] ?? 100) * (prosperity[key] ?? 100) / 10000;
   return { profile, draws: Math.max(0, Math.min(policy.limits.maxDraws, Math.round(profile.draws * product("drawPercent")))),
     quantityPercent: product("quantityPercent") * 100, maxQuantity: policy.limits.maxQuantity,
-    tierChances: { often: catalogue.stock.oftenChance, rarely: Math.max(0, Math.min(100 - catalogue.stock.oftenChance, Math.round(catalogue.stock.rarelyChance * product("rarePercent")))) } };
+    tierChances: { often: profile.tierChances?.often ?? catalogue.stock.oftenChance, rarely: Math.max(0, Math.min(100 - (profile.tierChances?.often ?? catalogue.stock.oftenChance), Math.round((profile.tierChances?.rarely ?? catalogue.stock.rarelyChance) * product("rarePercent")))) } };
 }
 /** E[min(Binomial(draws,p), pool size)]; uniform sampling without replacement inside a tier. */
 function expectedSelected(draws, chance, count) {
@@ -36,7 +36,7 @@ export function estimateGeneration(draft, context, actor = null) {
       const rule=catalogue.quantities.rules.find(r=>r.tier===tier && r.priceBand===priceBand(item.price));
       const quantityProfile=catalogue.quantities.profiles.find(r=>r.id===rule?.profile);
       if(!quantityProfile) throw Error(`Missing stock quantity policy for ${item.id}.`);
-      const quantity=quantityProfile.results.reduce((n,r)=>n+scaledQuantity(r.quantity,tier,options)*r.weight/100,0);
+      const quantity=quantityProfile.results.reduce((n,r)=>n+Math.min(options.profile.quantityLimit??Infinity,scaledQuantity(r.quantity,tier,options))*r.weight/100,0);
       count+=probability;units+=probability*quantity;value+=probability*quantity*coinValue(item.price);
       categories.set(item.category,(categories.get(item.category)??0)+probability);
     }

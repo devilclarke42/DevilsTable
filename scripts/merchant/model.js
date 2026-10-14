@@ -1,3 +1,4 @@
+import { visibleOffer } from "./visibility.js";
 import { catalogueRegistry } from "../catalogues/registry.js";
 import { MODULE_ID } from "../constants.js";
 
@@ -41,7 +42,7 @@ export function coinValue(price) {
 
 const stringList = value => Array.isArray(value) ? value.filter(entry => typeof entry === "string") : [];
 
-export function publicOffers(actor) {
+export function publicOffers(actor, character = null) {
   const offers = [];
   const unlimited = actor.getFlag?.(MODULE_ID, "merchant")?.settings?.infiniteStock === true;
   for (const item of actor.items ?? []) {
@@ -49,6 +50,7 @@ export function publicOffers(actor) {
     if (!Number.isSafeInteger(storedQuantity) || storedQuantity < 0 || (!unlimited && storedQuantity < 1)) continue;
     const quantity = unlimited ? Math.max(1, storedQuantity) : storedQuantity;
     const own = item.getFlag?.(MODULE_ID, "offer") ?? {};
+    if (!visibleOffer(actor, character, own.visibility)) continue;
     const canonical = item.getFlag?.(MODULE_ID, "generatedBy") === MODULE_ID;
     const price = Number.isSafeInteger(own.unitPrice) && own.unitPrice >= 0
       ? { value: own.unitPrice, denomination: "cp" } : item.system?.price;

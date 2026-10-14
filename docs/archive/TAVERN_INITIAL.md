@@ -1,12 +1,7 @@
-> Current completion: see [Tavern Guide](TAVERN_GUIDE.md) for alpha.13 counts, presets and acceptance. The detailed alpha.1 inventory review below is retained as historical provenance.
+# Initial Tavern content audit
 
-> Current status (alpha.8): the source catalogue described below is now active. No Item records
-> were rewritten during activation. See [Tavern Services](TAVERN_SERVICES.md) for current setup.
+**Audience:** maintainers tracing source and artwork provenance. **Purpose:** archived evidence only; counts and acceptance status are historical snapshots. Use [Tavern Guide](../TAVERN_GUIDE.md) for current behaviour.
 
-# Sprint 8 — Tavern catalogue and merchant presentation
-
-> Deferred historical candidate: Sprint 8 was revised to the catalogue framework. The material below
-> describes alpha.1, not the active alpha.2 build. Preserve its IDs and await framework review.
 
 **Candidate:** `0.3.0-alpha.1` · **Date:** 27 September 2026.  
 **Targets:** Foundry V14, D&D5e 5.3.3, 2014 mechanics, adjusted pounds for Variant Encumbrance.
@@ -445,4 +440,3 @@ Stable provisions and treats; the shared Horse Feed remains the canonical daily 
 | `DT_ITEM_TAV_HOUND_BISCUIT_BUNDLE` | Hound Biscuit Bundle | One pound of hound biscuits | 4 cp | 1 | variable |
 | `DT_ITEM_TAV_DRIED_APPLE_HORSE_TREATS` | Dried Apple Horse Treats | One half-pound packet of horse treats | 3 cp | 0.5 | variable |
 | `DT_ITEM_TAV_CHOPPED_FODDER` | Chopped Fodder | One five-pound measure of chopped fodder | 3 cp | 5 | variable |
-
