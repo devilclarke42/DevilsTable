@@ -16,7 +16,7 @@ export class Actor {
   constructor(id, copper = 0, data = []) {
     this.id = id; this.name = id; this.type = id === "merchant" ? "npc" : "character";
     this.system = { currency: { cp: copper, sp: 0, ep: 0, gp: 0, pp: 0 } };
-    this.flags = { "devils-table": { merchant: { enabled: true, availability: "open", settings: {}, relationships: {} } } };
+    this.flags = { "devils-table-merchants": { merchant: { enabled: true, availability: "open", settings: {}, relationships: {} } } };
     this.items = new Items(data.map(d => [d._id, new Item(d)]));
   }
   getFlag(ns, key) { return get(this.flags[ns], key); }
@@ -29,7 +29,7 @@ export class Actor {
   async deleteEmbeddedDocuments(_type, ids) { ids.forEach(id => this.items.delete(id)); }
 }
 export function good(id = "rope", quantity = 1, price = 10) {
-  return { _id: id, name: "Rope", type: "loot", img: "rope.webp", effects: [], flags: { "devils-table": { generatedBy: "devils-table" } },
+  return { _id: id, name: "Rope", type: "loot", img: "rope.webp", effects: [], flags: { "devils-table-merchants": { generatedBy: "devils-table-merchants" } },
     system: { quantity, price: { value: price, denomination: "cp" }, description: { value: "Rope" } } };
 }
 export function setup() {

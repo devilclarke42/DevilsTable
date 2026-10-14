@@ -12,8 +12,8 @@ A catalogue can offer **products and services as peers**. Product categories org
 | Packaged definitions | `data/services.json` | Source JSON |
 | Extension definitions | `registerServiceProvider` during setup | Provider JSON |
 | World definitions | `serviceDefinitions` world setting | Active GM |
-| Offers and price overrides | `flags.devils-table.merchant.services` | Merchant Actor |
-| Lifetime service counters | `flags.devils-table.merchant.serviceStats` | Verified transaction writes |
+| Offers and price overrides | `flags.devils-table-merchants.merchant.services` | Merchant Actor |
+| Lifetime service counters | `flags.devils-table-merchants.merchant.serviceStats` | Verified transaction writes |
 | Purchase and execution audit | Existing private transaction receipts | Active GM |
 
 Definitions are shared; merchant flags store only references and overrides. Offerings are configured through the Builder; existing saved offers remain intact and eligible catalogue defaults seed once per identity. Inventory, Item IDs and shared compendium UUIDs are unchanged. Definition data is not a secret store: do not place GM notes, hidden DCs or credentials in it. Public Shop projections omit execution references and all statistics.
@@ -114,7 +114,7 @@ Per-service Actor counters record purchased units, gross revenue after modifiers
 During Foundry `setup`, pass a plain JSON bundle to:
 
 ```js
-game.modules.get("devils-table").api.registerServiceProvider(bundle);
+game.modules.get("devils-table-merchants").api.registerServiceProvider(bundle);
 ```
 
 Use the same `categories`/`services` shape shown above. Register new merchant catalogues through the existing catalogue provider API. Definitions must be registered before ready; startup validates collisions and references. Services never enter the Item builder or source Item index. No merchant-type branches exist in the Shop or service purchase pipeline.

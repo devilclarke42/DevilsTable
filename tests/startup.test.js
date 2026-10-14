@@ -28,7 +28,7 @@ test("startup registers a restricted V2 menu and a read-only-default API without
   globalThis.Hooks = { once: (event, handler) => hooks.set(event, handler), on: (event, handler) => listeners.set(event, handler) };
   globalThis.canvas = { ready: false };
   globalThis.game = {
-    modules: new Map([["devils-table", module]]), user: { isGM: true },
+    modules: new Map([["devils-table-merchants", module]]), user: { isGM: true },
     socket: { on: () => {} },
     settings: {
       register: (namespace, key, config) => settings.push({ namespace, key, config }),
@@ -47,7 +47,7 @@ test("startup registers a restricted V2 menu and a read-only-default API without
   listeners.get("getActorContextOptions")({},entries);
   assert.deepEqual(entries.filter(entry=>entry.visible({dataset:{entryId:actor.id}})).map(entry=>entry.label),["Convert to Merchant"]);
 
-  t.mock.method(globalThis, "fetch", async url => ({ ok: true, json: () => readJson(String(url).replace("modules/devils-table/", "")) }));
+  t.mock.method(globalThis, "fetch", async url => ({ ok: true, json: () => readJson(String(url).replace("modules/devils-table-merchants/", "")) }));
   await hooks.get("ready")();
   assert.equal(settings.length, 7);
   assert.equal(settings.find(row=>row.key==="serviceDefinitions").config.config,false);
@@ -64,7 +64,7 @@ test("startup registers a restricted V2 menu and a read-only-default API without
   assert.equal(typeof module.api.rollStock, "function");
   assert.equal(typeof module.api.cleanupLegacyStockTables, "function");
   t.mock.method(globalThis, "fetch", async url => ({
-    ok: true, json: () => readJson(String(url).replace("modules/devils-table/", ""))
+    ok: true, json: () => readJson(String(url).replace("modules/devils-table-merchants/", ""))
   }));
   const App = menus.find(menu => menu.key === "compendiumBuilder").config.type;
   const app = new App();

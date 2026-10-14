@@ -5,7 +5,7 @@ import { appendHistory, publicOffers, sanitizeBasket, coinValue, merchantConfig,
 const item = (id, overrides = {}) => ({ id, name: `Offer ${id}`, type: "loot", img: "icon.webp",
   system: { quantity: 3, price: { value: 5, denomination: "sp" },
     description: { value: "<p>Safe public description.</p>" } },
-  getFlag: (_scope, key) => ({ generatedBy: "devils-table", category: "containers", saleUnit: "one" })[key],
+  getFlag: (_scope, key) => ({ generatedBy: "devils-table-merchants", category: "containers", saleUnit: "one" })[key],
   ...overrides });
 
 test("public projection reads embedded Items, hides arbitrary Item descriptions and never mutates stock", () => {

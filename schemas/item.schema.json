@@ -92,7 +92,7 @@
     },
     "icon": {
       "type": "string",
-      "pattern": "^(icons/|modules/devils-table/assets/)[A-Za-z0-9_/-]+\\.(svg|webp|png|jpg|jpeg)$"
+      "pattern": "^(icons/|modules/devils-table-merchants/assets/)[A-Za-z0-9_/-]+\\.(svg|webp|png|jpg|jpeg)$"
     },
     "category": {
       "type": "string",

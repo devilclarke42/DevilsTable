@@ -6,7 +6,7 @@ import { quoteTrade, purchaseOffers } from "../scripts/merchant/trade-model.js";
 import { confidence, interactionSuggestion, interactionQuote, nextMemory } from "../scripts/merchant/interactions.js";
 import { executeTrade } from "../scripts/merchant/transaction.js";
 
-const ns = "devils-table";
+const ns = "devils-table-merchants";
 const request = { id: "trade", userId: "player", lines: [{ id: "rope", quantity: 1 }], sales: [] };
 test("signed pricing supports additive and compound rules, bounded values and per-unit rounding", () => {
   assert.equal(combinedPercent([-10, -20]), -30);

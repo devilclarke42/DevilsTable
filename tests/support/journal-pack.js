@@ -7,7 +7,7 @@ export function journalPack() {
     if (docs.has(data._id)) throw Error("Duplicate receipt ID");
     const doc = { uuid: `Compendium.${pack.collection}.JournalEntry.${data._id}`, data: structuredClone(data),
       pages: [{ id: "page" }], getFlag: (ns, key) => doc.data.flags[ns][key],
-      async update(change) { if (change["flags.devils-table.transaction"]) doc.data.flags["devils-table"].transaction = structuredClone(change["flags.devils-table.transaction"]); },
+      async update(change) { if (change["flags.devils-table-merchants.transaction"]) doc.data.flags["devils-table-merchants"].transaction = structuredClone(change["flags.devils-table-merchants.transaction"]); },
       async updateEmbeddedDocuments() {} };
     docs.set(data._id, doc); index.set(data._id, { _id: data._id, flags: doc.data.flags }); return doc;
   } } };

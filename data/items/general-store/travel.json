@@ -49,7 +49,7 @@
       "units": "lb",
       "notes": "One tenth of a pound for a small needle assembly, dial and protective brass case."
     },
-    "icon": "modules/devils-table/assets/icons/compass.svg",
+    "icon": "modules/devils-table-merchants/assets/icons/compass.svg",
     "category": "travel",
     "tags": [
       "mundane",

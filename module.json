@@ -1,8 +1,8 @@
 {
-  "id": "devils-table",
+  "id": "devils-table-merchants",
   "title": "Devil's Table: Trade & Merchants",
   "description": "Persistent NPC merchants, shared item catalogues and GM-approved trading for D&D 5e.",
-  "version": "0.3.0-alpha.29",
+  "version": "0.3.29",
   "socket": true,
   "compatibility": {
     "minimum": "14",
@@ -11,7 +11,7 @@
   },
   "authors": [
     {
-      "name": "Devil Clarke"
+      "name": "Devilclarke"
     }
   ],
   "esmodules": [
@@ -34,8 +34,8 @@
     ]
   },
   "url": "https://github.com/devilclarke42/DevilsTable",
-  "readme": "https://github.com/devilclarke42/DevilsTable/blob/v0.3.0-alpha.29/README.md",
-  "changelog": "https://github.com/devilclarke42/DevilsTable/blob/v0.3.0-alpha.29/CHANGELOG.md",
+  "readme": "https://github.com/devilclarke42/DevilsTable/blob/v0.3.29/README.md",
+  "changelog": "https://github.com/devilclarke42/DevilsTable/blob/v0.3.29/CHANGELOG.md",
   "manifest": "https://raw.githubusercontent.com/devilclarke42/DevilsTable/main/module.json",
-  "download": "https://github.com/devilclarke42/DevilsTable/releases/download/v0.3.0-alpha.29/devils-table-v0.3.0-alpha.29.zip"
+  "download": "https://github.com/devilclarke42/DevilsTable/releases/download/v0.3.29/devils-table-v0.3.29.zip"
 }

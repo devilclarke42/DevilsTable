@@ -16,14 +16,14 @@ test("renaming, recategorising and changing shops never changes identity", () =>
   const first = catalogueEntryToItem(fixture);
   const second = catalogueEntryToItem({ ...fixture, name: "New name", category: "household", shops: ["alchemist"] });
   assert.equal(first._id, second._id);
-  assert.equal(second.flags["devils-table"].sourceId, fixture.id);
+  assert.equal(second.flags["devils-table-merchants"].sourceId, fixture.id);
 });
 test("converter keeps the adjusted weight and 2014 baseline without mutating source", () => {
   const before = structuredClone(fixture);
   const doc = catalogueEntryToItem(fixture);
   assert.equal(doc.system.weight.value, fixture.weight.value);
   assert.equal(doc.system.source.rules, "2014");
-  doc.flags["devils-table"].tags.push("changed");
+  doc.flags["devils-table-merchants"].tags.push("changed");
   assert.deepEqual(fixture, before);
 });
 test("descriptions cannot inject HTML", () => {

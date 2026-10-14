@@ -68,13 +68,13 @@ for (const conflict of [false, true, "property", "restored", "name", "ownership"
   let record = { gmId: "gm", id: request.id, date: "test", merchantId: m.id, characterId: pc.id,
     status: "needs-recovery", steps, attempted: index };
   const doc = { uuid: "Receipt.gear", pages: [], getFlag: () => structuredClone(record),
-    async update(data) { record = structuredClone(data["flags.devils-table.transaction"]); } };
+    async update(data) { record = structuredClone(data["flags.devils-table-merchants.transaction"]); } };
   globalThis.fromUuid = async () => doc; game.actors = new Map([[m.id, m], [pc.id, pc]]);
-  for (const a of [m, pc]) await a.setFlag("devils-table", "transactionPending", doc.uuid);
+  for (const a of [m, pc]) await a.setFlag("devils-table-merchants", "transactionPending", doc.uuid);
   if (conflict === true || conflict === "property" || conflict === "name" || conflict === "ownership") {
     await assert.rejects(recoverTrade(m), /Conflicting edit/);
     assert.equal(pc.items.size, 1); assert.equal(m.items.has("bag"), false);
-    assert.equal(m.getFlag("devils-table", "transactionPending"), doc.uuid);
+    assert.equal(m.getFlag("devils-table-merchants", "transactionPending"), doc.uuid);
   } else {
     assert.equal(await recoverTrade(m), "Recovery checked: rolled-back.");
     assert.equal(pc.items.size, 0); assert.equal(m.items.get("bag").system.quantity, 1);

@@ -15,11 +15,11 @@ test("GM portrait and availability hooks notify matching viewers without reactin
   const messages = [], seen = []; let gm = true;
   const unsubscribe = subscribePresentation("merchant", packet => seen.push(packet));
   registerPresentationUpdates(() => gm, packet => messages.push(packet));
-  hooks.get("updateActor")(actor, { flags: { "devils-table": { merchant: { relationships: { pc: {} } } } } });
+  hooks.get("updateActor")(actor, { flags: { "devils-table-merchants": { merchant: { relationships: { pc: {} } } } } });
   assert.equal(messages.length, 0);
   hooks.get("updateActor")(actor, { img: "new.webp" }); assert.equal(seen.length, 1); assert.equal(messages.length, 1);
   assert.deepEqual(Object.keys(messages[0]).sort(), ["actorId", "presentation", "type"]);
-  hooks.get("updateActor")(actor, { "flags.devils-table.merchant.availability": "closed" }); assert.equal(messages.length, 2);
+  hooks.get("updateActor")(actor, { "flags.devils-table-merchants.merchant.availability": "closed" }); assert.equal(messages.length, 2);
   gm = false; hooks.get("updateActor")(actor, { img: "other.webp" }); assert.equal(messages.length, 2);
   receivePresentation({ actorId: "other", presentation: { portrait: "other.webp", availability: "open" } }); assert.equal(seen.length, 2);
   unsubscribe(); receivePresentation(messages[0]); assert.equal(seen.length, 2);

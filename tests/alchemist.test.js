@@ -20,7 +20,7 @@ catalogueRegistry.register({catalogues:data.catalogueDefinitions,categories:data
 test("Alchemist shares six goods and adds 35 permanent, fully described records",async()=>{
  assert.equal(rows.length,41);assert.equal(rows.filter(i=>i.id.startsWith("DT_ITEM_ALC_")).length,35);
  const icons=new Set((await readJson("tests/fixtures/core-icon-references.json")).icons.map(i=>i.icon));
- for(const i of rows){assert.ok(i.icon.startsWith("modules/devils-table/")||icons.has(i.icon),i.name);assert.ok(i.saleUnit&&i.weight.notes&&i.description);}
+ for(const i of rows){assert.ok(i.icon.startsWith("modules/devils-table-merchants/")||icons.has(i.icon),i.name);assert.ok(i.saleUnit&&i.weight.notes&&i.description);}
 });
 test("healing doses use native healing dice, 2014 actions and self consumption",()=>{
  const formulas=[];
@@ -42,7 +42,7 @@ test("Alchemist scoped builds converge and never duplicate shared Item identitie
  await build({dryRun:false,shopId:"general-store"});
  const r=await build({dryRun:false,shopId:"alchemist"});assert.equal(r.create,35);assert.equal(r.unchanged,6);
  assert.equal((await build({dryRun:false,shopId:"alchemist"})).unchanged,41);
- assert.equal(new Set(state.docs.map(d=>d.flags["devils-table"].sourceId)).size,state.docs.length);
+ assert.equal(new Set(state.docs.map(d=>d.flags["devils-table-merchants"].sourceId)).size,state.docs.length);
 });
 test("four presets select distinct generation scales and workshop services",async()=>{
  const profiles=stockProfiles(data).filter(p=>p.shop==="alchemist");assert.equal(profiles.length,4);
@@ -51,7 +51,7 @@ test("four presets select distinct generation scales and workshop services",asyn
  assert.ok(Object.values(stockGroups(data,travelling)).flat().every(i=>i.weight.value<=0.5&&i.availability!=="special-order"));
  const distill=services.services.find(s=>s.id==="DT_SERVICE_ALC_DISTILL_ALCOHOL");
  for(const t of templates){
-  const m=new Actor("merchant");await m.setFlag("devils-table","merchant.economy",{profile:t.settings.profile});
+  const m=new Actor("merchant");await m.setFlag("devils-table-merchants","merchant.economy",{profile:t.settings.profile});
   assert.equal(eligibleService(distill,m,{catalogueId:"alchemist"}),["alchemist-town","alchemist-master"].includes(t.id));
  }
  assert.doesNotThrow(()=>new ServiceRegistry().register(services));
@@ -62,9 +62,9 @@ test("mixed potion and preparation checkout pays once and preserves the selected
  const mint=catalogueEntryToItem(rows.find(i=>i.id==="DT_ITEM_ALC_MINT"));
  const potion=catalogueEntryToItem(rows.find(i=>i.id==="DT_ITEM_ALC_HEALING_POTION"));
  const pc=new Actor("pc",5000,[mint]),m=new Actor("merchant",0,[potion]);game.actors=[m,pc];
- await m.setFlag("devils-table","merchant.catalogueId","alchemist");
- await m.setFlag("devils-table","merchant.economy",{profile:"herbalist"});
- await m.setFlag("devils-table","merchant.services",{DT_SERVICE_ALC_GRIND_HERBS:{enabled:true}});
+ await m.setFlag("devils-table-merchants","merchant.catalogueId","alchemist");
+ await m.setFlag("devils-table-merchants","merchant.economy",{profile:"herbalist"});
+ await m.setFlag("devils-table-merchants","merchant.services",{DT_SERVICE_ALC_GRIND_HERBS:{enabled:true}});
  const request={id:"alchemist-mixed",userId:"player",sales:[],lines:[{id:potion._id,quantity:1},{id:"service:DT_SERVICE_ALC_GRIND_HERBS",quantity:1,targetItemId:mint._id}]};
  const before=pc.items.get(mint._id).toObject(),log=ledger();
  await executeTrade({merchant:m,character:pc,request,quote:quoteTrade(m,pc,request),receiptAdapter:log});

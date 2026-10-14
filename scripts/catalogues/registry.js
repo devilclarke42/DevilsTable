@@ -34,18 +34,18 @@ export class CatalogueRegistry {
   categories(id) { return clone(ordered([...this.#categories.values()].filter(row => row.catalogue === id))); }
   /** Resolve legacy merchants without writing flags or rebuilding inventory. */
   resolve(actor) {
-    const explicit = actor.getFlag?.("devils-table", "merchant")?.catalogueId;
+    const explicit = actor.getFlag?.("devils-table-merchants", "merchant")?.catalogueId;
     if (explicit) return this.get(explicit); // Missing provider must not silently select another catalogue.
     const votes = new Map();
     for (const item of actor.items ?? []) {
-      const memberships = item.getFlag?.("devils-table", "shops");
+      const memberships = item.getFlag?.("devils-table-merchants", "shops");
       if (Array.isArray(memberships)) for (const id of memberships) votes.set(id, (votes.get(id) ?? 0) + 1);
     }
     return this.list().sort((a, b) => (votes.get(b.id) ?? 0) - (votes.get(a.id) ?? 0))[0] ?? null;
   }
   project(actor, offers) {
     const catalogue = this.resolve(actor);
-    if (!catalogue) return { catalogue: null, categories: [], items: actor.getFlag?.("devils-table", "merchant")?.catalogueId ? [] : offers };
+    if (!catalogue) return { catalogue: null, categories: [], items: actor.getFlag?.("devils-table-merchants", "merchant")?.catalogueId ? [] : offers };
     const definitions = this.categories(catalogue.id), byId = new Map(definitions.map(row => [row.id, row]));
     const items = offers.flatMap(item => {
       if (item.catalogues?.length && !item.catalogues.includes(catalogue.id)) return [];

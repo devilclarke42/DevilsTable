@@ -43,14 +43,14 @@ export async function renderNpcMerchantTab(app, html) {
   link.innerHTML = '<i class="fa-solid fa-store" aria-hidden="true"></i>';
   link.addEventListener("keydown", event => { if (["Enter", " "].includes(event.key)) { event.preventDefault(); link.click(); } });
   nav.append(link);
-  const panel = document.createElement("section"); panel.className = "tab devils-table dt-npc-tab";
+  const panel = document.createElement("section"); panel.className = "tab devils-table-merchants dt-npc-tab";
   Object.assign(panel.dataset, { dtEntry: "panel", group: "primary", tab: "devilsTable" });
   if (app.tabGroups?.primary === "devilsTable") { panel.classList.add("active"); link.classList.add("active"); }
   panel.textContent = "Loading merchant settings…"; body.append(panel);
   try {
     const state = await npcConfiguration(actor);
     if (generations.get(app) !== generation || !panel.parentElement || !game.user.isGM) return;
-    panel.innerHTML = await foundry.applications.handlebars.renderTemplate("modules/devils-table/templates/npc-merchant-tab.hbs", {
+    panel.innerHTML = await foundry.applications.handlebars.renderTemplate("modules/devils-table-merchants/templates/npc-merchant-tab.hbs", {
       enabled: enabled(actor), draft: state.draft, choices: configurationChoices(state)
     });
     // These controls intentionally have no form names; native Actor autosave must not handle module drafts.

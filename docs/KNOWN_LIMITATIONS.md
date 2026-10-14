@@ -30,3 +30,7 @@ The inactive reserved Item IDs `DT_ITEM_BSM_IRON_BAR` and `DT_ITEM_BSM_COPPER_BA
 ## Related documents
 
 [Roadmap](../ROADMAP.md), [Project Philosophy](PROJECT_PHILOSOPHY.md), [Integrations](INTEGRATIONS.md), [Release Process](RELEASE_PROCESS.md).
+
+## Module ID transition in 0.3.29
+
+The installed module ID is now `devils-table-merchants` (previously `devils-table`). Foundry treats these as different modules. Existing Actor/Item/Journal/Token flags and world settings under the old namespace are not automatically migrated. Back up existing worlds and migrate these namespaces before using the renamed module; do not enable both installations together. Existing world compendium names and document IDs remain unchanged.

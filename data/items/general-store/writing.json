@@ -167,7 +167,7 @@
       "units": "lb",
       "notes": "Two hundredths of a pound for one small chalk stick."
     },
-    "icon": "modules/devils-table/assets/icons/chalk.svg",
+    "icon": "modules/devils-table-merchants/assets/icons/chalk.svg",
     "category": "writing",
     "tags": [
       "mundane",
@@ -239,7 +239,7 @@
       "units": "lb",
       "notes": "One fifth of a pound for the brass face and short wooden handle."
     },
-    "icon": "modules/devils-table/assets/icons/sealing-stamp.svg",
+    "icon": "modules/devils-table-merchants/assets/icons/sealing-stamp.svg",
     "category": "writing",
     "tags": [
       "mundane",
@@ -347,7 +347,7 @@
       "units": "lb",
       "notes": "Half a pound for both wax-filled panels, hinges and included stylus."
     },
-    "icon": "modules/devils-table/assets/icons/writing-tablet.webp",
+    "icon": "modules/devils-table-merchants/assets/icons/writing-tablet.webp",
     "category": "writing",
     "tags": [
       "mundane",
@@ -383,7 +383,7 @@
       "units": "lb",
       "notes": "One pound for the slate, wooden frame and included chalk stick."
     },
-    "icon": "modules/devils-table/assets/icons/writing-tablet.webp",
+    "icon": "modules/devils-table-merchants/assets/icons/writing-tablet.webp",
     "category": "writing",
     "tags": [
       "mundane",
@@ -455,7 +455,7 @@
       "units": "lb",
       "notes": "Half a pound for the empty tube, cap and tie; documents are weighed separately."
     },
-    "icon": "modules/devils-table/assets/icons/document-case.webp",
+    "icon": "modules/devils-table-merchants/assets/icons/document-case.webp",
     "category": "writing",
     "tags": [
       "mundane",

@@ -12,7 +12,7 @@
       <label>Category<select data-builder-select="category"><option value="" {{#if allCategories}}selected{{/if}}>All categories</option>{{#each categories}}<option value="{{id}}" {{#if selected}}selected{{/if}}>{{name}} · {{count}} products</option>{{/each}}</select></label>
     </fieldset>
     <p>Settlement is preview context only: the shared Item catalogue is identical across settlements. Use the RollTable Builder to filter settlement stock profiles.</p>
-    {{> "modules/devils-table/templates/generation-summary.hbs"}}
+    {{> "modules/devils-table-merchants/templates/generation-summary.hbs"}}
     {{#if shop}}
       <details class="dt-merchant-notes">
         <summary>Merchant Notes — {{shop.name}}</summary>

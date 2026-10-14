@@ -61,7 +61,7 @@ test("provider data builds once in the shared pack and hidden categories cannot 
   const merchant = { type: "npc", getFlag: (_scope, key) => key === "merchant" ? { enabled: true, catalogueId: catalogue.id, settings: {} } : null,
     items: categories.filter(c => c.id !== "empty").map(c => ({ id: c.id, name: c.name, img: icon, type: "loot",
       system: { quantity: 1, price: { value: 1, denomination: "sp" }, description: { value: "Public" } },
-      getFlag: (_scope, key) => ({ generatedBy: "devils-table", category: c.id, shops: [catalogue.id], tags: ["tailoring"] })[key] })) };
+      getFlag: (_scope, key) => ({ generatedBy: "devils-table-merchants", category: c.id, shops: [catalogue.id], tags: ["tailoring"] })[key] })) };
   assert.deepEqual(purchaseOffers(merchant).map(i => i.id), ["visible"]);
   assert.throws(() => quoteTrade(merchant, { items: [] }, { lines: [{ id: "secret", quantity: 1 }] }, null, { settlement: false }), /Stock has changed/);
   assert.equal(catalogueRegistry.project(merchant, purchaseOffers(merchant)).catalogue.name, "Test Provider");

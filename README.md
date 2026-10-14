@@ -6,7 +6,7 @@ Devil's Table is for GMs who want merchants with believable stock, native curren
 
 ## Project status
 
-**Milestone 1: Merchant Framework complete.** The current runtime is `0.3.0-alpha.29`, targeting **Foundry VTT 14**, **D&D5e 5.3.3** and **2014 rules**. Milestone 2 covers content expansion and public beta preparation. This is an alpha project, not a certified public beta; see [Known Limitations](docs/KNOWN_LIMITATIONS.md).
+**Milestone 1: Merchant Framework complete.** The current runtime is `0.3.29`, targeting **Foundry VTT 14**, **D&D5e 5.3.3** and **2014 rules**. Milestone 2 covers content expansion and public beta preparation. This is an alpha project, not a certified public beta; see [Known Limitations](docs/KNOWN_LIMITATIONS.md).
 
 The source contains 440 unique products, 40 service definitions, 26 merchant templates and 100 active stock tables. Shared goods keep one identity across merchant types.
 

@@ -13,7 +13,7 @@
       "units": "lb",
       "notes": "Adjusted carried weight for the complete stated sale unit, including its wrapping or supplied vessel."
     },
-    "icon": "modules/devils-table/assets/icons/document-case.webp",
+    "icon": "modules/devils-table-merchants/assets/icons/document-case.webp",
     "category": "smuggling",
     "tags": [
       "black-market",
@@ -48,7 +48,7 @@
       "units": "lb",
       "notes": "Adjusted carried weight for the complete stated sale unit, including its wrapping or supplied vessel."
     },
-    "icon": "modules/devils-table/assets/icons/document-case.webp",
+    "icon": "modules/devils-table-merchants/assets/icons/document-case.webp",
     "category": "smuggling",
     "tags": [
       "black-market",
@@ -83,7 +83,7 @@
       "units": "lb",
       "notes": "Adjusted carried weight for the complete stated sale unit, including its wrapping or supplied vessel."
     },
-    "icon": "modules/devils-table/assets/icons/document-case.webp",
+    "icon": "modules/devils-table-merchants/assets/icons/document-case.webp",
     "category": "smuggling",
     "tags": [
       "black-market",
@@ -118,7 +118,7 @@
       "units": "lb",
       "notes": "Adjusted carried weight for the complete stated sale unit, including its wrapping or supplied vessel."
     },
-    "icon": "modules/devils-table/assets/icons/document-case.webp",
+    "icon": "modules/devils-table-merchants/assets/icons/document-case.webp",
     "category": "smuggling",
     "tags": [
       "black-market",

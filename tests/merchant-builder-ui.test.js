@@ -6,11 +6,11 @@ import { catalogueRegistry } from "../scripts/catalogues/registry.js";
 
 test("single-panel configuration updates estimates locally, saves explicitly and previews editable cash", async () => {
   setup();
-  const actor = new Actor("merchant",0);delete actor.flags["devils-table"].merchant;
+  const actor = new Actor("merchant",0);delete actor.flags["devils-table-merchants"].merchant;
   game.actors=[actor];game.actors.get=id=>game.actors.find(a=>a.id===id);game.scenes=[];game.packs=new Map();
   game.user.isGM=true;
   game.settings.get=(_ns,key)=>key==="serviceDefinitions"?{categories:[],services:[]}:key==="debugLogging"?false:"unlimited";
-  globalThis.fetch=async url=>({ok:true,json:()=>readJson(String(url).replace("modules/devils-table/",""))});
+  globalThis.fetch=async url=>({ok:true,json:()=>readJson(String(url).replace("modules/devils-table-merchants/",""))});
   globalThis.Roll=class {async evaluate(){return {total:1};}};
   const errors=[];globalThis.ui={notifications:{error:msg=>errors.push(msg)}};
   let renders=0,closed=0;
@@ -36,8 +36,8 @@ test("single-panel configuration updates estimates locally, saves explicitly and
   App.DEFAULT_OPTIONS.actions.selectTab.call(app,null,{dataset:{builderTab:"cash"}});
   assert.equal(panels.find(p=>p.dataset.builderPanel==="cash").hidden,false);
   assert.equal(fields[0].value,"city");
-  assert.equal(actor.getFlag("devils-table","merchant"),undefined);assert.equal(actor.system.currency.cp,0);
-  await App.DEFAULT_OPTIONS.actions.save.call(app);assert.equal(actor.getFlag("devils-table","merchant.economy").settlement,"city");assert.equal(actor.system.currency.cp,0);
+  assert.equal(actor.getFlag("devils-table-merchants","merchant"),undefined);assert.equal(actor.system.currency.cp,0);
+  await App.DEFAULT_OPTIONS.actions.save.call(app);assert.equal(actor.getFlag("devils-table-merchants","merchant.economy").settlement,"city");assert.equal(actor.system.currency.cp,0);
   context=await app._prepareContext({});assert.equal(context.generationBlocked,false);
   const business=node("businessName","Copper Kettle");business.dataset={merchantIdentity:"businessName"};identityFields.push(business);
   app._onRender({},{});business.input({target:business});
@@ -45,7 +45,7 @@ test("single-panel configuration updates estimates locally, saves explicitly and
   assert.equal(nativeName.textContent,"Old Nan");assert.equal((await app._prepareContext({})).identity.businessName,"Copper Kettle");
   App.DEFAULT_OPTIONS.actions.selectTab.call(app,null,{dataset:{builderTab:"services"}});
   assert.equal(panels.find(p=>p.dataset.builderPanel==="services").hidden,false);
-  await App.DEFAULT_OPTIONS.actions.saveIdentity.call(app);assert.equal(actor.getFlag("devils-table","merchant.identity.businessName"),"Copper Kettle");assert.equal(actor.name,"Old Nan");
+  await App.DEFAULT_OPTIONS.actions.saveIdentity.call(app);assert.equal(actor.getFlag("devils-table-merchants","merchant.identity.businessName"),"Copper Kettle");assert.equal(actor.name,"Old Nan");
 
   nodes.get("[name=replaceCash]") ?? nodes.set("[name=replaceCash]",{checked:false});
   await App.DEFAULT_OPTIONS.actions.generateFloat.call(app);context=await app._prepareContext({});assert.equal(context.float.generated,true);assert.equal(context.float.label,"250 gp");assert.equal(actor.system.currency.cp,0);

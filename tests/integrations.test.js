@@ -10,7 +10,7 @@ import { prepareServiceExecution,executeServiceJobs } from "../scripts/services/
 import { catalogueRegistry } from "../scripts/catalogues/registry.js";
 import { quoteTrade } from "../scripts/merchant/trade-model.js";
 import { executeTrade } from "../scripts/merchant/transaction.js";
-const ns="devils-table",icon="icons/svg/bed.svg";
+const ns="devils-table-merchants",icon="icons/svg/bed.svg";
 registerBuiltInIntegrations();
 catalogueRegistry.register({catalogues:[{id:"integration-test",name:"Inn",icon,sort:1,categories:[],fallbackCategory:{id:"other",name:"Other",icon}}],categories:[]});
 const room=()=>({name:"Willow Room",keyName:"",doors:["Scene.inn.Wall.first","Scene.inn.Wall.second"],days:3,expiry:"checkout",key:true,calendar:true});

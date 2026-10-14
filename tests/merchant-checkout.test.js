@@ -44,7 +44,7 @@ for (const count of [2, 3, 5]) test(`${count} checkout clients: one GM review, b
     let consent = null;
     players[0].query = async (name, payload) => {
       if (name.endsWith("checkoutProof")) return structuredClone(packets[0]);
-      assert.equal(name, "devils-table.revisedOffer");
+      assert.equal(name, "devils-table-merchants.revisedOffer");
       assert.equal(payload.previous.total, 10); assert.equal(payload.revised.total, 8);
       assert.equal(payload.revised.payment, undefined);
       if (consent === null) throw Error("Player timed out");
@@ -63,7 +63,7 @@ for (const count of [2, 3, 5]) test(`${count} checkout clients: one GM review, b
   await reviews[0].constructor.DEFAULT_OPTIONS.actions.approve.call(reviews[0]);
   assert.deepEqual(errors, []); assert.equal(responses.filter(r => r.status === "approved").length, 1);
   assert.equal(merchant.items.get("rope").system.quantity, 0); assert.equal(pcs[0].system.currency.cp, count === 2 ? 42 : 40);
-  const completed = [...docs.values()][0].getFlag("devils-table", "transaction");
+  const completed = [...docs.values()][0].getFlag("devils-table-merchants", "transaction");
   assert.equal(completed.status, "completed");
   const { createReceipt } = await import("../scripts/merchant/ledger.js");
   await assert.rejects(createReceipt(completed), /already has a receipt/);
@@ -75,7 +75,7 @@ for (const count of [2, 3, 5]) test(`${count} checkout clients: one GM review, b
     players[1].query = async name => name.endsWith("checkoutProof") ? structuredClone(next) : false;
     await reviews[1].constructor.DEFAULT_OPTIONS.actions.recalculate.call(reviews[1]);
     assert.equal(merchant.items.get("rope").system.quantity, 1); assert.equal(pcs[1].system.currency.cp, 50);
-    assert.equal([...docs.values()].filter(d => d.getFlag("devils-table", "transaction").status === "rejected").length, 1);
+    assert.equal([...docs.values()].filter(d => d.getFlag("devils-table-merchants", "transaction").status === "rejected").length, 1);
   }
 });
 
@@ -100,14 +100,14 @@ test("existing receipts can be dismissed without replaying trades or losing reco
     const before = docs.size;
     const result = await finishReceiptReview({ ...record, status: "closed" }, [merchant, pc]);
     assert.equal(result, expected); assert.equal(docs.size, before);
-    assert.equal(doc.getFlag("devils-table", "transaction").status, finalStatus);
-    assert.equal(Boolean(merchant.getFlag("devils-table", "transactionPending")), blocked);
-    assert.equal(Boolean(pc.getFlag("devils-table", "transactionPending")), blocked);
+    assert.equal(doc.getFlag("devils-table-merchants", "transaction").status, finalStatus);
+    assert.equal(Boolean(merchant.getFlag("devils-table-merchants", "transactionPending")), blocked);
+    assert.equal(Boolean(pc.getFlag("devils-table-merchants", "transactionPending")), blocked);
     assert.equal(pc.system.currency.cp, 50); assert.equal(merchant.system.currency.cp, 10);
   }
   const m = new Actor("merchant"), pc = new Actor("pc");
   const record = { id: "prewrite-reject", merchantId: m.id, characterId: pc.id, date: "2026-09-26", status: "committing", attempted: -1 };
   const doc = await createReceipt(record);
   assert.equal(await finishReceiptReview({ ...record, status: "rejected" }, [m, pc]), "rejected");
-  assert.equal(doc.getFlag("devils-table", "transaction").status, "rejected");
+  assert.equal(doc.getFlag("devils-table-merchants", "transaction").status, "rejected");
 });

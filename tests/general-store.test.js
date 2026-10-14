@@ -21,7 +21,7 @@ test("new purchase units preserve whole-bundle prices and adjusted weights", asy
     assert.equal(doc.system.source.rules, "2014");
     assert.equal(doc.system.weight.value, item.weight.value);
     assert.deepEqual(doc.system.price, item.price);
-    assert.equal(doc.flags["devils-table"].saleUnit, item.saleUnit);
+    assert.equal(doc.flags["devils-table-merchants"].saleUnit, item.saleUnit);
   }
   assert.equal(findItem(data, "Pitons").weight.value, 2);
   assert.match(findItem(data, "Pitons").saleUnit, /10|ten/i);
@@ -79,7 +79,7 @@ test("light reach uses total dim distance; burn metadata never creates token eff
     const item = findItem(data, name);
     const before = structuredClone(item);
     const doc = catalogueEntryToItem(item);
-    const light = doc.flags["devils-table"].light;
+    const light = doc.flags["devils-table-merchants"].light;
     assert.deepEqual([light.brightFeet, light.dimFeet, light.durationHours, light.shape], [bright, dim, hours, shape]);
     assert.equal(Object.hasOwn(doc, "effects"), false);
     light.brightFeet = 999;
@@ -154,7 +154,7 @@ test("native activity consumption and light metadata remain strict at read-back"
     doc => { doc.system.uses.autoDestroy = false; },
     doc => { doc.system.activities[activityId].consumption.targets[0].target = doc._id; },
     doc => { doc.system.activities[activityId].consumption.targets[0].value = "2"; },
-    doc => { doc.flags["devils-table"].light.dimFeet = 20; }
+    doc => { doc.flags["devils-table-merchants"].light.dimFeet = 20; }
   ]) {
     const saved = structuredClone(expected);
     mutate(saved);

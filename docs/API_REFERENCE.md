@@ -4,7 +4,7 @@
 
 ## Status and lifecycle
 
-The API is exposed on `game.modules.get("devils-table").api` at `init`. It is a supported **prerelease** surface, not a 1.0 stability guarantee. Providers should declare Devil's Table as a required dependency and register synchronously during `setup`, before `ready` begins metadata/service initialization. Load data before that synchronous hook; Foundry does not wait for an async listener. Every client must register the same bundle.
+The API is exposed on `game.modules.get("devils-table-merchants").api` at `init`. It is a supported **prerelease** surface, not a 1.0 stability guarantee. Providers should declare Devil's Table as a required dependency and register synchronously during `setup`, before `ready` begins metadata/service initialization. Load data before that synchronous hook; Foundry does not wait for an async listener. Every client must register the same bundle.
 
 Use exported entry points; do not import internal classes, patch prototypes or write persistence flags as an extension API. Referenced current schema/API shapes must be reviewed when target versions change.
 
@@ -40,7 +40,7 @@ Categories may extend an existing catalogue; `(catalogue, category id)` identifi
 ```js
 // providerBundle is validated plain data supplied by your module.
 Hooks.once("setup", () => {
-  const api = game.modules.get("devils-table").api;
+  const api = game.modules.get("devils-table-merchants").api;
   api.registerCatalogueProvider("my-module", providerBundle);
 });
 ```
@@ -54,7 +54,7 @@ Service bundles contain `categories` and `services`, with unique `DT_SERVICE_` I
 ## Building and rolling
 
 ```js
-const api = game.modules.get("devils-table").api;
+const api = game.modules.get("devils-table-merchants").api;
 await api.rebuildCompendiums({ shopId: "general-store" }); // preview
 await api.rebuildStockTables({ shopId: "black-market" }); // preview
 // After the GM reviews and builds the source/tables:

@@ -19,7 +19,7 @@ function setup(t) {
       for (const [key, value] of Object.entries(changes)) {
         if (key === "system.currency") this.system.currency = structuredClone(value);
         else {
-          const parts = key.replace("flags.devils-table.merchant.", "").split(".");
+          const parts = key.replace("flags.devils-table-merchants.merchant.", "").split(".");
           let target = config;
           for (const part of parts.slice(0,-1)) target = target[part] ??= {};
           target[parts.at(-1)] = structuredClone(value);
@@ -30,12 +30,12 @@ function setup(t) {
       assert.equal(type, "Item");
       for (const item of data) {
         assert.equal(item._id, undefined);
-        this.items.push(embedded(item.flags["devils-table"].sourceId, item.system.quantity));
+        this.items.push(embedded(item.flags["devils-table-merchants"].sourceId, item.system.quantity));
       }
     } };
   const roll = async () => ({ profileName: "Village", profileId: "DT_TABLE_GS", items: [row("existing"), row("new")] });
   const resolve = async uuid => ({ documentName: "Item", getFlag: () => uuid.split(".").at(-1),
-    toObject: () => ({ _id: "original", name: "new", system: { quantity: 1 }, flags: { "devils-table": { sourceId: "new" } } }) });
+    toObject: () => ({ _id: "original", name: "new", system: { quantity: 1 }, flags: { "devils-table-merchants": { sourceId: "new" } } }) });
   return { actor, roll, resolve };
 }
 

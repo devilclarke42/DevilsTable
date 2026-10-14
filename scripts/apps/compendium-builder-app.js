@@ -20,7 +20,7 @@ export class CompendiumBuilderApplication extends HandlebarsApplicationMixin(App
 
   static DEFAULT_OPTIONS = {
     id: "devils-table-builder",
-    classes: ["devils-table"],
+    classes: ["devils-table-merchants"],
     tag: "section",
     position: { width: 760, height: 690 },
     window: { title: "Devil's Table: Trade & Merchants — Compendium Builder", icon: "fa-solid fa-hammer", resizable: true },
@@ -32,7 +32,7 @@ export class CompendiumBuilderApplication extends HandlebarsApplicationMixin(App
     }
   };
 
-  static PARTS = { body: { template: "modules/devils-table/templates/compendium-builder.hbs", templates: ["modules/devils-table/templates/generation-summary.hbs"], scrollable: [".dt-builder", ".dt-report"] } };
+  static PARTS = { body: { template: "modules/devils-table-merchants/templates/compendium-builder.hbs", templates: ["modules/devils-table-merchants/templates/generation-summary.hbs"], scrollable: [".dt-builder", ".dt-report"] } };
 
   _onRender(context, options) {
     super._onRender?.(context, options);

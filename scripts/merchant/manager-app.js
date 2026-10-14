@@ -24,13 +24,13 @@ export class MerchantManagerApplication extends HandlebarsApplicationMixin(Appli
   #busy = false;
   #tab = "merchant";
   static DEFAULT_OPTIONS = {
-    id: "devils-table-merchant-manager", classes: ["devils-table"], tag: "section",
+    id: "devils-table-merchant-manager", classes: ["devils-table-merchants"], tag: "section",
     position: { width: 650, height: "auto" },
     window: { title: "Devil's Table: Trade & Merchants — Merchant Administration", icon: "fa-solid fa-store", resizable: true },
     actions: { selectTab: MerchantManagerApplication.#selectTab, enable: MerchantManagerApplication.#enable, previewStock: MerchantManagerApplication.#previewStock,
       addStock: MerchantManagerApplication.#addStock, loadTerms: MerchantManagerApplication.#loadTerms, saveTerms: MerchantManagerApplication.#saveTerms, recover: MerchantManagerApplication.#recover }
   };
-  static PARTS = { body: { template: "modules/devils-table/templates/merchant-manager.hbs" } };
+  static PARTS = { body: { template: "modules/devils-table-merchants/templates/merchant-manager.hbs" } };
   async _prepareContext(options) {
     let stockError = "";
     try { this.#catalogue ??= await loadStockCatalogue(); }

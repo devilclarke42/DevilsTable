@@ -59,7 +59,7 @@ All ten services use the shared registry, eligibility, mixed basket, currency se
 
 ## Shared visibility contract
 
-Inventory uses `flags.devils-table.offer.visibility` on the merchant’s embedded Item. Services use an offering-level `visibility` override, falling back to the definition’s default `visibility`. Policies are plain data:
+Inventory uses `flags.devils-table-merchants.offer.visibility` on the merchant’s embedded Item. Services use an offering-level `visibility` override, falling back to the definition’s default `visibility`. Policies are plain data:
 
 ```json
 {"mode":"relationship","minPurchases":3,"revealed":false}

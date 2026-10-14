@@ -10,7 +10,7 @@ async function environment({ locked = true } = {}) {
   const catalogue = await loadStockCatalogue({ readJson });
   const active = stockTableDocuments(catalogue);
   const legacy = stockTableDocuments(catalogue, {}, { legacyCategories: true })
-    .filter(table => catalogue.tableLedger.ids.includes(table.flags["devils-table"].sourceId));
+    .filter(table => catalogue.tableLedger.ids.includes(table.flags["devils-table-merchants"].sourceId));
   const { adapter, state } = fakeAdapter({ existing: [...active, ...legacy], locked });
   state.world = [];
   state.cleanup = [];
@@ -39,7 +39,7 @@ test("compact builds preserve old category tables until explicit cleanup; whole-
   assert.equal(result.unchanged, 100);
   assert.equal(result.preserved, 100);
   assert.deepEqual(state.docs, original);
-  assert.ok(active.every(table => table.flags["devils-table"].category === "all"));
+  assert.ok(active.every(table => table.flags["devils-table-merchants"].category === "all"));
 });
 
 test("cleanup preview is read-only and 100 eligible legacy tables are removed after exact approval", async () => {
@@ -79,8 +79,8 @@ test("edited results, folders and foreign flags protect tables and their linked 
 
 test("world and unrelated compendium RollTable references preserve their full dependency chains", async () => {
   const { catalogue, state, legacy } = await environment();
-  state.world.push({ _id: "world00000000001", name: "World table", results: [{ documentUuid: tableUuid(legacy[0].flags["devils-table"].sourceId) }] });
-  state.docs.push({ _id: "custom0000000001", name: "Personal table", description: `@UUID[${tableUuid(legacy[4].flags["devils-table"].sourceId)}]`, flags: {}, results: [] });
+  state.world.push({ _id: "world00000000001", name: "World table", results: [{ documentUuid: tableUuid(legacy[0].flags["devils-table-merchants"].sourceId) }] });
+  state.docs.push({ _id: "custom0000000001", name: "Personal table", description: `@UUID[${tableUuid(legacy[4].flags["devils-table-merchants"].sourceId)}]`, flags: {}, results: [] });
   const plan = planLegacyCleanup(catalogue, state.docs, state.world);
   assert.equal(plan.preserved.length, 8);
   assert.equal(plan.removable.length, 92);

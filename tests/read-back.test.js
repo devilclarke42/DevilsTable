@@ -70,8 +70,8 @@ test("prices, weights, capacities and identity metadata remain strictly compared
     doc => { doc.system.capacity.weight.value = 31; },
     doc => { doc.system.capacity.volume.value = 2; },
     doc => { doc._id = "changed"; },
-    doc => { doc.flags["devils-table"].sourceId = "changed"; },
-    doc => { doc.flags["devils-table"].shops.reverse(); }
+    doc => { doc.flags["devils-table-merchants"].sourceId = "changed"; },
+    doc => { doc.flags["devils-table-merchants"].shops.reverse(); }
   ]) {
     const saved = structuredClone(expected);
     mutate(saved);

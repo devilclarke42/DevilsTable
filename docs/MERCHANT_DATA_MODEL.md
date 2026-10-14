@@ -8,7 +8,7 @@ Merchant identity/inventory/currency remain on standard world NPC Actors and emb
 
 ## Merchant flag
 
-Current configuration is under `flags.devils-table.merchant`. Treat this as internal persistence, not a stable write API. Preserve unrelated fields and use validated Builder/administration functions.
+Current configuration is under `flags.devils-table-merchants.merchant`. Treat this as internal persistence, not a stable write API. Preserve unrelated fields and use validated Builder/administration functions.
 
 | Path within merchant | Meaning |
 | --- | --- |
@@ -27,13 +27,13 @@ Native identity is read through adapters and never copied into another merchant-
 
 ## Offers and relationships
 
-Embedded Item `flags.devils-table.offer` can hold approved publicDescription, copper unitPrice, generated lineage and visibility. Ordinary native quantity/price remain the stock source. A visibility policy has mode public/hidden/relationship, optional revealed boolean and positive minPurchases threshold (default three). Saved controls are stripped when goods transfer to customers.
+Embedded Item `flags.devils-table-merchants.offer` can hold approved publicDescription, copper unitPrice, generated lineage and visibility. Ordinary native quantity/price remain the stock source. A visibility policy has mode public/hidden/relationship, optional revealed boolean and positive minPurchases threshold (default three). Saved controls are stripped when goods transfer to customers.
 
 Relationships are keyed by character Actor ID. Verified decisions update visits, successful purchases/transactions, spent/received values, discount totals, negotiations and theft outcomes. State/notes remain descriptive GM context. Browse never writes a visit; a descriptive Trusted label does not itself unlock a purchase-count rule. Companion/apparent-identity/faction systems are not implemented extension contracts.
 
 ## Receipts and recovery
 
-Transaction Journals contain immutable decision context and staged native before/after data for audit/recovery, plus optional action job states. Actor `flags.devils-table.transactionPending` links unresolved operations to their receipt. Reject duplicate/replayed requests; do not edit receipt internals or clear pending flags to force a trade.
+Transaction Journals contain immutable decision context and staged native before/after data for audit/recovery, plus optional action job states. Actor `flags.devils-table-merchants.transactionPending` links unresolved operations to their receipt. Reject duplicate/replayed requests; do not edit receipt internals or clear pending flags to force a trade.
 
 The retention setting selects last 100/500/1000 or unlimited, with default 500. Unresolved recovery and uncertain service jobs remain protected. Lifetime customer/service counters are not reconstructed from the truncated receipt list. Private leases survive receipt retention and merchant reset.
 

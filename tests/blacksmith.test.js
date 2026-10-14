@@ -20,9 +20,9 @@ async function world(){
  setup();game.settings.get=(_ns,key)=>key==="serviceDefinitions"?{categories:[],services:[]}:key==="debugLogging"?false:"unlimited";
  const blade=catalogueEntryToItem(source("Longsword"));
  const pc=new Actor("pc",1000,[blade]),m=new Actor("merchant",0);
- await m.setFlag("devils-table","merchant.catalogueId","blacksmith");
- await m.setFlag("devils-table","merchant.economy",{settlement:"town",prosperity:"average",profile:"smith-town"});
- await m.setFlag("devils-table","merchant.services",{DT_SERVICE_BSM_REPAIR_WEAPON:{enabled:true}});
+ await m.setFlag("devils-table-merchants","merchant.catalogueId","blacksmith");
+ await m.setFlag("devils-table-merchants","merchant.economy",{settlement:"town",prosperity:"average",profile:"smith-town"});
+ await m.setFlag("devils-table-merchants","merchant.services",{DT_SERVICE_BSM_REPAIR_WEAPON:{enabled:true}});
  game.actors=[m,pc];return {m,pc,blade,request:{id:"smith-test",userId:"player",sales:[],lines:[{id:"service:DT_SERVICE_BSM_REPAIR_WEAPON",quantity:1,targetItemId:blade._id}]}};
 }
 test("native smith equipment preserves 2014 attacks, versatile dice, armour and ammunition",()=>{
@@ -41,7 +41,7 @@ test("smith builds converge without duplicating shared products",async()=>{
  const {adapter,state}=fakeAdapter();const build=createBuilder({load:()=>catalogue,adapter});
  const result=await build({dryRun:false,shopId:"blacksmith"});assert.equal(result.create,73);
  assert.equal((await build({dryRun:false,shopId:"blacksmith"})).unchanged,73);
- assert.equal(new Set(state.docs.map(d=>d.flags["devils-table"].sourceId)).size,73);
+ assert.equal(new Set(state.docs.map(d=>d.flags["devils-table-merchants"].sourceId)).size,73);
 });
 test("requirements reject missing, wrong, sold and other-character item identities",async()=>{
  const {m,pc,request,blade}=await world();const req={types:["weapon"]};

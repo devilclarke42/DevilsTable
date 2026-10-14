@@ -46,7 +46,7 @@ test("native identity hooks refresh matching documents and detach all listeners"
 });
 test("public identity projection never exposes Merchant Tags, System Tags, biography or private notes",async()=>{
  setup();const actor=new Actor("merchant");actor.system.details={biography:{value:"SECRET BIO"},alignment:"SECRET"};
- await actor.setFlag("devils-table","merchant.identity",{...readMerchantIdentity(actor),businessName:"Copper Kettle",merchantTags:["greedy"],publicDescription:"Come in."});
+ await actor.setFlag("devils-table-merchants","merchant.identity",{...readMerchantIdentity(actor),businessName:"Copper Kettle",merchantTags:["greedy"],publicDescription:"Come in."});
  const packet=merchantPresentation(actor);assert.equal(packet.business.businessName,"Copper Kettle");
  const serialized=JSON.stringify(packet);for(const secret of ["greedy","SECRET","biography","systemTags","merchantTags"])assert.ok(!serialized.includes(secret));
  let seen;const unsubscribe=subscribePresentation(actor.id,value=>{seen=value;});
@@ -54,6 +54,6 @@ test("public identity projection never exposes Merchant Tags, System Tags, biogr
  assert.equal(seen.business.merchantTags,undefined);unsubscribe();
  const hooks=new Map();globalThis.Hooks={on:(event,fn)=>hooks.set(event,fn)};let published;
  registerPresentationUpdates(()=>true,packet=>published=packet);
- hooks.get("updateActor")(actor,{"flags.devils-table.merchant.identity.businessName":"Copper Kettle"});
+ hooks.get("updateActor")(actor,{"flags.devils-table-merchants.merchant.identity.businessName":"Copper Kettle"});
  assert.equal(published.presentation.business.businessName,"Copper Kettle");
 });

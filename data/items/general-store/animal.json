@@ -102,7 +102,7 @@
       "units": "lb",
       "notes": "One tenth of a pound for the small wooden back, bristles and hand loop."
     },
-    "icon": "modules/devils-table/assets/icons/brush.svg",
+    "icon": "modules/devils-table-merchants/assets/icons/brush.svg",
     "category": "animal",
     "tags": [
       "mundane",
@@ -138,7 +138,7 @@
       "units": "lb",
       "notes": "One fifth of a pound for a light metal comb and short handle."
     },
-    "icon": "modules/devils-table/assets/icons/curry-comb.svg",
+    "icon": "modules/devils-table-merchants/assets/icons/curry-comb.svg",
     "category": "animal",
     "tags": [
       "mundane",
@@ -358,7 +358,7 @@
       "units": "lb",
       "notes": "Four tenths of a pound for the padded straps and short joining link."
     },
-    "icon": "modules/devils-table/assets/icons/bedroll-strap.svg",
+    "icon": "modules/devils-table-merchants/assets/icons/bedroll-strap.svg",
     "category": "animal",
     "tags": [
       "mundane",

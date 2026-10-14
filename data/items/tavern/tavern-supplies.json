@@ -49,7 +49,7 @@
       "units": "lb",
       "notes": "Adjusted complete sale-unit weight, including the wrapping or pouch where described; no contents beyond those explicitly listed."
     },
-    "icon": "modules/devils-table/assets/icons/smoking-pipe.webp",
+    "icon": "modules/devils-table-merchants/assets/icons/smoking-pipe.webp",
     "category": "tavern-supplies",
     "tags": [
       "mundane",
