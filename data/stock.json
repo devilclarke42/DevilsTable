@@ -2444,7 +2444,7 @@
       "id": "DT_TABLE_BMK",
       "shop": "black-market",
       "coverage": "complete",
-      "draws": 5,
+      "draws": 10,
       "categoryDraws": 2,
       "categories": [
         "containers",
@@ -2468,7 +2468,7 @@
       "overrides": [
         {
           "itemId": "DT_ITEM_GS_POUCH",
-          "tier": "often"
+          "tier": "always"
         },
         {
           "itemId": "DT_ITEM_GS_SACK",
@@ -2484,11 +2484,11 @@
         },
         {
           "itemId": "DT_ITEM_GS_PARCHMENT",
-          "tier": "often"
+          "tier": "always"
         },
         {
           "itemId": "DT_ITEM_GS_INK",
-          "tier": "often"
+          "tier": "always"
         },
         {
           "itemId": "DT_ITEM_GS_COMPASS",
@@ -2580,7 +2580,7 @@
         },
         {
           "itemId": "DT_ITEM_BMK_PICK_REPLACEMENTS",
-          "tier": "often"
+          "tier": "always"
         },
         {
           "itemId": "DT_ITEM_BMK_FINE_FILE",
@@ -2691,7 +2691,7 @@
           "id": "DT_TABLE_BMK_CAUTIOUS",
           "name": "Cautious Fence",
           "description": "Refuses identifiable trophies; no names spoken aloud. Suggested negotiation DC 18; offer modest concessions.",
-          "draws": 4,
+          "draws": 8,
           "categoryDraws": 2,
           "excludedItems": [
             "DT_ITEM_GS_SPYGLASS",
@@ -2708,7 +2708,7 @@
           "overrides": [
             {
               "itemId": "DT_ITEM_GS_POUCH",
-              "tier": "often"
+              "tier": "always"
             },
             {
               "itemId": "DT_ITEM_GS_SACK",
@@ -2724,11 +2724,11 @@
             },
             {
               "itemId": "DT_ITEM_GS_PARCHMENT",
-              "tier": "often"
+              "tier": "always"
             },
             {
               "itemId": "DT_ITEM_GS_INK",
-              "tier": "often"
+              "tier": "always"
             },
             {
               "itemId": "DT_ITEM_GS_COMPASS",
@@ -2800,7 +2800,7 @@
             },
             {
               "itemId": "DT_ITEM_BMK_PICK_REPLACEMENTS",
-              "tier": "often"
+              "tier": "always"
             },
             {
               "itemId": "DT_ITEM_BMK_FINE_FILE",
@@ -2888,7 +2888,7 @@
           ],
           "merchantNotes": {
             "alwaysStocks": [
-              "Appointments and small discrete exchanges"
+              "Four practical goods suited to this contact, with low quantities per product"
             ],
             "oftenStocks": [
               "Portable goods selected for this contact’s clientele"
@@ -2902,13 +2902,13 @@
           "id": "DT_TABLE_BMK_GREEDY",
           "name": "Greedy Fence",
           "description": "Risk is a surcharge. Will consider dubious valuables after inspection. Suggested negotiation DC 14; bargain hard over profit.",
-          "draws": 7,
+          "draws": 10,
           "categoryDraws": 2,
           "excludedItems": [],
           "overrides": [
             {
               "itemId": "DT_ITEM_GS_POUCH",
-              "tier": "often"
+              "tier": "always"
             },
             {
               "itemId": "DT_ITEM_GS_SACK",
@@ -3000,7 +3000,7 @@
             },
             {
               "itemId": "DT_ITEM_BMK_WAX_ASSORTMENT",
-              "tier": "often"
+              "tier": "always"
             },
             {
               "itemId": "DT_ITEM_BMK_GOLD_LEAF",
@@ -3020,7 +3020,7 @@
             },
             {
               "itemId": "DT_ITEM_BMK_PICK_REPLACEMENTS",
-              "tier": "often"
+              "tier": "always"
             },
             {
               "itemId": "DT_ITEM_BMK_FINE_FILE",
@@ -3032,7 +3032,7 @@
             },
             {
               "itemId": "DT_ITEM_BMK_PADDED_WRAP",
-              "tier": "often"
+              "tier": "always"
             },
             {
               "itemId": "DT_ITEM_BMK_HOLLOW_BOOK",
@@ -3128,7 +3128,7 @@
           ],
           "merchantNotes": {
             "alwaysStocks": [
-              "Appointments and small discrete exchanges"
+              "Four practical goods suited to this contact, with low quantities per product"
             ],
             "oftenStocks": [
               "Portable goods selected for this contact’s clientele"
@@ -3142,13 +3142,13 @@
           "id": "DT_TABLE_BMK_GUILD",
           "name": "Guild Fence",
           "description": "Works through introductions and guild contacts. Suggested negotiation DC 16; favour repeat buyers.",
-          "draws": 8,
+          "draws": 10,
           "categoryDraws": 2,
           "excludedItems": [],
           "overrides": [
             {
               "itemId": "DT_ITEM_GS_POUCH",
-              "tier": "often"
+              "tier": "always"
             },
             {
               "itemId": "DT_ITEM_GS_SACK",
@@ -3236,11 +3236,11 @@
             },
             {
               "itemId": "DT_ITEM_BMK_SEAL_BLANKS",
-              "tier": "often"
+              "tier": "always"
             },
             {
               "itemId": "DT_ITEM_BMK_WAX_ASSORTMENT",
-              "tier": "often"
+              "tier": "always"
             },
             {
               "itemId": "DT_ITEM_BMK_GOLD_LEAF",
@@ -3248,7 +3248,7 @@
             },
             {
               "itemId": "DT_ITEM_BMK_DOCUMENT_BLANKS",
-              "tier": "often"
+              "tier": "always"
             },
             {
               "itemId": "DT_ITEM_BMK_FALSE_TRAVEL_PAPERS",
@@ -3369,7 +3369,7 @@
           ],
           "merchantNotes": {
             "alwaysStocks": [
-              "Appointments and small discrete exchanges"
+              "Four practical goods suited to this contact, with low quantities per product"
             ],
             "oftenStocks": [
               "Portable goods selected for this contact’s clientele"
@@ -3383,7 +3383,7 @@
           "id": "DT_TABLE_BMK_TRAVELLING",
           "name": "Travelling Fence",
           "description": "Carries only light goods and changes meeting places. Suggested negotiation DC 15; buys portable valuables.",
-          "draws": 4,
+          "draws": 8,
           "categoryDraws": 2,
           "excludedItems": [
             "DT_ITEM_GS_LOCKBOX",
@@ -3407,11 +3407,11 @@
             },
             {
               "itemId": "DT_ITEM_GS_PARCHMENT",
-              "tier": "often"
+              "tier": "always"
             },
             {
               "itemId": "DT_ITEM_GS_INK",
-              "tier": "often"
+              "tier": "always"
             },
             {
               "itemId": "DT_ITEM_GS_COMPASS",
@@ -3483,11 +3483,11 @@
             },
             {
               "itemId": "DT_ITEM_BMK_WIRE_BUNDLE",
-              "tier": "often"
+              "tier": "always"
             },
             {
               "itemId": "DT_ITEM_BMK_PADDED_WRAP",
-              "tier": "often"
+              "tier": "always"
             },
             {
               "itemId": "DT_ITEM_BMK_HOLLOW_BOOK",
@@ -3583,7 +3583,7 @@
           ],
           "merchantNotes": {
             "alwaysStocks": [
-              "Appointments and small discrete exchanges"
+              "Four practical goods suited to this contact, with low quantities per product"
             ],
             "oftenStocks": [
               "Portable goods selected for this contact’s clientele"
@@ -3597,7 +3597,7 @@
           "id": "DT_TABLE_BMK_BOSS",
           "name": "Crime Boss",
           "description": "Deals in valuable curiosities and arranged shipments. Suggested negotiation DC 20; bargains require a reason beyond price.",
-          "draws": 10,
+          "draws": 12,
           "categoryDraws": 2,
           "excludedItems": [],
           "overrides": [
@@ -3691,11 +3691,11 @@
             },
             {
               "itemId": "DT_ITEM_BMK_SEAL_BLANKS",
-              "tier": "often"
+              "tier": "always"
             },
             {
               "itemId": "DT_ITEM_BMK_WAX_ASSORTMENT",
-              "tier": "often"
+              "tier": "always"
             },
             {
               "itemId": "DT_ITEM_BMK_GOLD_LEAF",
@@ -3703,7 +3703,7 @@
             },
             {
               "itemId": "DT_ITEM_BMK_DOCUMENT_BLANKS",
-              "tier": "often"
+              "tier": "always"
             },
             {
               "itemId": "DT_ITEM_BMK_FALSE_TRAVEL_PAPERS",
@@ -3715,7 +3715,7 @@
             },
             {
               "itemId": "DT_ITEM_BMK_PICK_REPLACEMENTS",
-              "tier": "often"
+              "tier": "always"
             },
             {
               "itemId": "DT_ITEM_BMK_FINE_FILE",
@@ -3816,7 +3816,7 @@
           ],
           "merchantNotes": {
             "alwaysStocks": [
-              "Appointments and small discrete exchanges"
+              "Four practical goods suited to this contact, with low quantities per product"
             ],
             "oftenStocks": [
               "Portable goods selected for this contact’s clientele"

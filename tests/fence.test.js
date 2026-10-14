@@ -103,3 +103,24 @@ test("failed transfer compensates funds and retains hidden merchant policy",asyn
 test("shared schema upper bounds reject oversized generation policies",()=>{
  const validate=compileSchema({type:"integer",minimum:1,maximum:100});assert.equal(validate(101).length,1);assert.equal(validate(100).length,0);
 });
+
+test("Merchant Builder guarantees four practical Fence products even when all rotating attempts miss",async()=>{
+ const { generationSettings, estimateGeneration, generateStock }=await import("../scripts/merchant/builder/generation.js");
+ const { loadBuilderPolicy }=await import("../scripts/merchant/builder/model.js");
+ const context={catalogue:data,economy:await readJson("data/economy.json"),policy:await loadBuilderPolicy({readJson})};
+ const templates=(await readJson("data/merchant-templates.json")).filter(t=>t.settings.catalogueId==="black-market");
+ const signatures=new Set();
+ for(const {settings:draft} of templates){
+  const options=generationSettings(draft,context),groups=stockGroups(data,options.profile);
+  assert.equal(groups.always.length,4,options.profile.name);assert.ok(groups.always.every(i=>!i.tags.some(t=>["restricted","contraband","stolen"].includes(t))));
+  signatures.add(groups.always.map(i=>i.id).join(","));
+  const {adapter}=fakeAdapter({existing:stockTableDocuments(data,{shopId:"black-market",profileId:options.profile.id})});
+  const result=await generateStock(draft,context,{roll:args=>rollStockList({...args,adapter,rollDie:async sides=>sides})});
+  assert.ok(result.items.length>=4);assert.ok(result.items.every(i=>i.quantity<=options.profile.quantityLimit));
+  if(draft.stockProfileId==="DT_TABLE_BMK_CAUTIOUS"){
+   assert.equal(options.draws,6);assert.deepEqual(options.tierChances,{often:50,rarely:15});
+   assert.equal(result.items.length,4);assert.ok(estimateGeneration(draft,context).count>7.8);
+  }
+ }
+ assert.ok(signatures.size>=4,"profiles retain different practical ranges");
+});

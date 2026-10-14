@@ -1,4 +1,4 @@
-# Fence Guide — Sprint 16 / alpha.27
+# Fence Guide — Sprint 16 / alpha.28
 
 Fence is the display name of the existing `black-market` catalogue identity. Black Market Dealer, Smuggler and Underground Trader are descriptive aliases. Existing Actor flags, Item identities, stock table IDs and compendium UUIDs are retained. No merchant-specific checkout, wallet, theft or service branch was added.
 
@@ -26,11 +26,15 @@ Templates offer a profile-specific base markup and buying multiplier; both remai
 
 | Template | Base markup | Buying multiplier | Base draws | Quantity cap | Business emphasis |
 | --- | ---: | ---: | ---: | ---: | --- |
-| Cautious Fence | +60% | 0.40 | 4 | 1 | Excludes restricted goods and expensive identifiable trophies |
-| Greedy Fence | +160% | 0.65 | 7 | 2 | Larger opportunistic pool and higher rare-tier odds |
-| Guild Fence | +25% | 0.60 | 8 | 2 | Restricted goods unlock after five completed purchases |
-| Travelling Fence | +35% | 0.35 | 4 | 1 | Only goods weighing at most one pound |
-| Crime Boss | +100% | 0.75 | 10 | 1 | Valuable stock restricted to established customers |
+| Cautious Fence | +60% | 0.40 | 8 | 1 | Excludes restricted goods and expensive identifiable trophies |
+| Greedy Fence | +160% | 0.65 | 10 | 2 | Larger opportunistic pool and higher rare-tier odds |
+| Guild Fence | +25% | 0.60 | 10 | 2 | Restricted goods unlock after five completed purchases |
+| Travelling Fence | +35% | 0.35 | 8 | 1 | Only goods weighing at most one pound |
+| Crime Boss | +100% | 0.75 | 12 | 1 | Valuable stock restricted to established customers |
+
+Every profile now guarantees four practical products before rotating selections. The default Discreet Fence makes ten base rotating attempts. The Cautious Fence Village/Poor preset makes six scaled attempts at 50% Often / 15% Rarely / 35% no extra stock, averaging about eight distinct products including its four guaranteed goods. These are products, not copies: quantity caps remain one or two per product.
+
+Rebuild Fence Stock RollTables after upgrading to alpha.28. Existing merchant stock is preserved; previews skip existing identities rather than removing or restocking them.
 
 Settlement and prosperity still scale draws and cash. Profile-specific tier chances weight rare pools more strongly than ordinary legal merchants, and quantity caps apply after settlement scaling. Native manual table draws use the same authored tier odds; quantities and visibility are applied by Roll Stock / Merchant Builder. Suggested negotiation DCs and personality remain editable GM notes; the existing GM interaction review retains final authority.
 

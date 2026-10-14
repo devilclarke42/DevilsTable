@@ -1,5 +1,10 @@
 # Changelog
 
+## alpha.28 — Fence stock assortment correction
+
+Fence profiles now guarantee four practical products and make more rotating selection attempts. Merchant Builder settlement/prosperity scaling and rare-tier odds remain in effect; per-product quantities stay capped at one or two. Existing inventory and offer visibility overrides remain unchanged. Rebuild Fence Stock RollTables before generating new stock. The Cautious Fence Village/Poor preset now averages about eight distinct products instead of two.
+
+
 ## Sprint 16 — Fence & Black Market (alpha.27)
 
 Fence adds 35 new products, reuses 13 shared goods, and supplies ten services and five editable templates. Hidden inventory and hidden services use one shared visibility policy with GM reveal and per-character completed-purchase thresholds. Profile tier odds and quantity caps keep stock sparse and varied. Existing black-market IDs are retained; rebuild its Items and stock tables in place. See [Fence Guide](FENCE_GUIDE.md).

@@ -67,7 +67,7 @@ test("Production Tavern keeps four existing table identities; only its rows chan
   const old = stockTableDocuments(previous), expected = stockTableDocuments(data);
   assert.equal(expected.length, 100); assert.ok(old.every(t => expected.some(row => row._id === t._id)));
   const { adapter, state } = fakeAdapter({ existing: old }); const build = createStockTableBuilder({ load: () => data, adapter });
-  const preview = await build(); assert.deepEqual([preview.create, preview.update, preview.unchanged], [20, 48, 32]);
+  const preview = await build(); assert.deepEqual([preview.create, preview.update, preview.unchanged], [20, 54, 26]);
   assert.deepEqual(state.writes, []); await build({ dryRun: false });
   assert.equal((await build({ dryRun: false })).unchanged, 100);
   const profile = stockProfiles(data).find(p => p.shop === "tavern"); assert.equal(profile.coverage, "complete");
