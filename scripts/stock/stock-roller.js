@@ -65,7 +65,7 @@ export async function rollStockList({ shopId = "general-store", categoryId = nul
   const ids = new Set(expected.map(table => table._id));
   const tables = actual.filter(table => ids.has(table._id));
   const count = draws ?? (categoryId ? profile.categoryDraws : profile.draws);
-  const rolled = await rollStockFromTables(tables, { draws: count, rollDie, eligibleIds, tierChances });
+  const rolled = await rollStockFromTables(tables, { draws: count, rollDie, eligibleIds, tierChances: tierChances ?? profile.tierChances });
   const items = new Map(catalogue.entries.map(({ item }) => [item.id, item]));
   const stock = [];
   // Presence is decided first; quantity dice cannot change the chosen assortment.
@@ -73,9 +73,11 @@ export async function rollStockList({ shopId = "general-store", categoryId = nul
     const item = items.get(row.flags[FLAG_SCOPE].itemId);
     const quantity = await rollStockQuantity(catalogue.quantities, item, tier, rollDie);
     if (quantityScale) quantity.quantity = scaledQuantity(quantity.quantity, tier, quantityScale);
+    if(profile.quantityLimit)quantity.quantity=Math.min(quantity.quantity,profile.quantityLimit);
+    const visibility=profile.offerRules?.find(rule=>item.tags.includes(rule.tag))?.visibility;
     stock.push({ id: item.id, name: item.name, uuid: row.documentUuid, tier,
       price: { ...item.price }, saleUnit: item.saleUnit ?? "one empty container",
-      ...quantity });
+      ...quantity, ...(visibility?{visibility:structuredClone(visibility)}:{}) });
   }
   return {
     shopId, categoryId, profileId: profile.id, profileName: profile.name, draws: count, outcomes: rolled.outcomes,

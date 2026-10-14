@@ -239,3 +239,9 @@ For content builds, choose a scope in the compact selectors, read Generation Sum
 Dice So Nice is optional and automatically presents native player negotiation/theft rolls locally. Players receive the numeric result without the hidden DC. Failures in dice presentation never stop the transaction workflow. See [UX workflows](UX_WORKFLOWS.md) for complete usage and the live acceptance checklist.
 
 Enabled merchants display a GM-only **Merchant** Directory badge and a small **SHOP** marker on linked canvas tokens. Disabling the merchant removes these indicators. No token image or status effect is changed. The native sheet three-dot menu replaces the exposed header button. Live Foundry rendering remains to be confirmed.
+
+## Generic restricted offers — alpha.27
+
+Inventory and services share the validated `public`, `hidden`, and `relationship` offer visibility policy in `scripts/merchant/visibility.js`. Inventory policies live on embedded Item offer flags; service policies use merchant offering overrides or definition defaults. Relationship access uses this character’s completed successful purchases. A GM reveal overrides visibility; enablement and ordinary eligibility still apply. Public projection, checkout and theft all apply the same rule on the active GM. Transfer strips offer flags. Builder Stock/Services expose the rules without adding a new tab. Guarded saves block active checkout/recovery and reject stale edits. Missing rules retain old behaviour; invalid rules fail closed.
+
+Stock profiles can supply merchant-neutral `tierChances`, `quantityLimit` and ordered tag-based `offerRules`. Rules affect newly generated stock only. Earlier Item identities and existing Actor inventory are preserved. Fence is the display name of the existing `black-market` identity. See [Fence Guide](FENCE_GUIDE.md) for the exact data contract, upgrade steps, framework review and live acceptance checklist.

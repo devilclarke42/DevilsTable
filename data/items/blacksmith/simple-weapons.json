@@ -179,7 +179,8 @@
       "simple-weapons"
     ],
     "shops": [
-      "blacksmith"
+      "blacksmith",
+      "black-market"
     ],
     "availability": "variable",
     "source": {

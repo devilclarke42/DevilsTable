@@ -1,0 +1,107 @@
+[
+  {
+    "id": "DT_ITEM_BMK_UNTAXED_SPICE",
+    "name": "Untaxed Spice Parcel",
+    "description": "A sealed quarter-pound spice parcel lacks customs markings. Its contents are ordinary culinary spice, and local law determines the consequence.\n\nLegality and provenance depend on the campaign. The GM confirms restrictions and any checks; this item grants no automatic access, immunity or bonus.",
+    "saleUnit": "One untaxed spice parcel",
+    "price": {
+      "value": 15,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 0.25,
+      "units": "lb",
+      "notes": "Adjusted carried weight for the complete stated sale unit, including its wrapping or supplied vessel."
+    },
+    "icon": "icons/containers/bags/sack-cloth-orange.webp",
+    "category": "contraband",
+    "tags": [
+      "black-market",
+      "contraband",
+      "trade"
+    ],
+    "shops": [
+      "black-market"
+    ],
+    "availability": "special-order",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "Original mundane trade good with no additional game mechanics. See docs/FENCE_GUIDE.md.",
+      "license": "Original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  },
+  {
+    "id": "DT_ITEM_BMK_PROHIBITED_INCENSE",
+    "name": "Prohibited Incense",
+    "description": "An aromatic incense bundle bears the fictional mark of a proscribed sect. It has no magical or intoxicating effect.\n\nLegality and provenance depend on the campaign. The GM confirms restrictions and any checks; this item grants no automatic access, immunity or bonus.",
+    "saleUnit": "One prohibited incense",
+    "price": {
+      "value": 20,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 0.1,
+      "units": "lb",
+      "notes": "Adjusted carried weight for the complete stated sale unit, including its wrapping or supplied vessel."
+    },
+    "icon": "icons/containers/bags/sack-cloth-orange.webp",
+    "category": "contraband",
+    "tags": [
+      "black-market",
+      "contraband",
+      "material"
+    ],
+    "shops": [
+      "black-market"
+    ],
+    "availability": "special-order",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "Original mundane trade good with no additional game mechanics. See docs/FENCE_GUIDE.md.",
+      "license": "Original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  },
+  {
+    "id": "DT_ITEM_BMK_UNREGISTERED_REAGENTS",
+    "name": "Unregistered Reagent Parcel",
+    "description": "Workshop minerals in anonymous packets lack the fictional permits required by the local authority. No poison recipe or explosive effect is provided.\n\nLegality and provenance depend on the campaign. The GM confirms restrictions and any checks; this item grants no automatic access, immunity or bonus.",
+    "saleUnit": "One unregistered reagent parcel",
+    "price": {
+      "value": 30,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 0.3,
+      "units": "lb",
+      "notes": "Adjusted carried weight for the complete stated sale unit, including its wrapping or supplied vessel."
+    },
+    "icon": "icons/containers/bags/sack-cloth-orange.webp",
+    "category": "contraband",
+    "tags": [
+      "black-market",
+      "contraband",
+      "material"
+    ],
+    "shops": [
+      "black-market"
+    ],
+    "availability": "special-order",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "Original mundane trade good with no additional game mechanics. See docs/FENCE_GUIDE.md.",
+      "license": "Original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  }
+]

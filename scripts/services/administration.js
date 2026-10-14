@@ -1,3 +1,4 @@
+import { validateVisibility } from "../merchant/visibility.js";
 import { validateRoom } from "../integrations/room.js";
 import { stable } from "../merchant/trade-model.js";
 import { MODULE_ID } from "../constants.js";
@@ -14,13 +15,15 @@ export async function saveServiceOffers(actor,rows,{expected}={}){
       if(!registry.get(row.id)||Object.hasOwn(next,row.id)||typeof row.enabled!=="boolean"||
         (row.available!==undefined&&typeof row.available!=="boolean") || (row.price!==undefined&&coinValue(row.price)===null))throw Error("Invalid service offer settings.");
       if(row.room!==undefined&&!registry.get(row.id).accommodation)throw Error("Room settings require an accommodation service.");
+      const visibility=row.visibility===undefined?undefined:validateVisibility(row.visibility);
       const room=validateRoom(row.room);
-      next[row.id]={...(room?{room}:{}),enabled:row.enabled,...(row.available===undefined?{}:{available:row.available}),...(row.price===undefined?{}:{price:row.price})};
+      next[row.id]={...(visibility?{visibility}:{}),...(room?{room}:{}),enabled:row.enabled,...(row.available===undefined?{}:{available:row.available}),...(row.price===undefined?{}:{price:row.price})};
     }
     const old=actor.getFlag(MODULE_ID,"merchant.services")??{};
     const update={...structuredClone(next)};
     // Foundry merges flag objects: explicit deletion keys are needed to remove offers.
     for(const id of Object.keys(old))if(!Object.hasOwn(next,id))update[`-=${id}`]=null;
+    for(const id of Object.keys(next))if(old[id]?.visibility&&!next[id].visibility)update[id]["-=visibility"]=null;
     for(const id of Object.keys(next))if(old[id]?.room&&!next[id].room)update[id]["-=room"]=null;
     for(const id of Object.keys(next))if(old[id]?.available!==undefined&&next[id].available===undefined)update[id]["-=available"]=null;
     for(const id of Object.keys(next))if(old[id]?.price && !next[id].price)update[id]["-=price"]=null;

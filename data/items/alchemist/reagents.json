@@ -56,7 +56,8 @@
       "reagent"
     ],
     "shops": [
-      "alchemist"
+      "alchemist",
+      "black-market"
     ],
     "availability": "variable",
     "source": {

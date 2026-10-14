@@ -119,7 +119,7 @@ async function receive(msg) {
       availability: merchantConfig(actor).availability ?? "open", items: [...markOfferGroups(actor, view.items), ...services], buyModifier: tradeSettings(actor).buyModifier });
   }
   if (!["checkout", "interaction"].includes(msg.type)) return;
-  if (msg.type === "interaction" && (!INTERACTIONS[msg.kind] || (msg.kind === "theft" && !publicOffers(actor).some(item => item.id === msg.itemId)))) {
+  if (msg.type === "interaction" && (!INTERACTIONS[msg.kind] || (msg.kind === "theft" && !publicOffers(actor, game.actors.get(msg.characterId)).some(item => item.id === msg.itemId)))) {
     return notify(msg.userId, { id: msg.id, error: "This interaction or item is unavailable." });
   }
   logger.debug("Checkout requested", { merchant: actor.id });

@@ -1,5 +1,12 @@
 # Changelog
 
+## Sprint 16 — Fence & Black Market (alpha.27)
+
+Fence adds 35 new products, reuses 13 shared goods, and supplies ten services and five editable templates. Hidden inventory and hidden services use one shared visibility policy with GM reveal and per-character completed-purchase thresholds. Profile tier odds and quantity caps keep stock sparse and varied. Existing black-market IDs are retained; rebuild its Items and stock tables in place. See [Fence Guide](FENCE_GUIDE.md).
+
+The source now contains 440 products, 40 services and 100 active stock tables. All current merchant types use the same framework; live Foundry V14 / D&D5e 5.3.3 / Forge acceptance remains required before release readiness is claimed.
+
+
 ## 0.3.0-alpha.26 — Sprint 15: Alchemist
 
 ### Added

@@ -2443,15 +2443,37 @@
     {
       "id": "DT_TABLE_BMK",
       "shop": "black-market",
-      "coverage": "partial",
-      "draws": 6,
+      "coverage": "complete",
+      "draws": 5,
       "categoryDraws": 2,
       "categories": [
         "containers",
         "rope-climbing",
-        "travel"
+        "writing",
+        "travel",
+        "tools",
+        "martial-weapons",
+        "simple-weapons",
+        "reagents",
+        "disguises",
+        "forgery",
+        "burglary-tools",
+        "poisons",
+        "smuggling",
+        "contraband",
+        "stolen-goods",
+        "curiosities",
+        "rare-components"
       ],
       "overrides": [
+        {
+          "itemId": "DT_ITEM_GS_POUCH",
+          "tier": "often"
+        },
+        {
+          "itemId": "DT_ITEM_GS_SACK",
+          "tier": "often"
+        },
         {
           "itemId": "DT_ITEM_GS_LOCKBOX",
           "tier": "often"
@@ -2459,6 +2481,1350 @@
         {
           "itemId": "DT_ITEM_GS_ROPE_SILK",
           "tier": "often"
+        },
+        {
+          "itemId": "DT_ITEM_GS_PARCHMENT",
+          "tier": "often"
+        },
+        {
+          "itemId": "DT_ITEM_GS_INK",
+          "tier": "often"
+        },
+        {
+          "itemId": "DT_ITEM_GS_COMPASS",
+          "tier": "often"
+        },
+        {
+          "itemId": "DT_ITEM_GS_SPYGLASS",
+          "tier": "rarely"
+        },
+        {
+          "itemId": "DT_ITEM_GS_CROWBAR",
+          "tier": "often"
+        },
+        {
+          "itemId": "DT_ITEM_BSM_SHORTSWORD",
+          "tier": "often"
+        },
+        {
+          "itemId": "DT_ITEM_BSM_HAND_CROSSBOW",
+          "tier": "rarely"
+        },
+        {
+          "itemId": "DT_ITEM_BSM_DAGGER",
+          "tier": "often"
+        },
+        {
+          "itemId": "DT_ITEM_ALC_SULFUR",
+          "tier": "often"
+        },
+        {
+          "itemId": "DT_ITEM_BMK_DISGUISE_KIT",
+          "tier": "often"
+        },
+        {
+          "itemId": "DT_ITEM_BMK_FORGERY_KIT",
+          "tier": "often"
+        },
+        {
+          "itemId": "DT_ITEM_BMK_THIEVES_TOOLS",
+          "tier": "often"
+        },
+        {
+          "itemId": "DT_ITEM_BMK_POISONERS_KIT",
+          "tier": "rarely"
+        },
+        {
+          "itemId": "DT_ITEM_BMK_BASIC_POISON",
+          "tier": "rarely"
+        },
+        {
+          "itemId": "DT_ITEM_BMK_HOODED_CLOAK",
+          "tier": "often"
+        },
+        {
+          "itemId": "DT_ITEM_BMK_STAGE_WIG",
+          "tier": "often"
+        },
+        {
+          "itemId": "DT_ITEM_BMK_FALSE_BEARD",
+          "tier": "often"
+        },
+        {
+          "itemId": "DT_ITEM_BMK_DYE_PACK",
+          "tier": "often"
+        },
+        {
+          "itemId": "DT_ITEM_BMK_SEAL_BLANKS",
+          "tier": "often"
+        },
+        {
+          "itemId": "DT_ITEM_BMK_WAX_ASSORTMENT",
+          "tier": "often"
+        },
+        {
+          "itemId": "DT_ITEM_BMK_GOLD_LEAF",
+          "tier": "often"
+        },
+        {
+          "itemId": "DT_ITEM_BMK_DOCUMENT_BLANKS",
+          "tier": "often"
+        },
+        {
+          "itemId": "DT_ITEM_BMK_FALSE_TRAVEL_PAPERS",
+          "tier": "often"
+        },
+        {
+          "itemId": "DT_ITEM_BMK_COUNTERFEIT_TOKEN",
+          "tier": "often"
+        },
+        {
+          "itemId": "DT_ITEM_BMK_PICK_REPLACEMENTS",
+          "tier": "often"
+        },
+        {
+          "itemId": "DT_ITEM_BMK_FINE_FILE",
+          "tier": "often"
+        },
+        {
+          "itemId": "DT_ITEM_BMK_WIRE_BUNDLE",
+          "tier": "often"
+        },
+        {
+          "itemId": "DT_ITEM_BMK_PADDED_WRAP",
+          "tier": "often"
+        },
+        {
+          "itemId": "DT_ITEM_BMK_HOLLOW_BOOK",
+          "tier": "often"
+        },
+        {
+          "itemId": "DT_ITEM_BMK_FALSE_BOTTOM_CASE",
+          "tier": "often"
+        },
+        {
+          "itemId": "DT_ITEM_BMK_SMUGGLERS_MANIFEST",
+          "tier": "often"
+        },
+        {
+          "itemId": "DT_ITEM_BMK_UNTAXED_SPICE",
+          "tier": "often"
+        },
+        {
+          "itemId": "DT_ITEM_BMK_PROHIBITED_INCENSE",
+          "tier": "often"
+        },
+        {
+          "itemId": "DT_ITEM_BMK_UNREGISTERED_REAGENTS",
+          "tier": "often"
+        },
+        {
+          "itemId": "DT_ITEM_BMK_STOLEN_SILVERWARE",
+          "tier": "often"
+        },
+        {
+          "itemId": "DT_ITEM_BMK_STOLEN_SIGNET",
+          "tier": "rarely"
+        },
+        {
+          "itemId": "DT_ITEM_BMK_STOLEN_RELIQUARY",
+          "tier": "rarely"
+        },
+        {
+          "itemId": "DT_ITEM_BMK_CUT_AGATE",
+          "tier": "often"
+        },
+        {
+          "itemId": "DT_ITEM_BMK_CUT_AMETHYST",
+          "tier": "rarely"
+        },
+        {
+          "itemId": "DT_ITEM_BMK_PEARL",
+          "tier": "rarely"
+        },
+        {
+          "itemId": "DT_ITEM_BMK_DIAMOND",
+          "tier": "rarely"
+        },
+        {
+          "itemId": "DT_ITEM_BMK_OBSIDIAN_IDOL",
+          "tier": "rarely"
+        },
+        {
+          "itemId": "DT_ITEM_BMK_BROKEN_SPELL_FOCUS",
+          "tier": "often"
+        },
+        {
+          "itemId": "DT_ITEM_BMK_FOREIGN_MEDALLION",
+          "tier": "rarely"
+        }
+      ],
+      "quantityLimit": 2,
+      "tierChances": {
+        "often": 45,
+        "rarely": 40
+      },
+      "offerRules": [
+        {
+          "tag": "restricted",
+          "visibility": {
+            "mode": "hidden"
+          }
+        },
+        {
+          "tag": "contraband",
+          "visibility": {
+            "mode": "relationship",
+            "minPurchases": 3
+          }
+        },
+        {
+          "tag": "stolen",
+          "visibility": {
+            "mode": "relationship",
+            "minPurchases": 2
+          }
+        }
+      ],
+      "variants": [
+        {
+          "id": "DT_TABLE_BMK_CAUTIOUS",
+          "name": "Cautious Fence",
+          "description": "Refuses identifiable trophies; no names spoken aloud. Suggested negotiation DC 18; offer modest concessions.",
+          "draws": 4,
+          "categoryDraws": 2,
+          "excludedItems": [
+            "DT_ITEM_GS_SPYGLASS",
+            "DT_ITEM_BMK_POISONERS_KIT",
+            "DT_ITEM_BMK_BASIC_POISON",
+            "DT_ITEM_BMK_FALSE_TRAVEL_PAPERS",
+            "DT_ITEM_BMK_COUNTERFEIT_TOKEN",
+            "DT_ITEM_BMK_SMUGGLERS_MANIFEST",
+            "DT_ITEM_BMK_STOLEN_RELIQUARY",
+            "DT_ITEM_BMK_CUT_AMETHYST",
+            "DT_ITEM_BMK_PEARL",
+            "DT_ITEM_BMK_DIAMOND"
+          ],
+          "overrides": [
+            {
+              "itemId": "DT_ITEM_GS_POUCH",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_SACK",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_LOCKBOX",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_ROPE_SILK",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_PARCHMENT",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_INK",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_COMPASS",
+              "tier": "rarely"
+            },
+            {
+              "itemId": "DT_ITEM_GS_CROWBAR",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_SHORTSWORD",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_HAND_CROSSBOW",
+              "tier": "rarely"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_DAGGER",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_ALC_SULFUR",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_DISGUISE_KIT",
+              "tier": "rarely"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_FORGERY_KIT",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_THIEVES_TOOLS",
+              "tier": "rarely"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_HOODED_CLOAK",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_STAGE_WIG",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_FALSE_BEARD",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_DYE_PACK",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_SEAL_BLANKS",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_WAX_ASSORTMENT",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_GOLD_LEAF",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_DOCUMENT_BLANKS",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_PICK_REPLACEMENTS",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_FINE_FILE",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_WIRE_BUNDLE",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_PADDED_WRAP",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_HOLLOW_BOOK",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_FALSE_BOTTOM_CASE",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_UNTAXED_SPICE",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_PROHIBITED_INCENSE",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_UNREGISTERED_REAGENTS",
+              "tier": "rarely"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_STOLEN_SILVERWARE",
+              "tier": "rarely"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_STOLEN_SIGNET",
+              "tier": "rarely"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_CUT_AGATE",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_OBSIDIAN_IDOL",
+              "tier": "rarely"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_BROKEN_SPELL_FOCUS",
+              "tier": "rarely"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_FOREIGN_MEDALLION",
+              "tier": "rarely"
+            }
+          ],
+          "quantityLimit": 1,
+          "tierChances": {
+            "often": 50,
+            "rarely": 30
+          },
+          "offerRules": [
+            {
+              "tag": "restricted",
+              "visibility": {
+                "mode": "hidden"
+              }
+            },
+            {
+              "tag": "contraband",
+              "visibility": {
+                "mode": "relationship",
+                "minPurchases": 3
+              }
+            },
+            {
+              "tag": "stolen",
+              "visibility": {
+                "mode": "relationship",
+                "minPurchases": 2
+              }
+            }
+          ],
+          "merchantNotes": {
+            "alwaysStocks": [
+              "Appointments and small discrete exchanges"
+            ],
+            "oftenStocks": [
+              "Portable goods selected for this contact’s clientele"
+            ],
+            "rarelyStocks": [
+              "Distinctive curiosities only when an opportunity arises"
+            ]
+          }
+        },
+        {
+          "id": "DT_TABLE_BMK_GREEDY",
+          "name": "Greedy Fence",
+          "description": "Risk is a surcharge. Will consider dubious valuables after inspection. Suggested negotiation DC 14; bargain hard over profit.",
+          "draws": 7,
+          "categoryDraws": 2,
+          "excludedItems": [],
+          "overrides": [
+            {
+              "itemId": "DT_ITEM_GS_POUCH",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_SACK",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_LOCKBOX",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_ROPE_SILK",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_PARCHMENT",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_INK",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_COMPASS",
+              "tier": "rarely"
+            },
+            {
+              "itemId": "DT_ITEM_GS_SPYGLASS",
+              "tier": "rarely"
+            },
+            {
+              "itemId": "DT_ITEM_GS_CROWBAR",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_SHORTSWORD",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_HAND_CROSSBOW",
+              "tier": "rarely"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_DAGGER",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_ALC_SULFUR",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_DISGUISE_KIT",
+              "tier": "rarely"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_FORGERY_KIT",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_THIEVES_TOOLS",
+              "tier": "rarely"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_POISONERS_KIT",
+              "tier": "rarely"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_BASIC_POISON",
+              "tier": "rarely"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_HOODED_CLOAK",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_STAGE_WIG",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_FALSE_BEARD",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_DYE_PACK",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_SEAL_BLANKS",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_WAX_ASSORTMENT",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_GOLD_LEAF",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_DOCUMENT_BLANKS",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_FALSE_TRAVEL_PAPERS",
+              "tier": "rarely"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_COUNTERFEIT_TOKEN",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_PICK_REPLACEMENTS",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_FINE_FILE",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_WIRE_BUNDLE",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_PADDED_WRAP",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_HOLLOW_BOOK",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_FALSE_BOTTOM_CASE",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_SMUGGLERS_MANIFEST",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_UNTAXED_SPICE",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_PROHIBITED_INCENSE",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_UNREGISTERED_REAGENTS",
+              "tier": "rarely"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_STOLEN_SILVERWARE",
+              "tier": "rarely"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_STOLEN_SIGNET",
+              "tier": "rarely"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_STOLEN_RELIQUARY",
+              "tier": "rarely"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_CUT_AGATE",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_CUT_AMETHYST",
+              "tier": "rarely"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_PEARL",
+              "tier": "rarely"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_DIAMOND",
+              "tier": "rarely"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_OBSIDIAN_IDOL",
+              "tier": "rarely"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_BROKEN_SPELL_FOCUS",
+              "tier": "rarely"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_FOREIGN_MEDALLION",
+              "tier": "rarely"
+            }
+          ],
+          "quantityLimit": 2,
+          "tierChances": {
+            "often": 35,
+            "rarely": 55
+          },
+          "offerRules": [
+            {
+              "tag": "restricted",
+              "visibility": {
+                "mode": "hidden"
+              }
+            },
+            {
+              "tag": "contraband",
+              "visibility": {
+                "mode": "relationship",
+                "minPurchases": 3
+              }
+            },
+            {
+              "tag": "stolen",
+              "visibility": {
+                "mode": "relationship",
+                "minPurchases": 2
+              }
+            }
+          ],
+          "merchantNotes": {
+            "alwaysStocks": [
+              "Appointments and small discrete exchanges"
+            ],
+            "oftenStocks": [
+              "Portable goods selected for this contact’s clientele"
+            ],
+            "rarelyStocks": [
+              "Distinctive curiosities only when an opportunity arises"
+            ]
+          }
+        },
+        {
+          "id": "DT_TABLE_BMK_GUILD",
+          "name": "Guild Fence",
+          "description": "Works through introductions and guild contacts. Suggested negotiation DC 16; favour repeat buyers.",
+          "draws": 8,
+          "categoryDraws": 2,
+          "excludedItems": [],
+          "overrides": [
+            {
+              "itemId": "DT_ITEM_GS_POUCH",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_SACK",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_LOCKBOX",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_ROPE_SILK",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_PARCHMENT",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_INK",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_COMPASS",
+              "tier": "rarely"
+            },
+            {
+              "itemId": "DT_ITEM_GS_SPYGLASS",
+              "tier": "rarely"
+            },
+            {
+              "itemId": "DT_ITEM_GS_CROWBAR",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_SHORTSWORD",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_HAND_CROSSBOW",
+              "tier": "rarely"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_DAGGER",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_ALC_SULFUR",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_DISGUISE_KIT",
+              "tier": "rarely"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_FORGERY_KIT",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_THIEVES_TOOLS",
+              "tier": "rarely"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_POISONERS_KIT",
+              "tier": "rarely"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_BASIC_POISON",
+              "tier": "rarely"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_HOODED_CLOAK",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_STAGE_WIG",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_FALSE_BEARD",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_DYE_PACK",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_SEAL_BLANKS",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_WAX_ASSORTMENT",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_GOLD_LEAF",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_DOCUMENT_BLANKS",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_FALSE_TRAVEL_PAPERS",
+              "tier": "rarely"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_COUNTERFEIT_TOKEN",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_PICK_REPLACEMENTS",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_FINE_FILE",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_WIRE_BUNDLE",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_PADDED_WRAP",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_HOLLOW_BOOK",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_FALSE_BOTTOM_CASE",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_SMUGGLERS_MANIFEST",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_UNTAXED_SPICE",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_PROHIBITED_INCENSE",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_UNREGISTERED_REAGENTS",
+              "tier": "rarely"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_STOLEN_SILVERWARE",
+              "tier": "rarely"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_STOLEN_SIGNET",
+              "tier": "rarely"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_STOLEN_RELIQUARY",
+              "tier": "rarely"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_CUT_AGATE",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_CUT_AMETHYST",
+              "tier": "rarely"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_PEARL",
+              "tier": "rarely"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_DIAMOND",
+              "tier": "rarely"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_OBSIDIAN_IDOL",
+              "tier": "rarely"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_BROKEN_SPELL_FOCUS",
+              "tier": "rarely"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_FOREIGN_MEDALLION",
+              "tier": "rarely"
+            }
+          ],
+          "quantityLimit": 2,
+          "tierChances": {
+            "often": 40,
+            "rarely": 50
+          },
+          "offerRules": [
+            {
+              "tag": "restricted",
+              "visibility": {
+                "mode": "relationship",
+                "minPurchases": 5
+              }
+            },
+            {
+              "tag": "contraband",
+              "visibility": {
+                "mode": "relationship",
+                "minPurchases": 3
+              }
+            },
+            {
+              "tag": "stolen",
+              "visibility": {
+                "mode": "relationship",
+                "minPurchases": 2
+              }
+            }
+          ],
+          "merchantNotes": {
+            "alwaysStocks": [
+              "Appointments and small discrete exchanges"
+            ],
+            "oftenStocks": [
+              "Portable goods selected for this contact’s clientele"
+            ],
+            "rarelyStocks": [
+              "Distinctive curiosities only when an opportunity arises"
+            ]
+          }
+        },
+        {
+          "id": "DT_TABLE_BMK_TRAVELLING",
+          "name": "Travelling Fence",
+          "description": "Carries only light goods and changes meeting places. Suggested negotiation DC 15; buys portable valuables.",
+          "draws": 4,
+          "categoryDraws": 2,
+          "excludedItems": [
+            "DT_ITEM_GS_LOCKBOX",
+            "DT_ITEM_GS_ROPE_SILK",
+            "DT_ITEM_GS_CROWBAR",
+            "DT_ITEM_BSM_SHORTSWORD",
+            "DT_ITEM_BSM_HAND_CROSSBOW",
+            "DT_ITEM_BMK_DISGUISE_KIT",
+            "DT_ITEM_BMK_FORGERY_KIT",
+            "DT_ITEM_BMK_POISONERS_KIT",
+            "DT_ITEM_BMK_HOODED_CLOAK"
+          ],
+          "overrides": [
+            {
+              "itemId": "DT_ITEM_GS_POUCH",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_SACK",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_PARCHMENT",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_INK",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_COMPASS",
+              "tier": "rarely"
+            },
+            {
+              "itemId": "DT_ITEM_GS_SPYGLASS",
+              "tier": "rarely"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_DAGGER",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_ALC_SULFUR",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_THIEVES_TOOLS",
+              "tier": "rarely"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_BASIC_POISON",
+              "tier": "rarely"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_STAGE_WIG",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_FALSE_BEARD",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_DYE_PACK",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_SEAL_BLANKS",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_WAX_ASSORTMENT",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_GOLD_LEAF",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_DOCUMENT_BLANKS",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_FALSE_TRAVEL_PAPERS",
+              "tier": "rarely"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_COUNTERFEIT_TOKEN",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_PICK_REPLACEMENTS",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_FINE_FILE",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_WIRE_BUNDLE",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_PADDED_WRAP",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_HOLLOW_BOOK",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_FALSE_BOTTOM_CASE",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_SMUGGLERS_MANIFEST",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_UNTAXED_SPICE",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_PROHIBITED_INCENSE",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_UNREGISTERED_REAGENTS",
+              "tier": "rarely"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_STOLEN_SILVERWARE",
+              "tier": "rarely"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_STOLEN_SIGNET",
+              "tier": "rarely"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_STOLEN_RELIQUARY",
+              "tier": "rarely"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_CUT_AGATE",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_CUT_AMETHYST",
+              "tier": "rarely"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_PEARL",
+              "tier": "rarely"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_DIAMOND",
+              "tier": "rarely"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_OBSIDIAN_IDOL",
+              "tier": "rarely"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_BROKEN_SPELL_FOCUS",
+              "tier": "rarely"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_FOREIGN_MEDALLION",
+              "tier": "rarely"
+            }
+          ],
+          "quantityLimit": 1,
+          "tierChances": {
+            "often": 55,
+            "rarely": 35
+          },
+          "offerRules": [
+            {
+              "tag": "restricted",
+              "visibility": {
+                "mode": "hidden"
+              }
+            },
+            {
+              "tag": "contraband",
+              "visibility": {
+                "mode": "relationship",
+                "minPurchases": 3
+              }
+            },
+            {
+              "tag": "stolen",
+              "visibility": {
+                "mode": "relationship",
+                "minPurchases": 2
+              }
+            }
+          ],
+          "merchantNotes": {
+            "alwaysStocks": [
+              "Appointments and small discrete exchanges"
+            ],
+            "oftenStocks": [
+              "Portable goods selected for this contact’s clientele"
+            ],
+            "rarelyStocks": [
+              "Distinctive curiosities only when an opportunity arises"
+            ]
+          }
+        },
+        {
+          "id": "DT_TABLE_BMK_BOSS",
+          "name": "Crime Boss",
+          "description": "Deals in valuable curiosities and arranged shipments. Suggested negotiation DC 20; bargains require a reason beyond price.",
+          "draws": 10,
+          "categoryDraws": 2,
+          "excludedItems": [],
+          "overrides": [
+            {
+              "itemId": "DT_ITEM_GS_POUCH",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_SACK",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_LOCKBOX",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_ROPE_SILK",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_PARCHMENT",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_INK",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_COMPASS",
+              "tier": "rarely"
+            },
+            {
+              "itemId": "DT_ITEM_GS_SPYGLASS",
+              "tier": "rarely"
+            },
+            {
+              "itemId": "DT_ITEM_GS_CROWBAR",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_SHORTSWORD",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_HAND_CROSSBOW",
+              "tier": "rarely"
+            },
+            {
+              "itemId": "DT_ITEM_BSM_DAGGER",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_ALC_SULFUR",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_DISGUISE_KIT",
+              "tier": "rarely"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_FORGERY_KIT",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_THIEVES_TOOLS",
+              "tier": "rarely"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_POISONERS_KIT",
+              "tier": "rarely"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_BASIC_POISON",
+              "tier": "rarely"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_HOODED_CLOAK",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_STAGE_WIG",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_FALSE_BEARD",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_DYE_PACK",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_SEAL_BLANKS",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_WAX_ASSORTMENT",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_GOLD_LEAF",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_DOCUMENT_BLANKS",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_FALSE_TRAVEL_PAPERS",
+              "tier": "rarely"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_COUNTERFEIT_TOKEN",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_PICK_REPLACEMENTS",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_FINE_FILE",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_WIRE_BUNDLE",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_PADDED_WRAP",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_HOLLOW_BOOK",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_FALSE_BOTTOM_CASE",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_SMUGGLERS_MANIFEST",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_UNTAXED_SPICE",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_PROHIBITED_INCENSE",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_UNREGISTERED_REAGENTS",
+              "tier": "rarely"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_STOLEN_SILVERWARE",
+              "tier": "rarely"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_STOLEN_SIGNET",
+              "tier": "rarely"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_STOLEN_RELIQUARY",
+              "tier": "rarely"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_CUT_AGATE",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_CUT_AMETHYST",
+              "tier": "rarely"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_PEARL",
+              "tier": "rarely"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_DIAMOND",
+              "tier": "rarely"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_OBSIDIAN_IDOL",
+              "tier": "rarely"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_BROKEN_SPELL_FOCUS",
+              "tier": "rarely"
+            },
+            {
+              "itemId": "DT_ITEM_BMK_FOREIGN_MEDALLION",
+              "tier": "rarely"
+            }
+          ],
+          "quantityLimit": 1,
+          "tierChances": {
+            "often": 25,
+            "rarely": 65
+          },
+          "offerRules": [
+            {
+              "tag": "restricted",
+              "visibility": {
+                "mode": "hidden"
+              }
+            },
+            {
+              "tag": "valuable",
+              "visibility": {
+                "mode": "relationship",
+                "minPurchases": 5
+              }
+            }
+          ],
+          "merchantNotes": {
+            "alwaysStocks": [
+              "Appointments and small discrete exchanges"
+            ],
+            "oftenStocks": [
+              "Portable goods selected for this contact’s clientele"
+            ],
+            "rarelyStocks": [
+              "Distinctive curiosities only when an opportunity arises"
+            ]
+          }
         }
       ]
     }

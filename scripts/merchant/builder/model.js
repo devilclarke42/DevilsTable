@@ -9,7 +9,7 @@ import { stockProfiles } from "../../data/stock-catalogue.js";
 
 /** Only these portable configuration fields can be saved as a template. */
 export const CONFIG_KEYS = Object.freeze(["catalogueId", "settlement", "prosperity", "profile", "stockProfileId", "availability",
-  "infiniteFunds", "infiniteStock", "restockProfile", "pricingModifier", "relationshipState", "relationshipModifier", "notes", "checkoutTime"]);
+  "infiniteFunds", "infiniteStock", "restockProfile", "pricingModifier", "relationshipState", "relationshipModifier", "notes", "checkoutTime", "restrictedOffers", "buyModifier"]);
 export async function loadBuilderPolicy({ readJson = readModuleJson } = {}) {
   const data = await readJson("data/merchant-builder.json");
   if (data?.schemaVersion !== 1) throw Error("Unsupported Merchant Builder policy.");
@@ -32,12 +32,16 @@ export function readConfiguration(actor, { economy, policy, registry = catalogue
     restockProfile: config.restock?.profileId ?? policy.defaults.restockProfile,
     relationshipState: config.relationshipDefaults?.state ?? policy.defaults.relationshipState,
     relationshipModifier: config.relationshipDefaults?.pricingModifier ?? policy.defaults.relationshipModifier,
+    restrictedOffers: config.settings?.restrictedOffers === true, buyModifier: config.settings?.buyModifier ?? 1,
     checkoutTime: merchantCheckoutTime(actor),
     notes: typeof config.notes === "string" ? config.notes : "" };
 }
 export function validateConfiguration(input, { economy, policy, catalogue, registry = catalogueRegistry }) {
   if (!input || typeof input !== "object" || Array.isArray(input) || Object.keys(input).some(key => !CONFIG_KEYS.includes(key))) throw Error("Unknown Merchant Builder configuration field.");
   const result = Object.fromEntries(CONFIG_KEYS.map(key => [key, input[key]]));
+  result.restrictedOffers = input.restrictedOffers ?? false;
+  result.buyModifier = input.buyModifier ?? 1;
+  if(typeof result.restrictedOffers!=="boolean" || !Number.isFinite(result.buyModifier) || result.buyModifier<0 || result.buyModifier>6)throw Error("Invalid restricted offer or buying settings.");
   result.checkoutTime = validateCheckoutTime(input.checkoutTime ?? "10:00");
   if (!registry.get(result.catalogueId)) throw Error("Select an available catalogue.");
   resolveEconomy(economy, result);

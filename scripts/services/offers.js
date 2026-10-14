@@ -1,3 +1,4 @@
+import { visibleOffer } from "../merchant/visibility.js";
 import { merchantCheckoutTime } from "./checkout-time.js";
 import { roomActions } from "../integrations/room.js";
 import { MODULE_ID } from "../constants.js";
@@ -23,7 +24,7 @@ export function serviceOffers(actor,character=null,{includeUnavailable=false}={}
   const registry=definitions();
   return Object.entries(offerings).flatMap(([id,offer])=>{
     const row=registry.get(id);
-    if(!row||!eligibleService(row,actor)||offer.enabled===false)return [];
+    if(!row||!eligibleService(row,actor)||offer.enabled===false||!visibleOffer(actor,character,offer.visibility??row.visibility))return [];
     const r=row.requirements??{};
     const allowed=offer.available!==false&&(!r.actorTypes?.length||r.actorTypes.includes(character?.type))&&(!(r.minLevel>0)||Number(character?.system?.details?.level)>=r.minLevel);
     if(!allowed&&!includeUnavailable)return [];

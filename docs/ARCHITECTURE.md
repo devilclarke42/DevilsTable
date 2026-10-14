@@ -342,3 +342,9 @@ Tavern completion adds canonical product JSON, existing stock-profile variants, 
 Integration Manager `present` dispatches only explicitly registered `clientActions`; it cannot reach `actions`, which retain active-GM authorization. Dice So Nice receives an already evaluated Roll only. Client-local animation is best-effort and not awaited by the request response. Hidden DC/outcome data never reaches this adapter. Existing proof and duplicate-query caching remains authoritative.
 
 See [UX Workflows](UX_WORKFLOWS.md) for supported layouts, deliberate sidebar omission and live acceptance limits.
+
+## Generic restricted offers — alpha.27
+
+Inventory and services share the validated `public`, `hidden`, and `relationship` offer visibility policy in `scripts/merchant/visibility.js`. Inventory policies live on embedded Item offer flags; service policies use merchant offering overrides or definition defaults. Relationship access uses this character’s completed successful purchases. A GM reveal overrides visibility; enablement and ordinary eligibility still apply. Public projection, checkout and theft all apply the same rule on the active GM. Transfer strips offer flags. Builder Stock/Services expose the rules without adding a new tab. Guarded saves block active checkout/recovery and reject stale edits. Missing rules retain old behaviour; invalid rules fail closed.
+
+Stock profiles can supply merchant-neutral `tierChances`, `quantityLimit` and ordered tag-based `offerRules`. Rules affect newly generated stock only. Earlier Item identities and existing Actor inventory are preserved. Fence is the display name of the existing `black-market` identity. See [Fence Guide](FENCE_GUIDE.md) for the exact data contract, upgrade steps, framework review and live acceptance checklist.

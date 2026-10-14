@@ -145,3 +145,9 @@ Services have their own top-level Builder tab, using the same guarded administra
 ## Ordered actions and optional adapters (alpha.10)
 
 Definitions may add `actions`, a validated ordered array, and `accommodation: true` to expose room mappings in the Builder. Existing `execution` references remain supported and preflight before payment. New optional actions execute after settlement and record attempted/completed/skipped/needs-attention states; stop-on-failure blocks subsequent optional actions without undoing the trade. Currency and receipt stages cannot be duplicated through authored actions. See [Integrations](INTEGRATIONS.md) and [developer schema](INTEGRATION_DEVELOPERS.md).
+
+## Generic restricted offers — alpha.27
+
+Inventory and services share the validated `public`, `hidden`, and `relationship` offer visibility policy in `scripts/merchant/visibility.js`. Inventory policies live on embedded Item offer flags; service policies use merchant offering overrides or definition defaults. Relationship access uses this character’s completed successful purchases. A GM reveal overrides visibility; enablement and ordinary eligibility still apply. Public projection, checkout and theft all apply the same rule on the active GM. Transfer strips offer flags. Builder Stock/Services expose the rules without adding a new tab. Guarded saves block active checkout/recovery and reject stale edits. Missing rules retain old behaviour; invalid rules fail closed.
+
+Stock profiles can supply merchant-neutral `tierChances`, `quantityLimit` and ordered tag-based `offerRules`. Rules affect newly generated stock only. Earlier Item identities and existing Actor inventory are preserved. Fence is the display name of the existing `black-market` identity. See [Fence Guide](FENCE_GUIDE.md) for the exact data contract, upgrade steps, framework review and live acceptance checklist.

@@ -1267,5 +1267,215 @@
     "icon": "icons/svg/alchemy.svg",
     "sort": 50,
     "visible": true
+  },
+  {
+    "id": "writing",
+    "shop": "black-market",
+    "catalogue": "black-market",
+    "name": "Writing",
+    "description": "Goods traded through contacts; legality and provenance are campaign-dependent.",
+    "plannedItems": [
+      "Parchment",
+      "Ink"
+    ],
+    "sort": 20,
+    "visible": true,
+    "icon": "icons/svg/item-bag.svg"
+  },
+  {
+    "id": "tools",
+    "shop": "black-market",
+    "catalogue": "black-market",
+    "name": "Tools",
+    "description": "Goods traded through contacts; legality and provenance are campaign-dependent.",
+    "plannedItems": [
+      "Crowbar"
+    ],
+    "sort": 40,
+    "visible": true,
+    "icon": "icons/svg/item-bag.svg"
+  },
+  {
+    "id": "martial-weapons",
+    "shop": "black-market",
+    "catalogue": "black-market",
+    "name": "Martial Weapons",
+    "description": "Goods traded through contacts; legality and provenance are campaign-dependent.",
+    "plannedItems": [
+      "Shortsword",
+      "Hand Crossbow"
+    ],
+    "sort": 50,
+    "visible": true,
+    "icon": "icons/svg/item-bag.svg"
+  },
+  {
+    "id": "simple-weapons",
+    "shop": "black-market",
+    "catalogue": "black-market",
+    "name": "Simple Weapons",
+    "description": "Goods traded through contacts; legality and provenance are campaign-dependent.",
+    "plannedItems": [
+      "Dagger"
+    ],
+    "sort": 60,
+    "visible": true,
+    "icon": "icons/svg/item-bag.svg"
+  },
+  {
+    "id": "reagents",
+    "shop": "black-market",
+    "catalogue": "black-market",
+    "name": "Reagents",
+    "description": "Goods traded through contacts; legality and provenance are campaign-dependent.",
+    "plannedItems": [
+      "Sulfur"
+    ],
+    "sort": 70,
+    "visible": true,
+    "icon": "icons/svg/item-bag.svg"
+  },
+  {
+    "id": "disguises",
+    "shop": "black-market",
+    "catalogue": "black-market",
+    "name": "Disguises",
+    "description": "Goods traded through contacts; legality and provenance are campaign-dependent.",
+    "plannedItems": [
+      "Disguise Kit",
+      "Reversible Hooded Cloak",
+      "Stage Wig",
+      "False Beard",
+      "Costume Dye Pack"
+    ],
+    "sort": 80,
+    "visible": true,
+    "icon": "icons/svg/item-bag.svg"
+  },
+  {
+    "id": "forgery",
+    "shop": "black-market",
+    "catalogue": "black-market",
+    "name": "Forgery",
+    "description": "Goods traded through contacts; legality and provenance are campaign-dependent.",
+    "plannedItems": [
+      "Forgery Kit",
+      "Seal Blanks",
+      "Sealing Wax Assortment",
+      "Gold Leaf Packet",
+      "Document Blanks",
+      "False Travel Papers",
+      "Counterfeit Guild Token"
+    ],
+    "sort": 90,
+    "visible": true,
+    "icon": "icons/svg/item-bag.svg"
+  },
+  {
+    "id": "burglary-tools",
+    "shop": "black-market",
+    "catalogue": "black-market",
+    "name": "Burglary Tools",
+    "description": "Goods traded through contacts; legality and provenance are campaign-dependent.",
+    "plannedItems": [
+      "Thieves’ Tools",
+      "Replacement Lockpicks",
+      "Fine Metal File",
+      "Fine Wire Bundle"
+    ],
+    "sort": 100,
+    "visible": true,
+    "icon": "icons/svg/item-bag.svg"
+  },
+  {
+    "id": "poisons",
+    "shop": "black-market",
+    "catalogue": "black-market",
+    "name": "Poisons",
+    "description": "Goods traded through contacts; legality and provenance are campaign-dependent.",
+    "plannedItems": [
+      "Poisoner’s Kit",
+      "Basic Poison"
+    ],
+    "sort": 110,
+    "visible": true,
+    "icon": "icons/svg/item-bag.svg"
+  },
+  {
+    "id": "smuggling",
+    "shop": "black-market",
+    "catalogue": "black-market",
+    "name": "Smuggling",
+    "description": "Goods traded through contacts; legality and provenance are campaign-dependent.",
+    "plannedItems": [
+      "Padded Goods Wrap",
+      "Hollow Book",
+      "False-Bottom Document Case",
+      "False Cargo Manifest"
+    ],
+    "sort": 120,
+    "visible": true,
+    "icon": "icons/svg/item-bag.svg"
+  },
+  {
+    "id": "contraband",
+    "shop": "black-market",
+    "catalogue": "black-market",
+    "name": "Contraband",
+    "description": "Goods traded through contacts; legality and provenance are campaign-dependent.",
+    "plannedItems": [
+      "Untaxed Spice Parcel",
+      "Prohibited Incense",
+      "Unregistered Reagent Parcel"
+    ],
+    "sort": 130,
+    "visible": true,
+    "icon": "icons/svg/item-bag.svg"
+  },
+  {
+    "id": "stolen-goods",
+    "shop": "black-market",
+    "catalogue": "black-market",
+    "name": "Stolen Goods",
+    "description": "Goods traded through contacts; legality and provenance are campaign-dependent.",
+    "plannedItems": [
+      "Stolen Silverware Lot",
+      "Stolen Signet Ring",
+      "Stolen Silver Reliquary"
+    ],
+    "sort": 140,
+    "visible": true,
+    "icon": "icons/svg/item-bag.svg"
+  },
+  {
+    "id": "curiosities",
+    "shop": "black-market",
+    "catalogue": "black-market",
+    "name": "Curiosities",
+    "description": "Goods traded through contacts; legality and provenance are campaign-dependent.",
+    "plannedItems": [
+      "Cut Agate",
+      "Cut Amethyst",
+      "Obsidian Idol",
+      "Broken Spell Focus",
+      "Foreign Medallion"
+    ],
+    "sort": 150,
+    "visible": true,
+    "icon": "icons/svg/item-bag.svg"
+  },
+  {
+    "id": "rare-components",
+    "shop": "black-market",
+    "catalogue": "black-market",
+    "name": "Rare Components",
+    "description": "Goods traded through contacts; legality and provenance are campaign-dependent.",
+    "plannedItems": [
+      "Pearl",
+      "Diamond"
+    ],
+    "sort": 160,
+    "visible": true,
+    "icon": "icons/svg/item-bag.svg"
   }
 ]

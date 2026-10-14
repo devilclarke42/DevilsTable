@@ -14,12 +14,12 @@ const scopeTables = (data, shopId = "general-store", categoryId = null) => stock
   { shopId, categoryId, profileId: data.stock.profiles.find(profile => profile.shop === shopId).id });
 const rollSequence = values => async sides => { const value = values.shift(); assert.ok(value >= 1 && value <= sides, `d${sides}: ${value}`); return value; };
 
-test("twenty stock profiles generate 80 tables and retain all 180 reservations", async () => {
+test("twenty-five stock profiles generate 100 tables and retain all 200 reservations", async () => {
   const data = await production();
   assert.equal(validateStockCatalogue(data).valid, true);
   const tables = stockTableDocuments(data);
-  assert.equal(tables.length, 80);
-  assert.equal(data.tableLedger.ids.length, 180);
+  assert.equal(tables.length, 100);
+  assert.equal(data.tableLedger.ids.length, 200);
   assert.ok(tables.every(table => data.tableLedger.ids.includes(table.flags["devils-table"].sourceId)));
   const items = new Set(data.entries.map(({ item }) => itemUuid(item.id)));
   const nested = new Set(tables.map(table => `Compendium.world.devils-table-stock-tables.RollTable.${table._id}`));
@@ -30,7 +30,7 @@ test("twenty stock profiles generate 80 tables and retain all 180 reservations",
     assert.equal(typeof result.type, "string");
   }
   const counts = Object.fromEntries(data.stock.profiles.map(profile => [profile.shop, tables.filter(t => t.flags["devils-table"].shop === profile.shop).length]));
-  assert.deepEqual(counts, { tavern: 24, "general-store": 16, alchemist: 16, blacksmith: 20, "black-market": 4 });
+  assert.deepEqual(counts, { tavern: 24, "general-store": 16, alchemist: 16, blacksmith: 20, "black-market": 24 });
 });
 
 test("one Always draw returns every core good instead of selecting only one", async () => {
@@ -55,7 +55,7 @@ test("rotating d100 ranges preserve 80/15/5 odds and empty tiers do not promote 
   }
   const travel = scopeTables(data, "general-store", "travel");
   const eligibleIds = new Set(["DT_ITEM_GS_WALKING_STICK", "DT_ITEM_GS_BELL", "DT_ITEM_GS_WHISTLE_SIGNAL", "DT_ITEM_GS_COMPASS", "DT_ITEM_GS_SPYGLASS"]);
-  const empty = await rollStockFromTables(travel, { draws: 3, eligibleIds, rollDie: rollSequence([1, 80, 100]) });
+  const empty = await rollStockFromTables(travel, { draws: 3, eligibleIds, rollDie: rollSequence([1, 100, 100]) });
   assert.equal(empty.selected.length, 3); // The three Always travel goods; no forced compass/spyglass.
   const rare = await rollStockFromTables(travel, { draws: 1, eligibleIds, rollDie: rollSequence([81, 1]) });
   assert.equal(rare.selected.filter(row => row.tier === "rarely").length, 1);
@@ -95,7 +95,7 @@ test("result ordering and equivalent table HTML are harmless; altered odds and U
   const expected = stockTableDocuments(await production());
   const saved = structuredClone(expected);
   for (const table of saved) { table.results.reverse(); table.description = table.description.replaceAll("&#39;", "'"); }
-  assert.equal(planRollTables(expected, saved).unchanged, 80);
+  assert.equal(planRollTables(expected, saved).unchanged, 100);
   saved[0].results[0].documentUuid = "Compendium.world.wrong.Item.1234567890123456";
   const plan = planRollTables(expected, saved);
   assert.equal(plan.update.length, 1);
@@ -110,15 +110,15 @@ test("preview, first build, filtered rebuild and repeated all-shop build preserv
   const data = await production();
   const { adapter, state } = fakeAdapter({ hasPack: false });
   const build = createStockTableBuilder({ load: () => data, adapter });
-  assert.equal((await build()).create, 80);
+  assert.equal((await build()).create, 100);
   assert.equal(state.pack, null);
   assert.deepEqual(state.summaries, []);
   const first = await build({ dryRun: false, shopId: "general-store", categoryId: "containers" });
   assert.equal(first.create, 16);
   assert.equal(first.pack, "world.devils-table-stock-tables");
-  assert.equal((await build({ dryRun: false })).create, 64);
-  assert.equal((await build({ dryRun: false })).unchanged, 80);
-  assert.equal((await build({ categoryId: "travel" })).unchanged, 80);
+  assert.equal((await build({ dryRun: false })).create, 84);
+  assert.equal((await build({ dryRun: false })).unchanged, 100);
+  assert.equal((await build({ categoryId: "travel" })).unchanged, 100);
   assert.equal(state.pack.locked, true);
   assert.ok(state.writes.every(write => write.count <= 100));
 });
@@ -134,7 +134,7 @@ test("partial table writes relock and converge on retry", async () => {
   delete state.hooks.create;
   const result = await build({ dryRun: false });
   assert.equal(result.unchanged, 4);
-  assert.equal(result.create, 76);
+  assert.equal(result.create, 96);
 });
 
 test("unmanaged result rows fail before any table is unlocked or written", async () => {

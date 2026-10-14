@@ -1,0 +1,107 @@
+[
+  {
+    "id": "DT_ITEM_BMK_STOLEN_SILVERWARE",
+    "name": "Stolen Silverware Lot",
+    "description": "Four mismatched silver spoons show traces of a removed household crest. The GM determines ownership and resale circumstances.\n\nLegality and provenance depend on the campaign. The GM confirms restrictions and any checks; this item grants no automatic access, immunity or bonus.",
+    "saleUnit": "One stolen silverware lot",
+    "price": {
+      "value": 25,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 0.5,
+      "units": "lb",
+      "notes": "Adjusted carried weight for the complete stated sale unit, including its wrapping or supplied vessel."
+    },
+    "icon": "modules/devils-table/assets/icons/spoon.svg",
+    "category": "stolen-goods",
+    "tags": [
+      "black-market",
+      "stolen",
+      "valuable"
+    ],
+    "shops": [
+      "black-market"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "Original mundane trade good with no additional game mechanics. See docs/FENCE_GUIDE.md.",
+      "license": "Original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  },
+  {
+    "id": "DT_ITEM_BMK_STOLEN_SIGNET",
+    "name": "Stolen Signet Ring",
+    "description": "A gold signet carries a fictional household device. Possession does not confer title, authority or access.\n\nLegality and provenance depend on the campaign. The GM confirms restrictions and any checks; this item grants no automatic access, immunity or bonus.",
+    "saleUnit": "One stolen signet ring",
+    "price": {
+      "value": 50,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 0.02,
+      "units": "lb",
+      "notes": "Adjusted carried weight for the complete stated sale unit, including its wrapping or supplied vessel."
+    },
+    "icon": "modules/devils-table/assets/icons/spoon.svg",
+    "category": "stolen-goods",
+    "tags": [
+      "black-market",
+      "stolen",
+      "valuable"
+    ],
+    "shops": [
+      "black-market"
+    ],
+    "availability": "special-order",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "Original mundane trade good with no additional game mechanics. See docs/FENCE_GUIDE.md.",
+      "license": "Original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  },
+  {
+    "id": "DT_ITEM_BMK_STOLEN_RELIQUARY",
+    "name": "Stolen Silver Reliquary",
+    "description": "A small silver devotional case is empty and nonmagical. The GM supplies the fictional institution seeking its return.\n\nLegality and provenance depend on the campaign. The GM confirms restrictions and any checks; this item grants no automatic access, immunity or bonus.",
+    "saleUnit": "One stolen silver reliquary",
+    "price": {
+      "value": 100,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 0.6,
+      "units": "lb",
+      "notes": "Adjusted carried weight for the complete stated sale unit, including its wrapping or supplied vessel."
+    },
+    "icon": "modules/devils-table/assets/icons/spoon.svg",
+    "category": "stolen-goods",
+    "tags": [
+      "black-market",
+      "stolen",
+      "valuable"
+    ],
+    "shops": [
+      "black-market"
+    ],
+    "availability": "special-order",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "Original mundane trade good with no additional game mechanics. See docs/FENCE_GUIDE.md.",
+      "license": "Original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  }
+]

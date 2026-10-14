@@ -1,0 +1,143 @@
+[
+  {
+    "id": "DT_ITEM_BMK_PADDED_WRAP",
+    "name": "Padded Goods Wrap",
+    "description": "Soft wool panels and ties protect a small parcel from knocks during transport. They do not automatically suppress noise or evade inspection.\n\nLegality and provenance depend on the campaign. The GM confirms restrictions and any checks; this item grants no automatic access, immunity or bonus.",
+    "saleUnit": "One padded goods wrap",
+    "price": {
+      "value": 2,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 0.4,
+      "units": "lb",
+      "notes": "Adjusted carried weight for the complete stated sale unit, including its wrapping or supplied vessel."
+    },
+    "icon": "modules/devils-table/assets/icons/document-case.webp",
+    "category": "smuggling",
+    "tags": [
+      "black-market",
+      "mundane",
+      "smuggling"
+    ],
+    "shops": [
+      "black-market"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "Original mundane trade good with no additional game mechanics. See docs/FENCE_GUIDE.md.",
+      "license": "Original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  },
+  {
+    "id": "DT_ITEM_BMK_HOLLOW_BOOK",
+    "name": "Hollow Book",
+    "description": "An ordinary-looking bound book has a cut-out compartment for one palm-sized object. The GM adjudicates capacity and inspection.\n\nLegality and provenance depend on the campaign. The GM confirms restrictions and any checks; this item grants no automatic access, immunity or bonus.",
+    "saleUnit": "One hollow book",
+    "price": {
+      "value": 8,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 0.8,
+      "units": "lb",
+      "notes": "Adjusted carried weight for the complete stated sale unit, including its wrapping or supplied vessel."
+    },
+    "icon": "modules/devils-table/assets/icons/document-case.webp",
+    "category": "smuggling",
+    "tags": [
+      "black-market",
+      "mundane",
+      "smuggling"
+    ],
+    "shops": [
+      "black-market"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "Original mundane trade good with no additional game mechanics. See docs/FENCE_GUIDE.md.",
+      "license": "Original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  },
+  {
+    "id": "DT_ITEM_BMK_FALSE_BOTTOM_CASE",
+    "name": "False-Bottom Document Case",
+    "description": "A rigid document case has a shallow compartment under its lining. It is a narrative storage prop; no native container capacity or concealment bonus is assigned.\n\nLegality and provenance depend on the campaign. The GM confirms restrictions and any checks; this item grants no automatic access, immunity or bonus.",
+    "saleUnit": "One false-bottom document case",
+    "price": {
+      "value": 12,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 0.6,
+      "units": "lb",
+      "notes": "Adjusted carried weight for the complete stated sale unit, including its wrapping or supplied vessel."
+    },
+    "icon": "modules/devils-table/assets/icons/document-case.webp",
+    "category": "smuggling",
+    "tags": [
+      "black-market",
+      "mundane",
+      "smuggling"
+    ],
+    "shops": [
+      "black-market"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "Original mundane trade good with no additional game mechanics. See docs/FENCE_GUIDE.md.",
+      "license": "Original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  },
+  {
+    "id": "DT_ITEM_BMK_SMUGGLERS_MANIFEST",
+    "name": "False Cargo Manifest",
+    "description": "A prepared fictional cargo list uses inaccurate descriptions and quantities. It cannot alter actual inventory or guarantee safe passage.\n\nLegality and provenance depend on the campaign. The GM confirms restrictions and any checks; this item grants no automatic access, immunity or bonus.",
+    "saleUnit": "One false cargo manifest",
+    "price": {
+      "value": 10,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 0.03,
+      "units": "lb",
+      "notes": "Adjusted carried weight for the complete stated sale unit, including its wrapping or supplied vessel."
+    },
+    "icon": "modules/devils-table/assets/icons/document-case.webp",
+    "category": "smuggling",
+    "tags": [
+      "black-market",
+      "counterfeit",
+      "restricted",
+      "smuggling"
+    ],
+    "shops": [
+      "black-market"
+    ],
+    "availability": "special-order",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "Original mundane trade good with no additional game mechanics. See docs/FENCE_GUIDE.md.",
+      "license": "Original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  }
+]

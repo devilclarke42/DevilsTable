@@ -1,3 +1,4 @@
+import { validateVisibility } from "./visibility.js";
 import { withAdministration } from "./operation-guard.js";
 import { previewInitialFloat, assertFloatCurrent, applyInitialFloat } from "./economy.js";
 import { MODULE_ID, PACK_COLLECTION } from "../constants.js";
@@ -55,7 +56,7 @@ export async function applyMerchantStock(actor, preview, { resolve = uuid => fro
       data.flags ??= {};
       data.flags[MODULE_ID] ??= {};
       data.flags[MODULE_ID].offer = { origin: "generated", sourceUuid: row.uuid,
-        stockProfileId: preview.profileId, restockEnabled: false };
+        stockProfileId: preview.profileId, restockEnabled: false, ...(row.visibility?{visibility:validateVisibility(row.visibility)}:{}) };
       // Native D&D5e containers cannot stack: each is an independent embedded Item.
       const count = data.type === "container" ? row.quantity : 1;
       if (data.type === "container") data.system.quantity = 1;

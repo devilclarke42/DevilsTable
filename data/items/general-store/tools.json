@@ -60,7 +60,8 @@
     ],
     "shops": [
       "general-store",
-      "blacksmith"
+      "blacksmith",
+      "black-market"
     ],
     "availability": "variable",
     "source": {

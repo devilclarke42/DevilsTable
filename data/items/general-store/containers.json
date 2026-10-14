@@ -71,7 +71,8 @@
       "sold-empty"
     ],
     "shops": [
-      "general-store"
+      "general-store",
+      "black-market"
     ],
     "availability": "core",
     "source": {
@@ -118,7 +119,8 @@
       "sold-empty"
     ],
     "shops": [
-      "general-store"
+      "general-store",
+      "black-market"
     ],
     "availability": "core",
     "source": {

@@ -76,6 +76,27 @@
       "catalogues": [
         "alchemist"
       ]
+    },
+    {
+      "id": "fence-trade",
+      "name": "Fence Trade",
+      "catalogues": [
+        "black-market"
+      ]
+    },
+    {
+      "id": "fence-logistics",
+      "name": "Discreet Logistics",
+      "catalogues": [
+        "black-market"
+      ]
+    },
+    {
+      "id": "fence-specialist",
+      "name": "Restricted Arrangements",
+      "catalogues": [
+        "black-market"
+      ]
     }
   ],
   "services": [
@@ -715,7 +736,7 @@
     {
       "id": "DT_SERVICE_TAV_SECURE_STORAGE",
       "name": "Secure Storage",
-      "description": "The keeper records one parcel up to 20 lb and places it in the inn\u2019s locked store for a day. Contents and identifying marks are agreed before payment. This is ordinary custody, not magical protection or insurance. Character Items are not moved or removed automatically; the GM records the handover and return. No Lock & Key key is issued for this service.",
+      "description": "The keeper records one parcel up to 20 lb and places it in the inn’s locked store for a day. Contents and identifying marks are agreed before payment. This is ordinary custody, not magical protection or insurance. Character Items are not moved or removed automatically; the GM records the handover and return. No Lock & Key key is issued for this service.",
       "icon": "icons/sundries/misc/lock-bronze-reinforced.webp",
       "category": "tavern-premium",
       "catalogues": [
@@ -735,7 +756,7 @@
           "denomination": "gp"
         }
       },
-      "saleUnit": "one parcel up to 20 lb in the inn\u2019s locked store for one day",
+      "saleUnit": "one parcel up to 20 lb in the inn’s locked store for one day",
       "duration": "Up to 24 hours; collection arranged with the keeper",
       "modifier": 0,
       "maxQuantity": 10,
@@ -883,7 +904,7 @@
             "weapon"
           ]
         },
-        "note": "Select one eligible item from your character\u2019s inventory. It stays with the character."
+        "note": "Select one eligible item from your character’s inventory. It stays with the character."
       },
       "execution": {},
       "tags": [
@@ -944,7 +965,7 @@
             "heavy"
           ]
         },
-        "note": "Select one eligible item from your character\u2019s inventory. It stays with the character."
+        "note": "Select one eligible item from your character’s inventory. It stays with the character."
       },
       "execution": {},
       "tags": [
@@ -1014,7 +1035,7 @@
             "shortsword"
           ]
         },
-        "note": "Select one eligible item from your character\u2019s inventory. It stays with the character."
+        "note": "Select one eligible item from your character’s inventory. It stays with the character."
       },
       "execution": {},
       "tags": [
@@ -1066,7 +1087,7 @@
             "weapon"
           ]
         },
-        "note": "Select one eligible item from your character\u2019s inventory. It stays with the character."
+        "note": "Select one eligible item from your character’s inventory. It stays with the character."
       },
       "execution": {},
       "tags": [
@@ -1127,7 +1148,7 @@
             "heavy"
           ]
         },
-        "note": "Select one eligible item from your character\u2019s inventory. It stays with the character."
+        "note": "Select one eligible item from your character’s inventory. It stays with the character."
       },
       "execution": {},
       "tags": [
@@ -1190,7 +1211,7 @@
             "handcrossbow"
           ]
         },
-        "note": "Select one eligible item from your character\u2019s inventory. It stays with the character."
+        "note": "Select one eligible item from your character’s inventory. It stays with the character."
       },
       "execution": {},
       "tags": [
@@ -1249,7 +1270,7 @@
             "shield"
           ]
         },
-        "note": "Select one eligible item from your character\u2019s inventory. It stays with the character."
+        "note": "Select one eligible item from your character’s inventory. It stays with the character."
       },
       "execution": {},
       "tags": [
@@ -1275,7 +1296,7 @@
     {
       "id": "DT_SERVICE_BSM_CUSTOM_FITTING",
       "name": "Custom Fitting",
-      "description": "Refine an intact suit\u2019s padding, straps and articulation for its wearer. The wearer must attend; this does not remove proficiency requirements, Strength requirements or Stealth disadvantage. Payment records the commissioned work; the GM decides completion and applies any item changes manually.",
+      "description": "Refine an intact suit’s padding, straps and articulation for its wearer. The wearer must attend; this does not remove proficiency requirements, Strength requirements or Stealth disadvantage. Payment records the commissioned work; the GM decides completion and applies any item changes manually.",
       "icon": "icons/skills/trades/smithing-tongs-metal-red.webp",
       "category": "smith-fitting",
       "catalogues": [
@@ -1306,7 +1327,7 @@
             "heavy"
           ]
         },
-        "note": "Select one eligible item from your character\u2019s inventory. It stays with the character."
+        "note": "Select one eligible item from your character’s inventory. It stays with the character."
       },
       "execution": {},
       "tags": [
@@ -1364,7 +1385,7 @@
             "tool"
           ]
         },
-        "note": "Select one eligible item from your character\u2019s inventory. It stays with the character."
+        "note": "Select one eligible item from your character’s inventory. It stays with the character."
       },
       "execution": {},
       "tags": [
@@ -1643,6 +1664,374 @@
           "value": 6,
           "denomination": "cp"
         }
+      }
+    },
+    {
+      "id": "DT_SERVICE_BMK_LAUNDER",
+      "name": "Launder Stolen Goods",
+      "description": "Arrange a fictional resale or paperwork cover for one agreed lot. The fee does not change ownership, erase evidence or transfer Items. The GM resolves the outcome.",
+      "icon": "icons/svg/book.svg",
+      "category": "fence-trade",
+      "catalogues": [
+        "black-market"
+      ],
+      "price": {
+        "value": 10,
+        "denomination": "gp"
+      },
+      "modifier": 0,
+      "maxQuantity": 1,
+      "availability": {
+        "profiles": []
+      },
+      "requirements": {
+        "actorTypes": [
+          "character"
+        ],
+        "note": "Agree scope, schedule, external costs and outcome with the GM before approval."
+      },
+      "execution": {},
+      "tags": [
+        "black-market",
+        "arrangement"
+      ],
+      "saleUnit": "One agreed consultation or arrangement",
+      "duration": "GM agreed",
+      "visibility": {
+        "mode": "relationship",
+        "minPurchases": 2
+      }
+    },
+    {
+      "id": "DT_SERVICE_BMK_FIND_BUYER",
+      "name": "Find Buyer",
+      "description": "Contact potential buyers for one agreed lot. Payment covers the search; any sale uses a separate GM-approved trade.",
+      "icon": "icons/svg/book.svg",
+      "category": "fence-trade",
+      "catalogues": [
+        "black-market"
+      ],
+      "price": {
+        "value": 5,
+        "denomination": "gp"
+      },
+      "modifier": 0,
+      "maxQuantity": 1,
+      "availability": {
+        "profiles": []
+      },
+      "requirements": {
+        "actorTypes": [
+          "character"
+        ],
+        "note": "Agree scope, schedule, external costs and outcome with the GM before approval."
+      },
+      "execution": {},
+      "tags": [
+        "black-market",
+        "arrangement"
+      ],
+      "saleUnit": "One agreed consultation or arrangement",
+      "duration": "GM agreed",
+      "visibility": {
+        "mode": "public"
+      }
+    },
+    {
+      "id": "DT_SERVICE_BMK_ACQUIRE_CONTRABAND",
+      "name": "Acquire Contraband",
+      "description": "Seek one agreed prohibited item. The fee pays for sourcing efforts only; the goods, deposits, delivery and outcome require GM agreement. No Item is created automatically.",
+      "icon": "icons/svg/book.svg",
+      "category": "fence-specialist",
+      "catalogues": [
+        "black-market"
+      ],
+      "price": {
+        "value": 25,
+        "denomination": "gp"
+      },
+      "modifier": 0,
+      "maxQuantity": 1,
+      "availability": {
+        "profiles": [
+          "fence-greedy",
+          "fence-guild",
+          "fence-boss"
+        ]
+      },
+      "requirements": {
+        "actorTypes": [
+          "character"
+        ],
+        "note": "Agree scope, schedule, external costs and outcome with the GM before approval."
+      },
+      "execution": {},
+      "tags": [
+        "black-market",
+        "arrangement"
+      ],
+      "saleUnit": "One agreed consultation or arrangement",
+      "duration": "GM agreed",
+      "visibility": {
+        "mode": "hidden"
+      }
+    },
+    {
+      "id": "DT_SERVICE_BMK_LOCATE_RARE",
+      "name": "Locate Rare Item",
+      "description": "Search contacts for one named rare item. Availability is not guaranteed; acquisition price and travel costs are separate.",
+      "icon": "icons/svg/book.svg",
+      "category": "fence-trade",
+      "catalogues": [
+        "black-market"
+      ],
+      "price": {
+        "value": 15,
+        "denomination": "gp"
+      },
+      "modifier": 0,
+      "maxQuantity": 1,
+      "availability": {
+        "profiles": []
+      },
+      "requirements": {
+        "actorTypes": [
+          "character"
+        ],
+        "note": "Agree scope, schedule, external costs and outcome with the GM before approval."
+      },
+      "execution": {},
+      "tags": [
+        "black-market",
+        "arrangement"
+      ],
+      "saleUnit": "One agreed consultation or arrangement",
+      "duration": "GM agreed",
+      "visibility": {
+        "mode": "relationship",
+        "minPurchases": 3
+      }
+    },
+    {
+      "id": "DT_SERVICE_BMK_SMUGGLING",
+      "name": "Arrange Smuggling",
+      "description": "Arrange transport of an agreed fictional parcel. The GM confirms route, size, timing and risks. The fee does not teleport goods or guarantee passage.",
+      "icon": "icons/svg/book.svg",
+      "category": "fence-logistics",
+      "catalogues": [
+        "black-market"
+      ],
+      "price": {
+        "value": 20,
+        "denomination": "gp"
+      },
+      "modifier": 0,
+      "maxQuantity": 1,
+      "availability": {
+        "profiles": [
+          "fence-guild",
+          "fence-travelling",
+          "fence-boss"
+        ]
+      },
+      "requirements": {
+        "actorTypes": [
+          "character"
+        ],
+        "note": "Agree scope, schedule, external costs and outcome with the GM before approval."
+      },
+      "execution": {},
+      "tags": [
+        "black-market",
+        "arrangement"
+      ],
+      "saleUnit": "One agreed consultation or arrangement",
+      "duration": "GM agreed",
+      "visibility": {
+        "mode": "relationship",
+        "minPurchases": 3
+      }
+    },
+    {
+      "id": "DT_SERVICE_BMK_FORGERY",
+      "name": "Forgery Consultation",
+      "description": "Review a proposed fictional document imitation. This consultation grants no automatic bonus and does not produce an authorised document.",
+      "icon": "icons/svg/book.svg",
+      "category": "fence-trade",
+      "catalogues": [
+        "black-market"
+      ],
+      "price": {
+        "value": 5,
+        "denomination": "gp"
+      },
+      "modifier": 0,
+      "maxQuantity": 1,
+      "availability": {
+        "profiles": []
+      },
+      "requirements": {
+        "actorTypes": [
+          "character"
+        ],
+        "note": "Agree scope, schedule, external costs and outcome with the GM before approval."
+      },
+      "execution": {},
+      "tags": [
+        "black-market",
+        "arrangement"
+      ],
+      "saleUnit": "One agreed consultation or arrangement",
+      "duration": "GM agreed",
+      "visibility": {
+        "mode": "public"
+      }
+    },
+    {
+      "id": "DT_SERVICE_BMK_APPRAISE",
+      "name": "Appraise Illegal Goods",
+      "description": "Inspect one agreed fictional lot for estimated market value and suspicious provenance. The GM determines findings; this is not magical identification.",
+      "icon": "icons/svg/book.svg",
+      "category": "fence-trade",
+      "catalogues": [
+        "black-market"
+      ],
+      "price": {
+        "value": 3,
+        "denomination": "gp"
+      },
+      "modifier": 0,
+      "maxQuantity": 1,
+      "availability": {
+        "profiles": []
+      },
+      "requirements": {
+        "actorTypes": [
+          "character"
+        ],
+        "note": "Agree scope, schedule, external costs and outcome with the GM before approval."
+      },
+      "execution": {},
+      "tags": [
+        "black-market",
+        "arrangement"
+      ],
+      "saleUnit": "One agreed consultation or arrangement",
+      "duration": "GM agreed",
+      "visibility": {
+        "mode": "public"
+      }
+    },
+    {
+      "id": "DT_SERVICE_BMK_DELIVERY",
+      "name": "Discreet Delivery",
+      "description": "Arrange local delivery of one agreed fictional parcel to a named destination. Confirm recipient, distance and deadline with the GM. Delivery is resolved in play.",
+      "icon": "icons/svg/book.svg",
+      "category": "fence-logistics",
+      "catalogues": [
+        "black-market"
+      ],
+      "price": {
+        "value": 5,
+        "denomination": "gp"
+      },
+      "modifier": 0,
+      "maxQuantity": 1,
+      "availability": {
+        "profiles": []
+      },
+      "requirements": {
+        "actorTypes": [
+          "character"
+        ],
+        "note": "Agree scope, schedule, external costs and outcome with the GM before approval."
+      },
+      "execution": {},
+      "tags": [
+        "black-market",
+        "arrangement"
+      ],
+      "saleUnit": "One agreed consultation or arrangement",
+      "duration": "GM agreed",
+      "visibility": {
+        "mode": "public"
+      }
+    },
+    {
+      "id": "DT_SERVICE_BMK_THEFT",
+      "name": "Commission Theft",
+      "description": "Negotiate a fictional in-world theft commission. Payment covers consultation and contact fees only. The GM must agree on the target and outcome; no theft or inventory change happens automatically.",
+      "icon": "icons/svg/book.svg",
+      "category": "fence-specialist",
+      "catalogues": [
+        "black-market"
+      ],
+      "price": {
+        "value": 50,
+        "denomination": "gp"
+      },
+      "modifier": 0,
+      "maxQuantity": 1,
+      "availability": {
+        "profiles": [
+          "fence-greedy",
+          "fence-boss"
+        ]
+      },
+      "requirements": {
+        "actorTypes": [
+          "character"
+        ],
+        "note": "Agree scope, schedule, external costs and outcome with the GM before approval."
+      },
+      "execution": {},
+      "tags": [
+        "black-market",
+        "arrangement"
+      ],
+      "saleUnit": "One agreed consultation or arrangement",
+      "duration": "GM agreed",
+      "visibility": {
+        "mode": "hidden"
+      }
+    },
+    {
+      "id": "DT_SERVICE_BMK_ROUTE",
+      "name": "Smuggling Route",
+      "description": "Arrange a fictional introduction to a route operator. Exact route, price and hazards remain GM decisions; no map or safe passage is created automatically.",
+      "icon": "icons/svg/book.svg",
+      "category": "fence-specialist",
+      "catalogues": [
+        "black-market"
+      ],
+      "price": {
+        "value": 30,
+        "denomination": "gp"
+      },
+      "modifier": 0,
+      "maxQuantity": 1,
+      "availability": {
+        "profiles": [
+          "fence-guild",
+          "fence-travelling",
+          "fence-boss"
+        ]
+      },
+      "requirements": {
+        "actorTypes": [
+          "character"
+        ],
+        "note": "Agree scope, schedule, external costs and outcome with the GM before approval."
+      },
+      "execution": {},
+      "tags": [
+        "black-market",
+        "arrangement"
+      ],
+      "saleUnit": "One agreed consultation or arrangement",
+      "duration": "GM agreed",
+      "visibility": {
+        "mode": "hidden"
       }
     }
   ]

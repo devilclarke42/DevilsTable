@@ -22,7 +22,8 @@
       "sheet"
     ],
     "shops": [
-      "general-store"
+      "general-store",
+      "black-market"
     ],
     "availability": "variable",
     "source": {
@@ -96,7 +97,8 @@
     ],
     "shops": [
       "general-store",
-      "alchemist"
+      "alchemist",
+      "black-market"
     ],
     "availability": "variable",
     "source": {
