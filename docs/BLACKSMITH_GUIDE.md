@@ -1,10 +1,11 @@
 # Blacksmith Guide
 
-Sprint 13 ships in 0.3.0-alpha.17, with native field serialization corrected in alpha.18. It uses the existing shared Item compendium, merchant stock tables, Builder, native Actor currency and GM approval pipeline. Live Foundry V14 / D&D5e 5.3.3 / Forge acceptance remains required.
+**Audience:** GMs and equipment content authors. **Purpose:** explain native equipment, presets and required-item services.
+
 
 ## Products and mechanics
 
-The Blacksmith has **73 products**: 58 new records and 15 shared General Store records. Shared products retain their original IDs, prices, weights and categories; only catalogue membership changes. The complete project contains 370 products, 25 services and 68 stock tables.
+The Blacksmith has **73 products**: 58 new records and 15 shared General Store records. Shared products retain their original IDs, prices, weights and categories; only catalogue membership changes. Shared goods keep their original identities.
 
 The new equipment includes all 37 mundane 2014 simple/martial weapons, 12 suits of armour, a shield, four ammunition types, Smith's Tools, a lock, manacles and a steel billet. Existing chains, horseshoes, climbing fittings, hand tools, charcoal, iron and copper bars supply the workshop range. Bows and wooden weapons represent bought-in stock and repairs, not an assertion that every smith manufactures them.
 

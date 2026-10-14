@@ -1,5 +1,7 @@
 # Weight Guide
 
+**Audience:** content authors and reviewers. **Purpose:** define adjusted weights and complete-unit accounting.
+
 **Status:** official adjusted-weight standard for Variant Encumbrance.
 
 Equipment weight should make packing, transport and resupply meaningful without turning ordinary

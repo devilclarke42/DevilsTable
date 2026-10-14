@@ -1,213 +1,27 @@
 # Roadmap
 
-## Sprint 16 — Fence & Black Market (alpha.27)
+**Audience:** users, contributors and maintainers. **Purpose:** describe project direction; this is the only roadmap.
 
-Fence adds 35 new products, reuses 13 shared goods, and supplies ten services and five editable templates. Hidden inventory and hidden services use one shared visibility policy with GM reveal and per-character completed-purchase thresholds. Profile tier odds and quantity caps keep stock sparse and varied. Existing black-market IDs are retained; rebuild its Items and stock tables in place. See [Fence Guide](docs/FENCE_GUIDE.md).
+## Milestone 1 — Merchant Framework: complete
 
-The source now contains 440 products, 40 services and 100 active stock tables. All current merchant types use the same framework; live Foundry V14 / D&D5e 5.3.3 / Forge acceptance remains required before release readiness is claimed.
+All five current merchant types use shared catalogue, stock, services, pricing, GM review, currency, relationship, receipt and recovery infrastructure. Repository consolidation closes this milestone with permanent guides and explicit extension boundaries. Feature completeness describes this implemented scope; it does not certify every live integration or resolve release licensing.
 
+## Milestone 2 — Content Expansion & Public Beta Preparation: next
 
-## Sprint 13 — Blacksmith candidate
+- Expand and review merchant products, services and presets through the existing framework.
+- Review economics, weights, descriptions, artwork and provenance across all catalogues.
+- Complete supported-world multiplayer, accessibility and optional-integration acceptance.
+- Resolve the distribution license and document upgrade/support expectations.
+- Fix verified defects and improve usability without adding merchant-specific architecture.
 
-Alpha.17 implements the Blacksmith catalogue, nine services, five presets and generic required-item selection. Live Foundry/Forge review is required before stability sign-off. See docs/BLACKSMITH_GUIDE.md.
+## Milestone 3 — Public Beta
 
+Publish a traceable installation release after the license and acceptance gates pass. Establish a hosted manifest, release assets, issue templates/support guidance and a clear compatibility matrix. Collect campaign feedback and address defects before widening compatibility claims.
 
-## Tavern Completion candidate — 0.3.0-alpha.13
+## Milestone 4 — Version 1.0
 
-Tavern content and presets are implemented: 205 products, 16 services, nine presets and six curated stock profiles. The shared catalogue, Builder, transactions and optional integrations are reused. Live V14 / D&D5e 5.3.3 / Forge acceptance is the remaining gate before calling the Tavern milestone stable. No new merchant gameplay or other merchant catalogue was started. See [Tavern Guide](docs/TAVERN_GUIDE.md).
+Provide a stable, documented extension contract, reliable upgrades, reviewed content and an evidenced support policy. Ship a versioned release with complete notices and reproducible packaging.
 
+## Future proposals
 
-## Sprint 10C — Optional integration candidate
-
-Implemented in `0.3.0-alpha.10`: optional manager, ordered fulfilment, Lock & Key room access, Calendaria accommodation notes, booking checkout/recovery and integration settings. Live Foundry/Forge acceptance remains pending. Room capacity, reservations, automated restocking, business hours and other module adapters remain future work.
-
-
-## Sprint 11A — Merchant Identity candidate
-
-Implemented in `0.3.0-alpha.9`: native-derived identity/System Tags, separate business metadata/Merchant Tags, dedicated Identity and Services tabs, service filters/availability and data ownership documentation. Live Foundry/Forge review remains pending. Full business profiles, disguises, faction/reputation systems and settlement generation remain future work; this sprint adds no new gameplay.
-
-
-## Sprint 10B — Tavern Services candidate
-
-Implemented in `0.3.0-alpha.8`: twelve services, editable Tavern presets and data-driven default selection. Existing food/drink sources are active. Await live Foundry review; reservations, capacity scheduling and service automation remain future work.
-
-
-## Sprint 10A — Merchant Services framework candidate
-
-Implemented in `0.3.0-alpha.7`: separate definitions, shared basket/payment review, service administration, usage statistics and optional post-payment native integrations. Await live Foundry review before starting Tavern service content (Sprint 10B). No new trading mechanics or Tavern services are bundled.
-
-
-## Sprint 9 — Merchant Builder candidate: 0.3.0-alpha.4
-
-- [x] Single editable panel; preserve existing NPC data during conversion.
-- [x] Data-driven configuration, stock estimates and independent stock/float/notes previews.
-- [x] Built-in presets and private portable custom templates.
-- [x] Native funds, infinite-stock configuration, relationship defaults and inventory administration.
-- [x] Documentation and automated regression coverage.
-- [ ] Live Foundry/Forge acceptance using the [Merchant Guide](docs/MERCHANT_GUIDE.md#maintenance-and-acceptance).
-
-Automatic restocking, greetings and template import/export remain future work. The service framework is now implemented; merchant-specific service content follows review.
-Existing catalogue milestones and Tavern content are unchanged.
-
-
-## Sprint 8A — Consolidation candidate: 0.3.0-alpha.3
-
-- [x] Trade & Merchants branding with stable module/source/collection identities.
-- [x] Reviewed compendium names and documented existing-pack display aliases.
-- [x] GM Merchant Summary, confirmed Empty Stock and shared transaction guards.
-- [x] Data-driven initial native cash float with existing-wallet and repeat-grant protection.
-- [x] Documentation, regression coverage and unchanged Tavern content.
-- [ ] Live Foundry/Forge acceptance: [checklist](docs/MERCHANT_ADMINISTRATION.md#validation-and-live-acceptance).
-
-Future economy work may use settlement, prosperity and merchant profile for stock/rarity/restocking;
-none of those systems is implemented here. Existing catalogue milestones are unchanged.
-
-
-This is the detailed implementation and acceptance checklist. The official versioned milestones
-and release outcomes are defined in [docs/ROADMAP.md](docs/ROADMAP.md).
-
-## Sprint 8 — Catalogue framework and merchant UX
-
-- [x] Data-defined catalogue registry and validated category display metadata.
-- [x] Shared Items, compatible legacy memberships and optional merchant catalogue selection.
-- [x] Provider registration, ordinary shared-pack building and collision validation.
-- [x] Populated category tabs, public-field live search and independent basket scrolling.
-- [x] Actor portrait, exact token name, availability and formatted pricing summaries.
-- [x] Architecture, content standard, decisions, extension contract and project state.
-- [x] Preserve the earlier Tavern draft and IDs while deferring its active build.
-- [ ] Owner review and live Foundry acceptance using [Project State](docs/PROJECT_STATE.md).
-- [ ] Resume Tavern only after the framework is reviewed.
-
-Candidate: `0.3.0-alpha.2`. Services and Merchant Builder are design boundaries only.
-
-## Sprint 7 — Merchant interaction
-
-- [x] Signed percentage controls, stacking, original/adjusted previews and denomination labels.
-- [x] Shop/character pricing and next-purchase negotiation modifiers.
-- [x] GM-controlled negotiation/theft, native rolls and hidden DCs.
-- [x] Recoverable theft transfers, private counters and advisory confidence.
-- [x] Shared service locking, lifecycle/rollback tests and updated operation documentation.
-- [ ] Record live V14 / D&D5e 5.3.3 / Forge acceptance using the
-  [Sprint 7 checklist](docs/merchant/SPRINT_7_INTERACTIONS.md).
-
-Sprint 7 baseline: `0.2.0-alpha.25`; owner reports the features work in their live setup.
-
-## Documentation Foundation
-
-- [x] Publish the nine complete development standards under `docs/`.
-- [x] Document permanent identities, content quality, copper/silver pricing and adjusted weights.
-- [x] Define merchant frequency/context, quantity conventions, shared icons and release practice.
-- [x] Record accepted design decisions and the 0.2.0–1.0 milestone plan.
-- [x] Preserve alpha-build history and distinguish implemented behaviour from future requirements.
-
-The documentation sprint changes Markdown only; weighted quantities and compact tables were
-implemented and verified in the preceding stock feature change.
-
-## Sprint 2 — Framework implementation
-
-- [x] Module structure, manifest, documentation, settings and logging.
-- [x] Canonical JSON registry and permanent-ID/weight/provenance validation.
-- [x] Pure mundane-goods converter with explicit 2014 rules.
-- [x] GM preview/build UI and bounded, non-deleting compendium updates.
-- [x] Regression tests, synthetic scale test, checks and Forge-oriented ZIP packaging.
-- [ ] Complete and record the live V14 / D&D5e 5.3.3 Forge acceptance checklist.
-
-Implementation is available for acceptance testing; the target environment is not yet verified.
-
-## Sprint 3 — Complete the General Store
-
-- [x] Finish 144 goods across ten categories, including Tools and Trade Goods.
-- [x] Preserve all 69 existing permanent IDs, prices, weights and descriptions.
-- [x] Add explicit sale units to the 13 original Containers; require sale units and nonempty tags.
-- [x] Reject duplicate normalized display names across the catalogue.
-- [x] Add Village, Town, City and Wagon stock selection using shared canonical Items.
-- [x] Reuse icons and add twelve lightweight 256×256 WebPs with editable masters.
-- [x] Verify the 69-to-144 Item and 20-to-32 table upgrades and unchanged repeat builds.
-- [x] Update standards, review tables, changelogs, API guidance and packaging.
-- [ ] Record detailed Foundry V14 / D&D5e 5.3.3 / Forge acceptance and Sprint 3 owner review.
-
-Sprint 3 stopped at the General Store. Further Tavern authoring awaits review of the revised Sprint 8 catalogue framework.
-
-## Sprint 4 — Merchant System specification (approved)
-
-- [x] Draft the Actor/Item, relationship, wallet, checkout, negotiation, inventory, permission,
-  migration and transaction-history model in [the design proposal](docs/merchant/MERCHANT_SYSTEM_SPECIFICATION.md).
-- [x] Draft accessible [UI wireframes](docs/merchant/UI_WIREFRAMES.md),
-  [workflow diagrams](docs/merchant/WORKFLOW_DIAGRAMS.md) and a
-  [phased implementation roadmap](docs/merchant/IMPLEMENTATION_ROADMAP.md).
-- [x] Challenge complexity and record [Foundry-native decisions and feasibility gates](docs/merchant/TECHNICAL_JUSTIFICATION.md).
-- [x] Review and approve the specification with required changes before Sprint 5 code begins.
-- [ ] Resolve the versioned milestone order for Merchant System work before Tavern authoring.
-
-Sprint 4 was documentation-only. Subsequent Sprint 5–7 runtime work is recorded in the
-merchant validation reports and release changelog.
-
-## Accepted baseline — Containers and seven-category expansion
-
-- [x] Define all eight curated General Store categories and their planned item lists.
-- [x] Require builder-only Merchant Notes for Tavern, General Store, Alchemist, Blacksmith and Black Market.
-- [x] Establish whole cp/sp/gp prices and the 25 gp specialist boundary.
-- [x] Author exactly 13 Containers with reserved permanent IDs and adjusted empty weights.
-- [x] Add native container capacities, shop/category filters and regression coverage.
-- [x] User accepted the working Containers build and requested all seven remaining categories.
-- [x] Author the remaining 56 approved goods with explicit purchase units and permanent IDs.
-- [x] Add supported mundane consumable activities, light metadata and focused validation.
-- [x] Verify a 13-to-69 upgrade and repeat build in automated tests.
-- [x] User reported alpha.4 worked and accepted the prices and goods.
-- [ ] Live V14 / D&D5e 5.3.3 Forge acceptance, including contained-item encumbrance.
-- [ ] Live actor-import, completed-use consumption, reusable activity and light metadata checks.
-
-The original eight General Store categories have accepted alpha.4 authored stock. Successful user reports
-for alpha.3 and alpha.4 do not complete the detailed live checklist.
-
-## Current — Stock RollTables
-
-- [x] Add canonical stock profiles and permanent table IDs for all five shops.
-- [x] Generate Always / Often / Rarely / Rotating sets for each shop with category filters.
-- [x] Keep Merchant Notes in the builder and use real Item compendium references.
-- [x] Add a separate settings button, preview/build window and independent build record.
-- [x] Guarantee core stock and offer duplicate-free rotating lists from built tables.
-- [x] Preserve item economics and identities; support safe table/result reconciliation and retries.
-- [x] Reduce active output from 120 to 20 tables, retaining IDs and category stock selection.
-- [x] Roll weighted sale-unit quantities from price and effective availability.
-- [x] Provide a separate reviewed cleanup of unchanged legacy category tables.
-- [ ] Review stock tier overrides, 80/15/5 chances and suggested draw counts.
-- [ ] Complete live V14 / D&D5e 5.3.3 Forge table build, native draw and repeat-build checks.
-
-Alpha.6 reduced output to 20 active tables. Sprint 3 adds twelve variant tables for 32 active tables. Alchemist, Blacksmith and Black
-Market remain partial catalogues. Table generation does not create missing shop-specific content.
-
-## After review — Curated content
-
-- Review the original Tavern material against the canonical schema before any import.
-- Resolve General Store balance feedback against the canonical JSON and preserve all existing IDs.
-- Reserve permanent IDs before publication; test rename and cross-shop behaviour.
-- Extend supported converters only when a real item needs them: potions, proficiency tools,
-  weapons and armour still need documented mappings and system tests.
-
-## Later — Catalogue and shop workflows
-
-- Add Tavern, Alchemist, Blacksmith and Black Market catalogues incrementally.
-- Expand category plans to other shops without multiplying item identities.
-- Implement the approved merchant-actor, saved-stock, purchasing and recovery workflows in phases.
-- Add a reviewed retirement/migration workflow, backups and stronger multi-session coordination.
-- Profile read/write memory use and responsiveness inside Foundry with thousands of real items.
-- Add localisation and wider runtime compatibility only after tests and review.
-
-## Public release gate
-
-- Select a distribution license and verify rights for text/icons and source attribution.
-- Finish live install, upgrade and recovery tests on The Forge.
-- Publish versioned ZIP and manifest assets; add real download/update URLs.
-- Document migration and rollback policy before declaring a stable release.
-
-No previous catalogue, provisional release asset or untested compatibility claim is inferred
-from work outside this repository.
-
-## Sprint 12A — UX & Workflow Polish
-
-Implemented in alpha.14: NPC configuration tab, Actor-based entry points, merchant badges, optional Dice So Nice presentation and compact content builders. Live Foundry/Forge sheet, keyboard, narrow-window and multiplayer animation acceptance remains the next release gate. No new gameplay milestone or catalogue was introduced.
-
-## Sprint 15 — Alchemist candidate
-
-Alpha.26 adds 35 products, five services and four presets through the existing framework. Native potion activities and mixed checkout have automated coverage; live Foundry acceptance remains required. Brewing remains future work. Sprint 16 Fence catalogue and generic hidden-offer access are now implemented. Full stolen-property, risk and reputation simulation remain future work.
+Reputation/factions, automatic restocking, crafting, room capacity/reservations and broader compatibility are proposals, not committed features. Evaluate each against [Project Philosophy](docs/PROJECT_PHILOSOPHY.md), current [Known Limitations](docs/KNOWN_LIMITATIONS.md) and the existing extension surface. Milestone numbers are planning labels, not semantic version numbers or release dates.

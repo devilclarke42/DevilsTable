@@ -1,6 +1,7 @@
 # Merchant services
 
-Sprint 10A introduces services in `0.3.0-alpha.7`. That framework release contained no production services. Alpha.8 adds the [Tavern Services catalogue](TAVERN_SERVICES.md).
+**Audience:** service authors and GM maintainers. **Purpose:** document definitions, offering state, eligibility and execution.
+
 
 ## Boundaries and storage
 
@@ -15,7 +16,7 @@ A catalogue can offer **products and services as peers**. Product categories org
 | Lifetime service counters | `flags.devils-table.merchant.serviceStats` | Verified transaction writes |
 | Purchase and execution audit | Existing private transaction receipts | Active GM |
 
-Definitions are shared; merchant flags store only references and overrides. Existing merchants need no migration and offer no services until configured. Inventory, Item IDs and shared compendium UUIDs are unchanged. Definition data is not a secret store: do not place GM notes, hidden DCs or credentials in it. Public Shop projections omit execution references and all statistics.
+Definitions are shared; merchant flags store only references and overrides. Offerings are configured through the Builder; existing saved offers remain intact and eligible catalogue defaults seed once per identity. Inventory, Item IDs and shared compendium UUIDs are unchanged. Definition data is not a secret store: do not place GM notes, hidden DCs or credentials in it. Public Shop projections omit execution references and all statistics.
 
 ## GM workflow
 
@@ -74,7 +75,13 @@ The following example is documentation only and is **not bundled content**. Past
 - `requirements`: optional `minLevel` (integer 0–20), `actorTypes` (native Actor type IDs), and `note` (public explanatory text). The first two are enforced by the GM at quote time; notes are advisory checks for the GM. Unsupported rules fail validation.
 - `execution`: optional UUIDs keyed by `macro`, `journal`, `rollTable` or `activeEffect`. Inline scripts and unknown action types are rejected. All configured documents must resolve to the expected native type before payment.
 
-Plain data can express catalogue/economy eligibility, level/type requirements and existing document integrations. It cannot express arbitrary time scheduling, repair targets, capacity reservations or complex predicates in this sprint. Add future rules explicitly with validation rather than embedding code in JSON.
+Plain data can express catalogue/economy eligibility, level/type requirements and existing document integrations. It does not provide arbitrary time scheduling, capacity reservations or complex predicates. Item-required targets use the explicit requirements.item contract. Add future rules explicitly with validation rather than embedding code in JSON.
+
+### Required Item and visibility fields
+
+`requirements.item` accepts a nonempty native `types` list and optional `subtypes`/`baseItems` lists. Supported physical types are weapon, equipment, tool, consumable, loot and container. Item-required services set `maxQuantity: 1`; the buyer selects one eligible owned Item. The target is validated again by the GM and remains unmodified unless a configured action deliberately completes work.
+
+Definition `visibility` supplies a public/hidden/relationship default; NPC offering overrides take precedence. Modes and completed-purchase/GM-reveal behaviour match inventory. Visibility never bypasses disabled status or eligibility. See [Merchant Data Model](MERCHANT_DATA_MODEL.md).
 
 ## Checkout and execution
 
@@ -128,7 +135,7 @@ Before treating this candidate as live-validated, use GM and player sessions on 
 
 These live checks cannot be replaced by Node mocks; no live Foundry session was available during implementation.
 
-## Optional content metadata and defaults (alpha.8)
+## Optional content metadata and defaults
 
 Definitions may provide `saleUnit` and `duration` as nonempty text up to 300 characters. Duration
 is descriptive and never advances time. `recommendedRange` is `{min: {value, denomination}, max:
@@ -138,16 +145,16 @@ Catalogue `metadata.defaultServiceCategories` names service categories to seed o
 Save, subject to normal catalogue/economy eligibility. Processed IDs live in
 `merchant.builder.serviceDefaults.<catalogueId>` and prevent unwanted recreation of removed offers.
 
-## Builder service administration (alpha.9)
+## Builder service administration
 
 Services have their own top-level Builder tab, using the same guarded administration as the standalone compatibility window. Search/category/status filters preserve unsaved row edits. The optional offer field `available` defaults to true; false shows “Temporarily unavailable” and prevents purchase. It does not bypass existing catalogue, economic or character requirements. `enabled: false` instead hides an offering. Price overrides, usage and generation remain unchanged. See [Builder Guide](BUILDER_GUIDE.md).
 
-## Ordered actions and optional adapters (alpha.10)
+## Ordered actions and optional adapters
 
 Definitions may add `actions`, a validated ordered array, and `accommodation: true` to expose room mappings in the Builder. Existing `execution` references remain supported and preflight before payment. New optional actions execute after settlement and record attempted/completed/skipped/needs-attention states; stop-on-failure blocks subsequent optional actions without undoing the trade. Currency and receipt stages cannot be duplicated through authored actions. See [Integrations](INTEGRATIONS.md) and [developer schema](INTEGRATION_DEVELOPERS.md).
 
-## Generic restricted offers — alpha.27
+## Restricted offerings
 
 Inventory and services share the validated `public`, `hidden`, and `relationship` offer visibility policy in `scripts/merchant/visibility.js`. Inventory policies live on embedded Item offer flags; service policies use merchant offering overrides or definition defaults. Relationship access uses this character’s completed successful purchases. A GM reveal overrides visibility; enablement and ordinary eligibility still apply. Public projection, checkout and theft all apply the same rule on the active GM. Transfer strips offer flags. Builder Stock/Services expose the rules without adding a new tab. Guarded saves block active checkout/recovery and reject stale edits. Missing rules retain old behaviour; invalid rules fail closed.
 
-Stock profiles can supply merchant-neutral `tierChances`, `quantityLimit` and ordered tag-based `offerRules`. Rules affect newly generated stock only. Earlier Item identities and existing Actor inventory are preserved. Fence is the display name of the existing `black-market` identity. See [Fence Guide](FENCE_GUIDE.md) for the exact data contract, upgrade steps, framework review and live acceptance checklist.
+See [Merchant Data Model](MERCHANT_DATA_MODEL.md) for persisted visibility and [Stock Tables](STOCK_TABLES.md) for stock-generation policy.

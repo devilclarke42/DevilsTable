@@ -1,9 +1,9 @@
 import { readdir } from "node:fs/promises";
-import { resolve, relative } from "node:path";
+import { resolve, relative, sep } from "node:path";
 import { fileURLToPath } from "node:url";
 
 export const ROOT = fileURLToPath(new URL("../", import.meta.url));
-export const RUNTIME_FILES = ["module.json", "README.md", "CHANGELOG.md", "ROADMAP.md"];
+export const RUNTIME_FILES = ["module.json", "README.md", "CHANGELOG.md", "ROADMAP.md", "CONTRIBUTING.md"];
 export const RUNTIME_DIRS = ["scripts", "data", "schemas", "templates", "styles", "docs", "assets"];
 
 export async function listFiles(directory, { optional = false } = {}) {
@@ -22,6 +22,6 @@ export async function listFiles(directory, { optional = false } = {}) {
 
 export async function runtimeFiles() {
   const files = RUNTIME_FILES.map(file => resolve(ROOT, file));
-  for (const dir of RUNTIME_DIRS) files.push(...await listFiles(resolve(ROOT, dir), { optional: dir === "assets" }));
+  for (const dir of RUNTIME_DIRS) files.push(...(await listFiles(resolve(ROOT, dir), { optional: dir === "assets" })).filter(path => !path.startsWith(resolve(ROOT, "docs/archive") + sep)));
   return files.map(file => relative(ROOT, file).replaceAll("\\", "/")).sort();
 }

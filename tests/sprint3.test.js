@@ -23,6 +23,7 @@ test("all 69 accepted source records survive unchanged except explicit Container
   for (const { id, sha256 } of baseline.items) {
     const item = structuredClone(data.entries.find(entry => entry.item.id === id).item);
     if (item.category === "containers") delete item.saleUnit;
+    item.source.reference = item.source.reference.replaceAll("docs/archive/GENERAL_STORE_INITIAL.md", "docs/GENERAL_STORE_REVIEW.md").replaceAll("docs/archive/GENERAL_STORE_EXPANSION.md", "docs/SPRINT_3_REVIEW.md").replaceAll("docs/archive/CONTAINERS_INITIAL.md", "docs/CONTAINERS_REVIEW.md");
     if (["DT_ITEM_GS_POUCH","DT_ITEM_GS_SACK","DT_ITEM_GS_CROWBAR","DT_ITEM_GS_INK","DT_ITEM_GS_PARCHMENT"].includes(id)) item.shops = item.shops.filter(shop => shop !== "black-market");
     if (["DT_ITEM_GS_WATERSKIN","DT_ITEM_GS_RATIONS_TRAVEL","DT_ITEM_GS_FIREWOOD","DT_ITEM_GS_BEDROLL","DT_ITEM_GS_MESS_KIT","DT_ITEM_GS_FLINT_STEEL"].includes(id)) item.shops = item.shops.filter(shop => shop !== "tavern");
     assert.equal(createHash("sha256").update(JSON.stringify(item)).digest("hex"), sha256, id);

@@ -1,5 +1,7 @@
 # Alchemist Guide
 
+**Audience:** GMs and alchemical content authors. **Purpose:** explain potion mechanics, presets and commissioned work.
+
 ## Scope
 
 The Alchemist catalogue adds 35 products and reuses six General Store goods, for 41 available products. All use the shared Devil's Table Item compendium. Five separate service definitions reuse the existing basket, pricing, approval and receipt pipeline. No potion brewing, ingredient consumption, crafting recipes or new reputation mechanics are introduced.
@@ -70,4 +72,4 @@ Before campaign use, verify in Foundry V14 with D&D5e 5.3.3: build twice with no
 
 2014 mechanics are based on the *System Reference Document 5.1* by Wizards of the Coast LLC, available under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) at the [official SRD](https://media.wizards.com/2023/downloads/dnd/SRD_CC_v5.1.pdf). Original descriptions, prices and adjusted weights are project adaptations. Higher healing strengths retain the established D&D5e dice progression; their market prices are project decisions.
 
-Native field shapes and existing icon references were checked against [D&D5e release 5.3.3](https://github.com/foundryvtt/dnd5e/tree/release-5.3.3), including `module/data/activity/heal-data.mjs`, `module/data/shared/damage-field.mjs` and the source healing potion and alchemist tool. Existing source notices in [Blacksmith Source Notices](BLACKSMITH_SOURCE_NOTICES.md) remain applicable to reused native tool structure. Icon assets are referenced from Foundry, not redistributed.
+Native field shapes and existing icon references were checked against [D&D5e release 5.3.3](https://github.com/foundryvtt/dnd5e/tree/release-5.3.3), including `module/data/activity/heal-data.mjs`, `module/data/shared/damage-field.mjs` and the source healing potion and alchemist tool. Existing source notices in [Blacksmith Source Notices](SOURCE_NOTICES.md) remain applicable to reused native tool structure. Icon assets are referenced from Foundry, not redistributed.

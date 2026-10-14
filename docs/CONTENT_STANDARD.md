@@ -1,210 +1,44 @@
 # Content Standard
 
-## Potions
+**Audience:** product/service authors and reviewers. **Purpose:** define editorial quality and permanent identity conventions. Structural detail is in [Source Data](SOURCE_DATA.md).
 
-Use `mechanics.type: "consumable"`, subtype `potion` and an explicit consume/action use for the 2014 baseline. Optional `healing` supplies positive dice count, supported denomination and nonnegative integer bonus; supported limits are 20 dice and +100. The builder emits native healing and marks potions magical. Do not describe automatic effects that the generated activity does not implement. See [Alchemist Guide](ALCHEMIST_GUIDE.md).
+## One identity and purchase unit
 
+Reserve `DT_ITEM_<ORIGIN>_<PRODUCT>` IDs in the append-only ledger. Existing origins include GS, TAV, BSM, ALC and BMK. Origins record where a product began; shared goods keep the same ID. Do not encode price, availability, version or a merchant name in identity. Never recycle a retired reservation or quietly change the meaning of a sale unit.
 
-## Blacksmith equipment and services
+Each record has one explicit `saleUnit`. Price, weight, stock quantity and consumption all refer to that complete unit: a coil, bundle, set, serving or individual projectile. A kit does not generate its component Items. Ammunition is sold per projectile; mundane containers are sold empty unless the specific product says otherwise.
 
-Blacksmith adds Simple Weapons, Martial Weapons, Ammunition, Shields, Light Armour, Medium Armour and Heavy Armour. Existing tools, metals and fittings retain their canonical categories and IDs. Native equipment fields are authored in mechanics.native; arbitrary top-level system overrides are prohibited. Ammunition sale units are individual projectiles. Service definitions remain separate from product files; item requirements use native type/subtype/base-item selectors and maxQuantity 1. See [Blacksmith Guide](BLACKSMITH_GUIDE.md) and [source notices](BLACKSMITH_SOURCE_NOTICES.md).
+## Names and descriptions
 
+Use familiar title-case names, globally unique after Unicode/whitespace normalization. Describe the object, ordinary use, what is included and meaningful limits in original plain text. Use `\n\n` for paragraphs. Do not embed HTML/scripts, assume campaign facts, narrate character feelings or imply unsupported benefits.
 
-## Catalogue membership (Sprint 8)
+Distinguish 2014 rules, project prices/weights and GM-adjudicated effects. A supplied cosmetic, rope or raw herb must not promise automatic success/healing. Preserve mechanics independently from economy adjustments.
 
-New merchant types must be defined in `data/catalogues.json`; category display metadata belongs in `data/categories.json`. Every category has `catalogue`, matching legacy `shop`, `id`, `name`, `icon`, `sort`, `visible`, `description` and `plannedItems`. Item `shops` tags are catalogue memberships, not separate copies of a product. Retain this compatibility field and all permanent IDs. Never duplicate an Item to place it in another catalogue. See the [complete definition and provider contract](CATALOGUE_FRAMEWORK.md). The Tavern is active; see [Tavern Guide](TAVERN_GUIDE.md) for current content and portions.
+## Required data
 
-**Status:** official standard for all future Devil's Table content.  
-**Target:** Foundry VTT V14, D&D5e 5.3.3, 2014 mechanics, adjusted pounds for Variant Encumbrance.
+Products require id, name, description, saleUnit, price, weight/rationale, icon, category, tags, shops, availability, source and supported mechanics. Categories/catalogues must be registered; files must appear in `data/catalogue.json`. Use one canonical category and meaningful lowercase kebab-case tags. Additional catalogue memberships never require duplicate Items.
 
-The repository is authoritative. Authors edit canonical JSON, reviewers approve it, and builders
-generate Foundry documents. World or actor copies are play data, not a route for changing the
-published catalogue. This standard governs editorial quality; [SOURCE_DATA.md](SOURCE_DATA.md)
-documents the current schema and converter. A documented future feature is not permission to
-add an unsupported JSON field or mechanic.
+Prices use positive whole cp/sp/gp values (cp/sp 1–9); weights use adjusted pounds with a rationale. Service prices have their own broader currency contract. See [Price Guide](PRICE_GUIDE.md) and [Weight Guide](WEIGHT_GUIDE.md).
 
-## 1. One record, one identity, one sale unit
+## Supported mechanics
 
-Every item represents one clearly defined product and purchase unit. A fifty-foot coil, a bundle
-of ten pitons and a set of four horseshoes are each one quantity unit. Price, weight, consumption
-and rolled stock quantity must all refer to that same unit. A kit's listed components are included
-in its total; the builder does not generate separate component Items.
+Use explicit supported loot, container, consumable, weapon, equipment or tool mappings. Weapons/armour/tools/ammunition require reviewed native fields; potions use the 2014 action and single-dose consumption. Supported healing activities must match their authored dice. Utility consumables do not automatically apply described benefits.
 
-Use the permanent format `DT_ITEM_<ORIGIN>_<IDENTIFIER>`:
+Do not label a mechanical weapon/tool/potion as loot merely to evade validation. Ordinary props or incomplete repair supplies may be mundane loot when their manual limitations are stated. Required-item services select compatible native customer Items and allow one target per checkout line.
 
-| Origin | Meaning | Example identity |
-| --- | --- | --- |
-| `GS` | First authored for General Store | `DT_ITEM_GS_ROPE_HEMP` |
-| `TAV` | First authored for Tavern | `DT_ITEM_TAV_RYE_BREAD` |
-| `ALC` | First authored for Alchemist | `DT_ITEM_ALC_HEALING_POTION` |
-| `BSM` | First authored for Blacksmith | Use this prefix when that catalogue is authored |
-| `BMK` | First authored for Black Market | Use this prefix when that catalogue is authored |
+## Provenance and artwork
 
-The General Store and Tavern examples above are authored records. The Alchemist example remains
-a naming illustration, not an ID reservation or a claim of shipped content.
+State the actual source and applicable rights. Write original explanations; preserve required third-party notices. `source.license` records provenance and does not select the project's distribution license. Reuse appropriate verified core/module icons before creating assets. New artwork must meet [Icon Standard](ICON_STANDARD.md); see [Source Notices](SOURCE_NOTICES.md).
 
-- Use uppercase ASCII letters, digits and underscores; no spaces, punctuation or accented letters.
-- The schema pattern is `^DT_ITEM_[A-Z0-9]+(?:_[A-Z0-9]+)+$`, with a 128-character maximum.
-- Prefer a durable object name followed by a meaningful material/variant: `ROPE_HEMP`,
-  `JUG_CLAY`, `LANTERN_HOODED`. Avoid price, weight, version, merchant name or availability in an ID.
-- Reserve the ID in `data/id-ledger.json` before adding the record. Search existing records first.
-- An ID never changes after reservation and is never reused, even if the item is retired.
-- Changing a display name, price, category or shop list does not create a new identity. Origin
-  records where the item began; shared goods retain it when another shop stocks them.
-- A genuinely different product or purchase unit needs a reviewed new ID. Do not quietly turn a
-  ten-piton bundle into a single piton under the existing identity.
+Historical source audits remain available under [archive](archive/README.md). They establish provenance, not current prices or scope.
 
-Foundry's 16-character document ID is derived separately. Never hand-edit the mapping algorithm,
-generated IDs or `flags.devils-table.sourceId` to resolve a conflict; investigate and migrate explicitly.
+## Review gate
 
-## 2. Names and descriptions
+1. Check duplicates and reserve identity.
+2. Review text, sale unit, economy, weight/capacity, source and artwork together.
+3. Register files/categories/memberships and update relevant stock policies.
+4. Run `npm run check`; reject unknown fields rather than ignoring them.
+5. Build twice in a disposable supported world; inspect native behaviour and test relevant transactions.
+6. Record meaningful changes and actual acceptance evidence before release.
 
-Use familiar English names in title case: **Clay Jug**, **Hempen Rope**, **Hooded Lantern**.
-Use a singular name for one object; a conventional plural is appropriate for a set, such as
-**Pitons** or **Horseshoes**. Keep sizes and pack counts in `saleUnit` unless needed to distinguish
-two different products. Avoid merchant prefixes, marketing claims, rarity labels and revision numbers.
-Display-name changes are allowed, but must not conceal a changed product. Names must be globally
-unique after Unicode NFKC normalization, lowercasing and whitespace normalization; validation
-rejects visually equivalent duplicates.
-
-Descriptions are original plain text, generally one or two short paragraphs:
-
-1. Identify the object, material and ordinary practical use.
-2. Explain what one purchase includes and any relevant exclusions: empty/full, fuel, fittings,
-   packaging, rope length, kit components or separate accessories.
-3. State useful mechanics and limits precisely when relevant. Separate a 2014 rule from a project
-   adjustment, and make manual handling clear when no automation exists.
-
-Use concrete, restrained language. Do not narrate a character's feelings, assume a setting,
-invent combat benefits, or pad ordinary goods with lore. A description of soap must not imply
-disease removal; a climbing rope must not promise automatic success. Never copy a rulebook passage
-as flavour text. Attribute the mechanics and write the explanation in the project's own words.
-Use `\n\n` for paragraph breaks. Raw HTML, scripts and embedded remote assets do not belong in source
-descriptions; the converter escapes text. Names must be nonblank and at most 200 characters;
-descriptions must be nonblank and at most 20,000 characters, though normal entries are much shorter.
-
-## 3. Required authoring fields
-
-| Field | Standard |
-| --- | --- |
-| `id` | Reserved permanent identity, unique across the entire catalogue. |
-| `name` | Clear product name following the conventions above. |
-| `description` | Original plain text explaining use, inclusions and meaningful limits. |
-| `saleUnit` | Required for every item; nonblank, at most 200 characters. |
-| `price` | Positive whole `value` and `denomination` of `cp`, `sp` or `gp`; see [PRICE_GUIDE.md](PRICE_GUIDE.md). |
-| `weight` | Finite nonnegative `value`, `units: "lb"`, and a nonblank rationale in `notes`; see [WEIGHT_GUIDE.md](WEIGHT_GUIDE.md). |
-| `icon` | A permitted local shared icon path; see [ICON_STANDARD.md](ICON_STANDARD.md). |
-| `category` | Exactly one registered functional category slug. |
-| `tags` | One or more unique lowercase descriptive slugs; use meaningful shared vocabulary. |
-| `shops` | One or more registered shop slugs, without duplicates. |
-| `availability` | Exactly `core`, `variable` or `special-order` under the current schema. |
-| `source` | Nonblank `title`, `reference` and `license` describing provenance honestly. |
-| `mechanics` | An explicitly supported D&D5e mapping, even for ordinary nonmagical goods. |
-
-Sprint 3 adds explicit `saleUnit` values to the original thirteen Containers. Those 144 records and the 168 Tavern-authored additions
-meet the same required-field schema; there is no legacy sale-unit exception.
-
-Price examples: `{ "value": 7, "denomination": "sp" }`. Weight examples:
-`{ "value": 5, "units": "lb", "notes": "Dry weight of one complete 50-foot coil." }`.
-Do not use strings such as `"7 sp"`, fractional coin amounts, kilograms, or a price for one object
-with the weight of a whole bundle. Containers require positive empty weight and explicit positive
-mass/volume capacities. An official dash in a weight table is not an instruction to use zero.
-
-## 4. Category hierarchy and physical files
-
-The catalogue has functional categories, shown within each merchant's view. General Store's
-approved navigation is **General Store → category → item**. A product still has one canonical
-category when it appears in another merchant's view.
-
-| Display category | Canonical slug | Scope |
-| --- | --- | --- |
-| Containers | `containers` | General storage vessels, bags and boxes |
-| Lighting & Fire | `fire-lighting` | Light sources, fuels and fire-making goods |
-| Rope & Climbing | `rope-climbing` | Cordage, anchors and climbing equipment |
-| Camping | `camping` | Shelter, bedding and camp cooking/tableware |
-| Writing | `writing` | Paper, ink and sealing supplies |
-| Household | `household` | Cleaning, sewing and laundry goods |
-| Animal Supplies | `animal` | Feed, grooming and tack care |
-| Travel | `travel` | Walking, navigation and signalling goods |
-| Tools | `tools` | Ordinary hand tools, measuring aids and workshop supplies |
-| Trade Goods | `trade-goods` | Measured raw materials and household processing supplies |
-
-Tavern adds Ale (`ale`), Beer (`beer`), Mead (`mead`), Wine (`wine`), Spirits (`spirits`),
-Non-alcoholic Drinks (`non-alcoholic-drinks`), Hot Drinks (`hot-drinks`), Breakfast (`breakfast`),
-Lunch (`lunch`), Dinner (`dinner`), Stews (`stews`), Roasts (`roasts`), Bread (`bread`), Cheese
-(`cheese`), Desserts (`desserts`), Snacks (`snacks`), Travel Meals (`travel-meals`), Luxury Meals
-(`luxury-meals`), Animal Feed (`animal-feed`), Soups (`soups`), Fish (`fish`),
-Imported Drinks (`imported-drinks`) and Tavern Supplies (`tavern-supplies`). Its files live under `data/items/tavern/`.
-Shared General Store goods keep their original categories. Existing Horse Feed stays in Animal
-Supplies; the new Animal Feed category contains distinct supplemental products. See
-[Tavern portions and review](TAVERN_REVIEW.md) before authoring new food or drink.
-
-Choose the primary use: Cooking Pot belongs in Camping while its mechanics can still be
-`container`. Tags express cross-cutting properties. Do not duplicate an item to make it appear
-in another category or merchant. There is no nested `subcategory` field in the current schema;
-a deeper hierarchy needs a reviewed schema/UI change before data uses it.
-
-Canonical arrays live under `data/items/`, grouped by useful authoring boundaries, and every
-content file is registered in `data/catalogue.json`. A folder named `general-store` indicates
-authoring organisation, not exclusive shop ownership. `data/categories.json` holds descriptions
-and planned names; a planned name does not create an item. Future registered categories do not
-imply that their mechanics or content have already been implemented.
-
-## 5. Tags and shop assignments
-
-Tags use lowercase kebab-case matching `^[a-z0-9]+(?:-[a-z0-9]+)*$`. Reuse existing words before
-introducing synonyms. Prefer a few useful tags for material, use and purchase form, for example
-`mundane`, `leather`, `container`, `sold-empty`, `bundle`, `fuel`, `reusable`. Avoid duplicate tags,
-sentences, prices, names masquerading as tags and contradictory pairs such as `sold-empty` with
-`filled-vessel`. An empty tag array fails validation. Reviewers also check that the tags
-are useful and accurate. Descriptive tags do not silently grant game mechanics.
-
-Valid shop assignments are `tavern`, `general-store`, `alchemist`, `blacksmith` and `black-market`.
-Assign a shop because that kind of merchant plausibly sells the product, not merely because a
-character could use it there. The Bottle record is shared across General Store, Tavern and
-Alchemist; it must not be copied into three source records.
-
-Base availability and per-shop stock overrides control selection. Seasonal, imported and illegal
-conditions are described in [MERCHANT_STANDARD.md](MERCHANT_STANDARD.md); those labels must not
-be inserted as unsupported `availability` values. Merchant Notes remain builder-only guidance.
-
-## 6. Mechanics, provenance and icons
-
-Current converters support `loot`, native `container`, and documented mundane `consumable`
-types with explicit use modes. They do not yet provide general weapon, armour, proficiency-tool
-or potion conversion. Do not disguise an unsupported mechanical item as loot just to pass validation.
-Keep 2014 mechanical effects unless a project adjustment has been explicitly documented and reviewed.
-Prices and weights are authored project values; they do not automatically change mechanics.
-
-Every source record must identify its basis and any original project design. `source.license`
-records provenance; it is not a substitute for the project's distribution licence. Do not claim
-rights that have not been established. Reuse an existing suitable core or module-owned icon.
-New module-owned raster icons follow the 256×256 WebP standard; existing SVG/core exceptions are
-documented in the icon policy. Remote image URLs and paths escaping the permitted roots are invalid.
-
-## 7. Review and validation gate
-
-1. Compare the proposed product with existing records and reserve its identity once.
-2. Check description, sale unit, price, weight rationale, capacity, source and icon together.
-3. Register new source files/categories as needed; update shop coverage and stock policy explicitly.
-4. Run `npm run check`. Structural and semantic checks must pass before building.
-5. Preview Items in a disposable target world, build, and rerun to confirm unchanged identities.
-6. Build the affected shop tables and roll relevant categories/quantities. Test real activities,
-   container behaviour and imported copies where the item uses those features.
-7. Record the result in the review/build history before a release. Follow [RELEASE_PROCESS.md](RELEASE_PROCESS.md).
-
-Automation verifies shapes, IDs, references, supported mappings and numeric constraints. Human
-review verifies believable economics, honest weight adjustments, good writing, icon suitability
-and provenance. Current schema validation does not enforce every editorial rule in this document.
-Unknown JSON fields fail rather than being ignored. A failed check must be fixed at the source;
-never patch a generated compendium to make the validation report look clean.
-
-## Services are separate content
-
-This document governs Items. Merchant services use `DT_SERVICE_` identities and the separate
-[Merchant Services contract](MERCHANT_SERVICES.md). Never create zero-weight or fake Items for
-services. Shared catalogue assignments do not place services in the Master Item Catalogue.
-
-## Tavern Completion categories
-
-Soups (`soups`), Fish (`fish`), Imported Drinks (`imported-drinks`) and Tavern Supplies (`tavern-supplies`) extend Tavern navigation through data definitions. Each Item still has one canonical category. Existing supper plates and Fish Chowder keep their identities and primary categories; shared rations and equipment retain their original IDs, price, weight and mechanics. New smoking/gaming supplies use the supported mundane loot mapping with manual use, not invented proficiency or intoxication automation.
+Services use `DT_SERVICE_` identities and the separate [Merchant Services](MERCHANT_SERVICES.md) contract. Never create fake zero-weight service inventory.

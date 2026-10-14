@@ -1,8 +1,8 @@
 # Tavern Guide
 
-Sprint 11 — Tavern Completion · 0.3.0-alpha.13 · 4 October 2026
+**Audience:** GMs running inns/taverns and menu authors. **Purpose:** explain portions, presets and hospitality.
 
-Devil’s Table provides **205 Tavern products and 16 services**. The menu combines 168 Tavern-authored products with 37 existing supplies. All 312 project Items still live in one generated master Item compendium. Services remain separate definitions and never become fake inventory Items.
+Devil’s Table provides **205 Tavern products and 16 services**. The menu combines 168 Tavern-authored products with 37 existing supplies. All products use one generated master Item compendium. Services remain separate definitions and never become fake inventory Items.
 
 ## Build your first inn
 
@@ -28,7 +28,7 @@ Generation supplies an assortment, not every dish in the catalogue. Preset chang
 | Taproom supplies | Tavern Supplies | Tobacco, an empty clay pipe, playing cards and bone dice |
 | Shared equipment | Containers, Lighting & Fire, Household, Rope & Climbing, Travel | Existing canonical equipment; never separate Tavern copies |
 
-The completion adds Onion Broth, Creamed Mushroom Soup, Chicken Noodle Broth, Sorrel Spring Soup, Grilled Sardines, Mussels in Cider, Baked Haddock, Pickled Herring, Southern Date Wine, Island Palm Spirit, Resined White Wine and Spiced Pomegranate Drink. These complement existing dishes rather than replace them. Fish Chowder remains a stew; Pan-Fried Trout Supper remains a full Dinner plate.
+The menu includes Onion Broth, Creamed Mushroom Soup, Chicken Noodle Broth, Sorrel Spring Soup, Grilled Sardines, Mussels in Cider, Baked Haddock, Pickled Herring, Southern Date Wine, Island Palm Spirit, Resined White Wine and Spiced Pomegranate Drink. These complement existing dishes rather than replace them. Fish Chowder remains a stew; Pan-Fried Trout Supper remains a full Dinner plate.
 
 Travel Rations, Waterskin, Firewood, Bedroll, Mess Kit and Flint & Steel gain Tavern membership under their existing permanent IDs. A waterskin is sold empty. Trail food does not include water. Pipe Tobacco is an ounce packet; its consumption is manual. Cards and dice are ordinary goods with GM-adjudicated gaming proficiency, not automated gambling.
 
@@ -50,7 +50,7 @@ Every preset is editable. These estimates are rounded expected distinct product 
 | Roadhouse | Hamlet / Poor | -10% | 14 | 5 |
 | Noble Inn | Large-City / Wealthy | +20% | 54 | 13 |
 
-The six stock profiles are the broad Village Tavern profile plus Roadside, Dockside, Luxury, Coaching and Roadhouse. They share Item references and existing quantity rules. Each profile uses four tables, for **24 Tavern tables and 52 module-wide tables**. Categories filter those pools; no category-specific table set is created. All older table identities remain reserved.
+The six stock profiles are the broad Village Tavern profile plus Roadside, Dockside, Luxury, Coaching and Roadhouse. They share Item references and existing quantity rules. Each profile uses four tables, for **24 Tavern tables**. Categories filter those pools; no category-specific table set is created. All older table identities remain reserved.
 
 Roadside menus emphasise packed food, simple hot meals and travel replacements. Dockside menus guarantee fish specialities and include imported drinks. Luxury menus favour wines, fine cooking and premium pours over common-room staples. Coaching menus emphasise breakfasts, provisions and animal feed. Roadhouses use a smaller inexpensive menu with ordinary ale and filling food.
 
@@ -66,7 +66,34 @@ To present “Merrick’s Rest”, enter that business name in Identity and keep
 
 ## Services
 
-See [Tavern Services](TAVERN_SERVICES.md) for the complete price, range and duration table.
+| Service | Base price | Recommended range | Sale unit | Duration |
+| --- | --- | --- | --- | --- |
+| Rent Common Room | 2 sp | 1 sp–4 sp | one person for one night | 1 night(s); checkout at merchant time (default 10:00), GM may override |
+| Rent Private Room | 6 sp | 4 sp–15 sp | one room for up to two guests for one night | 1 night(s); checkout at merchant time (default 10:00), GM may override |
+| Rent Luxury Room | 3 gp | 2 gp–8 gp | one room for up to two guests for one night | 1 night(s); checkout at merchant time (default 10:00), GM may override |
+| Meal of the Day | 8 cp | 5 cp–2 sp | one served meal for one diner | About 30 minutes during kitchen hours |
+| Breakfast | 5 cp | 3 cp–1 sp | one served breakfast for one diner | About 20 minutes in the morning |
+| Dinner Package | 3 sp | 2 sp–6 sp | one two-course dinner for one diner | About one hour during evening kitchen hours |
+| Stable Horse | 4 sp | 2 sp–8 sp | one stall for one horse for up to 24 hours | Up to 24 hours from arrival |
+| Feed Horse | 8 cp | 5 cp–2 sp | one day of ordinary feed and feeding for one horse | Feed supplied over one day |
+| Bath | 2 sp | 1 sp–5 sp | one bath for one person | About 30 minutes by arrangement |
+| Laundry | 1 sp | 5 cp–3 sp | one ordinary outfit washed and dried | Usually next day; weather may delay drying |
+| Private Dining Room | 2 gp | 1 gp–5 gp | one room for up to eight guests for one sitting | Up to three hours at an agreed time |
+| Long-Term Lodging | 35 sp | 25 sp–7 gp | one private room for up to two guests for seven nights | 7 night(s); checkout at merchant time (default 10:00), GM may override |
+| Meeting Room Hire | 8 sp | 5 sp–2 gp | one room for up to eight people for two hours | Two hours at an agreed time |
+| Secure Storage | 3 sp | 1 sp–1 gp | one parcel up to 20 lb in the inn’s locked store for one day | Up to 24 hours; collection arranged with the keeper |
+| Courier Message | 2 sp | 1 sp–8 sp | one written message to one address within the settlement | One local delivery attempt during working hours |
+| Package Holding | 5 cp | 2 cp–2 sp | one labelled parcel up to 10 lb held behind the counter for one day | Until collection within 24 hours |
+
+## Inclusions and exclusions
+
+Accommodation includes the stated sleeping space and bedding, not food or animal care. A weekly booking replaces seven nightly charges for the same room and dates. Common Room covers one guest; private and luxury rooms cover up to two guests unless the GM changes the agreement. Checkout defaults to 10:00 and remains configurable per merchant and per purchase.
+
+Meal of the Day, Breakfast and Dinner Package are flexible dine-in service options. Their descriptions state included portions. They create no food Items and must not be charged alongside the same included menu portions. Dinner Package is the evening meal package; no duplicate Evening Meal definition is needed.
+
+Stable Horse includes shelter, bedding, water and ordinary care, but not feed. Feed Horse covers ordinary feeding on site, unlike carried Horse Feed. Baths provide temporary use of washing materials; laundry covers an ordinary outfit, not armour, leatherwork or repairs. Private Dining Room and Meeting Room Hire do not include an unlisted banquet.
+
+Secure Storage covers one parcel up to 20 lb in a locked store for a day. Package Holding covers one parcel up to 10 lb behind the counter for a day without a locked-store promise. Neither provides insurance or automatic inventory transfer. Courier Message covers one local written message and one delivery attempt; dangerous routes, replies and travel outside the settlement require a separate agreement. No real message is sent by purchasing it.
 
 - **Accommodation:** common room, private room, luxury room and seven-night lodging.
 - **Facilities and stable:** bath, laundry, stabling and feeding.
@@ -112,6 +139,4 @@ This release has automated DOM/context checks, not a live browser accessibility 
 
 ## Upgrade and acceptance
 
-From a complete alpha.12 build, Item preview should report **16 creates, six updates and 290 unchanged**. The six updates add Tavern membership only. Stock preview should report **20 creates, two updates and 30 unchanged**. Repeating builds should show 312 unchanged Items and 52 unchanged Stock tables. World inventories are not rewritten by catalogue rebuilding.
-
-Automated coverage checks source validation, IDs/names, icon references, service eligibility, preset generation, mixed checkout, absent integrations, key access and expiry, player consent, upgrades and repeated-build convergence. Live V14 / D&D5e 5.3.3 / Forge verification remains a release gate; automated adapter mocks do not establish live integration compatibility.
+Rebuild the affected Item catalogue and Stock RollTables, then repeat builds to confirm unchanged identities. Actor inventory is not rewritten. Test a mixed food/service checkout and actual room actions in the supported world; use [Testing](TESTING.md) for the acceptance matrix.

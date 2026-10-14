@@ -1,100 +1,70 @@
-# Merchant Builder guide
+# Builder Guide
 
-## Alchemist presets
+**Audience:** GMs and content maintainers. **Purpose:** distinguish catalogue builds from live merchant configuration and explain safe editing.
 
-Select Village Herbalist, Town Alchemist, Master Alchemist or Travelling Apothecary. Preview stock and float before applying; use Services to review the available work. Distillation requires the town or master profile. Required Items remain in the character inventory until the GM completes commissioned work. See [Alchemist Guide](ALCHEMIST_GUIDE.md).
+## Content builders
 
+Open the Catalogue Builder and RollTable Builder in module settings. Select **Merchant Type** and **Settlement** separately. All Merchant Types/All Settlements select available definitions; Advanced filters contains stock-profile refinements and Legacy Category.
 
-## Sprint 14 — Daily merchant workflow (alpha.23)
+Item builds read canonical source and reconcile the shared Master Item Catalogue. Settlement is informational for Item builds: goods are not duplicated or omitted by settlement. Stock-table builds use authored profile settlement assignments and generate four tables per selected profile. A settlement without an authored profile does not fall back silently.
 
-Right-click a world NPC in the Actors sidebar. **Convert to Merchant** enables merchant flags and opens Setup; **Open Merchant Builder** appears for enabled merchants and opens their existing configuration. The sheet header menu and Devil's Table tab use the same terminology. Player characters, compendium entries, unlinked synthetic Actors and player users are excluded.
+Preview reports creates, updates, unchanged records and warnings. Confirm the intended build, then repeat to verify convergence. Builders preserve unmanaged and inactive reserved documents. Services are reference counts, not generated Item documents. World imports and Actor inventory are independent copies.
 
-Conversion preserves native inventory, currency, biography, portrait, ownership and token configuration. Existing merchant notes, relationships and history are retained when re-enabling. New merchants start Closed until configured; previously configured availability is retained. The existing active-GM administration guard protects conversion during a pending checkout or recovery. Opening an enabled merchant is read-only and available to GMs.
+**Legacy Category** filters rolled stock suggestions and legacy cleanup; it does not create a new category table set. A category roll uses `categoryDraws`, which may be smaller than a whole assortment. Normal Merchant Builder generation uses the saved whole stock profile and settlement/prosperity scaling. See [Stock Tables](STOCK_TABLES.md).
 
-All Builder entry points share a launcher, including the Shop UI and public API. The NPC tab offers **View Statistics**, which opens the existing Manage tab directly. Existing merchant badges remain the visual indicator. Summary and statistics stay in the existing Builder rather than adding a blocking preview window. Stock generation and Empty Stock remain in the Builder with their existing previews and confirmation; the directory never modifies inventory or money.
+## Create or reopen a merchant
 
-Live check: right-click an ordinary NPC, convert it, verify its currency and inventory are unchanged, then reopen the menu and confirm only Open Merchant Builder is visible. Check the sheet menu, Statistics shortcut and GM-only visibility. Automated checks cover conversion preservation, dynamic menu conditions and callbacks; live Foundry rendering remains a GM verification.
+Right-click an ordinary world NPC in the Actors sidebar: **Convert to Merchant** appears before conversion and **Open Merchant Builder** afterward. The NPC sheet and module settings use the same launcher. Characters, compendium actors and unlinked synthetic Actors are not conversion targets. New conversions start Closed until configured.
 
+Conversion preserves inventory, cash, biography, portrait, ownership and token configuration. Keep NPC ownership GM-only and place a linked token. Existing business history/settings survive re-enabling. All GMs may inspect; active-GM authority is required for administration writes.
 
-## Sprint 13A — Builder workflow (alpha.21)
+## Tabs
 
-Choose **Merchant Type** for the business catalogue and **Settlement** independently. Native dropdowns keep the forms compact as new merchant types are registered. **All Merchant Types** and **All Settlements** select all available definitions without a scrolling list of checkboxes.
-
-The RollTable Builder filters existing stock profiles using `data/economy.json` settlement assignments; profiles without an explicit assignment use the economy default. A settlement with no authored profile shows an empty selection rather than silently building another settlement. **Advanced filters** contains the optional stock-profile refinement and **Legacy Category**, with an explanatory tooltip. Legacy Category limits stock suggestions and legacy cleanup, not modern shared table generation. Preview, build and cleanup use the same profile scope. Existing table IDs and links remain unchanged.
-
-The Compendium Builder uses the same Merchant Type / Settlement layout. Settlement is informational there: canonical products are shared across settlements, so Item builds never duplicate or omit products based on settlement. Services are reference counts and are not Item documents. Build Preview updates with selections and shows type, settlement, categories, products, services and table count. Its build-time range is an explicitly rough planning estimate (0.1 seconds per product or 0.25 per table, with a broad upper margin), not a measured performance promise.
-
-The individual Merchant Builder and NPC configuration use **Merchant Type** too. An NPC still needs one concrete settlement; All Settlements belongs to batch content tools only. Templates may retain descriptive names such as Village Smith, while Merchant Type and Settlement remain independently editable. The existing configuration grid and isolated filter helper can accommodate future filters without encoding them into names; no region, climate or culture mechanics are introduced.
-
-
-## Blacksmith presets
-
-Apply Village Smith, Town Blacksmith, Master Armorer, Military Quartermaster or Travelling Smith. Save the configuration to seed eligible services, then preview and apply stock and float. Services retain existing overrides. These presets reuse catalogue, stock and economy data; no smith-specific Builder controls are required. See [Blacksmith Guide](BLACKSMITH_GUIDE.md).
-
-
-Open **Merchant Builder** from module settings or the GM Shop UI. Select a standard NPC in Setup. Only the active GM may apply administration changes. The panel uses six direct-access tabs; Back/Next is optional and navigation never commits edits.
-
-| Tab | Use |
+| Tab | Work |
 | --- | --- |
-| Setup | Select NPC, apply/save templates, choose catalogue, economy and trade configuration; Save / Convert |
-| Identity | Inspect live native identity; edit business name, title, Merchant Tags and public descriptions |
-| Stock | Preview generated stock, edit proposed quantities and confirm application |
-| Services | Generate offerings, search/filter by category/status, set enabled/available states and prices, inspect usage |
-| Cash | Preview or reroll the float, manually override it and explicitly replace the native wallet |
-| Manage | Review statistics, Empty Stock, advanced settings/recovery or confirmed merchant reset |
+| Setup | Preset, catalogue, settlement, prosperity, economic/stock profile, availability, pricing, buying multiplier, unlimited settings, checkout time and private notes |
+| Identity | Read-only native identity; editable public business name/title/descriptions and private Merchant Tags |
+| Stock | Generation estimates/previews, edited preview quantities and existing-offer visibility |
+| Services | Categories, generated offerings, enabled/available state, price/visibility overrides and room configuration |
+| Cash | Generated/replacement native wallet preview and explicit application |
+| Manage | Current statistics, Empty Stock, advanced trade/recovery and confirmed merchant reset |
 
-## Editing identity
+System Tags are transient read-only descriptors from native fields. Merchant Tags describe the business privately and grant no mechanics. Public descriptions and business titles are explicitly player-facing. Edit native identity through the Actor sheet rather than maintaining duplicate copies.
 
-Save / Convert in Setup before saving merchant metadata. Actor information is read-only: change native information on the Actor, not in a second merchant form. Native updates refresh the Identity tab without discarding typed merchant text. Business fields are separate: a token named “Old Nan” can trade as “The Copper Kettle”. The Shop's primary name remains “Old Nan”.
+## Presets and drafts
 
-Merchant Tags are comma separated, GM-only business descriptors. Save normalizes and deduplicates them. System Tags are automatically derived and cannot be edited here. Public and shop descriptions are explicitly player-visible; they never copy the Actor's biography. See [Merchant Identity](MERCHANT_IDENTITY.md) for field ownership and privacy.
+A preset changes the editable draft; it does not immediately replace world data. Save / Convert before generation. Custom templates store portable configuration only, excluding inventory, cash balances, relationships and history, in a GM-only template compendium.
 
-## Editing services
+Unsaved settings and previews remain local. Reload/switch confirms discarding drafts. Stale snapshots or a pending checkout/recovery block conflicting writes. Do not use several active-GM tabs to edit the same merchant.
 
-Save the catalogue and economic profile in Setup first. In **Services**, choose categories and Preview / Generate Offers. Confirmation adds eligible references while preserving saved overrides; it discards unsaved service edits. Generating services never creates inventory Items.
+## Stock generation
 
-Search covers names, descriptions, tags and categories. Category and status filters combine with search. Hidden rows retain edits and remain part of Save Service Offerings. Each category groups its services, including units, durations, recommended price ranges and usage statistics.
+Generate a preview, review goods/quantities/value and explicitly apply. Zero omits a proposed addition. Existing source identities, including sold-out entries, are skipped; generation does not refill or replace them. Empty Stock is a separate destructive action.
 
-- **Offer this service** adds/removes the definition reference. Removing it does not erase historical usage.
-- **Enabled** controls whether customers see the offering.
-- **Available now** temporarily prevents purchase without hiding an enabled offering. It cannot override catalogue/profile or character requirements.
-- **Unit price and denomination** override the definition's base price. Existing merchant/character/negotiation modifiers still apply.
-- **Purchased, revenue, last purchase and popularity** are accumulated transaction statistics, not editable stock counts.
+The saved stock profile defines Always/Often/Rarely pools, exclusions, rotating attempts, optional tier odds, tag visibility rules and quantity caps. Settlement/prosperity scale draws, quantities and rare chance. Merchant Builder estimates use these same rules. Fence profiles guarantee four practical products plus rotating selections, with one/two-copy limits; see [Fence Guide](FENCE_GUIDE.md).
 
-Save Service Offerings applies the entire form, including filtered-out rows. Refresh the player Shop to load current offerings. Server-side checkout always rechecks availability. Shared world-definition JSON remains in a collapsed advanced section and affects all merchants; validate it before saving.
+Rebuild affected Stock RollTables after source/profile changes before rolling. Merely upgrading the module does not rewrite existing inventory or stock tables.
 
-## Drafts and conflicts
+## Cash and statistics
 
-Identity and Services drafts survive tab changes and ordinary panel renders. Switching NPC or Reload prompts before discarding edits. Closing the panel discards drafts without changing the world. A concurrent change may make the panel stale; Reload rather than overwriting another window's work. Active checkouts and unresolved recovery prevent administration writes.
+Initial float draws within the settlement range, applies prosperity/economic-profile factors and distributes exact value into native coins. Existing wallet/stock/history or an initialization marker normally preserves established merchants. Infinite funding generates no fictitious coins. Explicit **Apply Float** replacement uses the reviewed total, not an amount added on top.
 
-Stock and cash previews remain separate from application. Identity/service saves invalidate old generation previews; generate again before applying. Reset removes merchant metadata, including new identity/service fields, but preserves native Actor biography, portrait, ownership, inventory and coins.
+The stock preview can carry a cash plan; funds are only applied with qualifying additions. Cash can be reviewed/applied separately. Changes to wallets/settings invalidate stale previews. If stock succeeds but a later cash write fails, inspect both before retrying.
 
-For generation formulas, templates and cash behaviour, see the [Merchant Guide](MERCHANT_GUIDE.md). For service authoring, see [Merchant Services](MERCHANT_SERVICES.md).
+Statistics derive from native physical stock/cash and saved records. Lifetime trading totals depend on retained relationships; rejection counts refer to retained receipts. Hidden/manual physical stock is included. Invalid price/quantity entries are reported rather than invented.
 
-## Optional room integrations (alpha.10)
+## Service editing
 
-Builder → Services → Service actions and accommodation now configures room names, Wall UUIDs, key names, expiry and duration. Enable Lock & Key keys and/or Calendaria bookings when available, then Save Service Offerings. Unavailable enhancements are skipped; payment and history remain normal. Settings → Manage Integrations / Room Bookings provides independent toggles and explicit checkout/key recovery. Calendar notes do not reserve room capacity. See [Integrations](INTEGRATIONS.md) for the complete workflow and live checks.
+Save Setup first. Eligible catalogue defaults seed once per identity, preserving manual removals/disabled settings/overrides. Generate Offers adds eligible category definitions while retaining saved overrides and confirms discarding unsaved service edits.
 
-## Accommodation checkout time
+**Enabled** hides an offer when false; **Available now** retains a visible unavailable offering subject to normal eligibility. Visibility rules can further restrict enabled offers. Prices and optional room mappings belong to this NPC. See [Merchant Services](MERCHANT_SERVICES.md) for authoring and [Integrations](INTEGRATIONS.md) for rooms.
 
-In **Merchant Builder → Setup**, set **Accommodation checkout time** using HH:mm (default **10:00**, or 10 am), then save configuration. This is specific to the merchant and is included in saved templates. Older templates and merchants default to 10:00.
+## Destructive operations
 
-For a rental purchase, GM Review shows the booked nights and an editable checkout time. An override applies to every accommodation line in that purchase, without changing the merchant default. Recalculate asks the player to accept changed terms before approval. One night ends on the next calendar date at that time; weekly lodging covers seven nights. Existing bookings are not rescheduled.
+Empty Stock deletes physical embedded goods, including hidden/manual/nested entries, while retaining features, spells, money and merchant records. Merchant Reset removes business configuration, offer controls and retained transaction history while preserving ordinary NPC inventory/cash/identity. Resolve recovery first. Active room booking journals remain independent so rental access can still be recovered.
 
-With configured integrations, the same endpoint drives calendar notes and Expire on Checkout keys. An active GM processes expiry when world time advances; no player morning-checkout button is required. Persistent and Manual Recovery key policies remain unchanged. Without integrations, the room terms are still displayed and recorded, with no automated room or key management.
+Legacy table cleanup is separately previewed and confirmed; protect external links and back up the world. Never use deletion or reset as a substitute for recovering an interrupted trade.
 
-## Tavern presets and stories
+## Related documents
 
-Apply a Tavern preset in Setup and save, then review Stock, Services and Cash. Nine Tavern presets cover Village Inn, Roadside Tavern, Dockside Tavern, Luxury Inn, Coaching Inn, Roadhouse, Noble Inn, Poor Hamlet Tavern and Town Inn. Optional stories, greetings and specialities are editable GM notes; they do not create campaign facts. Preset changes preserve existing inventory and manual service offers. See [Tavern Guide](TAVERN_GUIDE.md) for stock/service differences and room setup.
-
-## NPC-first workflow (alpha.15)
-
-Start from a world NPC sheet's **Devil's Table** tab. Enable the merchant, edit catalogue, economic profile, settlement, prosperity, availability, pricing and restock preference, then **Save Merchant Settings**. Native Actor information stays on the Actor sheet. Disabling the merchant preserves stock, wallet and private history.
-
-Choose **Devils Table: Make merchant** from the sheet’s three-dot menu or Actor Directory context menu to open the Merchant Builder with that NPC selected. The tab's **Services & Room Integrations** button opens Services directly. Enabled merchants have a small GM-only Directory badge. These controls require a world NPC; unlinked synthetic token Actors and compendium Actors must first be represented by a world NPC and linked token.
-
-For content builds, choose a scope in the compact selectors, read Generation Summary, Preview, then confirm Build. Merchant/profile guidance and maintenance stay collapsed until needed. Services in a summary are catalogue references, never Item-compendium entries. RollTable category selection filters sample rolls/cleanup; builds still generate four tables per selected profile.
-
-Dice So Nice is optional and automatically presents native player negotiation/theft rolls locally. Players receive the numeric result without the hidden DC. Failures in dice presentation never stop the transaction workflow. See [UX workflows](UX_WORKFLOWS.md) for complete usage and the live acceptance checklist.
-
-Enabled merchants display a GM-only **Merchant** Directory badge and a small **SHOP** marker on linked canvas tokens. Disabling the merchant removes these indicators. No token image or status effect is changed. The native sheet three-dot menu replaces the exposed header button. Live Foundry rendering remains to be confirmed.
+[Merchant Guide](MERCHANT_GUIDE.md), [Stock Tables](STOCK_TABLES.md), [Testing](TESTING.md), [Known Limitations](KNOWN_LIMITATIONS.md).

@@ -1,5 +1,7 @@
 # Icon Standard
 
+**Audience:** content/artwork authors and reviewers. **Purpose:** define shared icon selection, asset requirements and provenance.
+
 **Status:** official policy for icon selection, new artwork and release review.
 
 Icons must be readable, consistent and inexpensive to load on The Forge. A catalogue with thousands
@@ -75,9 +77,8 @@ same as for other artwork. Creation method is not a reason to add a duplicate or
 
 ## Existing assets and compatibility
 
-The catalogue references core assets, **15 original module-owned SVGs** and **12 new WebP icons**.
-Those SVGs are documented in [FILE_MAP.md](FILE_MAP.md) and the General Store review. They remain
-valid legacy assets; Sprint 3 neither replaces nor duplicates them.
+The catalogue references core assets, module-owned SVGs and WebP icons.
+The historical artwork provenance is retained in the [content audit archive](archive/README.md). Existing SVGs remain valid shared assets.
 Core assets are also consumed at their supplied dimensions and formats without repackaging.
 
 The 256×256 WebP requirement applies to newly introduced module-owned raster icons. New work should
@@ -89,14 +90,14 @@ without a compatibility reason.
 The current schema accepts SVG, WebP, PNG, JPG and JPEG paths for compatibility. That broad schema
 does not make every accepted format the preferred authoring standard. Current tooling checks
 permitted paths and the existence of module-owned files; pixel dimensions, visual consistency,
-deduplication and rights still require review. Sprint 3 tests also check WebP headers and a 50 KiB
+deduplication and rights still require review. Asset regression tests also check WebP headers and a 50 KiB
 ceiling. Pixel dimensions were checked with Pillow; core paths are checked against a reviewed
 reference inventory, which is not a substitute for resolving icons in the supported live installation.
 
-The twelve Sprint 3 icons extend the existing muted vector style. Editable masters and export
+The General Store artwork extend the existing muted vector style. Editable masters and export
 instructions are in `tools/render-general-store-icons.py`; Inkscape and Pillow are optional artwork
 development dependencies, not Foundry requirements. Only the 256×256 WebPs enter the runtime ZIP.
-See [SPRINT_3_REVIEW.md](SPRINT_3_REVIEW.md) for subjects, reuse and provenance.
+See [General Store content audit](archive/GENERAL_STORE_EXPANSION.md) for subjects, reuse and provenance.
 
 ## Acceptance checklist
 
@@ -108,9 +109,9 @@ See [SPRINT_3_REVIEW.md](SPRINT_3_REVIEW.md) for subjects, reuse and provenance.
 - Provenance and rights are recorded, and duplicate exports/editor files are absent from the ZIP.
 - Importing and opening the Item on the supported Foundry/Forge environment renders the icon correctly.
 
-Update the affected content review, [file inventory](FILE_MAP.md) and changelog when artwork changes.
+Update the affected content review, [repository guide](DEVELOPER_GUIDE.md) and changelog when artwork changes.
 Shared icon replacement is a user-visible catalogue change even when no permanent Item ID changes.
 
-## Tavern Completion artwork
+## Tavern artwork
 
-The completion adds one original 256×256 WebP smoking-pipe icon, authored as a vector drawing in the existing muted module style. Its reproducible master and Inkscape/Pillow export are in `tools/render-tavern-icons.py`; only the WebP ships at runtime. This avoids depicting a smoking pipe as a musical flute. Cards and dice reference verified D&D5e 5.3.3 core paths; all food, drink and service icons reuse reviewed assets. The module now includes 13 authored WebP icons plus its legacy SVGs. Distribution licensing remains the existing release gate.
+The completion adds one original 256×256 WebP smoking-pipe icon, authored as a vector drawing in the existing muted module style. Its reproducible master and Inkscape/Pillow export are in `tools/render-tavern-icons.py`; only the WebP ships at runtime. This avoids depicting a smoking pipe as a musical flute. Cards and dice reference verified D&D5e 5.3.3 core paths; all food, drink and service icons reuse reviewed assets. The catalogue reuses optimized raster assets and existing SVGs. Distribution licensing remains the existing release gate.

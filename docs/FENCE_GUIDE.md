@@ -1,4 +1,6 @@
-# Fence Guide — Sprint 16 / alpha.28
+# Fence Guide
+
+**Audience:** GMs and merchant content authors. **Purpose:** explain illicit stock, profiles, restricted offers and arranged services.
 
 Fence is the display name of the existing `black-market` catalogue identity. Black Market Dealer, Smuggler and Underground Trader are descriptive aliases. Existing Actor flags, Item identities, stock table IDs and compendium UUIDs are retained. No merchant-specific checkout, wallet, theft or service branch was added.
 
@@ -10,7 +12,7 @@ New stock covers disguises, forgery, burglary tools, smuggling props, campaign-d
 
 Official equipment mechanics were checked against [SRD 5.1](https://www.dndbeyond.com/attachments/39j2li89/SRD5.1-CCBY4.0License.pdf). Native tool mappings use [D&D5e release-5.3.3 config](https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/module/config.mjs) and [ToolData](https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/module/data/item/tool.mjs). Other stock uses original mundane descriptions. Kit weights use the established 80% baseline adjustment; all other records explain their complete carried sale unit. Contraband and stolen goods are campaign labels, not a universal Forgotten Realms legal system.
 
-Icons reuse reviewed core/module references. `assets/icons/gem.svg` is original project-authored vector geometry, created for this sprint, with no external artwork; it is shared by loose gems/components and has no mechanical meaning.
+Icons reuse reviewed core/module references. `assets/icons/gem.svg` is original project-authored vector geometry, created for the current implementation, with no external artwork; it is shared by loose gems/components and has no mechanical meaning.
 
 ## Setup
 

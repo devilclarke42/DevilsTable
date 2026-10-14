@@ -1,6 +1,7 @@
 # Optional integrations
 
-Sprint 10C · `0.3.0-alpha.10`
+**Audience:** GMs configuring optional modules. **Purpose:** explain capability checks, room setup, expiry and recovery.
+
 
 Devil's Table works without any other module. Integrations enhance paid services through one Integration Manager; they are not dependencies. Missing, disabled or incompatible modules produce a recorded skipped action and a GM notification. The ordinary service, payment, statistics and receipt still complete.
 
@@ -31,7 +32,7 @@ These are source/API checks and automated adapter tests, not a completed live Fo
 
 The `accommodation: true` definition capability enables this UI without hard-coding Tavern IDs into the Builder. Another catalogue can expose accommodation through data. Room mappings belong to individual merchant offerings, not shared catalogue definitions.
 
-One key and one booking are created per purchased service line. Quantity is recorded and available to actions but does not duplicate keys, allocate additional rooms or extend the configured duration. For a group booking the GM decides who receives the key. This sprint does not introduce reservation conflict detection, room allocation, occupancy limits or capacity simulation. A common-room offering can therefore intentionally serve several customers.
+One key and one booking are created per purchased service line. Quantity is recorded and available to actions but does not duplicate keys, allocate additional rooms or extend the configured duration. For a group booking the GM decides who receives the key. The current implementation does not introduce reservation conflict detection, room allocation, occupancy limits or capacity simulation. A common-room offering can therefore intentionally serve several customers.
 
 ## Payment and sequential actions
 
@@ -104,7 +105,7 @@ Before production use, test a backed-up Foundry V14 / D&D5e 5.3.3 world:
 6. Disable each integration independently. Confirm the other action still works. Simulate an invalid door and verify calendar action continuation and a private failure receipt.
 7. Refresh/reconnect GM and player clients. Confirm ordinary mixed product/service trading, the inline catalogue icon and `Token Name - Business Name` window title.
 
-## Tavern Completion defaults
+## New room defaults
 
 New room configuration forms preselect supported integrations that are installed, active, enabled in Devil’s Table and API-compatible. This is a draft convenience, not an automatic world mutation. The GM enters room names and door references, reviews the actions and saves. Existing room choices, including opt-outs, remain unchanged. All optional actions still run through the Integration Manager after approved payment. Secure Storage and Package Holding do not issue room keys or move Items; Courier Message does not send messages.
 
@@ -112,4 +113,4 @@ New room configuration forms preselect supported integrations that are installed
 
 Module ID: `dice-so-nice`. When active and exposing `game.dice3d.showForRoll`, it presents native merchant negotiation/theft rolls on the rolling player's client. Devil's Table does not create a public chat roll or broadcast animation. Players see their total, while hidden DCs and decisions remain in GM review. No reroll or extra gameplay result is created.
 
-Presentation defaults on and can be disabled in Devil's Table's Integration Settings. Missing APIs, disabled modules and animation failures fall back silently to the standard native result. Service integrations still require the active GM; player presentation is isolated in the Integration Manager's `clientActions` allowlist. Live animation testing remains part of [UX acceptance](UX_WORKFLOWS.md#live-acceptance).
+Presentation defaults on and can be disabled in Devil's Table's Integration Settings. Missing APIs, disabled modules and animation failures fall back silently to the standard native result. Service integrations still require the active GM; player presentation is isolated in the Integration Manager's `clientActions` allowlist. Live animation testing remains part of [live acceptance matrix](TESTING.md).

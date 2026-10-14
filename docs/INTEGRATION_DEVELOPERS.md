@@ -1,5 +1,7 @@
 # Integration developer contract
 
+**Audience:** integration authors. **Purpose:** document isolated adapter and ordered-action contracts.
+
 All external-module knowledge lives under `scripts/integrations/` or in an adapter registered through the public API. Merchant Services import the Integration Manager, never external modules. There are no required-module manifest relationships.
 
 ## Register an adapter
@@ -30,7 +32,7 @@ Hooks.once("setup", () => {
 });
 ```
 
-This example describes the adapter contract; it does not claim any such module exists. Future Convenient Effects, active-tile, Item Piles, calendar, quest or reputation adapters use the same boundary and are not included in this release.
+This example describes the adapter contract; it does not claim any such module exists. Future Convenient Effects, active-tile, Item Piles, calendar, quest or reputation adapters use the same boundary and are not included in the current implementation.
 
 Handlers must validate configuration, await all mutations and return small JSON-serializable results. Do not return Foundry documents or functions. Do not call the Integration Manager recursively from a handler: external actions share a serialized queue. If an upstream convenience API launches unawaited writes, use an officially supported awaitable alternative or isolate and document a reviewed schema-level fallback. Never patch another module's classes globally.
 

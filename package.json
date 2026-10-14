@@ -7,8 +7,11 @@
   "scripts": {
     "test": "node --test",
     "validate": "node tools/validate-data.mjs",
-    "check": "npm run validate && npm test",
-    "package": "npm run check && node tools/package.mjs"
+    "check": "npm run validate:docs && npm run validate && npm test",
+    "package": "npm run check && node tools/package.mjs",
+    "validate:docs": "node tools/check-docs.mjs"
   },
-  "engines": { "node": ">=20" }
+  "engines": {
+    "node": ">=20"
+  }
 }

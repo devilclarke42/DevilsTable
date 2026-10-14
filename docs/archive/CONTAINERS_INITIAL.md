@@ -1,11 +1,13 @@
-# General Store: Containers review
+# Initial container content audit
+
+**Audience:** maintainers investigating content/asset provenance. **Purpose:** historical evidence only. This archived snapshot is not current installation, compatibility or balance guidance. Current values come from canonical JSON; use the [documentation index](../../README.md) for current workflows.
 
 > Historical review of the accepted earlier batch. Current catalogue and upgrade details are in
-> [Sprint 3 Review](SPRINT_3_REVIEW.md). Sprint 3 adds explicit sale units to the original Containers.
+> [Sprint 3 Review](GENERAL_STORE_EXPANSION.md). Sprint 3 adds explicit sale units to the original Containers.
 
 Original batch, preserved unchanged in **0.2.0-alpha.4**. These 13 Containers are now part of the
-69-item General Store; see the [complete review](GENERAL_STORE_REVIEW.md). The canonical records
-are in [containers.json](../data/items/general-store/containers.json).
+69-item General Store; see the [complete review](GENERAL_STORE_INITIAL.md). The canonical records
+are in [containers.json](../../data/items/general-store/containers.json).
 These permanent IDs are reserved and must not be renamed, even if names or balance change.
 
 Prices, descriptions and empty weights are project choices for a grounded 2014-rules game with
