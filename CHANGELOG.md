@@ -13,6 +13,11 @@
 
 ## Release candidates
 
+### 0.3.0-alpha.29
+
+- Added installer/update manifest URLs, verified Foundry 14 / D&D5e 5.3.3 metadata and a validated alpha-release publishing workflow. Packages now use fixed file times for reproducible retry verification.
+
+
 ### 0.3.0-alpha.28
 
 - Fence assortments now guarantee practical goods and retain low per-product quantities.

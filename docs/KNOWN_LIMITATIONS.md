@@ -4,7 +4,7 @@
 
 ## Release status
 
-Milestone 1's shared merchant framework is feature complete for the five current merchant types. The runtime remains an alpha candidate targeting Foundry 14 / D&D5e 5.3.3 with 2014 rules. No compatibility beyond these targets, stable API guarantee, hosted manifest or public-beta release is established.
+Milestone 1's shared merchant framework is feature complete for the five current merchant types. The runtime remains an alpha candidate targeting Foundry 14 / D&D5e 5.3.3 with 2014 rules. No compatibility beyond these targets, stable API guarantee or public-beta release is established. A hosted alpha installer manifest and versioned downloads are supplied through main-branch publishing.
 
 At milestone closure, 411 automated tests passed. The owner confirmed the corrected Fence assortment works in their live Merchant Builder. That confirmation covers stock generation only; it does not certify every merchant, multiplayer flow, native activity, browser layout or optional integration. Complete the [live acceptance matrix](TESTING.md) before widening claims.
 

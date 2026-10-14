@@ -1,3 +1,4 @@
+import { releaseContract } from "./release-contract.mjs";
 import { ServiceRegistry } from "../scripts/services/registry.js";
 import { loadBuilderPolicy } from "../scripts/merchant/builder/model.js";
 import { builtInTemplates, validateTemplate } from "../scripts/merchant/builder/templates.js";
@@ -38,6 +39,7 @@ try {
   assert(report.valid, `Catalogue failed with ${report.errors.length} error(s).`);
   const manifest = await readJson("module.json");
   const pkg = await readJson("package.json");
+  releaseContract(manifest);
   assert(manifest.id === "devils-table", "Unexpected module identity.");
   assert(/^[0-9]+\.[0-9]+\.[0-9]+(?:-[A-Za-z0-9.-]+)?$/.test(manifest.version), "Invalid module version.");
   assert(manifest.version === pkg.version, "package.json and module.json versions differ.");

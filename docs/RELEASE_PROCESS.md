@@ -28,10 +28,16 @@ npm run package
 
 This validates/tests, stages the allowlisted runtime, creates `dist/devils-table-v<version>.zip` and verifies archive entries/manifest. `scripts/`, data/schemas, templates/styles, runtime assets and permanent documentation are included. Developer tools/tests, Git internals, generated output and historical provenance archive are excluded.
 
-Artwork generation utilities remain in source for reproducibility; only optimized runtime assets ship. Existing world compendiums are generated outputs, not package input. CI uploads testable artifacts and does not publish a release automatically.
+Artwork generation utilities remain in source for reproducibility; only optimized runtime assets ship. Existing world compendiums are generated outputs, not package input. The validation workflow uploads test artifacts. The separate alpha installer workflow publishes versioned prerelease assets on a main-branch manifest change, or a manual main-branch dispatch.
 
 ## Public beta gates
 
-Before publishing an installation release, resolve the owner-selected distribution license and retain required attribution. Complete the reviewed live acceptance matrix, upgrade guidance, support/issue workflow and compatibility policy. Establish real release assets and a hosted manifest before advertising an installer/updater URL. A public source repository is not automatically a licensed open-source release.
+Before publishing an installation release, resolve the owner-selected distribution license and retain required attribution. Complete the reviewed live acceptance matrix, upgrade guidance, support/issue workflow and compatibility policy. The alpha installer already supplies a hosted manifest and versioned release assets; public beta still requires its own acceptance and licensing gates. A public source repository is not automatically a licensed open-source release.
 
 Keep a versioned asset, source commit, checks and acceptance record together. Do not bundle private world data or imply that template documentation is a live compatibility report. See [Source Notices](SOURCE_NOTICES.md) and [Known Limitations](KNOWN_LIMITATIONS.md).
+
+## Alpha installer publishing
+
+Prepare changes on a review branch, set matching package/module versions, and merge into main. The manifest's stable URL is the raw main-branch module.json; download points to an immutable version-tagged ZIP. Set verified Foundry/system metadata only from actual testing. The publishing workflow uses GitHub's scoped repository token, creates a prerelease draft, attaches module.json and the validated ZIP, verifies downloaded asset checksums, then publishes. It does not mark an alpha as the stable latest release.
+
+A matching draft can be retried; a version belonging to another commit is rejected. Published assets are never clobbered. Package file times are fixed so identical source yields identical ZIP bytes for retry verification. Until publication succeeds the new manifest's download is pending; inspect workflow errors before telling users to update. Broader beta acceptance and original-material license selection remain outstanding.

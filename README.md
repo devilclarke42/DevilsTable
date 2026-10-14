@@ -6,7 +6,7 @@ Devil's Table is for GMs who want merchants with believable stock, native curren
 
 ## Project status
 
-**Milestone 1: Merchant Framework complete.** The current runtime is `0.3.0-alpha.28`, targeting **Foundry VTT 14**, **D&D5e 5.3.3** and **2014 rules**. Milestone 2 covers content expansion and public beta preparation. This is an alpha project, not a certified public beta; see [Known Limitations](docs/KNOWN_LIMITATIONS.md).
+**Milestone 1: Merchant Framework complete.** The current runtime is `0.3.0-alpha.29`, targeting **Foundry VTT 14**, **D&D5e 5.3.3** and **2014 rules**. Milestone 2 covers content expansion and public beta preparation. This is an alpha project, not a certified public beta; see [Known Limitations](docs/KNOWN_LIMITATIONS.md).
 
 The source contains 440 unique products, 40 service definitions, 26 merchant templates and 100 active stock tables. Shared goods keep one identity across merchant types.
 
@@ -23,12 +23,17 @@ The source contains 440 unique products, 40 service definitions, 26 merchant tem
 
 ## Installation
 
-1. Use a backed-up world with the supported Foundry and D&D5e versions.
-2. Obtain the validated versioned module ZIP from a repository Actions run or build it locally with `npm run package`. Actions artifacts are test builds, not automatically published releases.
-3. Extract the ZIP so `devils-table/module.json` is inside your Foundry user-data `Data/modules/` directory, or use The Forge's custom-module ZIP upload workflow.
-4. Restart the server and reconnect clients, then enable **Devil's Table: Trade & Merchants** in the world.
+In Foundry Setup → Add-on Modules → Install Module, paste this manifest URL:
 
-There is currently no hosted install-manifest URL or automatic updater. Source archives from GitHub are not the packaged module ZIP. Runtime dependencies are Foundry/D&D5e; optional integrations are not required.
+```text
+https://raw.githubusercontent.com/devilclarke42/DevilsTable/main/module.json
+```
+
+Foundry follows the manifest's version-specific download URL and uses the same manifest for Update checks. The current alpha targets Foundry 14 / D&D5e 5.3.3; verified metadata reflects the owner's target-world testing, while broader live acceptance remains pending.
+
+Alternatively, download the versioned module ZIP from GitHub Releases and install manually or through The Forge's custom-module ZIP upload. Use a backed-up world; restart/reconnect after installation. GitHub source archives are not packaged module ZIPs.
+
+Publishing happens after a versioned manifest change merges into main and the alpha installer workflow validates, builds, uploads and verifies both assets. A newly merged version is installable only after that workflow succeeds. This alpha channel is not the public beta.
 
 ## Quick start
 

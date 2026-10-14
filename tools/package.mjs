@@ -1,4 +1,4 @@
-import { copyFile, mkdir, mkdtemp, rm } from "node:fs/promises";
+import { copyFile, mkdir, mkdtemp, rm, utimes } from "node:fs/promises";
 import { readFileSync } from "node:fs";
 import { resolve, dirname, join } from "node:path";
 import { tmpdir } from "node:os";
@@ -14,6 +14,8 @@ try {
     const target = resolve(staging, "devils-table", path);
     await mkdir(dirname(target), { recursive: true });
     await copyFile(resolve(ROOT, path), target);
+    // Fixed file times make retries verify the same versioned ZIP bytes.
+    await utimes(target, new Date("2000-01-01T00:00:00Z"), new Date("2000-01-01T00:00:00Z"));
   }
   const archive = resolve(staging, "module.zip");
   const zip = spawnSync("zip", ["-q", "-X", archive, "-@"], {
