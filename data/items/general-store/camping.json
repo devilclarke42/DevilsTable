@@ -123,7 +123,7 @@
       "units": "lb",
       "notes": "One tenth of a pound includes the short leather strap and small buckle."
     },
-    "icon": "modules/devils-table/assets/icons/bedroll-strap.svg",
+    "icon": "modules/devils-table-merchants/assets/icons/bedroll-strap.svg",
     "category": "camping",
     "tags": [
       "mundane",
@@ -385,7 +385,7 @@
       "units": "lb",
       "notes": "Two hundredths of a pound for a small wooden spoon, retaining a positive weight for large quantities."
     },
-    "icon": "modules/devils-table/assets/icons/spoon.svg",
+    "icon": "modules/devils-table-merchants/assets/icons/spoon.svg",
     "category": "camping",
     "tags": [
       "mundane",
@@ -422,7 +422,7 @@
       "units": "lb",
       "notes": "Quarter-pound weight for a single practical wooden plate."
     },
-    "icon": "modules/devils-table/assets/icons/plate.svg",
+    "icon": "modules/devils-table-merchants/assets/icons/plate.svg",
     "category": "camping",
     "tags": [
       "mundane",
@@ -675,7 +675,7 @@
       "units": "lb",
       "notes": "A light carved hardwood scoop and handle, counted as one object."
     },
-    "icon": "modules/devils-table/assets/icons/spoon.svg",
+    "icon": "modules/devils-table-merchants/assets/icons/spoon.svg",
     "category": "camping",
     "tags": [
       "mundane",
@@ -711,7 +711,7 @@
       "units": "lb",
       "notes": "One modest hardwood board, without a knife or other kitchen tools."
     },
-    "icon": "modules/devils-table/assets/icons/plate.svg",
+    "icon": "modules/devils-table-merchants/assets/icons/plate.svg",
     "category": "camping",
     "tags": [
       "mundane",

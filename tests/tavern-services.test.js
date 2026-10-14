@@ -36,10 +36,10 @@ test("Builder saves seed data-driven poor, roadside, town and luxury selections"
 });
 test("repeat saves preserve disabled, repriced and removed defaults; upgrades add newly eligible services",async()=>{
  const {m,pc}=world();await configure(m,"roadside-tavern");
- await m.setFlag("devils-table","merchant.services.DT_SERVICE_TAV_BATH",{enabled:false,price:{value:7,denomination:"sp"}});
- await m.unsetFlag("devils-table","merchant.services.DT_SERVICE_TAV_LAUNDRY");
- await configure(m,"roadside-tavern");assert.equal(m.getFlag("devils-table","merchant.services.DT_SERVICE_TAV_LAUNDRY"),undefined);
- assert.deepEqual(m.getFlag("devils-table","merchant.services.DT_SERVICE_TAV_BATH"),{enabled:false,price:{value:7,denomination:"sp"}});
+ await m.setFlag("devils-table-merchants","merchant.services.DT_SERVICE_TAV_BATH",{enabled:false,price:{value:7,denomination:"sp"}});
+ await m.unsetFlag("devils-table-merchants","merchant.services.DT_SERVICE_TAV_LAUNDRY");
+ await configure(m,"roadside-tavern");assert.equal(m.getFlag("devils-table-merchants","merchant.services.DT_SERVICE_TAV_LAUNDRY"),undefined);
+ assert.deepEqual(m.getFlag("devils-table-merchants","merchant.services.DT_SERVICE_TAV_BATH"),{enabled:false,price:{value:7,denomination:"sp"}});
  await configure(m,"luxury-city-inn");assert.ok(suffixes(m,pc).includes("LUXURY_ROOM"));assert.ok(!suffixes(m,pc).includes("COMMON_ROOM"));assert.ok(!suffixes(m,pc).includes("LAUNDRY"));
 });
 test("real Tavern bread, ale and lodging settle in one checkout without creating service Items",async()=>{
@@ -52,7 +52,7 @@ test("real Tavern bread, ale and lodging settle in one checkout without creating
  assert.match(quote.basket.find(r=>r.kind==="service").saleUnit,/two guests/);
  const log=ledger();await executeTrade({merchant:m,character:pc,request:req,quote,receiptAdapter:log});
  assert.equal(log.records[0].status,"completed");assert.equal(pc.items.size,2);assert.equal(pc.system.currency.cp,1000-quote.total);
- assert.equal(m.getFlag("devils-table","merchant.serviceStats.DT_SERVICE_TAV_PRIVATE_ROOM").purchased,1);
+ assert.equal(m.getFlag("devils-table-merchants","merchant.serviceStats.DT_SERVICE_TAV_PRIVATE_ROOM").purchased,1);
 });
 test("service catalogue stays out of Item builds; active Tavern food and drink preserve their identities",()=>{
  assert.equal(context.catalogue.entries.length,440);assert.equal(context.catalogue.entries.filter(e=>e.item.id.startsWith("DT_ITEM_TAV_")).length,168);

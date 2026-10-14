@@ -13,7 +13,7 @@
       "units": "lb",
       "notes": "Adjusted carried weight for the complete stated sale unit, including its wrapping or supplied vessel."
     },
-    "icon": "modules/devils-table/assets/icons/spoon.svg",
+    "icon": "modules/devils-table-merchants/assets/icons/spoon.svg",
     "category": "stolen-goods",
     "tags": [
       "black-market",
@@ -48,7 +48,7 @@
       "units": "lb",
       "notes": "Adjusted carried weight for the complete stated sale unit, including its wrapping or supplied vessel."
     },
-    "icon": "modules/devils-table/assets/icons/spoon.svg",
+    "icon": "modules/devils-table-merchants/assets/icons/spoon.svg",
     "category": "stolen-goods",
     "tags": [
       "black-market",
@@ -83,7 +83,7 @@
       "units": "lb",
       "notes": "Adjusted carried weight for the complete stated sale unit, including its wrapping or supplied vessel."
     },
-    "icon": "modules/devils-table/assets/icons/spoon.svg",
+    "icon": "modules/devils-table-merchants/assets/icons/spoon.svg",
     "category": "stolen-goods",
     "tags": [
       "black-market",

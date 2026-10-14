@@ -50,7 +50,7 @@
       "units": "lb",
       "notes": "Two thousandths of a pound per needle, preserving a small positive mass rather than treating bulk needles as weightless."
     },
-    "icon": "modules/devils-table/assets/icons/needle.svg",
+    "icon": "modules/devils-table-merchants/assets/icons/needle.svg",
     "category": "household",
     "tags": [
       "mundane",
@@ -86,7 +86,7 @@
       "units": "lb",
       "notes": "Two hundredths of a pound for the full spool and its light wooden core."
     },
-    "icon": "modules/devils-table/assets/icons/thread.svg",
+    "icon": "modules/devils-table-merchants/assets/icons/thread.svg",
     "category": "household",
     "tags": [
       "mundane",
@@ -122,7 +122,7 @@
       "units": "lb",
       "notes": "Fifteen hundredths of a pound for the complete light kit, including its cloth wallet."
     },
-    "icon": "modules/devils-table/assets/icons/sewing-kit.svg",
+    "icon": "modules/devils-table-merchants/assets/icons/sewing-kit.svg",
     "category": "household",
     "tags": [
       "mundane",
@@ -197,7 +197,7 @@
       "units": "lb",
       "notes": "One and a quarter pounds for the dry handle and cloth head. Retained water is not included."
     },
-    "icon": "modules/devils-table/assets/icons/mop.svg",
+    "icon": "modules/devils-table-merchants/assets/icons/mop.svg",
     "category": "household",
     "tags": [
       "mundane",
@@ -282,7 +282,7 @@
       "units": "lb",
       "notes": "Two pounds for a sturdy wooden board sized for use over a basin or small tub."
     },
-    "icon": "modules/devils-table/assets/icons/washboard.svg",
+    "icon": "modules/devils-table-merchants/assets/icons/washboard.svg",
     "category": "household",
     "tags": [
       "mundane",
@@ -429,7 +429,7 @@
       "units": "lb",
       "notes": "Fifteen hundredths of a pound for twelve small pegs."
     },
-    "icon": "modules/devils-table/assets/icons/clothes-pegs.webp",
+    "icon": "modules/devils-table-merchants/assets/icons/clothes-pegs.webp",
     "category": "household",
     "tags": [
       "mundane",
@@ -465,7 +465,7 @@
       "units": "lb",
       "notes": "Three hundredths of a pound for twelve small wooden buttons and a paper fold."
     },
-    "icon": "modules/devils-table/assets/icons/buttons.webp",
+    "icon": "modules/devils-table-merchants/assets/icons/buttons.webp",
     "category": "household",
     "tags": [
       "mundane",
@@ -501,7 +501,7 @@
       "units": "lb",
       "notes": "Two hundredths of a pound for a thin brass finger cap."
     },
-    "icon": "modules/devils-table/assets/icons/thimble.webp",
+    "icon": "modules/devils-table-merchants/assets/icons/thimble.webp",
     "category": "household",
     "tags": [
       "mundane",
@@ -537,7 +537,7 @@
       "units": "lb",
       "notes": "Five hundredths of a pound for one small polished bone comb."
     },
-    "icon": "modules/devils-table/assets/icons/comb.webp",
+    "icon": "modules/devils-table-merchants/assets/icons/comb.webp",
     "category": "household",
     "tags": [
       "mundane",
@@ -573,7 +573,7 @@
       "units": "lb",
       "notes": "One pound for both small hinges, pins and their fitting nails."
     },
-    "icon": "modules/devils-table/assets/icons/hinges.webp",
+    "icon": "modules/devils-table-merchants/assets/icons/hinges.webp",
     "category": "household",
     "tags": [
       "mundane",
@@ -645,7 +645,7 @@
       "units": "lb",
       "notes": "Two pounds for the small bowl and matching pestle, with no ingredients included."
     },
-    "icon": "modules/devils-table/assets/icons/mortar-pestle.webp",
+    "icon": "modules/devils-table-merchants/assets/icons/mortar-pestle.webp",
     "category": "household",
     "tags": [
       "mundane",

@@ -23,6 +23,8 @@ test("all 69 accepted source records survive unchanged except explicit Container
   for (const { id, sha256 } of baseline.items) {
     const item = structuredClone(data.entries.find(entry => entry.item.id === id).item);
     if (item.category === "containers") delete item.saleUnit;
+    // Normalize only the installed module asset path for the historical content checksum.
+    item.icon = item.icon.replace("modules/devils-table-merchants/", "modules/devils-table/");
     item.source.reference = item.source.reference.replaceAll("docs/archive/GENERAL_STORE_INITIAL.md", "docs/GENERAL_STORE_REVIEW.md").replaceAll("docs/archive/GENERAL_STORE_EXPANSION.md", "docs/SPRINT_3_REVIEW.md").replaceAll("docs/archive/CONTAINERS_INITIAL.md", "docs/CONTAINERS_REVIEW.md");
     if (["DT_ITEM_GS_POUCH","DT_ITEM_GS_SACK","DT_ITEM_GS_CROWBAR","DT_ITEM_GS_INK","DT_ITEM_GS_PARCHMENT"].includes(id)) item.shops = item.shops.filter(shop => shop !== "black-market");
     if (["DT_ITEM_GS_WATERSKIN","DT_ITEM_GS_RATIONS_TRAVEL","DT_ITEM_GS_FIREWOOD","DT_ITEM_GS_BEDROLL","DT_ITEM_GS_MESS_KIT","DT_ITEM_GS_FLINT_STEEL"].includes(id)) item.shops = item.shops.filter(shop => shop !== "tavern");
@@ -38,7 +40,7 @@ test("alpha.6 Item upgrade creates 75, adds 13 sale-unit flags and preserves 56 
   const ids = new Set((await readJson("tests/fixtures/general-store-alpha6-hashes.json")).items.map(item => item.id));
   const existing = data.entries.filter(({ item }) => ids.has(item.id)).map(({ item }) => {
     const doc = catalogueEntryToItem(item);
-    if (item.category === "containers") delete doc.flags["devils-table"].saleUnit;
+    if (item.category === "containers") delete doc.flags["devils-table-merchants"].saleUnit;
     return doc;
   });
   existing[0].folder = "personalFolder";
@@ -66,7 +68,7 @@ test("every product has a sale unit, meaningful tags and a known or packaged ico
     assert.ok(item.price.value > 0 && item.weight.value > 0, item.id);
     if (item.icon.startsWith("icons/")) assert.ok(icons.has(item.icon), `Unreviewed core path: ${item.icon}`);
     else {
-      const path = new URL(item.icon.replace("modules/devils-table/", ""), root);
+      const path = new URL(item.icon.replace("modules/devils-table-merchants/", ""), root);
       await access(path);
       if (item.icon.endsWith(".webp")) {
         const bytes = await readFile(path);
@@ -102,8 +104,8 @@ test("four General Store profiles partition their own tiers and share canonical 
     const docs = stockTableDocuments(data, { shopId: "general-store", profileId: profile.id });
     assert.equal(docs.length, 4);
     for (const table of docs) for (const row of table.results) {
-      if (row.flags["devils-table"].itemId === "DT_ITEM_GS_SOAP") soapUuids.add(row.documentUuid);
-      assert.ok(!profile.excludedItems.includes(row.flags["devils-table"].itemId));
+      if (row.flags["devils-table-merchants"].itemId === "DT_ITEM_GS_SOAP") soapUuids.add(row.documentUuid);
+      assert.ok(!profile.excludedItems.includes(row.flags["devils-table-merchants"].itemId));
     }
   }
   assert.equal(soapUuids.size, 1);
@@ -213,7 +215,7 @@ test("historical category tables with older membership are protected during clea
   const docs = [...stockTableDocuments(data), ...legacy];
   const before = structuredClone(docs);
   const plan = planLegacyCleanup(data, docs, []);
-  const oldTravel = legacy.filter(doc => doc.flags["devils-table"].shop === "general-store" && doc.flags["devils-table"].category === "travel");
+  const oldTravel = legacy.filter(doc => doc.flags["devils-table-merchants"].shop === "general-store" && doc.flags["devils-table-merchants"].category === "travel");
   assert.equal(oldTravel.length, 4);
   assert.ok(oldTravel.every(doc => plan.preserved.some(entry => entry.id === doc._id)));
   assert.ok(plan.removable.length < 100);

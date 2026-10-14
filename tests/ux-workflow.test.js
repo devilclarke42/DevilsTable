@@ -11,7 +11,7 @@ import { merchantSlots } from "../scripts/merchant/operation-guard.js";
 import { generationSummary } from "../scripts/ux/builder-summary.js";
 import { IntegrationManager } from "../scripts/integrations/manager.js";
 import { diceSoNiceAdapter } from "../scripts/integrations/dice-so-nice.js";
-const ns="devils-table";
+const ns="devils-table-merchants";
 const catalogue=await loadStockCatalogue({readJson});
 catalogueRegistry.register({catalogues:catalogue.catalogueDefinitions,categories:catalogue.categoryDefinitions});
 const context={catalogue,policy:await loadBuilderPolicy({readJson}),economy:await loadEconomy({readJson})};

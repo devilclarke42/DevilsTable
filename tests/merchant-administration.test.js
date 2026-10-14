@@ -13,7 +13,7 @@ function setup(t) {
   globalThis.game = { user: { id: "gm", isGM: true }, users: { activeGM: { id: "gm" } }, settings: { get: () => false } };
   t.after(() => { globalThis.game = old; activeActorWrites.clear(); merchantSlots.release("m", "checkout"); });
   const actor = { id: "m", type: "npc", system: { currency: { pp: 0, gp: 0, ep: 0, sp: 0, cp: 0 } },
-    flags: { "devils-table": { merchant: { enabled: true, notes: "keep", relationships: {} } } }, items: [],
+    flags: { "devils-table-merchants": { merchant: { enabled: true, notes: "keep", relationships: {} } } }, items: [],
     getFlag(scope, key) { return key.split(".").reduce((o,k) => o?.[k], this.flags[scope]); },
     async update(changes) { for (const [key,value] of Object.entries(changes)) { let target=this; const parts=key.split("."); for(const k of parts.slice(0,-1)) target=target[k] ??= {}; target[parts.at(-1)]=copy(value); } },
     async setFlag(scope,key,value) { await this.update({ [`flags.${scope}.${key}`]: value }); },
@@ -46,7 +46,7 @@ test("planning is read-only and native cash plus one-time marker commit together
 test("existing wallets, established stock and infinite merchants do not receive free cash",async t=>{
   const a=setup(t);a.system.currency.gp=17;assert.equal((await preview(a)).status,"preserved-wallet");
   a.system.currency.gp=0;a.items.push(item("old"));assert.equal((await preview(a)).status,"preserved-existing-merchant");
-  a.items.length=0;a.flags["devils-table"].merchant.settings={walletMode:"infinite"};assert.equal((await preview(a)).status,"infinite-wallet");
+  a.items.length=0;a.flags["devils-table-merchants"].merchant.settings={walletMode:"infinite"};assert.equal((await preview(a)).status,"infinite-wallet");
 });
 test("stale float plans and player writes are rejected",async t=>{
   const a=setup(t),p=await preview(a);a.system.currency.cp=1;
@@ -57,14 +57,14 @@ test("cancelled Empty Stock preserves everything; confirmed reset preserves non-
   const a=setup(t);a.items.push(item("bag","container"),item("feat","feat"),item("spell","spell"));a.system.currency.gp=7;
   const before=copy(a.flags);assert.deepEqual(await emptyMerchantStock(a,{confirm:async()=>false}),{removed:0});assert.deepEqual(a.flags,before);
   assert.deepEqual(await emptyMerchantStock(a,{confirm:async()=>true}),{removed:1});assert.deepEqual(a.items.map(i=>i.id),["feat","spell"]);
-  assert.equal(a.system.currency.gp,7);assert.equal(a.getFlag("devils-table","merchant.notes"),"keep");
+  assert.equal(a.system.currency.gp,7);assert.equal(a.getFlag("devils-table-merchants","merchant.notes"),"keep");
   a.system.currency.gp=0;assert.equal((await preview(a)).status,"already-initialized");
 });
 test("administration cannot overlap checkout, transaction writes or pending recovery",async t=>{
   const a=setup(t);a.items.push(item("stock"));merchantSlots.acquire(a.id,"checkout");
   await assert.rejects(emptyMerchantStock(a,{confirm:async()=>true}),/serving/);merchantSlots.release(a.id,"checkout");
   activeActorWrites.add(a.id);await assert.rejects(emptyMerchantStock(a,{confirm:async()=>true}),/serving/);activeActorWrites.clear();
-  a.flags["devils-table"].transactionPending={id:"recovery"};await assert.rejects(emptyMerchantStock(a,{confirm:async()=>true}),/recovery/);assert.equal(a.items.length,1);
+  a.flags["devils-table-merchants"].transactionPending={id:"recovery"};await assert.rejects(emptyMerchantStock(a,{confirm:async()=>true}),/recovery/);assert.equal(a.items.length,1);
 });
 test("inventory edits during confirmation abort without deletion",async t=>{
   const a=setup(t);a.items.push(item("stock"));await assert.rejects(emptyMerchantStock(a,{confirm:async()=>{a.items.push(item("new"));return true;}}),/changed/);assert.equal(a.items.length,2);
@@ -75,7 +75,7 @@ test("cancelled native deletion is reported instead of claiming success",async t
 });
 test("summary separates lifetime relationship totals from retained rejection counts and stays GM-only",async t=>{
   const a=setup(t);a.items.push(item("stock"));a.system.currency.gp=2;
-  a.flags["devils-table"].merchant.relationships={pc:{spentMinor:400,receivedMinor:100,transactionCount:3}};
+  a.flags["devils-table-merchants"].merchant.relationships={pc:{spentMinor:400,receivedMinor:100,transactionCount:3}};
   const summary=await merchantSummary(a,{policy,rejected:async()=>2});const rows=Object.fromEntries(summary.rows.map(r=>[r.label,r.value]));
   assert.equal(rows["Inventory value"],"1 gp");assert.equal(rows["Merchant wealth (inventory + cash)"],"3 gp");assert.equal(rows["Successful transactions"],3);assert.equal(rows["Rejected transactions (retained history)"],2);
   game.user.isGM=false;await assert.rejects(merchantSummary(a,{policy}),/GM-only/);
@@ -94,7 +94,7 @@ test("native first-stock hooks initialize once, without storing cash on Items",a
   const first=item("first"), options={};first.parent=a;
   hooks.preCreateItem(first,{},options);assert.equal(options.devilsTableFirstStock,true);a.items.push(first);
   hooks.createItem(first,options);hooks.createItem(first,options);await new Promise(resolve=>setImmediate(resolve));
-  assert.equal(walletValue(a.system.currency),2000);assert.equal(a.getFlag("devils-table","merchant.initialFloat").status,"generated");
+  assert.equal(walletValue(a.system.currency),2000);assert.equal(a.getFlag("devils-table-merchants","merchant.initialFloat").status,"generated");
   hooks.createItem(first,options);await new Promise(resolve=>setImmediate(resolve));assert.equal(walletValue(a.system.currency),2000);
   assert.equal(first.system.currency,undefined);
 });

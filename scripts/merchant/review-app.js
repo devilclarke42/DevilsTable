@@ -20,7 +20,7 @@ export class MerchantReviewApplication extends HandlebarsApplicationMixin(Applic
   }
 
   static DEFAULT_OPTIONS = {
-    id: "devils-table-merchant-review", classes: ["devils-table"], tag: "section",
+    id: "devils-table-merchant-review", classes: ["devils-table-merchants"], tag: "section",
     position: { width: 560, height: "auto" },
     window: { title: "Devil's Table: Trade & Merchants — GM Merchant Review", icon: "fa-solid fa-clipboard-check", resizable: true },
     actions: { approve: MerchantReviewApplication.#approve, reject: MerchantReviewApplication.#reject,
@@ -28,7 +28,7 @@ export class MerchantReviewApplication extends HandlebarsApplicationMixin(Applic
       saveModifiers: MerchantReviewApplication.#saveModifiers,
       dismiss: MerchantReviewApplication.#dismiss, recalculate: MerchantReviewApplication.#recalculate }
   };
-  static PARTS = { body: { template: "modules/devils-table/templates/merchant-review.hbs" } };
+  static PARTS = { body: { template: "modules/devils-table-merchants/templates/merchant-review.hbs" } };
 
   async _prepareContext(options) {
     const memory = { successfulNegotiations: 0, failedNegotiations: 0, successfulThefts: 0, caughtStealing: 0,

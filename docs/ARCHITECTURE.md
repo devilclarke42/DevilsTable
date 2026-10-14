@@ -9,7 +9,7 @@
 | Products, catalogue metadata, profiles, services and presets | Versioned JSON under `data/` |
 | Generated reusable Items and stock tables | World compendiums generated from source |
 | Merchant stock and cash | NPC embedded Items and native `system.currency` |
-| Business configuration and per-character memory | `flags.devils-table.merchant` on the NPC |
+| Business configuration and per-character memory | `flags.devils-table-merchants.merchant` on the NPC |
 | Final decisions and interrupted-trade checkpoints | GM-only transaction JournalEntry compendium |
 | Room access leases | GM-only world booking Journals |
 | Native name, portrait, species, biography and token identity | Foundry/D&D5e Actor and Token fields |

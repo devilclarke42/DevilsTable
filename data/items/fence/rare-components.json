@@ -13,7 +13,7 @@
       "units": "lb",
       "notes": "Adjusted carried weight for the complete stated sale unit, including its wrapping or supplied vessel."
     },
-    "icon": "modules/devils-table/assets/icons/gem.svg",
+    "icon": "modules/devils-table-merchants/assets/icons/gem.svg",
     "category": "rare-components",
     "tags": [
       "black-market",
@@ -49,7 +49,7 @@
       "units": "lb",
       "notes": "Adjusted carried weight for the complete stated sale unit, including its wrapping or supplied vessel."
     },
-    "icon": "modules/devils-table/assets/icons/gem.svg",
+    "icon": "modules/devils-table-merchants/assets/icons/gem.svg",
     "category": "rare-components",
     "tags": [
       "black-market",

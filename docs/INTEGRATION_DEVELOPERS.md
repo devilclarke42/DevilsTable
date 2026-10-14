@@ -10,7 +10,7 @@ Register during Foundry `setup`, after Devil's Table has created its API at `ini
 
 ```js
 Hooks.once("setup", () => {
-  game.modules.get("devils-table")?.api?.registerIntegration({
+  game.modules.get("devils-table-merchants")?.api?.registerIntegration({
     id: "example-tools",
     name: "Example Tools",
     moduleId: "example-tools",

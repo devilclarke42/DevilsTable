@@ -128,7 +128,7 @@ test("table preflight resolves real item identities and missing links block all 
   const adapter = createRollTableAdapter();
   const docs = stockTableDocuments(catalogue);
   await adapter.validateDocuments(docs);
-  items.splice(items.findIndex(item => item.flags["devils-table"].sourceId === "DT_ITEM_GS_SOAP"), 1);
+  items.splice(items.findIndex(item => item.flags["devils-table-merchants"].sourceId === "DT_ITEM_GS_SOAP"), 1);
   await assert.rejects(adapter.validateDocuments(docs), /Missing or conflicting compendium item DT_ITEM_GS_SOAP/);
   assert.deepEqual(state.writes, []);
 });
@@ -178,11 +178,11 @@ test("tier changes reconcile owned rows and preserve table identity, folder and 
   const scope = { dryRun: false, shopId: "general-store", categoryId: "writing", profileId: "DT_TABLE_GS" };
   const build = createStockTableBuilder({ load: () => catalogue });
   await build(scope);
-  const table = [...state.tables.values()].find(t => t.data.flags["devils-table"].tier === "always");
+  const table = [...state.tables.values()].find(t => t.data.flags["devils-table-merchants"].tier === "always");
   const oldId = table.data._id;
   table.data.folder = "userFolder";
   table.data.flags.other = { preserved: true };
-  const chalk = table.data.results.find(row => row.flags["devils-table"].itemId === "DT_ITEM_GS_CHALK");
+  const chalk = table.data.results.find(row => row.flags["devils-table-merchants"].itemId === "DT_ITEM_GS_CHALK");
   chalk.flags.other = { rowFlag: true };
   catalogue.entries.find(({ item }) => item.id === "DT_ITEM_GS_PAPER").item.availability = "variable";
   const result = await build(scope);

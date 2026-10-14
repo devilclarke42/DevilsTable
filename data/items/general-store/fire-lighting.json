@@ -467,7 +467,7 @@
       "units": "lb",
       "notes": "Adjusted total for the small box, flint, steel and a starting pinch of tinder."
     },
-    "icon": "modules/devils-table/assets/icons/flint-steel.svg",
+    "icon": "modules/devils-table-merchants/assets/icons/flint-steel.svg",
     "category": "fire-lighting",
     "tags": [
       "mundane",
@@ -505,7 +505,7 @@
       "units": "lb",
       "notes": "Adjusted weight of one flint and its small striking steel; no tinder box or fuel included."
     },
-    "icon": "modules/devils-table/assets/icons/flint-steel.svg",
+    "icon": "modules/devils-table-merchants/assets/icons/flint-steel.svg",
     "category": "fire-lighting",
     "tags": [
       "mundane",
@@ -543,7 +543,7 @@
       "units": "lb",
       "notes": "Adjusted sale weight for the whole bag and its contents; most of the weight is actual fuel."
     },
-    "icon": "modules/devils-table/assets/icons/charcoal.svg",
+    "icon": "modules/devils-table-merchants/assets/icons/charcoal.svg",
     "category": "fire-lighting",
     "tags": [
       "mundane",
@@ -631,7 +631,7 @@
       "units": "lb",
       "notes": "A light cotton strip sold by the yard; offcuts remain part of this sale unit."
     },
-    "icon": "modules/devils-table/assets/icons/thread.svg",
+    "icon": "modules/devils-table-merchants/assets/icons/thread.svg",
     "category": "fire-lighting",
     "tags": [
       "mundane",
@@ -667,7 +667,7 @@
       "units": "lb",
       "notes": "A compact iron holder and tray, without a candle."
     },
-    "icon": "modules/devils-table/assets/icons/candle-holder.webp",
+    "icon": "modules/devils-table-merchants/assets/icons/candle-holder.webp",
     "category": "fire-lighting",
     "tags": [
       "mundane",
@@ -703,7 +703,7 @@
       "units": "lb",
       "notes": "Thin brass cone and short handle; no candle or holder included."
     },
-    "icon": "modules/devils-table/assets/icons/candle-snuffer.webp",
+    "icon": "modules/devils-table-merchants/assets/icons/candle-snuffer.webp",
     "category": "fire-lighting",
     "tags": [
       "mundane",

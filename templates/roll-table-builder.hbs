@@ -15,7 +15,7 @@
       <label><span title="Filters stock suggestions and legacy category-table cleanup only. Modern table builds share category pools and do not need this field.">Legacy Category <i class="fa-solid fa-circle-info" aria-hidden="true"></i></span><select data-builder-select="category"><option value="" {{#if allCategories}}selected{{/if}}>All categories</option>{{#each categories}}<option value="{{id}}" {{#if selected}}selected{{/if}}>{{name}} · {{count}} products</option>{{/each}}</select></label>
     </fieldset>
     </details>
-    {{> "modules/devils-table/templates/generation-summary.hbs"}}
+    {{> "modules/devils-table-merchants/templates/generation-summary.hbs"}}
     <p><strong>{{scopeLabel}}</strong> — {{tableCount}} tables in {{setCount}} sets.</p>
     {{#unless setCount}}<p role="status">No stock profiles match this settlement. Select All Settlements or another settlement.</p>{{/unless}}
     <p>Each set: Always Stock, Often Stock, Rarely Stock and Rotating Stock.</p>

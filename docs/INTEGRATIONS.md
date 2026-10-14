@@ -85,7 +85,7 @@ If note creation partially succeeds, the private booking records each returned n
 
 ## Storage and recovery
 
-Room configuration is stored at `flags.devils-table.merchant.services.<serviceId>.room`. Each actual rental creates a GM-only world JournalEntry whose `flags.devils-table.booking` contains booking identity, merchant/character/service references, room configuration snapshot, start/end, policy and generated document references. This is an access lease and audit record, not a second inventory, wallet or Actor identity store.
+Room configuration is stored at `flags.devils-table-merchants.merchant.services.<serviceId>.room`. Each actual rental creates a GM-only world JournalEntry whose `flags.devils-table-merchants.booking` contains booking identity, merchant/character/service references, room configuration snapshot, start/end, policy and generated document references. This is an access lease and audit record, not a second inventory, wallet or Actor identity store.
 
 Booking journals intentionally survive receipt-retention limits and merchant resets so active keys cannot become orphaned. Closed bookings remain available to the GM; their deletion is a deliberate native Journal action after access is resolved. Do not delete active booking journals. The integration panel lists open/attention bookings and exposes receipt, key and note references. Completed/skipped optional jobs follow normal receipt retention; unresolved jobs remain protected from ordinary trimming.
 

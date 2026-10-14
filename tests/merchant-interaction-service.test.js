@@ -24,7 +24,7 @@ test("GM interaction review keeps DC private, honours an overridden result, and 
   const { interactionReview } = await import("../scripts/merchant/interaction-service.js");
   const messages = []; let released = 0, queries = 0;
   user.query = async (name, payload) => {
-    queries++; assert.equal(name, "devils-table.interactionRoll");
+    queries++; assert.equal(name, "devils-table-merchants.interactionRoll");
     assert.deepEqual(payload, { id: "negotiate", characterId: "pc", skill: "per", kind: "negotiation" });
     return { total: 3 }; // Failed roll, but the GM may still grant a discount.
   };
@@ -40,8 +40,8 @@ test("GM interaction review keeps DC private, honours an overridden result, and 
   await Promise.all([actions.resolveInteraction.call(app), actions.resolveInteraction.call(app)]);
   assert.deepEqual(errors, []); assert.equal(released, 1); assert.equal(docs.size, 1);
   assert.deepEqual(messages, [{ status: "interaction-complete", outcome: "success", kind: "negotiation" }]);
-  assert.equal(merchant.getFlag("devils-table", "merchant.relationships.pc.negotiationModifier"), -15);
-  assert.equal([...docs.values()][0].getFlag("devils-table", "transaction").quote.interaction.dc, 19);
+  assert.equal(merchant.getFlag("devils-table-merchants", "merchant.relationships.pc.negotiationModifier"), -15);
+  assert.equal([...docs.values()][0].getFlag("devils-table-merchants", "transaction").quote.interaction.dc, 19);
 });
 test("GM can dismiss after availability or ownership changes without altering memory", async () => {
   const { merchant, character, user, docs, errors } = world();
@@ -49,12 +49,12 @@ test("GM can dismiss after availability or ownership changes without altering me
   let released = false;
   const app = await interactionReview({ actor: merchant, character, user, request: { id: "decline", kind: "theft", itemId: "rope" },
     verify: async () => {}, owns: () => !released, release: () => { released = true; }, notify() {} });
-  await merchant.setFlag("devils-table", "merchant.availability", "closed"); character.testUserPermission = () => false;
+  await merchant.setFlag("devils-table-merchants", "merchant.availability", "closed"); character.testUserPermission = () => false;
   await app.close();
   assert.equal(released, true); assert.equal(app.closed, true); assert.deepEqual(errors, []);
-  assert.equal([...docs.values()][0].getFlag("devils-table", "transaction").status, "closed");
+  assert.equal([...docs.values()][0].getFlag("devils-table-merchants", "transaction").status, "closed");
   assert.equal(merchant.items.get("rope").system.quantity, 1);
-  assert.equal(merchant.getFlag("devils-table", "merchant.relationships.pc"), undefined);
+  assert.equal(merchant.getFlag("devils-table-merchants", "merchant.relationships.pc"), undefined);
 });
 test("native player roll requires an outstanding interaction and caches duplicate queries", async () => {
   const { character, user } = world();
@@ -67,7 +67,7 @@ test("native player roll requires an outstanding interaction and caches duplicat
     return [{ total: 17 }];
   };
   service.registerCheckoutProof();
-  const handler = CONFIG.queries["devils-table.interactionRoll"];
+  const handler = CONFIG.queries["devils-table-merchants.interactionRoll"];
   assert.equal(await handler({ id: "unsolicited", characterId: "pc", skill: "per", kind: "negotiation" }), null);
   const id = service.merchantRequest("interaction", { characterId: "pc", kind: "negotiation" }, () => {});
   const payload = { id, characterId: "pc", skill: "per", kind: "negotiation" };

@@ -13,6 +13,12 @@
 
 ## Release candidates
 
+### 0.3.29
+
+- Simplified version numbering, changed the installed module ID to `devils-table-merchants` and credited Devilclarke as author.
+- Updated runtime paths, API references and packaging to use the new module ID. Existing worlds using the previous ID require migration of saved flags/settings before continuing.
+
+
 ### 0.3.0-alpha.29
 
 - Added installer/update manifest URLs, verified Foundry 14 / D&D5e 5.3.3 metadata and a validated alpha-release publishing workflow. Packages now use fixed file times for reproducible retry verification.

@@ -146,7 +146,7 @@ test("notes and category plans never enter Item documents or trigger Item update
   assert.equal((await build()).unchanged, data.entries.length);
   assert.ok(!JSON.stringify(state.docs).includes("SENTINEL"));
   for (const doc of state.docs) {
-    assert.equal(Object.hasOwn(doc.flags["devils-table"], "merchantNotes"), false);
+    assert.equal(Object.hasOwn(doc.flags["devils-table-merchants"], "merchantNotes"), false);
   }
 });
 

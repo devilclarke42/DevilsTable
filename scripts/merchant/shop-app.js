@@ -83,7 +83,7 @@ export class MerchantShopApplication extends HandlebarsApplicationMixin(Applicat
   }
 
   static DEFAULT_OPTIONS = {
-    id: "devils-table-merchant-shop", classes: ["devils-table"], tag: "section",
+    id: "devils-table-merchant-shop", classes: ["devils-table-merchants"], tag: "section",
     position: { width: 740, height: "auto" },
     window: { title: "Devil's Table: Trade & Merchants — Shop", icon: "fa-solid fa-store", resizable: true },
     actions: { view: MerchantShopApplication.#viewTab, toggleAdministration: MerchantShopApplication.#toggleAdministration, emptyStock: MerchantShopApplication.#emptyStock,
@@ -91,7 +91,7 @@ export class MerchantShopApplication extends HandlebarsApplicationMixin(Applicat
       category: MerchantShopApplication.#selectCategory, add: MerchantShopApplication.#add,
       remove: MerchantShopApplication.#remove, sell: MerchantShopApplication.#sell, unsell: MerchantShopApplication.#unsell, checkout: MerchantShopApplication.#checkout }
   };
-  static PARTS = { body: { template: "modules/devils-table/templates/merchant-shop.hbs" } };
+  static PARTS = { body: { template: "modules/devils-table-merchants/templates/merchant-shop.hbs" } };
 
   async _prepareContext(options) {
     const canAdmin = globalThis.game?.user?.isGM === true;

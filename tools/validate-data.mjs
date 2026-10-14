@@ -40,7 +40,7 @@ try {
   const manifest = await readJson("module.json");
   const pkg = await readJson("package.json");
   releaseContract(manifest);
-  assert(manifest.id === "devils-table", "Unexpected module identity.");
+  assert(manifest.id === "devils-table-merchants", "Unexpected module identity.");
   assert(/^[0-9]+\.[0-9]+\.[0-9]+(?:-[A-Za-z0-9.-]+)?$/.test(manifest.version), "Invalid module version.");
   assert(manifest.version === pkg.version, "package.json and module.json versions differ.");
   assert(manifest.compatibility.minimum === "14" && manifest.compatibility.maximum === "14", "Foundry target must remain V14 until reviewed.");
@@ -56,7 +56,7 @@ try {
     const generated = catalogueEntryToItem(item);
     assert(generated.system.source.rules === "2014", `Incorrect rules baseline: ${item.id}`);
     assert(generated.system.weight.value === item.weight.value, `Weight conversion changed ${item.id}`);
-    if (item.icon.startsWith("modules/devils-table/")) await access(resolve(ROOT, item.icon.slice("modules/devils-table/".length)));
+    if (item.icon.startsWith("modules/devils-table-merchants/")) await access(resolve(ROOT, item.icon.slice("modules/devils-table-merchants/".length)));
   }
   const tables = stockTableDocuments(catalogue);
   planRollTables(tables, []); // Also checks stable table/result identities before packaging.

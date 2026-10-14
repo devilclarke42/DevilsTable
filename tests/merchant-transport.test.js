@@ -25,7 +25,7 @@ test("separate GM and player services relay public stock without player Actor ac
     return { user, users, settings: { get: (_ns,key) => key === "serviceDefinitions" ? {categories:[{id:"advice",name:"Advice",catalogues:["general-store"]}],services:[{id:"DT_SERVICE_TEST",name:"Advice",description:"Discuss a journey",icon:"icons/svg/book.svg",catalogues:["general-store"],category:"advice",price:{value:1,denomination:"sp"},tags:[],maxQuantity:1,actions:[{kind:"integration",integration:"future",action:"private",config:{secret:"PRIVATE_DOOR"}}],execution:{macro:"Macro.private"}}]} : false }, socket: {
       on(channel, callback) { handlers.set(user.id, callback); },
       emit(channel, packet, acknowledge) {
-        assert.equal(channel, "module.devils-table");
+        assert.equal(channel, "module.devils-table-merchants");
         assert.equal(typeof acknowledge, "function");
         acknowledgements++; acknowledge({});
         queue.push({ target: user.isGM ? "player" : "gm", packet });

@@ -9,7 +9,7 @@ import { planRollTables, tableReadBackError } from "../scripts/builders/roll-tab
 import { rollStockFromTables, rollStockList } from "../scripts/stock/stock-roller.js";
 
 const production = () => loadStockCatalogue({ readJson });
-const tierOf = table => table.flags["devils-table"].tier;
+const tierOf = table => table.flags["devils-table-merchants"].tier;
 const scopeTables = (data, shopId = "general-store", categoryId = null) => stockTableDocuments(data,
   { shopId, categoryId, profileId: data.stock.profiles.find(profile => profile.shop === shopId).id });
 const rollSequence = values => async sides => { const value = values.shift(); assert.ok(value >= 1 && value <= sides, `d${sides}: ${value}`); return value; };
@@ -20,7 +20,7 @@ test("twenty-five stock profiles generate 100 tables and retain all 200 reservat
   const tables = stockTableDocuments(data);
   assert.equal(tables.length, 100);
   assert.equal(data.tableLedger.ids.length, 200);
-  assert.ok(tables.every(table => data.tableLedger.ids.includes(table.flags["devils-table"].sourceId)));
+  assert.ok(tables.every(table => data.tableLedger.ids.includes(table.flags["devils-table-merchants"].sourceId)));
   const items = new Set(data.entries.map(({ item }) => itemUuid(item.id)));
   const nested = new Set(tables.map(table => `Compendium.world.devils-table-stock-tables.RollTable.${table._id}`));
   for (const table of tables) for (const result of table.results) {
@@ -29,7 +29,7 @@ test("twenty-five stock profiles generate 100 tables and retain all 200 reservat
     assert.equal(Object.hasOwn(result, "text"), false);
     assert.equal(typeof result.type, "string");
   }
-  const counts = Object.fromEntries(data.stock.profiles.map(profile => [profile.shop, tables.filter(t => t.flags["devils-table"].shop === profile.shop).length]));
+  const counts = Object.fromEntries(data.stock.profiles.map(profile => [profile.shop, tables.filter(t => t.flags["devils-table-merchants"].shop === profile.shop).length]));
   assert.deepEqual(counts, { tavern: 24, "general-store": 16, alchemist: 16, blacksmith: 20, "black-market": 24 });
 });
 
@@ -41,7 +41,7 @@ test("one Always draw returns every core good instead of selecting only one", as
   const drawn = table.results.filter(row => row.range[0] <= 1 && row.range[1] >= 1);
   assert.equal(drawn.length, 82);
   for (const id of ["DT_ITEM_GS_ROPE_HEMP", "DT_ITEM_GS_SACK", "DT_ITEM_GS_CANDLE", "DT_ITEM_GS_SOAP", "DT_ITEM_GS_TORCH"]) {
-    assert.ok(drawn.some(row => row.flags["devils-table"].itemId === id));
+    assert.ok(drawn.some(row => row.flags["devils-table-merchants"].itemId === id));
   }
 });
 
@@ -64,9 +64,9 @@ test("rotating d100 ranges preserve 80/15/5 odds and empty tiers do not promote 
 test("shop overrides change local tiers without changing item identity or source", async () => {
   const data = await production();
   const before = structuredClone(data.entries);
-  const oil = scopeTables(data, "alchemist").find(table => tierOf(table) === "often").results.find(row => row.flags["devils-table"].itemId === "DT_ITEM_GS_OIL_LAMP");
+  const oil = scopeTables(data, "alchemist").find(table => tierOf(table) === "often").results.find(row => row.flags["devils-table-merchants"].itemId === "DT_ITEM_GS_OIL_LAMP");
   assert.equal(oil.documentUuid, itemUuid("DT_ITEM_GS_OIL_LAMP"));
-  const lockbox = scopeTables(data, "blacksmith").find(table => tierOf(table) === "rarely").results.find(row => row.flags["devils-table"].itemId === "DT_ITEM_GS_LOCKBOX");
+  const lockbox = scopeTables(data, "blacksmith").find(table => tierOf(table) === "rarely").results.find(row => row.flags["devils-table-merchants"].itemId === "DT_ITEM_GS_LOCKBOX");
   assert.ok(lockbox);
   assert.deepEqual(data.entries, before);
 });
@@ -152,7 +152,7 @@ test("stock sampling is duplicate-free, keeps Always goods and does not mutate b
   const tables = scopeTables(data);
   const before = structuredClone(tables);
   const stock = await rollStockFromTables(tables, { draws: 50, rollDie: async () => 1 });
-  const ids = stock.selected.map(({ row }) => row.flags["devils-table"].itemId);
+  const ids = stock.selected.map(({ row }) => row.flags["devils-table-merchants"].itemId);
   assert.equal(new Set(ids).size, ids.length);
   assert.equal(stock.selected.filter(row => row.tier === "always").length, 82);
   assert.equal(stock.selected.filter(row => row.tier === "often").length, 50);

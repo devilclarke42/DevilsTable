@@ -24,7 +24,7 @@ catalogueRegistry.register({catalogues:data.catalogueDefinitions,categories:data
 serviceRegistry.register(await readJson("data/services.json"));
 const rows=data.entries.map(e=>e.item).filter(i=>i.shops.includes("black-market"));
 const world=()=>{setup();game.settings.get=(_ns,key)=>key==="serviceDefinitions"?{categories:[],services:[]}:key==="debugLogging"?false:"unlimited";};
-const merchant=async(items=[])=>{const m=new Actor("merchant",0,items);await m.setFlag("devils-table","merchant.catalogueId","black-market");return m;};
+const merchant=async(items=[])=>{const m=new Actor("merchant",0,items);await m.setFlag("devils-table-merchants","merchant.catalogueId","black-market");return m;};
 test("Fence builds 48 canonical goods without duplicating shared equipment",async()=>{
  assert.equal(rows.length,48);assert.equal(rows.filter(i=>i.id.startsWith("DT_ITEM_BMK_")).length,35);
  const {adapter,state}=fakeAdapter(),build=createBuilder({load:()=>data,adapter});
@@ -36,40 +36,40 @@ test("Fence builds 48 canonical goods without duplicating shared equipment",asyn
 test("all merchants use the same visibility policy and invalid policies fail closed",async()=>{
  world();const m=await merchant(),pc=new Actor("pc"),other=new Actor("other");
  const rule={mode:"relationship",minPurchases:3};
- assert.equal(visibleOffer(m,pc,rule),false);await m.setFlag("devils-table","merchant.relationships.pc",{successfulPurchases:3,visits:20});
+ assert.equal(visibleOffer(m,pc,rule),false);await m.setFlag("devils-table-merchants","merchant.relationships.pc",{successfulPurchases:3,visits:20});
  assert.equal(visibleOffer(m,pc,rule),true);assert.equal(visibleOffer(m,other,rule),false);assert.equal(visibleOffer(m,null,rule),false);
- await m.setFlag("devils-table","merchant.settings.restrictedOffers",true);
+ await m.setFlag("devils-table-merchants","merchant.settings.restrictedOffers",true);
  assert.equal(visibleOffer(m,other,rule),true);assert.equal(visibleOffer(m,pc,{mode:"hidden"}),false);
  assert.equal(visibleOffer(m,pc,{mode:"hidden",revealed:true}),true);
  assert.equal(visibleOffer(m,pc,{mode:"unknown"}),false);
  for(const bad of [{mode:"relationship",minPurchases:-1},{mode:"hidden",revealed:"true"},{mode:"public",script:"true"}])assert.throws(()=>validateVisibility(bad));
  // Demonstrate policy reuse outside the Fence catalogue.
- await m.setFlag("devils-table","merchant.catalogueId","general-store");assert.equal(visibleOffer(m,pc,rule),true);
+ await m.setFlag("devils-table-merchants","merchant.catalogueId","general-store");assert.equal(visibleOffer(m,pc,rule),true);
 });
 test("hidden stock is absent from projection, checkout and theft even with a forged known Item ID",async()=>{
- world();const doc=catalogueEntryToItem(rows.find(i=>i.id==="DT_ITEM_BMK_STOLEN_SIGNET"));doc.flags["devils-table"].offer={visibility:{mode:"hidden"}};
+ world();const doc=catalogueEntryToItem(rows.find(i=>i.id==="DT_ITEM_BMK_STOLEN_SIGNET"));doc.flags["devils-table-merchants"].offer={visibility:{mode:"hidden"}};
  const m=await merchant([doc]),pc=new Actor("pc",50000);
  assert.equal(publicOffers(m,pc).length,0);assert.equal(purchaseOffers(m,pc).length,0);
  const request={lines:[{id:doc._id,quantity:1}],sales:[]};assert.throws(()=>quoteTrade(m,pc,request),/Stock has changed/);
  assert.throws(()=>interactionQuote(m,pc,{kind:"theft",itemId:doc._id},{outcome:"success"}),/no longer available/);
- await m.updateEmbeddedDocuments("Item",[{_id:doc._id,"flags.devils-table.offer.visibility":{mode:"hidden",revealed:true}}]);
+ await m.updateEmbeddedDocuments("Item",[{_id:doc._id,"flags.devils-table-merchants.offer.visibility":{mode:"hidden",revealed:true}}]);
  const projected=publicOffers(m,pc);assert.equal(projected.length,1);assert.ok(!JSON.stringify(projected).includes('visibility'));
 });
 test("service default policies hide arrangements until explicitly revealed and preserve availability requirements",async()=>{
- world();const m=await merchant(),pc=new Actor("pc",50000);await m.setFlag("devils-table","merchant.economy",{profile:"fence-guild"});
- await m.setFlag("devils-table","merchant.services",{DT_SERVICE_BMK_ACQUIRE_CONTRABAND:{enabled:true}});
+ world();const m=await merchant(),pc=new Actor("pc",50000);await m.setFlag("devils-table-merchants","merchant.economy",{profile:"fence-guild"});
+ await m.setFlag("devils-table-merchants","merchant.services",{DT_SERVICE_BMK_ACQUIRE_CONTRABAND:{enabled:true}});
  assert.equal(serviceOffers(m,pc,{includeUnavailable:true}).length,0);
- await m.setFlag("devils-table","merchant.services.DT_SERVICE_BMK_ACQUIRE_CONTRABAND.visibility",{mode:"hidden",revealed:true});
+ await m.setFlag("devils-table-merchants","merchant.services.DT_SERVICE_BMK_ACQUIRE_CONTRABAND.visibility",{mode:"hidden",revealed:true});
  assert.equal(serviceOffers(m,pc).length,1);
- await m.setFlag("devils-table","merchant.services.DT_SERVICE_BMK_ACQUIRE_CONTRABAND.enabled",false);assert.equal(serviceOffers(m,pc).length,0);
- await m.setFlag("devils-table","merchant.services.DT_SERVICE_BMK_ACQUIRE_CONTRABAND.enabled",true);
- await m.setFlag("devils-table","merchant.economy",{profile:"fence-cautious"});assert.equal(serviceOffers(m,pc).length,0);
+ await m.setFlag("devils-table-merchants","merchant.services.DT_SERVICE_BMK_ACQUIRE_CONTRABAND.enabled",false);assert.equal(serviceOffers(m,pc).length,0);
+ await m.setFlag("devils-table-merchants","merchant.services.DT_SERVICE_BMK_ACQUIRE_CONTRABAND.enabled",true);
+ await m.setFlag("devils-table-merchants","merchant.economy",{profile:"fence-cautious"});assert.equal(serviceOffers(m,pc).length,0);
 });
 test("visibility editing preserves unrelated offers and obeys stale state, checkout and GM guards",async()=>{
- world();const doc=good("x");doc.flags["devils-table"].offer={unitPrice:77,publicDescription:"Approved"};
+ world();const doc=good("x");doc.flags["devils-table-merchants"].offer={unitPrice:77,publicDescription:"Approved"};
  const m=await merchant([doc]),snapshot=stockVisibilitySnapshot(m),rows=[{id:"x",visibility:{mode:"hidden"}}];
  merchantSlots.acquire(m.id,"pending");try{await assert.rejects(saveStockVisibility(m,rows,snapshot),/serving/);}finally{merchantSlots.release(m.id,"pending");}
- await saveStockVisibility(m,rows,snapshot);assert.equal(m.items.get("x").getFlag("devils-table","offer").unitPrice,77);
+ await saveStockVisibility(m,rows,snapshot);assert.equal(m.items.get("x").getFlag("devils-table-merchants","offer").unitPrice,77);
  await assert.rejects(saveStockVisibility(m,rows,snapshot),/changed/);
  game.user.isGM=false;await assert.rejects(saveStockVisibility(m,rows,stockVisibilitySnapshot(m)),/active GM/);
 });
@@ -82,23 +82,23 @@ test("profile stock is sparse, distinct, and generated rules stay on merchant of
  const {adapter}=fakeAdapter({existing:tables});
  const result=await rollStockList({shopId:"black-market",profileId:"DT_TABLE_BMK_GUILD",load:()=>data,adapter,rollDie:async()=>1});
  assert.ok(result.items.every(i=>i.quantity<=2));assert.ok(result.items.some(i=>i.visibility?.mode==="relationship"));
- const rotating=tables.find(t=>t.flags["devils-table"].tier==="rotating");assert.deepEqual(rotating.results.map(r=>r.range),[[1,40],[41,90],[91,100]]);
+ const rotating=tables.find(t=>t.flags["devils-table-merchants"].tier==="rotating");assert.deepEqual(rotating.results.map(r=>r.range),[[1,40],[41,90],[91,100]]);
 });
 test("mixed Fence checkout uses one payment and receipt, and offer policies do not transfer to the buyer",async()=>{
- world();const doc=catalogueEntryToItem(rows.find(i=>i.id==="DT_ITEM_BMK_SEAL_BLANKS"));doc.flags["devils-table"].offer={visibility:{mode:"relationship",minPurchases:1}};
- const m=await merchant([doc]),pc=new Actor("pc",10000);game.actors=[m,pc];await m.setFlag("devils-table","merchant.relationships.pc",{successfulPurchases:1});
- await m.setFlag("devils-table","merchant.services",{DT_SERVICE_BMK_FORGERY:{enabled:true}});
+ world();const doc=catalogueEntryToItem(rows.find(i=>i.id==="DT_ITEM_BMK_SEAL_BLANKS"));doc.flags["devils-table-merchants"].offer={visibility:{mode:"relationship",minPurchases:1}};
+ const m=await merchant([doc]),pc=new Actor("pc",10000);game.actors=[m,pc];await m.setFlag("devils-table-merchants","merchant.relationships.pc",{successfulPurchases:1});
+ await m.setFlag("devils-table-merchants","merchant.services",{DT_SERVICE_BMK_FORGERY:{enabled:true}});
  const request={id:"mixed-fence",userId:"player",lines:[{id:doc._id,quantity:1},{id:"service:DT_SERVICE_BMK_FORGERY",quantity:1}],sales:[]},log=ledger();
  await executeTrade({merchant:m,character:pc,request,quote:quoteTrade(m,pc,request),receiptAdapter:log});
  assert.equal(m.system.currency.cp,900);assert.equal(pc.system.currency.cp,9100);assert.equal(log.records.length,1);
- assert.equal([...pc.items][0].getFlag("devils-table","offer"),undefined);assert.equal(m.getFlag("devils-table","merchant.relationships.pc.successfulPurchases"),2);
+ assert.equal([...pc.items][0].getFlag("devils-table-merchants","offer"),undefined);assert.equal(m.getFlag("devils-table-merchants","merchant.relationships.pc.successfulPurchases"),2);
 });
 test("failed transfer compensates funds and retains hidden merchant policy",async()=>{
- world();const doc=good("x");doc.flags["devils-table"].offer={visibility:{mode:"hidden",revealed:true}};
+ world();const doc=good("x");doc.flags["devils-table-merchants"].offer={visibility:{mode:"hidden",revealed:true}};
  const m=await merchant([doc]),pc=new Actor("pc",1000);game.actors=[m,pc];pc.createEmbeddedDocuments=async()=>{throw Error("transfer failed");};
  const request={id:"failed-fence",userId:"player",lines:[{id:"x",quantity:1}],sales:[]};
  await assert.rejects(executeTrade({merchant:m,character:pc,request,quote:quoteTrade(m,pc,request),receiptAdapter:ledger()}),/transfer failed/);
- assert.equal(pc.system.currency.cp,1000);assert.equal(m.system.currency.cp,0);assert.equal(m.items.get("x").system.quantity,1);assert.deepEqual(m.items.get("x").getFlag("devils-table","offer.visibility"),{mode:"hidden",revealed:true});
+ assert.equal(pc.system.currency.cp,1000);assert.equal(m.system.currency.cp,0);assert.equal(m.items.get("x").system.quantity,1);assert.deepEqual(m.items.get("x").getFlag("devils-table-merchants","offer.visibility"),{mode:"hidden",revealed:true});
 });
 test("shared schema upper bounds reject oversized generation policies",()=>{
  const validate=compileSchema({type:"integer",minimum:1,maximum:100});assert.equal(validate(101).length,1);assert.equal(validate(100).length,0);

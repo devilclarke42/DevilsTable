@@ -21,7 +21,7 @@ export class RollTableBuilderApplication extends HandlebarsApplicationMixin(Appl
   #data = null;
 
   static DEFAULT_OPTIONS = {
-    id: "devils-table-stock-builder", classes: ["devils-table"], tag: "section",
+    id: "devils-table-stock-builder", classes: ["devils-table-merchants"], tag: "section",
     position: { width: 760, height: 690 },
     window: { title: "Devil's Table: Trade & Merchants — Stock RollTable Builder", icon: "fa-solid fa-dice", resizable: true },
     actions: { selectShop: RollTableBuilderApplication.#selectShop, selectCategory: RollTableBuilderApplication.#selectCategory,
@@ -29,7 +29,7 @@ export class RollTableBuilderApplication extends HandlebarsApplicationMixin(Appl
       preview: RollTableBuilderApplication.#preview, build: RollTableBuilderApplication.#build, rollStock: RollTableBuilderApplication.#rollStock,
       cleanup: RollTableBuilderApplication.#cleanup }
   };
-  static PARTS = { body: { template: "modules/devils-table/templates/roll-table-builder.hbs", templates: ["modules/devils-table/templates/generation-summary.hbs"], scrollable: [".dt-builder", ".dt-report"] } };
+  static PARTS = { body: { template: "modules/devils-table-merchants/templates/roll-table-builder.hbs", templates: ["modules/devils-table-merchants/templates/generation-summary.hbs"], scrollable: [".dt-builder", ".dt-report"] } };
 
   _onRender(context, options) {
     super._onRender?.(context, options);

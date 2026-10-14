@@ -11,7 +11,7 @@ npm run check
 npm run package
 ```
 
-`check` validates documentation, source, manifests, imports and JavaScript syntax, then runs tests. `package` performs those checks and creates the versioned runtime ZIP under `dist/`. The archive has one `devils-table/` root and one manifest.
+`check` validates documentation, source, manifests, imports and JavaScript syntax, then runs tests. `package` performs those checks and creates the versioned runtime ZIP under `dist/`. The archive has one `devils-table-merchants/` root and one manifest.
 
 ## Repository layout
 

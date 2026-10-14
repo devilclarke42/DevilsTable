@@ -11,7 +11,7 @@ const staging = await mkdtemp(join(tmpdir(), "devils-table-package-"));
 try {
   const files = await runtimeFiles();
   for (const path of files) {
-    const target = resolve(staging, "devils-table", path);
+    const target = resolve(staging, "devils-table-merchants", path);
     await mkdir(dirname(target), { recursive: true });
     await copyFile(resolve(ROOT, path), target);
     // Fixed file times make retries verify the same versioned ZIP bytes.
@@ -19,13 +19,13 @@ try {
   }
   const archive = resolve(staging, "module.zip");
   const zip = spawnSync("zip", ["-q", "-X", archive, "-@"], {
-    cwd: staging, input: files.map(file => `devils-table/${file}`).join("\n") + "\n", encoding: "utf8"
+    cwd: staging, input: files.map(file => `${manifest.id}/${file}`).join("\n") + "\n", encoding: "utf8"
   });
   if (zip.status !== 0) throw new Error(zip.error?.message || zip.stderr || "Install the zip command to build archives.");
   const verify = spawnSync("unzip", ["-Z1", archive], { encoding: "utf8" });
   if (verify.status !== 0) throw new Error("Archive verification failed; the unzip command is required.");
   const entries = verify.stdout.trim().split("\n");
-  if (JSON.stringify(entries) !== JSON.stringify(files.map(file => `devils-table/${file}`))) throw new Error("Archive contents differ from the runtime allowlist.");
+  if (JSON.stringify(entries) !== JSON.stringify(files.map(file => `${manifest.id}/${file}`))) throw new Error("Archive contents differ from the runtime allowlist.");
   if (entries.filter(file => file.endsWith("/module.json")).length !== 1) throw new Error("Archive must contain exactly one module manifest.");
   await mkdir(resolve(ROOT, "dist"), { recursive: true });
   const output = resolve(ROOT, "dist", `devils-table-v${manifest.version}.zip`);

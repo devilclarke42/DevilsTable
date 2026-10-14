@@ -13,7 +13,7 @@
       "units": "lb",
       "notes": "Adjusted carried weight for the complete stated sale unit, including its wrapping or supplied vessel."
     },
-    "icon": "modules/devils-table/assets/icons/sealing-stamp.svg",
+    "icon": "modules/devils-table-merchants/assets/icons/sealing-stamp.svg",
     "category": "forgery",
     "tags": [
       "black-market",

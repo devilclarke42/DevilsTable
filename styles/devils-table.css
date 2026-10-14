@@ -1,139 +1,139 @@
-.devils-table .dt-builder { padding: 1rem; display: grid; gap: 0.6rem; max-height: 80vh; overflow: auto; }
-.devils-table .dt-builder p { margin: 0; }
-.devils-table .dt-warning { border-inline-start: 3px solid #bb853e; padding-inline-start: 0.75rem; }
-.devils-table fieldset { display: flex; gap: 0.6rem; flex-wrap: wrap; }
-.devils-table fieldset button { flex: 1 1 12rem; min-height: 2.5rem; }
-.devils-table pre { white-space: pre-wrap; overflow-wrap: anywhere; user-select: text; }
-.devils-table .dt-report { min-height: 7rem; max-height: 20rem; overflow: auto; padding: 0.75rem; border: 1px solid var(--color-border-light-primary, #888); border-radius: 4px; }
-.devils-table button:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; }
-.devils-table button[aria-pressed="true"] { outline: 2px solid var(--color-border-highlight, #bb853e); font-weight: bold; }
-.devils-table .dt-stock-tiers { display: grid; grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr)); gap: 0.75rem; }
-.devils-table .dt-stock-tiers h3 { margin-block: 0.6rem 0.25rem; }
-.devils-table .dt-stock-tiers ul { margin-block: 0.25rem; padding-inline-start: 1.2rem; }
-.devils-table .dt-merchant-notes { border: 1px solid var(--color-border-light-primary, #888); border-radius: 4px; padding: 0.6rem; }
-.devils-table summary { cursor: pointer; padding-block: 0.25rem; }
-.devils-table .dt-categories { display: block; }
-.devils-table .dt-category-list { display: grid; gap: 0.5rem; max-height: 15rem; overflow: auto; padding: 0.4rem; }
-.devils-table .dt-category { display: grid; grid-template-columns: minmax(10rem, 1fr) 1fr; gap: 0.6rem; align-items: start; }
-.devils-table .dt-category button { min-height: 2.2rem; white-space: normal; }
-.devils-table .dt-category details p { margin-block: 0.3rem; }
-.devils-table .dt-shop { display: flex; flex-direction: column; gap: 0.65rem; padding: 1rem; max-height: 80vh; overflow: hidden; min-height: 0; }
-.devils-table .dt-shop p, .devils-table .dt-shop h2, .devils-table .dt-shop h3 { margin: 0.25rem 0; }
-.devils-table .dt-shop-controls, .devils-table .dt-shop-categories { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; }
-.devils-table .dt-shop-controls input { min-width: 12rem; }
-.devils-table .dt-shop-grid { flex: 1 1 auto; min-height: 0; display: grid; grid-template-columns: minmax(18rem, 2fr) minmax(12rem, 1fr); gap: 1rem; }
-.devils-table .dt-shop-stock { min-height: 0; overflow: auto; }
-.devils-table .dt-shop-item { display: grid; grid-template-columns: 2.5rem minmax(0, 1fr) auto; gap: 0.65rem; padding: 0.65rem 0; border-bottom: 1px solid var(--color-border-light-primary, #888); }
-.devils-table .dt-shop-item img { width: 2.5rem; height: 2.5rem; object-fit: cover; }
-.devils-table .dt-shop-item p { overflow-wrap: anywhere; }
-.devils-table .dt-shop-basket { min-height: 0; overflow: auto; border-inline-start: 1px solid var(--color-border-light-primary, #888); padding-inline-start: 0.75rem; }
-.devils-table .dt-shop button { min-height: 2rem; }
-.devils-table .dt-shop [aria-pressed="true"] { outline: 2px solid currentColor; }
-@media (max-width: 640px) { .devils-table .dt-shop-grid { grid-template-columns: minmax(0, 1fr) minmax(10rem, 1fr); } }
+.devils-table-merchants .dt-builder { padding: 1rem; display: grid; gap: 0.6rem; max-height: 80vh; overflow: auto; }
+.devils-table-merchants .dt-builder p { margin: 0; }
+.devils-table-merchants .dt-warning { border-inline-start: 3px solid #bb853e; padding-inline-start: 0.75rem; }
+.devils-table-merchants fieldset { display: flex; gap: 0.6rem; flex-wrap: wrap; }
+.devils-table-merchants fieldset button { flex: 1 1 12rem; min-height: 2.5rem; }
+.devils-table-merchants pre { white-space: pre-wrap; overflow-wrap: anywhere; user-select: text; }
+.devils-table-merchants .dt-report { min-height: 7rem; max-height: 20rem; overflow: auto; padding: 0.75rem; border: 1px solid var(--color-border-light-primary, #888); border-radius: 4px; }
+.devils-table-merchants button:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; }
+.devils-table-merchants button[aria-pressed="true"] { outline: 2px solid var(--color-border-highlight, #bb853e); font-weight: bold; }
+.devils-table-merchants .dt-stock-tiers { display: grid; grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr)); gap: 0.75rem; }
+.devils-table-merchants .dt-stock-tiers h3 { margin-block: 0.6rem 0.25rem; }
+.devils-table-merchants .dt-stock-tiers ul { margin-block: 0.25rem; padding-inline-start: 1.2rem; }
+.devils-table-merchants .dt-merchant-notes { border: 1px solid var(--color-border-light-primary, #888); border-radius: 4px; padding: 0.6rem; }
+.devils-table-merchants summary { cursor: pointer; padding-block: 0.25rem; }
+.devils-table-merchants .dt-categories { display: block; }
+.devils-table-merchants .dt-category-list { display: grid; gap: 0.5rem; max-height: 15rem; overflow: auto; padding: 0.4rem; }
+.devils-table-merchants .dt-category { display: grid; grid-template-columns: minmax(10rem, 1fr) 1fr; gap: 0.6rem; align-items: start; }
+.devils-table-merchants .dt-category button { min-height: 2.2rem; white-space: normal; }
+.devils-table-merchants .dt-category details p { margin-block: 0.3rem; }
+.devils-table-merchants .dt-shop { display: flex; flex-direction: column; gap: 0.65rem; padding: 1rem; max-height: 80vh; overflow: hidden; min-height: 0; }
+.devils-table-merchants .dt-shop p, .devils-table-merchants .dt-shop h2, .devils-table-merchants .dt-shop h3 { margin: 0.25rem 0; }
+.devils-table-merchants .dt-shop-controls, .devils-table-merchants .dt-shop-categories { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; }
+.devils-table-merchants .dt-shop-controls input { min-width: 12rem; }
+.devils-table-merchants .dt-shop-grid { flex: 1 1 auto; min-height: 0; display: grid; grid-template-columns: minmax(18rem, 2fr) minmax(12rem, 1fr); gap: 1rem; }
+.devils-table-merchants .dt-shop-stock { min-height: 0; overflow: auto; }
+.devils-table-merchants .dt-shop-item { display: grid; grid-template-columns: 2.5rem minmax(0, 1fr) auto; gap: 0.65rem; padding: 0.65rem 0; border-bottom: 1px solid var(--color-border-light-primary, #888); }
+.devils-table-merchants .dt-shop-item img { width: 2.5rem; height: 2.5rem; object-fit: cover; }
+.devils-table-merchants .dt-shop-item p { overflow-wrap: anywhere; }
+.devils-table-merchants .dt-shop-basket { min-height: 0; overflow: auto; border-inline-start: 1px solid var(--color-border-light-primary, #888); padding-inline-start: 0.75rem; }
+.devils-table-merchants .dt-shop button { min-height: 2rem; }
+.devils-table-merchants .dt-shop [aria-pressed="true"] { outline: 2px solid currentColor; }
+@media (max-width: 640px) { .devils-table-merchants .dt-shop-grid { grid-template-columns: minmax(0, 1fr) minmax(10rem, 1fr); } }
 
 /* Align actions with the input, rather than the combined label/input height. */
-.devils-table .dt-shop-controls { align-items: flex-end; }
-.devils-table .dt-shop-controls > label { display: grid; gap: 0.25rem; margin: 0; }
-.devils-table .dt-shop-controls > button,
-.devils-table .dt-shop-controls input { margin: 0; }
+.devils-table-merchants .dt-shop-controls { align-items: flex-end; }
+.devils-table-merchants .dt-shop-controls > label { display: grid; gap: 0.25rem; margin: 0; }
+.devils-table-merchants .dt-shop-controls > button,
+.devils-table-merchants .dt-shop-controls input { margin: 0; }
 
-.devils-table .dt-manager-tabs { display: flex; gap: 0.4rem; flex-wrap: wrap; border-bottom: 1px solid currentColor; padding-bottom: 0.5rem; }
-.devils-table [data-panel]:not([hidden]) { display: grid; gap: 0.65rem; }
-.devils-table [data-panel][hidden] { display: none; }
+.devils-table-merchants .dt-manager-tabs { display: flex; gap: 0.4rem; flex-wrap: wrap; border-bottom: 1px solid currentColor; padding-bottom: 0.5rem; }
+.devils-table-merchants [data-panel]:not([hidden]) { display: grid; gap: 0.65rem; }
+.devils-table-merchants [data-panel][hidden] { display: none; }
 
-.devils-table .dt-item-actions { display: grid; gap: 0.35rem; align-content: start; }
+.devils-table-merchants .dt-item-actions { display: grid; gap: 0.35rem; align-content: start; }
 
 /* Compact identity header; context can accommodate future badges without resizing stock. */
-.devils-table .dt-merchant-header { display: flex; align-items: center; gap: 0.85rem; margin-bottom: 0.65rem; }
-.devils-table .dt-merchant-portrait { flex: 0 0 72px; width: 72px; height: 72px; object-fit: cover; object-position: center top; border-radius: 0.4rem; }
-.devils-table .dt-merchant-identity { flex: 1; min-width: 0; }
-.devils-table .dt-merchant-identity h2 { margin: 0 0 0.3rem; overflow-wrap: anywhere; }
-.devils-table .dt-merchant-context { display: flex; flex-wrap: wrap; align-items: center; gap: 0.4rem 0.8rem; }
-.devils-table .dt-merchant-context p { margin: 0; }
+.devils-table-merchants .dt-merchant-header { display: flex; align-items: center; gap: 0.85rem; margin-bottom: 0.65rem; }
+.devils-table-merchants .dt-merchant-portrait { flex: 0 0 72px; width: 72px; height: 72px; object-fit: cover; object-position: center top; border-radius: 0.4rem; }
+.devils-table-merchants .dt-merchant-identity { flex: 1; min-width: 0; }
+.devils-table-merchants .dt-merchant-identity h2 { margin: 0 0 0.3rem; overflow-wrap: anywhere; }
+.devils-table-merchants .dt-merchant-context { display: flex; flex-wrap: wrap; align-items: center; gap: 0.4rem 0.8rem; }
+.devils-table-merchants .dt-merchant-context p { margin: 0; }
 
-.devils-table .dt-shop [hidden] { display: none !important; }
-.devils-table .dt-category-icon { width: 1.1rem; height: 1.1rem; object-fit: contain; vertical-align: middle; }
-.devils-table .dt-shop > details { max-height: 12vh; overflow: auto; }
+.devils-table-merchants .dt-shop [hidden] { display: none !important; }
+.devils-table-merchants .dt-category-icon { width: 1.1rem; height: 1.1rem; object-fit: contain; vertical-align: middle; }
+.devils-table-merchants .dt-shop > details { max-height: 12vh; overflow: auto; }
 
 /* Administration is a GM-only view in the existing merchant window. */
-.devils-table .dt-administration { overflow: auto; max-height: 60vh; padding: 0.4rem; }
-.devils-table .dt-summary-card { display: grid; grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr)); gap: 0.8rem; margin: 0.5rem 0; }
-.devils-table .dt-summary-card > div { padding: 0.6rem; border: 1px solid var(--color-border-light-primary, #888); border-radius: 0.3rem; }
-.devils-table .dt-summary-card dt { font-size: 0.85em; opacity: 0.85; }
-.devils-table .dt-summary-card dd { margin: 0.25rem 0 0; font-weight: bold; overflow-wrap: anywhere; }
-.devils-table .dt-administration label { display: grid; gap: 0.3rem; margin: 0.5rem 0; }
+.devils-table-merchants .dt-administration { overflow: auto; max-height: 60vh; padding: 0.4rem; }
+.devils-table-merchants .dt-summary-card { display: grid; grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr)); gap: 0.8rem; margin: 0.5rem 0; }
+.devils-table-merchants .dt-summary-card > div { padding: 0.6rem; border: 1px solid var(--color-border-light-primary, #888); border-radius: 0.3rem; }
+.devils-table-merchants .dt-summary-card dt { font-size: 0.85em; opacity: 0.85; }
+.devils-table-merchants .dt-summary-card dd { margin: 0.25rem 0 0; font-weight: bold; overflow-wrap: anywhere; }
+.devils-table-merchants .dt-administration label { display: grid; gap: 0.3rem; margin: 0.5rem 0; }
 
 /* Single-panel Merchant Builder; drafts and generated previews remain visible together. */
-.devils-table .dt-merchant-builder { padding: 1rem; overflow: auto; min-height: 0; max-height: 85vh; }
-.devils-table .dt-merchant-builder fieldset, .devils-table .dt-merchant-builder section[data-preview] { margin: .75rem 0; padding: .75rem; }
-.devils-table .dt-merchant-builder-columns { display: grid; grid-template-columns: minmax(20rem, 1.2fr) minmax(16rem, 1fr); gap: 1rem; align-items: start; }
-.devils-table .dt-merchant-builder-fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .65rem; align-items: end; }
-.devils-table .dt-merchant-builder label { display: block; }
-.devils-table .dt-merchant-builder label select, .devils-table .dt-merchant-builder label input:not([type=checkbox]), .devils-table .dt-merchant-builder textarea { width: 100%; }
-.devils-table .dt-merchant-builder dd { margin: .2rem 0 .65rem; overflow-wrap: anywhere; }
-.devils-table .dt-merchant-builder button { width: auto; margin: .25rem 0; }
-.devils-table .dt-merchant-builder [hidden] { display: none !important; }
-@media (max-width: 760px) { .devils-table .dt-merchant-builder-columns { grid-template-columns: 1fr; } }
+.devils-table-merchants .dt-merchant-builder { padding: 1rem; overflow: auto; min-height: 0; max-height: 85vh; }
+.devils-table-merchants .dt-merchant-builder fieldset, .devils-table-merchants .dt-merchant-builder section[data-preview] { margin: .75rem 0; padding: .75rem; }
+.devils-table-merchants .dt-merchant-builder-columns { display: grid; grid-template-columns: minmax(20rem, 1.2fr) minmax(16rem, 1fr); gap: 1rem; align-items: start; }
+.devils-table-merchants .dt-merchant-builder-fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .65rem; align-items: end; }
+.devils-table-merchants .dt-merchant-builder label { display: block; }
+.devils-table-merchants .dt-merchant-builder label select, .devils-table-merchants .dt-merchant-builder label input:not([type=checkbox]), .devils-table-merchants .dt-merchant-builder textarea { width: 100%; }
+.devils-table-merchants .dt-merchant-builder dd { margin: .2rem 0 .65rem; overflow-wrap: anywhere; }
+.devils-table-merchants .dt-merchant-builder button { width: auto; margin: .25rem 0; }
+.devils-table-merchants .dt-merchant-builder [hidden] { display: none !important; }
+@media (max-width: 760px) { .devils-table-merchants .dt-merchant-builder-columns { grid-template-columns: 1fr; } }
 
-.devils-table .dt-merchant-builder [role=tab][aria-selected=true] { font-weight: bold; outline: 2px solid var(--color-border-highlight, #bb853e); }
-.devils-table .dt-merchant-builder [role=tabpanel] { padding: .5rem 0; }
-.devils-table .dt-merchant-builder [data-stock-id] { max-width: 7rem; }
+.devils-table-merchants .dt-merchant-builder [role=tab][aria-selected=true] { font-weight: bold; outline: 2px solid var(--color-border-highlight, #bb853e); }
+.devils-table-merchants .dt-merchant-builder [role=tabpanel] { padding: .5rem 0; }
+.devils-table-merchants .dt-merchant-builder [data-stock-id] { max-width: 7rem; }
 
 /* Services remain separate from Item inventory while sharing the merchant layout. */
-.devils-table .dt-services-manager { overflow-y: auto; padding: 0.5rem; }
-.devils-table .dt-services-manager article { padding: 0.6rem; border-bottom: 1px solid var(--color-border-light-primary, #777); }
-.devils-table .dt-services-manager textarea { width: 100%; min-height: 16rem; font-family: monospace; }
-.devils-table .dt-services-manager input[type=number] { width: 6rem; }
-.devils-table .dt-manager-tabs button[aria-pressed=true] { font-weight: bold; outline: 1px solid currentColor; }
+.devils-table-merchants .dt-services-manager { overflow-y: auto; padding: 0.5rem; }
+.devils-table-merchants .dt-services-manager article { padding: 0.6rem; border-bottom: 1px solid var(--color-border-light-primary, #777); }
+.devils-table-merchants .dt-services-manager textarea { width: 100%; min-height: 16rem; font-family: monospace; }
+.devils-table-merchants .dt-services-manager input[type=number] { width: 6rem; }
+.devils-table-merchants .dt-manager-tabs button[aria-pressed=true] { font-weight: bold; outline: 1px solid currentColor; }
 
 /* Identity reads native documents; form fields below it hold merchant-only drafts. */
-.devils-table .dt-identity-native { display: grid; grid-template-columns: minmax(8rem, 1fr) 3fr; gap: .35rem .75rem; }
-.devils-table .dt-identity-native dd { margin: 0; overflow-wrap: anywhere; }
-.devils-table [data-builder-panel="identity"] label { display: block; margin: .5rem 0; }
-.devils-table [data-merchant-identity] { width: 100%; }
-.devils-table .dt-service-filters { display: flex; flex-wrap: wrap; gap: .5rem; align-items: end; }
-.devils-table .dt-service-filters label { flex: 1; min-width: 9rem; }
-.devils-table [data-service-row] { border-top: 1px solid var(--color-border-light-primary); padding: .6rem 0; }
-.devils-table .dt-business-description { white-space: pre-wrap; overflow-wrap: anywhere; }
+.devils-table-merchants .dt-identity-native { display: grid; grid-template-columns: minmax(8rem, 1fr) 3fr; gap: .35rem .75rem; }
+.devils-table-merchants .dt-identity-native dd { margin: 0; overflow-wrap: anywhere; }
+.devils-table-merchants [data-builder-panel="identity"] label { display: block; margin: .5rem 0; }
+.devils-table-merchants [data-merchant-identity] { width: 100%; }
+.devils-table-merchants .dt-service-filters { display: flex; flex-wrap: wrap; gap: .5rem; align-items: end; }
+.devils-table-merchants .dt-service-filters label { flex: 1; min-width: 9rem; }
+.devils-table-merchants [data-service-row] { border-top: 1px solid var(--color-border-light-primary); padding: .6rem 0; }
+.devils-table-merchants .dt-business-description { white-space: pre-wrap; overflow-wrap: anywhere; }
 
-.devils-table .dt-merchant-context p { display: inline-flex; flex-direction: row; flex-wrap: nowrap; align-items: center; gap: .35rem; }
-.devils-table .dt-merchant-context .dt-category-icon { display: inline-block; flex: 0 0 1.1rem; margin: 0; }
+.devils-table-merchants .dt-merchant-context p { display: inline-flex; flex-direction: row; flex-wrap: nowrap; align-items: center; gap: .35rem; }
+.devils-table-merchants .dt-merchant-context .dt-category-icon { display: inline-block; flex: 0 0 1.1rem; margin: 0; }
 
-.devils-table .dt-integrations { padding: 1rem; overflow-y: auto; min-height: 0; }
-.devils-table .dt-integrations fieldset > section, .devils-table [data-service-group] { width: 100%; }
-.devils-table .dt-services-manager textarea[name=roomDoors] { min-height: 5rem; font-family: inherit; }
+.devils-table-merchants .dt-integrations { padding: 1rem; overflow-y: auto; min-height: 0; }
+.devils-table-merchants .dt-integrations fieldset > section, .devils-table-merchants [data-service-group] { width: 100%; }
+.devils-table-merchants .dt-services-manager textarea[name=roomDoors] { min-height: 5rem; font-family: inherit; }
 
 /* Review disclosures keep common approval controls compact and expanded content reachable. */
-.devils-table .dt-review { overflow-y: auto; }
-.devils-table .dt-review-pricing > .dt-shop-controls { margin-top: .5rem; }
+.devils-table-merchants .dt-review { overflow-y: auto; }
+.devils-table-merchants .dt-review-pricing > .dt-shop-controls { margin-top: .5rem; }
 
 /* Menu polish: long prose is disclosed, category navigation cannot consume the stock pane. */
-.application.devils-table { max-width: calc(100vw - 1rem); }
-.devils-table .dt-shop { container-type: inline-size; }
-.devils-table .dt-shop-categories { flex-wrap: nowrap; overflow-x: auto; flex: 0 0 auto; padding: .3rem; }
-.devils-table .dt-shop-categories button { flex: 0 0 auto; width: auto; white-space: nowrap; }
-.devils-table .dt-offer-description p { white-space: pre-wrap; }
-.devils-table summary:focus-visible, .devils-table input:focus-visible, .devils-table select:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; }
-.devils-table .dt-shop-controls { flex: 0 0 auto; }
-.devils-table .dt-shop-controls > label { flex: 1; min-width: 8rem; }
-.devils-table .dt-shop-controls input { min-width: 0; width: 100%; }
+.application.devils-table-merchants { max-width: calc(100vw - 1rem); }
+.devils-table-merchants .dt-shop { container-type: inline-size; }
+.devils-table-merchants .dt-shop-categories { flex-wrap: nowrap; overflow-x: auto; flex: 0 0 auto; padding: .3rem; }
+.devils-table-merchants .dt-shop-categories button { flex: 0 0 auto; width: auto; white-space: nowrap; }
+.devils-table-merchants .dt-offer-description p { white-space: pre-wrap; }
+.devils-table-merchants summary:focus-visible, .devils-table-merchants input:focus-visible, .devils-table-merchants select:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; }
+.devils-table-merchants .dt-shop-controls { flex: 0 0 auto; }
+.devils-table-merchants .dt-shop-controls > label { flex: 1; min-width: 8rem; }
+.devils-table-merchants .dt-shop-controls input { min-width: 0; width: 100%; }
 @container (max-width: 560px) {
-  .devils-table .dt-shop-grid { grid-template-columns: minmax(0, 1fr); grid-template-rows: minmax(8rem, 1fr) minmax(8rem, .8fr); gap: .5rem; }
-  .devils-table .dt-shop-basket { border-inline-start: 0; border-top: 1px solid var(--color-border-light-primary, #888); padding: .5rem 0 0; }
-  .devils-table .dt-shop-item { grid-template-columns: 2rem minmax(0, 1fr); }
-  .devils-table .dt-item-actions { grid-column: 2; display: flex; flex-wrap: wrap; }
-  .devils-table .dt-merchant-portrait { width: 48px; height: 48px; flex-basis: 48px; }
+  .devils-table-merchants .dt-shop-grid { grid-template-columns: minmax(0, 1fr); grid-template-rows: minmax(8rem, 1fr) minmax(8rem, .8fr); gap: .5rem; }
+  .devils-table-merchants .dt-shop-basket { border-inline-start: 0; border-top: 1px solid var(--color-border-light-primary, #888); padding: .5rem 0 0; }
+  .devils-table-merchants .dt-shop-item { grid-template-columns: 2rem minmax(0, 1fr); }
+  .devils-table-merchants .dt-item-actions { grid-column: 2; display: flex; flex-wrap: wrap; }
+  .devils-table-merchants .dt-merchant-portrait { width: 48px; height: 48px; flex-basis: 48px; }
 }
 
 /* Shared builder hierarchy: scope, compact summary, explicit actions, bounded report. */
-.devils-table .dt-builder { overflow-y: auto; min-height: 0; }
-.devils-table .dt-builder-selection { display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:0.65rem; }
-.devils-table .dt-builder-selection label { display:flex; flex-direction:column; gap:0.3rem; }
-.devils-table .dt-builder-selection select { width:100%; min-width:0; }
-.devils-table .dt-generation-summary dl { display:flex; flex-wrap:wrap; gap:0.7rem 1.4rem; }
-.devils-table .dt-generation-summary dt { font-size:0.85em; }
-.devils-table .dt-generation-summary dd { margin:0; font-weight:bold; }
-.devils-table .dt-report { max-height:16rem; overflow:auto; white-space:pre-wrap; overflow-wrap:anywhere; }
+.devils-table-merchants .dt-builder { overflow-y: auto; min-height: 0; }
+.devils-table-merchants .dt-builder-selection { display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:0.65rem; }
+.devils-table-merchants .dt-builder-selection label { display:flex; flex-direction:column; gap:0.3rem; }
+.devils-table-merchants .dt-builder-selection select { width:100%; min-width:0; }
+.devils-table-merchants .dt-generation-summary dl { display:flex; flex-wrap:wrap; gap:0.7rem 1.4rem; }
+.devils-table-merchants .dt-generation-summary dt { font-size:0.85em; }
+.devils-table-merchants .dt-generation-summary dd { margin:0; font-weight:bold; }
+.devils-table-merchants .dt-report { max-height:16rem; overflow:auto; white-space:pre-wrap; overflow-wrap:anywhere; }
 .dt-npc-tab { overflow-y:auto; padding:0.75rem; }
 .dt-npc-tab:not(.active) { display:none; }
 .dt-npc-tab.active { display:block; }
@@ -143,10 +143,10 @@
 .dt-merchant-badge { display:inline-flex; align-items:center; gap:0.25em; margin-inline-start:0.4rem; padding:0.1em 0.35em; border:1px solid currentColor; border-radius:3px; font-size:0.7rem; line-height:1.3; flex:0 0 auto; color:var(--color-text-primary); pointer-events:none; }
 
 /* Shared builder filter grid: native selects scale without a growing checkbox wall. */
-.devils-table .dt-builder-selection label { min-width:0; align-self:end; }
-.devils-table .dt-builder-selection select { text-overflow:ellipsis; }
-.devils-table .dt-builder-selection legend { font-weight:600; }
-.devils-table .dt-builder > details { margin-block:0.55rem; }
-.devils-table .dt-generation-summary dl { display:grid; grid-template-columns:repeat(auto-fit,minmax(145px,1fr)); }
-.devils-table .dt-generation-summary dd { overflow-wrap:anywhere; }
-.devils-table .dt-merchant-builder-fields label { min-width:0; }
+.devils-table-merchants .dt-builder-selection label { min-width:0; align-self:end; }
+.devils-table-merchants .dt-builder-selection select { text-overflow:ellipsis; }
+.devils-table-merchants .dt-builder-selection legend { font-weight:600; }
+.devils-table-merchants .dt-builder > details { margin-block:0.55rem; }
+.devils-table-merchants .dt-generation-summary dl { display:grid; grid-template-columns:repeat(auto-fit,minmax(145px,1fr)); }
+.devils-table-merchants .dt-generation-summary dd { overflow-wrap:anywhere; }
+.devils-table-merchants .dt-merchant-builder-fields label { min-width:0; }

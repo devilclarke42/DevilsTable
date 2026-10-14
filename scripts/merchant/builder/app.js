@@ -29,7 +29,7 @@ export class MerchantBuilderApplication extends HandlebarsApplicationMixin(Appli
   #stockPending=false; #stock=null; #float=null; #floatPending=false; #busy=false; #closed=false; #message="Select an NPC, adjust settings, then Save / Convert.";
   constructor({actorId="",tab="setup",...options}={}) { super(options); this.#actorId=actorId; this.#tab=BUILDER_TABS.includes(tab)?tab:"setup"; }
   static DEFAULT_OPTIONS = {
-    id:"devils-table-merchant-builder",classes:["devils-table"],tag:"section",position:{width:850,height:730},
+    id:"devils-table-merchant-builder",classes:["devils-table-merchants"],tag:"section",position:{width:850,height:730},
     window:{title:"Devil's Table: Trade & Merchants — Merchant Builder",icon:"fa-solid fa-store",resizable:true},
     actions:{saveStockVisibility:MerchantBuilderApplication.#saveStockVisibility,saveIdentity:MerchantBuilderApplication.#saveIdentity,saveServices:MerchantBuilderApplication.#saveServices,generateServices:MerchantBuilderApplication.#generateServices,saveServiceDefinitions:MerchantBuilderApplication.#saveServiceDefinitions,editStock:MerchantBuilderApplication.#editStock,selectTab:MerchantBuilderApplication.#selectTab,stepTab:MerchantBuilderApplication.#stepTab,resetMerchant:MerchantBuilderApplication.#resetMerchant,save:MerchantBuilderApplication.#save,generateStock:MerchantBuilderApplication.#generateStock,
       generateFloat:MerchantBuilderApplication.#generateFloat,generateNotes:MerchantBuilderApplication.#generateNotes,
@@ -38,7 +38,7 @@ export class MerchantBuilderApplication extends HandlebarsApplicationMixin(Appli
       applyTemplate:MerchantBuilderApplication.#applyTemplate,saveTemplate:MerchantBuilderApplication.#saveTemplate,
       reload:MerchantBuilderApplication.#reload,advanced:MerchantBuilderApplication.#advanced}
   };
-  static PARTS={body:{template:"modules/devils-table/templates/merchant-builder.hbs"}};
+  static PARTS={body:{template:"modules/devils-table-merchants/templates/merchant-builder.hbs"}};
   async close(options = {}) {
     this.#closed = true;
     this.#identitySubscription?.();this.#identitySubscription=null;
@@ -84,7 +84,7 @@ export class MerchantBuilderApplication extends HandlebarsApplicationMixin(Appli
     return {...await super._prepareContext(options),actorName:this.actor?.name??"Choose an NPC",draft:d,selects:selects.filter(row=>["catalogueId","settlement","prosperity","availability"].includes(row.key)),
       advancedSelects:selects.filter(row=>!["catalogueId","settlement","prosperity","availability"].includes(row.key)), cashLabel:formatCopper(walletValue(this.actor?.system.currency)),
       identity:this.#identity,merchantTags:this.#identity.merchantTags.join(", "),nativeIdentity:actorIdentity(this.actor),hasActor:Boolean(this.actor),
-      servicesHTML:this.#servicesPanel?await foundry.applications.handlebars.renderTemplate("modules/devils-table/templates/merchant-services.hbs",this.#servicesPanel.context(this.#busy)):"",
+      servicesHTML:this.#servicesPanel?await foundry.applications.handlebars.renderTemplate("modules/devils-table-merchants/templates/merchant-services.hbs",this.#servicesPanel.context(this.#busy)):"",
       tabs:Object.fromEntries(BUILDER_TABS.map(id=>[id,id===this.#tab])),
       npcs:game.actors.filter(a=>a.type==="npc").map(a=>({id:a.id,name:a.name,selected:a.id===this.#actorId})),
       templates:this.#templates.map(r=>({...r,selected:r.key===this.#templateId})),summary,summaryError,

@@ -16,7 +16,7 @@ test("buy transfers value and goods, stacks identical state, records character m
   assert.equal(walletValue(pc.system.currency), 40); assert.equal(walletValue(m.system.currency), 10);
   assert.equal(m.items.get("rope").system.quantity, 1); assert.equal(pc.items.get("owned").system.quantity, 2);
   assert.equal(pc.items.size, 1); assert.equal(log.records[0].status, "completed");
-  assert.equal(m.getFlag("devils-table", "merchant.relationships.pc").spentMinor, 10);
+  assert.equal(m.getFlag("devils-table-merchants", "merchant.relationships.pc").spentMinor, 10);
 });
 test("sell and combined trade settle net, preserve state, and update earned totals", async () => {
   setup(); const m = new Actor("merchant", 100, [good("rope", 1, 10)]), pc = new Actor("pc", 0, [good("sale", 1, 30)]);
@@ -25,14 +25,14 @@ test("sell and combined trade settle net, preserve state, and update earned tota
   assert.equal(walletValue(pc.system.currency), 20); assert.equal(walletValue(m.system.currency), 80);
   const received = [...m.items].find(i => i.getFlag("other", "custom") === "retained"); assert.ok(received);
   assert.equal(pc.items.has("sale"), false);
-  const memory = m.getFlag("devils-table", "merchant.relationships.pc"); assert.equal(memory.receivedMinor, 30); assert.equal(memory.visits, 1);
+  const memory = m.getFlag("devils-table-merchants", "merchant.relationships.pc"); assert.equal(memory.receivedMinor, 30); assert.equal(memory.visits, 1);
 });
 test("insufficient player or merchant money blocks before writes; infinite funds are explicit", async () => {
   setup(); const m = new Actor("merchant", 0, [good()]), pc = new Actor("pc", 0, [good("sale")]);
   assert.throws(() => quoteTrade(m, pc, req()), /enough money/);
   const sale = { id: "sale", lines: [], sales: [{ id: "sale", quantity: 1 }] };
   assert.throws(() => quoteTrade(m, pc, sale), /merchant does not/);
-  await m.setFlag("devils-table", "merchant.settings.walletMode", "infinite");
+  await m.setFlag("devils-table-merchants", "merchant.settings.walletMode", "infinite");
   await trade(m, pc, sale); assert.equal(pc.system.currency.cp, 10); assert.equal(m.system.currency.cp, 0);
 });
 test("exact denomination solver permits change but does not invent coins", () => {
@@ -60,7 +60,7 @@ test("failed item creation restores funds and stock; partial creation is also ro
     await assert.rejects(trade(m, pc, req(), log), /injected failure/);
     assert.equal(walletValue(pc.system.currency), 50); assert.equal(walletValue(m.system.currency), 0);
     assert.equal(m.items.get("rope").system.quantity, 1); assert.equal(pc.items.size, 0);
-    assert.equal(log.records[0].status, "rolled-back"); assert.equal(m.getFlag("devils-table", "transactionPending"), undefined);
+    assert.equal(log.records[0].status, "rolled-back"); assert.equal(m.getFlag("devils-table-merchants", "transactionPending"), undefined);
   }
 });
 test("external edits prevent destructive rollback and leave durable recovery block", async () => {
@@ -68,7 +68,7 @@ test("external edits prevent destructive rollback and leave durable recovery blo
   pc.createEmbeddedDocuments = async () => { m.items.get("rope").data.system.quantity = 7; throw Error("conflict"); };
   await assert.rejects(trade(m, pc, req(), log), /needs GM recovery/);
   assert.equal(m.items.get("rope").system.quantity, 7); assert.equal(log.records[0].status, "needs-recovery");
-  assert.ok(m.getFlag("devils-table", "transactionPending"));
+  assert.ok(m.getFlag("devils-table-merchants", "transactionPending"));
   await assert.rejects(trade(m, pc, req("retry")), /needs recovery/);
 });
 test("different mechanical state never merges; nested items fail before money moves", async () => {

@@ -50,7 +50,7 @@
       "units": "lb",
       "notes": "Three pounds for a practical two-foot iron lever, adjusted from heavier demolition bars."
     },
-    "icon": "modules/devils-table/assets/icons/crowbar.webp",
+    "icon": "modules/devils-table-merchants/assets/icons/crowbar.webp",
     "category": "tools",
     "tags": [
       "mundane",
@@ -306,7 +306,7 @@
       "units": "lb",
       "notes": "Half a pound for the complete natural abrasive block."
     },
-    "icon": "modules/devils-table/assets/icons/whetstone.webp",
+    "icon": "modules/devils-table-merchants/assets/icons/whetstone.webp",
     "category": "tools",
     "tags": [
       "mundane",

@@ -303,7 +303,7 @@
       "units": "lb",
       "notes": "Half a pound for the pitch block and light wrapper; warming equipment is separate."
     },
-    "icon": "modules/devils-table/assets/icons/charcoal.svg",
+    "icon": "modules/devils-table-merchants/assets/icons/charcoal.svg",
     "category": "trade-goods",
     "tags": [
       "mundane",

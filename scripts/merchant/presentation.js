@@ -24,11 +24,11 @@ export function receivePresentation({ actorId, presentation }) {
 export function registerPresentationUpdates(isCoordinator, publish) {
   Hooks.on("updateActor", (actor, changed) => {
     if (!isCoordinator() || !merchantConfig(actor)) return;
-    const nested = changed.flags?.["devils-table"]?.merchant ?? changed["flags.devils-table.merchant"];
+    const nested = changed.flags?.["devils-table-merchants"]?.merchant ?? changed["flags.devils-table-merchants.merchant"];
     const hasStatus = nested && ("availability" in nested || "enabled" in nested || "identity" in nested || "-=identity" in nested);
-    if (!("img" in changed) && !hasStatus && !("flags.devils-table.merchant.availability" in changed)
-        && !("flags.devils-table.merchant.enabled" in changed)
-        && !Object.keys(changed).some(key=>key.startsWith("flags.devils-table.merchant.identity")||key==="flags.devils-table.merchant.-=identity")) return;
+    if (!("img" in changed) && !hasStatus && !("flags.devils-table-merchants.merchant.availability" in changed)
+        && !("flags.devils-table-merchants.merchant.enabled" in changed)
+        && !Object.keys(changed).some(key=>key.startsWith("flags.devils-table-merchants.merchant.identity")||key==="flags.devils-table-merchants.merchant.-=identity")) return;
     const packet = { type: "presentation", actorId: actor.id, presentation: merchantPresentation(actor) };
     receivePresentation(packet); // The originating GM's local shop also updates.
     publish(packet);

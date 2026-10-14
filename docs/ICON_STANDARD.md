@@ -51,9 +51,9 @@ Do not enlarge a poor source just to meet dimensions; review its readability and
 Module-owned runtime files live in `assets/icons/`, with lowercase descriptive kebab-case filenames.
 Use the depicted subject rather than the first merchant's name, price or permanent item ID. This
 makes the file reusable. Item JSON references the exact module-relative public path beginning
-`modules/devils-table/assets/`. Paths are case-sensitive on the target host.
+`modules/devils-table-merchants/assets/`. Paths are case-sensitive on the target host.
 
-Permitted source roots are `icons/` and `modules/devils-table/assets/`. Remote URLs, data URLs,
+Permitted source roots are `icons/` and `modules/devils-table-merchants/assets/`. Remote URLs, data URLs,
 absolute filesystem paths and traversal are prohibited. Only reference an asset after it exists
 or has been verified in the supported Foundry core library. Changing a shared path requires checking
 all references; replacing an image in place affects every Item using it.
