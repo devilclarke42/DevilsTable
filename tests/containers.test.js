@@ -18,12 +18,12 @@ test("all thirteen curated General Store categories contain exactly their approv
   for (const category of data.categoryDefinitions.filter(category => category.shop === "general-store")) {
     assert.deepEqual(data.entries.filter(({ item }) => item.category === category.id && item.shops.includes("general-store")).map(({ item }) => item.name), category.plannedItems);
   }
-  assert.equal(selectEntries(data, { shopId: "general-store" }).length, 186);
+  assert.equal(selectEntries(data, { shopId: "general-store" }).length, 211);
   assert.ok(selectEntries(data, { shopId: "general-store" }).every(({ item }) => item.id.startsWith("DT_ITEM_GS_")));
   assert.deepEqual(new Set(selectEntries(data, { shopId: "general-store" }).map(({ item }) => item.id)), new Set(data.ledger.ids.filter(id => id.startsWith("DT_ITEM_GS_"))));
   const view = shopView(data, { shopId: "general-store" });
-  assert.deepEqual(view.categories.map(category => category.count), [19, 17, 11, 21, 15, 18, 12, 14, 25, 11, 6, 5, 12]);
-  assert.deepEqual(view.priceBands.map(band => band.count), [60, 71, 49, 6]);
+  assert.deepEqual(view.categories.map(category => category.count), [19, 17, 11, 21, 15, 18, 12, 14, 50, 11, 6, 5, 12]);
+  assert.deepEqual(view.priceBands.map(band => band.count), [60, 74, 69, 8]);
 });
 
 test("every registered shop has three Merchant Notes tiers, including the requested village profile", async () => {

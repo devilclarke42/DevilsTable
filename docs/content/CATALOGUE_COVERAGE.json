@@ -12,8 +12,8 @@
   },
   "denominator": {
     "entries": 241,
-    "represented": 167,
-    "representedPercent": 69.29,
+    "represented": 192,
+    "representedPercent": 79.67,
     "definition": "One priced entry or named formula from SRD Equipment tables pp. 63–72; bundles once, barding formula once, tools vehicle cross-reference excluded; stabling and food/lodging/hirelings are service commerce in SERVICE_COVERAGE.md. Not a percentage of all SRD magic items/spells. Near matches with different function/capacity are not represented."
   },
   "statusDefinitions": {
@@ -6797,11 +6797,32 @@
       "officialWeightLb": 9.0,
       "sourceWeightMeaning": "listed sale unit",
       "officialUnitCount": 1,
-      "canonicalIds": [],
+      "canonicalIds": [
+        "DT_ITEM_GS_TOOLS_BREWER"
+      ],
       "candidateIds": [],
-      "represented": false,
-      "status": "missing",
-      "notes": []
+      "represented": true,
+      "status": "complete",
+      "notes": [
+        "Milestone 2B: source unit represented; approved custom economy and adjusted weight. Manual effect limits are stated in the Item description."
+      ],
+      "findingIds": [],
+      "priceComparison": {
+        "projectPrice": {
+          "value": 15,
+          "denomination": "gp"
+        },
+        "sourceUnitCount": 1,
+        "projectUnitCount": 1,
+        "result": "project-variation",
+        "policy": "approved custom economy"
+      },
+      "weightComparison": {
+        "projectWeightLb": 7.2,
+        "projectUnitCount": 1,
+        "result": "intentional-adjustment",
+        "rationale": "Complete tool set and case weigh 7.2 lb, 80% of the source weight. The stated custom-economy price covers the whole kit and its ordinary implements, not a workshop, raw material supply or completed job."
+      }
     },
     {
       "sourceId": "srd51.tools.calligrapher-s-supplies",
@@ -6817,11 +6838,32 @@
       "officialWeightLb": 5.0,
       "sourceWeightMeaning": "listed sale unit",
       "officialUnitCount": 1,
-      "canonicalIds": [],
+      "canonicalIds": [
+        "DT_ITEM_GS_TOOLS_CALLIGRAPHER"
+      ],
       "candidateIds": [],
-      "represented": false,
-      "status": "missing",
-      "notes": []
+      "represented": true,
+      "status": "complete",
+      "notes": [
+        "Milestone 2B: source unit represented; approved custom economy and adjusted weight. Manual effect limits are stated in the Item description."
+      ],
+      "findingIds": [],
+      "priceComparison": {
+        "projectPrice": {
+          "value": 8,
+          "denomination": "gp"
+        },
+        "sourceUnitCount": 1,
+        "projectUnitCount": 1,
+        "result": "project-variation",
+        "policy": "approved custom economy"
+      },
+      "weightComparison": {
+        "projectWeightLb": 4.0,
+        "projectUnitCount": 1,
+        "result": "intentional-adjustment",
+        "rationale": "Complete tool set and case weigh 4.0 lb, 80% of the source weight. The stated custom-economy price covers the whole kit and its ordinary implements, not a workshop, raw material supply or completed job."
+      }
     },
     {
       "sourceId": "srd51.tools.carpenter-s-tools",
@@ -6837,11 +6879,32 @@
       "officialWeightLb": 6.0,
       "sourceWeightMeaning": "listed sale unit",
       "officialUnitCount": 1,
-      "canonicalIds": [],
+      "canonicalIds": [
+        "DT_ITEM_GS_TOOLS_CARPENTER"
+      ],
       "candidateIds": [],
-      "represented": false,
-      "status": "missing",
-      "notes": []
+      "represented": true,
+      "status": "complete",
+      "notes": [
+        "Milestone 2B: source unit represented; approved custom economy and adjusted weight. Manual effect limits are stated in the Item description."
+      ],
+      "findingIds": [],
+      "priceComparison": {
+        "projectPrice": {
+          "value": 6,
+          "denomination": "gp"
+        },
+        "sourceUnitCount": 1,
+        "projectUnitCount": 1,
+        "result": "project-variation",
+        "policy": "approved custom economy"
+      },
+      "weightComparison": {
+        "projectWeightLb": 4.8,
+        "projectUnitCount": 1,
+        "result": "intentional-adjustment",
+        "rationale": "Complete tool set and case weigh 4.8 lb, 80% of the source weight. The stated custom-economy price covers the whole kit and its ordinary implements, not a workshop, raw material supply or completed job."
+      }
     },
     {
       "sourceId": "srd51.tools.cartographer-s-tools",
@@ -6857,11 +6920,32 @@
       "officialWeightLb": 6.0,
       "sourceWeightMeaning": "listed sale unit",
       "officialUnitCount": 1,
-      "canonicalIds": [],
+      "canonicalIds": [
+        "DT_ITEM_GS_TOOLS_CARTOGRAPHER"
+      ],
       "candidateIds": [],
-      "represented": false,
-      "status": "missing",
-      "notes": []
+      "represented": true,
+      "status": "complete",
+      "notes": [
+        "Milestone 2B: source unit represented; approved custom economy and adjusted weight. Manual effect limits are stated in the Item description."
+      ],
+      "findingIds": [],
+      "priceComparison": {
+        "projectPrice": {
+          "value": 12,
+          "denomination": "gp"
+        },
+        "sourceUnitCount": 1,
+        "projectUnitCount": 1,
+        "result": "project-variation",
+        "policy": "approved custom economy"
+      },
+      "weightComparison": {
+        "projectWeightLb": 4.8,
+        "projectUnitCount": 1,
+        "result": "intentional-adjustment",
+        "rationale": "Complete tool set and case weigh 4.8 lb, 80% of the source weight. The stated custom-economy price covers the whole kit and its ordinary implements, not a workshop, raw material supply or completed job."
+      }
     },
     {
       "sourceId": "srd51.tools.cobbler-s-tools",
@@ -6877,11 +6961,32 @@
       "officialWeightLb": 5.0,
       "sourceWeightMeaning": "listed sale unit",
       "officialUnitCount": 1,
-      "canonicalIds": [],
+      "canonicalIds": [
+        "DT_ITEM_GS_TOOLS_COBBLER"
+      ],
       "candidateIds": [],
-      "represented": false,
-      "status": "missing",
-      "notes": []
+      "represented": true,
+      "status": "complete",
+      "notes": [
+        "Milestone 2B: source unit represented; approved custom economy and adjusted weight. Manual effect limits are stated in the Item description."
+      ],
+      "findingIds": [],
+      "priceComparison": {
+        "projectPrice": {
+          "value": 4,
+          "denomination": "gp"
+        },
+        "sourceUnitCount": 1,
+        "projectUnitCount": 1,
+        "result": "project-variation",
+        "policy": "approved custom economy"
+      },
+      "weightComparison": {
+        "projectWeightLb": 4.0,
+        "projectUnitCount": 1,
+        "result": "intentional-adjustment",
+        "rationale": "Complete tool set and case weigh 4.0 lb, 80% of the source weight. The stated custom-economy price covers the whole kit and its ordinary implements, not a workshop, raw material supply or completed job."
+      }
     },
     {
       "sourceId": "srd51.tools.cook-s-utensils",
@@ -6897,11 +7002,32 @@
       "officialWeightLb": 8.0,
       "sourceWeightMeaning": "listed sale unit",
       "officialUnitCount": 1,
-      "canonicalIds": [],
+      "canonicalIds": [
+        "DT_ITEM_GS_TOOLS_COOK"
+      ],
       "candidateIds": [],
-      "represented": false,
-      "status": "missing",
-      "notes": []
+      "represented": true,
+      "status": "complete",
+      "notes": [
+        "Milestone 2B: source unit represented; approved custom economy and adjusted weight. Manual effect limits are stated in the Item description."
+      ],
+      "findingIds": [],
+      "priceComparison": {
+        "projectPrice": {
+          "value": 8,
+          "denomination": "sp"
+        },
+        "sourceUnitCount": 1,
+        "projectUnitCount": 1,
+        "result": "project-variation",
+        "policy": "approved custom economy"
+      },
+      "weightComparison": {
+        "projectWeightLb": 6.4,
+        "projectUnitCount": 1,
+        "result": "intentional-adjustment",
+        "rationale": "Complete tool set and case weigh 6.4 lb, 80% of the source weight. The stated custom-economy price covers the whole kit and its ordinary implements, not a workshop, raw material supply or completed job."
+      }
     },
     {
       "sourceId": "srd51.tools.glassblower-s-tools",
@@ -6917,11 +7043,32 @@
       "officialWeightLb": 5.0,
       "sourceWeightMeaning": "listed sale unit",
       "officialUnitCount": 1,
-      "canonicalIds": [],
+      "canonicalIds": [
+        "DT_ITEM_GS_TOOLS_GLASSBLOWER"
+      ],
       "candidateIds": [],
-      "represented": false,
-      "status": "missing",
-      "notes": []
+      "represented": true,
+      "status": "complete",
+      "notes": [
+        "Milestone 2B: source unit represented; approved custom economy and adjusted weight. Manual effect limits are stated in the Item description."
+      ],
+      "findingIds": [],
+      "priceComparison": {
+        "projectPrice": {
+          "value": 24,
+          "denomination": "gp"
+        },
+        "sourceUnitCount": 1,
+        "projectUnitCount": 1,
+        "result": "project-variation",
+        "policy": "approved custom economy"
+      },
+      "weightComparison": {
+        "projectWeightLb": 4.0,
+        "projectUnitCount": 1,
+        "result": "intentional-adjustment",
+        "rationale": "Complete tool set and case weigh 4.0 lb, 80% of the source weight. The stated custom-economy price covers the whole kit and its ordinary implements, not a workshop, raw material supply or completed job."
+      }
     },
     {
       "sourceId": "srd51.tools.jeweler-s-tools",
@@ -6937,11 +7084,32 @@
       "officialWeightLb": 2.0,
       "sourceWeightMeaning": "listed sale unit",
       "officialUnitCount": 1,
-      "canonicalIds": [],
+      "canonicalIds": [
+        "DT_ITEM_GS_TOOLS_JEWELER"
+      ],
       "candidateIds": [],
-      "represented": false,
-      "status": "missing",
-      "notes": []
+      "represented": true,
+      "status": "complete",
+      "notes": [
+        "Milestone 2B: source unit represented; approved custom economy and adjusted weight. Manual effect limits are stated in the Item description."
+      ],
+      "findingIds": [],
+      "priceComparison": {
+        "projectPrice": {
+          "value": 20,
+          "denomination": "gp"
+        },
+        "sourceUnitCount": 1,
+        "projectUnitCount": 1,
+        "result": "project-variation",
+        "policy": "approved custom economy"
+      },
+      "weightComparison": {
+        "projectWeightLb": 1.6,
+        "projectUnitCount": 1,
+        "result": "intentional-adjustment",
+        "rationale": "Complete tool set and case weigh 1.6 lb, 80% of the source weight. The stated custom-economy price covers the whole kit and its ordinary implements, not a workshop, raw material supply or completed job."
+      }
     },
     {
       "sourceId": "srd51.tools.leatherworker-s-tools",
@@ -6957,11 +7125,32 @@
       "officialWeightLb": 5.0,
       "sourceWeightMeaning": "listed sale unit",
       "officialUnitCount": 1,
-      "canonicalIds": [],
+      "canonicalIds": [
+        "DT_ITEM_GS_TOOLS_LEATHERWORKER"
+      ],
       "candidateIds": [],
-      "represented": false,
-      "status": "missing",
-      "notes": []
+      "represented": true,
+      "status": "complete",
+      "notes": [
+        "Milestone 2B: source unit represented; approved custom economy and adjusted weight. Manual effect limits are stated in the Item description."
+      ],
+      "findingIds": [],
+      "priceComparison": {
+        "projectPrice": {
+          "value": 4,
+          "denomination": "gp"
+        },
+        "sourceUnitCount": 1,
+        "projectUnitCount": 1,
+        "result": "project-variation",
+        "policy": "approved custom economy"
+      },
+      "weightComparison": {
+        "projectWeightLb": 4.0,
+        "projectUnitCount": 1,
+        "result": "intentional-adjustment",
+        "rationale": "Complete tool set and case weigh 4.0 lb, 80% of the source weight. The stated custom-economy price covers the whole kit and its ordinary implements, not a workshop, raw material supply or completed job."
+      }
     },
     {
       "sourceId": "srd51.tools.mason-s-tools",
@@ -6977,11 +7166,32 @@
       "officialWeightLb": 8.0,
       "sourceWeightMeaning": "listed sale unit",
       "officialUnitCount": 1,
-      "canonicalIds": [],
+      "canonicalIds": [
+        "DT_ITEM_GS_TOOLS_MASON"
+      ],
       "candidateIds": [],
-      "represented": false,
-      "status": "missing",
-      "notes": []
+      "represented": true,
+      "status": "complete",
+      "notes": [
+        "Milestone 2B: source unit represented; approved custom economy and adjusted weight. Manual effect limits are stated in the Item description."
+      ],
+      "findingIds": [],
+      "priceComparison": {
+        "projectPrice": {
+          "value": 8,
+          "denomination": "gp"
+        },
+        "sourceUnitCount": 1,
+        "projectUnitCount": 1,
+        "result": "project-variation",
+        "policy": "approved custom economy"
+      },
+      "weightComparison": {
+        "projectWeightLb": 6.4,
+        "projectUnitCount": 1,
+        "result": "intentional-adjustment",
+        "rationale": "Complete tool set and case weigh 6.4 lb, 80% of the source weight. The stated custom-economy price covers the whole kit and its ordinary implements, not a workshop, raw material supply or completed job."
+      }
     },
     {
       "sourceId": "srd51.tools.painter-s-supplies",
@@ -6997,11 +7207,32 @@
       "officialWeightLb": 5.0,
       "sourceWeightMeaning": "listed sale unit",
       "officialUnitCount": 1,
-      "canonicalIds": [],
+      "canonicalIds": [
+        "DT_ITEM_GS_TOOLS_PAINTER"
+      ],
       "candidateIds": [],
-      "represented": false,
-      "status": "missing",
-      "notes": []
+      "represented": true,
+      "status": "complete",
+      "notes": [
+        "Milestone 2B: source unit represented; approved custom economy and adjusted weight. Manual effect limits are stated in the Item description."
+      ],
+      "findingIds": [],
+      "priceComparison": {
+        "projectPrice": {
+          "value": 8,
+          "denomination": "gp"
+        },
+        "sourceUnitCount": 1,
+        "projectUnitCount": 1,
+        "result": "project-variation",
+        "policy": "approved custom economy"
+      },
+      "weightComparison": {
+        "projectWeightLb": 4.0,
+        "projectUnitCount": 1,
+        "result": "intentional-adjustment",
+        "rationale": "Complete tool set and case weigh 4.0 lb, 80% of the source weight. The stated custom-economy price covers the whole kit and its ordinary implements, not a workshop, raw material supply or completed job."
+      }
     },
     {
       "sourceId": "srd51.tools.potter-s-tools",
@@ -7017,11 +7248,32 @@
       "officialWeightLb": 3.0,
       "sourceWeightMeaning": "listed sale unit",
       "officialUnitCount": 1,
-      "canonicalIds": [],
+      "canonicalIds": [
+        "DT_ITEM_GS_TOOLS_POTTER"
+      ],
       "candidateIds": [],
-      "represented": false,
-      "status": "missing",
-      "notes": []
+      "represented": true,
+      "status": "complete",
+      "notes": [
+        "Milestone 2B: source unit represented; approved custom economy and adjusted weight. Manual effect limits are stated in the Item description."
+      ],
+      "findingIds": [],
+      "priceComparison": {
+        "projectPrice": {
+          "value": 8,
+          "denomination": "gp"
+        },
+        "sourceUnitCount": 1,
+        "projectUnitCount": 1,
+        "result": "project-variation",
+        "policy": "approved custom economy"
+      },
+      "weightComparison": {
+        "projectWeightLb": 2.4,
+        "projectUnitCount": 1,
+        "result": "intentional-adjustment",
+        "rationale": "Complete tool set and case weigh 2.4 lb, 80% of the source weight. The stated custom-economy price covers the whole kit and its ordinary implements, not a workshop, raw material supply or completed job."
+      }
     },
     {
       "sourceId": "srd51.tools.smith-s-tools",
@@ -7076,11 +7328,32 @@
       "officialWeightLb": 10.0,
       "sourceWeightMeaning": "listed sale unit",
       "officialUnitCount": 1,
-      "canonicalIds": [],
+      "canonicalIds": [
+        "DT_ITEM_GS_TOOLS_TINKER"
+      ],
       "candidateIds": [],
-      "represented": false,
-      "status": "missing",
-      "notes": []
+      "represented": true,
+      "status": "complete",
+      "notes": [
+        "Milestone 2B: source unit represented; approved custom economy and adjusted weight. Manual effect limits are stated in the Item description."
+      ],
+      "findingIds": [],
+      "priceComparison": {
+        "projectPrice": {
+          "value": 40,
+          "denomination": "gp"
+        },
+        "sourceUnitCount": 1,
+        "projectUnitCount": 1,
+        "result": "project-variation",
+        "policy": "approved custom economy"
+      },
+      "weightComparison": {
+        "projectWeightLb": 8.0,
+        "projectUnitCount": 1,
+        "result": "intentional-adjustment",
+        "rationale": "Complete tool set and case weigh 8.0 lb, 80% of the source weight. The stated custom-economy price covers the whole kit and its ordinary implements, not a workshop, raw material supply or completed job."
+      }
     },
     {
       "sourceId": "srd51.tools.weaver-s-tools",
@@ -7096,11 +7369,32 @@
       "officialWeightLb": 5.0,
       "sourceWeightMeaning": "listed sale unit",
       "officialUnitCount": 1,
-      "canonicalIds": [],
+      "canonicalIds": [
+        "DT_ITEM_GS_TOOLS_WEAVER"
+      ],
       "candidateIds": [],
-      "represented": false,
-      "status": "missing",
-      "notes": []
+      "represented": true,
+      "status": "complete",
+      "notes": [
+        "Milestone 2B: source unit represented; approved custom economy and adjusted weight. Manual effect limits are stated in the Item description."
+      ],
+      "findingIds": [],
+      "priceComparison": {
+        "projectPrice": {
+          "value": 8,
+          "denomination": "sp"
+        },
+        "sourceUnitCount": 1,
+        "projectUnitCount": 1,
+        "result": "project-variation",
+        "policy": "approved custom economy"
+      },
+      "weightComparison": {
+        "projectWeightLb": 4.0,
+        "projectUnitCount": 1,
+        "result": "intentional-adjustment",
+        "rationale": "Complete tool set and case weigh 4.0 lb, 80% of the source weight. The stated custom-economy price covers the whole kit and its ordinary implements, not a workshop, raw material supply or completed job."
+      }
     },
     {
       "sourceId": "srd51.tools.woodcarver-s-tools",
@@ -7116,11 +7410,32 @@
       "officialWeightLb": 5.0,
       "sourceWeightMeaning": "listed sale unit",
       "officialUnitCount": 1,
-      "canonicalIds": [],
+      "canonicalIds": [
+        "DT_ITEM_GS_TOOLS_WOODCARVER"
+      ],
       "candidateIds": [],
-      "represented": false,
-      "status": "missing",
-      "notes": []
+      "represented": true,
+      "status": "complete",
+      "notes": [
+        "Milestone 2B: source unit represented; approved custom economy and adjusted weight. Manual effect limits are stated in the Item description."
+      ],
+      "findingIds": [],
+      "priceComparison": {
+        "projectPrice": {
+          "value": 8,
+          "denomination": "sp"
+        },
+        "sourceUnitCount": 1,
+        "projectUnitCount": 1,
+        "result": "project-variation",
+        "policy": "approved custom economy"
+      },
+      "weightComparison": {
+        "projectWeightLb": 4.0,
+        "projectUnitCount": 1,
+        "result": "intentional-adjustment",
+        "rationale": "Complete tool set and case weigh 4.0 lb, 80% of the source weight. The stated custom-economy price covers the whole kit and its ordinary implements, not a workshop, raw material supply or completed job."
+      }
     },
     {
       "sourceId": "srd51.tools.disguise-kit",
@@ -7337,11 +7652,32 @@
       "officialWeightLb": 6.0,
       "sourceWeightMeaning": "listed sale unit",
       "officialUnitCount": 1,
-      "canonicalIds": [],
+      "canonicalIds": [
+        "DT_ITEM_GS_INSTRUMENT_BAGPIPES"
+      ],
       "candidateIds": [],
-      "represented": false,
-      "status": "missing",
-      "notes": []
+      "represented": true,
+      "status": "complete",
+      "notes": [
+        "Milestone 2B: source unit represented; approved custom economy and adjusted weight. Manual effect limits are stated in the Item description."
+      ],
+      "findingIds": [],
+      "priceComparison": {
+        "projectPrice": {
+          "value": 24,
+          "denomination": "gp"
+        },
+        "sourceUnitCount": 1,
+        "projectUnitCount": 1,
+        "result": "project-variation",
+        "policy": "approved custom economy"
+      },
+      "weightComparison": {
+        "projectWeightLb": 4.8,
+        "projectUnitCount": 1,
+        "result": "intentional-adjustment",
+        "rationale": "Complete instrument weighs 4.8 lb, 80% of the listed source weight. The custom-economy price covers one ordinary playable instrument, not instruction, a performance contract or magical construction."
+      }
     },
     {
       "sourceId": "srd51.tools.drum",
@@ -7357,11 +7693,32 @@
       "officialWeightLb": 3.0,
       "sourceWeightMeaning": "listed sale unit",
       "officialUnitCount": 1,
-      "canonicalIds": [],
+      "canonicalIds": [
+        "DT_ITEM_GS_INSTRUMENT_DRUM"
+      ],
       "candidateIds": [],
-      "represented": false,
-      "status": "missing",
-      "notes": []
+      "represented": true,
+      "status": "complete",
+      "notes": [
+        "Milestone 2B: source unit represented; approved custom economy and adjusted weight. Manual effect limits are stated in the Item description."
+      ],
+      "findingIds": [],
+      "priceComparison": {
+        "projectPrice": {
+          "value": 4,
+          "denomination": "gp"
+        },
+        "sourceUnitCount": 1,
+        "projectUnitCount": 1,
+        "result": "project-variation",
+        "policy": "approved custom economy"
+      },
+      "weightComparison": {
+        "projectWeightLb": 2.4,
+        "projectUnitCount": 1,
+        "result": "intentional-adjustment",
+        "rationale": "Complete instrument weighs 2.4 lb, 80% of the listed source weight. The custom-economy price covers one ordinary playable instrument, not instruction, a performance contract or magical construction."
+      }
     },
     {
       "sourceId": "srd51.tools.dulcimer",
@@ -7377,11 +7734,32 @@
       "officialWeightLb": 10.0,
       "sourceWeightMeaning": "listed sale unit",
       "officialUnitCount": 1,
-      "canonicalIds": [],
+      "canonicalIds": [
+        "DT_ITEM_GS_INSTRUMENT_DULCIMER"
+      ],
       "candidateIds": [],
-      "represented": false,
-      "status": "missing",
-      "notes": []
+      "represented": true,
+      "status": "complete",
+      "notes": [
+        "Milestone 2B: source unit represented; approved custom economy and adjusted weight. Manual effect limits are stated in the Item description."
+      ],
+      "findingIds": [],
+      "priceComparison": {
+        "projectPrice": {
+          "value": 20,
+          "denomination": "gp"
+        },
+        "sourceUnitCount": 1,
+        "projectUnitCount": 1,
+        "result": "project-variation",
+        "policy": "approved custom economy"
+      },
+      "weightComparison": {
+        "projectWeightLb": 8.0,
+        "projectUnitCount": 1,
+        "result": "intentional-adjustment",
+        "rationale": "Complete instrument weighs 8.0 lb, 80% of the listed source weight. The custom-economy price covers one ordinary playable instrument, not instruction, a performance contract or magical construction."
+      }
     },
     {
       "sourceId": "srd51.tools.flute",
@@ -7397,11 +7775,32 @@
       "officialWeightLb": 1.0,
       "sourceWeightMeaning": "listed sale unit",
       "officialUnitCount": 1,
-      "canonicalIds": [],
+      "canonicalIds": [
+        "DT_ITEM_GS_INSTRUMENT_FLUTE"
+      ],
       "candidateIds": [],
-      "represented": false,
-      "status": "missing",
-      "notes": []
+      "represented": true,
+      "status": "complete",
+      "notes": [
+        "Milestone 2B: source unit represented; approved custom economy and adjusted weight. Manual effect limits are stated in the Item description."
+      ],
+      "findingIds": [],
+      "priceComparison": {
+        "projectPrice": {
+          "value": 1,
+          "denomination": "gp"
+        },
+        "sourceUnitCount": 1,
+        "projectUnitCount": 1,
+        "result": "project-variation",
+        "policy": "approved custom economy"
+      },
+      "weightComparison": {
+        "projectWeightLb": 0.8,
+        "projectUnitCount": 1,
+        "result": "intentional-adjustment",
+        "rationale": "Complete instrument weighs 0.8 lb, 80% of the listed source weight. The custom-economy price covers one ordinary playable instrument, not instruction, a performance contract or magical construction."
+      }
     },
     {
       "sourceId": "srd51.tools.lute",
@@ -7417,11 +7816,32 @@
       "officialWeightLb": 2.0,
       "sourceWeightMeaning": "listed sale unit",
       "officialUnitCount": 1,
-      "canonicalIds": [],
+      "canonicalIds": [
+        "DT_ITEM_GS_INSTRUMENT_LUTE"
+      ],
       "candidateIds": [],
-      "represented": false,
-      "status": "missing",
-      "notes": []
+      "represented": true,
+      "status": "complete",
+      "notes": [
+        "Milestone 2B: source unit represented; approved custom economy and adjusted weight. Manual effect limits are stated in the Item description."
+      ],
+      "findingIds": [],
+      "priceComparison": {
+        "projectPrice": {
+          "value": 28,
+          "denomination": "gp"
+        },
+        "sourceUnitCount": 1,
+        "projectUnitCount": 1,
+        "result": "project-variation",
+        "policy": "approved custom economy"
+      },
+      "weightComparison": {
+        "projectWeightLb": 1.6,
+        "projectUnitCount": 1,
+        "result": "intentional-adjustment",
+        "rationale": "Complete instrument weighs 1.6 lb, 80% of the listed source weight. The custom-economy price covers one ordinary playable instrument, not instruction, a performance contract or magical construction."
+      }
     },
     {
       "sourceId": "srd51.tools.lyre",
@@ -7437,11 +7857,32 @@
       "officialWeightLb": 2.0,
       "sourceWeightMeaning": "listed sale unit",
       "officialUnitCount": 1,
-      "canonicalIds": [],
+      "canonicalIds": [
+        "DT_ITEM_GS_INSTRUMENT_LYRE"
+      ],
       "candidateIds": [],
-      "represented": false,
-      "status": "missing",
-      "notes": []
+      "represented": true,
+      "status": "complete",
+      "notes": [
+        "Milestone 2B: source unit represented; approved custom economy and adjusted weight. Manual effect limits are stated in the Item description."
+      ],
+      "findingIds": [],
+      "priceComparison": {
+        "projectPrice": {
+          "value": 24,
+          "denomination": "gp"
+        },
+        "sourceUnitCount": 1,
+        "projectUnitCount": 1,
+        "result": "project-variation",
+        "policy": "approved custom economy"
+      },
+      "weightComparison": {
+        "projectWeightLb": 1.6,
+        "projectUnitCount": 1,
+        "result": "intentional-adjustment",
+        "rationale": "Complete instrument weighs 1.6 lb, 80% of the listed source weight. The custom-economy price covers one ordinary playable instrument, not instruction, a performance contract or magical construction."
+      }
     },
     {
       "sourceId": "srd51.tools.horn",
@@ -7457,11 +7898,32 @@
       "officialWeightLb": 2.0,
       "sourceWeightMeaning": "listed sale unit",
       "officialUnitCount": 1,
-      "canonicalIds": [],
+      "canonicalIds": [
+        "DT_ITEM_GS_INSTRUMENT_HORN"
+      ],
       "candidateIds": [],
-      "represented": false,
-      "status": "missing",
-      "notes": []
+      "represented": true,
+      "status": "complete",
+      "notes": [
+        "Milestone 2B: source unit represented; approved custom economy and adjusted weight. Manual effect limits are stated in the Item description."
+      ],
+      "findingIds": [],
+      "priceComparison": {
+        "projectPrice": {
+          "value": 2,
+          "denomination": "gp"
+        },
+        "sourceUnitCount": 1,
+        "projectUnitCount": 1,
+        "result": "project-variation",
+        "policy": "approved custom economy"
+      },
+      "weightComparison": {
+        "projectWeightLb": 1.6,
+        "projectUnitCount": 1,
+        "result": "intentional-adjustment",
+        "rationale": "Complete instrument weighs 1.6 lb, 80% of the listed source weight. The custom-economy price covers one ordinary playable instrument, not instruction, a performance contract or magical construction."
+      }
     },
     {
       "sourceId": "srd51.tools.pan-flute",
@@ -7477,11 +7939,32 @@
       "officialWeightLb": 2.0,
       "sourceWeightMeaning": "listed sale unit",
       "officialUnitCount": 1,
-      "canonicalIds": [],
+      "canonicalIds": [
+        "DT_ITEM_GS_INSTRUMENT_PAN_FLUTE"
+      ],
       "candidateIds": [],
-      "represented": false,
-      "status": "missing",
-      "notes": []
+      "represented": true,
+      "status": "complete",
+      "notes": [
+        "Milestone 2B: source unit represented; approved custom economy and adjusted weight. Manual effect limits are stated in the Item description."
+      ],
+      "findingIds": [],
+      "priceComparison": {
+        "projectPrice": {
+          "value": 9,
+          "denomination": "gp"
+        },
+        "sourceUnitCount": 1,
+        "projectUnitCount": 1,
+        "result": "project-variation",
+        "policy": "approved custom economy"
+      },
+      "weightComparison": {
+        "projectWeightLb": 1.6,
+        "projectUnitCount": 1,
+        "result": "intentional-adjustment",
+        "rationale": "Complete instrument weighs 1.6 lb, 80% of the listed source weight. The custom-economy price covers one ordinary playable instrument, not instruction, a performance contract or magical construction."
+      }
     },
     {
       "sourceId": "srd51.tools.shawm",
@@ -7497,11 +7980,32 @@
       "officialWeightLb": 1.0,
       "sourceWeightMeaning": "listed sale unit",
       "officialUnitCount": 1,
-      "canonicalIds": [],
+      "canonicalIds": [
+        "DT_ITEM_GS_INSTRUMENT_SHAWM"
+      ],
       "candidateIds": [],
-      "represented": false,
-      "status": "missing",
-      "notes": []
+      "represented": true,
+      "status": "complete",
+      "notes": [
+        "Milestone 2B: source unit represented; approved custom economy and adjusted weight. Manual effect limits are stated in the Item description."
+      ],
+      "findingIds": [],
+      "priceComparison": {
+        "projectPrice": {
+          "value": 1,
+          "denomination": "gp"
+        },
+        "sourceUnitCount": 1,
+        "projectUnitCount": 1,
+        "result": "project-variation",
+        "policy": "approved custom economy"
+      },
+      "weightComparison": {
+        "projectWeightLb": 0.8,
+        "projectUnitCount": 1,
+        "result": "intentional-adjustment",
+        "rationale": "Complete instrument weighs 0.8 lb, 80% of the listed source weight. The custom-economy price covers one ordinary playable instrument, not instruction, a performance contract or magical construction."
+      }
     },
     {
       "sourceId": "srd51.tools.viol",
@@ -7517,11 +8021,32 @@
       "officialWeightLb": 1.0,
       "sourceWeightMeaning": "listed sale unit",
       "officialUnitCount": 1,
-      "canonicalIds": [],
+      "canonicalIds": [
+        "DT_ITEM_GS_INSTRUMENT_VIOL"
+      ],
       "candidateIds": [],
-      "represented": false,
-      "status": "missing",
-      "notes": []
+      "represented": true,
+      "status": "complete",
+      "notes": [
+        "Milestone 2B: source unit represented; approved custom economy and adjusted weight. Manual effect limits are stated in the Item description."
+      ],
+      "findingIds": [],
+      "priceComparison": {
+        "projectPrice": {
+          "value": 24,
+          "denomination": "gp"
+        },
+        "sourceUnitCount": 1,
+        "projectUnitCount": 1,
+        "result": "project-variation",
+        "policy": "approved custom economy"
+      },
+      "weightComparison": {
+        "projectWeightLb": 0.8,
+        "projectUnitCount": 1,
+        "result": "intentional-adjustment",
+        "rationale": "Complete instrument weighs 0.8 lb, 80% of the listed source weight. The custom-economy price covers one ordinary playable instrument, not instruction, a performance contract or magical construction."
+      }
     },
     {
       "sourceId": "srd51.tools.navigator-s-tools",

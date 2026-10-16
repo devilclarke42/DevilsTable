@@ -1007,6 +1007,70 @@
             {
               "itemId": "DT_ITEM_GS_MAGNIFYING_GLASS",
               "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_TOOLS_BREWER",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_TOOLS_CALLIGRAPHER",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_TOOLS_CARTOGRAPHER",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_TOOLS_GLASSBLOWER",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_TOOLS_JEWELER",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_TOOLS_MASON",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_TOOLS_PAINTER",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_TOOLS_POTTER",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_TOOLS_TINKER",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_INSTRUMENT_BAGPIPES",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_INSTRUMENT_DULCIMER",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_INSTRUMENT_LUTE",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_INSTRUMENT_LYRE",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_INSTRUMENT_PAN_FLUTE",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_INSTRUMENT_SHAWM",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_INSTRUMENT_VIOL",
+              "tier": "often"
             }
           ],
           "merchantNotes": {
@@ -1051,7 +1115,18 @@
             "DT_ITEM_GS_HUNTING_TRAP",
             "DT_ITEM_GS_MAGNIFYING_GLASS",
             "DT_ITEM_GS_POT_IRON_GALLON",
-            "DT_ITEM_GS_RAM_PORTABLE"
+            "DT_ITEM_GS_RAM_PORTABLE",
+            "DT_ITEM_GS_TOOLS_BREWER",
+            "DT_ITEM_GS_TOOLS_COOK",
+            "DT_ITEM_GS_TOOLS_GLASSBLOWER",
+            "DT_ITEM_GS_TOOLS_JEWELER",
+            "DT_ITEM_GS_TOOLS_MASON",
+            "DT_ITEM_GS_TOOLS_TINKER",
+            "DT_ITEM_GS_INSTRUMENT_BAGPIPES",
+            "DT_ITEM_GS_INSTRUMENT_DULCIMER",
+            "DT_ITEM_GS_INSTRUMENT_LUTE",
+            "DT_ITEM_GS_INSTRUMENT_LYRE",
+            "DT_ITEM_GS_INSTRUMENT_VIOL"
           ],
           "overrides": [
             {

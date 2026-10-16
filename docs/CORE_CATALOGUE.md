@@ -87,3 +87,37 @@ Healer’s Kit is one ten-charge Item. Its activity spends a charge; the GM mark
 | Portable Ram | Ram, portable: 4 gp; 35 lb | 3 gp / 25 lb |
 | Signet Ring | Signet ring: 5 gp; weight not listed | 4 gp / 0.02 lb |
 | Glass Vial, 4 fl oz | Vial: 1 gp; weight not listed | 1 sp / 0.08 lb |
+
+## Artisan tools and musical instruments
+
+Fifteen additional artisan sets and all ten audited musical instruments now use native tool Items. Their exact `type.value`, `baseItem` and default ability were checked against the pinned system source. Possession grants no proficiency or guaranteed work/performance result; crafting inputs, workshops, completed goods and instruction remain separate. Musical instruments may serve as bard focuses under the 2014 class rules.
+
+| Tool / instrument | SRD price / weight | Project price / weight |
+| --- | --- | --- |
+| Brewer's Supplies | Brewer’s supplies: 20 gp; 9 lb | 15 gp / 7.2 lb |
+| Calligrapher's Supplies | Calligrapher’s supplies: 10 gp; 5 lb | 8 gp / 4.0 lb |
+| Carpenter's Tools | Carpenter’s tools: 8 gp; 6 lb | 6 gp / 4.8 lb |
+| Cartographer's Tools | Cartographer’s tools: 15 gp; 6 lb | 12 gp / 4.8 lb |
+| Cobbler's Tools | Cobbler’s tools: 5 gp; 5 lb | 4 gp / 4.0 lb |
+| Cook's Utensils | Cook’s utensils: 1 gp; 8 lb | 8 sp / 6.4 lb |
+| Glassblower's Tools | Glassblower’s tools: 30 gp; 5 lb | 24 gp / 4.0 lb |
+| Jeweler's Tools | Jeweler’s tools: 25 gp; 2 lb | 20 gp / 1.6 lb |
+| Leatherworker's Tools | Leatherworker’s tools: 5 gp; 5 lb | 4 gp / 4.0 lb |
+| Mason's Tools | Mason’s tools: 10 gp; 8 lb | 8 gp / 6.4 lb |
+| Painter's Supplies | Painter’s supplies: 10 gp; 5 lb | 8 gp / 4.0 lb |
+| Potter's Tools | Potter’s tools: 10 gp; 3 lb | 8 gp / 2.4 lb |
+| Tinker's Tools | Tinker’s tools: 50 gp; 10 lb | 40 gp / 8.0 lb |
+| Weaver's Tools | Weaver’s tools: 1 gp; 5 lb | 8 sp / 4.0 lb |
+| Woodcarver's Tools | Woodcarver’s tools: 1 gp; 5 lb | 8 sp / 4.0 lb |
+| Bagpipes | Bagpipes: 30 gp; 6 lb | 24 gp / 4.8 lb |
+| Drum | Drum: 6 gp; 3 lb | 4 gp / 2.4 lb |
+| Dulcimer | Dulcimer: 25 gp; 10 lb | 20 gp / 8.0 lb |
+| Flute | Flute: 2 gp; 1 lb | 1 gp / 0.8 lb |
+| Lute | Lute: 35 gp; 2 lb | 28 gp / 1.6 lb |
+| Lyre | Lyre: 30 gp; 2 lb | 24 gp / 1.6 lb |
+| Horn | Horn: 3 gp; 2 lb | 2 gp / 1.6 lb |
+| Pan Flute | Pan flute: 12 gp; 2 lb | 9 gp / 1.6 lb |
+| Shawm | Shawm: 2 gp; 1 lb | 1 gp / 0.8 lb |
+| Viol | Viol: 30 gp; 1 lb | 24 gp / 0.8 lb |
+
+All 25 are optional stock. Six everyday artisan sets and three common instruments use Often stock; sixteen specialists use Rarely in the base profile. City profiles may draw all 25 from Often pools, without making every entry guaranteed. Original gaming-set types remain deferred for migration review.

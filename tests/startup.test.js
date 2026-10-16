@@ -70,7 +70,7 @@ test("startup registers a restricted V2 menu and a read-only-default API without
   const app = new App();
   const initial = await app._prepareContext({});
   assert.equal(initial.shop.id, "general-store");
-  assert.equal(initial.count, 186);
+  assert.equal(initial.count, 211);
   assert.equal(initial.categories.length, 13);
   assert.equal(initial.blocked, false);
   await App.DEFAULT_OPTIONS.actions.selectCategory.call(app, null, { dataset: { category: "fire-lighting" } });
@@ -94,7 +94,7 @@ test("startup registers a restricted V2 menu and a read-only-default API without
   assert.equal((await stockApp._prepareContext({})).profiles[0].name, "Merchant Wagon");
   const wagonContext = await stockApp._prepareContext({});
   assert.match(wagonContext.scopeLabel, /^Merchant Wagon \/ /);
-  assert.equal(wagonContext.categories.reduce((sum, category) => sum + category.count, 0), 166);
+  assert.equal(wagonContext.categories.reduce((sum, category) => sum + category.count, 0), 180);
   assert.equal((await stockApp._prepareContext({})).tableCount, 4);
   await StockApp.DEFAULT_OPTIONS.actions.selectProfile.call(stockApp, null, { dataset: { profile: "" } });
   assert.equal((await stockApp._prepareContext({})).tableCount, 16);

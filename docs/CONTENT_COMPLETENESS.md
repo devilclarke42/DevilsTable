@@ -49,3 +49,7 @@ Implemented change: permit the supported native trinket equipment subtype and it
 - **Padlocks, potion rarity and original-source branding:** retain existing canonical records. Padlock consolidation and rarity need separate migration/data-contract decisions; source title cleanup is not mixed into the first expansion batch.
 
 The adventuring/spellcasting batch now adds 34 Items (482 total), covering 167/241 source units (69.29%). Its validation gate passes 430 tests. Tools/instruments and commodities follow; pack fulfilment and livestock remain documented exceptions rather than fake carried goods.
+
+## Tools and instruments batch
+
+The 25 missing artisan/instrument entries bring totals to 507 Items, 40 services and 192/241 source units represented (79.67%). All 35 audited tool entries are physically represented; 33 use native tool mappings, while the two existing gaming-set type changes remain deferred. The batch passes 433 tests. All 440 released source records and all 448 pre-extension generated records remain unchanged.
