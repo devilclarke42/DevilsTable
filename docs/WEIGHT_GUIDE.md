@@ -121,3 +121,7 @@ alongside this guide when shipping an adjustment.
 ## Core equipment source comparisons
 
 New core equipment records retain official reference weights in `source.reference` and explain complete-unit project adjustments in `weight.notes`. See [Core Catalogue](CORE_CATALOGUE.md). Existing weights are preserved during expansion.
+
+## Limited-use kits
+
+A limited-use kit is one purchased unit with several native charges. Price and carried weight describe the full kit, not one charge. Expending a charge does not progressively reduce authored weight; native consumption removes the exhausted kit and resets the next stacked kit.

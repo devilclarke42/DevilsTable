@@ -1,0 +1,1797 @@
+{
+  "purpose": "Protect generated output for all 448 Items before approved generic use/focus extensions.",
+  "items": [
+    {
+      "id": "DT_ITEM_GS_BACKPACK",
+      "sha256": "0e003f300f1016aa13035d16e8cacbcc6444c7584677c754a6053f0a52aefcf5"
+    },
+    {
+      "id": "DT_ITEM_GS_POUCH",
+      "sha256": "a5e9f0b9a7804c05a7249a7005f51dabe1780ff3c7dcdefa4c1a57bbcc9dddb4"
+    },
+    {
+      "id": "DT_ITEM_GS_SACK",
+      "sha256": "c878a4206ccd97e736e65766c6d166ecba25daac7764aef626dcd2ce4d0452b1"
+    },
+    {
+      "id": "DT_ITEM_GS_CHEST",
+      "sha256": "b39142e10c9638b39140f8c9a6ec8b03e6bc02e5546388a250f2d651247440c7"
+    },
+    {
+      "id": "DT_ITEM_GS_LOCKBOX",
+      "sha256": "1ede1fabed5bb28581bc821f5155420e5dcd0efdd2d408c0a0a14bf5775b7bee"
+    },
+    {
+      "id": "DT_ITEM_GS_BARREL",
+      "sha256": "982348547c1fc5e0036fa8e62d0530a9423886752cea4afa85eca2a3eb9e8d8d"
+    },
+    {
+      "id": "DT_ITEM_GS_CRATE",
+      "sha256": "1281e207dbe772c67dfeec378335060da54b54e8489737012d4e3240fb8b11de"
+    },
+    {
+      "id": "DT_ITEM_GS_BASKET",
+      "sha256": "cf2e9b4e07cc26bd8c9c305a4c7bd017329ab66c3dd997ba628cc32506755a0a"
+    },
+    {
+      "id": "DT_ITEM_GS_BOTTLE",
+      "sha256": "dd0e25ce30e2aa518b28a3da93e9f3dcb1278ca73f35466ff23d7b06f59195e5"
+    },
+    {
+      "id": "DT_ITEM_GS_FLASK",
+      "sha256": "07e41916597224d706dc7fec8aeb39b9b56beabe20f4681e84c59ddf9004d5e6"
+    },
+    {
+      "id": "DT_ITEM_GS_WATERSKIN",
+      "sha256": "c1889e83ea66672dcec1f31e34f95717890b683bb289b83961344e3198dee5b0"
+    },
+    {
+      "id": "DT_ITEM_GS_JUG_CLAY",
+      "sha256": "577f3af8fb2ba0e4a83d794cb38ab6ab500f86b523e903e2229d7c1281f9e9d2"
+    },
+    {
+      "id": "DT_ITEM_GS_JAR_CERAMIC",
+      "sha256": "c1f2f4ed2fec9a76e8a6c4bf76de0e3035e574e5015e246bad639e8394e472bc"
+    },
+    {
+      "id": "DT_ITEM_GS_TORCH",
+      "sha256": "28cd01e74b8f65c1a7e02593076eb6f65595312cf81fa755b6adc2f82d5e952d"
+    },
+    {
+      "id": "DT_ITEM_GS_CANDLE",
+      "sha256": "e2584cbfe2fa9a9877a818f6b859552b334137c6ee1c7c8fc07fe203ade694d8"
+    },
+    {
+      "id": "DT_ITEM_GS_CANDLE_BEESWAX",
+      "sha256": "e9a4a5c0b170b9b36cda1063a2ef9328fbc0ed563737129cefe55457a37a300d"
+    },
+    {
+      "id": "DT_ITEM_GS_CANDLE_TALLOW",
+      "sha256": "b679f566c4c43e2718b6bb291fa16751b6edfd4b57391a46f7c4a61aae1fe73d"
+    },
+    {
+      "id": "DT_ITEM_GS_LANTERN",
+      "sha256": "b5960997d749b2fea5ecfd945efad76a065ec9a4ff12399aef4976f0ee7355ae"
+    },
+    {
+      "id": "DT_ITEM_GS_LANTERN_HOODED",
+      "sha256": "c982c0e25ed741901fb0787b4448a5d2c6a0b33c66e6c26770c071c256f33dcc"
+    },
+    {
+      "id": "DT_ITEM_GS_LANTERN_BULLSEYE",
+      "sha256": "e62d1b0c2bf6cc69257f999da52b10c69e9b7a8a963dcb3bc6db99530c209ad2"
+    },
+    {
+      "id": "DT_ITEM_GS_LAMP",
+      "sha256": "6722d173c3efdef1201e4ac35445038babf9ca152d6db9da75329b7b9759b464"
+    },
+    {
+      "id": "DT_ITEM_GS_OIL_LAMP",
+      "sha256": "6a8da1ee2bf47a00e0d2ae09f1c3b8a3ca10a3bd7a7633c30b5564350fb34dc0"
+    },
+    {
+      "id": "DT_ITEM_GS_TINDERBOX",
+      "sha256": "ce1e5d366a70a62e67e2a443e31f6e162814d353897fb3f19d4fec0c06d44270"
+    },
+    {
+      "id": "DT_ITEM_GS_FLINT_STEEL",
+      "sha256": "2722eefed9c2a6394633b4ad5e3a748d726b5af7a3071ee65cd306c3feb5f8da"
+    },
+    {
+      "id": "DT_ITEM_GS_CHARCOAL",
+      "sha256": "9e47ebd4a4f12df1e421cc2a0e45237d4bd409408924f70392ad539ab7af9e95"
+    },
+    {
+      "id": "DT_ITEM_GS_KINDLING",
+      "sha256": "211d577402b6cd0181b4a70fbcdaff085d7d27399efb3dbc363e6c5264ce7b4f"
+    },
+    {
+      "id": "DT_ITEM_GS_WICK_LAMP",
+      "sha256": "dc7cece0ea6849de7b533620deaef7b96ce31cab3e1850acf62dec4db0440342"
+    },
+    {
+      "id": "DT_ITEM_GS_CANDLE_HOLDER",
+      "sha256": "72d22bff248e794e5f397118d2f0f9ac7458f4154bf71e056fdadc2a7af27d1a"
+    },
+    {
+      "id": "DT_ITEM_GS_CANDLE_SNUFFER",
+      "sha256": "c59550dab3224ceedb225565197a0cfffead32dcfdd202470991adff646dc767"
+    },
+    {
+      "id": "DT_ITEM_GS_FIREWOOD",
+      "sha256": "aeb8d4a15c43b7dced23e00af3c090a5f4b4c1d448e222750a961f7500ae858d"
+    },
+    {
+      "id": "DT_ITEM_GS_ROPE_HEMP",
+      "sha256": "6984625f9fc6dac0e6132f7d230a6ecd6320a3a6c4c1dfd6e7e02452d4ee9acb"
+    },
+    {
+      "id": "DT_ITEM_GS_ROPE_SILK",
+      "sha256": "775f478d7d123cacf6ded562097fa5775b9baf931967e145b8f830f22eacac32"
+    },
+    {
+      "id": "DT_ITEM_GS_TWINE",
+      "sha256": "ea9c4ea70a74cec903b9cb6f4ecd6cd4c0664d47bcd501c2ae1921396f2587bb"
+    },
+    {
+      "id": "DT_ITEM_GS_GRAPPLING_HOOK",
+      "sha256": "c1b1c8f8127911c6469acf157c18f77171fdd2fb7a8586a40f12600eb21ece9a"
+    },
+    {
+      "id": "DT_ITEM_GS_PITONS",
+      "sha256": "4c19f417c598132d8761279a70afc1965b02733ccb5a4f5e754b23579e2de241"
+    },
+    {
+      "id": "DT_ITEM_GS_CLIMBERS_KIT",
+      "sha256": "fb4b233214fd05f65d96718eba998d793631cb99dfc38ffa2159557e90bad88f"
+    },
+    {
+      "id": "DT_ITEM_GS_BLOCK_TACKLE",
+      "sha256": "10fe17fce4888aca972732940c68164101ec6e55adcc5eea281d42e16ec63536"
+    },
+    {
+      "id": "DT_ITEM_GS_CHAIN",
+      "sha256": "30244c3f5df8e52716f2e2735ede22bf3cbf0fca7e17f0df38079427a2da1885"
+    },
+    {
+      "id": "DT_ITEM_GS_LADDER_ROPE",
+      "sha256": "3c7b100f70cceed839b142771859c34e143b85cb426b434a3407e0997f334626"
+    },
+    {
+      "id": "DT_ITEM_GS_PIN_BELAYING",
+      "sha256": "29c5408309bedd7ddb3a872c48492c49c9b6d450fbb613661eb792350bac736b"
+    },
+    {
+      "id": "DT_ITEM_GS_BLANKET",
+      "sha256": "37d3412078a7d986222d93c471c85443ed8c7dd36368e00ab725bbcca0857eb4"
+    },
+    {
+      "id": "DT_ITEM_GS_BEDROLL",
+      "sha256": "ce3effa435707aff6ebc3ec1f22f6ab14bb6b7ac06824fa21bfeb5c32cfec579"
+    },
+    {
+      "id": "DT_ITEM_GS_TENT",
+      "sha256": "2e9f89ad62afab716c8fe2714b9bf86e177ad28db7906099b75f6bf63dafbb23"
+    },
+    {
+      "id": "DT_ITEM_GS_BEDROLL_STRAP",
+      "sha256": "1733a3c46fd326e9cd850b167990f60f2b8e41f98d3cb13281fdc2f6a02af47d"
+    },
+    {
+      "id": "DT_ITEM_GS_MESS_KIT",
+      "sha256": "5f4636eee98da52796895b27ab5eb0788d87c766eecf9287dad31e90082c201b"
+    },
+    {
+      "id": "DT_ITEM_GS_POT_COOKING",
+      "sha256": "b30d0d4d7fb6ef543aa8f83ece4a216d83ba10623078c0523daba6020b69c51a"
+    },
+    {
+      "id": "DT_ITEM_GS_KETTLE_CAMP",
+      "sha256": "2b0635513974e354c0b17136cdd113f687e7b92b6ccb6ea4d5294d5f8714e1d5"
+    },
+    {
+      "id": "DT_ITEM_GS_CUP",
+      "sha256": "a4282122b5e2c126ba6f021d4ce06e04db5d86d9ff2eb4e91b40b05575ccdd70"
+    },
+    {
+      "id": "DT_ITEM_GS_BOWL",
+      "sha256": "89966195c295a36b921441f0b6f088cc569b803c4fbe7ae2ce8db204e51c6f20"
+    },
+    {
+      "id": "DT_ITEM_GS_SPOON",
+      "sha256": "1b6488aea7b2e1f2ddd3d162560acd0b27081ef64063cb51f2d3082dd7744a3b"
+    },
+    {
+      "id": "DT_ITEM_GS_PLATE_WOOD",
+      "sha256": "bc36169f783d05a19027240e260a1db24d98df3365a731a7f62a40857f6b4fba"
+    },
+    {
+      "id": "DT_ITEM_GS_GROUNDSHEET",
+      "sha256": "e1307be3b073e570068cf1efe07a060829302c66d6e3d75cc957918261c01ce8"
+    },
+    {
+      "id": "DT_ITEM_GS_TARPAULIN",
+      "sha256": "c84cb914d009632f803917a3159dd64e915d8c03fcbe9c99f05dd7336b55b9fe"
+    },
+    {
+      "id": "DT_ITEM_GS_HAMMOCK",
+      "sha256": "b39d6c843e8d5e56bcd588c880322ffb6f3178ea469e0c7c8d99a21fcec7d4d6"
+    },
+    {
+      "id": "DT_ITEM_GS_PEGS_TENT",
+      "sha256": "487d65b25db49c069b3198bada308b27fd6d868f6ce355808420d15a18d42e74"
+    },
+    {
+      "id": "DT_ITEM_GS_TRIPOD_COOKING",
+      "sha256": "e4ee9c84bdecfbe34b3752a9539205dbb98658f378a30b20ba9cd379457637fc"
+    },
+    {
+      "id": "DT_ITEM_GS_SKILLET",
+      "sha256": "89106525f55f4578b121ffc34889f913f3a48a3c0653262b94a21c86cbfae8ed"
+    },
+    {
+      "id": "DT_ITEM_GS_LADLE",
+      "sha256": "1ab051b2974433385cd70e3f0e84dd70c5c424e73019c5c18410f86608ee40e1"
+    },
+    {
+      "id": "DT_ITEM_GS_BOARD_CHOPPING",
+      "sha256": "e418069fcf9866d5ac0bd065f654d5e25bcb3e661310b0abed9cc3a75e39d911"
+    },
+    {
+      "id": "DT_ITEM_GS_RATIONS_TRAVEL",
+      "sha256": "0426e268f63e087564d8fdaa632a7878585801588c526341e2de9aa3f4433e3b"
+    },
+    {
+      "id": "DT_ITEM_GS_TACKLE_FISHING",
+      "sha256": "8830c50320439bda9f87d46cc563b059fa9431dc0cd6b43c4748c134c2c32344"
+    },
+    {
+      "id": "DT_ITEM_GS_PARCHMENT",
+      "sha256": "953e25aed4c1fb30d90f9028144c6ada8c4826ec825e3bf5e142b2fda05dd15b"
+    },
+    {
+      "id": "DT_ITEM_GS_PAPER",
+      "sha256": "919d07cd029aa5cf15ea15c674d80b08515bdaf8ac7e485807a9756b90cc1281"
+    },
+    {
+      "id": "DT_ITEM_GS_INK",
+      "sha256": "b6397a5e5532416f4113e8928f8128043407fcc33422a5a07239acd00b1ee010"
+    },
+    {
+      "id": "DT_ITEM_GS_INK_PEN",
+      "sha256": "3a7a4fe988b78850516ec28d654f714cdc2806ccf62b04dcc4cf2d8e444a86f9"
+    },
+    {
+      "id": "DT_ITEM_GS_CHALK",
+      "sha256": "5d7d99ca296b7ff252dc1d71fbdcb3857ef493f836404fa31d5678bb03f763a0"
+    },
+    {
+      "id": "DT_ITEM_GS_WAX",
+      "sha256": "1749da0377a5a47e0b3a4dc5db0a16f0b64e629ccd5d3842075279896e41e533"
+    },
+    {
+      "id": "DT_ITEM_GS_SEALING_STAMP",
+      "sha256": "f2f3a75f976f12dbdfb3bdbca0a575e4744239b1835d3b1b2148efa10398491c"
+    },
+    {
+      "id": "DT_ITEM_GS_BOOK_BLANK",
+      "sha256": "2d51f7f055dd9878def7d4cdcf430118af587716731debff240f812c82e0f181"
+    },
+    {
+      "id": "DT_ITEM_GS_LEDGER",
+      "sha256": "83383370cd98a20b3d46b4943fd0bdd344b4ffb01fb7cc711660bfbefe85d02e"
+    },
+    {
+      "id": "DT_ITEM_GS_TABLET_WAX",
+      "sha256": "442afea720f3cd27fb13e7a16f3a07266d4b2ab521ec78dec7957be2e9e44176"
+    },
+    {
+      "id": "DT_ITEM_GS_SLATE",
+      "sha256": "0f9133d65ee2a65c65fdee1c561ffbc7e53b1ef43f3c13f2742bf8a1f30cb96e"
+    },
+    {
+      "id": "DT_ITEM_GS_SAND_BLOTTING",
+      "sha256": "0fefaa18733418f5ddb2676340041bed7f87c589cf2474a234193228c9375642"
+    },
+    {
+      "id": "DT_ITEM_GS_CASE_DOCUMENT",
+      "sha256": "fee4eb92b1f341f8ac98de0a70f9d9626075cbe5ab618bd38fd6c7157f6edeba"
+    },
+    {
+      "id": "DT_ITEM_GS_SOAP",
+      "sha256": "8b5f1cafaa8967822a4bee32835c8e7c8eb8e1815e29689e5a835323dbc4d7d5"
+    },
+    {
+      "id": "DT_ITEM_GS_NEEDLE",
+      "sha256": "c70539bd77922d5293a58967aedc2e12e8ee64c9cbbda0377f270c97ecff7f17"
+    },
+    {
+      "id": "DT_ITEM_GS_THREAD",
+      "sha256": "cd484f78e1bb9d0b9da6a9b8c911bbcc14aa363ca2e8266e66e9124c6783027b"
+    },
+    {
+      "id": "DT_ITEM_GS_SEWING_KIT",
+      "sha256": "a6d0a22cb12c6c7a35750399de4e9b30d09f6d0bbfc01631730486382d7e6f63"
+    },
+    {
+      "id": "DT_ITEM_GS_BROOM",
+      "sha256": "19be2552fb75cb55326fa63ab8b55602e35c763a1cd413dd58974a8509a9e7c0"
+    },
+    {
+      "id": "DT_ITEM_GS_MOP",
+      "sha256": "9fbc2041cf7c6e064b806c296d51bd7b6c835be308852e5aacd83d4254fc19ec"
+    },
+    {
+      "id": "DT_ITEM_GS_BUCKET_WASH",
+      "sha256": "626baf8b664eaa2ee33082f0c24a6e292d38bd9e9b18c71e0794312c1e75db72"
+    },
+    {
+      "id": "DT_ITEM_GS_BOARD_WASH",
+      "sha256": "c01f6497badc887d8698bdcd4d4d44727be8673ba92e2655a314ae9d16017212"
+    },
+    {
+      "id": "DT_ITEM_GS_CLOTHES_LINE",
+      "sha256": "8c65a6e4eae5716464fb9b5c87892b4846b8c13c400ae701764e11bce5e1a82c"
+    },
+    {
+      "id": "DT_ITEM_GS_RAGS_CLOTH",
+      "sha256": "568c0c40f1dd404368a6948040bf7995027575d502ab1bc6dcfd0db60639d6d2"
+    },
+    {
+      "id": "DT_ITEM_GS_TOWEL_HAND",
+      "sha256": "a24965b8a4dbba3934ab809d11919439650917bc19d599651cd4426679e2c7a1"
+    },
+    {
+      "id": "DT_ITEM_GS_PEGS_CLOTHES",
+      "sha256": "5866e63f49219a5a64d266eee2893a9cc6f39ac4422dc361479f2074e2f75adf"
+    },
+    {
+      "id": "DT_ITEM_GS_BUTTONS_WOOD",
+      "sha256": "590e9c0ea3e3652ea43f56a7e4b098f8b07cc92dd3e74b6827ae7877a390af0a"
+    },
+    {
+      "id": "DT_ITEM_GS_THIMBLE",
+      "sha256": "a5769d63c19021d0d8c8dadb2e51ea979d7eb657d4642e94b003e6e3edb8002d"
+    },
+    {
+      "id": "DT_ITEM_GS_COMB",
+      "sha256": "6d2cdd022a7913a201161f69f96bc88604bcae7a28e31f893f373c26dcff2343"
+    },
+    {
+      "id": "DT_ITEM_GS_HINGES_DOOR",
+      "sha256": "583d3b8cc6d40d723a637ac493078eca3f5d097abdb5e22bdacbdcf65be4c31c"
+    },
+    {
+      "id": "DT_ITEM_GS_PADLOCK",
+      "sha256": "9d3c9369b084d8af358f8b3f03689a830c0694348d8b14f7c6b76dd1f0e68153"
+    },
+    {
+      "id": "DT_ITEM_GS_MORTAR_PESTLE",
+      "sha256": "7d89550cd5a3a8fd2a5c6fee5443a02c93f30e3f6a140f69a681022bae1f1c44"
+    },
+    {
+      "id": "DT_ITEM_GS_FEED_HORSE",
+      "sha256": "a230252bae7b07908b5ef1ca81e4585380a2e835de99258a6a6b2faf5ab8a8b7"
+    },
+    {
+      "id": "DT_ITEM_GS_BAG_FEED",
+      "sha256": "18b35ffdedb4eff5e9232171cebd83dfcb1f0d87812c9d369cb2626ef592264a"
+    },
+    {
+      "id": "DT_ITEM_GS_BRUSH",
+      "sha256": "ead9966a594de25749367b2549bfdd14f77cb38faa2a8104f87e2a3bed9fb049"
+    },
+    {
+      "id": "DT_ITEM_GS_CURRY_COMB",
+      "sha256": "c5012c7e30a63af474b57bb1c79aadf7dfc1604b7be4a5d66a214163e88980ba"
+    },
+    {
+      "id": "DT_ITEM_GS_HORSESHOES",
+      "sha256": "297eae6aad8b36b36f7466a39dc4ae01d64d2922bcb6ec9ba95fcdf926469b5a"
+    },
+    {
+      "id": "DT_ITEM_GS_TACK_REPAIR_KIT",
+      "sha256": "2fd00c64e982dd25b5630b9bf82b4b49b57ccd75d8e485cb8173c1a091015b75"
+    },
+    {
+      "id": "DT_ITEM_GS_HALTER",
+      "sha256": "5b00adfeba8ebce7bb357caaa59f9b16c0ab007154f07b50f1d9b3acd9399593"
+    },
+    {
+      "id": "DT_ITEM_GS_ROPE_LEAD",
+      "sha256": "115fe4af0a511756e7c930e4293cd9e8713839ebad4abd9992a442bd9e262280"
+    },
+    {
+      "id": "DT_ITEM_GS_BLANKET_SADDLE",
+      "sha256": "b8f02ff8494e8609165259daf082d14f423abf2df2a5c7bde4552bb5df1b847a"
+    },
+    {
+      "id": "DT_ITEM_GS_HOBBLES_HORSE",
+      "sha256": "315877ffa6d11c91366cdbbebcc5e50dbbbda3364c9219844e5ee48fc78157dd"
+    },
+    {
+      "id": "DT_ITEM_GS_LINE_PICKET",
+      "sha256": "ad71130bbafbdf8cd1ba215b2707079bbdb0c21f164f2db749e615f257b99e07"
+    },
+    {
+      "id": "DT_ITEM_GS_SADDLEBAGS",
+      "sha256": "96e01093b1375e13777951e809e456014a0b57138e7d18a415b3fed7d6ce4ef1"
+    },
+    {
+      "id": "DT_ITEM_GS_WALKING_STICK",
+      "sha256": "2a079d345b7eafa08850bad359c4d67c300d9aba3245412b88502eb932876734"
+    },
+    {
+      "id": "DT_ITEM_GS_COMPASS",
+      "sha256": "9e4e7c30e65a028c1c456f42a2ceb66ab9b4fdffd519cf2b75b53656f6691b10"
+    },
+    {
+      "id": "DT_ITEM_GS_SPYGLASS",
+      "sha256": "b4745b5c14c0ef9951fc97c51ece385317cee38d8503a5af13a9992e302ab097"
+    },
+    {
+      "id": "DT_ITEM_GS_BELL",
+      "sha256": "3d122be80eedc5b839b53bbeb4c90b4fda8cc1d13bdc7647e944f7910c1052cd"
+    },
+    {
+      "id": "DT_ITEM_GS_WHISTLE_SIGNAL",
+      "sha256": "3b85a90c16c08769be93e3e226d03c1438b52208268ccc9eb89e755fb19381a6"
+    },
+    {
+      "id": "DT_ITEM_GS_MIRROR_STEEL",
+      "sha256": "8b2ff55e931cfa48711faa5d42a0db7b176410d0978e28f2ce70293efca2f5b9"
+    },
+    {
+      "id": "DT_ITEM_GS_HOURGLASS",
+      "sha256": "caae5b4957bd9720093e03e1adccebad189c608d2ec92e17f6dbdc1e2da02d6b"
+    },
+    {
+      "id": "DT_ITEM_GS_MAP_ROAD",
+      "sha256": "3457cfe9916ab67f35032e06624d58b330703c650298e851f43275a7df05655d"
+    },
+    {
+      "id": "DT_ITEM_GS_WRAP_DOCUMENT_WATERPROOF",
+      "sha256": "9b17855e342be62e0994ce7cb1c0e39bc5805d26989ac125d13a9366aa163816"
+    },
+    {
+      "id": "DT_ITEM_GS_CLOAK_TRAVEL",
+      "sha256": "6e25505ca5b7b0c8da6d5f09efb8f0b25ac413e35c55ab91f501fb2763e87e75"
+    },
+    {
+      "id": "DT_ITEM_GS_COVER_PACK",
+      "sha256": "853e143414126458fae459905724050cb08dae365e996ce6e8919bc638790b49"
+    },
+    {
+      "id": "DT_ITEM_GS_PATCHES_REPAIR",
+      "sha256": "2f49b7ed9d48bdf1adc0ff22221fb9ae8020ee2144b4403a76de594f0cdc4368"
+    },
+    {
+      "id": "DT_ITEM_GS_RIBBON_MARKING",
+      "sha256": "ca08132d6356c7d511caa8cc2a185ffdd00f3da16332c46353aa1f079c5a58b6"
+    },
+    {
+      "id": "DT_ITEM_GS_HAMMER",
+      "sha256": "ada5895ca8564526098358e813155165ace1d3144fbce3b1a6b5a6fed01f26d5"
+    },
+    {
+      "id": "DT_ITEM_GS_CROWBAR",
+      "sha256": "5a79fec9211429908ef1f0dc66274f75c977c51451c92ea62752afe65688ec09"
+    },
+    {
+      "id": "DT_ITEM_GS_SAW_HAND",
+      "sha256": "1032b567e1cc6a6968ec8235ec679e9407e2ee7d89dc48fb6610a37f4700c8ff"
+    },
+    {
+      "id": "DT_ITEM_GS_CHISEL",
+      "sha256": "54a5fd08db40a592c77217be83f61b5d5ca91391b39e7871ee20ede8c8a74b5b"
+    },
+    {
+      "id": "DT_ITEM_GS_MALLET_WOOD",
+      "sha256": "32c2966335a31b5ba637b892168e2b77feccffd3eaed4233e48663f1ef39b315"
+    },
+    {
+      "id": "DT_ITEM_GS_SHOVEL",
+      "sha256": "be76e129b3f86fec382453fda51d960d0a267484c9e86212ac3ff503bbf0fb0c"
+    },
+    {
+      "id": "DT_ITEM_GS_PICK_MINER",
+      "sha256": "236ec10335bc517abf8ed51b58e13e7d3173b49191e8f9f741354df76e78832b"
+    },
+    {
+      "id": "DT_ITEM_GS_HAMMER_SLEDGE",
+      "sha256": "b1ea40f1db6d97e06925733a26bbdbb98e6ffb21d69f1d609e66895e11897834"
+    },
+    {
+      "id": "DT_ITEM_GS_WHETSTONE",
+      "sha256": "23b81a74c61365a2ed220d6f9fbfb629df3d41b8a7548f1be292f72b65d784fb"
+    },
+    {
+      "id": "DT_ITEM_GS_NAILS_IRON",
+      "sha256": "17f2216528f10c051b0aeb208bff08b288bd7939c738a46b5f063894697426f9"
+    },
+    {
+      "id": "DT_ITEM_GS_SPIKES_IRON",
+      "sha256": "4ed582a333d9a3410a821f314b2f525641eae03a6c8c7902e9fd31baf3537212"
+    },
+    {
+      "id": "DT_ITEM_GS_CORD_MEASURING",
+      "sha256": "9e8449234861d0729de9e9396767ab532df3e86f015a9c76e76abb603ec8dc3a"
+    },
+    {
+      "id": "DT_ITEM_GS_RULE_WOOD",
+      "sha256": "a7fefb1cc3f5046d57b888e36e53091b0cd9c9a4ec1e2534e1fd931cbaad5b54"
+    },
+    {
+      "id": "DT_ITEM_GS_WRAP_TOOL",
+      "sha256": "13626aabc2f5c635e60236f3e75232e7a8e8ca13093cff9663a8e467b37d8d64"
+    },
+    {
+      "id": "DT_ITEM_GS_WEDGES_WOOD",
+      "sha256": "3dfafccc3b1033b4015f2fe08a341b9aabe34132aa73e952fb1fb47d00183b56"
+    },
+    {
+      "id": "DT_ITEM_GS_SCALE_MERCHANT",
+      "sha256": "a7c301c29d248922db17af967303242b88d9172174bd612deb622c3e30d01d7e"
+    },
+    {
+      "id": "DT_ITEM_GS_LINEN",
+      "sha256": "5c8d6b7748dfc6ceb4932b0b8fc2bb94b80c28cc6f45002e577b3eab55a18705"
+    },
+    {
+      "id": "DT_ITEM_GS_CANVAS",
+      "sha256": "fef5e87d0f33718d4e6c37ba9891b685ad10efd7e4c982644118a8795dd9cc8d"
+    },
+    {
+      "id": "DT_ITEM_GS_CLOTH_WOOL",
+      "sha256": "45b6083fa020885127fb55c1a5f45b2c1fc9e6914f3f119f21082ef8541cab7d"
+    },
+    {
+      "id": "DT_ITEM_GS_LEATHER",
+      "sha256": "52929a4e8aeefb66d50ba219238b2bff077380e68296b48c6af182d377e770d4"
+    },
+    {
+      "id": "DT_ITEM_GS_BAR_IRON",
+      "sha256": "e9eac0b9cedc4abfcf5d4df1ded86e4466f3e8b174499916cdfdfeb48518f4df"
+    },
+    {
+      "id": "DT_ITEM_GS_BAR_COPPER",
+      "sha256": "9c704e66314d9ba2fff0dc003e747baf645e29f235e06c2b35603183879f8f9e"
+    },
+    {
+      "id": "DT_ITEM_GS_SALT",
+      "sha256": "a1b58b838c9081f90d99fa7efd2fccab31bf936b13be6440d51fb367e864b5d2"
+    },
+    {
+      "id": "DT_ITEM_GS_BEESWAX",
+      "sha256": "5c3366be0a772bb617b11b8f9a1355104fdcaea150981eeb42a5a2e2b430fb53"
+    },
+    {
+      "id": "DT_ITEM_GS_PITCH",
+      "sha256": "ae2d53051e6715165a895084b1df8089a0191a69432a90b5c21ad1b207eb1bf1"
+    },
+    {
+      "id": "DT_ITEM_GS_DYE_CLOTH",
+      "sha256": "0b13e0f2920c9792d88b9ce4d49dba7c4c824ffa938a30cdf6799a1986e3853e"
+    },
+    {
+      "id": "DT_ITEM_GS_CLOTH_SILK",
+      "sha256": "2cacad110934c764dcc3043c504c5c8a7661448b098e6fd0df235dae888f5286"
+    },
+    {
+      "id": "DT_ITEM_TAV_SMALL_ALE",
+      "sha256": "4726bc580607e7e8c1fc87e09279967ee5c1816d8aa3efc32b47847ed7fdb0f8"
+    },
+    {
+      "id": "DT_ITEM_TAV_BROWN_HEARTH_ALE",
+      "sha256": "46b661e69057a7990c5c6712e2bbe74052ac95ad6bbcdb84cdd7ef4e9f6959db"
+    },
+    {
+      "id": "DT_ITEM_TAV_OAT_ALE",
+      "sha256": "3d758326e05a0ffe0fb852451ad8dad6df9e416662062899f7133bfd10d03566"
+    },
+    {
+      "id": "DT_ITEM_TAV_HEATHER_ALE",
+      "sha256": "658d55da948146cf206c8fe877ca76a0e51bed64c33cf7954b632b401d3696be"
+    },
+    {
+      "id": "DT_ITEM_TAV_SMOKED_MALT_ALE",
+      "sha256": "6e8573942d1908c59037a49027cf25be13c2e156f4450275829db2e81100413d"
+    },
+    {
+      "id": "DT_ITEM_TAV_HARVEST_ALE",
+      "sha256": "ab7b12cc9a9ca62007e6b309735da5b0081f61d93761ca0600eb19995c309542"
+    },
+    {
+      "id": "DT_ITEM_TAV_STRONG_CELLAR_ALE",
+      "sha256": "4d9c1dfa180f8f2557b4262bc634a25276b3030ec9c6b8a8c0aaf9613a52fd33"
+    },
+    {
+      "id": "DT_ITEM_TAV_OLD_OAK_ALE",
+      "sha256": "1d89e713f345ca6e5a5d7c140146aecebd73a76afb2e0963c1523e79a277fceb"
+    },
+    {
+      "id": "DT_ITEM_TAV_HOUSE_HOPPED_BEER",
+      "sha256": "1fcb4a06c510ef68e2fdcdd50eeb49a95304f1a242a4b6e6afda1fe8fae9d77d"
+    },
+    {
+      "id": "DT_ITEM_TAV_PALE_BITTER_BEER",
+      "sha256": "9b1336037f7b92514c46ec17244d5b542db3d053a2cc774f735013ed557133bc"
+    },
+    {
+      "id": "DT_ITEM_TAV_DARK_RYE_BEER",
+      "sha256": "4409e7a0ceef93278989c450df2dc8763d2eecb99a4835ec97c9f482a6587928"
+    },
+    {
+      "id": "DT_ITEM_TAV_CLOUDY_WHEAT_BEER",
+      "sha256": "4fd3158e9e2ebd3fa873bf17393c10f581705eb61355847778e2d3f74e7b0dc3"
+    },
+    {
+      "id": "DT_ITEM_TAV_COOL_CELLAR_BEER",
+      "sha256": "71713ba256461c36f2ec2e99190463036606ea04119224c2214ed80258250452"
+    },
+    {
+      "id": "DT_ITEM_TAV_RED_MALT_BEER",
+      "sha256": "8f3e4157411b0ee97af987b4d2aea43e68deb57403cc223b1eee47f49be37ee6"
+    },
+    {
+      "id": "DT_ITEM_TAV_JUNIPER_BEER",
+      "sha256": "ff7ca5850b6a18204ad4043ee94aa9e8892d6ae93a1b7bba809341dd9d437b30"
+    },
+    {
+      "id": "DT_ITEM_TAV_DOUBLE_MALT_BEER",
+      "sha256": "c1c99280a452134989c1f706c105b39584079e089fc89420c5c14b9c8c0d40c7"
+    },
+    {
+      "id": "DT_ITEM_TAV_HOUSE_HONEY_MEAD",
+      "sha256": "7303e1bda0642514c79dc2af29036c8f3da59246febe182f70e7bc657410ed07"
+    },
+    {
+      "id": "DT_ITEM_TAV_DRY_MEADOW_MEAD",
+      "sha256": "a962c6047b5d7ca3219638e4c6ad270759ff763ebc5716d85e6b20e80b41d48a"
+    },
+    {
+      "id": "DT_ITEM_TAV_HEATHER_HONEY_MEAD",
+      "sha256": "7f8fb9e731009ac4fe984e2a2f1032dcbe9eead5a23a2ba8a5d43c9bc0cb9218"
+    },
+    {
+      "id": "DT_ITEM_TAV_APPLE_MEAD",
+      "sha256": "519e904fb6f759917e9508640d264f868b5c45f2166e965b9c5a322f39e99bb8"
+    },
+    {
+      "id": "DT_ITEM_TAV_BLACKBERRY_MEAD",
+      "sha256": "5e0d79bf3718931623dd990f894bd3c2903d4a9cc4e86e3ee04536e6fb20f12f"
+    },
+    {
+      "id": "DT_ITEM_TAV_SPICED_WINTER_MEAD",
+      "sha256": "e7b0e159270fa9a7e842f8595f9e99cc9498d370e95b7b475c08fff8b2a393a7"
+    },
+    {
+      "id": "DT_ITEM_TAV_OAK_AGED_MEAD",
+      "sha256": "b9d5bcf648cea7a0c0c8752b5981012bb9c084244189e905da8fc365686741da"
+    },
+    {
+      "id": "DT_ITEM_TAV_ROSE_PETAL_MEAD",
+      "sha256": "b3ab7ac2e10445e9da87ac244195d505bc5a0dc553ff70502c0142402abfe724"
+    },
+    {
+      "id": "DT_ITEM_TAV_HOUSE_RED_WINE",
+      "sha256": "5bae80a7a909a543e8923c1cf0781b82a47ebb164d7c2138bd0e82b9fe0d2ce0"
+    },
+    {
+      "id": "DT_ITEM_TAV_HOUSE_WHITE_WINE",
+      "sha256": "67f4bfa4e73b7d5c8750b3cd31bc1230f07317e519823084054cf9120b952f0d"
+    },
+    {
+      "id": "DT_ITEM_TAV_ROSY_TABLE_WINE",
+      "sha256": "f6447aa3ecdc615b7c7927a631cfcfa3f33763ce1d57b43dbab223b6c2d1d1f7"
+    },
+    {
+      "id": "DT_ITEM_TAV_SWEET_RED_WINE",
+      "sha256": "dac51e54451281ae03d5c7fa9825fff79bb130a601684e6434f1e449ca2de02d"
+    },
+    {
+      "id": "DT_ITEM_TAV_ORCHARD_PEAR_WINE",
+      "sha256": "0a3635d58addfc233540adacd644955c9e8090c796de207dc78b583e5399c137"
+    },
+    {
+      "id": "DT_ITEM_TAV_BLACKCURRANT_WINE",
+      "sha256": "f9db3ce470fdeafbe8d49bede4a4ce97e7242bab701731d7b5c794393666c051"
+    },
+    {
+      "id": "DT_ITEM_TAV_MULLED_RED_WINE",
+      "sha256": "c49522dbc6f8d5d2865d0d83759076842643585bacd57a4b0698768ef6661503"
+    },
+    {
+      "id": "DT_ITEM_TAV_RESERVE_VINEYARD_WINE",
+      "sha256": "145bd84d5d8f3f4c288788d6fd2a3b3e9e6ae3d0ce3e71af5bd172df5f3eefa2"
+    },
+    {
+      "id": "DT_ITEM_TAV_GRAIN_SPIRIT",
+      "sha256": "f5cdb1c096a297689aac5bb66328874616a8b25e71a5c747612d9bad92683969"
+    },
+    {
+      "id": "DT_ITEM_TAV_APPLE_BRANDY",
+      "sha256": "1d56a185649e55c8f2a0841bed8aed6c7220f2004689f67613789e35b6a84e36"
+    },
+    {
+      "id": "DT_ITEM_TAV_PEAR_BRANDY",
+      "sha256": "3373bbf9df6bf39d848c998f07fc51a006d50a2ead18b6ddf7a74e587f4a39a6"
+    },
+    {
+      "id": "DT_ITEM_TAV_PLUM_SPIRIT",
+      "sha256": "0d90bce839f45111b0e2e5ed27df2cb977f7af380ecb7ac01ed9e0c6c8cf7706"
+    },
+    {
+      "id": "DT_ITEM_TAV_JUNIPER_SPIRIT",
+      "sha256": "819bdfee698d6791b2c2f0f2bb8cda3334adc4b6da47d339fdea71ae511253f1"
+    },
+    {
+      "id": "DT_ITEM_TAV_DARK_CANE_SPIRIT",
+      "sha256": "617fc96a7cfbe1971ebe42d1197ae1218007a9f25dc8bf1e0254788d70e06666"
+    },
+    {
+      "id": "DT_ITEM_TAV_SPICED_HONEY_LIQUEUR",
+      "sha256": "ce11a800ce80b39cbca8334423e9a0c1cfb4c783dd028bc84929b85401d497e1"
+    },
+    {
+      "id": "DT_ITEM_TAV_CASK_AGED_GRAIN_SPIRIT",
+      "sha256": "7aadeeec3a5845cc94f969041254dcabba71335884737a760995c229fbdca335"
+    },
+    {
+      "id": "DT_ITEM_TAV_DRINKING_WATER",
+      "sha256": "2d0dab8e35f2b75fbe19c25a941aff9d0e0bf9e086361510a04968dad80c27ab"
+    },
+    {
+      "id": "DT_ITEM_TAV_BARLEY_WATER",
+      "sha256": "d5beec77fb020ac223148cde67f7aaa2059afa892d76783a438c79ab93c6b76c"
+    },
+    {
+      "id": "DT_ITEM_TAV_FRESH_COW_MILK",
+      "sha256": "6909877da66419af99fb05f244355097fc8ff5d2e6f0cd8933c9c2ce6a7049dd"
+    },
+    {
+      "id": "DT_ITEM_TAV_FRESH_GOAT_MILK",
+      "sha256": "392b752a20698801374c391175795f8a9e61750fe88623175bb2c6469852fd14"
+    },
+    {
+      "id": "DT_ITEM_TAV_PRESSED_APPLE_JUICE",
+      "sha256": "a1a58d5efbbbe8742a002a0e35d117f7145a647c603505b5a24fa97abaa71cac"
+    },
+    {
+      "id": "DT_ITEM_TAV_PEAR_JUICE",
+      "sha256": "0abc8f9b103eae29d87d6fce8771a4e0cb529d3e35ea0477c95aa1f01b7190d0"
+    },
+    {
+      "id": "DT_ITEM_TAV_HONEY_LEMON_WATER",
+      "sha256": "8dee8fb8ead054ee62ea14c85166c24a6bf87785b002cec1a3760a908b9a91f3"
+    },
+    {
+      "id": "DT_ITEM_TAV_BLACKBERRY_SHRUB_DRINK",
+      "sha256": "68af0539381b94423070fc1f6557829c7909ceb153a23540048334fe17ecf7b1"
+    },
+    {
+      "id": "DT_ITEM_TAV_MINT_INFUSION",
+      "sha256": "29044b17878ce9b3c6c6a8fdb938001b3e873384b8704c0ea2ded775ed28fd04"
+    },
+    {
+      "id": "DT_ITEM_TAV_CHAMOMILE_INFUSION",
+      "sha256": "c7fd07de1347d24d44a06f39aaf615901f9a56fcef3cf72006a3488e7704973f"
+    },
+    {
+      "id": "DT_ITEM_TAV_ROASTED_BARLEY_DRINK",
+      "sha256": "19595abd54ac6b5bd2e9e7eba3d07ff90863b1ae7c29f5277ad6654e3a1db48b"
+    },
+    {
+      "id": "DT_ITEM_TAV_SPICED_WARM_MILK",
+      "sha256": "7a6ca3a2418e79923f140dc4bed71d02da47effc57f36bfe9d0551dc35138e61"
+    },
+    {
+      "id": "DT_ITEM_TAV_BLACK_LEAF_TEA",
+      "sha256": "a8bd5aa6fcec75ccff52be0bdce44ca0659e88ab7baf1c1546f1b9980fc8aa7e"
+    },
+    {
+      "id": "DT_ITEM_TAV_GREEN_LEAF_TEA",
+      "sha256": "1956cb4e619e815b228b17f2718a5892cc9ddeba9d4f4f770d58ac4684328eed"
+    },
+    {
+      "id": "DT_ITEM_TAV_STRONG_BLACK_COFFEE",
+      "sha256": "fb67a873051388102ab7f7ac66e7934430a9797302047ed9ce2b67c8816a0763"
+    },
+    {
+      "id": "DT_ITEM_TAV_SPICED_COCOA",
+      "sha256": "0dc9201cdc4f9d2b31b802ef265d06a23054bf26b9b1c61aa2d563fc60f1d0e9"
+    },
+    {
+      "id": "DT_ITEM_TAV_OAT_PORRIDGE",
+      "sha256": "82d21a9d61a7d0e6297d43757080813b0a4262cb4e205441255d0310f7e5bd82"
+    },
+    {
+      "id": "DT_ITEM_TAV_HONEY_MILK_PORRIDGE",
+      "sha256": "1dce4a4ff943a4626bb0e3c288efdc52a9851c15fed2e0f56a4284a2239cd5c8"
+    },
+    {
+      "id": "DT_ITEM_TAV_FRIED_EGGS_ON_TOAST",
+      "sha256": "f33f4102f0bbcf57ed7d483a68e0d6d628655d9d049741309930cf842d4b5350"
+    },
+    {
+      "id": "DT_ITEM_TAV_BACON_AND_EGGS",
+      "sha256": "40c7eedbf51d5e10e3f8865c6f76afcd827c97b8f84d6639be2ac457459ca981"
+    },
+    {
+      "id": "DT_ITEM_TAV_MUSHROOM_BREAKFAST_TOAST",
+      "sha256": "f845fa7730f043065670421a1e3bd928baf500551cd3e33ff59387afa91babab"
+    },
+    {
+      "id": "DT_ITEM_TAV_CHEESE_AND_ONION_OMELETTE",
+      "sha256": "0f5b89dc3f83d236f74d62543aa4265f5b05bfd2a0bfe4e450434220c4d7df04"
+    },
+    {
+      "id": "DT_ITEM_TAV_KIPPER_BREAKFAST",
+      "sha256": "e64af16767a017a3231c038491a68cedc0d9dc06a86ae508666827c44c97debd"
+    },
+    {
+      "id": "DT_ITEM_TAV_BREAKFAST_SAUSAGE_PLATE",
+      "sha256": "13f449a2ca3abe9cb68c8560228998833adae567f8e70722e692128e3066f960"
+    },
+    {
+      "id": "DT_ITEM_TAV_PLOUGHMAN_S_PLATE",
+      "sha256": "64a9996f44df1bad964925ca0993cbd1b0cf86df180929ca2b26ded5d7f769ce"
+    },
+    {
+      "id": "DT_ITEM_TAV_ONION_AND_CHEESE_PIE",
+      "sha256": "4afa135b58e4371a3507de28fec1b009690ea297327252a8a159b5a13bf05ba0"
+    },
+    {
+      "id": "DT_ITEM_TAV_PORK_HAND_PIE",
+      "sha256": "d9f3e9c59db2d82265e48067cb99c7bc801c13c9bcf62be57dbdff204f8291f8"
+    },
+    {
+      "id": "DT_ITEM_TAV_MUSHROOM_HAND_PIE",
+      "sha256": "dc2cc77bd50945ad5c091bd388b10ec8562ee11012787c88c85c51d840f1dbe6"
+    },
+    {
+      "id": "DT_ITEM_TAV_LENTIL_AND_HERB_BOWL",
+      "sha256": "1bf250e770ad95198fc34d1b2c255f327dc8030dc5fafc574a5e83446cff85a0"
+    },
+    {
+      "id": "DT_ITEM_TAV_SMOKED_FISH_PLATE",
+      "sha256": "904af76e770fa880012271f828631528a7d53333294b678351dc5104af158964"
+    },
+    {
+      "id": "DT_ITEM_TAV_COLD_HAM_AND_PICKLES",
+      "sha256": "f7208ec42e70b8bfe954a827d7582611f7ba3615da2e914e3021ae39dda1c673"
+    },
+    {
+      "id": "DT_ITEM_TAV_VEGETABLE_TURNOVER",
+      "sha256": "06e98d3b43491dd15311ce5df1868b7eeb5f1ffd50075162d47d9a6fee15bc15"
+    },
+    {
+      "id": "DT_ITEM_TAV_SAUSAGE_AND_MASH",
+      "sha256": "a9876718b2a6f8985ed51d73e36dcf3954591e917d5b21632660974c28566789"
+    },
+    {
+      "id": "DT_ITEM_TAV_BRAISED_BEEF_SUPPER",
+      "sha256": "03ddc823cce17950345f573bad13ec5e0948ebafaabec469f9e51f5a9d3f99d0"
+    },
+    {
+      "id": "DT_ITEM_TAV_PAN_FRIED_TROUT_SUPPER",
+      "sha256": "428b84ffb0fdc50e2e03c220ec167da4ec8710bda1d44f30697d0c7760725fe0"
+    },
+    {
+      "id": "DT_ITEM_TAV_CHICKEN_AND_LEEK_SUPPER",
+      "sha256": "4f632f820b8b3495ad72ce03beb8c70e9b0a9c0c7c965447b1f6a0e2056091d6"
+    },
+    {
+      "id": "DT_ITEM_TAV_STUFFED_CABBAGE_SUPPER",
+      "sha256": "74d52ac810de79690a8b5cffe5f6990e03ccfbffb1c43411f4ebaa5270f68d70"
+    },
+    {
+      "id": "DT_ITEM_TAV_BAKED_BEAN_SUPPER",
+      "sha256": "f0d370968663d8a2390c9945683f81f90be641297bdcf10f4ad18278bfea762d"
+    },
+    {
+      "id": "DT_ITEM_TAV_MUTTON_AND_TURNIP_SUPPER",
+      "sha256": "23759b184afebfb18e30db33de4af7e9d44c58313141d319a64338ec1864457e"
+    },
+    {
+      "id": "DT_ITEM_TAV_EEL_AND_ONION_SUPPER",
+      "sha256": "9bd17904a3721a4501c6c38aec4ce490d7c7d2152d4c7eba61ff9f97397e4c4b"
+    },
+    {
+      "id": "DT_ITEM_TAV_VEGETABLE_POTTAGE",
+      "sha256": "40f39b233ce380b61372ed19a8bbbf23bca61929eaa3a0c26d53b4579809feae"
+    },
+    {
+      "id": "DT_ITEM_TAV_BEEF_AND_BARLEY_STEW",
+      "sha256": "f178c18d80412d3bad664b9381e2e0f1ea55ab6a740c983533905146104fa839"
+    },
+    {
+      "id": "DT_ITEM_TAV_MUTTON_AND_LEEK_STEW",
+      "sha256": "54308e459c8160d6c3efebacf7e7e1a4bba7f56f30bf91caaccb9f2802e515b6"
+    },
+    {
+      "id": "DT_ITEM_TAV_CHICKEN_AND_BEAN_STEW",
+      "sha256": "097380c4d2359532c3146efadece75f4ddbbe5a12493fa4a0eab589419b34134"
+    },
+    {
+      "id": "DT_ITEM_TAV_LENTIL_AND_CARROT_STEW",
+      "sha256": "a8003446e4a1860f79c89ca3d87fadb8e064e1b96052692e4dcc2afd0d12b931"
+    },
+    {
+      "id": "DT_ITEM_TAV_PEA_AND_HAM_STEW",
+      "sha256": "042961f06eced245fa0a4ea75f3e2c26a5113f8de4e4ad6447d5536ce6666e98"
+    },
+    {
+      "id": "DT_ITEM_TAV_FISH_CHOWDER",
+      "sha256": "5559995debac36a2f25807474171f94115934c0c5e9509f8a0c9089e83b518f4"
+    },
+    {
+      "id": "DT_ITEM_TAV_VENISON_JUNIPER_STEW",
+      "sha256": "be46da14ea863580b033bd98f807bf621112c7742b929a1f05b880160332b5d2"
+    },
+    {
+      "id": "DT_ITEM_TAV_ROAST_CHICKEN_PORTION",
+      "sha256": "3a4a23f2bdef35d8bf2de0411c8ed8d42e24bdc6f6028b949a3e2712a1215f66"
+    },
+    {
+      "id": "DT_ITEM_TAV_ROAST_PORK_WITH_APPLES",
+      "sha256": "0f5faebec1bbb4f39aa67cfd9e60812b37aa0d2102ee555663f2aebebf4e2981"
+    },
+    {
+      "id": "DT_ITEM_TAV_ROAST_BEEF_WITH_ONIONS",
+      "sha256": "31d2e5be560c9950e3ca053f5af4b742b2dff959bc0b79221822973a9ba0b88f"
+    },
+    {
+      "id": "DT_ITEM_TAV_ROAST_MUTTON_WITH_HERBS",
+      "sha256": "fa52c043650fa6fa7f320a128b7e4f13aca085d5947ea62367dbc53d9f1ba3ff"
+    },
+    {
+      "id": "DT_ITEM_TAV_ROAST_DUCK_PORTION",
+      "sha256": "11443ff6d9508231b5cead747e04e5901dc950497aa4e80dfa1e8a7fb21ba266"
+    },
+    {
+      "id": "DT_ITEM_TAV_ROAST_GOOSE_PORTION",
+      "sha256": "91f8c79c3da75e05c93959a9f22d3301ec91ab95472b87b35432423ee04b8430"
+    },
+    {
+      "id": "DT_ITEM_TAV_ROAST_RABBIT_PORTION",
+      "sha256": "a55a84b049bc26ebbf3f49bf773b8cbba5f9709f5861069200009a7c6ba10ef6"
+    },
+    {
+      "id": "DT_ITEM_TAV_ROAST_ROOT_PLATTER",
+      "sha256": "34acedaaed2825421af1d2c6d332d324676836a193ffe84e0c2c2222c4736792"
+    },
+    {
+      "id": "DT_ITEM_TAV_RYE_BREAD",
+      "sha256": "9f0dbe49f9476dc2177d39431183a8ae5eb175f062f5c0614d065ea59e576c0e"
+    },
+    {
+      "id": "DT_ITEM_TAV_BARLEY_BREAD",
+      "sha256": "66b404162848bced3c60ba33661881cf520d6e4c3615322f63f033bd2a9f15a5"
+    },
+    {
+      "id": "DT_ITEM_TAV_WHITE_WHEAT_LOAF",
+      "sha256": "d5c4d54faa249d1e9a72e6345b5c304450d881c204f5fcabdaee65b782788a83"
+    },
+    {
+      "id": "DT_ITEM_TAV_OATCAKES",
+      "sha256": "1c0bc02a82349d9113e81137bc9ea0f59f52a01bf9ca2218ba525d6687415621"
+    },
+    {
+      "id": "DT_ITEM_TAV_CARAWAY_ROLLS",
+      "sha256": "373bb08190ed80d2a350b49f0e0bfb5c85c1b545d40c2a73de6070ffb048978d"
+    },
+    {
+      "id": "DT_ITEM_TAV_ONION_FLATBREAD",
+      "sha256": "71a2bb973edd330fbc7ad553a2536670a177a8c66d20283a29bc4f273ea1e670"
+    },
+    {
+      "id": "DT_ITEM_TAV_SEEDED_BROWN_LOAF",
+      "sha256": "c35b9bd867f5cc080182c4156faf2523e8787b6cdd37ffc67d4290b14a258a0e"
+    },
+    {
+      "id": "DT_ITEM_TAV_HONEY_HEARTH_BUNS",
+      "sha256": "d11bd7b4eafac32925f2edae8c39e8a484f5a9d21ee0e7fad6b65b4f8a447260"
+    },
+    {
+      "id": "DT_ITEM_TAV_FARMHOUSE_CHEESE",
+      "sha256": "7b01c09659531e505a7d0e5bf13e4e8c1c8da167e4f4baea7bb7fe4a7555b812"
+    },
+    {
+      "id": "DT_ITEM_TAV_FRESH_GOAT_CHEESE",
+      "sha256": "0f672c0c6ca57ffd2f2be45a31161b84fab6355efa2729dbcb2b7f33cdeae7e6"
+    },
+    {
+      "id": "DT_ITEM_TAV_AGED_HARD_CHEESE",
+      "sha256": "5de0ffc8229079c08cc5ad9e5e45038708dd87f565d2208f31b3bf30885c5e49"
+    },
+    {
+      "id": "DT_ITEM_TAV_SMOKED_CHEESE",
+      "sha256": "8bd336b71a7ce8a1e3555efd233a4d79554c3236565ea7fb84a58180280105d3"
+    },
+    {
+      "id": "DT_ITEM_TAV_HERBED_CURD_CHEESE",
+      "sha256": "bd024da66224184e6647bb8107dc9dd22ef4ac8217a7081cf9ee52ad96a00aa6"
+    },
+    {
+      "id": "DT_ITEM_TAV_BLUE_VEINED_CHEESE",
+      "sha256": "054524403e5d518e36bb355eadfc2da3f68e6205fa123f5f05e5af7b41c2d4ed"
+    },
+    {
+      "id": "DT_ITEM_TAV_SOFT_RIND_CHEESE",
+      "sha256": "6f9218ffbaded75229f309058f49bd23defffb71b14780f23d7f32be0b9df804"
+    },
+    {
+      "id": "DT_ITEM_TAV_IMPORTED_SHEEP_CHEESE",
+      "sha256": "b03d9b9dc53244bbfd178c57e2a1b326d4a754a641fa5bf601ff9139924d5a10"
+    },
+    {
+      "id": "DT_ITEM_TAV_BAKED_APPLE",
+      "sha256": "7836e0f00cf9af121b90bd10daa1b649e8c9221e463f1083b15dc7b7aaefe87b"
+    },
+    {
+      "id": "DT_ITEM_TAV_HONEY_CUSTARD",
+      "sha256": "bcbc287fb0b6db59b906b8abed586804325dec8ec6b2536950246cd22eb7a8fc"
+    },
+    {
+      "id": "DT_ITEM_TAV_APPLE_PIE_SLICE",
+      "sha256": "e6335973c6dbcdda8475df72eebefa20f4ada4dfac4fe457a9053d03cf37c3fd"
+    },
+    {
+      "id": "DT_ITEM_TAV_BERRY_TART",
+      "sha256": "1778c05a6da9e709b1a9cfa0e33de137567ee6516bca4f45cfc4c26f0d918aec"
+    },
+    {
+      "id": "DT_ITEM_TAV_BREAD_PUDDING",
+      "sha256": "78ecf131f87fbb5a49886f1e6997da5abb73d340d9fa6f63f029f07ca8845249"
+    },
+    {
+      "id": "DT_ITEM_TAV_POACHED_PEAR",
+      "sha256": "b363ea51bbc695c87938e3c2a8a0779a04a6c64d2dc49c73c3ff6d01daf09b2a"
+    },
+    {
+      "id": "DT_ITEM_TAV_SPICE_CAKE_SLICE",
+      "sha256": "d70b517be863d33782160337916552e1400d84139b62faf3ef19ea5482a67d81"
+    },
+    {
+      "id": "DT_ITEM_TAV_CREAM_AND_PRESERVES",
+      "sha256": "c698b4992e7d4261d0499da4c3a18db7a735deed54092bbd73dbd9b01ba6a945"
+    },
+    {
+      "id": "DT_ITEM_TAV_SALTED_NUTS",
+      "sha256": "496d183b780b207371454de77cd3697272403088296f92847aaa261c36d14b15"
+    },
+    {
+      "id": "DT_ITEM_TAV_PICKLED_EGGS",
+      "sha256": "ca0f1574bdaff26c67cad0e68b1297d737dbf1eb9e02941d9fe2f168fd49792a"
+    },
+    {
+      "id": "DT_ITEM_TAV_PICKLED_ONIONS",
+      "sha256": "967ed2652a2e9d889e400bbadd4bd3c38747903429d480469f9be774761427b4"
+    },
+    {
+      "id": "DT_ITEM_TAV_DRIED_APPLE_RINGS",
+      "sha256": "41d501685a2103187f3653c06fe68e9aa2b1caa72d661e622531b2ac58c332ce"
+    },
+    {
+      "id": "DT_ITEM_TAV_ROASTED_CHICKPEAS",
+      "sha256": "a94f8f90f3da35a38f439e8e63a98b7ca030e9ebc87d68ef3de6170882b4308b"
+    },
+    {
+      "id": "DT_ITEM_TAV_PORK_CRACKLINGS",
+      "sha256": "40bd7aaa39c8e8862c0b34f70802438329f6896ee5e6562a758b03ee6f9c12f6"
+    },
+    {
+      "id": "DT_ITEM_TAV_SOFT_PRETZEL",
+      "sha256": "a960817e36528f648e64e9bb1d9574f2c602dd177f68ba88fc0ee957d17ec90a"
+    },
+    {
+      "id": "DT_ITEM_TAV_IMPORTED_OLIVES",
+      "sha256": "7661450fc1d2ac72e0d38b3f47cedf713bb321ca98b67f46f636a686f6ab5649"
+    },
+    {
+      "id": "DT_ITEM_TAV_BREAD_AND_CHEESE_BUNDLE",
+      "sha256": "0424318ca4f9fd474c05f7afa174acbacf95880d7b67428e9671b17e57dbbb76"
+    },
+    {
+      "id": "DT_ITEM_TAV_CURED_SAUSAGE_LUNCH",
+      "sha256": "3a5d0e0438461cbe4d430e5c10ac8820cb1937a32b5c03735e7d5f5c598d091d"
+    },
+    {
+      "id": "DT_ITEM_TAV_DRIED_FISH_AND_OATCAKE_MEAL",
+      "sha256": "d40f52c23ae985849f270a65e228cdc5217dca8354bb464f0125f404e6b795d6"
+    },
+    {
+      "id": "DT_ITEM_TAV_NUT_AND_FRUIT_MEAL",
+      "sha256": "1a313011471ce5736ff14e1ecf0a12499910d7abdb403d872da1d2dacef68a7e"
+    },
+    {
+      "id": "DT_ITEM_TAV_LENTIL_TRAVEL_CAKES",
+      "sha256": "5fb4d149ff4b9ec041c6221024348604431830de33c627d8bb0e4664a4a6a7a6"
+    },
+    {
+      "id": "DT_ITEM_TAV_SMOKED_MEAT_AND_RYE_MEAL",
+      "sha256": "43f33a40cefde0abc8704a0f2b13311e926dc38ad694b64918a1d74d9583e91a"
+    },
+    {
+      "id": "DT_ITEM_TAV_HARD_BISCUIT_PROVISIONS",
+      "sha256": "7d576613b9a074f705000b2a1ca14a6ce4788dd63f582ed2b65f938ea42f420b"
+    },
+    {
+      "id": "DT_ITEM_TAV_DRIED_VEGETABLE_SOUP_MIX",
+      "sha256": "b42f30d8a934687d9ba72392a445698e9484daf42d119f2f8af492a49e8759fb"
+    },
+    {
+      "id": "DT_ITEM_TAV_SAFFRON_CHICKEN_PILAF",
+      "sha256": "e0cfa53002cc16a5095094dffd974892d08a909b0d6231b6cd0532feee93c6cc"
+    },
+    {
+      "id": "DT_ITEM_TAV_PEPPERED_VENISON_PLATE",
+      "sha256": "999fadae9b1cbb6eed09bd4b48b9a71b2167dc397280f4c859f76f2cf9136756"
+    },
+    {
+      "id": "DT_ITEM_TAV_DUCK_WITH_CHERRY_SAUCE",
+      "sha256": "fa52c84f23db43ed853c266f48bf68e51530cb70758dd04d8a7c17bab267b4ce"
+    },
+    {
+      "id": "DT_ITEM_TAV_TRUFFLED_MUSHROOM_PIE",
+      "sha256": "9094547db241a3cc9e490efc4dc7b2040ef74415669ee09c5369de3fe6dc0d2c"
+    },
+    {
+      "id": "DT_ITEM_TAV_BUTTER_POACHED_SHELLFISH",
+      "sha256": "b76af4b7c3e162e04d5bedc5d90e32c569068c1e4d3eb216552e0f42aa827440"
+    },
+    {
+      "id": "DT_ITEM_TAV_SPICED_QUAIL_SUPPER",
+      "sha256": "f934816325d64d3327cb7d3647e8a7a099cfbf18445db4d58e86f2de0f26e3bd"
+    },
+    {
+      "id": "DT_ITEM_TAV_STUFFED_ARTICHOKE_PLATE",
+      "sha256": "71a58d4bb43ea969890f20ce73ef827dac603cfef083de4df495d206979c9f22"
+    },
+    {
+      "id": "DT_ITEM_TAV_CELEBRATION_SUPPER",
+      "sha256": "47e9792e504991215bc36dcb2f916cce89ed98b81e00ccfbccd489f61a09d543"
+    },
+    {
+      "id": "DT_ITEM_TAV_LOOSE_OATS",
+      "sha256": "728c24de8109402a351c6be8556eadc0cee94d57cc59d048096db6d6b42488d9"
+    },
+    {
+      "id": "DT_ITEM_TAV_HAY_BUNDLE",
+      "sha256": "ee27911a1849f6ad841351422ca88f2f543d0331497efc9a99669f2f0838fc0c"
+    },
+    {
+      "id": "DT_ITEM_TAV_BRAN_MASH",
+      "sha256": "2bb9437127787f6b2e5b40de147a6e60c0f2b211683cdff242e87c16fc341d20"
+    },
+    {
+      "id": "DT_ITEM_TAV_FEED_CARROTS",
+      "sha256": "09a836115e9c2babedd52269a7ddfd6605a82e7770c1b187f901e0b325050577"
+    },
+    {
+      "id": "DT_ITEM_TAV_POULTRY_GRAIN",
+      "sha256": "59842fbe65f16ce407ef1e605fc89c577d554746328651fc1cee3fca6424daae"
+    },
+    {
+      "id": "DT_ITEM_TAV_HOUND_BISCUIT_BUNDLE",
+      "sha256": "142092ce56ea2855e390615de4c60679038a5b98699312e66158beb27ec004ae"
+    },
+    {
+      "id": "DT_ITEM_TAV_DRIED_APPLE_HORSE_TREATS",
+      "sha256": "b292efd3490156a0bb8c6b238e28b45adb3c8361088a43218b4b8ff39cbe408a"
+    },
+    {
+      "id": "DT_ITEM_TAV_CHOPPED_FODDER",
+      "sha256": "6e1a08df9f5a7fd34c9fa7c3ed0c3a85d1d409c2d216802ec8067dea84b9429b"
+    },
+    {
+      "id": "DT_ITEM_TAV_SOUTHERN_DATE_WINE",
+      "sha256": "f8ce281beb4b3b8e76793708cb0eb70157844660ad2c9b86a7f9ee4edd7c12d5"
+    },
+    {
+      "id": "DT_ITEM_TAV_ISLAND_PALM_SPIRIT",
+      "sha256": "f92b8aa1056104357da49163fa5f955acd10a034e565785d81e39c8b4e7e2fe9"
+    },
+    {
+      "id": "DT_ITEM_TAV_RESINED_WHITE_WINE",
+      "sha256": "8edbd2fc4604292bbc7ebe5de84edc9f1641597b962ce882b6ae5da1243c0d9f"
+    },
+    {
+      "id": "DT_ITEM_TAV_SPICED_POMEGRANATE_DRINK",
+      "sha256": "580c31ec063b2ae99e5b58adcd68433bed2981d5dab414a54ee608ba6f58f42a"
+    },
+    {
+      "id": "DT_ITEM_TAV_ONION_BROTH",
+      "sha256": "696f3a21b232a1ee9e6e88d349f86bf5fc8043d55a1e0640e6e77b3ab0c60dea"
+    },
+    {
+      "id": "DT_ITEM_TAV_CREAMED_MUSHROOM_SOUP",
+      "sha256": "875724adf1cbaef2b6c2924ddd53d5b0874a32399d21420b0ed0ab8750d3833a"
+    },
+    {
+      "id": "DT_ITEM_TAV_CHICKEN_NOODLE_BROTH",
+      "sha256": "7581469003918040a1e137356bd4bf8f73518463866c879c1991a744c024f494"
+    },
+    {
+      "id": "DT_ITEM_TAV_SORREL_SPRING_SOUP",
+      "sha256": "43ead7865af36dfa56826fde01a4645941e8ea27891518dae20ecc9d1b02164e"
+    },
+    {
+      "id": "DT_ITEM_TAV_GRILLED_SARDINES",
+      "sha256": "1695d857efa69386998c2f1da25ca810ea66bde273ee34d8197c595f5221ba68"
+    },
+    {
+      "id": "DT_ITEM_TAV_MUSSELS_IN_CIDER",
+      "sha256": "eda617b6d2806dc8d8439745a3bc449c00547a8e4ddf1d3220eb56e210ac37ef"
+    },
+    {
+      "id": "DT_ITEM_TAV_BAKED_HADDOCK",
+      "sha256": "8e504a9dfbc451bfdcfd1040e0e4ace3da621e89ad1236443700971ca79c6bf8"
+    },
+    {
+      "id": "DT_ITEM_TAV_PICKLED_HERRING",
+      "sha256": "7c75273d4011b27a0af778526494b2b92176a6e9120985a1e057bdfe68dbfc8e"
+    },
+    {
+      "id": "DT_ITEM_TAV_PIPE_TOBACCO",
+      "sha256": "08e8b3a1a31fad9d3669903c0d579989aee406c98024e9cd45569f60bc041852"
+    },
+    {
+      "id": "DT_ITEM_TAV_CLAY_SMOKING_PIPE",
+      "sha256": "535057b085c32f431ebdc86f84bb1dec6961c144a492d761d1d12ff199ea329f"
+    },
+    {
+      "id": "DT_ITEM_TAV_PLAYING_CARDS",
+      "sha256": "0deb1479dbf0e8898ec87582b0c223b889f7c6fdc0bdce52eff785febfd41244"
+    },
+    {
+      "id": "DT_ITEM_TAV_BONE_DICE",
+      "sha256": "a019ecc03b518e829f02599361f370206cdf02dd2f32ea3777a32b0a0d30db85"
+    },
+    {
+      "id": "DT_ITEM_BSM_ARROW",
+      "sha256": "7391fc22718f3eb967054256529698fa5836b8282fa54e04a6145e1ba3cff8cc"
+    },
+    {
+      "id": "DT_ITEM_BSM_CROSSBOW_BOLT",
+      "sha256": "885b7f521ce36a4753b683d4976c5e00b4ffe3b3630fcf958fa2f48003cf410b"
+    },
+    {
+      "id": "DT_ITEM_BSM_SLING_BULLET",
+      "sha256": "4309b980bee4392280fd60c57f164ceee1f5a7374c5bbb4d01e9d07d15f9ed14"
+    },
+    {
+      "id": "DT_ITEM_BSM_BLOWGUN_NEEDLE",
+      "sha256": "8d9281f33aafef25b8b6bc6d3661be8f21a853c2948d9d0506c8983b45104169"
+    },
+    {
+      "id": "DT_ITEM_BSM_RING_MAIL",
+      "sha256": "f771048fb5bbdecf291d72d5d6e955ac33d1d92244ee467edf748581ad04ae27"
+    },
+    {
+      "id": "DT_ITEM_BSM_CHAIN_MAIL",
+      "sha256": "93e118b9bcfe0443acdfece76d36dd846c813255af9eb79a9c45918a2c72823b"
+    },
+    {
+      "id": "DT_ITEM_BSM_SPLINT_ARMOR",
+      "sha256": "c2ea7a2d88e0d1104c7d925e96690e596a27f79f772510f0dc99839cba58d0cb"
+    },
+    {
+      "id": "DT_ITEM_BSM_PLATE_ARMOR",
+      "sha256": "e0ae84e155049e4882854e1269ee801bc355b7bae20eb1f9734c01ab8067d676"
+    },
+    {
+      "id": "DT_ITEM_BSM_PADDED_ARMOR",
+      "sha256": "31a62377eb863690f89d803953fd0af5ef1c274fe6963f7914e164f5541bc6b4"
+    },
+    {
+      "id": "DT_ITEM_BSM_LEATHER_ARMOR",
+      "sha256": "80334efa9da08aff64275cccdbe391716edb4f89b0f5764e9ad7e5c87726b196"
+    },
+    {
+      "id": "DT_ITEM_BSM_STUDDED_LEATHER_ARMOR",
+      "sha256": "cea821dcfe03e51362cf3c3d7447ce6609203fb6b8ca46cb1cd7373b2aa738ed"
+    },
+    {
+      "id": "DT_ITEM_BSM_BATTLEAXE",
+      "sha256": "1bfdace1b3d34bf2a2046dc6c3528e522dc9efca6a510aab0f6a61ecad9a9ea2"
+    },
+    {
+      "id": "DT_ITEM_BSM_FLAIL",
+      "sha256": "d83863b17590ae2e2a7d63d59d3c8bc8c33151621347f7acd9817385237ca9f8"
+    },
+    {
+      "id": "DT_ITEM_BSM_GLAIVE",
+      "sha256": "d9aafc3177ed47af6b4f19b47658323a934f06d960d67b9b89ac102fbaeacb2c"
+    },
+    {
+      "id": "DT_ITEM_BSM_GREATAXE",
+      "sha256": "1be19d7593f0580b738115369bae3072b460fb176b3b17ae859c87913d5302a5"
+    },
+    {
+      "id": "DT_ITEM_BSM_GREATSWORD",
+      "sha256": "9d5db8340fb1196e41d3aa00aa0150e2db2df5449ca007e96f7ffdd7b8b3384f"
+    },
+    {
+      "id": "DT_ITEM_BSM_HALBERD",
+      "sha256": "d8c31b6a1fe03b80df7c22ed0f7a95333793f57ea5082585f4a6839875dce7b0"
+    },
+    {
+      "id": "DT_ITEM_BSM_LANCE",
+      "sha256": "b432a1face998c50e2ae3d1aa0ce3500b38d5be37f66cb8481b49ea89ce62a2c"
+    },
+    {
+      "id": "DT_ITEM_BSM_LONGSWORD",
+      "sha256": "8db89e495d4e09082448704ade44a9ca86a27b7dd5fdb07b2d5ec171bb5669ae"
+    },
+    {
+      "id": "DT_ITEM_BSM_MAUL",
+      "sha256": "df1129b2d171aea75d00552d7c7c2c71f6d1e0731e9d16fc9ef30d4c4f0563dc"
+    },
+    {
+      "id": "DT_ITEM_BSM_MORNINGSTAR",
+      "sha256": "433a781074404eeb726f2eac9b9d1341406a179fdfd29420f2043f9317d70555"
+    },
+    {
+      "id": "DT_ITEM_BSM_PIKE",
+      "sha256": "15ed3433e2e099d509897f5b0bc8c7ce4db5bb37159bf9280a4c0916c046ca50"
+    },
+    {
+      "id": "DT_ITEM_BSM_RAPIER",
+      "sha256": "a32ef9ffe9d47aeb62bcbc10b2d283658d4a968f22e9774babfa5ff96a9be559"
+    },
+    {
+      "id": "DT_ITEM_BSM_SCIMITAR",
+      "sha256": "b3d4428480f3459c82270526753b59cc3af9d5fa7702e8c52314538543c504f0"
+    },
+    {
+      "id": "DT_ITEM_BSM_SHORTSWORD",
+      "sha256": "4b9d05a9816117f39ce8d13728f2b345ddc58c5eb8075f977dbd679da9078f8f"
+    },
+    {
+      "id": "DT_ITEM_BSM_TRIDENT",
+      "sha256": "652f92cd8ed89aef56077bd63f1f9df94166ada6aac74c2b5afb9b6268aa723e"
+    },
+    {
+      "id": "DT_ITEM_BSM_WAR_PICK",
+      "sha256": "4cf88569b92abbdb4bab42803f5db2abf62b57dd84ea9412ae9ef572c39b6b3e"
+    },
+    {
+      "id": "DT_ITEM_BSM_WARHAMMER",
+      "sha256": "201fb6fda617f289fb4361d1b4a7daef4dadab67e372f022a9170992c2c64736"
+    },
+    {
+      "id": "DT_ITEM_BSM_WHIP",
+      "sha256": "bf1e6d79c5fd5ccdc3a39b390d391a96677b6057dc87b181b20cdd5f21791c8e"
+    },
+    {
+      "id": "DT_ITEM_BSM_BLOWGUN",
+      "sha256": "460f3f80c8ea973cb0e8c9c7944c9a8be158f2950bd2b72bbe4b398093cb3851"
+    },
+    {
+      "id": "DT_ITEM_BSM_HAND_CROSSBOW",
+      "sha256": "5c00195465646e257febbb975d19f3d2aca303524e11d5f00f75fd2e4c41ce76"
+    },
+    {
+      "id": "DT_ITEM_BSM_HEAVY_CROSSBOW",
+      "sha256": "afe2dbce57a0d66a3c4f8fc55ae6463d851face27a934d170783586ccc895380"
+    },
+    {
+      "id": "DT_ITEM_BSM_LONGBOW",
+      "sha256": "79bc9781232f06093788637ac751615989896d7147ae2524d17eae0a14ab2322"
+    },
+    {
+      "id": "DT_ITEM_BSM_NET",
+      "sha256": "9236526fdf586f9da730f7e9a54d9e74c250b658af20f3f537a387d3eff5c220"
+    },
+    {
+      "id": "DT_ITEM_BSM_HIDE_ARMOR",
+      "sha256": "616e5c3f106eb1cfe0f720f58126e953f309939613013ac8d1f8d8df2aa24249"
+    },
+    {
+      "id": "DT_ITEM_BSM_CHAIN_SHIRT",
+      "sha256": "a9bfac225c3f3d043eb4e197a16e8ed0a2b19ed743a79712ae7b24738848de82"
+    },
+    {
+      "id": "DT_ITEM_BSM_SCALE_MAIL",
+      "sha256": "0a23917feb2512c50333c2675e8d89bdb36f50571bf53a1281e6df994d3fe64a"
+    },
+    {
+      "id": "DT_ITEM_BSM_BREASTPLATE",
+      "sha256": "c46370604d4aa6a6518fec36bfb1284d838d8a476ebad5e85316333a1141c072"
+    },
+    {
+      "id": "DT_ITEM_BSM_HALF_PLATE_ARMOR",
+      "sha256": "183d8ed64cfa00b6e943c0ba939b7cd3712beed5493d77d7b6438b6d75964ba0"
+    },
+    {
+      "id": "DT_ITEM_BSM_SHIELD",
+      "sha256": "3fd951b33a172e1181744410aef8bc26af18f42ae11efda0f0e6f86f4b09cb7c"
+    },
+    {
+      "id": "DT_ITEM_BSM_CLUB",
+      "sha256": "884bef0c05c0fd6961f97695ad46e676f9cc71d350481136a43445314df7891a"
+    },
+    {
+      "id": "DT_ITEM_BSM_DAGGER",
+      "sha256": "eae2554de730721590288786a4dec1ccd8007adb79ba396a958f83e42cc5f12a"
+    },
+    {
+      "id": "DT_ITEM_BSM_GREATCLUB",
+      "sha256": "c245762762c1d88a9bd0378d586199c9ebc8a661b69f88aa315b86a416cf059d"
+    },
+    {
+      "id": "DT_ITEM_BSM_HANDAXE",
+      "sha256": "e522eed9c7f068d384cb530f8d3b15788f5f7d701649373a56adbb0979fd2e42"
+    },
+    {
+      "id": "DT_ITEM_BSM_JAVELIN",
+      "sha256": "95f52adf76e5acda963fe6cbbf9055da130905cc2f7b3804e5847d7d0f4cca3b"
+    },
+    {
+      "id": "DT_ITEM_BSM_LIGHT_HAMMER",
+      "sha256": "abdc7d94b1d4adf4943dfde3043bc5ae07427589b0a87ac720bc5f473ab88877"
+    },
+    {
+      "id": "DT_ITEM_BSM_MACE",
+      "sha256": "60b8f45bfcd25b00adc8e41f001e3b4b5672c3f8754d50b26b32b660fd66c04e"
+    },
+    {
+      "id": "DT_ITEM_BSM_QUARTERSTAFF",
+      "sha256": "95c8fa936b064fd5a7f8cf3a7603c681771bd05b721ca2b4954f789326cc00d9"
+    },
+    {
+      "id": "DT_ITEM_BSM_SICKLE",
+      "sha256": "8b12adea83519de1c980b9ad1db1bc30cc80823df882ed07da248e772fa8deb0"
+    },
+    {
+      "id": "DT_ITEM_BSM_SPEAR",
+      "sha256": "ee581bec3073652939d8bc05dda246bf432a2b9d8698cbfd1dc3361a631895bd"
+    },
+    {
+      "id": "DT_ITEM_BSM_LIGHT_CROSSBOW",
+      "sha256": "a85b8b7974547ec41e545bb64e3257ebbb2a08eded54943819e7d46d137fcd0a"
+    },
+    {
+      "id": "DT_ITEM_BSM_DART",
+      "sha256": "d2032685bc5d9a44deff0590a1bb91bf483b4baf443fb4559a8d8592c4bfafe2"
+    },
+    {
+      "id": "DT_ITEM_BSM_SHORTBOW",
+      "sha256": "3340c32b7215b071b7da81d2bccfc52ac546a959f3a3dcd1c9290feb56c09a13"
+    },
+    {
+      "id": "DT_ITEM_BSM_SLING",
+      "sha256": "623ef498c274781989a8b7ed86fab396512c0caf66c06d904a3bd637727e4813"
+    },
+    {
+      "id": "DT_ITEM_BSM_SMITHS_TOOLS",
+      "sha256": "51f507a4abbe7cb47367a0a409411ff4f5512f60237f2bcb5d9b68e102be150a"
+    },
+    {
+      "id": "DT_ITEM_BSM_LOCK",
+      "sha256": "a0ed61cec6694b183886ed46bc64e76fb3d418df65e9570e0db8ea0a6327cafb"
+    },
+    {
+      "id": "DT_ITEM_BSM_MANACLES",
+      "sha256": "515e5dd8c82a462b751afb488c9a4396fd56811b47bb70d31250b5c6d27d9809"
+    },
+    {
+      "id": "DT_ITEM_BSM_STEEL_BILLET",
+      "sha256": "e34beee9b50f3a91b5262ff030c03689e4ac7df44694e101a714cb7b34e76ac0"
+    },
+    {
+      "id": "DT_ITEM_ALC_HEALING_POTION",
+      "sha256": "6f62e41374ac830e79d24963e640f86a2178517ef17b7d36d62d4ec73ed1e3ed"
+    },
+    {
+      "id": "DT_ITEM_ALC_HEALING_GREATER",
+      "sha256": "8e789a324d999d6d7a3f7cb15d3d0bf6aa62bb5806a2e3ddd64381e189112935"
+    },
+    {
+      "id": "DT_ITEM_ALC_HEALING_SUPERIOR",
+      "sha256": "114bd0049889acddba7d944dce60456041f7dba707920384004e36e6cf6a13fe"
+    },
+    {
+      "id": "DT_ITEM_ALC_HEALING_SUPREME",
+      "sha256": "ae9ff7b0a080647ced0bd16d926912139ded747fe94e9cd9da714795878bd0c4"
+    },
+    {
+      "id": "DT_ITEM_ALC_CLIMBING_POTION",
+      "sha256": "ecabf35ec97d6c3d09d0b2283b7542e1220c6c704d16ef6d2e9e669e3a36a45f"
+    },
+    {
+      "id": "DT_ITEM_ALC_MINT",
+      "sha256": "0995f25ba1dfd469544fde0ef0f5b4c65c8d9c8a7cb7b621819a7069676465e9"
+    },
+    {
+      "id": "DT_ITEM_ALC_SAGE",
+      "sha256": "7167babd85d925ef4f2ca74ff5aff39d59f9ff9e4b12d56e6d01317cea7417b8"
+    },
+    {
+      "id": "DT_ITEM_ALC_LAVENDER",
+      "sha256": "eea04665fcfd13cf206d5bef0f19dde145cfd006d0da28cf91e3a07abe5bd1a0"
+    },
+    {
+      "id": "DT_ITEM_ALC_ROSEMARY",
+      "sha256": "9074d585b697e093c43165072e443ea436465bf5f5c262678893d470fbd3a4a9"
+    },
+    {
+      "id": "DT_ITEM_ALC_CHAMOMILE",
+      "sha256": "46d93eb7d00c9f8b529e21340bdc74e4e2fe041e99cd79bd4b222efbb05fa9fe"
+    },
+    {
+      "id": "DT_ITEM_ALC_JUNIPER",
+      "sha256": "12601b5a8d3060aea3a78f6e6f330938bf9f0d4b40c11eb21a09d4b227a3d504"
+    },
+    {
+      "id": "DT_ITEM_ALC_ROSE_PETALS",
+      "sha256": "11ce4aee3c8187cb9d92fbc09bc04d946a13d3e8abe0e347f0cef3ac211dc501"
+    },
+    {
+      "id": "DT_ITEM_ALC_LICORICE",
+      "sha256": "6b9b77116e052c7dfc76ed7940b514bb0a823ea12929e70be20283bc9c0125ed"
+    },
+    {
+      "id": "DT_ITEM_ALC_GUM_ARABIC",
+      "sha256": "0760c2a311b4d645281ec9b0b7965615e06d6e4fd0522f13540b6ac5332ec877"
+    },
+    {
+      "id": "DT_ITEM_ALC_ROSE_WATER",
+      "sha256": "f0d36d4089c32dec8bc94dd9938971eae73fb3affc6f6e928df3de71d5b2b58b"
+    },
+    {
+      "id": "DT_ITEM_ALC_LANOLIN",
+      "sha256": "c5612d17bd0befa2d6b8f5d0c8ef9cc01963b994028be5cfe13ff7cda70468ae"
+    },
+    {
+      "id": "DT_ITEM_ALC_PIGMENT_OCHRE",
+      "sha256": "fa0c0634999c4363b9f064ffa3012eb3d6ed023eaab30b7bde90a9230d830eb9"
+    },
+    {
+      "id": "DT_ITEM_ALC_RESIN",
+      "sha256": "0440621da8a7bc906f030b348c2950f4d295a34066127e0e78e87069f08bd4d0"
+    },
+    {
+      "id": "DT_ITEM_ALC_ALUM",
+      "sha256": "f3a6bd80740809dca9add4a96d4ef200c68b08c9b31c978b203ccec045a47a1f"
+    },
+    {
+      "id": "DT_ITEM_ALC_SULFUR",
+      "sha256": "b8e2c75bf619da8c0414e20ca012443d5ba46b9956b76c7420e6841fcf93ca46"
+    },
+    {
+      "id": "DT_ITEM_ALC_SALT_REFINED",
+      "sha256": "7a44694b8a2c5dae3f81e32855b68c19920524a1145ed823b524983048136027"
+    },
+    {
+      "id": "DT_ITEM_ALC_IRON_FILINGS",
+      "sha256": "94acad8f531bd094d3a0b25b8fa4b04d94fde358aa67d8670d0561a92f64fbdb"
+    },
+    {
+      "id": "DT_ITEM_ALC_COPPER_SULFATE",
+      "sha256": "48cf4eb9f1c41a0e96f785b75102205036628298a80ea6b6e8c8805270ee9b05"
+    },
+    {
+      "id": "DT_ITEM_ALC_DISTILLED_WATER",
+      "sha256": "8160528d22c14611cf608e3775e22f0f58ea31c8f6bff6c089f5d4b677efb4ef"
+    },
+    {
+      "id": "DT_ITEM_ALC_VIAL",
+      "sha256": "1e0aba545af3ac556543f9721d69c908367368327aae04f4d1cd08bf6e13755a"
+    },
+    {
+      "id": "DT_ITEM_ALC_DROPPER",
+      "sha256": "15068c98f89b32b7bd5178fb1a601e5b242bcfa08bda857d1e5cf18ab244651c"
+    },
+    {
+      "id": "DT_ITEM_ALC_FUNNEL",
+      "sha256": "812e6d0f2b438213fb2e3a66822cebd91e167da3a2fde7ea424862c181394dc6"
+    },
+    {
+      "id": "DT_ITEM_ALC_BEAKER",
+      "sha256": "1b3b12d2b8a907ba7012e19de7be6d7af9b34354d2de12b54802862fb4a5db1a"
+    },
+    {
+      "id": "DT_ITEM_ALC_RETORT",
+      "sha256": "c9238910c8aed280adaf366b4e6bbb6b7c48f0d0cc6c08ac926467b4005a49ab"
+    },
+    {
+      "id": "DT_ITEM_ALC_STIRRING_ROD",
+      "sha256": "ed9e80dc1728a7ce4303359a467d6c922e93f5c4c08bf862dc8a93b0faba7585"
+    },
+    {
+      "id": "DT_ITEM_ALC_MORTAR",
+      "sha256": "659d1f4ad104bcf14bd273292839994732b636e801243d0f665403928e9e6b27"
+    },
+    {
+      "id": "DT_ITEM_ALC_FILTER_PAPERS",
+      "sha256": "452df7f9186dabd33f222b0375c8a34733d8fa8f9406ede594fcb52cf035210f"
+    },
+    {
+      "id": "DT_ITEM_ALC_VIAL_RACK",
+      "sha256": "69a2579619d3b83c1e867eb25ebfede03e01ba23406fcfd7dd562c0f2c3b2870"
+    },
+    {
+      "id": "DT_ITEM_ALC_CRUCIBLE",
+      "sha256": "66adbf8d0bb44af86803152b401a482e7a7240f98c93c42dc7955f75a199319f"
+    },
+    {
+      "id": "DT_ITEM_ALC_ALCHEMISTS_SUPPLIES",
+      "sha256": "a158c58961af89f2c60d58a955580e4732d73bf5327bb3c5183cf8e2d8e76ad5"
+    },
+    {
+      "id": "DT_ITEM_BMK_DISGUISE_KIT",
+      "sha256": "fba1e58eccd852f98db77bacaadda90f83b2876b64de300a278aed88cf20b3a7"
+    },
+    {
+      "id": "DT_ITEM_BMK_HOODED_CLOAK",
+      "sha256": "2c3b9d2465fa07bd6c905d1222a81a6d4e30a61ab8960318ed19a260225cd725"
+    },
+    {
+      "id": "DT_ITEM_BMK_STAGE_WIG",
+      "sha256": "ec042243ed39d043878fa64042b8abc06cbdf8ccf59d31c2a249f9cef212adaa"
+    },
+    {
+      "id": "DT_ITEM_BMK_FALSE_BEARD",
+      "sha256": "ef77e4d0d683ebf218a29b97b9a2ef5d4782c265dcf5805b97395a370a9419f9"
+    },
+    {
+      "id": "DT_ITEM_BMK_DYE_PACK",
+      "sha256": "f496651173bff991036c79a8697a1b8c2ca7be8f1ee7197ce9f63df9b06c5cba"
+    },
+    {
+      "id": "DT_ITEM_BMK_FORGERY_KIT",
+      "sha256": "6051ce922b08d007314bf3e6d1e7242bd5d94a1788e7d110376c2fcfc010c354"
+    },
+    {
+      "id": "DT_ITEM_BMK_SEAL_BLANKS",
+      "sha256": "6835a4093a47e9b02e37ff401b6bd6d25c942bdd22415c89c1e77e63b13e978a"
+    },
+    {
+      "id": "DT_ITEM_BMK_WAX_ASSORTMENT",
+      "sha256": "ab37dd0595643e8901ee53e244efbdc418b07b9f5cf041a1e1a0f34bb4583db6"
+    },
+    {
+      "id": "DT_ITEM_BMK_GOLD_LEAF",
+      "sha256": "24c781d33c0acd72ec1371d015ddfc49e3e125e618c022256c79d4239c38c09c"
+    },
+    {
+      "id": "DT_ITEM_BMK_DOCUMENT_BLANKS",
+      "sha256": "e9ce522c8a83111022f64a8b283bebec79461946154fe8bb28d82fb3161aef4f"
+    },
+    {
+      "id": "DT_ITEM_BMK_FALSE_TRAVEL_PAPERS",
+      "sha256": "061085cc0e26328b965dfe35e944696d3b2973e21d3b3c1c00664f74c8a42407"
+    },
+    {
+      "id": "DT_ITEM_BMK_COUNTERFEIT_TOKEN",
+      "sha256": "a5337207fcbc4a08fabaf457a09b14e7be5c94668716ac78216d33622385c802"
+    },
+    {
+      "id": "DT_ITEM_BMK_THIEVES_TOOLS",
+      "sha256": "d3ad11c0b7ea69609373627ba86f3514d336ddf38875aa27123f44f2de5ed2bc"
+    },
+    {
+      "id": "DT_ITEM_BMK_PICK_REPLACEMENTS",
+      "sha256": "2cdd02c72d5700bf070b2e2396e8be67ae699243a3bd94633b5d2c1f32ca2d82"
+    },
+    {
+      "id": "DT_ITEM_BMK_FINE_FILE",
+      "sha256": "c21d590a98295fd36b2d7cac7e9b4763e4713ca44d1b20fb4fe914d874b696af"
+    },
+    {
+      "id": "DT_ITEM_BMK_WIRE_BUNDLE",
+      "sha256": "c397c89ea0836a2c40d4217d86b4955ce9b593b8b2419538523a7084aae0f71c"
+    },
+    {
+      "id": "DT_ITEM_BMK_POISONERS_KIT",
+      "sha256": "b723d1239a360bafd05cc380a62229fd4e1f8b995d9e4d134131e166b948ea03"
+    },
+    {
+      "id": "DT_ITEM_BMK_BASIC_POISON",
+      "sha256": "9f6e2b2c00c71adcfc466435eb2021f0da51eeff1660e48ad55c606e2a1f3ed3"
+    },
+    {
+      "id": "DT_ITEM_BMK_PADDED_WRAP",
+      "sha256": "b4c5718d0d42e55870f5b25cf7356f51904a6edc689df0262b112f26cdb6c973"
+    },
+    {
+      "id": "DT_ITEM_BMK_HOLLOW_BOOK",
+      "sha256": "0b0078621815745e77cf9d55f7e440c652628e8a212b0068b24e24afbb032855"
+    },
+    {
+      "id": "DT_ITEM_BMK_FALSE_BOTTOM_CASE",
+      "sha256": "665cab3653dcc6ea34d4e41606841ae686f04e8be73a67a485eea71b99f3d4fd"
+    },
+    {
+      "id": "DT_ITEM_BMK_SMUGGLERS_MANIFEST",
+      "sha256": "3e733779f18f0358241a2ccd09d6bfa13d0316b129cce6b5053d5972368fea57"
+    },
+    {
+      "id": "DT_ITEM_BMK_UNTAXED_SPICE",
+      "sha256": "65e37e4c7e2af5d94d8aab7dadb1158b34291c2cc51a57b4880d83e8f7694e34"
+    },
+    {
+      "id": "DT_ITEM_BMK_PROHIBITED_INCENSE",
+      "sha256": "e997efa2c385fee61dcabb834862f22381a9272a3fb0de8dbd42bb918f60057e"
+    },
+    {
+      "id": "DT_ITEM_BMK_UNREGISTERED_REAGENTS",
+      "sha256": "d5dcc682a7973a05cd4cc879e3b552e74f6a137297667638f19a526a8810ad28"
+    },
+    {
+      "id": "DT_ITEM_BMK_STOLEN_SILVERWARE",
+      "sha256": "1af38c5e9a50fb2dea6afdb1d80abb4a2b47bb5b99711570215f3d0392dda69d"
+    },
+    {
+      "id": "DT_ITEM_BMK_STOLEN_SIGNET",
+      "sha256": "8d514b316af5b39c37bd5b672a79bd21f495f628d398e832ca2708f62735606c"
+    },
+    {
+      "id": "DT_ITEM_BMK_STOLEN_RELIQUARY",
+      "sha256": "b70d54c89a1b630c8bd73d65257203344e687a71bf83034e6ddbad444afcae9e"
+    },
+    {
+      "id": "DT_ITEM_BMK_CUT_AGATE",
+      "sha256": "bc310040ee0a1340e460e95e72d28ec6f9ccd48bef762f731d007879d85d5844"
+    },
+    {
+      "id": "DT_ITEM_BMK_CUT_AMETHYST",
+      "sha256": "80f1d3d47a38b4a5ad68760e56365b581c1d1c5b75df7f39bbc8a63c88b3c27d"
+    },
+    {
+      "id": "DT_ITEM_BMK_OBSIDIAN_IDOL",
+      "sha256": "160fd7c27b4b9299465128dbea50149a3c23283114a7be0c55f2ca86576985e3"
+    },
+    {
+      "id": "DT_ITEM_BMK_BROKEN_SPELL_FOCUS",
+      "sha256": "814f25f68406d4cf887a6ccc46e204ff00baedfbada8ce671da7f44bde59d0f4"
+    },
+    {
+      "id": "DT_ITEM_BMK_FOREIGN_MEDALLION",
+      "sha256": "54eb0d3f4c22c2ae731a726d6d8ad68da944bfa84d5a6e79c68556dba1079837"
+    },
+    {
+      "id": "DT_ITEM_BMK_PEARL",
+      "sha256": "d6caa76c89e79bd89bb4c8510cf0837105f3a2e51dd8c5c534a573a1fb554be1"
+    },
+    {
+      "id": "DT_ITEM_BMK_DIAMOND",
+      "sha256": "1b419edeed20fd79fdb58f034a237f589b41bff82cd246138603d6a0a22cab46"
+    },
+    {
+      "id": "DT_ITEM_GS_COMPONENT_POUCH",
+      "sha256": "1c3527a0d36866a492ce9c09f76e33e460b39f07bb9d82ad606fd03c2089896e"
+    },
+    {
+      "id": "DT_ITEM_GS_SPELLBOOK",
+      "sha256": "4f98264755cb861fcfa805397f27fd74ed8023013b44fd547fe26eb195de58d7"
+    },
+    {
+      "id": "DT_ITEM_GS_HERBALISM_KIT",
+      "sha256": "92996438b7d9858ab5309ced687e1f25c6d437c0bc911b73f64fe0595614878c"
+    },
+    {
+      "id": "DT_ITEM_GS_NAVIGATORS_TOOLS",
+      "sha256": "e30fa6903d04dc4fd64c6e1c3b61f7e85803f93c62bec9a699b9b39c762d6f1c"
+    },
+    {
+      "id": "DT_ITEM_GS_QUIVER",
+      "sha256": "faf97988ff25840f3489d3ec808d202adb7e7e784aa1a43e5d9f1344766ba156"
+    },
+    {
+      "id": "DT_ITEM_GS_CROSSBOW_BOLT_CASE",
+      "sha256": "eb331b51bba7f61ad375aaed23f9af87a32fbf3450ae30b4880abf043205e02e"
+    },
+    {
+      "id": "DT_ITEM_GS_LADDER_RIGID",
+      "sha256": "8e10cddb1dfc06f11e79abadeab28f18395cab58e8be101346143339e31473a1"
+    },
+    {
+      "id": "DT_ITEM_GS_POLE",
+      "sha256": "006b4c206ffde28536e3495333f12f634328d066476aab078ed9909b22871cf6"
+    }
+  ]
+}
