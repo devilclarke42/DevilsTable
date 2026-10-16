@@ -45,3 +45,7 @@
 | [Repository Maintenance](MAINTENANCE.md) | Maintainers: document lifecycle, references and cleanup policy |
 
 The root [README](../README.md), [Contributing Guide](../CONTRIBUTING.md), [Roadmap](../ROADMAP.md) and [Changelog](../CHANGELOG.md) are the public entry points. [Archived content audits](archive/README.md) retain historical provenance only and are excluded from runtime ZIPs. Completed implementation plans and detailed internal history remain in Git.
+
+## Catalogue audit evidence
+
+Maintainers and content contributors can review the [Milestone 2A catalogue audit](audits/README.md), its machine-readable inventories and the proposed expansion plan. These are dated planning snapshots; runtime source JSON remains authoritative.
