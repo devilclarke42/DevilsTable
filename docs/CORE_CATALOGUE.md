@@ -33,7 +33,7 @@ Rigid ladders and poles keep their full ten-foot length despite reduced carried 
 
 ## Availability and stock
 
-The new ordinary essentials use Often stock; Navigator's Tools are Rarely. No new item is guaranteed by every village shop. Existing Town/City draw and prosperity scaling increase opportunities without guaranteeing a complete assortment. Merchant Wagon excludes the rigid ladder and pole; Travelling Apothecary excludes the full herbalism kit; Master Armorer excludes the quiver and bolt case. Other appropriate profiles reuse the same canonical records.
+The new ordinary essentials use Often stock; Navigator's Tools are Rarely. None of these eight essentials is guaranteed by every village shop. Existing Town/City draw and prosperity scaling increase opportunities without guaranteeing a complete assortment. Merchant Wagon excludes the rigid ladder and pole; Travelling Apothecary excludes the full herbalism kit; Master Armorer excludes the quiver and bolt case. Other appropriate profiles reuse the same canonical records.
 
 ## Validation and limits
 
@@ -141,3 +141,7 @@ Eleven additional commodities use native trade loot. One Item quantity is one co
 | Platinum Bar | Platinum (1 lb): 500 gp; 1 lb | 500 gp / 1 lb |
 
 Cotton uses the established textile economy (between existing linen and canvas), rather than importing a mismatched SRD price. Bullion retains full source mass and metal value. Silver, gold and platinum are shared canonical Items for General Stores, Blacksmiths and Fences. Their ordinary commodity status does not imply stolen provenance. The Crime Boss profile’s existing generic valuable-goods rule gates them behind relationship level five. Gold and platinum remain Rarely even for city shops, with the existing rare-stock one-or-two-unit distribution.
+
+## Equipment packs and livestock
+
+The seven pack manifests and proposed fulfilment workflow are in [Equipment Pack Fulfilment](EQUIPMENT_PACKS.md). They are not purchasable full-pack records. Six animal commodities also await a reviewed handover representation. These omissions remain visible in [Content Completeness](CONTENT_COMPLETENESS.md).

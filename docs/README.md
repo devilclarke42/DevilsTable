@@ -52,4 +52,4 @@ Maintainers and content contributors can review the [Milestone 2A catalogue audi
 
 ## Core content progress
 
-[Core Catalogue](CORE_CATALOGUE.md) explains source comparisons and Item behaviour. [Content Completeness](CONTENT_COMPLETENESS.md) records validated coverage progress and decisions pending review.
+[Core Catalogue](CORE_CATALOGUE.md) explains source comparisons and Item behaviour. [Content Completeness](CONTENT_COMPLETENESS.md) records validated coverage progress and decisions pending review. [Equipment Pack Fulfilment](EQUIPMENT_PACKS.md) preserves all seven manifests and the current transfer boundary.

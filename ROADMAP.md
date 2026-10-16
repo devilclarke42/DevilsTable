@@ -28,4 +28,4 @@ Reputation/factions, automatic restocking, crafting, room capacity/reservations 
 
 ## Current content progress
 
-The first eight core-equipment additions are validated on the development branch. Source-unit SRD coverage is 133/241 (55.19%); publication and further generic data-contract work remain pending review. See [Content Completeness](docs/CONTENT_COMPLETENESS.md).
+The development branch adds 78 core products and represents 203/241 SRD equipment units (84.23%). Adventuring gear, focus variants, artisan tools and instruments are covered; equipment-pack fulfilment, livestock representation and transport content remain open. The two approved generic Item support changes are validated. Owner review, live-world acceptance and publication remain pending. See [Content Completeness](docs/CONTENT_COMPLETENESS.md).
