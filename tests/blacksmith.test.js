@@ -39,9 +39,9 @@ test("five smith profiles have distinct stock pools and compatible templates",as
 });
 test("smith builds converge without duplicating shared products",async()=>{
  const {adapter,state}=fakeAdapter();const build=createBuilder({load:()=>catalogue,adapter});
- const result=await build({dryRun:false,shopId:"blacksmith"});assert.equal(result.create,73);
- assert.equal((await build({dryRun:false,shopId:"blacksmith"})).unchanged,73);
- assert.equal(new Set(state.docs.map(d=>d.flags["devils-table-merchants"].sourceId)).size,73);
+ const result=await build({dryRun:false,shopId:"blacksmith"});assert.equal(result.create,75);
+ assert.equal((await build({dryRun:false,shopId:"blacksmith"})).unchanged,75);
+ assert.equal(new Set(state.docs.map(d=>d.flags["devils-table-merchants"].sourceId)).size,75);
 });
 test("requirements reject missing, wrong, sold and other-character item identities",async()=>{
  const {m,pc,request,blade}=await world();const req={types:["weapon"]};
@@ -102,8 +102,8 @@ test("weapon and tool activity unit defaults converge after Foundry normalizatio
  const build=createBuilder({load:()=>catalogue,adapter});
  const result=await build({dryRun:false,shopId:"blacksmith"});
  assert.equal(result.update,0);assert.equal(result.unchanged,38);
- assert.equal((await build({dryRun:false,shopId:"blacksmith"})).unchanged,73);
- assert.equal(new Set(state.docs.map(d=>d._id)).size,73);
+ assert.equal((await build({dryRun:false,shopId:"blacksmith"})).unchanged,75);
+ assert.equal(new Set(state.docs.map(d=>d._id)).size,75);
  const changed=structuredClone(expected[0]);
  Object.values(changed.system.activities)[0].duration.units="hour";
  assert.equal(matchesGenerated(changed,expected[0]),false);

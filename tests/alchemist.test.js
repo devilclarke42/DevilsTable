@@ -18,7 +18,7 @@ const services=await readJson("data/services.json");
 serviceRegistry.register(services);
 catalogueRegistry.register({catalogues:data.catalogueDefinitions,categories:data.categoryDefinitions});
 test("Alchemist shares six goods and adds 35 permanent, fully described records",async()=>{
- assert.equal(rows.length,41);assert.equal(rows.filter(i=>i.id.startsWith("DT_ITEM_ALC_")).length,35);
+ assert.equal(rows.length,42);assert.equal(rows.filter(i=>i.id.startsWith("DT_ITEM_ALC_")).length,35);
  const icons=new Set((await readJson("tests/fixtures/core-icon-references.json")).icons.map(i=>i.icon));
  for(const i of rows){assert.ok(i.icon.startsWith("modules/devils-table-merchants/")||icons.has(i.icon),i.name);assert.ok(i.saleUnit&&i.weight.notes&&i.description);}
 });
@@ -40,8 +40,8 @@ test("healing doses use native healing dice, 2014 actions and self consumption",
 test("Alchemist scoped builds converge and never duplicate shared Item identities",async()=>{
  const {adapter,state}=fakeAdapter();const build=createBuilder({load:()=>data,adapter});
  await build({dryRun:false,shopId:"general-store"});
- const r=await build({dryRun:false,shopId:"alchemist"});assert.equal(r.create,35);assert.equal(r.unchanged,6);
- assert.equal((await build({dryRun:false,shopId:"alchemist"})).unchanged,41);
+ const r=await build({dryRun:false,shopId:"alchemist"});assert.equal(r.create,35);assert.equal(r.unchanged,7);
+ assert.equal((await build({dryRun:false,shopId:"alchemist"})).unchanged,42);
  assert.equal(new Set(state.docs.map(d=>d.flags["devils-table-merchants"].sourceId)).size,state.docs.length);
 });
 test("four presets select distinct generation scales and workshop services",async()=>{

@@ -2,7 +2,14 @@
 
 **Audience:** users and maintainers. **Purpose:** describe meaningful changes by release candidate; this is the only changelog. Candidate labels do not imply a stable release. Detailed historical investigations remain in Git.
 
-## Unreleased — Milestone 1 Closure
+## Unreleased
+
+### Added
+
+- Eight core essentials: Component Pouch, Spellbook, Herbalism Kit, Navigator's Tools, Quiver, Crossbow Bolt Case, Rigid Ladder (10 ft.) and Pole (10 ft.). Native tool/container mappings reuse the shared catalogue and stock framework.
+- Official source price/weight comparisons, conservative stock assignments, preserved released-item snapshots and core-content coverage tracking.
+
+### Repository consolidation
 
 ### Changed
 

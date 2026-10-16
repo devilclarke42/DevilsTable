@@ -1,0 +1,456 @@
+[
+  {
+    "id": "DT_ITEM_GS_COMPONENT_POUCH",
+    "name": "Component Pouch",
+    "description": "A compartmented, water-resistant belt pouch keeps ordinary spell ingredients within reach. Its supplied assortment represents material components without a listed cost. It does not provide components with a specific price; track components consumed by spells and replacement supplies with the GM. Using it follows the spell’s component requirements and does not waive the need for a free hand.\n\nThe stated carried weight includes the pouch and its abstract ordinary supplies. Additional physical Items placed inside add their own weight. The six-pound contents limit and one-fifth cubic foot volume are project limits, not SRD capacity statistics. No automatic component expenditure is performed.",
+    "saleUnit": "One stocked component pouch; costly components excluded",
+    "price": {
+      "value": 12,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 1.2,
+      "units": "lb",
+      "notes": "Adjusted complete-kit weight of 1.2 lb includes ordinary supplies; 12 gp makes a specialist compartmented kit distinct from the 3 sp empty pouch. The official comparator is 25 gp / 2 lb; no costly components are supplied."
+    },
+    "icon": "icons/containers/bags/pack-leather-brown.webp",
+    "category": "containers",
+    "tags": [
+      "mundane",
+      "core-equipment",
+      "containers"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 (2014), Equipment pp. 67–70: Component Pouch 25 gp, 2 lb. Original wording; project price and adjusted weight/capacity. See docs/CORE_CATALOGUE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0; original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "container",
+      "capacity": {
+        "weight": {
+          "value": 6,
+          "units": "lb"
+        },
+        "volume": {
+          "value": 0.2,
+          "units": "cubicFoot"
+        }
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_SPELLBOOK",
+    "name": "Spellbook",
+    "description": "One hundred blank vellum pages are bound in leather for recording a wizard’s spells. The binding opens flat for careful transcription and keeps the pages together during travel.\n\nNo spells, copying materials, transcription fees or magical protection are included. Spell recording, preparation and the costs of copying follow the 2014 spellcasting rules and are managed by the player and GM. This is a spellbook, distinct from an ordinary blank stationery book.",
+    "saleUnit": "One blank 100-page spellbook",
+    "price": {
+      "value": 25,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 2,
+      "units": "lb",
+      "notes": "Adjusted complete empty-book weight of 2 lb. Project 25 gp retains premium vellum and binding above the 3 gp ordinary blank book; the official comparator is 50 gp / 3 lb."
+    },
+    "icon": "icons/sundries/books/book-symbol-triangle-silver-brown.webp",
+    "category": "writing",
+    "tags": [
+      "mundane",
+      "core-equipment",
+      "writing"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 (2014), Equipment pp. 67–70: Spellbook 50 gp, 3 lb; 100 blank vellum pages. Original wording; project price and adjusted weight/capacity. See docs/CORE_CATALOGUE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0; original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_HERBALISM_KIT",
+    "name": "Herbalism Kit",
+    "description": "Clippers, a small mortar and pestle, pouches and vials form a portable kit for identifying and applying herbs. The complete kit supports herbalism-kit proficiency on relevant checks; it does not grant that proficiency. The GM chooses the ability and determines what an examination reveals.\n\nUnder the 2014 rules, proficiency with this kit is required to create antitoxin and potions of healing. Purchase alone supplies neither a recipe nor finished medicine. Gathering, crafting, ingredient use and recovery effects remain separate GM-adjudicated work.",
+    "saleUnit": "One complete herbalism kit",
+    "price": {
+      "value": 4,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 2.4,
+      "units": "lb",
+      "notes": "Adjusted complete kit weighs 80% of the 3 lb reference: 2.4 lb, including its pouch and ordinary apparatus. Project 4 gp is a modest reduction from 5 gp, above the price of loose herbs or an incomplete mortar."
+    },
+    "icon": "icons/containers/bags/pouch-leather-green.webp",
+    "category": "tools",
+    "tags": [
+      "mundane",
+      "core-equipment",
+      "tools",
+      "tool-kit"
+    ],
+    "shops": [
+      "general-store",
+      "alchemist"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 (2014), Equipment pp. 67–70: Herbalism Kit 5 gp, 3 lb. Original wording; project price and adjusted weight/capacity. See docs/CORE_CATALOGUE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0; original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "tool",
+      "native": {
+        "ability": "wis",
+        "bonus": "",
+        "type": {
+          "value": "",
+          "baseItem": "herb"
+        },
+        "properties": [],
+        "activities": {
+          "dnd5eactivity000": {
+            "_id": "dnd5eactivity000",
+            "type": "check",
+            "activation": {
+              "type": "",
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "concentration": false,
+              "value": "",
+              "units": "inst",
+              "special": "",
+              "override": false
+            },
+            "effects": [],
+            "range": {
+              "units": "self",
+              "special": "",
+              "override": false
+            },
+            "target": {
+              "template": {
+                "count": "",
+                "contiguous": false,
+                "type": "",
+                "size": "",
+                "width": "",
+                "height": "",
+                "units": "ft"
+              },
+              "affects": {
+                "count": "",
+                "type": "",
+                "choice": false,
+                "special": ""
+              },
+              "prompt": true,
+              "override": false
+            },
+            "check": {
+              "ability": "wis",
+              "dc": {}
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": []
+            },
+            "sort": 0
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_NAVIGATORS_TOOLS",
+    "name": "Navigator's Tools",
+    "description": "A fitted case holds the measuring instruments needed to chart a ship’s course and work with navigation charts. Navigator’s-tools proficiency applies to appropriate course-charting and navigation checks, including checks to avoid becoming lost at sea. The kit does not grant proficiency or guarantee a safe route.\n\nThe native tool check starts with Intelligence; the GM may choose an appropriate ability for the task. Charts, a ship and expert instruction are separate. These instruments are distinct from a simple pocket compass.",
+    "saleUnit": "One complete navigator’s tool set",
+    "price": {
+      "value": 20,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 1.6,
+      "units": "lb",
+      "notes": "Adjusted fitted kit weight is 80% of the 2 lb reference: 1.6 lb. Project 20 gp discounts the reference 25 gp while retaining a significant precision-tool purchase; it is not a superior magical compass."
+    },
+    "icon": "icons/tools/navigation/sextant-brass-brown.webp",
+    "category": "tools",
+    "tags": [
+      "mundane",
+      "core-equipment",
+      "tools",
+      "tool-kit"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "special-order",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 (2014), Equipment pp. 67–70: Navigator’s Tools 25 gp, 2 lb. Original wording; project price and adjusted weight/capacity. See docs/CORE_CATALOGUE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0; original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "tool",
+      "native": {
+        "ability": "int",
+        "bonus": "",
+        "type": {
+          "value": "",
+          "baseItem": "navg"
+        },
+        "properties": [],
+        "activities": {
+          "dnd5eactivity000": {
+            "_id": "dnd5eactivity000",
+            "type": "check",
+            "activation": {
+              "type": "",
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "concentration": false,
+              "value": "",
+              "units": "inst",
+              "special": "",
+              "override": false
+            },
+            "effects": [],
+            "range": {
+              "units": "self",
+              "special": "",
+              "override": false
+            },
+            "target": {
+              "template": {
+                "count": "",
+                "contiguous": false,
+                "type": "",
+                "size": "",
+                "width": "",
+                "height": "",
+                "units": "ft"
+              },
+              "affects": {
+                "count": "",
+                "type": "",
+                "choice": false,
+                "special": ""
+              },
+              "prompt": true,
+              "override": false
+            },
+            "check": {
+              "ability": "int",
+              "dc": {}
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": []
+            },
+            "sort": 0
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_QUIVER",
+    "name": "Quiver",
+    "description": "A stiff leather quiver keeps up to twenty ordinary arrows together and accessible. A shoulder strap secures it while travelling. Arrows are purchased separately; no ammunition is included.\n\nThe one-pound contents allowance accommodates twenty standard arrows. The project volume is a physical bookkeeping limit, not an extra arrow-count rule; the GM checks the twenty-arrow limit and the fit of other objects. Contents retain their own weight.",
+    "saleUnit": "One empty twenty-arrow quiver",
+    "price": {
+      "value": 7,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 0.6,
+      "units": "lb",
+      "notes": "Adjusted empty leather shell and strap weigh 0.6 lb. Project 7 sp sits below the 8 sp backpack and above the 3 sp pouch; official reference is 1 gp / 1 lb. Contents and ammunition are separate."
+    },
+    "icon": "icons/containers/ammunition/arrows-quiver-simple-brown.webp",
+    "category": "containers",
+    "tags": [
+      "mundane",
+      "core-equipment",
+      "containers"
+    ],
+    "shops": [
+      "general-store",
+      "blacksmith"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 (2014), Equipment pp. 67–70: Quiver 1 gp, 1 lb; holds twenty arrows. Original wording; project price and adjusted weight/capacity. See docs/CORE_CATALOGUE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0; original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "container",
+      "capacity": {
+        "weight": {
+          "value": 1,
+          "units": "lb"
+        },
+        "volume": {
+          "value": 0.08,
+          "units": "cubicFoot"
+        }
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_CROSSBOW_BOLT_CASE",
+    "name": "Crossbow Bolt Case",
+    "description": "A narrow wooden case with a tied cover protects up to twenty crossbow bolts. A carrying loop keeps it close to hand without turning it into a loaded weapon. Bolts are sold separately.\n\nThe 1.5-pound contents allowance accommodates twenty standard bolts. Its project volume does not enforce a count or ammunition type automatically; the GM checks the twenty-bolt limit and physical fit. The case is distinct from a tube for paper and scrolls.",
+    "saleUnit": "One empty twenty-bolt case",
+    "price": {
+      "value": 7,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 0.6,
+      "units": "lb",
+      "notes": "Adjusted empty case and lid weigh 0.6 lb. Project 7 sp matches a similarly constructed document tube and quiver; official reference is 1 gp / 1 lb. Bolts add their own weight."
+    },
+    "icon": "icons/containers/ammunition/quiver-simple-brown.webp",
+    "category": "containers",
+    "tags": [
+      "mundane",
+      "core-equipment",
+      "containers"
+    ],
+    "shops": [
+      "general-store",
+      "blacksmith"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 (2014), Equipment pp. 67–70: Case, crossbow bolt 1 gp, 1 lb; holds twenty bolts. Original wording; project price and adjusted weight/capacity. See docs/CORE_CATALOGUE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0; original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "container",
+      "capacity": {
+        "weight": {
+          "value": 1.5,
+          "units": "lb"
+        },
+        "volume": {
+          "value": 0.08,
+          "units": "cubicFoot"
+        }
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_LADDER_RIGID",
+    "name": "Rigid Ladder, 10 ft.",
+    "description": "Two wooden rails joined by fixed rungs form one rigid ten-foot ladder. Rest it against a sound support before climbing; it does not fold or coil like a rope ladder.\n\nIts length remains awkward to carry even though the project uses a lighter wooden construction than the reference. The GM decides whether it can fit through a passage, be secured to a load or safely bear a climber. Buying it provides no automatic climbing bonus.",
+    "saleUnit": "One rigid ten-foot wooden ladder",
+    "price": {
+      "value": 8,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 12,
+      "units": "lb",
+      "notes": "Adjusted dry wooden rails and rungs weigh 12 lb; the full ten-foot length remains rigid and bulky. Project 8 cp is near the reference 1 sp and distinct from a 4 gp portable rope ladder; no strength bonus is added."
+    },
+    "icon": "icons/sundries/misc/ladder-improvised.webp",
+    "category": "rope-climbing",
+    "tags": [
+      "mundane",
+      "core-equipment",
+      "rope-climbing"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 (2014), Equipment pp. 67–70: Ladder (10-foot) 1 sp, 25 lb. Original wording; project price and adjusted weight/capacity. See docs/CORE_CATALOGUE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0; original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_POLE",
+    "name": "Pole, 10 ft.",
+    "description": "A straight ten-foot wooden pole is useful for probing ahead, reaching a latch or pushing a light object from a distance. It is a single rigid length rather than telescoping equipment.\n\nThe GM resolves what probing reveals, how much force it can bear and whether its full length can be transported. It is not a reach weapon and grants no automatic trap detection, disarming or extra attack reach.",
+    "saleUnit": "One ten-foot wooden pole",
+    "price": {
+      "value": 4,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 4,
+      "units": "lb",
+      "notes": "Adjusted dry straight wooden pole weighs 4 lb while retaining its awkward ten-foot length. Project 4 cp stays close to the 5 cp reference and above an ordinary 3 cp walking stick."
+    },
+    "icon": "icons/commodities/wood/wood-pole.webp",
+    "category": "travel",
+    "tags": [
+      "mundane",
+      "core-equipment",
+      "travel"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 (2014), Equipment pp. 67–70: Pole (10-foot) 5 cp, 7 lb. Original wording; project price and adjusted weight/capacity. See docs/CORE_CATALOGUE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0; original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  }
+]

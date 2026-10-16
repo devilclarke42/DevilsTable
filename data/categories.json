@@ -17,7 +17,10 @@
       "Flask",
       "Waterskin",
       "Clay Jug",
-      "Ceramic Jar"
+      "Ceramic Jar",
+      "Component Pouch",
+      "Quiver",
+      "Crossbow Bolt Case"
     ],
     "catalogue": "general-store",
     "sort": 0,
@@ -68,7 +71,8 @@
       "Block and Tackle",
       "Chain",
       "Rope Ladder",
-      "Belaying Pin"
+      "Belaying Pin",
+      "Rigid Ladder, 10 ft."
     ],
     "catalogue": "general-store",
     "sort": 20,
@@ -126,7 +130,8 @@
       "Wax Tablet",
       "Slate",
       "Blotting Sand",
-      "Document Case"
+      "Document Case",
+      "Spellbook"
     ],
     "catalogue": "general-store",
     "sort": 40,
@@ -205,7 +210,8 @@
       "Travel Cloak",
       "Pack Cover",
       "Canvas Repair Patches",
-      "Marking Ribbon"
+      "Marking Ribbon",
+      "Pole, 10 ft."
     ],
     "catalogue": "general-store",
     "sort": 70,
@@ -233,7 +239,9 @@
       "Wooden Rule",
       "Tool Wrap",
       "Wooden Wedges",
-      "Merchant's Scale"
+      "Merchant's Scale",
+      "Herbalism Kit",
+      "Navigator's Tools"
     ],
     "catalogue": "general-store",
     "sort": 80,
@@ -1477,5 +1485,18 @@
     "sort": 160,
     "visible": true,
     "icon": "icons/svg/item-bag.svg"
+  },
+  {
+    "id": "tools",
+    "shop": "alchemist",
+    "catalogue": "alchemist",
+    "name": "Tools & Kits",
+    "description": "Complete specialist tool kits shared with other merchants.",
+    "plannedItems": [
+      "Herbalism Kit"
+    ],
+    "sort": 100,
+    "visible": true,
+    "icon": "icons/containers/bags/pouch-leather-green.webp"
   }
 ]

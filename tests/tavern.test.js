@@ -18,7 +18,7 @@ test("Production Tavern has 168 Tavern products across 23 categories and shares 
   const data = await load(); assert.equal(validateStockCatalogue(data).valid, true);
   const tavern = selectEntries(data, { shopId: "tavern" }); assert.equal(tavern.length, 205);
   assert.equal(tavern.filter(({ item }) => item.id.startsWith("DT_ITEM_GS_")).length, 37);
-  assert.equal(selectEntries(data, { shopId: "general-store" }).length, 144);
+  assert.equal(selectEntries(data, { shopId: "general-store" }).length, 152);
   for (const categoryId of categories) {
     const entries = selectEntries(data, { shopId: "tavern", categoryId });
     assert.equal(entries.length, 8);
@@ -30,8 +30,8 @@ test("Production Tavern has 168 Tavern products across 23 categories and shares 
       assert.ok(item.tags.length >= 4); assert.equal(item.shops.join(), "tavern");
     }
   }
-  assert.equal(new Set(data.entries.map(({ item }) => item.id)).size, 440);
-  assert.equal(new Set(data.entries.map(({ item }) => item.name.normalize("NFKC").toLowerCase())).size, 440);
+  assert.equal(new Set(data.entries.map(({ item }) => item.id)).size, 448);
+  assert.equal(new Set(data.entries.map(({ item }) => item.name.normalize("NFKC").toLowerCase())).size, 448);
 });
 test("Production Tavern consumables consume one sale unit without healing, effects or stale item references", async () => {
   const data = await load();
@@ -51,10 +51,10 @@ test("Deferred alpha.25 catalogue upgrade creates only the 168 Tavern records an
   const data = await load();
   const old = data.entries.filter(({ item }) => item.id.startsWith("DT_ITEM_GS_")).map(({ item }) => catalogueEntryToItem(item));
   const { adapter, state } = fakeAdapter({ existing: old }); const build = createBuilder({ load: () => data, adapter });
-  const preview = await build(); assert.deepEqual([preview.create, preview.update, preview.unchanged], [296, 0, 144]);
+  const preview = await build(); assert.deepEqual([preview.create, preview.update, preview.unchanged], [296, 0, 152]);
   assert.deepEqual(state.writes, []);
-  await build({ dryRun: false }); assert.equal(state.docs.length, 440); assert.deepEqual(state.docs.slice(0, 144), old);
-  assert.equal((await build({ dryRun: false })).unchanged, 440);
+  await build({ dryRun: false }); assert.equal(state.docs.length, 448); assert.deepEqual(state.docs.slice(0, 152), old);
+  assert.equal((await build({ dryRun: false })).unchanged, 448);
   assert.equal((await build({ dryRun: false, shopId: "tavern" })).unchanged, 205);
 });
 test("Production Tavern keeps four existing table identities; only its rows change and rebuild converges", async () => {

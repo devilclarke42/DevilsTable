@@ -18,12 +18,12 @@ test("all ten curated General Store categories contain exactly their approved it
   for (const category of data.categoryDefinitions.filter(category => category.shop === "general-store")) {
     assert.deepEqual(data.entries.filter(({ item }) => item.category === category.id && item.shops.includes("general-store")).map(({ item }) => item.name), category.plannedItems);
   }
-  assert.equal(selectEntries(data, { shopId: "general-store" }).length, 144);
+  assert.equal(selectEntries(data, { shopId: "general-store" }).length, 152);
   assert.ok(selectEntries(data, { shopId: "general-store" }).every(({ item }) => item.id.startsWith("DT_ITEM_GS_")));
   assert.deepEqual(new Set(selectEntries(data, { shopId: "general-store" }).map(({ item }) => item.id)), new Set(data.ledger.ids.filter(id => id.startsWith("DT_ITEM_GS_"))));
   const view = shopView(data, { shopId: "general-store" });
-  assert.deepEqual(view.categories.map(category => category.count), [13, 17, 10, 21, 13, 18, 12, 13, 16, 11]);
-  assert.deepEqual(view.priceBands.map(band => band.count), [58, 61, 23, 2]);
+  assert.deepEqual(view.categories.map(category => category.count), [16, 17, 11, 21, 14, 18, 12, 14, 18, 11]);
+  assert.deepEqual(view.priceBands.map(band => band.count), [60, 63, 26, 3]);
 });
 
 test("every registered shop has three Merchant Notes tiers, including the requested village profile", async () => {
@@ -157,15 +157,15 @@ test("shared goods keep one identity across filtered and full builds", async () 
   const first = await build({ dryRun: false, shopId: "alchemist", categoryId: "containers" });
   assert.equal(first.create, 3);
   const second = await build({ dryRun: false, shopId: "general-store", categoryId: "containers" });
-  assert.equal(second.create, 10);
+  assert.equal(second.create, 13);
   assert.equal(second.unchanged, 3);
-  assert.equal(state.docs.length, 13);
-  assert.equal((await build()).unchanged, 13);
+  assert.equal(state.docs.length, 16);
+  assert.equal((await build()).unchanged, 16);
   data.entries.find(({ item }) => item.name === "Bottle").item.price.value = 3;
   const updated = await build({ dryRun: false, shopId: "alchemist", categoryId: "containers" });
   assert.equal(updated.update, 1);
-  assert.equal(updated.preserved, 10);
-  assert.equal(state.docs.length, 13);
+  assert.equal(updated.preserved, 13);
+  assert.equal(state.docs.length, 16);
 });
 
 test("empty shop/category intersections never create or clear a pack", async () => {

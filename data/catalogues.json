@@ -90,7 +90,8 @@
       "ingredients",
       "reagents",
       "glassware",
-      "alchemical-tools"
+      "alchemical-tools",
+      "tools"
     ],
     "fallbackCategory": {
       "id": "other",

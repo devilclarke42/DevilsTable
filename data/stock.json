@@ -999,7 +999,9 @@
             "DT_ITEM_GS_BOARD_WASH",
             "DT_ITEM_GS_HINGES_DOOR",
             "DT_ITEM_GS_BAR_IRON",
-            "DT_ITEM_GS_BAR_COPPER"
+            "DT_ITEM_GS_BAR_COPPER",
+            "DT_ITEM_GS_LADDER_RIGID",
+            "DT_ITEM_GS_POLE"
           ],
           "overrides": [
             {
@@ -1098,7 +1100,8 @@
         "ingredients",
         "reagents",
         "glassware",
-        "alchemical-tools"
+        "alchemical-tools",
+        "tools"
       ],
       "overrides": [
         {
@@ -1179,7 +1182,8 @@
             "DT_ITEM_ALC_DISTILLED_WATER",
             "DT_ITEM_ALC_RETORT",
             "DT_ITEM_ALC_MORTAR",
-            "DT_ITEM_ALC_ALCHEMISTS_SUPPLIES"
+            "DT_ITEM_ALC_ALCHEMISTS_SUPPLIES",
+            "DT_ITEM_GS_HERBALISM_KIT"
           ],
           "overrides": [
             {
@@ -1898,7 +1902,9 @@
             "DT_ITEM_BSM_LIGHT_CROSSBOW",
             "DT_ITEM_BSM_DART",
             "DT_ITEM_BSM_SHORTBOW",
-            "DT_ITEM_BSM_SLING"
+            "DT_ITEM_BSM_SLING",
+            "DT_ITEM_GS_QUIVER",
+            "DT_ITEM_GS_CROSSBOW_BOLT_CASE"
           ],
           "overrides": [
             {

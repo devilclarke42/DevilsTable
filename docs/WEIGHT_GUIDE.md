@@ -117,3 +117,7 @@ Always Stock means reliable availability, not an infinite or weightless stack.
 Change an existing weight deliberately and document the balance effect; never change its permanent
 ID. Review the [content standard](CONTENT_STANDARD.md) and [release process](RELEASE_PROCESS.md)
 alongside this guide when shipping an adjustment.
+
+## Core equipment source comparisons
+
+New core equipment records retain official reference weights in `source.reference` and explain complete-unit project adjustments in `weight.notes`. See [Core Catalogue](CORE_CATALOGUE.md). Existing weights are preserved during expansion.

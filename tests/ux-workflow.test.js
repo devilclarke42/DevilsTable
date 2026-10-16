@@ -40,7 +40,7 @@ test("NPC configuration rejects players, synthetic actors, stale drafts and acti
 test("summary counts unique Items across catalogues and treats services as references",async()=>{
  const services=(await readJson("data/services.json")).services;
  const all=generationSummary(catalogue,{shopId:null},services,100);
- assert.equal(all.products,440);assert.equal(all.services,40);assert.equal(all.tables,100);
+ assert.equal(all.products,448);assert.equal(all.services,40);assert.equal(all.tables,100);
  const tavern=generationSummary(catalogue,{shopId:"tavern"},services);
  assert.equal(tavern.products,205);assert.equal(tavern.catalogues,1);assert.equal(tavern.services,16);
  assert.ok(all.products<catalogue.index.shops.reduce((n,shopId)=>n+generationSummary(catalogue,{shopId},services).products,0));

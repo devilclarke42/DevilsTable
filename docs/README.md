@@ -49,3 +49,7 @@ The root [README](../README.md), [Contributing Guide](../CONTRIBUTING.md), [Road
 ## Catalogue audit evidence
 
 Maintainers and content contributors can review the [Milestone 2A catalogue audit](audits/README.md), its machine-readable inventories and the proposed expansion plan. These are dated planning snapshots; runtime source JSON remains authoritative.
+
+## Core content progress
+
+[Core Catalogue](CORE_CATALOGUE.md) explains source comparisons and Item behaviour. [Content Completeness](CONTENT_COMPLETENESS.md) records validated coverage progress and decisions pending review.

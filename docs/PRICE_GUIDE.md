@@ -4,6 +4,8 @@
 
 **Status:** official economy standard for authored catalogue prices.
 
+The custom economy remains the default during core catalogue expansion. New SRD-derived goods retain official comparison prices and purchase units in `source.reference`, with intentional project differences explained. This does not authorize repricing existing goods or adding an official-pricing toggle.
+
 Devil's Table treats copper and silver as useful money. Ordinary shopping should involve buying
 soap, candles, rope and supplies in small denominations, while significant or specialist equipment
 still requires a deliberate investment. The 2014 rules provide a mechanical reference, not a

@@ -59,7 +59,8 @@
     "data/items/fence/contraband.json",
     "data/items/fence/stolen-goods.json",
     "data/items/fence/curiosities.json",
-    "data/items/fence/rare-components.json"
+    "data/items/fence/rare-components.json",
+    "data/items/general-store/core-equipment.json"
   ],
   "shops": [
     "tavern",

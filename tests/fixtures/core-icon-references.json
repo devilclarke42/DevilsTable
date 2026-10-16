@@ -521,6 +521,26 @@
     {
       "icon": "icons/tools/cooking/mortar-herbs-yellow.webp",
       "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/tool/alchemists-supplies.yml"
+    },
+    {
+      "icon": "icons/containers/bags/pack-leather-brown.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/container/component-pouch/_container.yml"
+    },
+    {
+      "icon": "icons/sundries/books/book-symbol-triangle-silver-brown.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/loot/spellbook.yml"
+    },
+    {
+      "icon": "icons/tools/navigation/sextant-brass-brown.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/tool/navigators-tools.yml"
+    },
+    {
+      "icon": "icons/containers/ammunition/arrows-quiver-simple-brown.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/container/quiver/_container.yml"
+    },
+    {
+      "icon": "icons/containers/ammunition/quiver-simple-brown.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/container/crossbow-bolt-case/_container.yml"
     }
   ]
 }
