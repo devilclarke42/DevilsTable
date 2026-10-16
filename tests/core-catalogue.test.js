@@ -58,17 +58,18 @@ test("projectile containers hold a standard source bundle without free ammunitio
   assert.match(book.description, /hundred blank vellum/); assert.match(book.description, /No spells/);
 });
 
-test("upgrading the released 440 Item pack creates only eight documents; repeated and cross-merchant builds converge", async () => {
-  const old = data.entries.filter(e => !ids.has(e.item.id)).map(e => catalogueEntryToItem(e.item));
+test("upgrading the released 440 Item pack creates only newly added documents; repeated and cross-merchant builds converge", async () => {
+  const originalIds = new Set((await readJson("tests/fixtures/core-catalogue-baseline-hashes.json")).items.map(i => i.id));
+  const old = data.entries.filter(e => originalIds.has(e.item.id)).map(e => catalogueEntryToItem(e.item));
   assert.equal(old.length, 440);
   const { adapter, state } = fakeAdapter({ existing: old });
   const build = createBuilder({ load: () => data, adapter });
-  const preview = await build(); assert.deepEqual([preview.create, preview.update, preview.unchanged], [8, 0, 440]);
+  const preview = await build(); assert.deepEqual([preview.create, preview.update, preview.unchanged], [42, 0, 440]);
   assert.deepEqual(state.writes, []);
-  await build({ dryRun: false }); assert.equal(state.docs.length, 448);
-  assert.equal(new Set(state.docs.map(d => d._id)).size, 448);
-  assert.equal((await build({ dryRun: false })).unchanged, 448);
-  assert.equal((await build({ dryRun: false, shopId: "alchemist" })).unchanged, 42);
+  await build({ dryRun: false }); assert.equal(state.docs.length, 482);
+  assert.equal(new Set(state.docs.map(d => d._id)).size, 482);
+  assert.equal((await build({ dryRun: false })).unchanged, 482);
+  assert.equal((await build({ dryRun: false, shopId: "alchemist" })).unchanged, 61);
   assert.equal((await build({ dryRun: false, shopId: "blacksmith" })).unchanged, 75);
   assert.equal(state.docs.filter(d => d.flags[MODULE_ID].sourceId === "DT_ITEM_GS_HERBALISM_KIT").length, 1);
 });
@@ -105,15 +106,16 @@ test("essentials remain optional stock and specialist/travelling exclusions are 
   assert.ok(estimates[0].count < estimates[1].count && estimates[1].count < estimates[2].count);
 });
 
-test("SRD progress preserves all 241 source identities and adds exactly the eight approved units", async () => {
+test("SRD progress preserves all 241 source identities and covers the approved additions", async () => {
   const baseline = await readJson("docs/audits/CATALOGUE_COVERAGE.json");
   const next = await readJson("docs/content/CATALOGUE_COVERAGE.json");
   assert.equal(next.equipment.length, 241);
   assert.deepEqual(next.equipment.map(r => r.sourceId), baseline.equipment.map(r => r.sourceId));
   const additions = next.equipment.filter((r, i) => r.represented && !baseline.equipment[i].represented);
-  assert.equal(additions.length, 8); assert.deepEqual(new Set(additions.flatMap(r => r.canonicalIds)), ids);
-  assert.equal(next.equipment.filter(r => r.represented).length, 133);
-  assert.equal(next.denominator.representedPercent, 55.19);
+  assert.equal(additions.length, 42);
+  assert.deepEqual(new Set(additions.flatMap(r => r.canonicalIds)), new Set(data.entries.filter(e => e.item.tags.includes("core-expansion") || ids.has(e.item.id)).map(e => e.item.id)));
+  assert.equal(next.equipment.filter(r => r.represented).length, 167);
+  assert.equal(next.denominator.representedPercent, 69.29);
 });
 
 test("a purchased native container retains capacity and transfers once through the existing transaction pipeline", async () => {

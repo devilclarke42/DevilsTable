@@ -12,8 +12,8 @@
   },
   "denominator": {
     "entries": 241,
-    "represented": 133,
-    "representedPercent": 55.19,
+    "represented": 167,
+    "representedPercent": 69.29,
     "definition": "One priced entry or named formula from SRD Equipment tables pp. 63–72; bundles once, barding formula once, tools vehicle cross-reference excluded; stabling and food/lodging/hirelings are service commerce in SERVICE_COVERAGE.md. Not a percentage of all SRD magic items/spells. Near matches with different function/capacity are not represented."
   },
   "statusDefinitions": {
@@ -2668,11 +2668,32 @@
       "officialWeightLb": 2.0,
       "sourceWeightMeaning": "listed sale unit",
       "officialUnitCount": 1,
-      "canonicalIds": [],
+      "canonicalIds": [
+        "DT_ITEM_GS_ABACUS"
+      ],
       "candidateIds": [],
-      "represented": false,
-      "status": "missing",
-      "notes": []
+      "represented": true,
+      "status": "complete",
+      "notes": [
+        "Milestone 2B: source unit represented; approved custom economy and adjusted weight. Manual effect limits are stated in the Item description."
+      ],
+      "findingIds": [],
+      "priceComparison": {
+        "projectPrice": {
+          "value": 1,
+          "denomination": "gp"
+        },
+        "sourceUnitCount": 1,
+        "projectUnitCount": 1,
+        "result": "project-variation",
+        "policy": "approved custom economy"
+      },
+      "weightComparison": {
+        "projectWeightLb": 1.2,
+        "projectUnitCount": 1,
+        "result": "intentional-adjustment",
+        "rationale": "Complete frame and beads weigh 1.2 lb versus the 2 lb reference; project 1 gp places it above simple stationery without a specialist-instrument premium."
+      }
     },
     {
       "sourceId": "srd51.adventuring-gear.acid-vial",
@@ -2688,11 +2709,32 @@
       "officialWeightLb": 1.0,
       "sourceWeightMeaning": "listed sale unit",
       "officialUnitCount": 1,
-      "canonicalIds": [],
+      "canonicalIds": [
+        "DT_ITEM_GS_ACID"
+      ],
       "candidateIds": [],
-      "represented": false,
-      "status": "missing",
-      "notes": []
+      "represented": true,
+      "status": "complete",
+      "notes": [
+        "Milestone 2B: source unit represented; approved custom economy and adjusted weight. Manual effect limits are stated in the Item description."
+      ],
+      "findingIds": [],
+      "priceComparison": {
+        "projectPrice": {
+          "value": 15,
+          "denomination": "gp"
+        },
+        "sourceUnitCount": 1,
+        "projectUnitCount": 1,
+        "result": "project-variation",
+        "policy": "approved custom economy"
+      },
+      "weightComparison": {
+        "projectWeightLb": 0.5,
+        "projectUnitCount": 1,
+        "result": "intentional-adjustment",
+        "rationale": "Half a pound includes the filled vial and disposable stopper versus 1 lb officially. Project 15 gp keeps a dangerous prepared reagent a specialist purchase below the 25 gp reference."
+      }
     },
     {
       "sourceId": "srd51.adventuring-gear.alchemist-s-fire-flask",
@@ -2708,11 +2750,32 @@
       "officialWeightLb": 1.0,
       "sourceWeightMeaning": "listed sale unit",
       "officialUnitCount": 1,
-      "canonicalIds": [],
+      "canonicalIds": [
+        "DT_ITEM_GS_ALCHEMISTS_FIRE"
+      ],
       "candidateIds": [],
-      "represented": false,
-      "status": "missing",
-      "notes": []
+      "represented": true,
+      "status": "complete",
+      "notes": [
+        "Milestone 2B: source unit represented; approved custom economy and adjusted weight. Manual effect limits are stated in the Item description."
+      ],
+      "findingIds": [],
+      "priceComparison": {
+        "projectPrice": {
+          "value": 30,
+          "denomination": "gp"
+        },
+        "sourceUnitCount": 1,
+        "projectUnitCount": 1,
+        "result": "project-variation",
+        "policy": "approved custom economy"
+      },
+      "weightComparison": {
+        "projectWeightLb": 0.7,
+        "projectUnitCount": 1,
+        "result": "intentional-adjustment",
+        "rationale": "The filled flask weighs 0.7 lb versus 1 lb in the source. Project 30 gp retains a premium for a prepared persistent hazard relative to the 50 gp reference; no extra damage is granted."
+      }
     },
     {
       "sourceId": "srd51.ammunition.arrows-20",
@@ -2896,11 +2959,32 @@
       "officialWeightLb": null,
       "sourceWeightMeaning": "not specified",
       "officialUnitCount": 1,
-      "canonicalIds": [],
+      "canonicalIds": [
+        "DT_ITEM_GS_ANTITOXIN"
+      ],
       "candidateIds": [],
-      "represented": false,
-      "status": "missing",
-      "notes": []
+      "represented": true,
+      "status": "complete",
+      "notes": [
+        "Milestone 2B: source unit represented; approved custom economy and adjusted weight. Manual effect limits are stated in the Item description."
+      ],
+      "findingIds": [],
+      "priceComparison": {
+        "projectPrice": {
+          "value": 30,
+          "denomination": "gp"
+        },
+        "sourceUnitCount": 1,
+        "projectUnitCount": 1,
+        "result": "project-variation",
+        "policy": "approved custom economy"
+      },
+      "weightComparison": {
+        "projectWeightLb": 0.1,
+        "projectUnitCount": 1,
+        "result": "unlisted-source-weight",
+        "rationale": "The source lists no weight; 0.1 lb includes a small filled dose vial. Project 30 gp compares with the 50 gp reference and remains a significant prepared medicine purchase."
+      }
     },
     {
       "sourceId": "srd51.adventuring-gear.arcane-focus-crystal",
@@ -2916,11 +3000,32 @@
       "officialWeightLb": 1.0,
       "sourceWeightMeaning": "listed sale unit",
       "officialUnitCount": 1,
-      "canonicalIds": [],
+      "canonicalIds": [
+        "DT_ITEM_GS_FOCUS_CRYSTAL"
+      ],
       "candidateIds": [],
-      "represented": false,
-      "status": "missing",
-      "notes": []
+      "represented": true,
+      "status": "complete",
+      "notes": [
+        "Milestone 2B: source unit represented; approved custom economy and adjusted weight. Manual effect limits are stated in the Item description."
+      ],
+      "findingIds": [],
+      "priceComparison": {
+        "projectPrice": {
+          "value": 8,
+          "denomination": "gp"
+        },
+        "sourceUnitCount": 1,
+        "projectUnitCount": 1,
+        "result": "project-variation",
+        "policy": "approved custom economy"
+      },
+      "weightComparison": {
+        "projectWeightLb": 0.8,
+        "projectUnitCount": 1,
+        "result": "intentional-adjustment",
+        "rationale": "Complete mundane focus weighs 0.8 lb. Numeric reference weights use the established 80% equipment convention; source dashes receive a small practical mass. Project price is below or near the stated reference without adding a spell effect."
+      }
     },
     {
       "sourceId": "srd51.adventuring-gear.arcane-focus-orb",
@@ -2936,11 +3041,32 @@
       "officialWeightLb": 3.0,
       "sourceWeightMeaning": "listed sale unit",
       "officialUnitCount": 1,
-      "canonicalIds": [],
+      "canonicalIds": [
+        "DT_ITEM_GS_FOCUS_ORB"
+      ],
       "candidateIds": [],
-      "represented": false,
-      "status": "missing",
-      "notes": []
+      "represented": true,
+      "status": "complete",
+      "notes": [
+        "Milestone 2B: source unit represented; approved custom economy and adjusted weight. Manual effect limits are stated in the Item description."
+      ],
+      "findingIds": [],
+      "priceComparison": {
+        "projectPrice": {
+          "value": 15,
+          "denomination": "gp"
+        },
+        "sourceUnitCount": 1,
+        "projectUnitCount": 1,
+        "result": "project-variation",
+        "policy": "approved custom economy"
+      },
+      "weightComparison": {
+        "projectWeightLb": 2.4,
+        "projectUnitCount": 1,
+        "result": "intentional-adjustment",
+        "rationale": "Complete mundane focus weighs 2.4 lb. Numeric reference weights use the established 80% equipment convention; source dashes receive a small practical mass. Project price is below or near the stated reference without adding a spell effect."
+      }
     },
     {
       "sourceId": "srd51.adventuring-gear.arcane-focus-rod",
@@ -2956,11 +3082,32 @@
       "officialWeightLb": 2.0,
       "sourceWeightMeaning": "listed sale unit",
       "officialUnitCount": 1,
-      "canonicalIds": [],
+      "canonicalIds": [
+        "DT_ITEM_GS_FOCUS_ROD"
+      ],
       "candidateIds": [],
-      "represented": false,
-      "status": "missing",
-      "notes": []
+      "represented": true,
+      "status": "complete",
+      "notes": [
+        "Milestone 2B: source unit represented; approved custom economy and adjusted weight. Manual effect limits are stated in the Item description."
+      ],
+      "findingIds": [],
+      "priceComparison": {
+        "projectPrice": {
+          "value": 8,
+          "denomination": "gp"
+        },
+        "sourceUnitCount": 1,
+        "projectUnitCount": 1,
+        "result": "project-variation",
+        "policy": "approved custom economy"
+      },
+      "weightComparison": {
+        "projectWeightLb": 1.6,
+        "projectUnitCount": 1,
+        "result": "intentional-adjustment",
+        "rationale": "Complete mundane focus weighs 1.6 lb. Numeric reference weights use the established 80% equipment convention; source dashes receive a small practical mass. Project price is below or near the stated reference without adding a spell effect."
+      }
     },
     {
       "sourceId": "srd51.adventuring-gear.arcane-focus-staff",
@@ -2976,11 +3123,32 @@
       "officialWeightLb": 4.0,
       "sourceWeightMeaning": "listed sale unit",
       "officialUnitCount": 1,
-      "canonicalIds": [],
+      "canonicalIds": [
+        "DT_ITEM_GS_FOCUS_STAFF"
+      ],
       "candidateIds": [],
-      "represented": false,
-      "status": "missing",
-      "notes": []
+      "represented": true,
+      "status": "complete",
+      "notes": [
+        "Milestone 2B: source unit represented; approved custom economy and adjusted weight. Manual effect limits are stated in the Item description."
+      ],
+      "findingIds": [],
+      "priceComparison": {
+        "projectPrice": {
+          "value": 4,
+          "denomination": "gp"
+        },
+        "sourceUnitCount": 1,
+        "projectUnitCount": 1,
+        "result": "project-variation",
+        "policy": "approved custom economy"
+      },
+      "weightComparison": {
+        "projectWeightLb": 3.2,
+        "projectUnitCount": 1,
+        "result": "intentional-adjustment",
+        "rationale": "Complete mundane focus weighs 3.2 lb. Numeric reference weights use the established 80% equipment convention; source dashes receive a small practical mass. Project price is below or near the stated reference without adding a spell effect."
+      }
     },
     {
       "sourceId": "srd51.adventuring-gear.arcane-focus-wand",
@@ -2996,11 +3164,32 @@
       "officialWeightLb": 1.0,
       "sourceWeightMeaning": "listed sale unit",
       "officialUnitCount": 1,
-      "canonicalIds": [],
+      "canonicalIds": [
+        "DT_ITEM_GS_FOCUS_WAND"
+      ],
       "candidateIds": [],
-      "represented": false,
-      "status": "missing",
-      "notes": []
+      "represented": true,
+      "status": "complete",
+      "notes": [
+        "Milestone 2B: source unit represented; approved custom economy and adjusted weight. Manual effect limits are stated in the Item description."
+      ],
+      "findingIds": [],
+      "priceComparison": {
+        "projectPrice": {
+          "value": 8,
+          "denomination": "gp"
+        },
+        "sourceUnitCount": 1,
+        "projectUnitCount": 1,
+        "result": "project-variation",
+        "policy": "approved custom economy"
+      },
+      "weightComparison": {
+        "projectWeightLb": 0.8,
+        "projectUnitCount": 1,
+        "result": "intentional-adjustment",
+        "rationale": "Complete mundane focus weighs 0.8 lb. Numeric reference weights use the established 80% equipment convention; source dashes receive a small practical mass. Project price is below or near the stated reference without adding a spell effect."
+      }
     },
     {
       "sourceId": "srd51.adventuring-gear.backpack",
@@ -3061,11 +3250,32 @@
       "officialWeightLb": 2.0,
       "sourceWeightMeaning": "listed sale unit",
       "officialUnitCount": 1,
-      "canonicalIds": [],
+      "canonicalIds": [
+        "DT_ITEM_GS_BALL_BEARINGS"
+      ],
       "candidateIds": [],
-      "represented": false,
-      "status": "missing",
-      "notes": []
+      "represented": true,
+      "status": "complete",
+      "notes": [
+        "Milestone 2B: source unit represented; approved custom economy and adjusted weight. Manual effect limits are stated in the Item description."
+      ],
+      "findingIds": [],
+      "priceComparison": {
+        "projectPrice": {
+          "value": 7,
+          "denomination": "sp"
+        },
+        "sourceUnitCount": 1,
+        "projectUnitCount": 1,
+        "result": "project-variation",
+        "policy": "approved custom economy"
+      },
+      "weightComparison": {
+        "projectWeightLb": 1.6,
+        "projectUnitCount": 1,
+        "result": "intentional-adjustment",
+        "rationale": "One complete thousand-bearing bag weighs 1.6 lb versus the 2 lb source bundle. Project 7 sp retains an inexpensive manufactured supply relative to the 1 gp reference."
+      }
     },
     {
       "sourceId": "srd51.adventuring-gear.barrel",
@@ -3331,15 +3541,32 @@
       "officialWeightLb": 5.0,
       "sourceWeightMeaning": "listed sale unit",
       "officialUnitCount": 1,
-      "canonicalIds": [],
-      "candidateIds": [
-        "DT_ITEM_GS_BOOK_BLANK"
+      "canonicalIds": [
+        "DT_ITEM_GS_BOOK_LORE"
       ],
-      "represented": false,
-      "status": "needs-review",
+      "candidateIds": [],
+      "represented": true,
+      "status": "complete",
       "notes": [
-        "Blank stationery is not a lore book or spellbook."
-      ]
+        "Milestone 2B: source unit represented; approved custom economy and adjusted weight. Manual effect limits are stated in the Item description."
+      ],
+      "findingIds": [],
+      "priceComparison": {
+        "projectPrice": {
+          "value": 8,
+          "denomination": "gp"
+        },
+        "sourceUnitCount": 1,
+        "projectUnitCount": 1,
+        "result": "project-variation",
+        "policy": "approved custom economy"
+      },
+      "weightComparison": {
+        "projectWeightLb": 3,
+        "projectUnitCount": 1,
+        "result": "intentional-adjustment",
+        "rationale": "Complete written volume and binding weigh 3 lb versus 5 lb in the source. Project 8 gp reflects ordinary authored content without the 25 gp source premium or the vellum specification of the project spellbook."
+      }
     },
     {
       "sourceId": "srd51.adventuring-gear.bottle-glass",
@@ -3355,17 +3582,34 @@
       "officialWeightLb": 2.0,
       "sourceWeightMeaning": "listed sale unit",
       "officialUnitCount": 1,
-      "canonicalIds": [],
-      "candidateIds": [
-        "DT_ITEM_GS_BOTTLE"
+      "canonicalIds": [
+        "DT_ITEM_GS_BOTTLE_STANDARD"
       ],
-      "represented": false,
-      "status": "needs-review",
+      "candidateIds": [],
+      "represented": true,
+      "status": "complete",
       "notes": [
-        "Project bottle holds one quart (two pints), not the SRD 1.5-pint bottle; retain it as a distinct size."
+        "Milestone 2B: source unit represented; approved custom economy and adjusted weight. Manual effect limits are stated in the Item description."
       ],
       "officialCapacity": {
         "pints": 1.5
+      },
+      "findingIds": [],
+      "priceComparison": {
+        "projectPrice": {
+          "value": 2,
+          "denomination": "sp"
+        },
+        "sourceUnitCount": 1,
+        "projectUnitCount": 1,
+        "result": "project-variation",
+        "policy": "approved custom economy"
+      },
+      "weightComparison": {
+        "projectWeightLb": 0.6,
+        "projectUnitCount": 1,
+        "result": "intentional-adjustment",
+        "rationale": "Empty glass and cork weigh 0.6 lb versus the source 2 lb. Project 2 sp follows the existing larger Bottle price; the capacity distinction is explicit and does not replace that Item."
       }
     },
     {
@@ -3427,11 +3671,32 @@
       "officialWeightLb": 2.0,
       "sourceWeightMeaning": "listed sale unit",
       "officialUnitCount": 1,
-      "canonicalIds": [],
+      "canonicalIds": [
+        "DT_ITEM_GS_CALTROPS"
+      ],
       "candidateIds": [],
-      "represented": false,
-      "status": "missing",
-      "notes": []
+      "represented": true,
+      "status": "complete",
+      "notes": [
+        "Milestone 2B: source unit represented; approved custom economy and adjusted weight. Manual effect limits are stated in the Item description."
+      ],
+      "findingIds": [],
+      "priceComparison": {
+        "projectPrice": {
+          "value": 7,
+          "denomination": "sp"
+        },
+        "sourceUnitCount": 1,
+        "projectUnitCount": 1,
+        "result": "project-variation",
+        "policy": "approved custom economy"
+      },
+      "weightComparison": {
+        "projectWeightLb": 1.6,
+        "projectUnitCount": 1,
+        "result": "intentional-adjustment",
+        "rationale": "The complete twenty-piece bag weighs 1.6 lb versus the 2 lb source unit. Project 7 sp compares with 1 gp and prices the bag, not each caltrop."
+      }
     },
     {
       "sourceId": "srd51.adventuring-gear.candle",
@@ -3732,11 +3997,32 @@
       "officialWeightLb": 3.0,
       "sourceWeightMeaning": "listed sale unit",
       "officialUnitCount": 1,
-      "canonicalIds": [],
+      "canonicalIds": [
+        "DT_ITEM_GS_CLOTHES_COMMON"
+      ],
       "candidateIds": [],
-      "represented": false,
-      "status": "missing",
-      "notes": []
+      "represented": true,
+      "status": "complete",
+      "notes": [
+        "Milestone 2B: source unit represented; approved custom economy and adjusted weight. Manual effect limits are stated in the Item description."
+      ],
+      "findingIds": [],
+      "priceComparison": {
+        "projectPrice": {
+          "value": 4,
+          "denomination": "sp"
+        },
+        "sourceUnitCount": 1,
+        "projectUnitCount": 1,
+        "result": "project-variation",
+        "policy": "approved custom economy"
+      },
+      "weightComparison": {
+        "projectWeightLb": 2,
+        "projectUnitCount": 1,
+        "result": "intentional-adjustment",
+        "rationale": "Adjusted complete outfit weight 2 lb; source reference retained. Project price follows the established copper/silver/gold economy and does not add mechanical protection."
+      }
     },
     {
       "sourceId": "srd51.adventuring-gear.clothes-costume",
@@ -3752,11 +4038,32 @@
       "officialWeightLb": 4.0,
       "sourceWeightMeaning": "listed sale unit",
       "officialUnitCount": 1,
-      "canonicalIds": [],
+      "canonicalIds": [
+        "DT_ITEM_GS_CLOTHES_COSTUME"
+      ],
       "candidateIds": [],
-      "represented": false,
-      "status": "missing",
-      "notes": []
+      "represented": true,
+      "status": "complete",
+      "notes": [
+        "Milestone 2B: source unit represented; approved custom economy and adjusted weight. Manual effect limits are stated in the Item description."
+      ],
+      "findingIds": [],
+      "priceComparison": {
+        "projectPrice": {
+          "value": 4,
+          "denomination": "gp"
+        },
+        "sourceUnitCount": 1,
+        "projectUnitCount": 1,
+        "result": "project-variation",
+        "policy": "approved custom economy"
+      },
+      "weightComparison": {
+        "projectWeightLb": 3,
+        "projectUnitCount": 1,
+        "result": "intentional-adjustment",
+        "rationale": "Adjusted complete outfit weight 3 lb; source reference retained. Project price follows the established copper/silver/gold economy and does not add mechanical protection."
+      }
     },
     {
       "sourceId": "srd51.adventuring-gear.clothes-fine",
@@ -3772,11 +4079,32 @@
       "officialWeightLb": 6.0,
       "sourceWeightMeaning": "listed sale unit",
       "officialUnitCount": 1,
-      "canonicalIds": [],
+      "canonicalIds": [
+        "DT_ITEM_GS_CLOTHES_FINE"
+      ],
       "candidateIds": [],
-      "represented": false,
-      "status": "missing",
-      "notes": []
+      "represented": true,
+      "status": "complete",
+      "notes": [
+        "Milestone 2B: source unit represented; approved custom economy and adjusted weight. Manual effect limits are stated in the Item description."
+      ],
+      "findingIds": [],
+      "priceComparison": {
+        "projectPrice": {
+          "value": 10,
+          "denomination": "gp"
+        },
+        "sourceUnitCount": 1,
+        "projectUnitCount": 1,
+        "result": "project-variation",
+        "policy": "approved custom economy"
+      },
+      "weightComparison": {
+        "projectWeightLb": 4,
+        "projectUnitCount": 1,
+        "result": "intentional-adjustment",
+        "rationale": "Adjusted complete outfit weight 4 lb; source reference retained. Project price follows the established copper/silver/gold economy and does not add mechanical protection."
+      }
     },
     {
       "sourceId": "srd51.adventuring-gear.clothes-traveler-s",
@@ -3792,15 +4120,32 @@
       "officialWeightLb": 4.0,
       "sourceWeightMeaning": "listed sale unit",
       "officialUnitCount": 1,
-      "canonicalIds": [],
-      "candidateIds": [
-        "DT_ITEM_GS_CLOAK_TRAVEL"
+      "canonicalIds": [
+        "DT_ITEM_GS_CLOTHES_TRAVELLER"
       ],
-      "represented": false,
-      "status": "needs-review",
+      "candidateIds": [],
+      "represented": true,
+      "status": "complete",
       "notes": [
-        "A cloak alone is not a complete outfit."
-      ]
+        "Milestone 2B: source unit represented; approved custom economy and adjusted weight. Manual effect limits are stated in the Item description."
+      ],
+      "findingIds": [],
+      "priceComparison": {
+        "projectPrice": {
+          "value": 1,
+          "denomination": "gp"
+        },
+        "sourceUnitCount": 1,
+        "projectUnitCount": 1,
+        "result": "project-variation",
+        "policy": "approved custom economy"
+      },
+      "weightComparison": {
+        "projectWeightLb": 3,
+        "projectUnitCount": 1,
+        "result": "intentional-adjustment",
+        "rationale": "Adjusted complete outfit weight 3 lb; source reference retained. Project price follows the established copper/silver/gold economy and does not add mechanical protection."
+      }
     },
     {
       "sourceId": "srd51.adventuring-gear.component-pouch",
@@ -3898,11 +4243,32 @@
       "officialWeightLb": null,
       "sourceWeightMeaning": "not specified",
       "officialUnitCount": 1,
-      "canonicalIds": [],
+      "canonicalIds": [
+        "DT_ITEM_GS_FOCUS_MISTLETOE"
+      ],
       "candidateIds": [],
-      "represented": false,
-      "status": "missing",
-      "notes": []
+      "represented": true,
+      "status": "complete",
+      "notes": [
+        "Milestone 2B: source unit represented; approved custom economy and adjusted weight. Manual effect limits are stated in the Item description."
+      ],
+      "findingIds": [],
+      "priceComparison": {
+        "projectPrice": {
+          "value": 6,
+          "denomination": "sp"
+        },
+        "sourceUnitCount": 1,
+        "projectUnitCount": 1,
+        "result": "project-variation",
+        "policy": "approved custom economy"
+      },
+      "weightComparison": {
+        "projectWeightLb": 0.02,
+        "projectUnitCount": 1,
+        "result": "unlisted-source-weight",
+        "rationale": "Complete mundane focus weighs 0.02 lb. Numeric reference weights use the established 80% equipment convention; source dashes receive a small practical mass. Project price is below or near the stated reference without adding a spell effect."
+      }
     },
     {
       "sourceId": "srd51.adventuring-gear.druidic-focus-totem",
@@ -3918,11 +4284,32 @@
       "officialWeightLb": null,
       "sourceWeightMeaning": "not specified",
       "officialUnitCount": 1,
-      "canonicalIds": [],
+      "canonicalIds": [
+        "DT_ITEM_GS_FOCUS_TOTEM"
+      ],
       "candidateIds": [],
-      "represented": false,
-      "status": "missing",
-      "notes": []
+      "represented": true,
+      "status": "complete",
+      "notes": [
+        "Milestone 2B: source unit represented; approved custom economy and adjusted weight. Manual effect limits are stated in the Item description."
+      ],
+      "findingIds": [],
+      "priceComparison": {
+        "projectPrice": {
+          "value": 8,
+          "denomination": "sp"
+        },
+        "sourceUnitCount": 1,
+        "projectUnitCount": 1,
+        "result": "project-variation",
+        "policy": "approved custom economy"
+      },
+      "weightComparison": {
+        "projectWeightLb": 0.1,
+        "projectUnitCount": 1,
+        "result": "unlisted-source-weight",
+        "rationale": "Complete mundane focus weighs 0.1 lb. Numeric reference weights use the established 80% equipment convention; source dashes receive a small practical mass. Project price is below or near the stated reference without adding a spell effect."
+      }
     },
     {
       "sourceId": "srd51.adventuring-gear.druidic-focus-wooden-staff",
@@ -3938,11 +4325,32 @@
       "officialWeightLb": 4.0,
       "sourceWeightMeaning": "listed sale unit",
       "officialUnitCount": 1,
-      "canonicalIds": [],
+      "canonicalIds": [
+        "DT_ITEM_GS_FOCUS_WOODEN_STAFF"
+      ],
       "candidateIds": [],
-      "represented": false,
-      "status": "missing",
-      "notes": []
+      "represented": true,
+      "status": "complete",
+      "notes": [
+        "Milestone 2B: source unit represented; approved custom economy and adjusted weight. Manual effect limits are stated in the Item description."
+      ],
+      "findingIds": [],
+      "priceComparison": {
+        "projectPrice": {
+          "value": 4,
+          "denomination": "gp"
+        },
+        "sourceUnitCount": 1,
+        "projectUnitCount": 1,
+        "result": "project-variation",
+        "policy": "approved custom economy"
+      },
+      "weightComparison": {
+        "projectWeightLb": 3.2,
+        "projectUnitCount": 1,
+        "result": "intentional-adjustment",
+        "rationale": "Complete mundane focus weighs 3.2 lb. Numeric reference weights use the established 80% equipment convention; source dashes receive a small practical mass. Project price is below or near the stated reference without adding a spell effect."
+      }
     },
     {
       "sourceId": "srd51.adventuring-gear.druidic-focus-yew-wand",
@@ -3958,11 +4366,32 @@
       "officialWeightLb": 1.0,
       "sourceWeightMeaning": "listed sale unit",
       "officialUnitCount": 1,
-      "canonicalIds": [],
+      "canonicalIds": [
+        "DT_ITEM_GS_FOCUS_YEW_WAND"
+      ],
       "candidateIds": [],
-      "represented": false,
-      "status": "missing",
-      "notes": []
+      "represented": true,
+      "status": "complete",
+      "notes": [
+        "Milestone 2B: source unit represented; approved custom economy and adjusted weight. Manual effect limits are stated in the Item description."
+      ],
+      "findingIds": [],
+      "priceComparison": {
+        "projectPrice": {
+          "value": 8,
+          "denomination": "gp"
+        },
+        "sourceUnitCount": 1,
+        "projectUnitCount": 1,
+        "result": "project-variation",
+        "policy": "approved custom economy"
+      },
+      "weightComparison": {
+        "projectWeightLb": 0.8,
+        "projectUnitCount": 1,
+        "result": "intentional-adjustment",
+        "rationale": "Complete mundane focus weighs 0.8 lb. Numeric reference weights use the established 80% equipment convention; source dashes receive a small practical mass. Project price is below or near the stated reference without adding a spell effect."
+      }
     },
     {
       "sourceId": "srd51.adventuring-gear.fishing-tackle",
@@ -4182,11 +4611,32 @@
       "officialWeightLb": 3.0,
       "sourceWeightMeaning": "listed sale unit",
       "officialUnitCount": 1,
-      "canonicalIds": [],
+      "canonicalIds": [
+        "DT_ITEM_GS_HEALERS_KIT"
+      ],
       "candidateIds": [],
-      "represented": false,
-      "status": "missing",
-      "notes": []
+      "represented": true,
+      "status": "complete",
+      "notes": [
+        "Milestone 2B: source unit represented; approved custom economy and adjusted weight. Manual effect limits are stated in the Item description."
+      ],
+      "findingIds": [],
+      "priceComparison": {
+        "projectPrice": {
+          "value": 4,
+          "denomination": "gp"
+        },
+        "sourceUnitCount": 1,
+        "projectUnitCount": 1,
+        "result": "project-variation",
+        "policy": "approved custom economy"
+      },
+      "weightComparison": {
+        "projectWeightLb": 2.4,
+        "projectUnitCount": 1,
+        "result": "intentional-adjustment",
+        "rationale": "Complete ten-use kit weighs 2.4 lb, 80% of the 3 lb source weight. Project 4 gp compares with 5 gp and prices the whole kit, including all ten uses."
+      }
     },
     {
       "sourceId": "srd51.adventuring-gear.holy-symbol-amulet",
@@ -4202,11 +4652,32 @@
       "officialWeightLb": 1.0,
       "sourceWeightMeaning": "listed sale unit",
       "officialUnitCount": 1,
-      "canonicalIds": [],
+      "canonicalIds": [
+        "DT_ITEM_GS_SYMBOL_AMULET"
+      ],
       "candidateIds": [],
-      "represented": false,
-      "status": "missing",
-      "notes": []
+      "represented": true,
+      "status": "complete",
+      "notes": [
+        "Milestone 2B: source unit represented; approved custom economy and adjusted weight. Manual effect limits are stated in the Item description."
+      ],
+      "findingIds": [],
+      "priceComparison": {
+        "projectPrice": {
+          "value": 4,
+          "denomination": "gp"
+        },
+        "sourceUnitCount": 1,
+        "projectUnitCount": 1,
+        "result": "project-variation",
+        "policy": "approved custom economy"
+      },
+      "weightComparison": {
+        "projectWeightLb": 0.8,
+        "projectUnitCount": 1,
+        "result": "intentional-adjustment",
+        "rationale": "Complete mundane focus weighs 0.8 lb. Numeric reference weights use the established 80% equipment convention; source dashes receive a small practical mass. Project price is below or near the stated reference without adding a spell effect."
+      }
     },
     {
       "sourceId": "srd51.adventuring-gear.holy-symbol-emblem",
@@ -4222,11 +4693,32 @@
       "officialWeightLb": null,
       "sourceWeightMeaning": "not specified",
       "officialUnitCount": 1,
-      "canonicalIds": [],
+      "canonicalIds": [
+        "DT_ITEM_GS_SYMBOL_EMBLEM"
+      ],
       "candidateIds": [],
-      "represented": false,
-      "status": "missing",
-      "notes": []
+      "represented": true,
+      "status": "complete",
+      "notes": [
+        "Milestone 2B: source unit represented; approved custom economy and adjusted weight. Manual effect limits are stated in the Item description."
+      ],
+      "findingIds": [],
+      "priceComparison": {
+        "projectPrice": {
+          "value": 4,
+          "denomination": "gp"
+        },
+        "sourceUnitCount": 1,
+        "projectUnitCount": 1,
+        "result": "project-variation",
+        "policy": "approved custom economy"
+      },
+      "weightComparison": {
+        "projectWeightLb": 0.05,
+        "projectUnitCount": 1,
+        "result": "unlisted-source-weight",
+        "rationale": "Complete mundane focus weighs 0.05 lb. Numeric reference weights use the established 80% equipment convention; source dashes receive a small practical mass. Project price is below or near the stated reference without adding a spell effect."
+      }
     },
     {
       "sourceId": "srd51.adventuring-gear.holy-symbol-reliquary",
@@ -4242,11 +4734,32 @@
       "officialWeightLb": 2.0,
       "sourceWeightMeaning": "listed sale unit",
       "officialUnitCount": 1,
-      "canonicalIds": [],
+      "canonicalIds": [
+        "DT_ITEM_GS_SYMBOL_RELIQUARY"
+      ],
       "candidateIds": [],
-      "represented": false,
-      "status": "missing",
-      "notes": []
+      "represented": true,
+      "status": "complete",
+      "notes": [
+        "Milestone 2B: source unit represented; approved custom economy and adjusted weight. Manual effect limits are stated in the Item description."
+      ],
+      "findingIds": [],
+      "priceComparison": {
+        "projectPrice": {
+          "value": 4,
+          "denomination": "gp"
+        },
+        "sourceUnitCount": 1,
+        "projectUnitCount": 1,
+        "result": "project-variation",
+        "policy": "approved custom economy"
+      },
+      "weightComparison": {
+        "projectWeightLb": 1.6,
+        "projectUnitCount": 1,
+        "result": "intentional-adjustment",
+        "rationale": "Complete mundane focus weighs 1.6 lb. Numeric reference weights use the established 80% equipment convention; source dashes receive a small practical mass. Project price is below or near the stated reference without adding a spell effect."
+      }
     },
     {
       "sourceId": "srd51.adventuring-gear.holy-water-flask",
@@ -4262,11 +4775,32 @@
       "officialWeightLb": 1.0,
       "sourceWeightMeaning": "listed sale unit",
       "officialUnitCount": 1,
-      "canonicalIds": [],
+      "canonicalIds": [
+        "DT_ITEM_GS_HOLY_WATER"
+      ],
       "candidateIds": [],
-      "represented": false,
-      "status": "missing",
-      "notes": []
+      "represented": true,
+      "status": "complete",
+      "notes": [
+        "Milestone 2B: source unit represented; approved custom economy and adjusted weight. Manual effect limits are stated in the Item description."
+      ],
+      "findingIds": [],
+      "priceComparison": {
+        "projectPrice": {
+          "value": 20,
+          "denomination": "gp"
+        },
+        "sourceUnitCount": 1,
+        "projectUnitCount": 1,
+        "result": "project-variation",
+        "policy": "approved custom economy"
+      },
+      "weightComparison": {
+        "projectWeightLb": 0.7,
+        "projectUnitCount": 1,
+        "result": "intentional-adjustment",
+        "rationale": "Filled flask weighs 0.7 lb versus 1 lb in the reference. Project 20 gp retains a specialist preparation cost below the 25 gp reference; it does not waive holy-water creation costs."
+      }
     },
     {
       "sourceId": "srd51.adventuring-gear.hourglass",
@@ -4323,11 +4857,32 @@
       "officialWeightLb": 25.0,
       "sourceWeightMeaning": "listed sale unit",
       "officialUnitCount": 1,
-      "canonicalIds": [],
+      "canonicalIds": [
+        "DT_ITEM_GS_HUNTING_TRAP"
+      ],
       "candidateIds": [],
-      "represented": false,
-      "status": "missing",
-      "notes": []
+      "represented": true,
+      "status": "complete",
+      "notes": [
+        "Milestone 2B: source unit represented; approved custom economy and adjusted weight. Manual effect limits are stated in the Item description."
+      ],
+      "findingIds": [],
+      "priceComparison": {
+        "projectPrice": {
+          "value": 4,
+          "denomination": "gp"
+        },
+        "sourceUnitCount": 1,
+        "projectUnitCount": 1,
+        "result": "project-variation",
+        "policy": "approved custom economy"
+      },
+      "weightComparison": {
+        "projectWeightLb": 18,
+        "projectUnitCount": 1,
+        "result": "intentional-adjustment",
+        "rationale": "Complete trap and chain weigh 18 lb versus 25 lb officially. Project 4 gp compares with 5 gp; the trap remains deliberately heavy and is excluded from a travelling wagon."
+      }
     },
     {
       "sourceId": "srd51.adventuring-gear.ink-1-ounce-bottle",
@@ -4673,11 +5228,32 @@
       "officialWeightLb": null,
       "sourceWeightMeaning": "not specified",
       "officialUnitCount": 1,
-      "canonicalIds": [],
+      "canonicalIds": [
+        "DT_ITEM_GS_MAGNIFYING_GLASS"
+      ],
       "candidateIds": [],
-      "represented": false,
-      "status": "missing",
-      "notes": []
+      "represented": true,
+      "status": "complete",
+      "notes": [
+        "Milestone 2B: source unit represented; approved custom economy and adjusted weight. Manual effect limits are stated in the Item description."
+      ],
+      "findingIds": [],
+      "priceComparison": {
+        "projectPrice": {
+          "value": 40,
+          "denomination": "gp"
+        },
+        "sourceUnitCount": 1,
+        "projectUnitCount": 1,
+        "result": "project-variation",
+        "policy": "approved custom economy"
+      },
+      "weightComparison": {
+        "projectWeightLb": 0.1,
+        "projectUnitCount": 1,
+        "result": "unlisted-source-weight",
+        "rationale": "The source gives no mass; 0.1 lb covers a small lens and handle. Project 40 gp reduces the source 100 gp precision premium while remaining a specialist purchase, above ordinary spectacles or a simple mirror."
+      }
     },
     {
       "sourceId": "srd51.adventuring-gear.manacles",
@@ -4937,11 +5513,32 @@
       "officialWeightLb": null,
       "sourceWeightMeaning": "not specified",
       "officialUnitCount": 1,
-      "canonicalIds": [],
+      "canonicalIds": [
+        "DT_ITEM_GS_PERFUME"
+      ],
       "candidateIds": [],
-      "represented": false,
-      "status": "missing",
-      "notes": []
+      "represented": true,
+      "status": "complete",
+      "notes": [
+        "Milestone 2B: source unit represented; approved custom economy and adjusted weight. Manual effect limits are stated in the Item description."
+      ],
+      "findingIds": [],
+      "priceComparison": {
+        "projectPrice": {
+          "value": 3,
+          "denomination": "gp"
+        },
+        "sourceUnitCount": 1,
+        "projectUnitCount": 1,
+        "result": "project-variation",
+        "policy": "approved custom economy"
+      },
+      "weightComparison": {
+        "projectWeightLb": 0.1,
+        "projectUnitCount": 1,
+        "result": "unlisted-source-weight",
+        "rationale": "The source gives no mass; 0.1 lb includes the perfume and vessel. Project 3 gp compares with 5 gp and prices a complete vial rather than a single application."
+      }
     },
     {
       "sourceId": "srd51.adventuring-gear.pick-miner-s",
@@ -5115,17 +5712,34 @@
       "officialWeightLb": 10.0,
       "sourceWeightMeaning": "listed sale unit",
       "officialUnitCount": 1,
-      "canonicalIds": [],
-      "candidateIds": [
-        "DT_ITEM_GS_POT_COOKING"
+      "canonicalIds": [
+        "DT_ITEM_GS_POT_IRON_GALLON"
       ],
-      "represented": false,
-      "status": "needs-review",
+      "candidateIds": [],
+      "represented": true,
+      "status": "complete",
       "notes": [
-        "Project two-quart camp pot is not the SRD one-gallon iron pot."
+        "Milestone 2B: source unit represented; approved custom economy and adjusted weight. Manual effect limits are stated in the Item description."
       ],
       "officialCapacity": {
         "gallons": 1
+      },
+      "findingIds": [],
+      "priceComparison": {
+        "projectPrice": {
+          "value": 1,
+          "denomination": "gp"
+        },
+        "sourceUnitCount": 1,
+        "projectUnitCount": 1,
+        "result": "project-variation",
+        "policy": "approved custom economy"
+      },
+      "weightComparison": {
+        "projectWeightLb": 6,
+        "projectUnitCount": 1,
+        "result": "intentional-adjustment",
+        "rationale": "Empty one-gallon iron vessel weighs 6 lb versus 10 lb officially; project 1 gp keeps it above the smaller 7 sp Cooking Pot. Contents are separate."
       }
     },
     {
@@ -5269,11 +5883,32 @@
       "officialWeightLb": 35.0,
       "sourceWeightMeaning": "listed sale unit",
       "officialUnitCount": 1,
-      "canonicalIds": [],
+      "canonicalIds": [
+        "DT_ITEM_GS_RAM_PORTABLE"
+      ],
       "candidateIds": [],
-      "represented": false,
-      "status": "missing",
-      "notes": []
+      "represented": true,
+      "status": "complete",
+      "notes": [
+        "Milestone 2B: source unit represented; approved custom economy and adjusted weight. Manual effect limits are stated in the Item description."
+      ],
+      "findingIds": [],
+      "priceComparison": {
+        "projectPrice": {
+          "value": 3,
+          "denomination": "gp"
+        },
+        "sourceUnitCount": 1,
+        "projectUnitCount": 1,
+        "result": "project-variation",
+        "policy": "approved custom economy"
+      },
+      "weightComparison": {
+        "projectWeightLb": 25,
+        "projectUnitCount": 1,
+        "result": "intentional-adjustment",
+        "rationale": "Complete reinforced beam and grips weigh 25 lb versus 35 lb officially. Project 3 gp compares with 4 gp while retaining a substantial carrying burden."
+      }
     },
     {
       "sourceId": "srd51.adventuring-gear.rations-1-day",
@@ -5330,11 +5965,32 @@
       "officialWeightLb": 4.0,
       "sourceWeightMeaning": "listed sale unit",
       "officialUnitCount": 1,
-      "canonicalIds": [],
+      "canonicalIds": [
+        "DT_ITEM_GS_ROBES"
+      ],
       "candidateIds": [],
-      "represented": false,
-      "status": "missing",
-      "notes": []
+      "represented": true,
+      "status": "complete",
+      "notes": [
+        "Milestone 2B: source unit represented; approved custom economy and adjusted weight. Manual effect limits are stated in the Item description."
+      ],
+      "findingIds": [],
+      "priceComparison": {
+        "projectPrice": {
+          "value": 8,
+          "denomination": "sp"
+        },
+        "sourceUnitCount": 1,
+        "projectUnitCount": 1,
+        "result": "project-variation",
+        "policy": "approved custom economy"
+      },
+      "weightComparison": {
+        "projectWeightLb": 3,
+        "projectUnitCount": 1,
+        "result": "intentional-adjustment",
+        "rationale": "Adjusted complete outfit weight 3 lb; source reference retained. Project price follows the established copper/silver/gold economy and does not add mechanical protection."
+      }
     },
     {
       "sourceId": "srd51.adventuring-gear.rope-hempen-50-feet",
@@ -5641,15 +6297,32 @@
       "officialWeightLb": null,
       "sourceWeightMeaning": "not specified",
       "officialUnitCount": 1,
-      "canonicalIds": [],
-      "candidateIds": [
-        "DT_ITEM_BMK_STOLEN_SIGNET"
+      "canonicalIds": [
+        "DT_ITEM_GS_SIGNET_RING"
       ],
-      "represented": false,
-      "status": "needs-review",
+      "candidateIds": [],
+      "represented": true,
+      "status": "complete",
       "notes": [
-        "Stolen jewellery at 50 gp does not provide a neutral 5 gp signet option."
-      ]
+        "Milestone 2B: source unit represented; approved custom economy and adjusted weight. Manual effect limits are stated in the Item description."
+      ],
+      "findingIds": [],
+      "priceComparison": {
+        "projectPrice": {
+          "value": 4,
+          "denomination": "gp"
+        },
+        "sourceUnitCount": 1,
+        "projectUnitCount": 1,
+        "result": "project-variation",
+        "policy": "approved custom economy"
+      },
+      "weightComparison": {
+        "projectWeightLb": 0.02,
+        "projectUnitCount": 1,
+        "result": "unlisted-source-weight",
+        "rationale": "A practical small ring weighs 0.02 lb where the source gives no weight. Project 4 gp compares with 5 gp; stolen provenance is not duplicated as a second listing of this ring."
+      }
     },
     {
       "sourceId": "srd51.adventuring-gear.soap",
@@ -5952,17 +6625,34 @@
       "officialWeightLb": null,
       "sourceWeightMeaning": "not specified",
       "officialUnitCount": 1,
-      "canonicalIds": [],
-      "candidateIds": [
-        "DT_ITEM_ALC_VIAL"
+      "canonicalIds": [
+        "DT_ITEM_GS_VIAL_STANDARD"
       ],
-      "represented": false,
-      "status": "needs-review",
+      "candidateIds": [],
+      "represented": true,
+      "status": "complete",
       "notes": [
-        "Project one-ounce vial is not the SRD four-ounce vial."
+        "Milestone 2B: source unit represented; approved custom economy and adjusted weight. Manual effect limits are stated in the Item description."
       ],
       "officialCapacity": {
         "fluidOunces": 4
+      },
+      "findingIds": [],
+      "priceComparison": {
+        "projectPrice": {
+          "value": 1,
+          "denomination": "sp"
+        },
+        "sourceUnitCount": 1,
+        "projectUnitCount": 1,
+        "result": "project-variation",
+        "policy": "approved custom economy"
+      },
+      "weightComparison": {
+        "projectWeightLb": 0.08,
+        "projectUnitCount": 1,
+        "result": "unlisted-source-weight",
+        "rationale": "Source weight is unspecified; 0.08 lb covers the empty four-ounce vessel and stopper. Project 1 sp compares with 1 gp and stays above the smaller 6 cp one-ounce vial."
       }
     },
     {

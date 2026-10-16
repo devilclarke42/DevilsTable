@@ -1,0 +1,1454 @@
+[
+  {
+    "id": "DT_ITEM_GS_ABACUS",
+    "name": "Abacus",
+    "description": "Wooden beads slide along a framed set of rods to assist counting and arithmetic. It is a practical accounting aid, not a magical calculator or a source of automatic check bonuses.",
+    "saleUnit": "One complete abacus",
+    "price": {
+      "value": 1,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 1.2,
+      "units": "lb",
+      "notes": "Complete frame and beads weigh 1.2 lb versus the 2 lb reference; project 1 gp places it above simple stationery without a specialist-instrument premium."
+    },
+    "icon": "icons/commodities/treasure/brooch-jewel-gold-blue.webp",
+    "category": "tools",
+    "tags": [
+      "mundane",
+      "core-expansion",
+      "tools"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 p. 69: Abacus: 2 gp; 2 lb. Original wording and custom-economy price/adjusted weight. See docs/CORE_CATALOGUE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0; original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_ACID",
+    "name": "Acid, Vial",
+    "description": "A sealed vial holds one use of corrosive acid. As an action, splash it at a creature within five feet or throw it up to twenty feet. Resolve a ranged attack as an improvised weapon; a hit deals 2d6 acid damage.\n\nThe GM resolves the attack and damage manually. The use activity removes one vial; it does not roll an attack or apply damage. The vessel is destroyed or emptied by use.",
+    "saleUnit": "One complete acid, vial",
+    "price": {
+      "value": 15,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 0.5,
+      "units": "lb",
+      "notes": "Half a pound includes the filled vial and disposable stopper versus 1 lb officially. Project 15 gp keeps a dangerous prepared reagent a specialist purchase below the 25 gp reference."
+    },
+    "icon": "icons/consumables/potions/bottle-round-corked-green.webp",
+    "category": "alchemical-goods",
+    "tags": [
+      "mundane",
+      "core-expansion",
+      "alchemical-goods"
+    ],
+    "shops": [
+      "general-store",
+      "alchemist"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 p. 69: Acid (vial): 25 gp; 1 lb. Original wording and custom-economy price/adjusted weight. See docs/CORE_CATALOGUE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0; original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "trinket",
+      "use": {
+        "name": "Use one acid vial",
+        "mode": "consume",
+        "activation": "action",
+        "condition": "The GM resolves the described effect; using this activity only records charge or supply use."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_ALCHEMISTS_FIRE",
+    "name": "Alchemist's Fire",
+    "description": "This sealed flask contains a sticky liquid that ignites on contact with air. As an action, throw it up to twenty feet and make a ranged attack as an improvised weapon. A hit causes 1d4 fire damage at the start of each of the target’s turns. The target can use an action to make a DC 10 Dexterity check to extinguish the flames.\n\nThe GM resolves the attack, recurring damage and extinguishing check manually. Using the activity removes one flask; it applies no ongoing effect or timer.",
+    "saleUnit": "One complete alchemist's fire",
+    "price": {
+      "value": 30,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 0.7,
+      "units": "lb",
+      "notes": "The filled flask weighs 0.7 lb versus 1 lb in the source. Project 30 gp retains a premium for a prepared persistent hazard relative to the 50 gp reference; no extra damage is granted."
+    },
+    "icon": "icons/consumables/potions/bottle-round-corked-yellow.webp",
+    "category": "alchemical-goods",
+    "tags": [
+      "mundane",
+      "core-expansion",
+      "alchemical-goods"
+    ],
+    "shops": [
+      "general-store",
+      "alchemist"
+    ],
+    "availability": "special-order",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 p. 69: Alchemist’s fire (flask): 50 gp; 1 lb. Original wording and custom-economy price/adjusted weight. See docs/CORE_CATALOGUE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0; original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "trinket",
+      "use": {
+        "name": "Throw one flask",
+        "mode": "consume",
+        "activation": "action",
+        "condition": "The GM resolves the described effect; using this activity only records charge or supply use."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_ANTITOXIN",
+    "name": "Antitoxin",
+    "description": "One sealed dose is drunk to gain advantage on saving throws against poison for one hour. It provides no benefit to undead or constructs. It does not restore hit points, cure an existing condition automatically or guarantee immunity.\n\nThe use activity consumes the dose. The GM applies the saving-throw benefit and tracks its end manually.",
+    "saleUnit": "One complete antitoxin",
+    "price": {
+      "value": 30,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 0.1,
+      "units": "lb",
+      "notes": "The source lists no weight; 0.1 lb includes a small filled dose vial. Project 30 gp compares with the 50 gp reference and remains a significant prepared medicine purchase."
+    },
+    "icon": "icons/consumables/potions/bottle-round-corked-pink.webp",
+    "category": "alchemical-goods",
+    "tags": [
+      "mundane",
+      "core-expansion",
+      "alchemical-goods"
+    ],
+    "shops": [
+      "general-store",
+      "alchemist"
+    ],
+    "availability": "special-order",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 p. 69: Antitoxin (vial): 50 gp; weight not listed. Original wording and custom-economy price/adjusted weight. See docs/CORE_CATALOGUE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0; original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "trinket",
+      "use": {
+        "name": "Drink one antitoxin dose",
+        "mode": "consume",
+        "activation": "action",
+        "condition": "The GM resolves the described effect; using this activity only records charge or supply use."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_BALL_BEARINGS",
+    "name": "Ball Bearings",
+    "description": "A cloth bag contains one thousand small metal balls. Spreading the bag as an action covers a level ten-foot square. A creature moving through the area makes a DC 10 Dexterity saving throw or falls prone; moving at half speed avoids the save.\n\nThe GM places the area and resolves movement and saves. Use removes one carried bag as a deployed supply, not one individual bearing. Recovered bearings must be recorded manually.",
+    "saleUnit": "One bag containing 1,000 ball bearings",
+    "price": {
+      "value": 7,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 1.6,
+      "units": "lb",
+      "notes": "One complete thousand-bearing bag weighs 1.6 lb versus the 2 lb source bundle. Project 7 sp retains an inexpensive manufactured supply relative to the 1 gp reference."
+    },
+    "icon": "icons/weapons/ammunition/shot-round-brown.webp",
+    "category": "tools",
+    "tags": [
+      "mundane",
+      "core-expansion",
+      "tools"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 p. 69: Ball bearings (bag of 1,000): 1 gp; 2 lb. Original wording and custom-economy price/adjusted weight. See docs/CORE_CATALOGUE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0; original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "trinket",
+      "use": {
+        "name": "Deploy one bag of bearings",
+        "mode": "consume",
+        "activation": "action",
+        "condition": "The GM resolves the described effect; using this activity only records charge or supply use."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_CALTROPS",
+    "name": "Caltrops",
+    "description": "Twenty iron caltrops fill one bag. An action spreads them over a five-foot square. A creature entering that area makes a DC 15 Dexterity save or stops moving this turn and takes one piercing damage; that damage reduces its walking speed by ten feet until it regains at least one hit point. Moving through at half speed avoids the save.\n\nThe GM resolves placement, saves, damage and movement. Use deploys the whole bag; it applies no terrain or condition automatically. Record recovered pieces manually.",
+    "saleUnit": "One bag containing twenty caltrops",
+    "price": {
+      "value": 7,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 1.6,
+      "units": "lb",
+      "notes": "The complete twenty-piece bag weighs 1.6 lb versus the 2 lb source unit. Project 7 sp compares with 1 gp and prices the bag, not each caltrop."
+    },
+    "icon": "icons/weapons/thrown/bomb-spiked-purple.webp",
+    "category": "tools",
+    "tags": [
+      "mundane",
+      "core-expansion",
+      "tools"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 p. 69: Caltrops (bag of 20): 1 gp; 2 lb. Original wording and custom-economy price/adjusted weight. See docs/CORE_CATALOGUE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0; original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "trinket",
+      "use": {
+        "name": "Deploy twenty caltrops",
+        "mode": "consume",
+        "activation": "action",
+        "condition": "The GM resolves the described effect; using this activity only records charge or supply use."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_BOOK_LORE",
+    "name": "Book of Lore",
+    "description": "A bound volume contains written accounts, diagrams and information on one subject chosen with the GM: a local history, a practical craft or a similar field of knowledge. It is sold with its written content, unlike a blank stationery book.\n\nThe book is neither a spellbook nor a guarantee of correct or complete knowledge. The GM determines language, topic and any information an examination provides.",
+    "saleUnit": "One complete book of lore",
+    "price": {
+      "value": 8,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 3,
+      "units": "lb",
+      "notes": "Complete written volume and binding weigh 3 lb versus 5 lb in the source. Project 8 gp reflects ordinary authored content without the 25 gp source premium or the vellum specification of the project spellbook."
+    },
+    "icon": "icons/sundries/books/book-rounded-red.webp",
+    "category": "writing",
+    "tags": [
+      "mundane",
+      "core-expansion",
+      "writing"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 p. 69: Book: 25 gp; 5 lb. Original wording and custom-economy price/adjusted weight. See docs/CORE_CATALOGUE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0; original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_BOTTLE_STANDARD",
+    "name": "Glass Bottle, 1.5 pint",
+    "description": "An empty glass bottle with a cork holds one and a half US pints. It is the source-sized bottle, smaller than the separate one-quart Bottle.\n\nLiquids add their own weight. The two-pound contents allowance is a project carrying limit; the GM decides compatibility and sealing. No potion or drink is included.",
+    "saleUnit": "One empty 1.5-pint glass bottle",
+    "price": {
+      "value": 2,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 0.6,
+      "units": "lb",
+      "notes": "Empty glass and cork weigh 0.6 lb versus the source 2 lb. Project 2 sp follows the existing larger Bottle price; the capacity distinction is explicit and does not replace that Item."
+    },
+    "icon": "icons/consumables/potions/bottle-bulb-empty-glass.webp",
+    "category": "containers",
+    "tags": [
+      "mundane",
+      "core-expansion",
+      "containers"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 p. 69: Bottle, glass: 2 gp; 2 lb. Original wording and custom-economy price/adjusted weight. See docs/CORE_CATALOGUE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0; original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "container",
+      "capacity": {
+        "weight": {
+          "value": 2,
+          "units": "lb"
+        },
+        "volume": {
+          "value": 1.5,
+          "units": "pint"
+        }
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_CLOTHES_COMMON",
+    "name": "Common Clothes",
+    "description": "A complete everyday outfit of plain shirt or tunic, trousers or skirt, and serviceable footwear. Its simple cloth suits ordinary work and travel around a settlement.\n\nThis is ordinary worn equipment. The GM adjudicates suitability; no armour AC or magical properties are granted.",
+    "saleUnit": "One complete common clothes",
+    "price": {
+      "value": 4,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 2,
+      "units": "lb",
+      "notes": "Adjusted complete outfit weight 2 lb; source reference retained. Project price follows the established copper/silver/gold economy and does not add mechanical protection."
+    },
+    "icon": "icons/equipment/chest/shirt-collared-brown.webp",
+    "category": "clothing",
+    "tags": [
+      "mundane",
+      "core-expansion",
+      "clothing"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 p. 69: Clothes, common: 5 sp; 3 lb. Original wording and custom-economy price/adjusted weight. See docs/CORE_CATALOGUE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0; original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "equipment",
+      "native": {
+        "type": {
+          "value": "trinket",
+          "baseItem": ""
+        },
+        "properties": [],
+        "activities": {}
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_CLOTHES_COSTUME",
+    "name": "Costume Clothes",
+    "description": "A complete theatrical outfit chosen for one agreed role, with ordinary costume accessories. It is neither a disguise kit nor a guarantee that observers accept a false identity.\n\nThis is ordinary worn equipment. The GM adjudicates suitability; no armour AC or magical properties are granted.",
+    "saleUnit": "One complete costume clothes",
+    "price": {
+      "value": 4,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 3,
+      "units": "lb",
+      "notes": "Adjusted complete outfit weight 3 lb; source reference retained. Project price follows the established copper/silver/gold economy and does not add mechanical protection."
+    },
+    "icon": "icons/equipment/head/crown-feather-brown.webp",
+    "category": "clothing",
+    "tags": [
+      "mundane",
+      "core-expansion",
+      "clothing"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 p. 69: Clothes, costume: 5 gp; 4 lb. Original wording and custom-economy price/adjusted weight. See docs/CORE_CATALOGUE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0; original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "equipment",
+      "native": {
+        "type": {
+          "value": "trinket",
+          "baseItem": ""
+        },
+        "properties": [],
+        "activities": {}
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_CLOTHES_FINE",
+    "name": "Fine Clothes",
+    "description": "A complete well-tailored outfit with neatly finished seams and coordinated accessories. The wearer chooses an appropriate style with the GM; the clothing grants neither rank nor a social-check bonus.\n\nThis is ordinary worn equipment. The GM adjudicates suitability; no armour AC or magical properties are granted.",
+    "saleUnit": "One complete fine clothes",
+    "price": {
+      "value": 10,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 4,
+      "units": "lb",
+      "notes": "Adjusted complete outfit weight 4 lb; source reference retained. Project price follows the established copper/silver/gold economy and does not add mechanical protection."
+    },
+    "icon": "icons/equipment/chest/robe-layered-white.webp",
+    "category": "clothing",
+    "tags": [
+      "mundane",
+      "core-expansion",
+      "clothing"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "special-order",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 p. 69: Clothes, fine: 15 gp; 6 lb. Original wording and custom-economy price/adjusted weight. See docs/CORE_CATALOGUE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0; original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "equipment",
+      "native": {
+        "type": {
+          "value": "trinket",
+          "baseItem": ""
+        },
+        "properties": [],
+        "activities": {}
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_CLOTHES_TRAVELLER",
+    "name": "Traveller’s Clothes",
+    "description": "A complete durable travelling outfit, including sturdy clothes, footwear and an outer layer. It supplies more than the separately sold travel cloak, without automatic weather protection or survival benefits.\n\nThis is ordinary worn equipment. The GM adjudicates suitability; no armour AC or magical properties are granted.",
+    "saleUnit": "One complete traveller’s clothes",
+    "price": {
+      "value": 1,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 3,
+      "units": "lb",
+      "notes": "Adjusted complete outfit weight 3 lb; source reference retained. Project price follows the established copper/silver/gold economy and does not add mechanical protection."
+    },
+    "icon": "icons/equipment/back/cloak-brown-collared-fur-white-tied.webp",
+    "category": "clothing",
+    "tags": [
+      "mundane",
+      "core-expansion",
+      "clothing"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 p. 69: Clothes, traveler’s: 2 gp; 4 lb. Original wording and custom-economy price/adjusted weight. See docs/CORE_CATALOGUE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0; original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "equipment",
+      "native": {
+        "type": {
+          "value": "trinket",
+          "baseItem": ""
+        },
+        "properties": [],
+        "activities": {}
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_ROBES",
+    "name": "Robes",
+    "description": "One complete set of ordinary robes with a belt or fastening. It may be styled for study, ceremony or comfortable daily wear. It provides no armour, spellcasting benefit or institutional authority.\n\nThis is ordinary worn equipment. The GM adjudicates suitability; no armour AC or magical properties are granted.",
+    "saleUnit": "One complete robes",
+    "price": {
+      "value": 8,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 3,
+      "units": "lb",
+      "notes": "Adjusted complete outfit weight 3 lb; source reference retained. Project price follows the established copper/silver/gold economy and does not add mechanical protection."
+    },
+    "icon": "icons/equipment/chest/robe-layered-teal.webp",
+    "category": "clothing",
+    "tags": [
+      "mundane",
+      "core-expansion",
+      "clothing"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 p. 69: Robes: 1 gp; 4 lb. Original wording and custom-economy price/adjusted weight. See docs/CORE_CATALOGUE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0; original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "equipment",
+      "native": {
+        "type": {
+          "value": "trinket",
+          "baseItem": ""
+        },
+        "properties": [],
+        "activities": {}
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_FOCUS_CRYSTAL",
+    "name": "Arcane Focus, Crystal",
+    "description": "A prepared crystal is fitted for use as an arcane focus. A sorcerer, warlock or wizard may use an arcane focus for appropriate spells.\n\nThe focus follows the 2014 component rules; specially priced or consumed materials must still be supplied as the spell requires. It grants no proficiency, attack bonus or magical effect. The GM resolves component availability and any use as an improvised weapon.",
+    "saleUnit": "One complete arcane focus, crystal",
+    "price": {
+      "value": 8,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 0.8,
+      "units": "lb",
+      "notes": "Complete mundane focus weighs 0.8 lb. Numeric reference weights use the established 80% equipment convention; source dashes receive a small practical mass. Project price is below or near the stated reference without adding a spell effect."
+    },
+    "icon": "icons/commodities/gems/gem-faceted-large-green.webp",
+    "category": "spellcasting-supplies",
+    "tags": [
+      "mundane",
+      "core-expansion",
+      "spellcasting-supplies",
+      "spellcasting-focus"
+    ],
+    "shops": [
+      "general-store",
+      "alchemist"
+    ],
+    "availability": "special-order",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 p. 69: Arcane focus, crystal: 10 gp; 1 lb. Original wording and custom-economy price/adjusted weight. See docs/CORE_CATALOGUE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0; original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "equipment",
+      "native": {
+        "type": {
+          "value": "trinket",
+          "baseItem": ""
+        },
+        "properties": [
+          "foc"
+        ],
+        "activities": {}
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_FOCUS_ORB",
+    "name": "Arcane Focus, Orb",
+    "description": "A smooth worked orb is fashioned to channel arcane spellcasting. A sorcerer, warlock or wizard may use an arcane focus for appropriate spells.\n\nThe focus follows the 2014 component rules; specially priced or consumed materials must still be supplied as the spell requires. It grants no proficiency, attack bonus or magical effect. The GM resolves component availability and any use as an improvised weapon.",
+    "saleUnit": "One complete arcane focus, orb",
+    "price": {
+      "value": 15,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 2.4,
+      "units": "lb",
+      "notes": "Complete mundane focus weighs 2.4 lb. Numeric reference weights use the established 80% equipment convention; source dashes receive a small practical mass. Project price is below or near the stated reference without adding a spell effect."
+    },
+    "icon": "icons/commodities/gems/pearl-purple-smooth.webp",
+    "category": "spellcasting-supplies",
+    "tags": [
+      "mundane",
+      "core-expansion",
+      "spellcasting-supplies",
+      "spellcasting-focus"
+    ],
+    "shops": [
+      "general-store",
+      "alchemist"
+    ],
+    "availability": "special-order",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 p. 69: Arcane focus, orb: 20 gp; 3 lb. Original wording and custom-economy price/adjusted weight. See docs/CORE_CATALOGUE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0; original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "equipment",
+      "native": {
+        "type": {
+          "value": "trinket",
+          "baseItem": ""
+        },
+        "properties": [
+          "foc"
+        ],
+        "activities": {}
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_FOCUS_ROD",
+    "name": "Arcane Focus, Rod",
+    "description": "A balanced rod is engraved and prepared as an arcane focus. A sorcerer, warlock or wizard may use an arcane focus for appropriate spells.\n\nThe focus follows the 2014 component rules; specially priced or consumed materials must still be supplied as the spell requires. It grants no proficiency, attack bonus or magical effect. The GM resolves component availability and any use as an improvised weapon.",
+    "saleUnit": "One complete arcane focus, rod",
+    "price": {
+      "value": 8,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 1.6,
+      "units": "lb",
+      "notes": "Complete mundane focus weighs 1.6 lb. Numeric reference weights use the established 80% equipment convention; source dashes receive a small practical mass. Project price is below or near the stated reference without adding a spell effect."
+    },
+    "icon": "icons/weapons/staves/staff-blue-jewel.webp",
+    "category": "spellcasting-supplies",
+    "tags": [
+      "mundane",
+      "core-expansion",
+      "spellcasting-supplies",
+      "spellcasting-focus"
+    ],
+    "shops": [
+      "general-store",
+      "alchemist"
+    ],
+    "availability": "special-order",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 p. 69: Arcane focus, rod: 10 gp; 2 lb. Original wording and custom-economy price/adjusted weight. See docs/CORE_CATALOGUE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0; original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "equipment",
+      "native": {
+        "type": {
+          "value": "trinket",
+          "baseItem": ""
+        },
+        "properties": [
+          "foc"
+        ],
+        "activities": {}
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_FOCUS_STAFF",
+    "name": "Arcane Focus, Staff",
+    "description": "A specially constructed staff is prepared as an arcane focus, rather than an ordinary walking pole. A sorcerer, warlock or wizard may use an arcane focus for appropriate spells.\n\nThe focus follows the 2014 component rules; specially priced or consumed materials must still be supplied as the spell requires. It grants no proficiency, attack bonus or magical effect. The GM resolves component availability and any use as an improvised weapon.",
+    "saleUnit": "One complete arcane focus, staff",
+    "price": {
+      "value": 4,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 3.2,
+      "units": "lb",
+      "notes": "Complete mundane focus weighs 3.2 lb. Numeric reference weights use the established 80% equipment convention; source dashes receive a small practical mass. Project price is below or near the stated reference without adding a spell effect."
+    },
+    "icon": "icons/weapons/staves/staff-simple-spiral-grey.webp",
+    "category": "spellcasting-supplies",
+    "tags": [
+      "mundane",
+      "core-expansion",
+      "spellcasting-supplies",
+      "spellcasting-focus"
+    ],
+    "shops": [
+      "general-store",
+      "alchemist"
+    ],
+    "availability": "special-order",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 p. 69: Arcane focus, staff: 5 gp; 4 lb. Original wording and custom-economy price/adjusted weight. See docs/CORE_CATALOGUE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0; original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "equipment",
+      "native": {
+        "type": {
+          "value": "trinket",
+          "baseItem": ""
+        },
+        "properties": [
+          "foc"
+        ],
+        "activities": {}
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_FOCUS_WAND",
+    "name": "Arcane Focus, Wand",
+    "description": "A slender worked wand is prepared to channel arcane spells. A sorcerer, warlock or wizard may use an arcane focus for appropriate spells.\n\nThe focus follows the 2014 component rules; specially priced or consumed materials must still be supplied as the spell requires. It grants no proficiency, attack bonus or magical effect. The GM resolves component availability and any use as an improvised weapon.",
+    "saleUnit": "One complete arcane focus, wand",
+    "price": {
+      "value": 8,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 0.8,
+      "units": "lb",
+      "notes": "Complete mundane focus weighs 0.8 lb. Numeric reference weights use the established 80% equipment convention; source dashes receive a small practical mass. Project price is below or near the stated reference without adding a spell effect."
+    },
+    "icon": "icons/weapons/staves/staff-orante-gold.webp",
+    "category": "spellcasting-supplies",
+    "tags": [
+      "mundane",
+      "core-expansion",
+      "spellcasting-supplies",
+      "spellcasting-focus"
+    ],
+    "shops": [
+      "general-store",
+      "alchemist"
+    ],
+    "availability": "special-order",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 p. 69: Arcane focus, wand: 10 gp; 1 lb. Original wording and custom-economy price/adjusted weight. See docs/CORE_CATALOGUE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0; original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "equipment",
+      "native": {
+        "type": {
+          "value": "trinket",
+          "baseItem": ""
+        },
+        "properties": [
+          "foc"
+        ],
+        "activities": {}
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_FOCUS_MISTLETOE",
+    "name": "Druidic Focus, Mistletoe",
+    "description": "A dried sprig of mistletoe is carefully wrapped for use as a druidic focus. A druid may use this object as a spellcasting focus.\n\nThe focus follows the 2014 component rules; specially priced or consumed materials must still be supplied as the spell requires. It grants no proficiency, attack bonus or magical effect. The GM resolves component availability and any use as an improvised weapon.",
+    "saleUnit": "One complete druidic focus, mistletoe",
+    "price": {
+      "value": 6,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 0.02,
+      "units": "lb",
+      "notes": "Complete mundane focus weighs 0.02 lb. Numeric reference weights use the established 80% equipment convention; source dashes receive a small practical mass. Project price is below or near the stated reference without adding a spell effect."
+    },
+    "icon": "icons/consumables/plants/fern-lady-green.webp",
+    "category": "spellcasting-supplies",
+    "tags": [
+      "mundane",
+      "core-expansion",
+      "spellcasting-supplies",
+      "spellcasting-focus"
+    ],
+    "shops": [
+      "general-store",
+      "alchemist"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 p. 69: Druidic focus, sprig of mistletoe: 1 gp; weight not listed. Original wording and custom-economy price/adjusted weight. See docs/CORE_CATALOGUE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0; original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "equipment",
+      "native": {
+        "type": {
+          "value": "trinket",
+          "baseItem": ""
+        },
+        "properties": [
+          "foc"
+        ],
+        "activities": {}
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_FOCUS_TOTEM",
+    "name": "Druidic Focus, Totem",
+    "description": "A small totem of natural material is prepared for druidic spellcasting. A druid may use this object as a spellcasting focus.\n\nThe focus follows the 2014 component rules; specially priced or consumed materials must still be supplied as the spell requires. It grants no proficiency, attack bonus or magical effect. The GM resolves component availability and any use as an improvised weapon.",
+    "saleUnit": "One complete druidic focus, totem",
+    "price": {
+      "value": 8,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 0.1,
+      "units": "lb",
+      "notes": "Complete mundane focus weighs 0.1 lb. Numeric reference weights use the established 80% equipment convention; source dashes receive a small practical mass. Project price is below or near the stated reference without adding a spell effect."
+    },
+    "icon": "icons/equipment/neck/collar-carved-bone-teeth-ring.webp",
+    "category": "spellcasting-supplies",
+    "tags": [
+      "mundane",
+      "core-expansion",
+      "spellcasting-supplies",
+      "spellcasting-focus"
+    ],
+    "shops": [
+      "general-store",
+      "alchemist"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 p. 69: Druidic focus, totem: 1 gp; weight not listed. Original wording and custom-economy price/adjusted weight. See docs/CORE_CATALOGUE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0; original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "equipment",
+      "native": {
+        "type": {
+          "value": "trinket",
+          "baseItem": ""
+        },
+        "properties": [
+          "foc"
+        ],
+        "activities": {}
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_FOCUS_WOODEN_STAFF",
+    "name": "Druidic Focus, Wooden Staff",
+    "description": "A staff taken whole from a living tree serves as a druidic focus. A druid may use this object as a spellcasting focus.\n\nThe focus follows the 2014 component rules; specially priced or consumed materials must still be supplied as the spell requires. It grants no proficiency, attack bonus or magical effect. The GM resolves component availability and any use as an improvised weapon.",
+    "saleUnit": "One complete druidic focus, wooden staff",
+    "price": {
+      "value": 4,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 3.2,
+      "units": "lb",
+      "notes": "Complete mundane focus weighs 3.2 lb. Numeric reference weights use the established 80% equipment convention; source dashes receive a small practical mass. Project price is below or near the stated reference without adding a spell effect."
+    },
+    "icon": "icons/weapons/staves/staff-nature.webp",
+    "category": "spellcasting-supplies",
+    "tags": [
+      "mundane",
+      "core-expansion",
+      "spellcasting-supplies",
+      "spellcasting-focus"
+    ],
+    "shops": [
+      "general-store",
+      "alchemist"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 p. 69: Druidic focus, wooden staff: 5 gp; 4 lb. Original wording and custom-economy price/adjusted weight. See docs/CORE_CATALOGUE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0; original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "equipment",
+      "native": {
+        "type": {
+          "value": "trinket",
+          "baseItem": ""
+        },
+        "properties": [
+          "foc"
+        ],
+        "activities": {}
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_FOCUS_YEW_WAND",
+    "name": "Druidic Focus, Yew Wand",
+    "description": "A worked yew wand serves as a druidic focus. A druid may use this object as a spellcasting focus.\n\nThe focus follows the 2014 component rules; specially priced or consumed materials must still be supplied as the spell requires. It grants no proficiency, attack bonus or magical effect. The GM resolves component availability and any use as an improvised weapon.",
+    "saleUnit": "One complete druidic focus, yew wand",
+    "price": {
+      "value": 8,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 0.8,
+      "units": "lb",
+      "notes": "Complete mundane focus weighs 0.8 lb. Numeric reference weights use the established 80% equipment convention; source dashes receive a small practical mass. Project price is below or near the stated reference without adding a spell effect."
+    },
+    "icon": "icons/weapons/staves/staff-ornate-wood.webp",
+    "category": "spellcasting-supplies",
+    "tags": [
+      "mundane",
+      "core-expansion",
+      "spellcasting-supplies",
+      "spellcasting-focus"
+    ],
+    "shops": [
+      "general-store",
+      "alchemist"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 p. 69: Druidic focus, yew wand: 10 gp; 1 lb. Original wording and custom-economy price/adjusted weight. See docs/CORE_CATALOGUE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0; original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "equipment",
+      "native": {
+        "type": {
+          "value": "trinket",
+          "baseItem": ""
+        },
+        "properties": [
+          "foc"
+        ],
+        "activities": {}
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_SYMBOL_AMULET",
+    "name": "Holy Symbol, Amulet",
+    "description": "An amulet bears a sacred symbol chosen by the GM and wearer. A cleric or paladin may use a holy symbol as a focus by holding it, wearing it visibly or bearing it on a shield.\n\nThe focus follows the 2014 component rules; specially priced or consumed materials must still be supplied as the spell requires. It grants no proficiency, attack bonus or magical effect. The GM resolves component availability and any use as an improvised weapon.",
+    "saleUnit": "One complete holy symbol, amulet",
+    "price": {
+      "value": 4,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 0.8,
+      "units": "lb",
+      "notes": "Complete mundane focus weighs 0.8 lb. Numeric reference weights use the established 80% equipment convention; source dashes receive a small practical mass. Project price is below or near the stated reference without adding a spell effect."
+    },
+    "icon": "icons/equipment/neck/pendant-bronze-gem-blue.webp",
+    "category": "spellcasting-supplies",
+    "tags": [
+      "mundane",
+      "core-expansion",
+      "spellcasting-supplies",
+      "spellcasting-focus"
+    ],
+    "shops": [
+      "general-store",
+      "alchemist"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 p. 69: Holy symbol, amulet: 5 gp; 1 lb. Original wording and custom-economy price/adjusted weight. See docs/CORE_CATALOGUE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0; original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "equipment",
+      "native": {
+        "type": {
+          "value": "trinket",
+          "baseItem": ""
+        },
+        "properties": [
+          "foc"
+        ],
+        "activities": {}
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_SYMBOL_EMBLEM",
+    "name": "Holy Symbol, Emblem",
+    "description": "A sacred emblem can be borne on a shield or displayed as appropriate to its faith. The shield is not included. A cleric or paladin may use a holy symbol as a focus by holding it, wearing it visibly or bearing it on a shield.\n\nThe focus follows the 2014 component rules; specially priced or consumed materials must still be supplied as the spell requires. It grants no proficiency, attack bonus or magical effect. The GM resolves component availability and any use as an improvised weapon.",
+    "saleUnit": "One complete holy symbol, emblem",
+    "price": {
+      "value": 4,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 0.05,
+      "units": "lb",
+      "notes": "Complete mundane focus weighs 0.05 lb. Numeric reference weights use the established 80% equipment convention; source dashes receive a small practical mass. Project price is below or near the stated reference without adding a spell effect."
+    },
+    "icon": "icons/sundries/flags/banner-symbol-sun-gold-red.webp",
+    "category": "spellcasting-supplies",
+    "tags": [
+      "mundane",
+      "core-expansion",
+      "spellcasting-supplies",
+      "spellcasting-focus"
+    ],
+    "shops": [
+      "general-store",
+      "alchemist"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 p. 69: Holy symbol, emblem: 5 gp; weight not listed. Original wording and custom-economy price/adjusted weight. See docs/CORE_CATALOGUE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0; original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "equipment",
+      "native": {
+        "type": {
+          "value": "trinket",
+          "baseItem": ""
+        },
+        "properties": [
+          "foc"
+        ],
+        "activities": {}
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_SYMBOL_RELIQUARY",
+    "name": "Holy Symbol, Reliquary",
+    "description": "A small case contains a symbolic relic appropriate to a chosen faith; it confers no independent relic power. A cleric or paladin may use a holy symbol as a focus by holding it, wearing it visibly or bearing it on a shield.\n\nThe focus follows the 2014 component rules; specially priced or consumed materials must still be supplied as the spell requires. It grants no proficiency, attack bonus or magical effect. The GM resolves component availability and any use as an improvised weapon.",
+    "saleUnit": "One complete holy symbol, reliquary",
+    "price": {
+      "value": 4,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 1.6,
+      "units": "lb",
+      "notes": "Complete mundane focus weighs 1.6 lb. Numeric reference weights use the established 80% equipment convention; source dashes receive a small practical mass. Project price is below or near the stated reference without adding a spell effect."
+    },
+    "icon": "icons/containers/chest/chest-reinforced-steel-red.webp",
+    "category": "spellcasting-supplies",
+    "tags": [
+      "mundane",
+      "core-expansion",
+      "spellcasting-supplies",
+      "spellcasting-focus"
+    ],
+    "shops": [
+      "general-store",
+      "alchemist"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 p. 69: Holy symbol, reliquary: 5 gp; 2 lb. Original wording and custom-economy price/adjusted weight. See docs/CORE_CATALOGUE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0; original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "equipment",
+      "native": {
+        "type": {
+          "value": "trinket",
+          "baseItem": ""
+        },
+        "properties": [
+          "foc"
+        ],
+        "activities": {}
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_HEALERS_KIT",
+    "name": "Healer's Kit",
+    "description": "Bandages, salves and splints form one kit with ten uses. As an action, expend one use to stabilize a creature at zero hit points without a Wisdom (Medicine) check. This does not restore hit points.\n\nThe activity spends one of the kit’s ten charges. The GM marks the patient stable. Price, quantity and carried weight refer to one complete kit, not one treatment; partial use does not reduce weight automatically.",
+    "saleUnit": "One ten-use healer’s kit",
+    "price": {
+      "value": 4,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 2.4,
+      "units": "lb",
+      "notes": "Complete ten-use kit weighs 2.4 lb, 80% of the 3 lb source weight. Project 4 gp compares with 5 gp and prices the whole kit, including all ten uses."
+    },
+    "icon": "icons/containers/bags/pouch-leather-brown-green.webp",
+    "category": "alchemical-goods",
+    "tags": [
+      "mundane",
+      "core-expansion",
+      "alchemical-goods"
+    ],
+    "shops": [
+      "general-store",
+      "alchemist"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 p. 69: Healer’s kit: 5 gp; 3 lb. Original wording and custom-economy price/adjusted weight. See docs/CORE_CATALOGUE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0; original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "trinket",
+      "use": {
+        "name": "Spend one treatment",
+        "mode": "consume",
+        "activation": "action",
+        "condition": "The GM resolves the described effect; using this activity only records charge or supply use.",
+        "maxUses": 10
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_HOLY_WATER",
+    "name": "Holy Water",
+    "description": "One sealed flask holds holy water. As an action, splash it at a creature within five feet or throw it up to twenty feet, resolving a ranged attack as an improvised weapon. A hit deals 2d6 radiant damage only if the target is a fiend or undead.\n\nThe activity consumes one flask. Attack, creature eligibility and damage are resolved manually by the GM. Buying the flask neither casts a spell nor supplies the ritual for producing more holy water.",
+    "saleUnit": "One complete holy water",
+    "price": {
+      "value": 20,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 0.7,
+      "units": "lb",
+      "notes": "Filled flask weighs 0.7 lb versus 1 lb in the reference. Project 20 gp retains a specialist preparation cost below the 25 gp reference; it does not waive holy-water creation costs."
+    },
+    "icon": "icons/consumables/potions/bottle-round-empty-glass.webp",
+    "category": "alchemical-goods",
+    "tags": [
+      "mundane",
+      "core-expansion",
+      "alchemical-goods"
+    ],
+    "shops": [
+      "general-store",
+      "alchemist"
+    ],
+    "availability": "special-order",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 p. 69: Holy water (flask): 25 gp; 1 lb. Original wording and custom-economy price/adjusted weight. See docs/CORE_CATALOGUE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0; original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "trinket",
+      "use": {
+        "name": "Use one holy water flask",
+        "mode": "consume",
+        "activation": "action",
+        "condition": "The GM resolves the described effect; using this activity only records charge or supply use."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_HUNTING_TRAP",
+    "name": "Hunting Trap",
+    "description": "An iron jaw trap is attached by a chain, normally three feet long, to a secure anchor. An action sets it. A creature stepping on its plate makes a DC 13 Dexterity save or takes 1d4 piercing damage and stops moving. Thereafter, movement is limited by the chain.\n\nA creature can use an action to attempt a DC 13 Strength check to free itself or another creature. Each failed attempt deals one piercing damage to the trapped creature. The GM resolves anchors, checks, placement and damage; the reusable activity changes no terrain or conditions.",
+    "saleUnit": "One complete hunting trap",
+    "price": {
+      "value": 4,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 18,
+      "units": "lb",
+      "notes": "Complete trap and chain weigh 18 lb versus 25 lb officially. Project 4 gp compares with 5 gp; the trap remains deliberately heavy and is excluded from a travelling wagon."
+    },
+    "icon": "icons/environment/traps/trap-jaw-green.webp",
+    "category": "tools",
+    "tags": [
+      "mundane",
+      "core-expansion",
+      "tools"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 p. 69: Hunting trap: 5 gp; 25 lb. Original wording and custom-economy price/adjusted weight. See docs/CORE_CATALOGUE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0; original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "trinket",
+      "use": {
+        "name": "Set or reset trap",
+        "mode": "reusable",
+        "activation": "action",
+        "condition": "The GM resolves placement, checks and results; no effect is applied automatically."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_MAGNIFYING_GLASS",
+    "name": "Magnifying Glass",
+    "description": "A fitted glass lens enlarges small details. It grants advantage on checks made to appraise or inspect an object that is small or highly detailed. The GM decides whether that condition applies.\n\nIt can also start a fire with tinder in light as bright as sunlight, taking about five minutes. It is not a telescope or automatic clue detector; neither checks nor fire-starting are automated.",
+    "saleUnit": "One complete magnifying glass",
+    "price": {
+      "value": 40,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 0.1,
+      "units": "lb",
+      "notes": "The source gives no mass; 0.1 lb covers a small lens and handle. Project 40 gp reduces the source 100 gp precision premium while remaining a specialist purchase, above ordinary spectacles or a simple mirror."
+    },
+    "icon": "icons/tools/scribal/magnifying-glass.webp",
+    "category": "tools",
+    "tags": [
+      "mundane",
+      "core-expansion",
+      "tools"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "special-order",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 p. 69: Magnifying glass: 100 gp; weight not listed. Original wording and custom-economy price/adjusted weight. See docs/CORE_CATALOGUE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0; original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_PERFUME",
+    "name": "Perfume",
+    "description": "A stoppered vial holds a small supply of scented perfume. Apply sparingly to clothes or skin as desired. It creates no magical disguise, charm effect or guaranteed reaction.\n\nPrice and weight include the filled vial. Track partial use manually; mark the vial empty only when the whole supply is spent.",
+    "saleUnit": "One complete perfume",
+    "price": {
+      "value": 3,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 0.1,
+      "units": "lb",
+      "notes": "The source gives no mass; 0.1 lb includes the perfume and vessel. Project 3 gp compares with 5 gp and prices a complete vial rather than a single application."
+    },
+    "icon": "icons/consumables/potions/bottle-bulb-corked-purple.webp",
+    "category": "alchemical-goods",
+    "tags": [
+      "mundane",
+      "core-expansion",
+      "alchemical-goods"
+    ],
+    "shops": [
+      "general-store",
+      "alchemist"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 p. 69: Perfume (vial): 5 gp; weight not listed. Original wording and custom-economy price/adjusted weight. See docs/CORE_CATALOGUE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0; original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "trinket",
+      "use": {
+        "name": "Mark perfume vial empty",
+        "mode": "consume",
+        "activation": "special",
+        "condition": "Use only after the whole vial has been spent."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_POT_IRON_GALLON",
+    "name": "Iron Pot, 1 gallon",
+    "description": "One empty iron pot with a handle holds a US gallon. It is a larger vessel than the separately sold two-quart Cooking Pot. Use a sound heat source and support appropriate to its load.\n\nThe eight-pound contents allowance is a project limit. Contents and fuel add their own weight; no food, water or firewood is included.",
+    "saleUnit": "One empty one-gallon iron pot",
+    "price": {
+      "value": 1,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 6,
+      "units": "lb",
+      "notes": "Empty one-gallon iron vessel weighs 6 lb versus 10 lb officially; project 1 gp keeps it above the smaller 7 sp Cooking Pot. Contents are separate."
+    },
+    "icon": "icons/tools/laboratory/cauldron-filled-gold.webp",
+    "category": "containers",
+    "tags": [
+      "mundane",
+      "core-expansion",
+      "containers"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 p. 69: Pot, iron: 2 gp; 10 lb. Original wording and custom-economy price/adjusted weight. See docs/CORE_CATALOGUE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0; original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "container",
+      "capacity": {
+        "weight": {
+          "value": 8,
+          "units": "lb"
+        },
+        "volume": {
+          "value": 1,
+          "units": "gallon"
+        }
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_RAM_PORTABLE",
+    "name": "Portable Ram",
+    "description": "A weighted beam with hand grips is used to force doors. Using it grants a +4 bonus to the relevant Strength check. One other character can help, giving advantage on that check.\n\nThe GM resolves the door, the check and the helper’s position. The reusable activity applies no bonus or damage automatically. Its full weight and bulk must be transported.",
+    "saleUnit": "One complete portable ram",
+    "price": {
+      "value": 3,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 25,
+      "units": "lb",
+      "notes": "Complete reinforced beam and grips weigh 25 lb versus 35 lb officially. Project 3 gp compares with 4 gp while retaining a substantial carrying burden."
+    },
+    "icon": "icons/weapons/maces/mace-skull-ram.webp",
+    "category": "tools",
+    "tags": [
+      "mundane",
+      "core-expansion",
+      "tools"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 p. 69: Ram, portable: 4 gp; 35 lb. Original wording and custom-economy price/adjusted weight. See docs/CORE_CATALOGUE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0; original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "consumable",
+      "subtype": "trinket",
+      "use": {
+        "name": "Use portable ram",
+        "mode": "reusable",
+        "activation": "action",
+        "condition": "The GM resolves placement, checks and results; no effect is applied automatically."
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_SIGNET_RING",
+    "name": "Signet Ring",
+    "description": "An ordinary ring carries a small engraved design for impressing into sealing wax. Agree its design with the GM. A matched impression is physical evidence, not proof of identity or authority by itself.\n\nThe ring is sold legitimately and is distinct from the Fence’s stolen jewellery. Wax and an authenticated legal identity are not included.",
+    "saleUnit": "One complete signet ring",
+    "price": {
+      "value": 4,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 0.02,
+      "units": "lb",
+      "notes": "A practical small ring weighs 0.02 lb where the source gives no weight. Project 4 gp compares with 5 gp; stolen provenance is not duplicated as a second listing of this ring."
+    },
+    "icon": "icons/equipment/finger/ring-cabochon-gold-orange.webp",
+    "category": "tools",
+    "tags": [
+      "mundane",
+      "core-expansion",
+      "tools"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 p. 69: Signet ring: 5 gp; weight not listed. Original wording and custom-economy price/adjusted weight. See docs/CORE_CATALOGUE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0; original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "gear"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_VIAL_STANDARD",
+    "name": "Glass Vial, 4 fl oz",
+    "description": "One empty glass vial with a stopper holds four US fluid ounces. It is larger than the separate one-ounce apothecary vial. No potion, acid or other liquid is included.\n\nThe half-pound contents allowance is a project limit. Contents retain their own weight; the GM determines material compatibility and safe sealing.",
+    "saleUnit": "One empty four-fluid-ounce vial",
+    "price": {
+      "value": 1,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 0.08,
+      "units": "lb",
+      "notes": "Source weight is unspecified; 0.08 lb covers the empty four-ounce vessel and stopper. Project 1 sp compares with 1 gp and stays above the smaller 6 cp one-ounce vial."
+    },
+    "icon": "icons/consumables/potions/vial-cork-empty.webp",
+    "category": "containers",
+    "tags": [
+      "mundane",
+      "core-expansion",
+      "containers"
+    ],
+    "shops": [
+      "general-store",
+      "alchemist"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 p. 69: Vial: 1 gp; weight not listed. Original wording and custom-economy price/adjusted weight. See docs/CORE_CATALOGUE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0; original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "container",
+      "capacity": {
+        "weight": {
+          "value": 0.5,
+          "units": "lb"
+        },
+        "volume": {
+          "value": 0.25,
+          "units": "pint"
+        }
+      }
+    }
+  }
+]

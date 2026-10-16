@@ -44,3 +44,46 @@ See [Content Completeness](CONTENT_COMPLETENESS.md) for delivered batches, cover
 ## Related documents
 
 [Content Standard](CONTENT_STANDARD.md), [Price Guide](PRICE_GUIDE.md), [Weight Guide](WEIGHT_GUIDE.md), [Stock Tables](STOCK_TABLES.md), [Milestone 2A baseline](audits/README.md).
+
+## Adventuring and spellcasting expansion
+
+All 95 audited adventuring-gear source units are now represented. The 34 additions preserve ordinary variants: the four-ounce vial, 1.5-pint bottle, one-gallon iron pot and written lore book remain separate from their smaller/larger or blank counterparts. Native clothing and focuses use equipment/trinket without armour AC; twelve focuses have the native `foc` property. No proficiency or spell effect is granted by purchase.
+
+Healer’s Kit is one ten-charge Item. Its activity spends a charge; the GM marks stabilization. Acid, alchemist’s fire, holy water, antitoxin, ball bearings and caltrops consume one complete purchased dose/bundle. Attack rolls, recurring damage, durations, saves and deployed areas remain manual. Hunting Trap and Portable Ram are reusable. Perfume use is tracked manually until a whole vial is empty.
+
+| Addition | SRD reference price / weight | Project price / weight |
+| --- | --- | --- |
+| Abacus | Abacus: 2 gp; 2 lb | 1 gp / 1.2 lb |
+| Acid, Vial | Acid (vial): 25 gp; 1 lb | 15 gp / 0.5 lb |
+| Alchemist's Fire | Alchemist’s fire (flask): 50 gp; 1 lb | 30 gp / 0.7 lb |
+| Antitoxin | Antitoxin (vial): 50 gp; weight not listed | 30 gp / 0.1 lb |
+| Ball Bearings | Ball bearings (bag of 1,000): 1 gp; 2 lb | 7 sp / 1.6 lb |
+| Caltrops | Caltrops (bag of 20): 1 gp; 2 lb | 7 sp / 1.6 lb |
+| Book of Lore | Book: 25 gp; 5 lb | 8 gp / 3 lb |
+| Glass Bottle, 1.5 pint | Bottle, glass: 2 gp; 2 lb | 2 sp / 0.6 lb |
+| Common Clothes | Clothes, common: 5 sp; 3 lb | 4 sp / 2 lb |
+| Costume Clothes | Clothes, costume: 5 gp; 4 lb | 4 gp / 3 lb |
+| Fine Clothes | Clothes, fine: 15 gp; 6 lb | 10 gp / 4 lb |
+| Traveller’s Clothes | Clothes, traveler’s: 2 gp; 4 lb | 1 gp / 3 lb |
+| Robes | Robes: 1 gp; 4 lb | 8 sp / 3 lb |
+| Arcane Focus, Crystal | Arcane focus, crystal: 10 gp; 1 lb | 8 gp / 0.8 lb |
+| Arcane Focus, Orb | Arcane focus, orb: 20 gp; 3 lb | 15 gp / 2.4 lb |
+| Arcane Focus, Rod | Arcane focus, rod: 10 gp; 2 lb | 8 gp / 1.6 lb |
+| Arcane Focus, Staff | Arcane focus, staff: 5 gp; 4 lb | 4 gp / 3.2 lb |
+| Arcane Focus, Wand | Arcane focus, wand: 10 gp; 1 lb | 8 gp / 0.8 lb |
+| Druidic Focus, Mistletoe | Druidic focus, sprig of mistletoe: 1 gp; weight not listed | 6 sp / 0.02 lb |
+| Druidic Focus, Totem | Druidic focus, totem: 1 gp; weight not listed | 8 sp / 0.1 lb |
+| Druidic Focus, Wooden Staff | Druidic focus, wooden staff: 5 gp; 4 lb | 4 gp / 3.2 lb |
+| Druidic Focus, Yew Wand | Druidic focus, yew wand: 10 gp; 1 lb | 8 gp / 0.8 lb |
+| Holy Symbol, Amulet | Holy symbol, amulet: 5 gp; 1 lb | 4 gp / 0.8 lb |
+| Holy Symbol, Emblem | Holy symbol, emblem: 5 gp; weight not listed | 4 gp / 0.05 lb |
+| Holy Symbol, Reliquary | Holy symbol, reliquary: 5 gp; 2 lb | 4 gp / 1.6 lb |
+| Healer's Kit | Healer’s kit: 5 gp; 3 lb | 4 gp / 2.4 lb |
+| Holy Water | Holy water (flask): 25 gp; 1 lb | 20 gp / 0.7 lb |
+| Hunting Trap | Hunting trap: 5 gp; 25 lb | 4 gp / 18 lb |
+| Magnifying Glass | Magnifying glass: 100 gp; weight not listed | 40 gp / 0.1 lb |
+| Perfume | Perfume (vial): 5 gp; weight not listed | 3 gp / 0.1 lb |
+| Iron Pot, 1 gallon | Pot, iron: 2 gp; 10 lb | 1 gp / 6 lb |
+| Portable Ram | Ram, portable: 4 gp; 35 lb | 3 gp / 25 lb |
+| Signet Ring | Signet ring: 5 gp; weight not listed | 4 gp / 0.02 lb |
+| Glass Vial, 4 fl oz | Vial: 1 gp; weight not listed | 1 sp / 0.08 lb |

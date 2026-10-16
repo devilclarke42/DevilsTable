@@ -13,7 +13,7 @@ const findItem = (data, name) => data.entries.find(({ item }) => item.name === n
 test("new purchase units preserve whole-bundle prices and adjusted weights", async () => {
   const data = await production();
   const added = data.entries.filter(({ item }) => item.shops.includes("general-store") && item.category !== "containers");
-  assert.equal(added.length, 136);
+  assert.equal(added.length, 167);
   for (const { item } of added) {
     assert.ok(item.saleUnit?.trim());
     const doc = catalogueEntryToItem(item);
@@ -30,9 +30,9 @@ test("new purchase units preserve whole-bundle prices and adjusted weights", asy
   assert.match(findItem(data, "Horseshoes").saleUnit, /four/);
 });
 
-test("fuel and food consume exactly one owning sale unit without a stale actor reference", async () => {
+test("existing fuel and food consume exactly one owning sale unit without a stale actor reference", async () => {
   const data = await production();
-  const items = data.entries.filter(({ item }) => item.shops.includes("general-store") && item.mechanics.use?.mode === "consume");
+  const items = data.entries.filter(({ item }) => item.shops.includes("general-store") && item.mechanics.use?.mode === "consume" && !item.tags.includes("core-expansion"));
   assert.equal(items.length, 11);
   for (const { item } of items) {
     const doc = catalogueEntryToItem(item);
@@ -114,20 +114,20 @@ test("six new vessels use native containers outside the Containers category", as
   }
 });
 
-test("a current Containers build gains 136 items and retains its 16 documents", async () => {
+test("a current Containers build gains 167 items and retains its 19 documents", async () => {
   const data = await production();
   const existing = data.entries.filter(({ item }) => item.category === "containers").map(({ item }) => catalogueEntryToItem(item));
   const { adapter, state } = fakeAdapter({ existing });
   const build = createBuilder({ load: () => data, adapter });
   const preview = await build({ shopId: "general-store" });
-  assert.deepEqual([preview.create, preview.update, preview.unchanged], [136, 0, 16]);
+  assert.deepEqual([preview.create, preview.update, preview.unchanged], [167, 0, 19]);
   assert.deepEqual(state.writes, []);
   const result = await build({ dryRun: false, shopId: "general-store" });
-  assert.equal(result.written, 136);
-  assert.equal(state.docs.length, 152);
-  assert.deepEqual(state.docs.slice(0, 16), existing);
-  assert.equal((await build({ dryRun: false, shopId: "general-store" })).unchanged, 152);
-  assert.deepEqual(state.writes, [{ action: "create", count: 100 }, { action: "create", count: 36 }]);
+  assert.equal(result.written, 167);
+  assert.equal(state.docs.length, 186);
+  assert.deepEqual(state.docs.slice(0, 19), existing);
+  assert.equal((await build({ dryRun: false, shopId: "general-store" })).unchanged, 186);
+  assert.deepEqual(state.writes, [{ action: "create", count: 100 }, { action: "create", count: 67 }]);
 });
 
 test("sequential category builds preserve earlier categories and shared-shop identities", async () => {
@@ -142,8 +142,8 @@ test("sequential category builds preserve earlier categories and shared-shop ide
     count += result.create;
     assert.equal(state.docs.length, count);
   }
-  assert.equal((await build({ dryRun: false, shopId: "alchemist" })).unchanged, 7);
-  assert.equal(state.docs.length, 187);
+  assert.equal((await build({ dryRun: false, shopId: "alchemist" })).unchanged, 26);
+  assert.equal(state.docs.length, 221);
 });
 
 test("native activity consumption and light metadata remain strict at read-back", async () => {

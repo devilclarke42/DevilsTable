@@ -60,7 +60,8 @@
     "data/items/fence/stolen-goods.json",
     "data/items/fence/curiosities.json",
     "data/items/fence/rare-components.json",
-    "data/items/general-store/core-equipment.json"
+    "data/items/general-store/core-equipment.json",
+    "data/items/general-store/adventuring-equipment.json"
   ],
   "shops": [
     "tavern",
@@ -130,7 +131,8 @@
     "smuggling",
     "stolen-goods",
     "curiosities",
-    "rare-components"
+    "rare-components",
+    "spellcasting-supplies"
   ],
   "deferredFiles": []
 }

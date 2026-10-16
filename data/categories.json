@@ -20,7 +20,10 @@
       "Ceramic Jar",
       "Component Pouch",
       "Quiver",
-      "Crossbow Bolt Case"
+      "Crossbow Bolt Case",
+      "Glass Bottle, 1.5 pint",
+      "Iron Pot, 1 gallon",
+      "Glass Vial, 4 fl oz"
     ],
     "catalogue": "general-store",
     "sort": 0,
@@ -131,7 +134,8 @@
       "Slate",
       "Blotting Sand",
       "Document Case",
-      "Spellbook"
+      "Spellbook",
+      "Book of Lore"
     ],
     "catalogue": "general-store",
     "sort": 40,
@@ -241,7 +245,14 @@
       "Wooden Wedges",
       "Merchant's Scale",
       "Herbalism Kit",
-      "Navigator's Tools"
+      "Navigator's Tools",
+      "Abacus",
+      "Ball Bearings",
+      "Caltrops",
+      "Hunting Trap",
+      "Magnifying Glass",
+      "Portable Ram",
+      "Signet Ring"
     ],
     "catalogue": "general-store",
     "sort": 80,
@@ -1498,5 +1509,106 @@
     "sort": 100,
     "visible": true,
     "icon": "icons/containers/bags/pouch-leather-green.webp"
+  },
+  {
+    "id": "alchemical-goods",
+    "shop": "general-store",
+    "catalogue": "general-store",
+    "name": "Alchemy & Medical Supplies",
+    "description": "Source-derived alchemy & medical supplies with explicit purchase units and manual limits.",
+    "plannedItems": [
+      "Acid, Vial",
+      "Alchemist's Fire",
+      "Antitoxin",
+      "Healer's Kit",
+      "Holy Water",
+      "Perfume"
+    ],
+    "sort": 120,
+    "visible": true,
+    "icon": "icons/consumables/potions/bottle-round-corked-green.webp"
+  },
+  {
+    "id": "alchemical-goods",
+    "shop": "alchemist",
+    "catalogue": "alchemist",
+    "name": "Alchemy & Medical Supplies",
+    "description": "Source-derived alchemy & medical supplies with explicit purchase units and manual limits.",
+    "plannedItems": [
+      "Acid, Vial",
+      "Alchemist's Fire",
+      "Antitoxin",
+      "Healer's Kit",
+      "Holy Water",
+      "Perfume"
+    ],
+    "sort": 120,
+    "visible": true,
+    "icon": "icons/consumables/potions/bottle-round-corked-green.webp"
+  },
+  {
+    "id": "clothing",
+    "shop": "general-store",
+    "catalogue": "general-store",
+    "name": "Clothing",
+    "description": "Source-derived clothing with explicit purchase units and manual limits.",
+    "plannedItems": [
+      "Common Clothes",
+      "Costume Clothes",
+      "Fine Clothes",
+      "Traveller’s Clothes",
+      "Robes"
+    ],
+    "sort": 100,
+    "visible": true,
+    "icon": "icons/equipment/chest/shirt-collared-brown.webp"
+  },
+  {
+    "id": "spellcasting-supplies",
+    "shop": "general-store",
+    "catalogue": "general-store",
+    "name": "Spellcasting Supplies",
+    "description": "Source-derived spellcasting supplies with explicit purchase units and manual limits.",
+    "plannedItems": [
+      "Arcane Focus, Crystal",
+      "Arcane Focus, Orb",
+      "Arcane Focus, Rod",
+      "Arcane Focus, Staff",
+      "Arcane Focus, Wand",
+      "Druidic Focus, Mistletoe",
+      "Druidic Focus, Totem",
+      "Druidic Focus, Wooden Staff",
+      "Druidic Focus, Yew Wand",
+      "Holy Symbol, Amulet",
+      "Holy Symbol, Emblem",
+      "Holy Symbol, Reliquary"
+    ],
+    "sort": 110,
+    "visible": true,
+    "icon": "icons/commodities/gems/gem-faceted-large-green.webp"
+  },
+  {
+    "id": "spellcasting-supplies",
+    "shop": "alchemist",
+    "catalogue": "alchemist",
+    "name": "Spellcasting Supplies",
+    "description": "Source-derived spellcasting supplies with explicit purchase units and manual limits.",
+    "plannedItems": [
+      "Arcane Focus, Crystal",
+      "Arcane Focus, Orb",
+      "Arcane Focus, Rod",
+      "Arcane Focus, Staff",
+      "Arcane Focus, Wand",
+      "Druidic Focus, Mistletoe",
+      "Druidic Focus, Totem",
+      "Druidic Focus, Wooden Staff",
+      "Druidic Focus, Yew Wand",
+      "Holy Symbol, Amulet",
+      "Holy Symbol, Emblem",
+      "Holy Symbol, Reliquary"
+    ],
+    "sort": 110,
+    "visible": true,
+    "icon": "icons/commodities/gems/gem-faceted-large-green.webp"
   }
 ]

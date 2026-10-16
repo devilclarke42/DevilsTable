@@ -845,7 +845,10 @@
         "animal",
         "travel",
         "tools",
-        "trade-goods"
+        "trade-goods",
+        "alchemical-goods",
+        "clothing",
+        "spellcasting-supplies"
       ],
       "overrides": [],
       "variants": [
@@ -964,6 +967,46 @@
             {
               "itemId": "DT_ITEM_GS_CLOTH_SILK",
               "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_ALCHEMISTS_FIRE",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_ANTITOXIN",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_CLOTHES_FINE",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_FOCUS_CRYSTAL",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_FOCUS_ORB",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_FOCUS_ROD",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_FOCUS_STAFF",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_FOCUS_WAND",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_HOLY_WATER",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_MAGNIFYING_GLASS",
+              "tier": "often"
             }
           ],
           "merchantNotes": {
@@ -1001,7 +1044,14 @@
             "DT_ITEM_GS_BAR_IRON",
             "DT_ITEM_GS_BAR_COPPER",
             "DT_ITEM_GS_LADDER_RIGID",
-            "DT_ITEM_GS_POLE"
+            "DT_ITEM_GS_POLE",
+            "DT_ITEM_GS_ALCHEMISTS_FIRE",
+            "DT_ITEM_GS_ANTITOXIN",
+            "DT_ITEM_GS_HOLY_WATER",
+            "DT_ITEM_GS_HUNTING_TRAP",
+            "DT_ITEM_GS_MAGNIFYING_GLASS",
+            "DT_ITEM_GS_POT_IRON_GALLON",
+            "DT_ITEM_GS_RAM_PORTABLE"
           ],
           "overrides": [
             {
@@ -1101,7 +1151,9 @@
         "reagents",
         "glassware",
         "alchemical-tools",
-        "tools"
+        "tools",
+        "alchemical-goods",
+        "spellcasting-supplies"
       ],
       "overrides": [
         {
@@ -1120,7 +1172,40 @@
             "DT_ITEM_ALC_HEALING_SUPERIOR",
             "DT_ITEM_ALC_HEALING_SUPREME"
           ],
-          "overrides": [],
+          "overrides": [
+            {
+              "itemId": "DT_ITEM_GS_ALCHEMISTS_FIRE",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_ANTITOXIN",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_FOCUS_CRYSTAL",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_FOCUS_ORB",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_FOCUS_ROD",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_FOCUS_STAFF",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_FOCUS_WAND",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_HOLY_WATER",
+              "tier": "often"
+            }
+          ],
           "merchantNotes": {
             "alwaysStocks": [
               "Dried Mint",
@@ -1183,7 +1268,20 @@
             "DT_ITEM_ALC_RETORT",
             "DT_ITEM_ALC_MORTAR",
             "DT_ITEM_ALC_ALCHEMISTS_SUPPLIES",
-            "DT_ITEM_GS_HERBALISM_KIT"
+            "DT_ITEM_GS_HERBALISM_KIT",
+            "DT_ITEM_GS_ALCHEMISTS_FIRE",
+            "DT_ITEM_GS_ANTITOXIN",
+            "DT_ITEM_GS_FOCUS_CRYSTAL",
+            "DT_ITEM_GS_FOCUS_ORB",
+            "DT_ITEM_GS_FOCUS_ROD",
+            "DT_ITEM_GS_FOCUS_STAFF",
+            "DT_ITEM_GS_FOCUS_WAND",
+            "DT_ITEM_GS_FOCUS_WOODEN_STAFF",
+            "DT_ITEM_GS_FOCUS_YEW_WAND",
+            "DT_ITEM_GS_SYMBOL_AMULET",
+            "DT_ITEM_GS_SYMBOL_RELIQUARY",
+            "DT_ITEM_GS_HEALERS_KIT",
+            "DT_ITEM_GS_HOLY_WATER"
           ],
           "overrides": [
             {

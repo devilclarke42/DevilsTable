@@ -28,7 +28,7 @@ const merchant=async(items=[])=>{const m=new Actor("merchant",0,items);await m.s
 test("Fence builds 48 canonical goods without duplicating shared equipment",async()=>{
  assert.equal(rows.length,48);assert.equal(rows.filter(i=>i.id.startsWith("DT_ITEM_BMK_")).length,35);
  const {adapter,state}=fakeAdapter(),build=createBuilder({load:()=>data,adapter});
- await build({dryRun:false});assert.equal(state.docs.length,448);
+ await build({dryRun:false});assert.equal(state.docs.length,482);
  assert.equal((await build({dryRun:false,shopId:"black-market"})).unchanged,48);
  const tools=rows.filter(i=>i.mechanics.type==="tool");assert.equal(tools.length,4);
  assert.deepEqual(tools.map(i=>i.mechanics.native.type.baseItem).sort(),["disg","forg","pois","thief"]);

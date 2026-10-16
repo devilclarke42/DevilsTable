@@ -22,23 +22,23 @@ The eight-item gate passed: all **420 tests** (412 existing plus eight focused r
 
 [Core Catalogue](CORE_CATALOGUE.md), [Source Data](SOURCE_DATA.md), [Milestone 2A Audit](audits/CATALOGUE_AUDIT.md).
 
-## Approval gate before the adventuring batch
+## Approved generic support
 
-The initial eight-item gate is complete. Further implementation is paused at the brief's requirement: “If an important catalogue addition requires framework changes, document the requirement and request approval before implementing it.” No schema, converter or runtime logic has been modified.
+The owner approved generic limited-use consumables and native focus equipment on 2026-10-16. Those two data-contract extensions are implemented and tested; no payment, transaction or merchant-specific runtime logic changed.
 
-### Proposal 1 — Generic limited-use consumables
+### Generic limited-use consumables
 
-The current non-native consumable converter authors `system.uses.max = "1"`; consumed use removes one complete sale unit. A Healer's Kit requires ten uses. Neither an infinite reusable trinket nor ten separate kits correctly represents one ten-use kit.
+Previously, the non-native consumable converter authored `system.uses.max = "1"`; consumed use removed one complete sale unit. A Healer's Kit requires ten uses. Neither an infinite reusable trinket nor ten separate kits correctly represents one ten-use kit.
 
-Proposed change: add an optional bounded positive integer `mechanics.use.maxUses` (default one, legal only for consuming uses), map it to the native Item uses maximum and retain one-owning-Item-use consumption per activity. Keep 2014 action costs and existing auto-destruction semantics. Use the same contract for any limited-use mundane consumable, with no Healer-specific branch, healing automation or transaction changes.
+Implemented change: add an optional bounded positive integer `mechanics.use.maxUses` (default one, legal only for consuming uses), map it to the native Item uses maximum and retain one-owning-Item-use consumption per activity. Keep 2014 action costs and existing auto-destruction semantics. Use the same contract for any limited-use mundane consumable, with no Healer-specific branch, healing automation or transaction changes.
 
-Before shipping, verify omitted-field outputs remain identical for every existing Item, ten uses exhaust exactly one kit, stacked kits behave correctly, invalid limits fail closed and source/native read-back converges. Native stabilization is not promised; the initial kit can describe its 2014 stabilization effect for GM resolution while accurately tracking ten charges. Update the sale-unit/consumption standard to distinguish a kit from one charge. This proposal is not implemented.
+Before shipping, verify omitted-field outputs remain identical for every existing Item, ten uses exhaust exactly one kit, stacked kits behave correctly, invalid limits fail closed and source/native read-back converges. Native stabilization is not promised; the initial kit can describe its 2014 stabilization effect for GM resolution while accurately tracking ten charges. Update the sale-unit/consumption standard to distinguish a kit from one charge. This extension is implemented and validated.
 
-### Proposal 2 — Generic native spellcasting-focus mapping
+### Native spellcasting-focus mapping
 
-The pinned D&D5e system represents focus Items as equipment with `system.type.value = "trinket"`. The module's current native equipment validator permits only light/medium/heavy/shield and requires an armour AC. It cannot accept a real focus without either extending that contract or misclassifying it as generic loot.
+The pinned D&D5e system represents focus Items as equipment with `system.type.value = "trinket"`. Previously the module's equipment validator permitted only light/medium/heavy/shield and required an armour AC. It cannot accept a real focus without either extending that contract or misclassifying it as generic loot.
 
-Proposed change: permit the supported native trinket equipment subtype and its reviewed focus properties, without requiring an armour AC for a trinket. Validate the exact pinned-system field shape and all twelve audited focus/symbol source units. Retain class/component restrictions in original descriptions; no active spell effect, automatic costly component payment or bespoke merchant code. Existing armour validation remains strict. This proposal is not implemented.
+Implemented change: permit the supported native trinket equipment subtype and its reviewed focus properties, without requiring an armour AC for a trinket. Validate the exact pinned-system field shape and all twelve audited focus/symbol source units. Retain class/component restrictions in original descriptions; no active spell effect, automatic costly component payment or bespoke merchant code. Existing armour validation remains strict. This extension is implemented and validated.
 
 ### Subsequent decisions retained for review
 
@@ -48,4 +48,4 @@ Proposed change: permit the supported native trinket equipment subtype and its r
 - **Livestock commodities:** use an agreed manual handover/booking representation rather than fake carried-animal loot with invented body weights. The six livestock trade entries remain pending alongside the later commodity batch.
 - **Padlocks, potion rarity and original-source branding:** retain existing canonical records. Padlock consolidation and rarity need separate migration/data-contract decisions; source title cleanup is not mixed into the first expansion batch.
 
-The other content-only batches remain authorized, but have not been started past this required review stop. No claim is made that Milestone 2B as a whole is complete. Once the two generic contracts are approved, continue the adventuring/spellcasting batch, then tools/instruments, pack representation and trade goods, with a separate validation commit after each batch.
+The adventuring/spellcasting batch now adds 34 Items (482 total), covering 167/241 source units (69.29%). Its validation gate passes 430 tests. Tools/instruments and commodities follow; pack fulfilment and livestock remain documented exceptions rather than fake carried goods.
