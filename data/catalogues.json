@@ -160,7 +160,8 @@
       "contraband",
       "stolen-goods",
       "curiosities",
-      "rare-components"
+      "rare-components",
+      "trade-goods"
     ],
     "fallbackCategory": {
       "id": "other",

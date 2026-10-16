@@ -37,9 +37,9 @@ test("one Always draw returns every core good instead of selecting only one", as
   const data = await production();
   const table = scopeTables(data).find(table => tierOf(table) === "always");
   assert.equal(table.formula, "1d1");
-  assert.equal(table.results.length, 82);
+  assert.equal(table.results.length, 84);
   const drawn = table.results.filter(row => row.range[0] <= 1 && row.range[1] >= 1);
-  assert.equal(drawn.length, 82);
+  assert.equal(drawn.length, 84);
   for (const id of ["DT_ITEM_GS_ROPE_HEMP", "DT_ITEM_GS_SACK", "DT_ITEM_GS_CANDLE", "DT_ITEM_GS_SOAP", "DT_ITEM_GS_TORCH"]) {
     assert.ok(drawn.some(row => row.flags["devils-table-merchants"].itemId === id));
   }
@@ -154,7 +154,7 @@ test("stock sampling is duplicate-free, keeps Always goods and does not mutate b
   const stock = await rollStockFromTables(tables, { draws: 50, rollDie: async () => 1 });
   const ids = stock.selected.map(({ row }) => row.flags["devils-table-merchants"].itemId);
   assert.equal(new Set(ids).size, ids.length);
-  assert.equal(stock.selected.filter(row => row.tier === "always").length, 82);
+  assert.equal(stock.selected.filter(row => row.tier === "always").length, 84);
   assert.equal(stock.selected.filter(row => row.tier === "often").length, 50);
   assert.equal(stock.selected.filter(row => row.tier === "rarely").length, 0);
   assert.deepEqual(tables, before);
@@ -163,8 +163,8 @@ test("stock sampling is duplicate-free, keeps Always goods and does not mutate b
 test("Roll Stock uses current built tables and never writes packs, chat or inventories", async () => {
   const data = await production();
   const { adapter, state } = fakeAdapter({ existing: stockTableDocuments(data) });
-  const stock = await rollStockList({ load: () => data, adapter, draws: 1, rollDie: rollSequence([95, 1, ...Array(83).fill(1)]) });
-  assert.equal(stock.items.length, 83);
+  const stock = await rollStockList({ load: () => data, adapter, draws: 1, rollDie: rollSequence([95, 1, ...Array(85).fill(1)]) });
+  assert.equal(stock.items.length, 85);
   assert.equal(stock.items.filter(item => item.tier === "rarely").length, 1);
   assert.ok(stock.items.every(item => item.uuid.startsWith("Compendium.world.devils-table-items.Item.")));
   assert.ok(stock.items.every(item => Number.isSafeInteger(item.quantity) && item.quantity >= 1));

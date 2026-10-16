@@ -1071,6 +1071,18 @@
             {
               "itemId": "DT_ITEM_GS_INSTRUMENT_VIOL",
               "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_SPICE_CLOVES",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_BAR_SILVER",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_SPICE_SAFFRON",
+              "tier": "often"
             }
           ],
           "merchantNotes": {
@@ -1126,7 +1138,9 @@
             "DT_ITEM_GS_INSTRUMENT_DULCIMER",
             "DT_ITEM_GS_INSTRUMENT_LUTE",
             "DT_ITEM_GS_INSTRUMENT_LYRE",
-            "DT_ITEM_GS_INSTRUMENT_VIOL"
+            "DT_ITEM_GS_INSTRUMENT_VIOL",
+            "DT_ITEM_GS_BAR_GOLD",
+            "DT_ITEM_GS_BAR_PLATINUM"
           ],
           "overrides": [
             {
@@ -2077,7 +2091,10 @@
             "DT_ITEM_BSM_SHORTBOW",
             "DT_ITEM_BSM_SLING",
             "DT_ITEM_GS_QUIVER",
-            "DT_ITEM_GS_CROSSBOW_BOLT_CASE"
+            "DT_ITEM_GS_CROSSBOW_BOLT_CASE",
+            "DT_ITEM_GS_BAR_SILVER",
+            "DT_ITEM_GS_BAR_GOLD",
+            "DT_ITEM_GS_BAR_PLATINUM"
           ],
           "overrides": [
             {
@@ -2642,7 +2659,8 @@
         "contraband",
         "stolen-goods",
         "curiosities",
-        "rare-components"
+        "rare-components",
+        "trade-goods"
       ],
       "overrides": [
         {

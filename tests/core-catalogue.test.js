@@ -64,13 +64,13 @@ test("upgrading the released 440 Item pack creates only newly added documents; r
   assert.equal(old.length, 440);
   const { adapter, state } = fakeAdapter({ existing: old });
   const build = createBuilder({ load: () => data, adapter });
-  const preview = await build(); assert.deepEqual([preview.create, preview.update, preview.unchanged], [67, 0, 440]);
+  const preview = await build(); assert.deepEqual([preview.create, preview.update, preview.unchanged], [78, 0, 440]);
   assert.deepEqual(state.writes, []);
-  await build({ dryRun: false }); assert.equal(state.docs.length, 507);
-  assert.equal(new Set(state.docs.map(d => d._id)).size, 507);
-  assert.equal((await build({ dryRun: false })).unchanged, 507);
+  await build({ dryRun: false }); assert.equal(state.docs.length, 518);
+  assert.equal(new Set(state.docs.map(d => d._id)).size, 518);
+  assert.equal((await build({ dryRun: false })).unchanged, 518);
   assert.equal((await build({ dryRun: false, shopId: "alchemist" })).unchanged, 61);
-  assert.equal((await build({ dryRun: false, shopId: "blacksmith" })).unchanged, 75);
+  assert.equal((await build({ dryRun: false, shopId: "blacksmith" })).unchanged, 78);
   assert.equal(state.docs.filter(d => d.flags[MODULE_ID].sourceId === "DT_ITEM_GS_HERBALISM_KIT").length, 1);
 });
 
@@ -112,10 +112,10 @@ test("SRD progress preserves all 241 source identities and covers the approved a
   assert.equal(next.equipment.length, 241);
   assert.deepEqual(next.equipment.map(r => r.sourceId), baseline.equipment.map(r => r.sourceId));
   const additions = next.equipment.filter((r, i) => r.represented && !baseline.equipment[i].represented);
-  assert.equal(additions.length, 67);
+  assert.equal(additions.length, 78);
   assert.deepEqual(new Set(additions.flatMap(r => r.canonicalIds)), new Set(data.entries.filter(e => e.item.tags.includes("core-expansion") || ids.has(e.item.id)).map(e => e.item.id)));
-  assert.equal(next.equipment.filter(r => r.represented).length, 192);
-  assert.equal(next.denominator.representedPercent, 79.67);
+  assert.equal(next.equipment.filter(r => r.represented).length, 203);
+  assert.equal(next.denominator.representedPercent, 84.23);
 });
 
 test("a purchased native container retains capacity and transfers once through the existing transaction pipeline", async () => {

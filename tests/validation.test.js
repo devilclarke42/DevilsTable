@@ -9,7 +9,7 @@ test("Active General Store and Tavern production catalogue validates without inc
   const data = await loadCatalogue({ readJson });
   const result = validateCatalogue(data);
   assert.equal(result.valid, true);
-  assert.equal(result.count, 507);
+  assert.equal(result.count, 518);
   assert.equal(result.warnings.length, 1);
   assert.ok(data.entries.every(({ item }) => !item.id.includes("TEST")));
 });

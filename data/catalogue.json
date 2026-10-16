@@ -62,7 +62,8 @@
     "data/items/fence/rare-components.json",
     "data/items/general-store/core-equipment.json",
     "data/items/general-store/adventuring-equipment.json",
-    "data/items/general-store/artisan-tools-instruments.json"
+    "data/items/general-store/artisan-tools-instruments.json",
+    "data/items/general-store/commodities.json"
   ],
   "shops": [
     "tavern",

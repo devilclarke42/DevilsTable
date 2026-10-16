@@ -1,0 +1,396 @@
+[
+  {
+    "id": "DT_ITEM_GS_TRADE_WHEAT",
+    "name": "Wheat",
+    "description": "One pound of dry wheat grain, sold by weight for food preparation or trade. It is not a mixed animal-feed ration or a prepared meal.\n\nOne Item quantity represents the complete stated purchase unit. Stock quantity counts additional full units; any splitting, refining or processing is manual.",
+    "saleUnit": "One pound of wheat",
+    "price": {
+      "value": 1,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 1,
+      "units": "lb",
+      "notes": "Preserves the official 1 cp per pound and actual grain mass; wrapping is negligible."
+    },
+    "icon": "icons/consumables/grains/sack-rice-flour-brown.webp",
+    "category": "trade-goods",
+    "tags": [
+      "mundane",
+      "core-expansion",
+      "trade-goods"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "core",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 p. 72: Wheat (1 lb): 1 cp; 1 lb. Original wording and custom-economy price/adjusted weight. See docs/CORE_CATALOGUE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0; original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "trade"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_TRADE_FLOUR",
+    "name": "Flour",
+    "description": "One pound of ordinary milled flour in a simple wrapping, sold for cooking or commodity exchange. Water, fuel, baking work and finished bread are separate.\n\nOne Item quantity represents the complete stated purchase unit. Stock quantity counts additional full units; any splitting, refining or processing is manual.",
+    "saleUnit": "One pound of flour",
+    "price": {
+      "value": 2,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 1,
+      "units": "lb",
+      "notes": "Preserves the official 2 cp per pound and dry flour mass; this is not a full sack at a one-pound price."
+    },
+    "icon": "icons/consumables/grains/sack-rice-flour-brown.webp",
+    "category": "trade-goods",
+    "tags": [
+      "mundane",
+      "core-expansion",
+      "trade-goods"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "core",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 p. 72: Flour (1 lb): 2 cp; 1 lb. Original wording and custom-economy price/adjusted weight. See docs/CORE_CATALOGUE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0; original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "trade"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_CLOTH_COTTON",
+    "name": "Cotton Cloth",
+    "description": "One square yard of plain cotton cloth. Its ordinary weave is suitable for domestic sewing and repairs, subject to the GM’s judgement about dimensions and strength. Thread and finished clothing are separate.\n\nOne Item quantity represents the complete stated purchase unit. Stock quantity counts additional full units; any splitting, refining or processing is manual.",
+    "saleUnit": "One square yard of cotton cloth",
+    "price": {
+      "value": 5,
+      "denomination": "cp"
+    },
+    "weight": {
+      "value": 0.25,
+      "units": "lb",
+      "notes": "Source mass is unspecified; a square yard of plain light cloth weighs 0.25 lb. Project 5 cp deliberately sits between existing plain linen (4 cp) and heavy canvas (6 cp), rather than importing the SRD 5 sp price into a different textile economy."
+    },
+    "icon": "icons/commodities/cloth/cloth-bolt-gold-orange.webp",
+    "category": "trade-goods",
+    "tags": [
+      "mundane",
+      "core-expansion",
+      "trade-goods"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 p. 72: Cotton cloth (1 sq yd): 5 sp; weight not listed. Original wording and custom-economy price/adjusted weight. See docs/CORE_CATALOGUE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0; original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "trade"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_SPICE_GINGER",
+    "name": "Ginger",
+    "description": "One pound of dried ginger, sold as a named spice commodity. It can be portioned for cooking or traded; no medicinal or spellcasting benefit is implied.\n\nOne Item quantity represents the complete stated purchase unit. Stock quantity counts additional full units; any splitting, refining or processing is manual.",
+    "saleUnit": "One pound of ginger",
+    "price": {
+      "value": 8,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 1,
+      "units": "lb",
+      "notes": "Retains a full one-pound spice unit. Project 8 sp compares with 1 gp and remains dearer than ordinary grain and common domestic herbs."
+    },
+    "icon": "icons/containers/bags/pouch-leather-green.webp",
+    "category": "trade-goods",
+    "tags": [
+      "mundane",
+      "core-expansion",
+      "trade-goods"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 p. 72: Ginger (1 lb): 1 gp; 1 lb. Original wording and custom-economy price/adjusted weight. See docs/CORE_CATALOGUE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0; original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "trade"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_SPICE_CINNAMON",
+    "name": "Cinnamon",
+    "description": "One pound of dried cinnamon bark, sold for flavouring and trade. The wrapping contains only cinnamon; it is not a mixed spice parcel or a magical reagent package.\n\nOne Item quantity represents the complete stated purchase unit. Stock quantity counts additional full units; any splitting, refining or processing is manual.",
+    "saleUnit": "One pound of cinnamon",
+    "price": {
+      "value": 1,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 1,
+      "units": "lb",
+      "notes": "Retains the full one-pound source unit. Project 1 gp compares with 2 gp and distinguishes an imported culinary spice from cheap staple grain."
+    },
+    "icon": "icons/containers/bags/pouch-leather-green.webp",
+    "category": "trade-goods",
+    "tags": [
+      "mundane",
+      "core-expansion",
+      "trade-goods"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 p. 72: Cinnamon (1 lb): 2 gp; 1 lb. Original wording and custom-economy price/adjusted weight. See docs/CORE_CATALOGUE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0; original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "trade"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_SPICE_PEPPER",
+    "name": "Pepper",
+    "description": "One pound of dried peppercorns in a tied wrapping. Grind or portion them as ordinary kitchen supplies; tools and prepared food are separate.\n\nOne Item quantity represents the complete stated purchase unit. Stock quantity counts additional full units; any splitting, refining or processing is manual.",
+    "saleUnit": "One pound of pepper",
+    "price": {
+      "value": 1,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 1,
+      "units": "lb",
+      "notes": "Retains the full one-pound source unit. Project 1 gp compares with 2 gp and matches cinnamon as an ordinary imported spice commodity."
+    },
+    "icon": "icons/consumables/grains/sack-rice-flour-brown.webp",
+    "category": "trade-goods",
+    "tags": [
+      "mundane",
+      "core-expansion",
+      "trade-goods"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 p. 72: Pepper (1 lb): 2 gp; 1 lb. Original wording and custom-economy price/adjusted weight. See docs/CORE_CATALOGUE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0; original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "trade"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_SPICE_CLOVES",
+    "name": "Cloves",
+    "description": "One pound of dried cloves, sold by weight as a specialist spice. The GM determines regional availability; the parcel has no magical or automatic medicinal effect.\n\nOne Item quantity represents the complete stated purchase unit. Stock quantity counts additional full units; any splitting, refining or processing is manual.",
+    "saleUnit": "One pound of cloves",
+    "price": {
+      "value": 2,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 1,
+      "units": "lb",
+      "notes": "Retains the full one-pound source unit. Project 2 gp compares with 3 gp and sits above more common imported spices."
+    },
+    "icon": "icons/consumables/grains/sack-rice-flour-brown.webp",
+    "category": "trade-goods",
+    "tags": [
+      "mundane",
+      "core-expansion",
+      "trade-goods"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "special-order",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 p. 72: Cloves (1 lb): 3 gp; 1 lb. Original wording and custom-economy price/adjusted weight. See docs/CORE_CATALOGUE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0; original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "trade"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_BAR_SILVER",
+    "name": "Silver Bar",
+    "description": "One pound of plain silver in a small trade bar. It is raw commodity metal, not coins, jewellery, powdered silver for a ritual, or a magical item. Purity and assay disputes are GM decisions.\n\nOne Item quantity represents the complete stated purchase unit. Stock quantity counts additional full units; any splitting, refining or processing is manual.",
+    "saleUnit": "One pound of silver",
+    "price": {
+      "value": 5,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 1,
+      "units": "lb",
+      "notes": "Preserves the official 5 gp per pound and full metal mass. No conversion to coins or ritual material is automated."
+    },
+    "icon": "icons/commodities/metal/ingot-stamped-silver.webp",
+    "category": "trade-goods",
+    "tags": [
+      "mundane",
+      "core-expansion",
+      "trade-goods",
+      "valuable"
+    ],
+    "shops": [
+      "general-store",
+      "blacksmith",
+      "black-market"
+    ],
+    "availability": "special-order",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 p. 72: Silver (1 lb): 5 gp; 1 lb. Original wording and custom-economy price/adjusted weight. See docs/CORE_CATALOGUE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0; original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "trade"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_SPICE_SAFFRON",
+    "name": "Saffron",
+    "description": "One pound of dried saffron, packed as an expensive bulk spice commodity. This is a substantial trader’s parcel rather than a small cook’s pinch. Partial quantities and regional provenance are recorded manually.\n\nOne Item quantity represents the complete stated purchase unit. Stock quantity counts additional full units; any splitting, refining or processing is manual.",
+    "saleUnit": "One pound of saffron",
+    "price": {
+      "value": 12,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 1,
+      "units": "lb",
+      "notes": "Retains a full pound despite its unusually high value and volume. Project 12 gp compares with 15 gp; rare stock prevents the bulk parcel becoming a routine village staple."
+    },
+    "icon": "icons/containers/bags/pouch-leather-green.webp",
+    "category": "trade-goods",
+    "tags": [
+      "mundane",
+      "core-expansion",
+      "trade-goods"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "special-order",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 p. 72: Saffron (1 lb): 15 gp; 1 lb. Original wording and custom-economy price/adjusted weight. See docs/CORE_CATALOGUE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0; original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "trade"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_BAR_GOLD",
+    "name": "Gold Bar",
+    "description": "One pound of plain gold in a trade bar. It is bullion rather than a collection of spendable coins. Exchange, assay and any manufacture are separate GM-adjudicated activities.\n\nOne Item quantity represents the complete stated purchase unit. Stock quantity counts additional full units; any splitting, refining or processing is manual.",
+    "saleUnit": "One pound of gold",
+    "price": {
+      "value": 50,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 1,
+      "units": "lb",
+      "notes": "Preserves the official 50 gp per pound and full mass. It has no discount that would create a built-in coin/bullion profit loop."
+    },
+    "icon": "icons/commodities/metal/ingot-stamped-bronze.webp",
+    "category": "trade-goods",
+    "tags": [
+      "mundane",
+      "core-expansion",
+      "trade-goods",
+      "valuable"
+    ],
+    "shops": [
+      "general-store",
+      "blacksmith",
+      "black-market"
+    ],
+    "availability": "special-order",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 p. 72: Gold (1 lb): 50 gp; 1 lb. Original wording and custom-economy price/adjusted weight. See docs/CORE_CATALOGUE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0; original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "trade"
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_BAR_PLATINUM",
+    "name": "Platinum Bar",
+    "description": "One pound of plain platinum in a trade bar, intended for high-value commodity exchange. It is not a stack of native platinum coins and is not converted into a wallet balance automatically.\n\nOne Item quantity represents the complete stated purchase unit. Stock quantity counts additional full units; any splitting, refining or processing is manual.",
+    "saleUnit": "One pound of platinum",
+    "price": {
+      "value": 500,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 1,
+      "units": "lb",
+      "notes": "Preserves the official 500 gp per pound and full metal mass. Rare one-or-two-unit availability retains the high-value, low-volume role."
+    },
+    "icon": "icons/commodities/metal/ingot-stamped-silver.webp",
+    "category": "trade-goods",
+    "tags": [
+      "mundane",
+      "core-expansion",
+      "trade-goods",
+      "valuable"
+    ],
+    "shops": [
+      "general-store",
+      "blacksmith",
+      "black-market"
+    ],
+    "availability": "special-order",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 p. 72: Platinum (1 lb): 500 gp; 1 lb. Original wording and custom-economy price/adjusted weight. See docs/CORE_CATALOGUE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0; original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "loot",
+      "subtype": "trade"
+    }
+  }
+]

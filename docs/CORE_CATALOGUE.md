@@ -121,3 +121,23 @@ Fifteen additional artisan sets and all ten audited musical instruments now use 
 | Viol | Viol: 30 gp; 1 lb | 24 gp / 0.8 lb |
 
 All 25 are optional stock. Six everyday artisan sets and three common instruments use Often stock; sixteen specialists use Rarely in the base profile. City profiles may draw all 25 from Often pools, without making every entry guaranteed. Original gaming-set types remain deferred for migration review.
+
+## Commodity additions
+
+Eleven additional commodities use native trade loot. One Item quantity is one complete purchase unit: a pound of grain, spice or bullion, or a square yard of cloth. Stock quantities count additional complete units. Splitting, processing and converting bullion into currency are manual.
+
+| Commodity | SRD benchmark | Project price / weight |
+| --- | --- | --- |
+| Wheat | Wheat (1 lb): 1 cp; 1 lb | 1 cp / 1 lb |
+| Flour | Flour (1 lb): 2 cp; 1 lb | 2 cp / 1 lb |
+| Cotton Cloth | Cotton cloth (1 sq yd): 5 sp; weight not listed | 5 cp / 0.25 lb |
+| Ginger | Ginger (1 lb): 1 gp; 1 lb | 8 sp / 1 lb |
+| Cinnamon | Cinnamon (1 lb): 2 gp; 1 lb | 1 gp / 1 lb |
+| Pepper | Pepper (1 lb): 2 gp; 1 lb | 1 gp / 1 lb |
+| Cloves | Cloves (1 lb): 3 gp; 1 lb | 2 gp / 1 lb |
+| Silver Bar | Silver (1 lb): 5 gp; 1 lb | 5 gp / 1 lb |
+| Saffron | Saffron (1 lb): 15 gp; 1 lb | 12 gp / 1 lb |
+| Gold Bar | Gold (1 lb): 50 gp; 1 lb | 50 gp / 1 lb |
+| Platinum Bar | Platinum (1 lb): 500 gp; 1 lb | 500 gp / 1 lb |
+
+Cotton uses the established textile economy (between existing linen and canvas), rather than importing a mismatched SRD price. Bullion retains full source mass and metal value. Silver, gold and platinum are shared canonical Items for General Stores, Blacksmiths and Fences. Their ordinary commodity status does not imply stolen provenance. The Crime Boss profile’s existing generic valuable-goods rule gates them behind relationship level five. Gold and platinum remain Rarely even for city shops, with the existing rare-stock one-or-two-unit distribution.

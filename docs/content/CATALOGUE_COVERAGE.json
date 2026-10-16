@@ -12,8 +12,8 @@
   },
   "denominator": {
     "entries": 241,
-    "represented": 192,
-    "representedPercent": 79.67,
+    "represented": 203,
+    "representedPercent": 84.23,
     "definition": "One priced entry or named formula from SRD Equipment tables pp. 63–72; bundles once, barding formula once, tools vehicle cross-reference excluded; stabling and food/lodging/hirelings are service commerce in SERVICE_COVERAGE.md. Not a percentage of all SRD magic items/spells. Near matches with different function/capacity are not represented."
   },
   "statusDefinitions": {
@@ -8994,13 +8994,32 @@
       "officialWeightLb": 1.0,
       "sourceWeightMeaning": "listed sale unit",
       "officialUnitCount": 1,
-      "canonicalIds": [],
+      "canonicalIds": [
+        "DT_ITEM_GS_TRADE_WHEAT"
+      ],
       "candidateIds": [],
-      "represented": false,
-      "status": "missing",
+      "represented": true,
+      "status": "complete",
       "notes": [
-        "Generic animal feed, prepared meals and untaxed mixed spices are not interchangeable with this named commodity sale unit."
-      ]
+        "Milestone 2B: source unit represented; approved custom economy and adjusted weight. Manual effect limits are stated in the Item description."
+      ],
+      "findingIds": [],
+      "priceComparison": {
+        "projectPrice": {
+          "value": 1,
+          "denomination": "cp"
+        },
+        "sourceUnitCount": 1,
+        "projectUnitCount": 1,
+        "result": "match",
+        "policy": "approved custom economy"
+      },
+      "weightComparison": {
+        "projectWeightLb": 1,
+        "projectUnitCount": 1,
+        "result": "match",
+        "rationale": "Preserves the official 1 cp per pound and actual grain mass; wrapping is negligible."
+      }
     },
     {
       "sourceId": "srd51.trade-goods.flour-1-lb",
@@ -9016,13 +9035,32 @@
       "officialWeightLb": 1.0,
       "sourceWeightMeaning": "listed sale unit",
       "officialUnitCount": 1,
-      "canonicalIds": [],
+      "canonicalIds": [
+        "DT_ITEM_GS_TRADE_FLOUR"
+      ],
       "candidateIds": [],
-      "represented": false,
-      "status": "missing",
+      "represented": true,
+      "status": "complete",
       "notes": [
-        "Generic animal feed, prepared meals and untaxed mixed spices are not interchangeable with this named commodity sale unit."
-      ]
+        "Milestone 2B: source unit represented; approved custom economy and adjusted weight. Manual effect limits are stated in the Item description."
+      ],
+      "findingIds": [],
+      "priceComparison": {
+        "projectPrice": {
+          "value": 2,
+          "denomination": "cp"
+        },
+        "sourceUnitCount": 1,
+        "projectUnitCount": 1,
+        "result": "match",
+        "policy": "approved custom economy"
+      },
+      "weightComparison": {
+        "projectWeightLb": 1,
+        "projectUnitCount": 1,
+        "result": "match",
+        "rationale": "Preserves the official 2 cp per pound and dry flour mass; this is not a full sack at a one-pound price."
+      }
     },
     {
       "sourceId": "srd51.trade-goods.chicken",
@@ -9220,13 +9258,32 @@
       "officialWeightLb": null,
       "sourceWeightMeaning": "not specified",
       "officialUnitCount": 1,
-      "canonicalIds": [],
+      "canonicalIds": [
+        "DT_ITEM_GS_CLOTH_COTTON"
+      ],
       "candidateIds": [],
-      "represented": false,
-      "status": "missing",
+      "represented": true,
+      "status": "complete",
       "notes": [
-        "Generic animal feed, prepared meals and untaxed mixed spices are not interchangeable with this named commodity sale unit."
-      ]
+        "Milestone 2B: source unit represented; approved custom economy and adjusted weight. Manual effect limits are stated in the Item description."
+      ],
+      "findingIds": [],
+      "priceComparison": {
+        "projectPrice": {
+          "value": 5,
+          "denomination": "cp"
+        },
+        "sourceUnitCount": 1,
+        "projectUnitCount": 1,
+        "result": "project-variation",
+        "policy": "approved custom economy"
+      },
+      "weightComparison": {
+        "projectWeightLb": 0.25,
+        "projectUnitCount": 1,
+        "result": "unlisted-source-weight",
+        "rationale": "Source mass is unspecified; a square yard of plain light cloth weighs 0.25 lb. Project 5 cp deliberately sits between existing plain linen (4 cp) and heavy canvas (6 cp), rather than importing the SRD 5 sp price into a different textile economy."
+      }
     },
     {
       "sourceId": "srd51.trade-goods.ginger-1-lb",
@@ -9242,13 +9299,32 @@
       "officialWeightLb": 1.0,
       "sourceWeightMeaning": "listed sale unit",
       "officialUnitCount": 1,
-      "canonicalIds": [],
+      "canonicalIds": [
+        "DT_ITEM_GS_SPICE_GINGER"
+      ],
       "candidateIds": [],
-      "represented": false,
-      "status": "missing",
+      "represented": true,
+      "status": "complete",
       "notes": [
-        "Generic animal feed, prepared meals and untaxed mixed spices are not interchangeable with this named commodity sale unit."
-      ]
+        "Milestone 2B: source unit represented; approved custom economy and adjusted weight. Manual effect limits are stated in the Item description."
+      ],
+      "findingIds": [],
+      "priceComparison": {
+        "projectPrice": {
+          "value": 8,
+          "denomination": "sp"
+        },
+        "sourceUnitCount": 1,
+        "projectUnitCount": 1,
+        "result": "project-variation",
+        "policy": "approved custom economy"
+      },
+      "weightComparison": {
+        "projectWeightLb": 1,
+        "projectUnitCount": 1,
+        "result": "match",
+        "rationale": "Retains a full one-pound spice unit. Project 8 sp compares with 1 gp and remains dearer than ordinary grain and common domestic herbs."
+      }
     },
     {
       "sourceId": "srd51.trade-goods.goat",
@@ -9286,13 +9362,32 @@
       "officialWeightLb": 1.0,
       "sourceWeightMeaning": "listed sale unit",
       "officialUnitCount": 1,
-      "canonicalIds": [],
+      "canonicalIds": [
+        "DT_ITEM_GS_SPICE_CINNAMON"
+      ],
       "candidateIds": [],
-      "represented": false,
-      "status": "missing",
+      "represented": true,
+      "status": "complete",
       "notes": [
-        "Generic animal feed, prepared meals and untaxed mixed spices are not interchangeable with this named commodity sale unit."
-      ]
+        "Milestone 2B: source unit represented; approved custom economy and adjusted weight. Manual effect limits are stated in the Item description."
+      ],
+      "findingIds": [],
+      "priceComparison": {
+        "projectPrice": {
+          "value": 1,
+          "denomination": "gp"
+        },
+        "sourceUnitCount": 1,
+        "projectUnitCount": 1,
+        "result": "project-variation",
+        "policy": "approved custom economy"
+      },
+      "weightComparison": {
+        "projectWeightLb": 1,
+        "projectUnitCount": 1,
+        "result": "match",
+        "rationale": "Retains the full one-pound source unit. Project 1 gp compares with 2 gp and distinguishes an imported culinary spice from cheap staple grain."
+      }
     },
     {
       "sourceId": "srd51.trade-goods.pepper-1-lb",
@@ -9308,13 +9403,32 @@
       "officialWeightLb": 1.0,
       "sourceWeightMeaning": "listed sale unit",
       "officialUnitCount": 1,
-      "canonicalIds": [],
+      "canonicalIds": [
+        "DT_ITEM_GS_SPICE_PEPPER"
+      ],
       "candidateIds": [],
-      "represented": false,
-      "status": "missing",
+      "represented": true,
+      "status": "complete",
       "notes": [
-        "Generic animal feed, prepared meals and untaxed mixed spices are not interchangeable with this named commodity sale unit."
-      ]
+        "Milestone 2B: source unit represented; approved custom economy and adjusted weight. Manual effect limits are stated in the Item description."
+      ],
+      "findingIds": [],
+      "priceComparison": {
+        "projectPrice": {
+          "value": 1,
+          "denomination": "gp"
+        },
+        "sourceUnitCount": 1,
+        "projectUnitCount": 1,
+        "result": "project-variation",
+        "policy": "approved custom economy"
+      },
+      "weightComparison": {
+        "projectWeightLb": 1,
+        "projectUnitCount": 1,
+        "result": "match",
+        "rationale": "Retains the full one-pound source unit. Project 1 gp compares with 2 gp and matches cinnamon as an ordinary imported spice commodity."
+      }
     },
     {
       "sourceId": "srd51.trade-goods.sheep",
@@ -9352,13 +9466,32 @@
       "officialWeightLb": 1.0,
       "sourceWeightMeaning": "listed sale unit",
       "officialUnitCount": 1,
-      "canonicalIds": [],
+      "canonicalIds": [
+        "DT_ITEM_GS_SPICE_CLOVES"
+      ],
       "candidateIds": [],
-      "represented": false,
-      "status": "missing",
+      "represented": true,
+      "status": "complete",
       "notes": [
-        "Generic animal feed, prepared meals and untaxed mixed spices are not interchangeable with this named commodity sale unit."
-      ]
+        "Milestone 2B: source unit represented; approved custom economy and adjusted weight. Manual effect limits are stated in the Item description."
+      ],
+      "findingIds": [],
+      "priceComparison": {
+        "projectPrice": {
+          "value": 2,
+          "denomination": "gp"
+        },
+        "sourceUnitCount": 1,
+        "projectUnitCount": 1,
+        "result": "project-variation",
+        "policy": "approved custom economy"
+      },
+      "weightComparison": {
+        "projectWeightLb": 1,
+        "projectUnitCount": 1,
+        "result": "match",
+        "rationale": "Retains the full one-pound source unit. Project 2 gp compares with 3 gp and sits above more common imported spices."
+      }
     },
     {
       "sourceId": "srd51.trade-goods.pig",
@@ -9396,13 +9529,32 @@
       "officialWeightLb": 1.0,
       "sourceWeightMeaning": "listed sale unit",
       "officialUnitCount": 1,
-      "canonicalIds": [],
+      "canonicalIds": [
+        "DT_ITEM_GS_BAR_SILVER"
+      ],
       "candidateIds": [],
-      "represented": false,
-      "status": "missing",
+      "represented": true,
+      "status": "complete",
       "notes": [
-        "Generic animal feed, prepared meals and untaxed mixed spices are not interchangeable with this named commodity sale unit."
-      ]
+        "Milestone 2B: source unit represented; approved custom economy and adjusted weight. Manual effect limits are stated in the Item description."
+      ],
+      "findingIds": [],
+      "priceComparison": {
+        "projectPrice": {
+          "value": 5,
+          "denomination": "gp"
+        },
+        "sourceUnitCount": 1,
+        "projectUnitCount": 1,
+        "result": "match",
+        "policy": "approved custom economy"
+      },
+      "weightComparison": {
+        "projectWeightLb": 1,
+        "projectUnitCount": 1,
+        "result": "match",
+        "rationale": "Preserves the official 5 gp per pound and full metal mass. No conversion to coins or ritual material is automated."
+      }
     },
     {
       "sourceId": "srd51.trade-goods.linen-1-sq-yd",
@@ -9522,13 +9674,32 @@
       "officialWeightLb": 1.0,
       "sourceWeightMeaning": "listed sale unit",
       "officialUnitCount": 1,
-      "canonicalIds": [],
+      "canonicalIds": [
+        "DT_ITEM_GS_SPICE_SAFFRON"
+      ],
       "candidateIds": [],
-      "represented": false,
-      "status": "missing",
+      "represented": true,
+      "status": "complete",
       "notes": [
-        "Generic animal feed, prepared meals and untaxed mixed spices are not interchangeable with this named commodity sale unit."
-      ]
+        "Milestone 2B: source unit represented; approved custom economy and adjusted weight. Manual effect limits are stated in the Item description."
+      ],
+      "findingIds": [],
+      "priceComparison": {
+        "projectPrice": {
+          "value": 12,
+          "denomination": "gp"
+        },
+        "sourceUnitCount": 1,
+        "projectUnitCount": 1,
+        "result": "project-variation",
+        "policy": "approved custom economy"
+      },
+      "weightComparison": {
+        "projectWeightLb": 1,
+        "projectUnitCount": 1,
+        "result": "match",
+        "rationale": "Retains a full pound despite its unusually high value and volume. Project 12 gp compares with 15 gp; rare stock prevents the bulk parcel becoming a routine village staple."
+      }
     },
     {
       "sourceId": "srd51.trade-goods.ox",
@@ -9566,13 +9737,32 @@
       "officialWeightLb": 1.0,
       "sourceWeightMeaning": "listed sale unit",
       "officialUnitCount": 1,
-      "canonicalIds": [],
+      "canonicalIds": [
+        "DT_ITEM_GS_BAR_GOLD"
+      ],
       "candidateIds": [],
-      "represented": false,
-      "status": "missing",
+      "represented": true,
+      "status": "complete",
       "notes": [
-        "Generic animal feed, prepared meals and untaxed mixed spices are not interchangeable with this named commodity sale unit."
-      ]
+        "Milestone 2B: source unit represented; approved custom economy and adjusted weight. Manual effect limits are stated in the Item description."
+      ],
+      "findingIds": [],
+      "priceComparison": {
+        "projectPrice": {
+          "value": 50,
+          "denomination": "gp"
+        },
+        "sourceUnitCount": 1,
+        "projectUnitCount": 1,
+        "result": "match",
+        "policy": "approved custom economy"
+      },
+      "weightComparison": {
+        "projectWeightLb": 1,
+        "projectUnitCount": 1,
+        "result": "match",
+        "rationale": "Preserves the official 50 gp per pound and full mass. It has no discount that would create a built-in coin/bullion profit loop."
+      }
     },
     {
       "sourceId": "srd51.trade-goods.platinum-1-lb",
@@ -9588,13 +9778,32 @@
       "officialWeightLb": 1.0,
       "sourceWeightMeaning": "listed sale unit",
       "officialUnitCount": 1,
-      "canonicalIds": [],
+      "canonicalIds": [
+        "DT_ITEM_GS_BAR_PLATINUM"
+      ],
       "candidateIds": [],
-      "represented": false,
-      "status": "missing",
+      "represented": true,
+      "status": "complete",
       "notes": [
-        "Generic animal feed, prepared meals and untaxed mixed spices are not interchangeable with this named commodity sale unit."
-      ]
+        "Milestone 2B: source unit represented; approved custom economy and adjusted weight. Manual effect limits are stated in the Item description."
+      ],
+      "findingIds": [],
+      "priceComparison": {
+        "projectPrice": {
+          "value": 500,
+          "denomination": "gp"
+        },
+        "sourceUnitCount": 1,
+        "projectUnitCount": 1,
+        "result": "match",
+        "policy": "approved custom economy"
+      },
+      "weightComparison": {
+        "projectWeightLb": 1,
+        "projectUnitCount": 1,
+        "result": "match",
+        "rationale": "Preserves the official 500 gp per pound and full metal mass. Rare one-or-two-unit availability retains the high-value, low-volume role."
+      }
     }
   ],
   "scope": "Milestone 2B working follow-up; audit baseline preserved in docs/audits.",

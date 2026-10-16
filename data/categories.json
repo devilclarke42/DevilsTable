@@ -300,7 +300,18 @@
       "Beeswax",
       "Pitch",
       "Cloth Dye",
-      "Silk Cloth"
+      "Silk Cloth",
+      "Wheat",
+      "Flour",
+      "Cotton Cloth",
+      "Ginger",
+      "Cinnamon",
+      "Pepper",
+      "Cloves",
+      "Silver Bar",
+      "Saffron",
+      "Gold Bar",
+      "Platinum Bar"
     ],
     "catalogue": "general-store",
     "sort": 90,
@@ -1635,5 +1646,20 @@
     "sort": 110,
     "visible": true,
     "icon": "icons/commodities/gems/gem-faceted-large-green.webp"
+  },
+  {
+    "id": "trade-goods",
+    "shop": "black-market",
+    "catalogue": "black-market",
+    "name": "Bullion & Trade Goods",
+    "description": "Shared high-value commodity bars; the GM determines legality and provenance.",
+    "plannedItems": [
+      "Silver Bar",
+      "Gold Bar",
+      "Platinum Bar"
+    ],
+    "sort": 180,
+    "visible": true,
+    "icon": "icons/commodities/metal/ingot-stamped-silver.webp"
   }
 ]
