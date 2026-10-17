@@ -2,7 +2,18 @@
 
 **Audience:** users and maintainers. **Purpose:** describe meaningful changes by release candidate; this is the only changelog. Candidate labels do not imply a stable release. Detailed historical investigations remain in Git.
 
-## Unreleased — Milestone 1 Closure
+## Unreleased
+
+### Added
+
+- Eight core essentials: Component Pouch, Spellbook, Herbalism Kit, Navigator's Tools, Quiver, Crossbow Bolt Case, Rigid Ladder (10 ft.) and Pole (10 ft.). Native tool/container mappings reuse the shared catalogue and stock framework.
+- Thirty-four additional adventuring products, including clothing, twelve focus/symbol variants and a ten-use Healer's Kit.
+- Fifteen missing artisan tool sets, all ten SRD instruments, and eleven grain/textile/spice/bullion commodities. Shared bullion uses existing merchant memberships and visibility rules.
+- Generic optional consumable use limits and native trinket equipment support; existing generated Item output is preserved.
+- Official source price/weight comparisons, conservative stock assignments, preserved released-item snapshots and core-content coverage tracking: 203/241 SRD units represented.
+- Seven equipment-pack contents manifests and a documented fulfilment proposal; populated-container purchases and livestock remain deferred pending a safe reviewed representation.
+
+### Repository consolidation
 
 ### Changed
 

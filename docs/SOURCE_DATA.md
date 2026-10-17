@@ -32,14 +32,14 @@ Use the schema files for exact required/optional keys. A structural allowance do
 | Container | Positive empty weight and positive weight/volume capacities; no weightless contents |
 | Consumable | Food/trinket/potion with explicit use, or ammunition with native fields |
 | Weapon | Native type, damage and attack activity |
-| Equipment | Native armour/shield type and AC fields |
+| Equipment | Native armour/shield type and AC fields; native trinket/focus equipment without armour AC |
 | Tool | Native category/base-item identity and supported check activity |
 
 `mechanics.native` holds reviewed system fields for weapons, equipment, tools and ammunition. Other top-level system overrides are not supported. Optional native defaults must serialize consistently on D&D5e 5.3.3; do not weaken read-back checks to hide mismatches.
 
 Consumable `use` declares name, condition, mode (`consume` or `reusable`) and supported activation. Potions consume one dose using an action. `healing` defines supported healing dice/bonus (up to 20 dice and +100); other utility effects remain manual unless actually implemented. Foods consume one complete serving without unlisted healing/rest effects.
 
-Consumed supplies use native owning-Item use targets and auto-destruction. Reusable activities have no consumption targets. Partial supplies, empty packaging and transferred fuel need manual bookkeeping. Light metadata records bright reach, total dim reach, shape, fuel and duration; it does not change token light or start timers.
+Consumed supplies use native owning-Item use targets and auto-destruction. Optional `mechanics.use.maxUses` authors 1–1000 native charges for consuming non-ammunition trinkets; omitted means one. Food, potion and light uses remain one complete-unit charge. A charge is not an additional purchased Item. Reusable activities have no consumption targets. Partial supplies, empty packaging and transferred fuel need manual bookkeeping. Light metadata records bright reach, total dim reach, shape, fuel and duration; it does not change token light or start timers.
 
 ## Containers and measures
 

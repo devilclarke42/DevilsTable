@@ -521,6 +521,210 @@
     {
       "icon": "icons/tools/cooking/mortar-herbs-yellow.webp",
       "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/tool/alchemists-supplies.yml"
+    },
+    {
+      "icon": "icons/containers/bags/pack-leather-brown.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/container/component-pouch/_container.yml"
+    },
+    {
+      "icon": "icons/sundries/books/book-symbol-triangle-silver-brown.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/loot/spellbook.yml"
+    },
+    {
+      "icon": "icons/tools/navigation/sextant-brass-brown.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/tool/navigators-tools.yml"
+    },
+    {
+      "icon": "icons/containers/ammunition/arrows-quiver-simple-brown.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/container/quiver/_container.yml"
+    },
+    {
+      "icon": "icons/containers/ammunition/quiver-simple-brown.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/container/crossbow-bolt-case/_container.yml"
+    },
+    {
+      "icon": "icons/commodities/treasure/brooch-jewel-gold-blue.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/loot/abacus.yml"
+    },
+    {
+      "icon": "icons/consumables/potions/bottle-round-corked-green.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/potion/acid-vial.yml"
+    },
+    {
+      "icon": "icons/consumables/potions/bottle-round-corked-yellow.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/potion/alchemists-fire.yml"
+    },
+    {
+      "icon": "icons/consumables/potions/bottle-round-corked-pink.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/potion/antitoxin.yml"
+    },
+    {
+      "icon": "icons/weapons/ammunition/shot-round-brown.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/trinket/ball-bearings.yml"
+    },
+    {
+      "icon": "icons/weapons/thrown/bomb-spiked-purple.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/trinket/caltrops.yml"
+    },
+    {
+      "icon": "icons/equipment/chest/shirt-collared-brown.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/equipment/common-clothes.yml"
+    },
+    {
+      "icon": "icons/equipment/head/crown-feather-brown.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/equipment/costume-clothes.yml"
+    },
+    {
+      "icon": "icons/equipment/chest/robe-layered-white.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/equipment/fine-clothes.yml"
+    },
+    {
+      "icon": "icons/equipment/back/cloak-brown-collared-fur-white-tied.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/equipment/travelers-clothes.yml"
+    },
+    {
+      "icon": "icons/equipment/chest/robe-layered-teal.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/equipment/robes.yml"
+    },
+    {
+      "icon": "icons/commodities/gems/gem-faceted-large-green.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/spellcasting-focus/crystal.yml"
+    },
+    {
+      "icon": "icons/commodities/gems/pearl-purple-smooth.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/spellcasting-focus/orb.yml"
+    },
+    {
+      "icon": "icons/weapons/staves/staff-blue-jewel.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/spellcasting-focus/rod.yml"
+    },
+    {
+      "icon": "icons/weapons/staves/staff-simple-spiral-grey.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/spellcasting-focus/staff.yml"
+    },
+    {
+      "icon": "icons/weapons/staves/staff-orante-gold.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/spellcasting-focus/wand.yml"
+    },
+    {
+      "icon": "icons/consumables/plants/fern-lady-green.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/spellcasting-focus/sprig-of-mistletoe.yml"
+    },
+    {
+      "icon": "icons/equipment/neck/collar-carved-bone-teeth-ring.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/spellcasting-focus/totem.yml"
+    },
+    {
+      "icon": "icons/weapons/staves/staff-nature.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/spellcasting-focus/wooden-staff.yml"
+    },
+    {
+      "icon": "icons/weapons/staves/staff-ornate-wood.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/spellcasting-focus/yew-wand.yml"
+    },
+    {
+      "icon": "icons/equipment/neck/pendant-bronze-gem-blue.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/spellcasting-focus/amulet.yml"
+    },
+    {
+      "icon": "icons/sundries/flags/banner-symbol-sun-gold-red.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/spellcasting-focus/emblem.yml"
+    },
+    {
+      "icon": "icons/containers/chest/chest-reinforced-steel-red.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/spellcasting-focus/reliquary.yml"
+    },
+    {
+      "icon": "icons/containers/bags/pouch-leather-brown-green.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/trinket/healers-kit.yml"
+    },
+    {
+      "icon": "icons/consumables/potions/bottle-round-empty-glass.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/potion/flask-of-holy-water.yml"
+    },
+    {
+      "icon": "icons/environment/traps/trap-jaw-green.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/trinket/hunting-trap.yml"
+    },
+    {
+      "icon": "icons/tools/scribal/magnifying-glass.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/loot/magnifying-glass.yml"
+    },
+    {
+      "icon": "icons/consumables/potions/bottle-bulb-corked-purple.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/loot/perfume.yml"
+    },
+    {
+      "icon": "icons/weapons/maces/mace-skull-ram.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/trinket/portable-ram.yml"
+    },
+    {
+      "icon": "icons/equipment/finger/ring-cabochon-gold-orange.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/loot/signet-ring.yml"
+    },
+    {
+      "icon": "icons/consumables/potions/vial-cork-empty.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/container/vial/_container.yml"
+    },
+    {
+      "icon": "icons/consumables/plants/herb-marjoram-basil-oregano-leaf-bunch-green.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/tool/brewers-supplies.yml"
+    },
+    {
+      "icon": "icons/tools/navigation/map-chart-tan.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/tool/cartographers-tools.yml"
+    },
+    {
+      "icon": "icons/tools/hand/awl-steel-tan.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/tool/cobblers-tools.yml"
+    },
+    {
+      "icon": "icons/tools/laboratory/bowl-mixing.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/tool/cooks-utensils.yml"
+    },
+    {
+      "icon": "icons/commodities/tech/metal-insert.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/tool/glassblowers-tools.yml"
+    },
+    {
+      "icon": "icons/commodities/gems/gem-rough-rose-teal.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/tool/jewelers-tools.yml"
+    },
+    {
+      "icon": "icons/tools/hand/hammer-and-nail.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/tool/masons-tools.yml"
+    },
+    {
+      "icon": "icons/tools/hand/brush-paint-brown-tan.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/tool/painters-supplies.yml"
+    },
+    {
+      "icon": "icons/containers/kitchenware/vase-bottle-brown.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/tool/potters-tools.yml"
+    },
+    {
+      "icon": "icons/commodities/cloth/thread-spindle-white-needle.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/tool/tinkers-tools.yml"
+    },
+    {
+      "icon": "icons/equipment/back/cloak-hooded-pink.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/tool/weavers-tools.yml"
+    },
+    {
+      "icon": "icons/sundries/survival/waterskin-leather-brown.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/tool/bagpipes.yml"
+    },
+    {
+      "icon": "icons/tools/instruments/drum-brown-red.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/tool/drum.yml"
+    },
+    {
+      "icon": "icons/tools/instruments/lute-gold-brown.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/tool/dulcimer.yml"
+    },
+    {
+      "icon": "icons/tools/instruments/flute-simple-wood.webp",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/tool/flute.yml"
     }
   ]
 }

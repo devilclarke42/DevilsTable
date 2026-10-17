@@ -22,7 +22,7 @@ Prices use positive whole cp/sp/gp values (cp/sp 1–9); weights use adjusted po
 
 ## Supported mechanics
 
-Use explicit supported loot, container, consumable, weapon, equipment or tool mappings. Weapons/armour/tools/ammunition require reviewed native fields; potions use the 2014 action and single-dose consumption. Supported healing activities must match their authored dice. Utility consumables do not automatically apply described benefits.
+Use explicit supported loot, container, consumable, weapon, equipment or tool mappings. Weapons/armour/tools/ammunition require reviewed native fields; potions use the 2014 action and single-dose consumption. Supported healing activities must match their authored dice. Limited-use mundane trinkets may declare `mechanics.use.maxUses`; each activation spends one charge of the whole purchased unit, rather than purchasing or deleting an entire kit per charge. Utility consumables do not automatically apply described benefits.
 
 Do not label a mechanical weapon/tool/potion as loot merely to evade validation. Ordinary props or incomplete repair supplies may be mundane loot when their manual limitations are stated. Required-item services select compatible native customer Items and allow one target per checkout line.
 

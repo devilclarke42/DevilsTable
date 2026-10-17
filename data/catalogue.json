@@ -59,7 +59,11 @@
     "data/items/fence/contraband.json",
     "data/items/fence/stolen-goods.json",
     "data/items/fence/curiosities.json",
-    "data/items/fence/rare-components.json"
+    "data/items/fence/rare-components.json",
+    "data/items/general-store/core-equipment.json",
+    "data/items/general-store/adventuring-equipment.json",
+    "data/items/general-store/artisan-tools-instruments.json",
+    "data/items/general-store/commodities.json"
   ],
   "shops": [
     "tavern",
@@ -129,7 +133,8 @@
     "smuggling",
     "stolen-goods",
     "curiosities",
-    "rare-components"
+    "rare-components",
+    "spellcasting-supplies"
   ],
   "deferredFiles": []
 }

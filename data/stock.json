@@ -845,7 +845,10 @@
         "animal",
         "travel",
         "tools",
-        "trade-goods"
+        "trade-goods",
+        "alchemical-goods",
+        "clothing",
+        "spellcasting-supplies"
       ],
       "overrides": [],
       "variants": [
@@ -964,6 +967,122 @@
             {
               "itemId": "DT_ITEM_GS_CLOTH_SILK",
               "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_ALCHEMISTS_FIRE",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_ANTITOXIN",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_CLOTHES_FINE",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_FOCUS_CRYSTAL",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_FOCUS_ORB",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_FOCUS_ROD",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_FOCUS_STAFF",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_FOCUS_WAND",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_HOLY_WATER",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_MAGNIFYING_GLASS",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_TOOLS_BREWER",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_TOOLS_CALLIGRAPHER",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_TOOLS_CARTOGRAPHER",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_TOOLS_GLASSBLOWER",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_TOOLS_JEWELER",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_TOOLS_MASON",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_TOOLS_PAINTER",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_TOOLS_POTTER",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_TOOLS_TINKER",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_INSTRUMENT_BAGPIPES",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_INSTRUMENT_DULCIMER",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_INSTRUMENT_LUTE",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_INSTRUMENT_LYRE",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_INSTRUMENT_PAN_FLUTE",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_INSTRUMENT_SHAWM",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_INSTRUMENT_VIOL",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_SPICE_CLOVES",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_BAR_SILVER",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_SPICE_SAFFRON",
+              "tier": "often"
             }
           ],
           "merchantNotes": {
@@ -999,7 +1118,29 @@
             "DT_ITEM_GS_BOARD_WASH",
             "DT_ITEM_GS_HINGES_DOOR",
             "DT_ITEM_GS_BAR_IRON",
-            "DT_ITEM_GS_BAR_COPPER"
+            "DT_ITEM_GS_BAR_COPPER",
+            "DT_ITEM_GS_LADDER_RIGID",
+            "DT_ITEM_GS_POLE",
+            "DT_ITEM_GS_ALCHEMISTS_FIRE",
+            "DT_ITEM_GS_ANTITOXIN",
+            "DT_ITEM_GS_HOLY_WATER",
+            "DT_ITEM_GS_HUNTING_TRAP",
+            "DT_ITEM_GS_MAGNIFYING_GLASS",
+            "DT_ITEM_GS_POT_IRON_GALLON",
+            "DT_ITEM_GS_RAM_PORTABLE",
+            "DT_ITEM_GS_TOOLS_BREWER",
+            "DT_ITEM_GS_TOOLS_COOK",
+            "DT_ITEM_GS_TOOLS_GLASSBLOWER",
+            "DT_ITEM_GS_TOOLS_JEWELER",
+            "DT_ITEM_GS_TOOLS_MASON",
+            "DT_ITEM_GS_TOOLS_TINKER",
+            "DT_ITEM_GS_INSTRUMENT_BAGPIPES",
+            "DT_ITEM_GS_INSTRUMENT_DULCIMER",
+            "DT_ITEM_GS_INSTRUMENT_LUTE",
+            "DT_ITEM_GS_INSTRUMENT_LYRE",
+            "DT_ITEM_GS_INSTRUMENT_VIOL",
+            "DT_ITEM_GS_BAR_GOLD",
+            "DT_ITEM_GS_BAR_PLATINUM"
           ],
           "overrides": [
             {
@@ -1098,7 +1239,10 @@
         "ingredients",
         "reagents",
         "glassware",
-        "alchemical-tools"
+        "alchemical-tools",
+        "tools",
+        "alchemical-goods",
+        "spellcasting-supplies"
       ],
       "overrides": [
         {
@@ -1117,7 +1261,40 @@
             "DT_ITEM_ALC_HEALING_SUPERIOR",
             "DT_ITEM_ALC_HEALING_SUPREME"
           ],
-          "overrides": [],
+          "overrides": [
+            {
+              "itemId": "DT_ITEM_GS_ALCHEMISTS_FIRE",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_ANTITOXIN",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_FOCUS_CRYSTAL",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_FOCUS_ORB",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_FOCUS_ROD",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_FOCUS_STAFF",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_FOCUS_WAND",
+              "tier": "often"
+            },
+            {
+              "itemId": "DT_ITEM_GS_HOLY_WATER",
+              "tier": "often"
+            }
+          ],
           "merchantNotes": {
             "alwaysStocks": [
               "Dried Mint",
@@ -1179,7 +1356,21 @@
             "DT_ITEM_ALC_DISTILLED_WATER",
             "DT_ITEM_ALC_RETORT",
             "DT_ITEM_ALC_MORTAR",
-            "DT_ITEM_ALC_ALCHEMISTS_SUPPLIES"
+            "DT_ITEM_ALC_ALCHEMISTS_SUPPLIES",
+            "DT_ITEM_GS_HERBALISM_KIT",
+            "DT_ITEM_GS_ALCHEMISTS_FIRE",
+            "DT_ITEM_GS_ANTITOXIN",
+            "DT_ITEM_GS_FOCUS_CRYSTAL",
+            "DT_ITEM_GS_FOCUS_ORB",
+            "DT_ITEM_GS_FOCUS_ROD",
+            "DT_ITEM_GS_FOCUS_STAFF",
+            "DT_ITEM_GS_FOCUS_WAND",
+            "DT_ITEM_GS_FOCUS_WOODEN_STAFF",
+            "DT_ITEM_GS_FOCUS_YEW_WAND",
+            "DT_ITEM_GS_SYMBOL_AMULET",
+            "DT_ITEM_GS_SYMBOL_RELIQUARY",
+            "DT_ITEM_GS_HEALERS_KIT",
+            "DT_ITEM_GS_HOLY_WATER"
           ],
           "overrides": [
             {
@@ -1898,7 +2089,12 @@
             "DT_ITEM_BSM_LIGHT_CROSSBOW",
             "DT_ITEM_BSM_DART",
             "DT_ITEM_BSM_SHORTBOW",
-            "DT_ITEM_BSM_SLING"
+            "DT_ITEM_BSM_SLING",
+            "DT_ITEM_GS_QUIVER",
+            "DT_ITEM_GS_CROSSBOW_BOLT_CASE",
+            "DT_ITEM_GS_BAR_SILVER",
+            "DT_ITEM_GS_BAR_GOLD",
+            "DT_ITEM_GS_BAR_PLATINUM"
           ],
           "overrides": [
             {
@@ -2463,7 +2659,8 @@
         "contraband",
         "stolen-goods",
         "curiosities",
-        "rare-components"
+        "rare-components",
+        "trade-goods"
       ],
       "overrides": [
         {

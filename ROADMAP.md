@@ -25,3 +25,7 @@ Provide a stable, documented extension contract, reliable upgrades, reviewed con
 ## Future proposals
 
 Reputation/factions, automatic restocking, crafting, room capacity/reservations and broader compatibility are proposals, not committed features. Evaluate each against [Project Philosophy](docs/PROJECT_PHILOSOPHY.md), current [Known Limitations](docs/KNOWN_LIMITATIONS.md) and the existing extension surface. Milestone numbers are planning labels, not semantic version numbers or release dates.
+
+## Current content progress
+
+The development branch adds 78 core products and represents 203/241 SRD equipment units (84.23%). Adventuring gear, focus variants, artisan tools and instruments are covered; equipment-pack fulfilment, livestock representation and transport content remain open. The two approved generic Item support changes are validated. Owner review, live-world acceptance and publication remain pending. See [Content Completeness](docs/CONTENT_COMPLETENESS.md).

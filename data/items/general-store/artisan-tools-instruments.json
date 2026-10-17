@@ -1,0 +1,2652 @@
+[
+  {
+    "id": "DT_ITEM_GS_TOOLS_BREWER",
+    "name": "Brewer's Supplies",
+    "description": "A portable selection of measuring vessels, strainers and brewing implements supports brewing work when a suitable workspace and ingredients are supplied.\n\nThe complete set supports its own artisan-tool proficiency on appropriate checks; owning it does not grant proficiency. The GM selects the ability and resolves work, costs and completion. No crafting output or bonus is created automatically.",
+    "saleUnit": "One complete brewer's supplies",
+    "price": {
+      "value": 15,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 7.2,
+      "units": "lb",
+      "notes": "Complete tool set and case weigh 7.2 lb, 80% of the source weight. The stated custom-economy price covers the whole kit and its ordinary implements, not a workshop, raw material supply or completed job."
+    },
+    "icon": "icons/consumables/plants/herb-marjoram-basil-oregano-leaf-bunch-green.webp",
+    "category": "tools",
+    "tags": [
+      "mundane",
+      "core-expansion",
+      "tools"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "special-order",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 p. 70: Brewer’s supplies: 20 gp; 9 lb. Original wording and custom-economy price/adjusted weight. See docs/CORE_CATALOGUE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0; original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "tool",
+      "native": {
+        "ability": "wis",
+        "bonus": "",
+        "type": {
+          "value": "art",
+          "baseItem": "brewer"
+        },
+        "properties": [],
+        "activities": {
+          "dnd5eactivity000": {
+            "_id": "dnd5eactivity000",
+            "type": "check",
+            "activation": {
+              "type": "",
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "concentration": false,
+              "value": "",
+              "units": "inst",
+              "special": "",
+              "override": false
+            },
+            "effects": [],
+            "range": {
+              "units": "self",
+              "special": "",
+              "override": false
+            },
+            "target": {
+              "template": {
+                "count": "",
+                "contiguous": false,
+                "type": "",
+                "size": "",
+                "width": "",
+                "height": "",
+                "units": "ft"
+              },
+              "affects": {
+                "count": "",
+                "type": "",
+                "choice": false,
+                "special": ""
+              },
+              "prompt": true,
+              "override": false
+            },
+            "check": {
+              "ability": "wis",
+              "dc": {}
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": []
+            },
+            "sort": 0
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_TOOLS_CALLIGRAPHER",
+    "name": "Calligrapher's Supplies",
+    "description": "Fine pens, brushes, inks and preparation tools support carefully formed lettering and decorative writing. Ordinary project ink bottles remain separate replacement supplies.\n\nThe complete set supports its own artisan-tool proficiency on appropriate checks; owning it does not grant proficiency. The GM selects the ability and resolves work, costs and completion. No crafting output or bonus is created automatically.",
+    "saleUnit": "One complete calligrapher's supplies",
+    "price": {
+      "value": 8,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 4.0,
+      "units": "lb",
+      "notes": "Complete tool set and case weigh 4.0 lb, 80% of the source weight. The stated custom-economy price covers the whole kit and its ordinary implements, not a workshop, raw material supply or completed job."
+    },
+    "icon": "icons/tools/scribal/pen-steel-grey-brown.webp",
+    "category": "tools",
+    "tags": [
+      "mundane",
+      "core-expansion",
+      "tools"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "special-order",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 p. 70: Calligrapher’s supplies: 10 gp; 5 lb. Original wording and custom-economy price/adjusted weight. See docs/CORE_CATALOGUE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0; original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "tool",
+      "native": {
+        "ability": "int",
+        "bonus": "",
+        "type": {
+          "value": "art",
+          "baseItem": "calligrapher"
+        },
+        "properties": [],
+        "activities": {
+          "dnd5eactivity000": {
+            "_id": "dnd5eactivity000",
+            "type": "check",
+            "activation": {
+              "type": "",
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "concentration": false,
+              "value": "",
+              "units": "inst",
+              "special": "",
+              "override": false
+            },
+            "effects": [],
+            "range": {
+              "units": "self",
+              "special": "",
+              "override": false
+            },
+            "target": {
+              "template": {
+                "count": "",
+                "contiguous": false,
+                "type": "",
+                "size": "",
+                "width": "",
+                "height": "",
+                "units": "ft"
+              },
+              "affects": {
+                "count": "",
+                "type": "",
+                "choice": false,
+                "special": ""
+              },
+              "prompt": true,
+              "override": false
+            },
+            "check": {
+              "ability": "int",
+              "dc": {}
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": []
+            },
+            "sort": 0
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_TOOLS_CARPENTER",
+    "name": "Carpenter's Tools",
+    "description": "A hand saw, small hammer, square and woodworking implements support joining and fitting timber. Lumber and large workshop equipment are separate.\n\nThe complete set supports its own artisan-tool proficiency on appropriate checks; owning it does not grant proficiency. The GM selects the ability and resolves work, costs and completion. No crafting output or bonus is created automatically.",
+    "saleUnit": "One complete carpenter's tools",
+    "price": {
+      "value": 6,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 4.8,
+      "units": "lb",
+      "notes": "Complete tool set and case weigh 4.8 lb, 80% of the source weight. The stated custom-economy price covers the whole kit and its ordinary implements, not a workshop, raw material supply or completed job."
+    },
+    "icon": "icons/tools/hand/saw-steel-grey.webp",
+    "category": "tools",
+    "tags": [
+      "mundane",
+      "core-expansion",
+      "tools"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 p. 70: Carpenter’s tools: 8 gp; 6 lb. Original wording and custom-economy price/adjusted weight. See docs/CORE_CATALOGUE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0; original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "tool",
+      "native": {
+        "ability": "str",
+        "bonus": "",
+        "type": {
+          "value": "art",
+          "baseItem": "carpenter"
+        },
+        "properties": [],
+        "activities": {
+          "dnd5eactivity000": {
+            "_id": "dnd5eactivity000",
+            "type": "check",
+            "activation": {
+              "type": "",
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "concentration": false,
+              "value": "",
+              "units": "inst",
+              "special": "",
+              "override": false
+            },
+            "effects": [],
+            "range": {
+              "units": "self",
+              "special": "",
+              "override": false
+            },
+            "target": {
+              "template": {
+                "count": "",
+                "contiguous": false,
+                "type": "",
+                "size": "",
+                "width": "",
+                "height": "",
+                "units": "ft"
+              },
+              "affects": {
+                "count": "",
+                "type": "",
+                "choice": false,
+                "special": ""
+              },
+              "prompt": true,
+              "override": false
+            },
+            "check": {
+              "ability": "str",
+              "dc": {}
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": []
+            },
+            "sort": 0
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_TOOLS_CARTOGRAPHER",
+    "name": "Cartographer's Tools",
+    "description": "Drafting instruments and drawing supplies support preparing and copying maps. The set supplies no map of an unexplored place and is distinct from navigator’s instruments.\n\nThe complete set supports its own artisan-tool proficiency on appropriate checks; owning it does not grant proficiency. The GM selects the ability and resolves work, costs and completion. No crafting output or bonus is created automatically.",
+    "saleUnit": "One complete cartographer's tools",
+    "price": {
+      "value": 12,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 4.8,
+      "units": "lb",
+      "notes": "Complete tool set and case weigh 4.8 lb, 80% of the source weight. The stated custom-economy price covers the whole kit and its ordinary implements, not a workshop, raw material supply or completed job."
+    },
+    "icon": "icons/tools/navigation/map-chart-tan.webp",
+    "category": "tools",
+    "tags": [
+      "mundane",
+      "core-expansion",
+      "tools"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "special-order",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 p. 70: Cartographer’s tools: 15 gp; 6 lb. Original wording and custom-economy price/adjusted weight. See docs/CORE_CATALOGUE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0; original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "tool",
+      "native": {
+        "ability": "int",
+        "bonus": "",
+        "type": {
+          "value": "art",
+          "baseItem": "cartographer"
+        },
+        "properties": [],
+        "activities": {
+          "dnd5eactivity000": {
+            "_id": "dnd5eactivity000",
+            "type": "check",
+            "activation": {
+              "type": "",
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "concentration": false,
+              "value": "",
+              "units": "inst",
+              "special": "",
+              "override": false
+            },
+            "effects": [],
+            "range": {
+              "units": "self",
+              "special": "",
+              "override": false
+            },
+            "target": {
+              "template": {
+                "count": "",
+                "contiguous": false,
+                "type": "",
+                "size": "",
+                "width": "",
+                "height": "",
+                "units": "ft"
+              },
+              "affects": {
+                "count": "",
+                "type": "",
+                "choice": false,
+                "special": ""
+              },
+              "prompt": true,
+              "override": false
+            },
+            "check": {
+              "ability": "int",
+              "dc": {}
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": []
+            },
+            "sort": 0
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_TOOLS_COBBLER",
+    "name": "Cobbler's Tools",
+    "description": "Awls, needles, lasts and small leatherworking implements support making and repairing footwear. Leather and replacement soles depend on the job.\n\nThe complete set supports its own artisan-tool proficiency on appropriate checks; owning it does not grant proficiency. The GM selects the ability and resolves work, costs and completion. No crafting output or bonus is created automatically.",
+    "saleUnit": "One complete cobbler's tools",
+    "price": {
+      "value": 4,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 4.0,
+      "units": "lb",
+      "notes": "Complete tool set and case weigh 4.0 lb, 80% of the source weight. The stated custom-economy price covers the whole kit and its ordinary implements, not a workshop, raw material supply or completed job."
+    },
+    "icon": "icons/tools/hand/awl-steel-tan.webp",
+    "category": "tools",
+    "tags": [
+      "mundane",
+      "core-expansion",
+      "tools"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 p. 70: Cobbler’s tools: 5 gp; 5 lb. Original wording and custom-economy price/adjusted weight. See docs/CORE_CATALOGUE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0; original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "tool",
+      "native": {
+        "ability": "int",
+        "bonus": "",
+        "type": {
+          "value": "art",
+          "baseItem": "cobbler"
+        },
+        "properties": [],
+        "activities": {
+          "dnd5eactivity000": {
+            "_id": "dnd5eactivity000",
+            "type": "check",
+            "activation": {
+              "type": "",
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "concentration": false,
+              "value": "",
+              "units": "inst",
+              "special": "",
+              "override": false
+            },
+            "effects": [],
+            "range": {
+              "units": "self",
+              "special": "",
+              "override": false
+            },
+            "target": {
+              "template": {
+                "count": "",
+                "contiguous": false,
+                "type": "",
+                "size": "",
+                "width": "",
+                "height": "",
+                "units": "ft"
+              },
+              "affects": {
+                "count": "",
+                "type": "",
+                "choice": false,
+                "special": ""
+              },
+              "prompt": true,
+              "override": false
+            },
+            "check": {
+              "ability": "int",
+              "dc": {}
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": []
+            },
+            "sort": 0
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_TOOLS_COOK",
+    "name": "Cook's Utensils",
+    "description": "Portable cooking implements support preparing meals with appropriate ingredients, heat and workspace. This is a complete working utensil set, not a single diner’s mess kit.\n\nThe complete set supports its own artisan-tool proficiency on appropriate checks; owning it does not grant proficiency. The GM selects the ability and resolves work, costs and completion. No crafting output or bonus is created automatically.",
+    "saleUnit": "One complete cook's utensils",
+    "price": {
+      "value": 8,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 6.4,
+      "units": "lb",
+      "notes": "Complete tool set and case weigh 6.4 lb, 80% of the source weight. The stated custom-economy price covers the whole kit and its ordinary implements, not a workshop, raw material supply or completed job."
+    },
+    "icon": "icons/tools/laboratory/bowl-mixing.webp",
+    "category": "tools",
+    "tags": [
+      "mundane",
+      "core-expansion",
+      "tools"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 p. 70: Cook’s utensils: 1 gp; 8 lb. Original wording and custom-economy price/adjusted weight. See docs/CORE_CATALOGUE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0; original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "tool",
+      "native": {
+        "ability": "wis",
+        "bonus": "",
+        "type": {
+          "value": "art",
+          "baseItem": "cook"
+        },
+        "properties": [],
+        "activities": {
+          "dnd5eactivity000": {
+            "_id": "dnd5eactivity000",
+            "type": "check",
+            "activation": {
+              "type": "",
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "concentration": false,
+              "value": "",
+              "units": "inst",
+              "special": "",
+              "override": false
+            },
+            "effects": [],
+            "range": {
+              "units": "self",
+              "special": "",
+              "override": false
+            },
+            "target": {
+              "template": {
+                "count": "",
+                "contiguous": false,
+                "type": "",
+                "size": "",
+                "width": "",
+                "height": "",
+                "units": "ft"
+              },
+              "affects": {
+                "count": "",
+                "type": "",
+                "choice": false,
+                "special": ""
+              },
+              "prompt": true,
+              "override": false
+            },
+            "check": {
+              "ability": "wis",
+              "dc": {}
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": []
+            },
+            "sort": 0
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_TOOLS_GLASSBLOWER",
+    "name": "Glassblower's Tools",
+    "description": "Blowing and shaping implements support working glass with a suitable furnace and materials. A furnace, fuel and finished vessels are not included.\n\nThe complete set supports its own artisan-tool proficiency on appropriate checks; owning it does not grant proficiency. The GM selects the ability and resolves work, costs and completion. No crafting output or bonus is created automatically.",
+    "saleUnit": "One complete glassblower's tools",
+    "price": {
+      "value": 24,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 4.0,
+      "units": "lb",
+      "notes": "Complete tool set and case weigh 4.0 lb, 80% of the source weight. The stated custom-economy price covers the whole kit and its ordinary implements, not a workshop, raw material supply or completed job."
+    },
+    "icon": "icons/commodities/tech/metal-insert.webp",
+    "category": "tools",
+    "tags": [
+      "mundane",
+      "core-expansion",
+      "tools"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "special-order",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 p. 70: Glassblower’s tools: 30 gp; 5 lb. Original wording and custom-economy price/adjusted weight. See docs/CORE_CATALOGUE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0; original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "tool",
+      "native": {
+        "ability": "int",
+        "bonus": "",
+        "type": {
+          "value": "art",
+          "baseItem": "glassblower"
+        },
+        "properties": [],
+        "activities": {
+          "dnd5eactivity000": {
+            "_id": "dnd5eactivity000",
+            "type": "check",
+            "activation": {
+              "type": "",
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "concentration": false,
+              "value": "",
+              "units": "inst",
+              "special": "",
+              "override": false
+            },
+            "effects": [],
+            "range": {
+              "units": "self",
+              "special": "",
+              "override": false
+            },
+            "target": {
+              "template": {
+                "count": "",
+                "contiguous": false,
+                "type": "",
+                "size": "",
+                "width": "",
+                "height": "",
+                "units": "ft"
+              },
+              "affects": {
+                "count": "",
+                "type": "",
+                "choice": false,
+                "special": ""
+              },
+              "prompt": true,
+              "override": false
+            },
+            "check": {
+              "ability": "int",
+              "dc": {}
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": []
+            },
+            "sort": 0
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_TOOLS_JEWELER",
+    "name": "Jeweler's Tools",
+    "description": "Fine files, small pliers and inspection implements support cutting, setting and assessing jewellery. Gems, precious metals and a guaranteed appraisal are not supplied.\n\nThe complete set supports its own artisan-tool proficiency on appropriate checks; owning it does not grant proficiency. The GM selects the ability and resolves work, costs and completion. No crafting output or bonus is created automatically.",
+    "saleUnit": "One complete jeweler's tools",
+    "price": {
+      "value": 20,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 1.6,
+      "units": "lb",
+      "notes": "Complete tool set and case weigh 1.6 lb, 80% of the source weight. The stated custom-economy price covers the whole kit and its ordinary implements, not a workshop, raw material supply or completed job."
+    },
+    "icon": "icons/commodities/gems/gem-rough-rose-teal.webp",
+    "category": "tools",
+    "tags": [
+      "mundane",
+      "core-expansion",
+      "tools"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "special-order",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 p. 70: Jeweler’s tools: 25 gp; 2 lb. Original wording and custom-economy price/adjusted weight. See docs/CORE_CATALOGUE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0; original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "tool",
+      "native": {
+        "ability": "int",
+        "bonus": "",
+        "type": {
+          "value": "art",
+          "baseItem": "jeweler"
+        },
+        "properties": [],
+        "activities": {
+          "dnd5eactivity000": {
+            "_id": "dnd5eactivity000",
+            "type": "check",
+            "activation": {
+              "type": "",
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "concentration": false,
+              "value": "",
+              "units": "inst",
+              "special": "",
+              "override": false
+            },
+            "effects": [],
+            "range": {
+              "units": "self",
+              "special": "",
+              "override": false
+            },
+            "target": {
+              "template": {
+                "count": "",
+                "contiguous": false,
+                "type": "",
+                "size": "",
+                "width": "",
+                "height": "",
+                "units": "ft"
+              },
+              "affects": {
+                "count": "",
+                "type": "",
+                "choice": false,
+                "special": ""
+              },
+              "prompt": true,
+              "override": false
+            },
+            "check": {
+              "ability": "int",
+              "dc": {}
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": []
+            },
+            "sort": 0
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_TOOLS_LEATHERWORKER",
+    "name": "Leatherworker's Tools",
+    "description": "Cutting, punching and stitching implements support shaping and joining leather. Hides and fittings are separate materials, not extra free inventory.\n\nThe complete set supports its own artisan-tool proficiency on appropriate checks; owning it does not grant proficiency. The GM selects the ability and resolves work, costs and completion. No crafting output or bonus is created automatically.",
+    "saleUnit": "One complete leatherworker's tools",
+    "price": {
+      "value": 4,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 4.0,
+      "units": "lb",
+      "notes": "Complete tool set and case weigh 4.0 lb, 80% of the source weight. The stated custom-economy price covers the whole kit and its ordinary implements, not a workshop, raw material supply or completed job."
+    },
+    "icon": "icons/commodities/leather/leather-buckle-steel-tan.webp",
+    "category": "tools",
+    "tags": [
+      "mundane",
+      "core-expansion",
+      "tools"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 p. 70: Leatherworker’s tools: 5 gp; 5 lb. Original wording and custom-economy price/adjusted weight. See docs/CORE_CATALOGUE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0; original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "tool",
+      "native": {
+        "ability": "int",
+        "bonus": "",
+        "type": {
+          "value": "art",
+          "baseItem": "leatherworker"
+        },
+        "properties": [],
+        "activities": {
+          "dnd5eactivity000": {
+            "_id": "dnd5eactivity000",
+            "type": "check",
+            "activation": {
+              "type": "",
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "concentration": false,
+              "value": "",
+              "units": "inst",
+              "special": "",
+              "override": false
+            },
+            "effects": [],
+            "range": {
+              "units": "self",
+              "special": "",
+              "override": false
+            },
+            "target": {
+              "template": {
+                "count": "",
+                "contiguous": false,
+                "type": "",
+                "size": "",
+                "width": "",
+                "height": "",
+                "units": "ft"
+              },
+              "affects": {
+                "count": "",
+                "type": "",
+                "choice": false,
+                "special": ""
+              },
+              "prompt": true,
+              "override": false
+            },
+            "check": {
+              "ability": "int",
+              "dc": {}
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": []
+            },
+            "sort": 0
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_TOOLS_MASON",
+    "name": "Mason's Tools",
+    "description": "A compact collection of masonry implements supports dressing and fitting stone. Stone blocks, lifting gear and major site equipment are separate.\n\nThe complete set supports its own artisan-tool proficiency on appropriate checks; owning it does not grant proficiency. The GM selects the ability and resolves work, costs and completion. No crafting output or bonus is created automatically.",
+    "saleUnit": "One complete mason's tools",
+    "price": {
+      "value": 8,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 6.4,
+      "units": "lb",
+      "notes": "Complete tool set and case weigh 6.4 lb, 80% of the source weight. The stated custom-economy price covers the whole kit and its ordinary implements, not a workshop, raw material supply or completed job."
+    },
+    "icon": "icons/tools/hand/hammer-and-nail.webp",
+    "category": "tools",
+    "tags": [
+      "mundane",
+      "core-expansion",
+      "tools"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "special-order",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 p. 70: Mason’s tools: 10 gp; 8 lb. Original wording and custom-economy price/adjusted weight. See docs/CORE_CATALOGUE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0; original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "tool",
+      "native": {
+        "ability": "wis",
+        "bonus": "",
+        "type": {
+          "value": "art",
+          "baseItem": "mason"
+        },
+        "properties": [],
+        "activities": {
+          "dnd5eactivity000": {
+            "_id": "dnd5eactivity000",
+            "type": "check",
+            "activation": {
+              "type": "",
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "concentration": false,
+              "value": "",
+              "units": "inst",
+              "special": "",
+              "override": false
+            },
+            "effects": [],
+            "range": {
+              "units": "self",
+              "special": "",
+              "override": false
+            },
+            "target": {
+              "template": {
+                "count": "",
+                "contiguous": false,
+                "type": "",
+                "size": "",
+                "width": "",
+                "height": "",
+                "units": "ft"
+              },
+              "affects": {
+                "count": "",
+                "type": "",
+                "choice": false,
+                "special": ""
+              },
+              "prompt": true,
+              "override": false
+            },
+            "check": {
+              "ability": "wis",
+              "dc": {}
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": []
+            },
+            "sort": 0
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_TOOLS_PAINTER",
+    "name": "Painter's Supplies",
+    "description": "Brushes, pigments and mixing implements support drawing and painting. Prepared pictures or magical markings are not part of the purchase.\n\nThe complete set supports its own artisan-tool proficiency on appropriate checks; owning it does not grant proficiency. The GM selects the ability and resolves work, costs and completion. No crafting output or bonus is created automatically.",
+    "saleUnit": "One complete painter's supplies",
+    "price": {
+      "value": 8,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 4.0,
+      "units": "lb",
+      "notes": "Complete tool set and case weigh 4.0 lb, 80% of the source weight. The stated custom-economy price covers the whole kit and its ordinary implements, not a workshop, raw material supply or completed job."
+    },
+    "icon": "icons/tools/hand/brush-paint-brown-tan.webp",
+    "category": "tools",
+    "tags": [
+      "mundane",
+      "core-expansion",
+      "tools"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "special-order",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 p. 70: Painter’s supplies: 10 gp; 5 lb. Original wording and custom-economy price/adjusted weight. See docs/CORE_CATALOGUE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0; original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "tool",
+      "native": {
+        "ability": "int",
+        "bonus": "",
+        "type": {
+          "value": "art",
+          "baseItem": "painter"
+        },
+        "properties": [],
+        "activities": {
+          "dnd5eactivity000": {
+            "_id": "dnd5eactivity000",
+            "type": "check",
+            "activation": {
+              "type": "",
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "concentration": false,
+              "value": "",
+              "units": "inst",
+              "special": "",
+              "override": false
+            },
+            "effects": [],
+            "range": {
+              "units": "self",
+              "special": "",
+              "override": false
+            },
+            "target": {
+              "template": {
+                "count": "",
+                "contiguous": false,
+                "type": "",
+                "size": "",
+                "width": "",
+                "height": "",
+                "units": "ft"
+              },
+              "affects": {
+                "count": "",
+                "type": "",
+                "choice": false,
+                "special": ""
+              },
+              "prompt": true,
+              "override": false
+            },
+            "check": {
+              "ability": "int",
+              "dc": {}
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": []
+            },
+            "sort": 0
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_TOOLS_POTTER",
+    "name": "Potter's Tools",
+    "description": "Shaping and finishing implements support forming ceramic goods with appropriate clay and workspace. A kiln and its fuel are separate.\n\nThe complete set supports its own artisan-tool proficiency on appropriate checks; owning it does not grant proficiency. The GM selects the ability and resolves work, costs and completion. No crafting output or bonus is created automatically.",
+    "saleUnit": "One complete potter's tools",
+    "price": {
+      "value": 8,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 2.4,
+      "units": "lb",
+      "notes": "Complete tool set and case weigh 2.4 lb, 80% of the source weight. The stated custom-economy price covers the whole kit and its ordinary implements, not a workshop, raw material supply or completed job."
+    },
+    "icon": "icons/containers/kitchenware/vase-bottle-brown.webp",
+    "category": "tools",
+    "tags": [
+      "mundane",
+      "core-expansion",
+      "tools"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "special-order",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 p. 70: Potter’s tools: 10 gp; 3 lb. Original wording and custom-economy price/adjusted weight. See docs/CORE_CATALOGUE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0; original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "tool",
+      "native": {
+        "ability": "int",
+        "bonus": "",
+        "type": {
+          "value": "art",
+          "baseItem": "potter"
+        },
+        "properties": [],
+        "activities": {
+          "dnd5eactivity000": {
+            "_id": "dnd5eactivity000",
+            "type": "check",
+            "activation": {
+              "type": "",
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "concentration": false,
+              "value": "",
+              "units": "inst",
+              "special": "",
+              "override": false
+            },
+            "effects": [],
+            "range": {
+              "units": "self",
+              "special": "",
+              "override": false
+            },
+            "target": {
+              "template": {
+                "count": "",
+                "contiguous": false,
+                "type": "",
+                "size": "",
+                "width": "",
+                "height": "",
+                "units": "ft"
+              },
+              "affects": {
+                "count": "",
+                "type": "",
+                "choice": false,
+                "special": ""
+              },
+              "prompt": true,
+              "override": false
+            },
+            "check": {
+              "ability": "int",
+              "dc": {}
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": []
+            },
+            "sort": 0
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_TOOLS_TINKER",
+    "name": "Tinker's Tools",
+    "description": "A fitted selection of small repair and adjustment tools supports work on mundane mechanisms. It is not thieves’ tools and grants no special access to locks.\n\nThe complete set supports its own artisan-tool proficiency on appropriate checks; owning it does not grant proficiency. The GM selects the ability and resolves work, costs and completion. No crafting output or bonus is created automatically.",
+    "saleUnit": "One complete tinker's tools",
+    "price": {
+      "value": 40,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 8.0,
+      "units": "lb",
+      "notes": "Complete tool set and case weigh 8.0 lb, 80% of the source weight. The stated custom-economy price covers the whole kit and its ordinary implements, not a workshop, raw material supply or completed job."
+    },
+    "icon": "icons/commodities/cloth/thread-spindle-white-needle.webp",
+    "category": "tools",
+    "tags": [
+      "mundane",
+      "core-expansion",
+      "tools"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "special-order",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 p. 70: Tinker’s tools: 50 gp; 10 lb. Original wording and custom-economy price/adjusted weight. See docs/CORE_CATALOGUE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0; original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "tool",
+      "native": {
+        "ability": "int",
+        "bonus": "",
+        "type": {
+          "value": "art",
+          "baseItem": "tinker"
+        },
+        "properties": [],
+        "activities": {
+          "dnd5eactivity000": {
+            "_id": "dnd5eactivity000",
+            "type": "check",
+            "activation": {
+              "type": "",
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "concentration": false,
+              "value": "",
+              "units": "inst",
+              "special": "",
+              "override": false
+            },
+            "effects": [],
+            "range": {
+              "units": "self",
+              "special": "",
+              "override": false
+            },
+            "target": {
+              "template": {
+                "count": "",
+                "contiguous": false,
+                "type": "",
+                "size": "",
+                "width": "",
+                "height": "",
+                "units": "ft"
+              },
+              "affects": {
+                "count": "",
+                "type": "",
+                "choice": false,
+                "special": ""
+              },
+              "prompt": true,
+              "override": false
+            },
+            "check": {
+              "ability": "int",
+              "dc": {}
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": []
+            },
+            "sort": 0
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_TOOLS_WEAVER",
+    "name": "Weaver's Tools",
+    "description": "Thread-working and finishing implements support weaving work with appropriate fibre and equipment. Bulk thread, a large loom and finished cloth are not included.\n\nThe complete set supports its own artisan-tool proficiency on appropriate checks; owning it does not grant proficiency. The GM selects the ability and resolves work, costs and completion. No crafting output or bonus is created automatically.",
+    "saleUnit": "One complete weaver's tools",
+    "price": {
+      "value": 8,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 4.0,
+      "units": "lb",
+      "notes": "Complete tool set and case weigh 4.0 lb, 80% of the source weight. The stated custom-economy price covers the whole kit and its ordinary implements, not a workshop, raw material supply or completed job."
+    },
+    "icon": "icons/equipment/back/cloak-hooded-pink.webp",
+    "category": "tools",
+    "tags": [
+      "mundane",
+      "core-expansion",
+      "tools"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 p. 70: Weaver’s tools: 1 gp; 5 lb. Original wording and custom-economy price/adjusted weight. See docs/CORE_CATALOGUE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0; original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "tool",
+      "native": {
+        "ability": "dex",
+        "bonus": "",
+        "type": {
+          "value": "art",
+          "baseItem": "weaver"
+        },
+        "properties": [],
+        "activities": {
+          "dnd5eactivity000": {
+            "_id": "dnd5eactivity000",
+            "type": "check",
+            "activation": {
+              "type": "",
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "concentration": false,
+              "value": "",
+              "units": "inst",
+              "special": "",
+              "override": false
+            },
+            "effects": [],
+            "range": {
+              "units": "self",
+              "special": "",
+              "override": false
+            },
+            "target": {
+              "template": {
+                "count": "",
+                "contiguous": false,
+                "type": "",
+                "size": "",
+                "width": "",
+                "height": "",
+                "units": "ft"
+              },
+              "affects": {
+                "count": "",
+                "type": "",
+                "choice": false,
+                "special": ""
+              },
+              "prompt": true,
+              "override": false
+            },
+            "check": {
+              "ability": "dex",
+              "dc": {}
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": []
+            },
+            "sort": 0
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_TOOLS_WOODCARVER",
+    "name": "Woodcarver's Tools",
+    "description": "Carving knives, gouges and finishing implements support shaping small wooden objects. Wood blanks and finished goods are separate.\n\nThe complete set supports its own artisan-tool proficiency on appropriate checks; owning it does not grant proficiency. The GM selects the ability and resolves work, costs and completion. No crafting output or bonus is created automatically.",
+    "saleUnit": "One complete woodcarver's tools",
+    "price": {
+      "value": 8,
+      "denomination": "sp"
+    },
+    "weight": {
+      "value": 4.0,
+      "units": "lb",
+      "notes": "Complete tool set and case weigh 4.0 lb, 80% of the source weight. The stated custom-economy price covers the whole kit and its ordinary implements, not a workshop, raw material supply or completed job."
+    },
+    "icon": "icons/tools/hand/chisel-steel-brown.webp",
+    "category": "tools",
+    "tags": [
+      "mundane",
+      "core-expansion",
+      "tools"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 p. 70: Woodcarver’s tools: 1 gp; 5 lb. Original wording and custom-economy price/adjusted weight. See docs/CORE_CATALOGUE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0; original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "tool",
+      "native": {
+        "ability": "dex",
+        "bonus": "",
+        "type": {
+          "value": "art",
+          "baseItem": "woodcarver"
+        },
+        "properties": [],
+        "activities": {
+          "dnd5eactivity000": {
+            "_id": "dnd5eactivity000",
+            "type": "check",
+            "activation": {
+              "type": "",
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "concentration": false,
+              "value": "",
+              "units": "inst",
+              "special": "",
+              "override": false
+            },
+            "effects": [],
+            "range": {
+              "units": "self",
+              "special": "",
+              "override": false
+            },
+            "target": {
+              "template": {
+                "count": "",
+                "contiguous": false,
+                "type": "",
+                "size": "",
+                "width": "",
+                "height": "",
+                "units": "ft"
+              },
+              "affects": {
+                "count": "",
+                "type": "",
+                "choice": false,
+                "special": ""
+              },
+              "prompt": true,
+              "override": false
+            },
+            "check": {
+              "ability": "dex",
+              "dc": {}
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": []
+            },
+            "sort": 0
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_INSTRUMENT_BAGPIPES",
+    "name": "Bagpipes",
+    "description": "A set of pipes is fed from a leather air bag, producing a sustained tone and drone.\n\nThis complete instrument supports its own musical-instrument proficiency; it grants no proficiency, performance success or magic by itself. A bard may use a musical instrument as a focus under the 2014 class rules. The GM selects the ability for a performance or other appropriate task.",
+    "saleUnit": "One complete bagpipes",
+    "price": {
+      "value": 24,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 4.8,
+      "units": "lb",
+      "notes": "Complete instrument weighs 4.8 lb, 80% of the listed source weight. The custom-economy price covers one ordinary playable instrument, not instruction, a performance contract or magical construction."
+    },
+    "icon": "icons/sundries/survival/waterskin-leather-brown.webp",
+    "category": "tools",
+    "tags": [
+      "mundane",
+      "core-expansion",
+      "tools"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "special-order",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 p. 70: Bagpipes: 30 gp; 6 lb. Original wording and custom-economy price/adjusted weight. See docs/CORE_CATALOGUE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0; original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "tool",
+      "native": {
+        "ability": "cha",
+        "bonus": "",
+        "type": {
+          "value": "music",
+          "baseItem": "bagpipes"
+        },
+        "properties": [],
+        "activities": {
+          "dnd5eactivity000": {
+            "_id": "dnd5eactivity000",
+            "type": "check",
+            "activation": {
+              "type": "",
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "concentration": false,
+              "value": "",
+              "units": "inst",
+              "special": "",
+              "override": false
+            },
+            "effects": [],
+            "range": {
+              "units": "self",
+              "special": "",
+              "override": false
+            },
+            "target": {
+              "template": {
+                "count": "",
+                "contiguous": false,
+                "type": "",
+                "size": "",
+                "width": "",
+                "height": "",
+                "units": "ft"
+              },
+              "affects": {
+                "count": "",
+                "type": "",
+                "choice": false,
+                "special": ""
+              },
+              "prompt": true,
+              "override": false
+            },
+            "check": {
+              "ability": "cha",
+              "dc": {}
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": []
+            },
+            "sort": 0
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_INSTRUMENT_DRUM",
+    "name": "Drum",
+    "description": "A framed drum with a fitted head and beaters supplies a portable rhythm instrument.\n\nThis complete instrument supports its own musical-instrument proficiency; it grants no proficiency, performance success or magic by itself. A bard may use a musical instrument as a focus under the 2014 class rules. The GM selects the ability for a performance or other appropriate task.",
+    "saleUnit": "One complete drum",
+    "price": {
+      "value": 4,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 2.4,
+      "units": "lb",
+      "notes": "Complete instrument weighs 2.4 lb, 80% of the listed source weight. The custom-economy price covers one ordinary playable instrument, not instruction, a performance contract or magical construction."
+    },
+    "icon": "icons/tools/instruments/drum-brown-red.webp",
+    "category": "tools",
+    "tags": [
+      "mundane",
+      "core-expansion",
+      "tools"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 p. 70: Drum: 6 gp; 3 lb. Original wording and custom-economy price/adjusted weight. See docs/CORE_CATALOGUE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0; original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "tool",
+      "native": {
+        "ability": "cha",
+        "bonus": "",
+        "type": {
+          "value": "music",
+          "baseItem": "drum"
+        },
+        "properties": [],
+        "activities": {
+          "dnd5eactivity000": {
+            "_id": "dnd5eactivity000",
+            "type": "check",
+            "activation": {
+              "type": "",
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "concentration": false,
+              "value": "",
+              "units": "inst",
+              "special": "",
+              "override": false
+            },
+            "effects": [],
+            "range": {
+              "units": "self",
+              "special": "",
+              "override": false
+            },
+            "target": {
+              "template": {
+                "count": "",
+                "contiguous": false,
+                "type": "",
+                "size": "",
+                "width": "",
+                "height": "",
+                "units": "ft"
+              },
+              "affects": {
+                "count": "",
+                "type": "",
+                "choice": false,
+                "special": ""
+              },
+              "prompt": true,
+              "override": false
+            },
+            "check": {
+              "ability": "cha",
+              "dc": {}
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": []
+            },
+            "sort": 0
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_INSTRUMENT_DULCIMER",
+    "name": "Dulcimer",
+    "description": "Strings stretched across a resonating body are played with small hammers or a plectrum.\n\nThis complete instrument supports its own musical-instrument proficiency; it grants no proficiency, performance success or magic by itself. A bard may use a musical instrument as a focus under the 2014 class rules. The GM selects the ability for a performance or other appropriate task.",
+    "saleUnit": "One complete dulcimer",
+    "price": {
+      "value": 20,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 8.0,
+      "units": "lb",
+      "notes": "Complete instrument weighs 8.0 lb, 80% of the listed source weight. The custom-economy price covers one ordinary playable instrument, not instruction, a performance contract or magical construction."
+    },
+    "icon": "icons/tools/instruments/lute-gold-brown.webp",
+    "category": "tools",
+    "tags": [
+      "mundane",
+      "core-expansion",
+      "tools"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "special-order",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 p. 70: Dulcimer: 25 gp; 10 lb. Original wording and custom-economy price/adjusted weight. See docs/CORE_CATALOGUE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0; original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "tool",
+      "native": {
+        "ability": "cha",
+        "bonus": "",
+        "type": {
+          "value": "music",
+          "baseItem": "dulcimer"
+        },
+        "properties": [],
+        "activities": {
+          "dnd5eactivity000": {
+            "_id": "dnd5eactivity000",
+            "type": "check",
+            "activation": {
+              "type": "",
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "concentration": false,
+              "value": "",
+              "units": "inst",
+              "special": "",
+              "override": false
+            },
+            "effects": [],
+            "range": {
+              "units": "self",
+              "special": "",
+              "override": false
+            },
+            "target": {
+              "template": {
+                "count": "",
+                "contiguous": false,
+                "type": "",
+                "size": "",
+                "width": "",
+                "height": "",
+                "units": "ft"
+              },
+              "affects": {
+                "count": "",
+                "type": "",
+                "choice": false,
+                "special": ""
+              },
+              "prompt": true,
+              "override": false
+            },
+            "check": {
+              "ability": "cha",
+              "dc": {}
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": []
+            },
+            "sort": 0
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_INSTRUMENT_FLUTE",
+    "name": "Flute",
+    "description": "A light flute has bored finger holes and a fitted mouthpiece.\n\nThis complete instrument supports its own musical-instrument proficiency; it grants no proficiency, performance success or magic by itself. A bard may use a musical instrument as a focus under the 2014 class rules. The GM selects the ability for a performance or other appropriate task.",
+    "saleUnit": "One complete flute",
+    "price": {
+      "value": 1,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 0.8,
+      "units": "lb",
+      "notes": "Complete instrument weighs 0.8 lb, 80% of the listed source weight. The custom-economy price covers one ordinary playable instrument, not instruction, a performance contract or magical construction."
+    },
+    "icon": "icons/tools/instruments/flute-simple-wood.webp",
+    "category": "tools",
+    "tags": [
+      "mundane",
+      "core-expansion",
+      "tools"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 p. 70: Flute: 2 gp; 1 lb. Original wording and custom-economy price/adjusted weight. See docs/CORE_CATALOGUE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0; original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "tool",
+      "native": {
+        "ability": "cha",
+        "bonus": "",
+        "type": {
+          "value": "music",
+          "baseItem": "flute"
+        },
+        "properties": [],
+        "activities": {
+          "dnd5eactivity000": {
+            "_id": "dnd5eactivity000",
+            "type": "check",
+            "activation": {
+              "type": "",
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "concentration": false,
+              "value": "",
+              "units": "inst",
+              "special": "",
+              "override": false
+            },
+            "effects": [],
+            "range": {
+              "units": "self",
+              "special": "",
+              "override": false
+            },
+            "target": {
+              "template": {
+                "count": "",
+                "contiguous": false,
+                "type": "",
+                "size": "",
+                "width": "",
+                "height": "",
+                "units": "ft"
+              },
+              "affects": {
+                "count": "",
+                "type": "",
+                "choice": false,
+                "special": ""
+              },
+              "prompt": true,
+              "override": false
+            },
+            "check": {
+              "ability": "cha",
+              "dc": {}
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": []
+            },
+            "sort": 0
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_INSTRUMENT_LUTE",
+    "name": "Lute",
+    "description": "A fretted neck and resonating body carry strings for plucked accompaniment.\n\nThis complete instrument supports its own musical-instrument proficiency; it grants no proficiency, performance success or magic by itself. A bard may use a musical instrument as a focus under the 2014 class rules. The GM selects the ability for a performance or other appropriate task.",
+    "saleUnit": "One complete lute",
+    "price": {
+      "value": 28,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 1.6,
+      "units": "lb",
+      "notes": "Complete instrument weighs 1.6 lb, 80% of the listed source weight. The custom-economy price covers one ordinary playable instrument, not instruction, a performance contract or magical construction."
+    },
+    "icon": "icons/tools/instruments/lute-gold-brown.webp",
+    "category": "tools",
+    "tags": [
+      "mundane",
+      "core-expansion",
+      "tools"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "special-order",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 p. 70: Lute: 35 gp; 2 lb. Original wording and custom-economy price/adjusted weight. See docs/CORE_CATALOGUE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0; original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "tool",
+      "native": {
+        "ability": "cha",
+        "bonus": "",
+        "type": {
+          "value": "music",
+          "baseItem": "lute"
+        },
+        "properties": [],
+        "activities": {
+          "dnd5eactivity000": {
+            "_id": "dnd5eactivity000",
+            "type": "check",
+            "activation": {
+              "type": "",
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "concentration": false,
+              "value": "",
+              "units": "inst",
+              "special": "",
+              "override": false
+            },
+            "effects": [],
+            "range": {
+              "units": "self",
+              "special": "",
+              "override": false
+            },
+            "target": {
+              "template": {
+                "count": "",
+                "contiguous": false,
+                "type": "",
+                "size": "",
+                "width": "",
+                "height": "",
+                "units": "ft"
+              },
+              "affects": {
+                "count": "",
+                "type": "",
+                "choice": false,
+                "special": ""
+              },
+              "prompt": true,
+              "override": false
+            },
+            "check": {
+              "ability": "cha",
+              "dc": {}
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": []
+            },
+            "sort": 0
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_INSTRUMENT_LYRE",
+    "name": "Lyre",
+    "description": "Strings held in an open frame provide a compact plucked instrument.\n\nThis complete instrument supports its own musical-instrument proficiency; it grants no proficiency, performance success or magic by itself. A bard may use a musical instrument as a focus under the 2014 class rules. The GM selects the ability for a performance or other appropriate task.",
+    "saleUnit": "One complete lyre",
+    "price": {
+      "value": 24,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 1.6,
+      "units": "lb",
+      "notes": "Complete instrument weighs 1.6 lb, 80% of the listed source weight. The custom-economy price covers one ordinary playable instrument, not instruction, a performance contract or magical construction."
+    },
+    "icon": "icons/tools/instruments/lute-gold-brown.webp",
+    "category": "tools",
+    "tags": [
+      "mundane",
+      "core-expansion",
+      "tools"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "special-order",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 p. 70: Lyre: 30 gp; 2 lb. Original wording and custom-economy price/adjusted weight. See docs/CORE_CATALOGUE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0; original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "tool",
+      "native": {
+        "ability": "cha",
+        "bonus": "",
+        "type": {
+          "value": "music",
+          "baseItem": "lyre"
+        },
+        "properties": [],
+        "activities": {
+          "dnd5eactivity000": {
+            "_id": "dnd5eactivity000",
+            "type": "check",
+            "activation": {
+              "type": "",
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "concentration": false,
+              "value": "",
+              "units": "inst",
+              "special": "",
+              "override": false
+            },
+            "effects": [],
+            "range": {
+              "units": "self",
+              "special": "",
+              "override": false
+            },
+            "target": {
+              "template": {
+                "count": "",
+                "contiguous": false,
+                "type": "",
+                "size": "",
+                "width": "",
+                "height": "",
+                "units": "ft"
+              },
+              "affects": {
+                "count": "",
+                "type": "",
+                "choice": false,
+                "special": ""
+              },
+              "prompt": true,
+              "override": false
+            },
+            "check": {
+              "ability": "cha",
+              "dc": {}
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": []
+            },
+            "sort": 0
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_INSTRUMENT_HORN",
+    "name": "Horn",
+    "description": "A curved horn with a mouthpiece sounds clear sustained notes.\n\nThis complete instrument supports its own musical-instrument proficiency; it grants no proficiency, performance success or magic by itself. A bard may use a musical instrument as a focus under the 2014 class rules. The GM selects the ability for a performance or other appropriate task.",
+    "saleUnit": "One complete horn",
+    "price": {
+      "value": 2,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 1.6,
+      "units": "lb",
+      "notes": "Complete instrument weighs 1.6 lb, 80% of the listed source weight. The custom-economy price covers one ordinary playable instrument, not instruction, a performance contract or magical construction."
+    },
+    "icon": "icons/tools/instruments/flute-simple-wood.webp",
+    "category": "tools",
+    "tags": [
+      "mundane",
+      "core-expansion",
+      "tools"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "variable",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 p. 70: Horn: 3 gp; 2 lb. Original wording and custom-economy price/adjusted weight. See docs/CORE_CATALOGUE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0; original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "tool",
+      "native": {
+        "ability": "cha",
+        "bonus": "",
+        "type": {
+          "value": "music",
+          "baseItem": "horn"
+        },
+        "properties": [],
+        "activities": {
+          "dnd5eactivity000": {
+            "_id": "dnd5eactivity000",
+            "type": "check",
+            "activation": {
+              "type": "",
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "concentration": false,
+              "value": "",
+              "units": "inst",
+              "special": "",
+              "override": false
+            },
+            "effects": [],
+            "range": {
+              "units": "self",
+              "special": "",
+              "override": false
+            },
+            "target": {
+              "template": {
+                "count": "",
+                "contiguous": false,
+                "type": "",
+                "size": "",
+                "width": "",
+                "height": "",
+                "units": "ft"
+              },
+              "affects": {
+                "count": "",
+                "type": "",
+                "choice": false,
+                "special": ""
+              },
+              "prompt": true,
+              "override": false
+            },
+            "check": {
+              "ability": "cha",
+              "dc": {}
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": []
+            },
+            "sort": 0
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_INSTRUMENT_PAN_FLUTE",
+    "name": "Pan Flute",
+    "description": "A bound rank of graduated pipes is played across the open ends.\n\nThis complete instrument supports its own musical-instrument proficiency; it grants no proficiency, performance success or magic by itself. A bard may use a musical instrument as a focus under the 2014 class rules. The GM selects the ability for a performance or other appropriate task.",
+    "saleUnit": "One complete pan flute",
+    "price": {
+      "value": 9,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 1.6,
+      "units": "lb",
+      "notes": "Complete instrument weighs 1.6 lb, 80% of the listed source weight. The custom-economy price covers one ordinary playable instrument, not instruction, a performance contract or magical construction."
+    },
+    "icon": "icons/tools/instruments/flute-simple-wood.webp",
+    "category": "tools",
+    "tags": [
+      "mundane",
+      "core-expansion",
+      "tools"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "special-order",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 p. 70: Pan flute: 12 gp; 2 lb. Original wording and custom-economy price/adjusted weight. See docs/CORE_CATALOGUE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0; original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "tool",
+      "native": {
+        "ability": "cha",
+        "bonus": "",
+        "type": {
+          "value": "music",
+          "baseItem": "flute"
+        },
+        "properties": [],
+        "activities": {
+          "dnd5eactivity000": {
+            "_id": "dnd5eactivity000",
+            "type": "check",
+            "activation": {
+              "type": "",
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "concentration": false,
+              "value": "",
+              "units": "inst",
+              "special": "",
+              "override": false
+            },
+            "effects": [],
+            "range": {
+              "units": "self",
+              "special": "",
+              "override": false
+            },
+            "target": {
+              "template": {
+                "count": "",
+                "contiguous": false,
+                "type": "",
+                "size": "",
+                "width": "",
+                "height": "",
+                "units": "ft"
+              },
+              "affects": {
+                "count": "",
+                "type": "",
+                "choice": false,
+                "special": ""
+              },
+              "prompt": true,
+              "override": false
+            },
+            "check": {
+              "ability": "cha",
+              "dc": {}
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": []
+            },
+            "sort": 0
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_INSTRUMENT_SHAWM",
+    "name": "Shawm",
+    "description": "A reed-driven wind instrument has a flared end and a carrying wrap.\n\nThis complete instrument supports its own musical-instrument proficiency; it grants no proficiency, performance success or magic by itself. A bard may use a musical instrument as a focus under the 2014 class rules. The GM selects the ability for a performance or other appropriate task.",
+    "saleUnit": "One complete shawm",
+    "price": {
+      "value": 1,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 0.8,
+      "units": "lb",
+      "notes": "Complete instrument weighs 0.8 lb, 80% of the listed source weight. The custom-economy price covers one ordinary playable instrument, not instruction, a performance contract or magical construction."
+    },
+    "icon": "icons/tools/instruments/lute-gold-brown.webp",
+    "category": "tools",
+    "tags": [
+      "mundane",
+      "core-expansion",
+      "tools"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "special-order",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 p. 70: Shawm: 2 gp; 1 lb. Original wording and custom-economy price/adjusted weight. See docs/CORE_CATALOGUE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0; original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "tool",
+      "native": {
+        "ability": "cha",
+        "bonus": "",
+        "type": {
+          "value": "music",
+          "baseItem": "shawm"
+        },
+        "properties": [],
+        "activities": {
+          "dnd5eactivity000": {
+            "_id": "dnd5eactivity000",
+            "type": "check",
+            "activation": {
+              "type": "",
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "concentration": false,
+              "value": "",
+              "units": "inst",
+              "special": "",
+              "override": false
+            },
+            "effects": [],
+            "range": {
+              "units": "self",
+              "special": "",
+              "override": false
+            },
+            "target": {
+              "template": {
+                "count": "",
+                "contiguous": false,
+                "type": "",
+                "size": "",
+                "width": "",
+                "height": "",
+                "units": "ft"
+              },
+              "affects": {
+                "count": "",
+                "type": "",
+                "choice": false,
+                "special": ""
+              },
+              "prompt": true,
+              "override": false
+            },
+            "check": {
+              "ability": "cha",
+              "dc": {}
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": []
+            },
+            "sort": 0
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "DT_ITEM_GS_INSTRUMENT_VIOL",
+    "name": "Viol",
+    "description": "A bowed string instrument is supplied with its bow and ordinary fittings.\n\nThis complete instrument supports its own musical-instrument proficiency; it grants no proficiency, performance success or magic by itself. A bard may use a musical instrument as a focus under the 2014 class rules. The GM selects the ability for a performance or other appropriate task.",
+    "saleUnit": "One complete viol",
+    "price": {
+      "value": 24,
+      "denomination": "gp"
+    },
+    "weight": {
+      "value": 0.8,
+      "units": "lb",
+      "notes": "Complete instrument weighs 0.8 lb, 80% of the listed source weight. The custom-economy price covers one ordinary playable instrument, not instruction, a performance contract or magical construction."
+    },
+    "icon": "icons/tools/instruments/lute-gold-brown.webp",
+    "category": "tools",
+    "tags": [
+      "mundane",
+      "core-expansion",
+      "tools"
+    ],
+    "shops": [
+      "general-store"
+    ],
+    "availability": "special-order",
+    "source": {
+      "title": "Devil's Table: Trade & Merchants",
+      "reference": "SRD 5.1 p. 70: Viol: 30 gp; 1 lb. Original wording and custom-economy price/adjusted weight. See docs/CORE_CATALOGUE.md.",
+      "license": "SRD 5.1 mechanics: CC-BY-4.0; original project text: distribution license pending."
+    },
+    "mechanics": {
+      "type": "tool",
+      "native": {
+        "ability": "cha",
+        "bonus": "",
+        "type": {
+          "value": "music",
+          "baseItem": "viol"
+        },
+        "properties": [],
+        "activities": {
+          "dnd5eactivity000": {
+            "_id": "dnd5eactivity000",
+            "type": "check",
+            "activation": {
+              "type": "",
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "concentration": false,
+              "value": "",
+              "units": "inst",
+              "special": "",
+              "override": false
+            },
+            "effects": [],
+            "range": {
+              "units": "self",
+              "special": "",
+              "override": false
+            },
+            "target": {
+              "template": {
+                "count": "",
+                "contiguous": false,
+                "type": "",
+                "size": "",
+                "width": "",
+                "height": "",
+                "units": "ft"
+              },
+              "affects": {
+                "count": "",
+                "type": "",
+                "choice": false,
+                "special": ""
+              },
+              "prompt": true,
+              "override": false
+            },
+            "check": {
+              "ability": "cha",
+              "dc": {}
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": []
+            },
+            "sort": 0
+          }
+        }
+      }
+    }
+  }
+]

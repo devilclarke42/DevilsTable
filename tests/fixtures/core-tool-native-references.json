@@ -1,0 +1,230 @@
+{
+  "sourceCommit": "965ad2d0cf5d063dac675ba078b5bd3c3c0dd449",
+  "references": [
+    {
+      "canonicalId": "DT_ITEM_GS_TOOLS_BREWER",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/tool/brewers-supplies.yml",
+      "type": {
+        "value": "art",
+        "baseItem": "brewer"
+      },
+      "ability": "wis"
+    },
+    {
+      "canonicalId": "DT_ITEM_GS_TOOLS_CALLIGRAPHER",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/tool/calligraphers-supplies.yml",
+      "type": {
+        "value": "art",
+        "baseItem": "calligrapher"
+      },
+      "ability": "int"
+    },
+    {
+      "canonicalId": "DT_ITEM_GS_TOOLS_CARPENTER",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/tool/carpenters-tools.yml",
+      "type": {
+        "value": "art",
+        "baseItem": "carpenter"
+      },
+      "ability": "str"
+    },
+    {
+      "canonicalId": "DT_ITEM_GS_TOOLS_CARTOGRAPHER",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/tool/cartographers-tools.yml",
+      "type": {
+        "value": "art",
+        "baseItem": "cartographer"
+      },
+      "ability": "int"
+    },
+    {
+      "canonicalId": "DT_ITEM_GS_TOOLS_COBBLER",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/tool/cobblers-tools.yml",
+      "type": {
+        "value": "art",
+        "baseItem": "cobbler"
+      },
+      "ability": "int"
+    },
+    {
+      "canonicalId": "DT_ITEM_GS_TOOLS_COOK",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/tool/cooks-utensils.yml",
+      "type": {
+        "value": "art",
+        "baseItem": "cook"
+      },
+      "ability": "wis"
+    },
+    {
+      "canonicalId": "DT_ITEM_GS_TOOLS_GLASSBLOWER",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/tool/glassblowers-tools.yml",
+      "type": {
+        "value": "art",
+        "baseItem": "glassblower"
+      },
+      "ability": "int"
+    },
+    {
+      "canonicalId": "DT_ITEM_GS_TOOLS_JEWELER",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/tool/jewelers-tools.yml",
+      "type": {
+        "value": "art",
+        "baseItem": "jeweler"
+      },
+      "ability": "int"
+    },
+    {
+      "canonicalId": "DT_ITEM_GS_TOOLS_LEATHERWORKER",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/tool/leatherworkers-tools.yml",
+      "type": {
+        "value": "art",
+        "baseItem": "leatherworker"
+      },
+      "ability": "int"
+    },
+    {
+      "canonicalId": "DT_ITEM_GS_TOOLS_MASON",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/tool/masons-tools.yml",
+      "type": {
+        "value": "art",
+        "baseItem": "mason"
+      },
+      "ability": "wis"
+    },
+    {
+      "canonicalId": "DT_ITEM_GS_TOOLS_PAINTER",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/tool/painters-supplies.yml",
+      "type": {
+        "value": "art",
+        "baseItem": "painter"
+      },
+      "ability": "int"
+    },
+    {
+      "canonicalId": "DT_ITEM_GS_TOOLS_POTTER",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/tool/potters-tools.yml",
+      "type": {
+        "value": "art",
+        "baseItem": "potter"
+      },
+      "ability": "int"
+    },
+    {
+      "canonicalId": "DT_ITEM_GS_TOOLS_TINKER",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/tool/tinkers-tools.yml",
+      "type": {
+        "value": "art",
+        "baseItem": "tinker"
+      },
+      "ability": "int"
+    },
+    {
+      "canonicalId": "DT_ITEM_GS_TOOLS_WEAVER",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/tool/weavers-tools.yml",
+      "type": {
+        "value": "art",
+        "baseItem": "weaver"
+      },
+      "ability": "dex"
+    },
+    {
+      "canonicalId": "DT_ITEM_GS_TOOLS_WOODCARVER",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/tool/woodcarvers-tools.yml",
+      "type": {
+        "value": "art",
+        "baseItem": "woodcarver"
+      },
+      "ability": "dex"
+    },
+    {
+      "canonicalId": "DT_ITEM_GS_INSTRUMENT_BAGPIPES",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/tool/bagpipes.yml",
+      "type": {
+        "value": "music",
+        "baseItem": "bagpipes"
+      },
+      "ability": "cha"
+    },
+    {
+      "canonicalId": "DT_ITEM_GS_INSTRUMENT_DRUM",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/tool/drum.yml",
+      "type": {
+        "value": "music",
+        "baseItem": "drum"
+      },
+      "ability": "cha"
+    },
+    {
+      "canonicalId": "DT_ITEM_GS_INSTRUMENT_DULCIMER",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/tool/dulcimer.yml",
+      "type": {
+        "value": "music",
+        "baseItem": "dulcimer"
+      },
+      "ability": "cha"
+    },
+    {
+      "canonicalId": "DT_ITEM_GS_INSTRUMENT_FLUTE",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/tool/pan-flute.yml",
+      "type": {
+        "value": "music",
+        "baseItem": "flute"
+      },
+      "ability": "cha"
+    },
+    {
+      "canonicalId": "DT_ITEM_GS_INSTRUMENT_LUTE",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/tool/lute.yml",
+      "type": {
+        "value": "music",
+        "baseItem": "lute"
+      },
+      "ability": "cha"
+    },
+    {
+      "canonicalId": "DT_ITEM_GS_INSTRUMENT_LYRE",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/tool/lyre.yml",
+      "type": {
+        "value": "music",
+        "baseItem": "lyre"
+      },
+      "ability": "cha"
+    },
+    {
+      "canonicalId": "DT_ITEM_GS_INSTRUMENT_HORN",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/tool/horn.yml",
+      "type": {
+        "value": "music",
+        "baseItem": "horn"
+      },
+      "ability": "cha"
+    },
+    {
+      "canonicalId": "DT_ITEM_GS_INSTRUMENT_PAN_FLUTE",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/tool/pan-flute.yml",
+      "type": {
+        "value": "music",
+        "baseItem": "flute"
+      },
+      "ability": "cha"
+    },
+    {
+      "canonicalId": "DT_ITEM_GS_INSTRUMENT_SHAWM",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/tool/shawm.yml",
+      "type": {
+        "value": "music",
+        "baseItem": "shawm"
+      },
+      "ability": "cha"
+    },
+    {
+      "canonicalId": "DT_ITEM_GS_INSTRUMENT_VIOL",
+      "source": "https://github.com/foundryvtt/dnd5e/blob/release-5.3.3/packs/_source/items/tool/viol.yml",
+      "type": {
+        "value": "music",
+        "baseItem": "viol"
+      },
+      "ability": "cha"
+    }
+  ]
+}

@@ -3,7 +3,7 @@ import { documentIdFor } from "./document-id.js";
 /**
  * Native D&D5e 5.3.3 utility activity. Blank itemUses target means the owning Item,
  * so actor imports do not contain a stale reference to the compendium document ID.
- * Consuming uses one complete sale unit; reusable gear has no consumption target.
+ * Consuming spends one native charge; a sale unit has one charge unless maxUses is authored.
  */
 export function consumableSystemFields(entry) {
   const { subtype, use, light } = entry.mechanics;
@@ -12,7 +12,7 @@ export function consumableSystemFields(entry) {
   const system = {
     type: { value: subtype, subtype: "" },
     properties: subtype === "potion" ? ["mgc"] : [],
-    uses: { spent: 0, max: consumes ? "1" : "", recovery: [], autoDestroy: consumes },
+    uses: { spent: 0, max: consumes ? String(use.maxUses ?? 1) : "", recovery: [], autoDestroy: consumes },
     activities: {
       [activityId]: {
         _id: activityId, type: "utility", name: use.name,

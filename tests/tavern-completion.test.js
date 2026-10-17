@@ -15,10 +15,10 @@ test("alpha.12 upgrades add only sixteen Items and six memberships; repeated bui
  const old=data.entries.filter(e=>!additions.has(e.item.category)).map(({item})=>{
   const r=structuredClone(item);if(shared.has(r.id))r.shops=r.shops.filter(s=>s!=="tavern");return catalogueEntryToItem(r);
  });
- assert.equal(old.length,424);
+ assert.equal(old.length,502);
  const {adapter,state}=fakeAdapter({existing:old}),build=createBuilder({load:()=>data,adapter});
- const p=await build();assert.deepEqual([p.create,p.update,p.unchanged],[16,6,418]);assert.equal(state.writes.length,0);
- await build({dryRun:false});assert.equal(state.docs.length,440);assert.equal((await build()).unchanged,440);
+ const p=await build();assert.deepEqual([p.create,p.update,p.unchanged],[16,6,496]);assert.equal(state.writes.length,0);
+ await build({dryRun:false});assert.equal(state.docs.length,518);assert.equal((await build()).unchanged,518);
 });
 test("new stock profiles add twenty tables while preserving every pre-existing identity",async()=>{
  const data=await loadStockCatalogue({readJson}),previous=structuredClone(data);

@@ -14,7 +14,10 @@
       "animal",
       "travel",
       "tools",
-      "trade-goods"
+      "trade-goods",
+      "alchemical-goods",
+      "clothing",
+      "spellcasting-supplies"
     ],
     "fallbackCategory": {
       "id": "other",
@@ -90,7 +93,10 @@
       "ingredients",
       "reagents",
       "glassware",
-      "alchemical-tools"
+      "alchemical-tools",
+      "tools",
+      "alchemical-goods",
+      "spellcasting-supplies"
     ],
     "fallbackCategory": {
       "id": "other",
@@ -154,7 +160,8 @@
       "contraband",
       "stolen-goods",
       "curiosities",
-      "rare-components"
+      "rare-components",
+      "trade-goods"
     ],
     "fallbackCategory": {
       "id": "other",

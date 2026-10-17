@@ -29,6 +29,12 @@ export function validateItemRules(item, location) {
     if (mechanics.subtype !== "ammo" && !mechanics.use) add("mechanics.use", "Consumables require an explicit use action and consumption mode.");
     if (mechanics.subtype === "food" && mechanics.use?.mode !== "consume") add("mechanics.use.mode", "Food must consume one sale unit.");
   }
+  if (mechanics.use?.maxUses !== undefined) {
+    const uses = mechanics.use.maxUses;
+    if (mechanics.type !== "consumable" || mechanics.subtype === "ammo" || mechanics.use.mode !== "consume"
+        || !Number.isSafeInteger(uses) || uses < 1 || uses > 1000) add("mechanics.use.maxUses", "Limited uses require a consuming non-ammunition Item and an integer from 1 to 1000.");
+    if (uses !== 1 && (["food", "potion"].includes(mechanics.subtype) || mechanics.light)) add("mechanics.use.maxUses", "Foods, potions and lights retain one complete sale-unit use.");
+  }
   if (mechanics.subtype === "potion" && (mechanics.use?.mode !== "consume" || mechanics.use?.activation !== "action")) add("mechanics.use", "Potions consume one dose using a 2014 action.");
   if (mechanics.healing && (mechanics.type !== "consumable" || mechanics.subtype !== "potion" || mechanics.use?.mode !== "consume" || mechanics.use?.activation !== "action")) add("mechanics.healing", "Healing requires a single-dose potion used as a 2014 action.");
   if (mechanics.healing && (mechanics.healing.number > 20 || mechanics.healing.bonus > 100)) add("mechanics.healing", "Healing exceeds supported dice or bonus limits.");
@@ -37,10 +43,11 @@ export function validateItemRules(item, location) {
   if (!nativeType && mechanics.native) add("mechanics.native", "Native fields are reserved for equipment, tools, weapons and ammunition.");
   if (mechanics.native) {
     const n = mechanics.native, t = n.type?.value;
-    const values = {weapon:["simpleM","simpleR","martialM","martialR"],equipment:["light","medium","heavy","shield"],tool:["art","game","music",""],consumable:["ammo"]};
+    const values = {weapon:["simpleM","simpleR","martialM","martialR"],equipment:["light","medium","heavy","shield","trinket"],tool:["art","game","music",""],consumable:["ammo"]};
     if (!values[mechanics.type]?.includes(t)) add("mechanics.native.type", "Unsupported native equipment type.");
     if (mechanics.type === "weapon" && (!n.damage?.base || !Object.values(n.activities ?? {}).some(a=>a.type==="attack"))) add("mechanics.native", "Weapons require damage and a native attack activity.");
-    if (mechanics.type === "equipment" && !Number.isInteger(n.armor?.value)) add("mechanics.native.armor", "Armour requires a native AC value.");
+    if (mechanics.type === "equipment" && t !== "trinket" && !Number.isInteger(n.armor?.value)) add("mechanics.native.armor", "Armour requires a native AC value.");
+    if (mechanics.type === "equipment" && t === "trinket" && n.armor !== undefined) add("mechanics.native.armor", "Trinket equipment does not grant armour AC.");
     if (mechanics.type === "consumable" && !["arrow","crossbowBolt","slingBullet","blowgunNeedle"].includes(n.type?.subtype)) add("mechanics.native.type", "Unknown ammunition subtype.");
     if (Object.values(n.activities??{}).some(a=>!["attack","check","save"].includes(a.type))) add("mechanics.native.activities", "Only native attack/check/save activities are supported.");
   }

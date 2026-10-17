@@ -17,7 +17,13 @@
       "Flask",
       "Waterskin",
       "Clay Jug",
-      "Ceramic Jar"
+      "Ceramic Jar",
+      "Component Pouch",
+      "Quiver",
+      "Crossbow Bolt Case",
+      "Glass Bottle, 1.5 pint",
+      "Iron Pot, 1 gallon",
+      "Glass Vial, 4 fl oz"
     ],
     "catalogue": "general-store",
     "sort": 0,
@@ -68,7 +74,8 @@
       "Block and Tackle",
       "Chain",
       "Rope Ladder",
-      "Belaying Pin"
+      "Belaying Pin",
+      "Rigid Ladder, 10 ft."
     ],
     "catalogue": "general-store",
     "sort": 20,
@@ -126,7 +133,9 @@
       "Wax Tablet",
       "Slate",
       "Blotting Sand",
-      "Document Case"
+      "Document Case",
+      "Spellbook",
+      "Book of Lore"
     ],
     "catalogue": "general-store",
     "sort": 40,
@@ -205,7 +214,8 @@
       "Travel Cloak",
       "Pack Cover",
       "Canvas Repair Patches",
-      "Marking Ribbon"
+      "Marking Ribbon",
+      "Pole, 10 ft."
     ],
     "catalogue": "general-store",
     "sort": 70,
@@ -233,7 +243,41 @@
       "Wooden Rule",
       "Tool Wrap",
       "Wooden Wedges",
-      "Merchant's Scale"
+      "Merchant's Scale",
+      "Herbalism Kit",
+      "Navigator's Tools",
+      "Abacus",
+      "Ball Bearings",
+      "Caltrops",
+      "Hunting Trap",
+      "Magnifying Glass",
+      "Portable Ram",
+      "Signet Ring",
+      "Brewer's Supplies",
+      "Calligrapher's Supplies",
+      "Carpenter's Tools",
+      "Cartographer's Tools",
+      "Cobbler's Tools",
+      "Cook's Utensils",
+      "Glassblower's Tools",
+      "Jeweler's Tools",
+      "Leatherworker's Tools",
+      "Mason's Tools",
+      "Painter's Supplies",
+      "Potter's Tools",
+      "Tinker's Tools",
+      "Weaver's Tools",
+      "Woodcarver's Tools",
+      "Bagpipes",
+      "Drum",
+      "Dulcimer",
+      "Flute",
+      "Lute",
+      "Lyre",
+      "Horn",
+      "Pan Flute",
+      "Shawm",
+      "Viol"
     ],
     "catalogue": "general-store",
     "sort": 80,
@@ -256,7 +300,18 @@
       "Beeswax",
       "Pitch",
       "Cloth Dye",
-      "Silk Cloth"
+      "Silk Cloth",
+      "Wheat",
+      "Flour",
+      "Cotton Cloth",
+      "Ginger",
+      "Cinnamon",
+      "Pepper",
+      "Cloves",
+      "Silver Bar",
+      "Saffron",
+      "Gold Bar",
+      "Platinum Bar"
     ],
     "catalogue": "general-store",
     "sort": 90,
@@ -1477,5 +1532,134 @@
     "sort": 160,
     "visible": true,
     "icon": "icons/svg/item-bag.svg"
+  },
+  {
+    "id": "tools",
+    "shop": "alchemist",
+    "catalogue": "alchemist",
+    "name": "Tools & Kits",
+    "description": "Complete specialist tool kits shared with other merchants.",
+    "plannedItems": [
+      "Herbalism Kit"
+    ],
+    "sort": 100,
+    "visible": true,
+    "icon": "icons/containers/bags/pouch-leather-green.webp"
+  },
+  {
+    "id": "alchemical-goods",
+    "shop": "general-store",
+    "catalogue": "general-store",
+    "name": "Alchemy & Medical Supplies",
+    "description": "Source-derived alchemy & medical supplies with explicit purchase units and manual limits.",
+    "plannedItems": [
+      "Acid, Vial",
+      "Alchemist's Fire",
+      "Antitoxin",
+      "Healer's Kit",
+      "Holy Water",
+      "Perfume"
+    ],
+    "sort": 120,
+    "visible": true,
+    "icon": "icons/consumables/potions/bottle-round-corked-green.webp"
+  },
+  {
+    "id": "alchemical-goods",
+    "shop": "alchemist",
+    "catalogue": "alchemist",
+    "name": "Alchemy & Medical Supplies",
+    "description": "Source-derived alchemy & medical supplies with explicit purchase units and manual limits.",
+    "plannedItems": [
+      "Acid, Vial",
+      "Alchemist's Fire",
+      "Antitoxin",
+      "Healer's Kit",
+      "Holy Water",
+      "Perfume"
+    ],
+    "sort": 120,
+    "visible": true,
+    "icon": "icons/consumables/potions/bottle-round-corked-green.webp"
+  },
+  {
+    "id": "clothing",
+    "shop": "general-store",
+    "catalogue": "general-store",
+    "name": "Clothing",
+    "description": "Source-derived clothing with explicit purchase units and manual limits.",
+    "plannedItems": [
+      "Common Clothes",
+      "Costume Clothes",
+      "Fine Clothes",
+      "Traveller’s Clothes",
+      "Robes"
+    ],
+    "sort": 100,
+    "visible": true,
+    "icon": "icons/equipment/chest/shirt-collared-brown.webp"
+  },
+  {
+    "id": "spellcasting-supplies",
+    "shop": "general-store",
+    "catalogue": "general-store",
+    "name": "Spellcasting Supplies",
+    "description": "Source-derived spellcasting supplies with explicit purchase units and manual limits.",
+    "plannedItems": [
+      "Arcane Focus, Crystal",
+      "Arcane Focus, Orb",
+      "Arcane Focus, Rod",
+      "Arcane Focus, Staff",
+      "Arcane Focus, Wand",
+      "Druidic Focus, Mistletoe",
+      "Druidic Focus, Totem",
+      "Druidic Focus, Wooden Staff",
+      "Druidic Focus, Yew Wand",
+      "Holy Symbol, Amulet",
+      "Holy Symbol, Emblem",
+      "Holy Symbol, Reliquary"
+    ],
+    "sort": 110,
+    "visible": true,
+    "icon": "icons/commodities/gems/gem-faceted-large-green.webp"
+  },
+  {
+    "id": "spellcasting-supplies",
+    "shop": "alchemist",
+    "catalogue": "alchemist",
+    "name": "Spellcasting Supplies",
+    "description": "Source-derived spellcasting supplies with explicit purchase units and manual limits.",
+    "plannedItems": [
+      "Arcane Focus, Crystal",
+      "Arcane Focus, Orb",
+      "Arcane Focus, Rod",
+      "Arcane Focus, Staff",
+      "Arcane Focus, Wand",
+      "Druidic Focus, Mistletoe",
+      "Druidic Focus, Totem",
+      "Druidic Focus, Wooden Staff",
+      "Druidic Focus, Yew Wand",
+      "Holy Symbol, Amulet",
+      "Holy Symbol, Emblem",
+      "Holy Symbol, Reliquary"
+    ],
+    "sort": 110,
+    "visible": true,
+    "icon": "icons/commodities/gems/gem-faceted-large-green.webp"
+  },
+  {
+    "id": "trade-goods",
+    "shop": "black-market",
+    "catalogue": "black-market",
+    "name": "Bullion & Trade Goods",
+    "description": "Shared high-value commodity bars; the GM determines legality and provenance.",
+    "plannedItems": [
+      "Silver Bar",
+      "Gold Bar",
+      "Platinum Bar"
+    ],
+    "sort": 180,
+    "visible": true,
+    "icon": "icons/commodities/metal/ingot-stamped-silver.webp"
   }
 ]

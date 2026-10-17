@@ -30,12 +30,12 @@ test("all 69 accepted source records survive unchanged except explicit Container
     if (["DT_ITEM_GS_WATERSKIN","DT_ITEM_GS_RATIONS_TRAVEL","DT_ITEM_GS_FIREWOOD","DT_ITEM_GS_BEDROLL","DT_ITEM_GS_MESS_KIT","DT_ITEM_GS_FLINT_STEEL"].includes(id)) item.shops = item.shops.filter(shop => shop !== "tavern");
     assert.equal(createHash("sha256").update(JSON.stringify(item)).digest("hex"), sha256, id);
   }
-  for (const [shop, count] of [["tavern", 37], ["alchemist", 6], ["blacksmith", 15], ["black-market", 9]]) {
+  for (const [shop, count] of [["tavern", 37], ["alchemist", 26], ["blacksmith", 20], ["black-market", 12]]) {
     assert.equal(data.entries.filter(({ item }) => item.id.startsWith("DT_ITEM_GS_") && item.shops.includes(shop)).length, count);
   }
 });
 
-test("alpha.6 Item upgrade creates 75, adds 13 sale-unit flags and preserves 56 unchanged", async () => {
+test("alpha.6 Item upgrade creates 153, adds 13 sale-unit flags and preserves 56 unchanged", async () => {
   const data = await production();
   const ids = new Set((await readJson("tests/fixtures/general-store-alpha6-hashes.json")).items.map(item => item.id));
   const existing = data.entries.filter(({ item }) => ids.has(item.id)).map(({ item }) => {
@@ -49,14 +49,14 @@ test("alpha.6 Item upgrade creates 75, adds 13 sale-unit flags and preserves 56 
   const rebuild = createBuilder({ load: () => data, adapter });
   const build = (options = {}) => rebuild({ shopId: "general-store", ...options });
   const preview = await build();
-  assert.deepEqual([preview.create, preview.update, preview.unchanged], [75, 13, 56]);
+  assert.deepEqual([preview.create, preview.update, preview.unchanged], [153, 13, 56]);
   assert.deepEqual(state.writes, []);
   await build({ dryRun: false });
-  assert.equal(state.docs.length, 144);
-  assert.equal(new Set(state.docs.map(doc => doc._id)).size, 144);
+  assert.equal(state.docs.length, 222);
+  assert.equal(new Set(state.docs.map(doc => doc._id)).size, 222);
   assert.equal(state.docs[0].folder, "personalFolder");
   assert.equal(state.docs[0].flags.other.keep, true);
-  assert.equal((await build({ dryRun: false })).unchanged, 144);
+  assert.equal((await build({ dryRun: false })).unchanged, 222);
 });
 
 test("every product has a sale unit, meaningful tags and a known or packaged icon", async () => {
@@ -99,7 +99,7 @@ test("four General Store profiles partition their own tiers and share canonical 
   for (const profile of profiles) {
     const groups = stockGroups(data, profile);
     const ids = Object.values(groups).flat().map(item => item.id);
-    assert.equal(ids.length, profile.isVariant && profile.name === "Merchant Wagon" ? 133 : 144);
+    assert.equal(ids.length, profile.isVariant && profile.name === "Merchant Wagon" ? 189 : 222);
     assert.equal(new Set(ids).size, ids.length);
     const docs = stockTableDocuments(data, { shopId: "general-store", profileId: profile.id });
     assert.equal(docs.length, 4);
